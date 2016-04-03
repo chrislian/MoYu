@@ -18,6 +18,12 @@
 		833E21291CB131800046F582 /* MOLeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21281CB131800046F582 /* MOLeftMenu.swift */; };
 		833E212B1CB131AE0046F582 /* MOLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E212A1CB131AE0046F582 /* MOLeftTableViewCell.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
+		833E21321CB15F800046F582 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21301CB15F800046F582 /* DataSource.swift */; };
+		833E21421CB161310046F582 /* Collectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E213F1CB161310046F582 /* Collectable.swift */; };
+		833E21431CB161310046F582 /* CollectableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21401CB161310046F582 /* CollectableCollection.swift */; };
+		833E21441CB161310046F582 /* CollectableGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21411CB161310046F582 /* CollectableGroup.swift */; };
+		833E21461CB1615B0046F582 /* RevertItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21451CB1615B0046F582 /* RevertItems.swift */; };
+		833E21481CB1616E0046F582 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21471CB1616E0046F582 /* Requirement.swift */; };
 		834E3EC11CB0C070005B8FC3 /* MOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC01CB0C070005B8FC3 /* MOBaseViewController.swift */; };
 		834E3EC31CB0C08B005B8FC3 /* MOHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC21CB0C08B005B8FC3 /* MOHomeViewController.swift */; };
 		834E3EC51CB0C0F7005B8FC3 /* Left.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */; };
@@ -75,6 +81,12 @@
 		833E21281CB131800046F582 /* MOLeftMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenu.swift; sourceTree = "<group>"; };
 		833E212A1CB131AE0046F582 /* MOLeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftTableViewCell.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		833E21301CB15F800046F582 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		833E213F1CB161310046F582 /* Collectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collectable.swift; sourceTree = "<group>"; };
+		833E21401CB161310046F582 /* CollectableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectableCollection.swift; sourceTree = "<group>"; };
+		833E21411CB161310046F582 /* CollectableGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectableGroup.swift; sourceTree = "<group>"; };
+		833E21451CB1615B0046F582 /* RevertItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevertItems.swift; sourceTree = "<group>"; };
+		833E21471CB1616E0046F582 /* Requirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
 		834E3EC01CB0C070005B8FC3 /* MOBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOBaseViewController.swift; sourceTree = "<group>"; };
 		834E3EC21CB0C08B005B8FC3 /* MOHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeViewController.swift; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Left.storyboard; sourceTree = "<group>"; };
@@ -162,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				831C33C91CB0B1E900157B67 /* MOAppDelegate.swift */,
+				833E212E1CB15F720046F582 /* Data Sources */,
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
 				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
@@ -192,6 +205,14 @@
 			path = MoYuUITests;
 			sourceTree = "<group>";
 		};
+		833E212E1CB15F720046F582 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				833E21301CB15F800046F582 /* DataSource.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +238,7 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				833E21451CB1615B0046F582 /* RevertItems.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -224,6 +246,10 @@
 		834E3EB71CB0BE86005B8FC3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				833E213F1CB161310046F582 /* Collectable.swift */,
+				833E21401CB161310046F582 /* CollectableCollection.swift */,
+				833E21411CB161310046F582 /* CollectableGroup.swift */,
+				833E21471CB1616E0046F582 /* Requirement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -579,21 +605,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */,
+				833E21441CB161310046F582 /* CollectableGroup.swift in Sources */,
 				834E3EC31CB0C08B005B8FC3 /* MOHomeViewController.swift in Sources */,
 				834E3ECB1CB0CAA5005B8FC3 /* UIColor+MoYu.swift in Sources */,
 				834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */,
 				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
+				833E21321CB15F800046F582 /* DataSource.swift in Sources */,
 				834E3ECD1CB0CC94005B8FC3 /* UIImage+MoYu.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
+				833E21481CB1616E0046F582 /* Requirement.swift in Sources */,
 				833E21291CB131800046F582 /* MOLeftMenu.swift in Sources */,
 				834E3EC71CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */,
 				833E212B1CB131AE0046F582 /* MOLeftTableViewCell.swift in Sources */,
+				833E21431CB161310046F582 /* CollectableCollection.swift in Sources */,
 				834E3ED11CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift in Sources */,
+				833E21421CB161310046F582 /* Collectable.swift in Sources */,
 				8389C6511CB0E7C5003E96B1 /* MOBaseView.swift in Sources */,
 				834E3EC11CB0C070005B8FC3 /* MOBaseViewController.swift in Sources */,
 				834E3ECF1CB0CE11005B8FC3 /* UIFont+MoYu.swift in Sources */,
 				834E3EC91CB0C81B005B8FC3 /* UINavigationController+MoYu.swift in Sources */,
+				833E21461CB1615B0046F582 /* RevertItems.swift in Sources */,
 				833E21271CB131560046F582 /* MOLeftMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
