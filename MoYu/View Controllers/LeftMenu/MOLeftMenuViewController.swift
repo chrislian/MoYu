@@ -26,10 +26,9 @@ class MOLeftMenuViewController: MOBaseViewController {
     private func setupLeftMenuView(){
         leftMenuView.tableView.delegate = self
         leftMenuView.tableView.dataSource = self
-        leftMenuView.tableView.separatorStyle = .None
-        leftMenuView.tableView.backgroundColor = UIColor.mo_lightYellowColor()
         
         leftMenuView.updateUserHead(UIImage(named: "defalutHead")!, username: "苹果", phone: "18350210050")
+        leftMenuView.isCustomerAuth = true
     }
     
     //MARK: - var & let

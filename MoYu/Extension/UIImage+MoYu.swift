@@ -30,4 +30,27 @@ extension UIImage{
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    /**
+     改变图片的颜色
+     
+     - parameter color: 颜色
+     
+     - returns: new Image
+     */
+    func mo_changeColor(color:UIColor)->UIImage{
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextTranslateCTM(context, 0, self.size.height)
+        CGContextScaleCTM(context, 1.0, -1.0)
+        CGContextSetBlendMode(context, .Normal)
+        let rect = CGRect(origin: CGPointZero, size: self.size)
+        CGContextClipToMask(context, rect, self.CGImage)
+        color.setFill()
+        CGContextFillRect(context, rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }

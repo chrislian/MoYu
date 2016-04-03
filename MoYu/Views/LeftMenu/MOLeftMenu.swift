@@ -12,13 +12,8 @@ class MOLeftMenuView: MOBaseView {
 
     
     override func awakeFromNib() {
-        tableView.tableFooterView = UIView()
         
-        headerImageView.layer.cornerRadius = headerImageView.bounds.size.height/2.0
-        headerImageView.layer.masksToBounds = true
-        
-        headerImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        headerImageView.layer.borderWidth = 2.0
+        self.setupView()
     }
     
     //MARK: - public method
@@ -27,31 +22,65 @@ class MOLeftMenuView: MOBaseView {
         headerUsernameLabel.text = username
         headerPhoneLabel.text = phone
     }
+    
+    private func setupView(){
+        
+        headerImageView.layer.cornerRadius = headerImageView.bounds.size.height/2.0
+        headerImageView.layer.masksToBounds = true
+        
+        headerBackView.layer.cornerRadius = headerBackView.bounds.size.height/2.0
+        headerBackView.layer.masksToBounds = true
+        headerBackView.layer.borderColor = UIColor.whiteColor().CGColor
+        headerBackView.layer.borderWidth = 2.0
+        
+        //tableView
+        tableView.separatorStyle = .None
+        tableView.bounces = false
+        
+        //auth
+        isMerchantAuth = false
+        isCustomerAuth = false
+    }
 
+    private func updateAuthImageView(imageView:UIImageView,flag:Bool){
+        var color:UIColor
+        if flag {
+           color = UIColor.mo_mainColor()
+        }else{
+            color = UIColor.mo_mercuryColor()
+        }
+        
+        guard let image = imageView.image else{
+            return
+        }
+        imageView.image? = image.mo_changeColor(color)
+    }
+    
+    
     //MARK: - var & let
-    var isMerchantAuth = false {
+    var isMerchantAuth = true {
         didSet{
             if isMerchantAuth != oldValue {
-                print("merchantAuth = \(isMerchantAuth)")
+                self.updateAuthImageView(headerMerchantAuthImageView, flag: isMerchantAuth)
             }
         }
     }
     
-    var isCustomerAuth = false {
+    var isCustomerAuth = true {
         didSet{
             if isCustomerAuth != oldValue {
-                print("customerAuth = \(isCustomerAuth)")
+                self.updateAuthImageView(headerCustomAuthImageView, flag: isCustomerAuth)
             }
         }
     }
-    
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var headerCustomAuthLabel: UIImageView!
-    @IBOutlet weak var headerMerchantAuthLabel: UIImageView!
-    @IBOutlet weak var headerUsernameLabel: UILabel!
-    @IBOutlet weak var headerPhoneLabel: UILabel!
+    @IBOutlet private weak var headerView: UIView!
+    @IBOutlet private weak var headerBackView: UIView!
+    @IBOutlet private weak var headerImageView: UIImageView!
+    @IBOutlet private weak var headerCustomAuthImageView: UIImageView!
+    @IBOutlet private weak var headerMerchantAuthImageView: UIImageView!
+    @IBOutlet private weak var headerUsernameLabel: UILabel!
+    @IBOutlet private weak var headerPhoneLabel: UILabel!
 }
