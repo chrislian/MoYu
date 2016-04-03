@@ -27,7 +27,7 @@ class MOLeftMenuViewController: MOBaseViewController {
         leftMenuView.tableView.delegate = self
         leftMenuView.tableView.dataSource = self
         
-        leftMenuView.updateUserHead(UIImage(named: "defalutHead")!, username: "苹果", phone: "18350210050")
+        leftMenuView.updateUserHead(UIImage(named: "defalutHead")!, username: "墨鱼", phone: "18350210050")
         leftMenuView.isCustomerAuth = true
     }
     
