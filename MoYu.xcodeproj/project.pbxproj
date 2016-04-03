@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		15D37867C79F4DED7F7C7CDB /* Pods_MoYu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA126A58D4CBA2C3226DFD8 /* Pods_MoYu.framework */; };
-		831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33C91CB0B1E900157B67 /* AppDelegate.swift */; };
-		831C33CC1CB0B1E900157B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33CB1CB0B1E900157B67 /* ViewController.swift */; };
+		831C33CA1CB0B1E900157B67 /* MYAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33C91CB0B1E900157B67 /* MYAppDelegate.swift */; };
 		831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33CD1CB0B1E900157B67 /* Main.storyboard */; };
 		831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D01CB0B1E900157B67 /* Assets.xcassets */; };
 		831C33D41CB0B1E900157B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */; };
 		831C33DF1CB0B1E900157B67 /* MoYuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33DE1CB0B1E900157B67 /* MoYuTests.swift */; };
 		831C33EA1CB0B1E900157B67 /* MoYuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33E91CB0B1E900157B67 /* MoYuUITests.swift */; };
+		834E3EC11CB0C070005B8FC3 /* MYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC01CB0C070005B8FC3 /* MYBaseViewController.swift */; };
+		834E3EC31CB0C08B005B8FC3 /* MYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC21CB0C08B005B8FC3 /* MYHomeViewController.swift */; };
+		834E3EC51CB0C0F7005B8FC3 /* Left.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -43,18 +45,20 @@
 		6778D3C039A2DAB742A101AD /* Pods-MoYuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		752A02BA78A64F04167261F4 /* Pods-MoYuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests.release.xcconfig"; sourceTree = "<group>"; };
 		831C33C61CB0B1E900157B67 /* MoYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		831C33C91CB0B1E900157B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		831C33CB1CB0B1E900157B67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		831C33C91CB0B1E900157B67 /* MYAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYAppDelegate.swift; sourceTree = "<group>"; };
 		831C33CE1CB0B1E900157B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		831C33D01CB0B1E900157B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		831C33D01CB0B1E900157B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		831C33D31CB0B1E900157B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		831C33D51CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831C33D51CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		831C33DA1CB0B1E900157B67 /* MoYuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoYuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		831C33DE1CB0B1E900157B67 /* MoYuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuTests.swift; sourceTree = "<group>"; };
 		831C33E01CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		831C33E51CB0B1E900157B67 /* MoYuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoYuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		831C33E91CB0B1E900157B67 /* MoYuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuUITests.swift; sourceTree = "<group>"; };
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834E3EC01CB0C070005B8FC3 /* MYBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYBaseViewController.swift; sourceTree = "<group>"; };
+		834E3EC21CB0C08B005B8FC3 /* MYHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYHomeViewController.swift; sourceTree = "<group>"; };
+		834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Left.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,12 +131,15 @@
 		831C33C81CB0B1E900157B67 /* MoYu */ = {
 			isa = PBXGroup;
 			children = (
-				831C33C91CB0B1E900157B67 /* AppDelegate.swift */,
-				831C33CB1CB0B1E900157B67 /* ViewController.swift */,
-				831C33CD1CB0B1E900157B67 /* Main.storyboard */,
-				831C33D01CB0B1E900157B67 /* Assets.xcassets */,
-				831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */,
-				831C33D51CB0B1E900157B67 /* Info.plist */,
+				831C33C91CB0B1E900157B67 /* MYAppDelegate.swift */,
+				834E3EB41CB0BE86005B8FC3 /* Constant */,
+				834E3EB51CB0BE86005B8FC3 /* Extension */,
+				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
+				834E3EB71CB0BE86005B8FC3 /* Models */,
+				834E3EBC1CB0BE86005B8FC3 /* Views */,
+				834E3EB91CB0BE86005B8FC3 /* View Controllers */,
+				834E3EB81CB0BE86005B8FC3 /* Resources */,
+				834E3EBF1CB0BF80005B8FC3 /* Storyboards */,
 			);
 			path = MoYu;
 			sourceTree = "<group>";
@@ -153,6 +160,101 @@
 				831C33EB1CB0B1E900157B67 /* Info.plist */,
 			);
 			path = MoYuUITests;
+			sourceTree = "<group>";
+		};
+		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		834E3EB51CB0BE86005B8FC3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		834E3EB71CB0BE86005B8FC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		834E3EB81CB0BE86005B8FC3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				831C33D01CB0B1E900157B67 /* Assets.xcassets */,
+				831C33D51CB0B1E900157B67 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		834E3EB91CB0BE86005B8FC3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				834E3EC01CB0C070005B8FC3 /* MYBaseViewController.swift */,
+				834E3EBA1CB0BE86005B8FC3 /* Home */,
+				834E3EBB1CB0BE86005B8FC3 /* LeftMenu */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		834E3EBA1CB0BE86005B8FC3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				834E3EC21CB0C08B005B8FC3 /* MYHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		834E3EBB1CB0BE86005B8FC3 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		834E3EBC1CB0BE86005B8FC3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				834E3EBD1CB0BE86005B8FC3 /* Home */,
+				834E3EBE1CB0BE86005B8FC3 /* LeftMenu */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		834E3EBD1CB0BE86005B8FC3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		834E3EBE1CB0BE86005B8FC3 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		834E3EBF1CB0BF80005B8FC3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */,
+				831C33CD1CB0B1E900157B67 /* Main.storyboard */,
+				831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		AA65D61154422FDF04B3BC87 /* Frameworks */ = {
@@ -280,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				831C33D41CB0B1E900157B67 /* LaunchScreen.storyboard in Resources */,
+				834E3EC51CB0C0F7005B8FC3 /* Left.storyboard in Resources */,
 				831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */,
 				831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */,
 			);
@@ -429,8 +532,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				831C33CC1CB0B1E900157B67 /* ViewController.swift in Sources */,
-				831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */,
+				834E3EC31CB0C08B005B8FC3 /* MYHomeViewController.swift in Sources */,
+				831C33CA1CB0B1E900157B67 /* MYAppDelegate.swift in Sources */,
+				834E3EC11CB0C070005B8FC3 /* MYBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +576,7 @@
 				831C33CE1CB0B1E900157B67 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */ = {
@@ -480,6 +585,7 @@
 				831C33D31CB0B1E900157B67 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
