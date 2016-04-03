@@ -11,25 +11,25 @@ import UIKit
 extension UINavigationBar{
     
     /**
-     找出导航栏底部的横线
+     隐藏导航栏底部的黑线
      
-     - returns: UIImageView
+     - parameter hide: ture or false
      */
-    func mo_findHairLineImageView()->UIImageView?{
-        
-        func findHairLineImageViewUnder(view:UIView)-> UIImageView?{
-            
-            if view.isKindOfClass(UIImageView) && view.bounds.size.height <= 1.0{
+    func mo_hideHairLine(hide:Bool){
+        func findHairLineUnder(view:UIView) -> UIImageView? {
+            if view.isKindOfClass(UIImageView) && view.bounds.height <= 1.0 {
                 return view as? UIImageView
+            }
+            for subview in view.subviews {
+                return findHairLineUnder(subview)
             }
             return nil
         }
         
-        for subview in self.subviews{
-            
-            return findHairLineImageViewUnder(subview)
+        guard let imageView = findHairLineUnder(self) else{
+            return
         }
-        return nil
+        imageView.hidden = hide
     }
     
 }

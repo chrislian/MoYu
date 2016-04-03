@@ -8,29 +8,91 @@
 
 import UIKit
 
+enum HomeTitleButtonTag:Int {
+    case partTime = 0,task,credit
+}
+
 class MOHomeViewController: MOBaseViewController {
 
+    //MARK: - event response
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor ( red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0 )
+        
+        self.navigationController?.mo_hideBackButtonTitle()
+        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.mo_hideHairLine(true)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.navigationController?.navigationBar.mo_hideHairLine(false)
     }
 
+    //MARK: - memory warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+    }
+    
+    //MARK: - event response
+    @IBAction func titleButtonClicked(sender: AnyObject) {
+        guard let buttonTag = HomeTitleButtonTag(rawValue: sender.tag) else{
+            print("button tag undefine, sender.tag:\(sender.tag)")
+            return
+        }
+        switch buttonTag {
+        case .partTime:
+            print("兼职")
+        case .task:
+            print("任务")
+        case .credit: 
+            print("积分够")
+        }
+    }
+    func leftRightBarButtonClicked(sender:UIBarButtonItem){
+        if sender.tag == 0 {
+            print("show left menu")
+        }else if sender.tag == 1{
+            performSegueWithIdentifier(SB.Main.Segue.appCenter, sender: self)
+        }
+    }
+    
+    //MARK: - private methond
+
+    
+    //MARK: - var & let
+    lazy var leftBarButton:UIBarButtonItem = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
+        let image = UIImage(named: "homeLeftTop")
+        button.setBackgroundImage(image, forState: .Normal)
+        button.setTitle("", forState: .Normal)
+        button.tag = 0
+        button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
+        return UIBarButtonItem(customView: button)
+    }()
+    
+    lazy var rightBarButton:UIBarButtonItem = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+        let image = UIImage(named: "homeRightTop")
+        button.setBackgroundImage(image, forState: .Normal)
+        button.setTitle("", forState: .Normal)
+        button.tag = 1
+        button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
+        return UIBarButtonItem(customView: button)
+    }()
 }

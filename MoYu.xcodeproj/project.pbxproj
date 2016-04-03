@@ -24,6 +24,10 @@
 		834E3ECF1CB0CE11005B8FC3 /* UIFont+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ECE1CB0CE11005B8FC3 /* UIFont+MoYu.swift */; };
 		834E3ED11CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ED01CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift */; };
 		834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ED21CB0D371005B8FC3 /* String+MoYu.swift */; };
+		8389C6511CB0E7C5003E96B1 /* MOBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6501CB0E7C5003E96B1 /* MOBaseView.swift */; };
+		8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */; };
+		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
+		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,10 @@
 		834E3ECE1CB0CE11005B8FC3 /* UIFont+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+MoYu.swift"; sourceTree = "<group>"; };
 		834E3ED01CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+MoYu.swift"; sourceTree = "<group>"; };
 		834E3ED21CB0D371005B8FC3 /* String+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MoYu.swift"; sourceTree = "<group>"; };
+		8389C6501CB0E7C5003E96B1 /* MOBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOBaseView.swift; path = MoYu/Views/MOBaseView.swift; sourceTree = SOURCE_ROOT; };
+		8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeView.swift; sourceTree = "<group>"; };
+		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
+		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,8 +160,8 @@
 				834E3EB71CB0BE86005B8FC3 /* Models */,
 				834E3EBC1CB0BE86005B8FC3 /* Views */,
 				834E3EB91CB0BE86005B8FC3 /* View Controllers */,
-				834E3EB81CB0BE86005B8FC3 /* Resources */,
 				834E3EBF1CB0BF80005B8FC3 /* Storyboards */,
+				834E3EB81CB0BE86005B8FC3 /* Resources */,
 			);
 			path = MoYu;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				8389C6541CB0EA5E003E96B1 /* MOLog.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -248,6 +257,7 @@
 		834E3EBC1CB0BE86005B8FC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8389C6501CB0E7C5003E96B1 /* MOBaseView.swift */,
 				834E3EBD1CB0BE86005B8FC3 /* Home */,
 				834E3EBE1CB0BE86005B8FC3 /* LeftMenu */,
 			);
@@ -257,6 +267,7 @@
 		834E3EBD1CB0BE86005B8FC3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -271,8 +282,9 @@
 		834E3EBF1CB0BF80005B8FC3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */,
+				8389C6561CB0F026003E96B1 /* Storyboards.swift */,
 				831C33CD1CB0B1E900157B67 /* Main.storyboard */,
+				834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */,
 				831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -553,13 +565,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */,
 				834E3EC31CB0C08B005B8FC3 /* MOHomeViewController.swift in Sources */,
 				834E3ECB1CB0CAA5005B8FC3 /* UIColor+MoYu.swift in Sources */,
 				834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */,
+				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
 				834E3ECD1CB0CC94005B8FC3 /* UIImage+MoYu.swift in Sources */,
+				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				834E3EC71CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */,
 				834E3ED11CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift in Sources */,
+				8389C6511CB0E7C5003E96B1 /* MOBaseView.swift in Sources */,
 				834E3EC11CB0C070005B8FC3 /* MOBaseViewController.swift in Sources */,
 				834E3ECF1CB0CE11005B8FC3 /* UIFont+MoYu.swift in Sources */,
 				834E3EC91CB0C81B005B8FC3 /* UINavigationController+MoYu.swift in Sources */,
