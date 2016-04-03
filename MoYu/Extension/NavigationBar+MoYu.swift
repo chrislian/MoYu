@@ -15,7 +15,7 @@ extension UINavigationBar{
      
      - returns: UIImageView
      */
-    func my_findHairLineImageView()->UIImageView?{
+    func mo_findHairLineImageView()->UIImageView?{
         
         func findHairLineImageViewUnder(view:UIView)-> UIImageView?{
             

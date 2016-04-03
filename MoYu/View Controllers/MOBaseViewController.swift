@@ -1,5 +1,5 @@
 //
-//  MYHomeViewController.swift
+//  MYBaseViewController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/3.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class MYHomeViewController: MYBaseViewController {
+class MOBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor ( red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0 )
     }
 
     override func didReceiveMemoryWarning() {

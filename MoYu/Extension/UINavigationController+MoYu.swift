@@ -13,7 +13,7 @@ extension UINavigationController{
     /**
      隐藏导航条返回键的 title
      */
-    func my_hideBackButtonTitle(){
+    func mo_hideBackButtonTitle(){
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), forBarMetrics:UIBarMetrics.Default)
         
     }

@@ -17,7 +17,7 @@ extension UIImage{
      
      - returns: UIImage
      */
-    func my_scaleToSize(size:CGSize) -> UIImage {
+    func mo_scaleToSize(size:CGSize) -> UIImage {
         
         //1.创建一个bitmap的context
         //2.把他设置成为当前正在使用的 context

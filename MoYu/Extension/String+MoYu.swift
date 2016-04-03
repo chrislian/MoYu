@@ -10,14 +10,14 @@ import Foundation
 
 extension String{
 
-    static func my_stringToBool(string:String) ->Bool {
+    static func mo_stringToBool(string:String) ->Bool {
         if string == "true" || string == "TRUE" {
             return true
         }
         return false
     }
     
-    static func my_boolToString(bool:Bool) -> String {
+    static func mo_boolToString(bool:Bool) -> String {
         if bool {
             return "true"
         }

@@ -11,7 +11,7 @@ import Foundation
 var gDateFormatter:NSDateFormatter? = nil
 extension NSDate{
     
-    class private func my_dateFormatter()->NSDateFormatter{
+    class private func mo_dateFormatter()->NSDateFormatter{
         var dateFormater:NSDateFormatter
         if let tmp = gDateFormatter{
             return tmp
@@ -22,26 +22,26 @@ extension NSDate{
         return dateFormater
     }
     
-    class func my_stringFromDate(date:NSDate) ->String{
-        let dateFormatter = NSDate.my_dateFormatter()
+    class func mo_stringFromDate(date:NSDate) ->String{
+        let dateFormatter = NSDate.mo_dateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.stringFromDate(date)
     }
     
-    class func my_dateFromString(stringDate:String) -> NSDate?{
-        let dateFormatter = NSDate.my_dateFormatter()
+    class func mo_dateFromString(stringDate:String) -> NSDate?{
+        let dateFormatter = NSDate.mo_dateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.dateFromString(stringDate)
     }
     
-    class func my_stringFromDatetime(date:NSDate) ->String{
-        let dateFormatter = NSDate.my_dateFormatter()
+    class func mo_stringFromDatetime(date:NSDate) ->String{
+        let dateFormatter = NSDate.mo_dateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter.stringFromDate(date)
     }
     
-    class func my_datetimeFromString(stringDate:String) -> NSDate?{
-        let dateFormatter = NSDate.my_dateFormatter()
+    class func mo_datetimeFromString(stringDate:String) -> NSDate?{
+        let dateFormatter = NSDate.mo_dateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter.dateFromString(stringDate)
     }
