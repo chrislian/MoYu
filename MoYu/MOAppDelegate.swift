@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import REFrostedViewController
 
 @UIApplicationMain
 class MOAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    //MARK: - AppDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.turnToHomeViewController()
         return true
     }
 
@@ -41,6 +43,20 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    //MARK: - turn to home view controller
+    
+    func turnToHomeViewController(){
+        
+        guard let homeVc = SB.Main.Vc.home(),
+            let leftMenuVc = SB.Left.Vc.leftMenu() else{
+                return
+        }
+        let frostedVc = REFrostedViewController(contentViewController: homeVc, menuViewController: leftMenuVc)
+        frostedVc.direction = .Left
+        frostedVc.liveBlurBackgroundStyle = .Light
+        frostedVc.liveBlur = true
+        self.window?.rootViewController = frostedVc
+        self.window?.makeKeyAndVisible()
+    }
 }
 

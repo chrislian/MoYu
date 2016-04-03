@@ -21,6 +21,10 @@ class MOHomeViewController: MOBaseViewController {
         self.navigationController?.mo_hideBackButtonTitle()
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        
+        let panGesutre = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognized(_:)))
+        self.view.addGestureRecognizer(panGesutre)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,10 +68,16 @@ class MOHomeViewController: MOBaseViewController {
     }
     func leftRightBarButtonClicked(sender:UIBarButtonItem){
         if sender.tag == 0 {
-            print("show left menu")
+            self.view.endEditing(true)
+            self.frostedViewController.presentMenuViewController()
         }else if sender.tag == 1{
             performSegueWithIdentifier(SB.Main.Segue.appCenter, sender: self)
         }
+    }
+    
+    func panGestureRecognized(sender:UIPanGestureRecognizer){
+        self.view.endEditing(true)
+        self.frostedViewController.panGestureRecognized(sender)
     }
     
     //MARK: - private methond
