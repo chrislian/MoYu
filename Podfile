@@ -5,19 +5,18 @@ use_frameworks!
 
 target 'MoYu' do
 #objective-c
-pod 'SVProgressHUD'
-pod 'YYText'
-pod 'REFrostedViewController'
+pod 'SVProgressHUD',    '~> 2.0'
+pod 'YYText',           '~> 1.0'
+pod 'REFrostedViewController', '~> 2.0'
+pod 'MJRefresh',    '~> 3.0'
 
 #swift
-pod 'Alamofire'
-pod 'SwiftDate'
-pod 'SwiftyJSON'
-pod 'LTMorphingLabel'
-pod 'MJRefresh'
+pod 'Alamofire',    '~> 3.0'
+pod 'SwiftDate',    '~> 3.0'
+pod 'SwiftyJSON',   '~> 2.0'
 pod 'SnapKit'
-pod 'SwiftDate'
-pod 'Kingfisher'
+pod 'Kingfisher',   '~> 2.0'
+pod 'Spring',       '~> 1.0'
 end
 
 target 'MoYuTests' do
