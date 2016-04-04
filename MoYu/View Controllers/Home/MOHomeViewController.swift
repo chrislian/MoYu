@@ -54,16 +54,16 @@ class MOHomeViewController: MOBaseViewController {
     //MARK: - event response
     @IBAction func titleButtonClicked(sender: AnyObject) {
         guard let buttonTag = HomeTitleButtonTag(rawValue: sender.tag) else{
-            print("button tag undefine, sender.tag:\(sender.tag)")
+            MOLog("button tag undefine , sender.tag:\(sender.tag)")
             return
         }
         switch buttonTag {
         case .partTime:
-            print("兼职")
+            MOLog("兼职")
         case .task:
-            print("任务")
+            MOLog("任务")
         case .credit: 
-            print("积分够")
+            MOLog("积分购")
         }
     }
     func leftRightBarButtonClicked(sender:UIBarButtonItem){

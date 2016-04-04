@@ -38,6 +38,8 @@
 		8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */; };
 		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
+		83D084D61CB2334E00A8D46C /* CGImage+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */; };
+		83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeView.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+MoYu.swift"; sourceTree = "<group>"; };
+		83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MoYu.swift"; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				834E3EC81CB0C81B005B8FC3 /* UINavigationController+MoYu.swift */,
 				834E3ECA1CB0CAA5005B8FC3 /* UIColor+MoYu.swift */,
 				834E3ECC1CB0CC94005B8FC3 /* UIImage+MoYu.swift */,
+				83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */,
+				83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */,
 				834E3ECE1CB0CE11005B8FC3 /* UIFont+MoYu.swift */,
 				834E3ED01CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift */,
 				834E3ED21CB0D371005B8FC3 /* String+MoYu.swift */,
@@ -612,6 +618,7 @@
 				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
 				833E21321CB15F800046F582 /* DataSource.swift in Sources */,
 				834E3ECD1CB0CC94005B8FC3 /* UIImage+MoYu.swift in Sources */,
+				83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				833E21481CB1616E0046F582 /* Requirement.swift in Sources */,
 				833E21291CB131800046F582 /* MOLeftMenu.swift in Sources */,
@@ -627,6 +634,7 @@
 				834E3EC91CB0C81B005B8FC3 /* UINavigationController+MoYu.swift in Sources */,
 				833E21461CB1615B0046F582 /* RevertItems.swift in Sources */,
 				833E21271CB131560046F582 /* MOLeftMenuViewController.swift in Sources */,
+				83D084D61CB2334E00A8D46C /* CGImage+MoYu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

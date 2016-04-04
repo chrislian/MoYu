@@ -8,3 +8,6 @@
 
 import Foundation
 
+func MOLog<T>(message:T,file:String=#file,method:String=#function,line:Int=#line){
+    print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+}
