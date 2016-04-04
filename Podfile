@@ -17,6 +17,7 @@ pod 'LTMorphingLabel'
 pod 'MJRefresh'
 pod 'SnapKit'
 pod 'SwiftDate'
+pod 'Kingfisher'
 end
 
 target 'MoYuTests' do
