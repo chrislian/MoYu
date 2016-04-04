@@ -46,6 +46,7 @@ class MOLeftMenuViewController: MOBaseViewController {
 
 //MARK: - UITableView delegate
 extension MOLeftMenuViewController: UITableViewDelegate{
+
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50.0

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOLeftMenuView: MOBaseView {
+class MOLeftMenuView: UIView {
 
     
     override func awakeFromNib() {

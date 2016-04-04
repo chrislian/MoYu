@@ -12,7 +12,11 @@ class MOBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let nav = self.navigationController{
+            nav.navigationBar.tintColor = UIColor.mo_lightBlackColor()
+        }
+        
         // Do any additional setup after loading the view.
     }
 

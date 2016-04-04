@@ -12,7 +12,7 @@ struct SB {
     //MARK: - main storyboard
     struct Main {
         struct Cell {
-            
+            static let appCenter = "cellAppCenterIdentifier"
         }
         
         struct Segue {

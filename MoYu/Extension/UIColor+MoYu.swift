@@ -14,6 +14,10 @@ extension UIColor{
         return UIColor ( red: 0.9882, green: 0.7216, blue: 0.0549, alpha: 1.0 )
     }
     
+    class func mo_backgroundColor()->UIColor{
+        return UIColor ( red: 0.9451, green: 0.9451, blue: 0.9451, alpha: 1.0 )
+    }
+    
     class func mo_lightYellowColor()->UIColor{
         return UIColor ( red: 0.9922, green: 0.9451, blue: 0.8353, alpha: 1.0 )
     }
@@ -24,6 +28,10 @@ extension UIColor{
     
     class func mo_silverColor()->UIColor{
         return UIColor ( red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0 )
+    }
+    
+    class func mo_lightBlackColor()->UIColor{
+        return UIColor ( red: 0.0863, green: 0.102, blue: 0.1451, alpha: 1.0 )
     }
     
 }

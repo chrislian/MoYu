@@ -149,6 +149,12 @@
                                                         <constraint firstAttribute="height" constant="1" id="Q6F-yu-31Q"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的钱包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dd-yU-Ake">
+                                                    <rect key="frame" x="60" y="16" width="315" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftMyPurse" translatesAutoresizingMaskIntoConstraints="NO" id="fAz-fH-CwL">
                                                     <rect key="frame" x="24" y="11" width="28" height="28"/>
                                                     <constraints>
@@ -156,12 +162,6 @@
                                                         <constraint firstAttribute="width" secondItem="fAz-fH-CwL" secondAttribute="height" multiplier="1:1" id="D4B-Nk-wuT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的钱包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dd-yU-Ake">
-                                                    <rect key="frame" x="60" y="16" width="315" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99607843137254903" green="0.95294117647058818" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
