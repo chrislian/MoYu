@@ -55,7 +55,11 @@ extension MOAppCenterViewController:UITableViewDelegate{
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0  {
+            self.performSegueWithIdentifier(SB.Main.Segue.aboutJobs, sender: self)
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

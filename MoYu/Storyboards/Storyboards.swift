@@ -13,10 +13,12 @@ struct SB {
     struct Main {
         struct Cell {
             static let appCenter = "cellAppCenterIdentifier"
+            static let aboutJobs = "cellAboutJobsIdentifier"
         }
         
         struct Segue {
             static let appCenter = "segueAppCener"
+            static let aboutJobs = "segueAboutJobs"
         }
         
         struct Vc {

@@ -34,6 +34,8 @@
 		834E3ECF1CB0CE11005B8FC3 /* UIFont+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ECE1CB0CE11005B8FC3 /* UIFont+MoYu.swift */; };
 		834E3ED11CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ED01CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift */; };
 		834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ED21CB0D371005B8FC3 /* String+MoYu.swift */; };
+		837D1E3B1CB3F02F00B27111 /* MOAboutJobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837D1E3A1CB3F02F00B27111 /* MOAboutJobsCell.swift */; };
+		837D1E3D1CB3F06600B27111 /* MOAboutJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837D1E3C1CB3F06600B27111 /* MOAboutJobsViewController.swift */; };
 		8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */; };
 		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
@@ -100,6 +102,8 @@
 		834E3ECE1CB0CE11005B8FC3 /* UIFont+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+MoYu.swift"; sourceTree = "<group>"; };
 		834E3ED01CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+MoYu.swift"; sourceTree = "<group>"; };
 		834E3ED21CB0D371005B8FC3 /* String+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MoYu.swift"; sourceTree = "<group>"; };
+		837D1E3A1CB3F02F00B27111 /* MOAboutJobsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsCell.swift; sourceTree = "<group>"; };
+		837D1E3C1CB3F06600B27111 /* MOAboutJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsViewController.swift; sourceTree = "<group>"; };
 		8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeView.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			children = (
 				834E3EC21CB0C08B005B8FC3 /* MOHomeViewController.swift */,
 				83D084D91CB2361600A8D46C /* MOAppCenterViewController.swift */,
+				837D1E3C1CB3F06600B27111 /* MOAboutJobsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */,
+				837D1E3A1CB3F02F00B27111 /* MOAboutJobsCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 			files = (
 				8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */,
 				833E21441CB161310046F582 /* CollectableGroup.swift in Sources */,
+				837D1E3D1CB3F06600B27111 /* MOAboutJobsViewController.swift in Sources */,
 				834E3EC31CB0C08B005B8FC3 /* MOHomeViewController.swift in Sources */,
 				834E3ECB1CB0CAA5005B8FC3 /* UIColor+MoYu.swift in Sources */,
 				834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */,
@@ -623,6 +630,7 @@
 				834E3ECD1CB0CC94005B8FC3 /* UIImage+MoYu.swift in Sources */,
 				83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */,
 				83D084DA1CB2361600A8D46C /* MOAppCenterViewController.swift in Sources */,
+				837D1E3B1CB3F02F00B27111 /* MOAboutJobsCell.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				833E21481CB1616E0046F582 /* Requirement.swift in Sources */,
 				833E21291CB131800046F582 /* MOLeftMenu.swift in Sources */,
