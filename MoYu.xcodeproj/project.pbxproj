@@ -361,11 +361,14 @@
 			buildConfigurationList = 831C33EE1CB0B1E900157B67 /* Build configuration list for PBXNativeTarget "MoYu" */;
 			buildPhases = (
 				ABD368ED9D3C0CF444FBA69E /* 📦 Check Pods Manifest.lock */,
+				22C14FB0E99F094D980B54C4 /* Check Pods Manifest.lock */,
 				831C33C21CB0B1E900157B67 /* Sources */,
 				831C33C31CB0B1E900157B67 /* Frameworks */,
 				831C33C41CB0B1E900157B67 /* Resources */,
 				5624B01466B85D3B1CF33097 /* 📦 Embed Pods Frameworks */,
 				89B48C1D6B36E6A645A33BC3 /* 📦 Copy Pods Resources */,
+				0C795E73E4614223429DAEB9 /* Embed Pods Frameworks */,
+				CD5803C58C1A9E3D22AF8893 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -381,11 +384,14 @@
 			buildConfigurationList = 831C33F11CB0B1E900157B67 /* Build configuration list for PBXNativeTarget "MoYuTests" */;
 			buildPhases = (
 				2DACEB7AA0D329345E7048FC /* 📦 Check Pods Manifest.lock */,
+				9E4572B7D5FEE5EAF48F65A4 /* Check Pods Manifest.lock */,
 				831C33D61CB0B1E900157B67 /* Sources */,
 				831C33D71CB0B1E900157B67 /* Frameworks */,
 				831C33D81CB0B1E900157B67 /* Resources */,
 				E91335AD13B64D2781E21A86 /* 📦 Embed Pods Frameworks */,
 				108945673AE56C95189F1473 /* 📦 Copy Pods Resources */,
+				CE7D7E734B83ECC9D5660FAC /* Embed Pods Frameworks */,
+				7E54E90229E84AA1A4DF55C5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -402,10 +408,12 @@
 			buildConfigurationList = 831C33F41CB0B1E900157B67 /* Build configuration list for PBXNativeTarget "MoYuUITests" */;
 			buildPhases = (
 				349E3BF988325BC7EF4166FE /* 📦 Check Pods Manifest.lock */,
+				6E5B6AE6A6DB7A25C6ECE6F9 /* Check Pods Manifest.lock */,
 				831C33E11CB0B1E900157B67 /* Sources */,
 				831C33E21CB0B1E900157B67 /* Frameworks */,
 				831C33E31CB0B1E900157B67 /* Resources */,
 				56707367AFC8196EDFF8E5F1 /* 📦 Copy Pods Resources */,
+				568BD296E4FD13141644CB84 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -492,6 +500,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C795E73E4614223429DAEB9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYu/Pods-MoYu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		108945673AE56C95189F1473 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,6 +528,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22C14FB0E99F094D980B54C4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		2DACEB7AA0D329345E7048FC /* 📦 Check Pods Manifest.lock */ = {
@@ -567,6 +605,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		568BD296E4FD13141644CB84 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E5B6AE6A6DB7A25C6ECE6F9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E54E90229E84AA1A4DF55C5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		89B48C1D6B36E6A645A33BC3 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +665,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYu/Pods-MoYu-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9E4572B7D5FEE5EAF48F65A4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		ABD368ED9D3C0CF444FBA69E /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -595,6 +693,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD5803C58C1A9E3D22AF8893 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYu/Pods-MoYu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE7D7E734B83ECC9D5660FAC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E91335AD13B64D2781E21A86 /* 📦 Embed Pods Frameworks */ = {
