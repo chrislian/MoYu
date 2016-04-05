@@ -80,6 +80,10 @@ class MOHomeViewController: MOBaseViewController {
         self.frostedViewController.panGestureRecognized(sender)
     }
     
+    @IBAction func tapGestureHomeMessage(sender: UITapGestureRecognizer) {
+        MOLog("消息")
+    }
+    
     //MARK: - private methond
 
     
