@@ -24,12 +24,23 @@ class MOAboutJobsViewController: UIViewController {
         self.performSegueWithIdentifier(SB.Main.Segue.personMsg, sender: self)
     }
     
+    func publishButtonClicked(sender:UIButton){
+        self.performSegueWithIdentifier(SB.Main.Segue.publishMsg, sender: self)
+    }
+    
     //MARK: - private method
     private func setupView(){
         tableView.delegate = self
         tableView.dataSource = self
         
         self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        self.view.addSubview(publishButton)
+        publishButton.snp_makeConstraints { (make) in
+            make.height.width.equalTo(60)
+            make.right.equalTo(publishButton.superview!).offset(-30)
+            make.bottom.equalTo(publishButton.superview!).offset(-60)
+        }
     }
     
     //MARK: - var & let
@@ -44,6 +55,15 @@ class MOAboutJobsViewController: UIViewController {
         button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
         
         return UIBarButtonItem(customView: button)
+    }()
+    
+    lazy var publishButton:UIButton = {
+        let button = UIButton(type: .Custom)
+        button.setTitle("", forState: .Normal)
+        button.contentMode = .ScaleAspectFit
+        button.setImage(UIImage(named:"icon_publish"), forState: .Normal)
+        button.addTarget(self, action: #selector(publishButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        return button
     }()
 }
 

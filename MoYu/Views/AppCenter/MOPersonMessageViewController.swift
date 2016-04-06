@@ -50,8 +50,5 @@ class MOPersonMessageViewController: UIViewController {
         button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
         
         return UIBarButtonItem(customView: button)
-    }()
-    
-
-    
+    }()  
 }

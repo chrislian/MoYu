@@ -19,6 +19,7 @@
 		832C1CA71CB53C1F009F3657 /* MOAboutJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C1CA51CB53C1F009F3657 /* MOAboutJobsViewController.swift */; };
 		832C1CA81CB53C1F009F3657 /* MOAppCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C1CA61CB53C1F009F3657 /* MOAppCenterViewController.swift */; };
 		832C1CAA1CB546C2009F3657 /* MOPersonMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C1CA91CB546C2009F3657 /* MOPersonMessageViewController.swift */; };
+		832C1CAC1CB55342009F3657 /* MOPublishMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C1CAB1CB55342009F3657 /* MOPublishMessageViewController.swift */; };
 		833E21271CB131560046F582 /* MOLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21261CB131560046F582 /* MOLeftMenuViewController.swift */; };
 		833E21291CB131800046F582 /* MOLeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21281CB131800046F582 /* MOLeftMenu.swift */; };
 		833E212B1CB131AE0046F582 /* MOLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E212A1CB131AE0046F582 /* MOLeftTableViewCell.swift */; };
@@ -90,6 +91,7 @@
 		832C1CA51CB53C1F009F3657 /* MOAboutJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsViewController.swift; sourceTree = "<group>"; };
 		832C1CA61CB53C1F009F3657 /* MOAppCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAppCenterViewController.swift; sourceTree = "<group>"; };
 		832C1CA91CB546C2009F3657 /* MOPersonMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPersonMessageViewController.swift; sourceTree = "<group>"; };
+		832C1CAB1CB55342009F3657 /* MOPublishMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPublishMessageViewController.swift; sourceTree = "<group>"; };
 		833E21261CB131560046F582 /* MOLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenuViewController.swift; sourceTree = "<group>"; };
 		833E21281CB131800046F582 /* MOLeftMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenu.swift; sourceTree = "<group>"; };
 		833E212A1CB131AE0046F582 /* MOLeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftTableViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				832C1CA51CB53C1F009F3657 /* MOAboutJobsViewController.swift */,
 				832C1CA61CB53C1F009F3657 /* MOAppCenterViewController.swift */,
 				832C1CA91CB546C2009F3657 /* MOPersonMessageViewController.swift */,
+				832C1CAB1CB55342009F3657 /* MOPublishMessageViewController.swift */,
 			);
 			name = AppCenter;
 			path = ../Views/AppCenter;
@@ -787,6 +790,7 @@
 				833E21431CB161310046F582 /* CollectableCollection.swift in Sources */,
 				832C1CA71CB53C1F009F3657 /* MOAboutJobsViewController.swift in Sources */,
 				832C1CAA1CB546C2009F3657 /* MOPersonMessageViewController.swift in Sources */,
+				832C1CAC1CB55342009F3657 /* MOPublishMessageViewController.swift in Sources */,
 				832C1CA81CB53C1F009F3657 /* MOAppCenterViewController.swift in Sources */,
 				834E3ED11CB0CFCC005B8FC3 /* NSDateFormatter+MoYu.swift in Sources */,
 				833E21421CB161310046F582 /* Collectable.swift in Sources */,
