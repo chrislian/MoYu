@@ -19,6 +19,7 @@ struct SB {
         struct Segue {
             static let appCenter = "segueAppCener"
             static let aboutJobs = "segueAboutJobs"
+            static let personMsg = "seguePersonMessage"
         }
         
         struct Vc {

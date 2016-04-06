@@ -19,14 +19,32 @@ class MOAboutJobsViewController: UIViewController {
     }
     
     
+    //MARK: - event response
+    func rightBarButtonClicked(sender:UIButton){
+        self.performSegueWithIdentifier(SB.Main.Segue.personMsg, sender: self)
+    }
+    
     //MARK: - private method
     private func setupView(){
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
+    
+    lazy var rightBarButton:UIBarButtonItem = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let image = UIImage(named:"icon_message")
+        button.setBackgroundImage(image, forState: .Normal)
+        button.setTitle("", forState: .Normal)
+        button.tag = 1
+        button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
+        return UIBarButtonItem(customView: button)
+    }()
 }
 
 extension MOAboutJobsViewController: UITableViewDelegate{
