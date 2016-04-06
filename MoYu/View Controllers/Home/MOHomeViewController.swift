@@ -12,19 +12,19 @@ enum HomeTitleButtonTag:Int {
     case partTime = 0,task,credit
 }
 
+enum FindPublishWork:Int {
+    
+    case FindWork = 100,PublishWork
+}
+
+
 class MOHomeViewController: MOBaseViewController {
 
     //MARK: - event response
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.mo_hideBackButtonTitle()
-        self.navigationItem.leftBarButtonItem = leftBarButton
-        self.navigationItem.rightBarButtonItem = rightBarButton
-        
-        
-        let panGesutre = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognized(_:)))
-        self.view.addGestureRecognizer(panGesutre)
+        self.setupHomeView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -75,19 +75,64 @@ class MOHomeViewController: MOBaseViewController {
         }
     }
     
-    func panGestureRecognized(sender:UIPanGestureRecognizer){
-        self.view.endEditing(true)
-        self.frostedViewController.panGestureRecognized(sender)
-    }
-    
     @IBAction func tapGestureHomeMessage(sender: UITapGestureRecognizer) {
         MOLog("消息")
     }
     
     //MARK: - private methond
-
+    private func setupHomeView(){
+        
+        self.navigationController?.mo_hideBackButtonTitle()
+        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        self.changeChildView(findPublishType)
+        
+        self.homeView.fpClosure = { [unowned self] type in
+            self.findPublishType = type
+        }
+    }
+    
+    
+    private func changeChildView(type:FindPublishWork){
+    
+        func addFindWorkToChild(){
+            
+            publishWorkVc.view.removeFromSuperview()
+            publishWorkVc.removeFromParentViewController()
+            
+            self.addChildViewController(findWorkVc)
+            self.homeView.mapBaseView.addSubview(findWorkVc.view)
+            findWorkVc.didMoveToParentViewController(self)
+        }
+        
+        func addPublishWorkToChild(){
+            
+            findWorkVc.view.removeFromSuperview()
+            findWorkVc.removeFromParentViewController()
+            
+            self.addChildViewController(publishWorkVc)
+            self.homeView.mapBaseView.addSubview(publishWorkVc.view)
+            publishWorkVc.didMoveToParentViewController(self)
+        }
+        
+        switch findPublishType {
+        case .FindWork:
+            addFindWorkToChild()
+        case .PublishWork:
+            addPublishWorkToChild()
+        }
+    }
     
     //MARK: - var & let
+    var findPublishType:FindPublishWork = .FindWork{
+        didSet{
+            if findPublishType != oldValue {
+                changeChildView(findPublishType)
+            }
+        }
+    }
+    
     lazy var leftBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
         let image = UIImage(named: "homeLeftTop")
@@ -109,4 +154,16 @@ class MOHomeViewController: MOBaseViewController {
         
         return UIBarButtonItem(customView: button)
     }()
+    
+    lazy var findWorkVc:MOFindWorkViewController = {
+        
+        return MOFindWorkViewController()
+    }()
+    
+    lazy var publishWorkVc:MOPublishWorkViewController = {
+        
+        return MOPublishWorkViewController()
+    }()
+    
+    @IBOutlet var homeView: MOHomeView!
 }

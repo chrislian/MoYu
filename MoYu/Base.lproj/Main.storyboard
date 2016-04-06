@@ -203,7 +203,7 @@
                                                     <constraint firstAttribute="height" constant="2" id="2Oc-f3-nDw"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5H-35-p8W">
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5H-35-p8W">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                 <connections>
                                                     <action selector="selectTypeButtonClicked:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="WK9-0g-eLl"/>
@@ -269,7 +269,7 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgb-z3-frj">
+                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgb-z3-frj">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                 <connections>
                                                     <action selector="selectTypeButtonClicked:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="T7T-3x-7cM"/>
@@ -335,17 +335,25 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzs-XU-G38">
+                                <rect key="frame" x="-4" y="95" width="383" height="508"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.95294117649999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rzs-XU-G38" secondAttribute="bottom" id="77u-5x-vN8"/>
                             <constraint firstItem="SHk-X4-MOL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ERr-8h-ifo"/>
                             <constraint firstItem="rIj-9m-LkB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="O1C-Dz-PPV"/>
+                            <constraint firstItem="rzs-XU-G38" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="WI7-nc-AfU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SHk-X4-MOL" secondAttribute="trailing" constant="-20" id="WY2-ZE-Bqg"/>
                             <constraint firstItem="rIj-9m-LkB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YOU-fx-0bV"/>
                             <constraint firstItem="SHk-X4-MOL" firstAttribute="top" secondItem="rIj-9m-LkB" secondAttribute="bottom" id="ar8-Cx-cie"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rIj-9m-LkB" secondAttribute="trailing" constant="-20" id="esg-IL-DQJ"/>
+                            <constraint firstItem="rzs-XU-G38" firstAttribute="top" secondItem="SHk-X4-MOL" secondAttribute="bottom" id="iG9-SC-52X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzs-XU-G38" secondAttribute="trailing" constant="-20" id="tQC-Y2-uPC"/>
                         </constraints>
                         <connections>
+                            <outlet property="mapBaseView" destination="rzs-XU-G38" id="DmT-ws-IFq"/>
                             <outlet property="timeImageView" destination="GYs-RX-plc" id="BCe-Kh-8Au"/>
                             <outlet property="timeLineLabel" destination="kS5-U1-t04" id="22z-wC-frG"/>
                             <outlet property="timeTitleLabel" destination="BW1-Vz-2sF" id="LFg-y9-Sfh"/>
@@ -357,6 +365,7 @@
                     <navigationItem key="navigationItem" id="lTf-iv-I6d"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="homeView" destination="8bC-Xf-vdC" id="Npn-hX-1yv"/>
                         <segue destination="Evy-7l-Rv5" kind="show" identifier="segueAppCener" id="L02-y0-0bP"/>
                     </connections>
                 </viewController>

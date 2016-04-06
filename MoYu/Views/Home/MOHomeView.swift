@@ -8,23 +8,14 @@
 
 import UIKit
 
-enum HomeTimeWorkType:Int {
-    
-    case HasTime = 0,HasWork
-}
+typealias FindPublishClosure = (type:FindPublishWork)->Void
 
 class MOHomeView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    //MARK: - event response
     @IBAction func selectTypeButtonClicked(sender: UIButton) {
         
-        func changeHasTime(flag:Bool){
+        func turnToFindWork(flag:Bool){
             if flag {
                 timeLineLabel.backgroundColor = UIColor.mo_mainColor()
                 timeTitleLabel.textColor = UIColor.mo_mainColor()
@@ -36,7 +27,7 @@ class MOHomeView: UIView {
             }
         }
         
-        func changeHasWork(flag:Bool){
+        func turnToPublishWork(flag:Bool){
             if flag {
                 workLineLabel.backgroundColor = UIColor.mo_mainColor()
                 workTitleLabel.textColor = UIColor.mo_mainColor()
@@ -48,26 +39,36 @@ class MOHomeView: UIView {
             }
         }
         
-        guard let type = HomeTimeWorkType(rawValue: sender.tag) else{
+        guard let type = FindPublishWork(rawValue: sender.tag) else{
             MOLog("undefine tag")
             return
         }
         
         switch type {
-        case .HasTime:
-            changeHasTime(true)
-            changeHasWork(false)
-        case .HasWork:
-            changeHasWork(true)
-            changeHasTime(false)
+        case .FindWork:
+            turnToFindWork(true)
+            turnToPublishWork(false)
+        case .PublishWork:
+            turnToPublishWork(true)
+            turnToFindWork(false)
         }
         
+        //closure
+        if let closure = fpClosure {
+            closure(type: type)
+        }
     }
-    @IBOutlet weak var timeLineLabel: UIView!
-    @IBOutlet weak var timeTitleLabel: UILabel!
-    @IBOutlet weak var timeImageView: UIImageView!
     
-    @IBOutlet weak var workLineLabel: UIView!
-    @IBOutlet weak var workTitleLabel: UILabel!
-    @IBOutlet weak var workImageView: UIImageView!
+    
+    //MARK: - var & let
+    @IBOutlet weak var mapBaseView: UIView!
+    @IBOutlet private weak var timeLineLabel: UIView!
+    @IBOutlet private weak var timeTitleLabel: UILabel!
+    @IBOutlet private weak var timeImageView: UIImageView!
+    
+    @IBOutlet private weak var workLineLabel: UIView!
+    @IBOutlet private weak var workTitleLabel: UILabel!
+    @IBOutlet private weak var workImageView: UIImageView!
+    
+    var fpClosure:FindPublishClosure?
 }
