@@ -14,6 +14,7 @@ class MOHomeMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupMenuView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,4 +46,50 @@ class MOHomeMenuViewController: UIViewController {
         
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    private func setupMenuView(){
+        
+        menuView.tableView.dataSource = self
+        menuView.tableView.delegate = self
+        menuView.tableView.rowHeight = 100.0
+    }
+
+    //MARK: - var & let
+    @IBOutlet var menuView: MOHomeMenuView!
+    let menuModel = MOHomeMenuItemModel(items: 15)
 }
+
+extension MOHomeMenuViewController:UITableViewDelegate{
+    
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let tmpCell = cell as? MOHomeMenuCell else{
+            return
+        }
+       tmpCell.updateCellWithImage(menuModel.datas[indexPath.row])
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+
+extension MOHomeMenuViewController:UITableViewDataSource{
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return menuModel.rows
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMenu) else{
+            return MOHomeMenuCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMenu)
+        }
+        return cell
+    }
+}
+
+

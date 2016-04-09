@@ -13,6 +13,7 @@ struct SB {
     struct Main {
         struct Cell {
             static let homeMessage = "cellHomeMessageIdentifier"
+            static let homeMenu  = "cellHomeMenuIdentifier"
         }
         
         struct Segue {

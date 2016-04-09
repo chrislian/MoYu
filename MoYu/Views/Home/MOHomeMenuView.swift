@@ -26,4 +26,5 @@ class MOHomeMenuView: UIView {
     
     //MARK: - var & let
     @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var tableView: UITableView!
 }

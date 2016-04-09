@@ -53,6 +53,8 @@
 		83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A21CB8AD6D00D20F08 /* MOHomeItemView.swift */; };
 		83EF60A51CB8CF9800D20F08 /* MOHomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A41CB8CF9800D20F08 /* MOHomeMenuViewController.swift */; };
 		83EF60A71CB8CFBC00D20F08 /* MOHomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */; };
+		83EF60A91CB8DA2900D20F08 /* MOHomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */; };
+		83EF60AB1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60AA1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -131,6 +133,8 @@
 		83EF60A21CB8AD6D00D20F08 /* MOHomeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeItemView.swift; sourceTree = "<group>"; };
 		83EF60A41CB8CF9800D20F08 /* MOHomeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuViewController.swift; sourceTree = "<group>"; };
 		83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuView.swift; sourceTree = "<group>"; };
+		83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuCell.swift; sourceTree = "<group>"; };
+		83EF60AA1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuItemModel.swift; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 				833E21401CB161310046F582 /* CollectableCollection.swift */,
 				833E21411CB161310046F582 /* CollectableGroup.swift */,
 				833E21471CB1616E0046F582 /* Requirement.swift */,
+				83EF60AA1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				83EF60A21CB8AD6D00D20F08 /* MOHomeItemView.swift */,
 				83EF60A01CB89B5E00D20F08 /* MOHomeMessageCell.swift */,
 				83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */,
+				83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -801,6 +807,7 @@
 				834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */,
 				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
 				833E21321CB15F800046F582 /* DataSource.swift in Sources */,
+				83EF60A91CB8DA2900D20F08 /* MOHomeMenuCell.swift in Sources */,
 				83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */,
 				83EF609F1CB89B1A00D20F08 /* MOHomeMessageViewController.swift in Sources */,
 				83EF609B1CB89A4000D20F08 /* MOAppCenterViewController.swift in Sources */,
@@ -816,6 +823,7 @@
 				833E21481CB1616E0046F582 /* Requirement.swift in Sources */,
 				834E3EC71CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */,
+				83EF60AB1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift in Sources */,
 				833E21431CB161310046F582 /* CollectableCollection.swift in Sources */,
 				83EF60941CB899A800D20F08 /* MOAppCenterTableViewCell.swift in Sources */,
 				83EF606E1CB8972100D20F08 /* MOLeftMenuViewController.swift in Sources */,
