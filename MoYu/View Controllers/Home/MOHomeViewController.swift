@@ -93,6 +93,17 @@ class MOHomeViewController: MOBaseViewController {
         self.homeView.fpClosure = { [unowned self] type in
             self.findPublishType = type
         }
+        
+        self.homeItemView.homeItemClosure = {[unowned self] type in
+            switch type {
+            case .GPS:
+                self.performSegueWithIdentifier(SB.Main.Segue.homeGps, sender: self)
+            case .Menu:
+                self.performSegueWithIdentifier(SB.Main.Segue.homeMenu, sender: self)
+            case .Search:
+                self.performSegueWithIdentifier(SB.Main.Segue.homeSearch, sender: self)
+            }
+        }
     }
     
     
@@ -109,9 +120,19 @@ class MOHomeViewController: MOBaseViewController {
                 make.edges.equalTo(findWorkVc.view.superview!)
             }
             findWorkVc.didMoveToParentViewController(self)
+            
+            self.homeView.mapBaseView.addSubview(homeItemView)
+            homeItemView.snp_makeConstraints { (make) in
+                make.right.equalTo(homeItemView.superview!).offset(-8)
+                make.bottom.equalTo(homeItemView.superview!).offset(-80)
+                make.width.equalTo(60)
+                make.height.equalTo(180)
+            }
         }
         
         func addPublishWorkToChild(){
+            
+            homeItemView.removeFromSuperview()
             
             findWorkVc.view.removeFromSuperview()
             findWorkVc.removeFromParentViewController()
@@ -174,4 +195,5 @@ class MOHomeViewController: MOBaseViewController {
     }()
     
     @IBOutlet var homeView: MOHomeView!
+    let homeItemView = MOHomeItemView()
 }
