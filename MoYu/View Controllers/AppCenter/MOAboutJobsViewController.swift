@@ -19,14 +19,52 @@ class MOAboutJobsViewController: UIViewController {
     }
     
     
+    //MARK: - event response
+    func rightBarButtonClicked(sender:UIButton){
+        self.performSegueWithIdentifier(SB.AppCenter.Segue.personMsg, sender: self)
+    }
+    
+    func publishButtonClicked(sender:UIButton){
+        self.performSegueWithIdentifier(SB.AppCenter.Segue.publishMsg, sender: self)
+    }
+    
     //MARK: - private method
     private func setupView(){
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        self.view.addSubview(publishButton)
+        publishButton.snp_makeConstraints { (make) in
+            make.height.width.equalTo(60)
+            make.right.equalTo(publishButton.superview!).offset(-30)
+            make.bottom.equalTo(publishButton.superview!).offset(-60)
+        }
     }
     
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
+    
+    lazy var rightBarButton:UIBarButtonItem = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let image = UIImage(named:"icon_message")
+        button.setBackgroundImage(image, forState: .Normal)
+        button.setTitle("", forState: .Normal)
+        button.tag = 1
+        button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        
+        return UIBarButtonItem(customView: button)
+    }()
+    
+    lazy var publishButton:UIButton = {
+        let button = UIButton(type: .Custom)
+        button.setTitle("", forState: .Normal)
+        button.contentMode = .ScaleAspectFit
+        button.setImage(UIImage(named:"icon_publish"), forState: .Normal)
+        button.addTarget(self, action: #selector(publishButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        return button
+    }()
 }
 
 extension MOAboutJobsViewController: UITableViewDelegate{
@@ -60,8 +98,8 @@ extension MOAboutJobsViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.aboutJobs) else{
-            return MOAboutJobsCell(style: .Default, reuseIdentifier:SB.Main.Cell.aboutJobs)
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.aboutJobs) else{
+            return MOAboutJobsCell(style: .Default, reuseIdentifier:SB.AppCenter.Cell.aboutJobs)
         }
         return cell
     }
