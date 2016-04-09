@@ -12,12 +12,12 @@ struct SB {
     //MARK: - main storyboard
     struct Main {
         struct Cell {
-
+            static let homeMessage = "cellHomeMessageIdentifier"
         }
         
         struct Segue {
             static let appCenter = "segueAppCener"
-
+            static let homeMessage = "segueHomeMessage"
         }
         
         struct Vc {

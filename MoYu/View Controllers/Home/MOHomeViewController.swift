@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 enum HomeTitleButtonTag:Int {
     case partTime = 0,task,credit
@@ -76,7 +77,8 @@ class MOHomeViewController: MOBaseViewController {
     }
     
     @IBAction func tapGestureHomeMessage(sender: UITapGestureRecognizer) {
-        MOLog("消息")
+        
+        self.performSegueWithIdentifier(SB.Main.Segue.homeMessage, sender: self)
     }
     
     //MARK: - private methond
@@ -103,6 +105,9 @@ class MOHomeViewController: MOBaseViewController {
             
             self.addChildViewController(findWorkVc)
             self.homeView.mapBaseView.addSubview(findWorkVc.view)
+            findWorkVc.view.snp_makeConstraints { (make) in
+                make.edges.equalTo(findWorkVc.view.superview!)
+            }
             findWorkVc.didMoveToParentViewController(self)
         }
         
@@ -113,6 +118,9 @@ class MOHomeViewController: MOBaseViewController {
             
             self.addChildViewController(publishWorkVc)
             self.homeView.mapBaseView.addSubview(publishWorkVc.view)
+            publishWorkVc.view.snp_makeConstraints { (make) in
+                make.edges.equalTo(publishWorkVc.view.superview!)
+            }
             publishWorkVc.didMoveToParentViewController(self)
         }
         

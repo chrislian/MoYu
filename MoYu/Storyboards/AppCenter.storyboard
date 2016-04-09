@@ -139,7 +139,7 @@
                                                     <rect key="frame" x="0.0" y="8" width="375" height="50"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPm-h7-zDE">
-                                                            <rect key="frame" x="66" y="0.0" width="309" height="50"/>
+                                                            <rect key="frame" x="74" y="0.0" width="301" height="50"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="超人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-17-xYx">
                                                                     <rect key="frame" x="0.0" y="0.0" width="36" height="33"/>
@@ -165,7 +165,7 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defalutHead" translatesAutoresizingMaskIntoConstraints="NO" id="voA-l1-fTX" customClass="MOImageView" customModule="MoYu" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="voA-l1-fTX" secondAttribute="height" multiplier="1:1" id="bm4-uI-iZj"/>
                                                             </constraints>
@@ -181,7 +181,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="MPm-h7-zDE" secondAttribute="trailing" id="XH1-VK-A95"/>
                                                         <constraint firstItem="voA-l1-fTX" firstAttribute="top" secondItem="ZGO-RY-8lK" secondAttribute="top" id="Zmv-CS-lBw"/>
                                                         <constraint firstItem="MPm-h7-zDE" firstAttribute="leading" secondItem="voA-l1-fTX" secondAttribute="trailing" constant="8" id="aPd-UE-WhV"/>
-                                                        <constraint firstItem="voA-l1-fTX" firstAttribute="leading" secondItem="ZGO-RY-8lK" secondAttribute="leading" constant="8" id="fgi-d4-XwE"/>
+                                                        <constraint firstItem="voA-l1-fTX" firstAttribute="leading" secondItem="ZGO-RY-8lK" secondAttribute="leading" constant="16" id="fgi-d4-XwE"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -193,13 +193,13 @@
                                                     <rect key="frame" x="0.0" y="66" width="375" height="50"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_zan" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-3y-sbR">
-                                                            <rect key="frame" x="8" y="33" width="40" height="17"/>
+                                                            <rect key="frame" x="16" y="33" width="40" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="Faf-Kb-5mJ"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_comments" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-ew-z5q">
-                                                            <rect key="frame" x="56" y="33" width="40" height="17"/>
+                                                            <rect key="frame" x="64" y="33" width="40" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="VBR-41-dy9"/>
                                                             </constraints>
@@ -210,7 +210,7 @@
                                                             </variation>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大牛,别看了,快登录帮我点评一下吧!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P87-2b-UHx">
-                                                            <rect key="frame" x="8" y="0.0" width="238" height="25"/>
+                                                            <rect key="frame" x="18" y="0.0" width="238" height="25"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -222,10 +222,10 @@
                                                         <constraint firstItem="tPO-3y-sbR" firstAttribute="height" secondItem="P87-2b-UHx" secondAttribute="height" multiplier="2:3" id="Bid-s1-wt1"/>
                                                         <constraint firstAttribute="bottom" secondItem="WNv-ew-z5q" secondAttribute="bottom" id="GnO-4l-ebU"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P87-2b-UHx" secondAttribute="trailing" id="LNI-Zo-8cT"/>
-                                                        <constraint firstItem="P87-2b-UHx" firstAttribute="leading" secondItem="zyv-g4-DyZ" secondAttribute="leading" constant="8" id="O83-I0-djB"/>
+                                                        <constraint firstItem="P87-2b-UHx" firstAttribute="leading" secondItem="zyv-g4-DyZ" secondAttribute="leading" constant="18" id="O83-I0-djB"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tPO-3y-sbR" secondAttribute="trailing" id="OWv-Z1-wKS"/>
                                                         <constraint firstItem="WNv-ew-z5q" firstAttribute="height" secondItem="tPO-3y-sbR" secondAttribute="height" id="PfY-J6-Id9"/>
-                                                        <constraint firstItem="tPO-3y-sbR" firstAttribute="leading" secondItem="zyv-g4-DyZ" secondAttribute="leading" constant="8" id="a7q-g9-LW2"/>
+                                                        <constraint firstItem="tPO-3y-sbR" firstAttribute="leading" secondItem="zyv-g4-DyZ" secondAttribute="leading" constant="16" id="a7q-g9-LW2"/>
                                                         <constraint firstItem="WNv-ew-z5q" firstAttribute="leading" secondItem="tPO-3y-sbR" secondAttribute="trailing" constant="8" id="cR2-57-LEa"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WNv-ew-z5q" secondAttribute="trailing" id="gnH-PY-QFi"/>
                                                         <constraint firstItem="WNv-ew-z5q" firstAttribute="top" secondItem="P87-2b-UHx" secondAttribute="bottom" constant="8" id="grI-qB-v6B"/>
