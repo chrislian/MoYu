@@ -51,6 +51,8 @@
 		83EF609F1CB89B1A00D20F08 /* MOHomeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF609E1CB89B1A00D20F08 /* MOHomeMessageViewController.swift */; };
 		83EF60A11CB89B5E00D20F08 /* MOHomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A01CB89B5E00D20F08 /* MOHomeMessageCell.swift */; };
 		83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A21CB8AD6D00D20F08 /* MOHomeItemView.swift */; };
+		83EF60A51CB8CF9800D20F08 /* MOHomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A41CB8CF9800D20F08 /* MOHomeMenuViewController.swift */; };
+		83EF60A71CB8CFBC00D20F08 /* MOHomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -127,6 +129,8 @@
 		83EF609E1CB89B1A00D20F08 /* MOHomeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMessageViewController.swift; sourceTree = "<group>"; };
 		83EF60A01CB89B5E00D20F08 /* MOHomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMessageCell.swift; sourceTree = "<group>"; };
 		83EF60A21CB8AD6D00D20F08 /* MOHomeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeItemView.swift; sourceTree = "<group>"; };
+		83EF60A41CB8CF9800D20F08 /* MOHomeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuViewController.swift; sourceTree = "<group>"; };
+		83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuView.swift; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				832C1CA01CB53BC5009F3657 /* MOFindWorkViewController.swift */,
 				832C1CA21CB53BCE009F3657 /* MOPublishWorkViewController.swift */,
 				83EF609E1CB89B1A00D20F08 /* MOHomeMessageViewController.swift */,
+				83EF60A41CB8CF9800D20F08 /* MOHomeMenuViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */,
 				83EF60A21CB8AD6D00D20F08 /* MOHomeItemView.swift */,
 				83EF60A01CB89B5E00D20F08 /* MOHomeMessageCell.swift */,
+				83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -798,10 +804,12 @@
 				83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */,
 				83EF609F1CB89B1A00D20F08 /* MOHomeMessageViewController.swift in Sources */,
 				83EF609B1CB89A4000D20F08 /* MOAppCenterViewController.swift in Sources */,
+				83EF60A71CB8CFBC00D20F08 /* MOHomeMenuView.swift in Sources */,
 				834E3ECD1CB0CC94005B8FC3 /* UIImage+MoYu.swift in Sources */,
 				83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */,
 				83EF609A1CB89A4000D20F08 /* MOAboutJobsViewController.swift in Sources */,
 				832C1CA31CB53BCE009F3657 /* MOPublishWorkViewController.swift in Sources */,
+				83EF60A51CB8CF9800D20F08 /* MOHomeMenuViewController.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				83EF60931CB899A800D20F08 /* MOAboutJobsCell.swift in Sources */,
 				832C1CA11CB53BC5009F3657 /* MOFindWorkViewController.swift in Sources */,
