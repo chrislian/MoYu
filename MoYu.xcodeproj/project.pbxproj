@@ -32,7 +32,7 @@
 		833E21481CB1616E0046F582 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E21471CB1616E0046F582 /* Requirement.swift */; };
 		834E3EC11CB0C070005B8FC3 /* MOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC01CB0C070005B8FC3 /* MOBaseViewController.swift */; };
 		834E3EC31CB0C08B005B8FC3 /* MOHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC21CB0C08B005B8FC3 /* MOHomeViewController.swift */; };
-		834E3EC51CB0C0F7005B8FC3 /* Left.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */; };
+		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
 		834E3EC71CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC61CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift */; };
 		834E3EC91CB0C81B005B8FC3 /* UINavigationController+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3EC81CB0C81B005B8FC3 /* UINavigationController+MoYu.swift */; };
 		834E3ECB1CB0CAA5005B8FC3 /* UIColor+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E3ECA1CB0CAA5005B8FC3 /* UIColor+MoYu.swift */; };
@@ -47,6 +47,7 @@
 		83D084D61CB2334E00A8D46C /* CGImage+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */; };
 		83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */; };
 		83D084DE1CB23E4100A8D46C /* MOAppCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084DD1CB23E4100A8D46C /* MOAppCenterTableViewCell.swift */; };
+		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -104,7 +105,7 @@
 		833E21471CB1616E0046F582 /* Requirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
 		834E3EC01CB0C070005B8FC3 /* MOBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOBaseViewController.swift; sourceTree = "<group>"; };
 		834E3EC21CB0C08B005B8FC3 /* MOHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeViewController.swift; sourceTree = "<group>"; };
-		834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Left.storyboard; sourceTree = "<group>"; };
+		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		834E3EC61CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationBar+MoYu.swift"; sourceTree = "<group>"; };
 		834E3EC81CB0C81B005B8FC3 /* UINavigationController+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MoYu.swift"; sourceTree = "<group>"; };
 		834E3ECA1CB0CAA5005B8FC3 /* UIColor+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MoYu.swift"; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 		83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+MoYu.swift"; sourceTree = "<group>"; };
 		83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MoYu.swift"; sourceTree = "<group>"; };
 		83D084DD1CB23E4100A8D46C /* MOAppCenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAppCenterTableViewCell.swift; sourceTree = "<group>"; };
+		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -358,7 +360,8 @@
 			children = (
 				8389C6561CB0F026003E96B1 /* Storyboards.swift */,
 				831C33CD1CB0B1E900157B67 /* Main.storyboard */,
-				834E3EC41CB0C0F7005B8FC3 /* Left.storyboard */,
+				834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */,
+				83EF606A1CB8919800D20F08 /* AppCenter.storyboard */,
 				831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -497,7 +500,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				831C33D41CB0B1E900157B67 /* LaunchScreen.storyboard in Resources */,
-				834E3EC51CB0C0F7005B8FC3 /* Left.storyboard in Resources */,
+				83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */,
+				834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */,
 				831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */,
 				831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */,
 				833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */,

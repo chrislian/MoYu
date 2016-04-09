@@ -56,7 +56,7 @@ extension MOAppCenterViewController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 0  {
-            self.performSegueWithIdentifier(SB.Main.Segue.aboutJobs, sender: self)
+            self.performSegueWithIdentifier(SB.AppCenter.Segue.aboutJobs, sender: self)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -103,10 +103,10 @@ extension MOAppCenterViewController:UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.appCenter){
+        if let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.appCenter){
             return cell
         }
         
-        return MOLeftTableViewCell(style: .Default, reuseIdentifier: SB.Main.Cell.appCenter)
+        return MOLeftTableViewCell(style: .Default, reuseIdentifier: SB.AppCenter.Cell.appCenter)
     }
 }

@@ -21,11 +21,11 @@ class MOAboutJobsViewController: UIViewController {
     
     //MARK: - event response
     func rightBarButtonClicked(sender:UIButton){
-        self.performSegueWithIdentifier(SB.Main.Segue.personMsg, sender: self)
+        self.performSegueWithIdentifier(SB.AppCenter.Segue.personMsg, sender: self)
     }
     
     func publishButtonClicked(sender:UIButton){
-        self.performSegueWithIdentifier(SB.Main.Segue.publishMsg, sender: self)
+        self.performSegueWithIdentifier(SB.AppCenter.Segue.publishMsg, sender: self)
     }
     
     //MARK: - private method
@@ -98,8 +98,8 @@ extension MOAboutJobsViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.aboutJobs) else{
-            return MOAboutJobsCell(style: .Default, reuseIdentifier:SB.Main.Cell.aboutJobs)
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.aboutJobs) else{
+            return MOAboutJobsCell(style: .Default, reuseIdentifier:SB.AppCenter.Cell.aboutJobs)
         }
         return cell
     }

@@ -71,10 +71,10 @@ extension MOLeftMenuViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(SB.Left.Cell.leftMenuCell){
+        if let cell = tableView.dequeueReusableCellWithIdentifier(SB.Personal.Cell.leftMenuCell){
             return cell
         }
         
-        return MOLeftTableViewCell(style: .Default, reuseIdentifier: SB.Left.Cell.leftMenuCell)
+        return MOLeftTableViewCell(style: .Default, reuseIdentifier: SB.Personal.Cell.leftMenuCell)
     }
 }

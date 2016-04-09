@@ -48,7 +48,7 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
     func turnToHomeViewController(){
         
         guard let homeVc = SB.Main.Vc.home(),
-            let leftMenuVc = SB.Left.Vc.leftMenu() else{
+            let leftMenuVc = SB.Personal.Vc.leftMenu() else{
                 return
         }
         let frostedVc = REFrostedViewController(contentViewController: homeVc, menuViewController: leftMenuVc)

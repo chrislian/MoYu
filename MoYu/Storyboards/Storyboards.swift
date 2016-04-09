@@ -12,15 +12,12 @@ struct SB {
     //MARK: - main storyboard
     struct Main {
         struct Cell {
-            static let appCenter = "cellAppCenterIdentifier"
-            static let aboutJobs = "cellAboutJobsIdentifier"
+
         }
         
         struct Segue {
             static let appCenter = "segueAppCener"
-            static let aboutJobs = "segueAboutJobs"
-            static let personMsg = "seguePersonMessage"
-            static let publishMsg = "seguePublishMessage"
+
         }
         
         struct Vc {
@@ -31,7 +28,8 @@ struct SB {
     }
     
     //MARK: - left storyboard
-    struct Left {
+    struct Personal {
+        
         struct Cell {
             static let leftMenuCell = "cellLeftMenuIdentifier"
         }
@@ -42,8 +40,26 @@ struct SB {
         
         struct Vc {
             static func leftMenu() -> UIViewController?{
-                return UIStoryboard(name: "Left", bundle: nil).instantiateInitialViewController()
+                return UIStoryboard(name: "Personal", bundle: nil).instantiateInitialViewController()
             }
+        }
+    }
+    
+    //MARK: - right stroyboard
+    struct AppCenter{
+        
+        struct Cell{
+            static let appCenter = "cellAppCenterIdentifier"
+            static let aboutJobs = "cellAboutJobsIdentifier"
+        }
+        struct Segue{
+            static let aboutJobs = "segueAboutJobs"
+            static let personMsg = "seguePersonMessage"
+            static let publishMsg = "seguePublishMessage"
+        }
+        
+        struct Vc{
+        
         }
     }
 }
