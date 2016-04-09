@@ -47,6 +47,12 @@ class MOHomeMenuViewController: UIViewController {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    @IBAction func headViewButtonClicked(sender: UIButton) {
+        MOLog("sender.tag = \(sender.tag)")
+        
+    }
+    
     private func setupMenuView(){
         
         menuView.tableView.dataSource = self
