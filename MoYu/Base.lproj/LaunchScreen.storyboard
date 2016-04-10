@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,13 +18,72 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ow9-FM-qNq">
+                                <rect key="frame" x="70" y="557" width="235" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moyuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="A9o-h8-RDz">
+                                        <rect key="frame" x="8" y="10" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="6ER-Ym-vWb"/>
+                                            <constraint firstAttribute="width" secondItem="A9o-h8-RDz" secondAttribute="height" multiplier="1:1" id="mq7-S8-L7u"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clM-x8-k4K">
+                                        <rect key="frame" x="76" y="45" width="159" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Something big comming">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="墨鱼-触手可得" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m84-Ik-Uwk">
+                                        <rect key="frame" x="76" y="10" width="159" height="35"/>
+                                        <fontDescription key="fontDescription" name="STLibian-SC-Regular" family="Libian SC" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0K1-dz-McI"/>
+                                    <constraint firstAttribute="width" constant="280" id="6w7-Xn-MG3"/>
+                                    <constraint firstItem="clM-x8-k4K" firstAttribute="top" secondItem="m84-Ik-Uwk" secondAttribute="bottom" id="BRQ-56-1f1"/>
+                                    <constraint firstItem="A9o-h8-RDz" firstAttribute="leading" secondItem="ow9-FM-qNq" secondAttribute="leading" constant="8" id="DWT-45-rIv"/>
+                                    <constraint firstItem="m84-Ik-Uwk" firstAttribute="leading" secondItem="A9o-h8-RDz" secondAttribute="trailing" constant="8" id="EUf-5h-wgM"/>
+                                    <constraint firstAttribute="trailing" secondItem="clM-x8-k4K" secondAttribute="trailing" id="LOw-9D-wD5"/>
+                                    <constraint firstItem="A9o-h8-RDz" firstAttribute="centerY" secondItem="ow9-FM-qNq" secondAttribute="centerY" id="TcH-Lf-Aw3"/>
+                                    <constraint firstItem="clM-x8-k4K" firstAttribute="bottom" secondItem="A9o-h8-RDz" secondAttribute="bottom" constant="-8" id="UbH-VW-tc7"/>
+                                    <constraint firstItem="clM-x8-k4K" firstAttribute="height" secondItem="m84-Ik-Uwk" secondAttribute="height" multiplier="1:2" id="eg3-7u-Vza"/>
+                                    <constraint firstAttribute="trailing" secondItem="m84-Ik-Uwk" secondAttribute="trailing" id="l74-PG-GBn"/>
+                                    <constraint firstItem="m84-Ik-Uwk" firstAttribute="top" secondItem="A9o-h8-RDz" secondAttribute="top" id="taR-nR-Hgc"/>
+                                    <constraint firstItem="clM-x8-k4K" firstAttribute="leading" secondItem="A9o-h8-RDz" secondAttribute="trailing" constant="8" id="u13-fA-Wfu"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6w7-Xn-MG3"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ow9-FM-qNq" secondAttribute="bottom" constant="30" id="8F0-a6-qzd"/>
+                            <constraint firstItem="ow9-FM-qNq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hZy-Qp-HW1"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215.5" y="483.5"/>
+            <point key="canvasLocation" x="194.5" y="495.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="moyuLogo" width="60" height="60"/>
+    </resources>
 </document>
