@@ -367,9 +367,8 @@
                         <outlet property="homeView" destination="8bC-Xf-vdC" id="Npn-hX-1yv"/>
                         <segue destination="BZb-XC-Cso" kind="show" identifier="segueAppCener" id="8F1-AM-txQ"/>
                         <segue destination="qyh-hv-aNj" kind="show" identifier="segueHomeMessage" id="pN5-b6-hqw"/>
-                        <segue destination="LuB-QW-FAD" kind="show" identifier="segueHomeGps" id="GUs-VB-jzG"/>
                         <segue destination="cdP-nS-3V2" kind="presentation" identifier="segueHomeMenu" id="Ibs-RY-CVZ"/>
-                        <segue destination="AtK-yL-2Xg" kind="show" identifier="segueHomeSearch" id="tvn-0e-vFh"/>
+                        <segue destination="czk-5I-72M" kind="presentation" identifier="segueHomeSearch" id="tvn-0e-vFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -380,24 +379,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="648.5" y="443.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rix-li-zhh">
-            <objects>
-                <viewController id="LuB-QW-FAD" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3jo-97-xrZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Aeo-iu-HEZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1d1-hy-wLB">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyq-v1-yqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1236.5" y="-394.5"/>
         </scene>
         <!--Home Menu View Controller-->
         <scene sceneID="sYT-XX-EWo">
@@ -485,8 +466,9 @@
                                             <constraint firstAttribute="bottom" secondItem="krs-Hb-Rf8" secondAttribute="bottom" constant="8" id="mgJ-Kl-C7z"/>
                                         </constraints>
                                     </view>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="输入感兴趣的兼职" translatesAutoresizingMaskIntoConstraints="NO" id="6PP-QS-USo">
+                                    <searchBar contentMode="redraw" placeholder="输入感兴趣的兼职" translatesAutoresizingMaskIntoConstraints="NO" id="6PP-QS-USo">
                                         <rect key="frame" x="78" y="0.0" width="227" height="44"/>
+                                        <color key="barTintColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                 </subviews>
@@ -703,25 +685,25 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-W7-B9W">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-W7-B9W">
                                         <rect key="frame" x="0.0" y="44" width="383" height="515"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMenuIdentifier" rowHeight="100" id="p3K-jp-ZrJ" customClass="MOHomeMenuCell" customModule="MoYu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="383" height="100"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMenuIdentifier" rowHeight="80" id="p3K-jp-ZrJ" customClass="MOHomeMenuCell" customModule="MoYu" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="383" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3K-jp-ZrJ" id="kPz-ah-OjH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="383" height="99"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="383" height="79"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务员和传菜员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RQ-9n-azV">
-                                                            <rect key="frame" x="94" y="23" width="119" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="84" y="18" width="105" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQJ-hz-8m5">
-                                                            <rect key="frame" x="94" y="61" width="114" height="16"/>
+                                                            <rect key="frame" x="84" y="46" width="114" height="16"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_menu_time" translatesAutoresizingMaskIntoConstraints="NO" id="Jyo-Lz-rgO">
                                                                     <rect key="frame" x="0.0" y="3" width="10" height="10"/>
@@ -747,21 +729,21 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="思明区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmK-D8-QHD">
-                                                            <rect key="frame" x="319" y="24" width="48" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <rect key="frame" x="322" y="18" width="45" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100¥/天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rh-dx-5Go">
-                                                            <rect key="frame" x="309" y="59" width="58" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <rect key="frame" x="312" y="45" width="55" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_menu_server" translatesAutoresizingMaskIntoConstraints="NO" id="spg-t4-taE" customClass="MOImageView" customModule="MoYu" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="15" width="70" height="70"/>
+                                                            <rect key="frame" x="16" y="10" width="60" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="CgG-XT-vJj"/>
+                                                                <constraint firstAttribute="width" constant="60" id="CgG-XT-vJj"/>
                                                                 <constraint firstAttribute="width" secondItem="spg-t4-taE" secondAttribute="height" multiplier="1:1" id="QzR-Na-0Gj"/>
                                                             </constraints>
                                                         </imageView>
@@ -819,6 +801,7 @@
                             <constraint firstItem="1y5-as-Vwf" firstAttribute="leading" secondItem="zHd-hU-PJO" secondAttribute="leadingMargin" constant="-20" id="qB3-8b-1yc"/>
                         </constraints>
                         <connections>
+                            <outlet property="searchBar" destination="6PP-QS-USo" id="LbH-Kl-RTK"/>
                             <outlet property="tableView" destination="k3h-W7-B9W" id="AEi-fJ-c5q"/>
                             <outlet property="titleView" destination="mDx-cG-IZt" id="HC4-Jx-B8v"/>
                         </connections>
@@ -830,25 +813,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbO-fC-MXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823.5" y="337.5"/>
+            <point key="canvasLocation" x="1746.5" y="38.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Search View Controller-->
         <scene sceneID="ocT-aw-4PZ">
             <objects>
-                <viewController id="AtK-yL-2Xg" sceneMemberID="viewController">
+                <viewController id="AtK-yL-2Xg" customClass="MOHomeSearchViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cHB-3y-EQb"/>
                         <viewControllerLayoutGuide type="bottom" id="wsI-VP-VIU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="luf-yb-V7c">
+                    <view key="view" contentMode="scaleToFill" id="luf-yb-V7c" customClass="MOHomeSearchView" customModule="MoYu" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-uu-krE">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="44"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="输入感兴趣的兼职" translatesAutoresizingMaskIntoConstraints="NO" id="usK-BQ-iEN">
+                                        <rect key="frame" x="8" y="0.0" width="317" height="44"/>
+                                        <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfq-wl-IbX">
+                                        <rect key="frame" x="325" y="0.0" width="50" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="z4d-rZ-AA5"/>
+                                        </constraints>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="AtK-yL-2Xg" eventType="touchUpInside" id="pFE-gX-WwS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qfq-wl-IbX" secondAttribute="bottom" id="Lhd-cC-I60"/>
+                                    <constraint firstItem="qfq-wl-IbX" firstAttribute="leading" secondItem="usK-BQ-iEN" secondAttribute="trailing" id="PXi-Wk-cNg"/>
+                                    <constraint firstItem="qfq-wl-IbX" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="top" id="YeK-t3-ZmQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="usK-BQ-iEN" secondAttribute="bottom" id="dRs-iO-rWz"/>
+                                    <constraint firstItem="qfq-wl-IbX" firstAttribute="leading" secondItem="usK-BQ-iEN" secondAttribute="trailing" id="eGH-Op-FKC"/>
+                                    <constraint firstAttribute="trailing" secondItem="qfq-wl-IbX" secondAttribute="trailing" constant="8" id="gwZ-pY-4im"/>
+                                    <constraint firstItem="usK-BQ-iEN" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="top" id="ilS-ah-x0F"/>
+                                    <constraint firstAttribute="height" constant="44" id="whQ-pX-IBn"/>
+                                    <constraint firstItem="usK-BQ-iEN" firstAttribute="leading" secondItem="DOs-uu-krE" secondAttribute="leading" constant="8" id="zAC-qm-mhc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PXi-Wk-cNg"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-eZ-esM">
+                                <rect key="frame" x="-4" y="44" width="383" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pbr-eZ-esM" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="bottom" id="1Rr-OY-2D8"/>
+                            <constraint firstItem="wsI-VP-VIU" firstAttribute="top" secondItem="Pbr-eZ-esM" secondAttribute="bottom" id="DYZ-O5-8hz"/>
+                            <constraint firstItem="Pbr-eZ-esM" firstAttribute="leading" secondItem="luf-yb-V7c" secondAttribute="leadingMargin" constant="-20" id="TuZ-dr-0m7"/>
+                            <constraint firstItem="DOs-uu-krE" firstAttribute="leading" secondItem="luf-yb-V7c" secondAttribute="leadingMargin" constant="-20" id="Ypd-VR-csx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DOs-uu-krE" secondAttribute="trailing" constant="-20" id="hbW-Zp-9OJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pbr-eZ-esM" secondAttribute="trailing" constant="-20" id="r8b-id-vSw"/>
+                            <constraint firstItem="DOs-uu-krE" firstAttribute="top" secondItem="cHB-3y-EQb" secondAttribute="bottom" id="uby-GR-tt6"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="searchBar" destination="usK-BQ-iEN" id="H1s-1C-EOq"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="1iF-uv-10f"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCk-JO-EK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236.5" y="1063.5"/>
+            <point key="canvasLocation" x="1746.5" y="805.5"/>
         </scene>
         <!--AppCenterID-->
         <scene sceneID="RzD-lL-hXO">
@@ -984,7 +1025,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="no7-9o-3hs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236.5" y="337.5"/>
+            <point key="canvasLocation" x="1212.5" y="38.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oQK-pP-vcX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="czk-5I-72M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="EFk-nU-FNS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AtK-yL-2Xg" kind="relationship" relationship="rootViewController" id="YTl-pm-I5f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cjG-yT-CnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212.5" y="805.5"/>
         </scene>
     </scenes>
     <resources>

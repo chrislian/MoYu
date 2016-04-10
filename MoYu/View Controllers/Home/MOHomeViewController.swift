@@ -96,8 +96,8 @@ class MOHomeViewController: MOBaseViewController {
         
         self.homeItemView.homeItemClosure = {[unowned self] type in
             switch type {
-            case .GPS:
-                self.performSegueWithIdentifier(SB.Main.Segue.homeGps, sender: self)
+            case .GPS:break
+                //TODO: 
             case .Menu:
                 self.performSegueWithIdentifier(SB.Main.Segue.homeMenu, sender: self)
             case .Search:

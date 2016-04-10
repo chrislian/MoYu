@@ -57,7 +57,7 @@ class MOHomeMenuViewController: UIViewController {
         
         menuView.tableView.dataSource = self
         menuView.tableView.delegate = self
-        menuView.tableView.rowHeight = 100.0
+        menuView.tableView.rowHeight = 80.0
     }
 
     //MARK: - var & let

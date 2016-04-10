@@ -38,6 +38,8 @@
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
 		83D084D61CB2334E00A8D46C /* CGImage+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */; };
 		83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */; };
+		83D888751CB9FD2000E57981 /* MOHomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D888741CB9FD2000E57981 /* MOHomeSearchViewController.swift */; };
+		83D888771CB9FD2D00E57981 /* MOHomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D888761CB9FD2D00E57981 /* MOHomeSearchView.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		83EF606E1CB8972100D20F08 /* MOLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF606D1CB8972100D20F08 /* MOLeftMenuViewController.swift */; };
 		83EF60741CB8974900D20F08 /* MOLeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60711CB8974900D20F08 /* MOLeftMenu.swift */; };
@@ -118,6 +120,8 @@
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+MoYu.swift"; sourceTree = "<group>"; };
 		83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MoYu.swift"; sourceTree = "<group>"; };
+		83D888741CB9FD2000E57981 /* MOHomeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeSearchViewController.swift; sourceTree = "<group>"; };
+		83D888761CB9FD2D00E57981 /* MOHomeSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeSearchView.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		83EF606D1CB8972100D20F08 /* MOLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenuViewController.swift; sourceTree = "<group>"; };
 		83EF60711CB8974900D20F08 /* MOLeftMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenu.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 				832C1CA21CB53BCE009F3657 /* MOPublishWorkViewController.swift */,
 				83EF609E1CB89B1A00D20F08 /* MOHomeMessageViewController.swift */,
 				83EF60A41CB8CF9800D20F08 /* MOHomeMenuViewController.swift */,
+				83D888741CB9FD2000E57981 /* MOHomeSearchViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				83EF60A01CB89B5E00D20F08 /* MOHomeMessageCell.swift */,
 				83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */,
 				83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */,
+				83D888761CB9FD2D00E57981 /* MOHomeSearchView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -807,6 +813,7 @@
 				834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */,
 				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
 				833E21321CB15F800046F582 /* DataSource.swift in Sources */,
+				83D888771CB9FD2D00E57981 /* MOHomeSearchView.swift in Sources */,
 				83EF60A91CB8DA2900D20F08 /* MOHomeMenuCell.swift in Sources */,
 				83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */,
 				83EF609F1CB89B1A00D20F08 /* MOHomeMessageViewController.swift in Sources */,
@@ -826,6 +833,7 @@
 				83EF60AB1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift in Sources */,
 				833E21431CB161310046F582 /* CollectableCollection.swift in Sources */,
 				83EF60941CB899A800D20F08 /* MOAppCenterTableViewCell.swift in Sources */,
+				83D888751CB9FD2000E57981 /* MOHomeSearchViewController.swift in Sources */,
 				83EF606E1CB8972100D20F08 /* MOLeftMenuViewController.swift in Sources */,
 				83EF609C1CB89A4000D20F08 /* MOPersonMessageViewController.swift in Sources */,
 				83EF609D1CB89A4000D20F08 /* MOPublishMessageViewController.swift in Sources */,

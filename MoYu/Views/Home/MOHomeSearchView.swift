@@ -1,16 +1,16 @@
 //
-//  MOMOHomeMenu.swift
+//  MOHomeSearchView.swift
 //  MoYu
 //
-//  Created by Chris on 16/4/9.
+//  Created by Chris on 16/4/10.
 //  Copyright © 2016年 Chris. All rights reserved.
 //
 
 import UIKit
 
-class MOHomeMenuView: UIView {
+class MOHomeSearchView: UIView {
 
-    
+   
     override func awakeFromNib() {
         
         setupView()
@@ -19,14 +19,9 @@ class MOHomeMenuView: UIView {
     //MARK: - private method
     private func setupView(){
         
-        self.backgroundColor = UIColor.mo_mainColor()
-        titleView.backgroundColor = UIColor.mo_mainColor()
         searchBar.backgroundImage = UIImage()
     }
     
-    
     //MARK: - var & let
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var titleView: UIView!
-    @IBOutlet weak var tableView: UITableView!
 }

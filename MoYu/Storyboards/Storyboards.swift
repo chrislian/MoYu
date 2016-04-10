@@ -19,7 +19,6 @@ struct SB {
         struct Segue {
             static let appCenter = "segueAppCener"
             static let homeMessage = "segueHomeMessage"
-            static let homeGps = "segueHomeGps"
             static let homeMenu = "segueHomeMenu"
             static let homeSearch = "segueHomeSearch"
         }
