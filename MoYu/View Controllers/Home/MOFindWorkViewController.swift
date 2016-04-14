@@ -10,27 +10,43 @@ import UIKit
 
 class MOFindWorkViewController: UIViewController {
 
+    //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor ( red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0 )
+        
+        self.setupView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mapView.viewWillAppear()
+        mapView.delegate = self
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        mapView.viewWillDisappear()
+        mapView.delegate = nil
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: - private method
+    func setupView(){
+        
+        self.view.addSubview(mapView)
+        mapView.snp_makeConstraints { (make) in
+            make.edges.equalTo(mapView.superview!)
+        }
     }
-    */
+    
+    //MARK: - var & let
+    lazy var mapView = BMKMapView()
+}
 
+//MARK: - BMKMapView Delegate
+extension MOFindWorkViewController:BMKMapViewDelegate{
+    
 }

@@ -55,7 +55,7 @@ class MOHomeViewController: MOBaseViewController {
     //MARK: - event response
     @IBAction func titleButtonClicked(sender: AnyObject) {
         guard let buttonTag = HomeTitleButtonTag(rawValue: sender.tag) else{
-            MOLog("button tag undefine , sender.tag:\(sender.tag)")
+//            MOLog("button tag undefine , sender.tag:\(sender.tag)")
             return
         }
         switch buttonTag {

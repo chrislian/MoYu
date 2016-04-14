@@ -13,10 +13,15 @@ import REFrostedViewController
 class MOAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    lazy var mapManager = BMKMapManager()
 
     //MARK: - AppDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if !mapManager.start("r9LH3rGsee4Iks2ogmnC9jMfSqWEdnIR", generalDelegate: self){
+            MOLog("Manager start failed")
+        }
         self.turnToHomeViewController()
         return true
     }
@@ -57,6 +62,22 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
         frostedVc.liveBlur = true
         self.window?.rootViewController = frostedVc
         self.window?.makeKeyAndVisible()
+    }
+}
+
+//MARK: - Baidu GeneralDelegate
+extension MOAppDelegate:BMKGeneralDelegate{
+    
+    func onGetNetworkState(iError: Int32) {
+        if iError != 0{
+            MOLog("联网失败，错误码：Error\(iError)")
+        }
+    }
+    
+    func onGetPermissionState(iError: Int32) {
+        if iError != 0{
+            MOLog("授权失败，错误码：Error\(iError)")
+        }
     }
 }
 
