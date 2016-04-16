@@ -17,7 +17,7 @@ pod 'SwiftDate',    '~> 3.0'
 pod 'SwiftyJSON',   '~> 2.0'
 pod 'SnapKit'
 pod 'Kingfisher',   '~> 2.0'
-#pod 'Spring',       '~> 1.0'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 end
 
 target 'MoYuTests' do
