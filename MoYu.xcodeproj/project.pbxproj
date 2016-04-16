@@ -98,7 +98,7 @@
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832C1CA01CB53BC5009F3657 /* MOFindWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOFindWorkViewController.swift; sourceTree = "<group>"; };
 		832C1CA21CB53BCE009F3657 /* MOPublishWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPublishWorkViewController.swift; sourceTree = "<group>"; };
-		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
+		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		833E21301CB15F800046F582 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		833E213F1CB161310046F582 /* Collectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collectable.swift; sourceTree = "<group>"; };
@@ -222,7 +222,6 @@
 				834E3EB91CB0BE86005B8FC3 /* View Controllers */,
 				834E3EBF1CB0BF80005B8FC3 /* Storyboards */,
 				834E3EB81CB0BE86005B8FC3 /* Resources */,
-				833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */,
 			);
 			path = MoYu;
 			sourceTree = "<group>";
@@ -300,6 +299,7 @@
 		834E3EB81CB0BE86005B8FC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */,
 				831C33D01CB0B1E900157B67 /* Assets.xcassets */,
 				831C33D51CB0B1E900157B67 /* Info.plist */,
 				833E212C1CB15CE20046F582 /* InfoPlist.strings */,
