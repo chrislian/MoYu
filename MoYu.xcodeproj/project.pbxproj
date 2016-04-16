@@ -57,6 +57,7 @@
 		83EF60A71CB8CFBC00D20F08 /* MOHomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */; };
 		83EF60A91CB8DA2900D20F08 /* MOHomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */; };
 		83EF60AB1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF60AA1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift */; };
+		83F3F9CF1CC2451200682B81 /* MOPublishSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3F9CE1CC2451200682B81 /* MOPublishSheetView.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,7 @@
 		83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuView.swift; sourceTree = "<group>"; };
 		83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuCell.swift; sourceTree = "<group>"; };
 		83EF60AA1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuItemModel.swift; sourceTree = "<group>"; };
+		83F3F9CE1CC2451200682B81 /* MOPublishSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPublishSheetView.swift; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				83EF60A61CB8CFBC00D20F08 /* MOHomeMenuView.swift */,
 				83EF60A81CB8DA2900D20F08 /* MOHomeMenuCell.swift */,
 				83D888761CB9FD2D00E57981 /* MOHomeSearchView.swift */,
+				83F3F9CE1CC2451200682B81 /* MOPublishSheetView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				83EF60931CB899A800D20F08 /* MOAboutJobsCell.swift in Sources */,
 				832C1CA11CB53BC5009F3657 /* MOFindWorkViewController.swift in Sources */,
 				833E21481CB1616E0046F582 /* Requirement.swift in Sources */,
+				83F3F9CF1CC2451200682B81 /* MOPublishSheetView.swift in Sources */,
 				834E3EC71CB0C5E9005B8FC3 /* NavigationBar+MoYu.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */,
 				83EF60AB1CB8DE3F00D20F08 /* MOHomeMenuItemModel.swift in Sources */,
