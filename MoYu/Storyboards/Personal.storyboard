@@ -214,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="3.5" y="450.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="JGL-gM-u8v">
             <objects>
-                <viewController id="y79-wa-ALV" sceneMemberID="viewController">
+                <viewController id="y79-wa-ALV" customClass="MOSettingViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FNW-5k-exy"/>
                         <viewControllerLayoutGuide type="bottom" id="Smi-ff-LnE"/>
@@ -234,9 +234,9 @@
                                 </constraints>
                                 <state key="normal" title="退出"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WXV-gb-sH8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="WXV-gb-sH8">
                                 <rect key="frame" x="-4" y="64" width="383" height="543"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,6 +252,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BXy-8J-pnr"/>
+                    <connections>
+                        <outlet property="exitButton" destination="tKF-rt-Gsf" id="AlQ-50-Fq5"/>
+                        <outlet property="tableView" destination="WXV-gb-sH8" id="u9l-TI-Xje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hD-Jj-cVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +269,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oaI-5l-gMN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.9882352941176471" green="0.72156862745098038" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

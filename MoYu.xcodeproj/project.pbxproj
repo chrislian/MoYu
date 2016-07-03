@@ -32,6 +32,7 @@
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
 		839F04B71D28BBA1009CC6F1 /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F04B61D28BBA1009CC6F1 /* UISeachBar+MoYu.swift */; };
 		839F04B91D28C097009CC6F1 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F04B81D28C097009CC6F1 /* NSDateExtension.swift */; };
+		839F04BB1D28CF63009CC6F1 /* MOSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F04BA1D28CF63009CC6F1 /* MOSettingViewController.swift */; };
 		83D084D61CB2334E00A8D46C /* CGImage+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */; };
 		83D084D81CB233A400A8D46C /* UIImageView+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */; };
 		83D888751CB9FD2000E57981 /* MOHomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D888741CB9FD2000E57981 /* MOHomeSearchViewController.swift */; };
@@ -112,6 +113,7 @@
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		839F04B61D28BBA1009CC6F1 /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
 		839F04B81D28C097009CC6F1 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		839F04BA1D28CF63009CC6F1 /* MOSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOSettingViewController.swift; sourceTree = "<group>"; };
 		83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+MoYu.swift"; sourceTree = "<group>"; };
 		83D084D71CB233A400A8D46C /* UIImageView+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MoYu.swift"; sourceTree = "<group>"; };
 		83D888741CB9FD2000E57981 /* MOHomeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeSearchViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				83EF606D1CB8972100D20F08 /* MOLeftMenuViewController.swift */,
+				839F04BA1D28CF63009CC6F1 /* MOSettingViewController.swift */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				834E3ED31CB0D371005B8FC3 /* String+MoYu.swift in Sources */,
 				839F04B71D28BBA1009CC6F1 /* UISeachBar+MoYu.swift in Sources */,
 				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
+				839F04BB1D28CF63009CC6F1 /* MOSettingViewController.swift in Sources */,
 				83D888771CB9FD2D00E57981 /* MOHomeSearchView.swift in Sources */,
 				83EF60A91CB8DA2900D20F08 /* MOHomeMenuCell.swift in Sources */,
 				83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */,
