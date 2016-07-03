@@ -1,21 +1,31 @@
 PODS:
-  - Alamofire (3.3.0)
+  - Alamofire (3.4.1)
+  - AsyncSwift (1.7.2)
   - BaiduMapKit (2.10.2)
-  - Kingfisher (2.2.0)
-  - MJRefresh (3.1.0)
+  - IBAnimatable (2.4)
+  - Kingfisher (2.4.1)
+  - MJRefresh (3.1.9)
+  - Realm (1.0.1):
+    - Realm/Headers (= 1.0.1)
+  - Realm/Headers (1.0.1)
+  - RealmSwift (1.0.1):
+    - Realm (= 1.0.1)
   - REFrostedViewController (2.4.8)
-  - SnapKit (0.20.0)
+  - SnapKit (0.21.1)
   - Spring (1.0.3)
-  - SVProgressHUD (2.0.2)
+  - SVProgressHUD (2.0.3)
   - SwiftDate (3.0.8)
   - SwiftyJSON (2.3.2)
-  - YYText (1.0.4)
+  - YYText (1.0.5)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - AsyncSwift
   - BaiduMapKit (~> 2.0)
+  - IBAnimatable
   - Kingfisher (~> 2.0)
   - MJRefresh (~> 3.0)
+  - RealmSwift
   - REFrostedViewController (~> 2.0)
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
@@ -35,18 +45,22 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
-  Kingfisher: 350869ed88d6451803b390475d977abdd9f0a357
-  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  IBAnimatable: f5dcd428e0fc41d11d3ed657c925393dd7bbaa0a
+  Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
+  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
-  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
-  SVProgressHUD: e4020e23badbd7cc61bc4a80d3c1da57f166a978
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  YYText: 41761822986179828a27ccf82aa97c7b5483c2e2
+  YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
 
-PODFILE CHECKSUM: d259d88d3341537573b2dc9541b77032dc26e463
+PODFILE CHECKSUM: 594cbd738cb1ebbf57c0e06b973426f9d72dbff0
 
-COCOAPODS: 1.0.0.beta.6
+COCOAPODS: 1.0.1

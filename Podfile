@@ -18,6 +18,9 @@ pod 'SwiftyJSON',   '~> 2.0'
 pod 'SnapKit'
 pod 'Kingfisher',   '~> 2.0'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+pod 'AsyncSwift'
+pod 'IBAnimatable'
+pod 'RealmSwift'
 end
 
 target 'MoYuTests' do

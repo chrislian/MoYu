@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iTK-JS-oxt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iTK-JS-oxt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -225,7 +225,31 @@
                     <view key="view" contentMode="scaleToFill" id="3ZH-zs-kE0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-rt-Gsf">
+                                <rect key="frame" x="16" y="615" width="343" height="44"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9Su-t7-gZQ"/>
+                                </constraints>
+                                <state key="normal" title="退出"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WXV-gb-sH8">
+                                <rect key="frame" x="-4" y="64" width="383" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WXV-gb-sH8" firstAttribute="top" secondItem="FNW-5k-exy" secondAttribute="bottom" id="6sV-9C-We8"/>
+                            <constraint firstItem="Smi-ff-LnE" firstAttribute="top" secondItem="tKF-rt-Gsf" secondAttribute="bottom" constant="8" symbolic="YES" id="9HG-rq-rcF"/>
+                            <constraint firstItem="tKF-rt-Gsf" firstAttribute="leading" secondItem="3ZH-zs-kE0" secondAttribute="leadingMargin" id="ELy-sa-tgB"/>
+                            <constraint firstItem="WXV-gb-sH8" firstAttribute="leading" secondItem="3ZH-zs-kE0" secondAttribute="leadingMargin" constant="-20" id="Oxz-zJ-HD3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WXV-gb-sH8" secondAttribute="trailing" constant="-20" id="Ueo-gl-O0W"/>
+                            <constraint firstItem="tKF-rt-Gsf" firstAttribute="top" secondItem="WXV-gb-sH8" secondAttribute="bottom" constant="8" id="Zs2-IN-ERj"/>
+                            <constraint firstItem="tKF-rt-Gsf" firstAttribute="centerX" secondItem="3ZH-zs-kE0" secondAttribute="centerX" id="tij-tG-ggS"/>
+                            <constraint firstItem="tKF-rt-Gsf" firstAttribute="centerX" secondItem="WXV-gb-sH8" secondAttribute="centerX" id="v4d-zw-0MG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BXy-8J-pnr"/>
                 </viewController>

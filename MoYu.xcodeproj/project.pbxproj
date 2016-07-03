@@ -30,7 +30,6 @@
 		8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */; };
 		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
-		839F04B51D28BB75009CC6F1 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F04B41D28BB75009CC6F1 /* Async.swift */; };
 		839F04B71D28BBA1009CC6F1 /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F04B61D28BBA1009CC6F1 /* UISeachBar+MoYu.swift */; };
 		839F04B91D28C097009CC6F1 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F04B81D28C097009CC6F1 /* NSDateExtension.swift */; };
 		83D084D61CB2334E00A8D46C /* CGImage+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */; };
@@ -111,7 +110,6 @@
 		8389C6521CB0E7DA003E96B1 /* MOHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeView.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
-		839F04B41D28BB75009CC6F1 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		839F04B61D28BBA1009CC6F1 /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
 		839F04B81D28C097009CC6F1 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		83D084D51CB2334E00A8D46C /* CGImage+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+MoYu.swift"; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
-				839F04B41D28BB75009CC6F1 /* Async.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -406,13 +403,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 831C33EE1CB0B1E900157B67 /* Build configuration list for PBXNativeTarget "MoYu" */;
 			buildPhases = (
-				ABD368ED9D3C0CF444FBA69E /* 📦 Check Pods Manifest.lock */,
+				ABD368ED9D3C0CF444FBA69E /* [CP] Check Pods Manifest.lock */,
 				22C14FB0E99F094D980B54C4 /* Check Pods Manifest.lock */,
 				831C33C21CB0B1E900157B67 /* Sources */,
 				831C33C31CB0B1E900157B67 /* Frameworks */,
 				831C33C41CB0B1E900157B67 /* Resources */,
-				5624B01466B85D3B1CF33097 /* 📦 Embed Pods Frameworks */,
-				89B48C1D6B36E6A645A33BC3 /* 📦 Copy Pods Resources */,
+				5624B01466B85D3B1CF33097 /* [CP] Embed Pods Frameworks */,
+				89B48C1D6B36E6A645A33BC3 /* [CP] Copy Pods Resources */,
 				0C795E73E4614223429DAEB9 /* Embed Pods Frameworks */,
 				CD5803C58C1A9E3D22AF8893 /* Copy Pods Resources */,
 			);
@@ -429,13 +426,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 831C33F11CB0B1E900157B67 /* Build configuration list for PBXNativeTarget "MoYuTests" */;
 			buildPhases = (
-				2DACEB7AA0D329345E7048FC /* 📦 Check Pods Manifest.lock */,
+				2DACEB7AA0D329345E7048FC /* [CP] Check Pods Manifest.lock */,
 				9E4572B7D5FEE5EAF48F65A4 /* Check Pods Manifest.lock */,
 				831C33D61CB0B1E900157B67 /* Sources */,
 				831C33D71CB0B1E900157B67 /* Frameworks */,
 				831C33D81CB0B1E900157B67 /* Resources */,
-				E91335AD13B64D2781E21A86 /* 📦 Embed Pods Frameworks */,
-				108945673AE56C95189F1473 /* 📦 Copy Pods Resources */,
+				E91335AD13B64D2781E21A86 /* [CP] Embed Pods Frameworks */,
+				108945673AE56C95189F1473 /* [CP] Copy Pods Resources */,
 				CE7D7E734B83ECC9D5660FAC /* Embed Pods Frameworks */,
 				7E54E90229E84AA1A4DF55C5 /* Copy Pods Resources */,
 			);
@@ -453,12 +450,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 831C33F41CB0B1E900157B67 /* Build configuration list for PBXNativeTarget "MoYuUITests" */;
 			buildPhases = (
-				349E3BF988325BC7EF4166FE /* 📦 Check Pods Manifest.lock */,
+				349E3BF988325BC7EF4166FE /* [CP] Check Pods Manifest.lock */,
 				6E5B6AE6A6DB7A25C6ECE6F9 /* Check Pods Manifest.lock */,
 				831C33E11CB0B1E900157B67 /* Sources */,
 				831C33E21CB0B1E900157B67 /* Frameworks */,
 				831C33E31CB0B1E900157B67 /* Resources */,
-				56707367AFC8196EDFF8E5F1 /* 📦 Copy Pods Resources */,
+				56707367AFC8196EDFF8E5F1 /* [CP] Copy Pods Resources */,
 				568BD296E4FD13141644CB84 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -562,14 +559,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYu/Pods-MoYu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		108945673AE56C95189F1473 /* 📦 Copy Pods Resources */ = {
+		108945673AE56C95189F1473 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,14 +589,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2DACEB7AA0D329345E7048FC /* 📦 Check Pods Manifest.lock */ = {
+		2DACEB7AA0D329345E7048FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,14 +604,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		349E3BF988325BC7EF4166FE /* 📦 Check Pods Manifest.lock */ = {
+		349E3BF988325BC7EF4166FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,14 +619,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5624B01466B85D3B1CF33097 /* 📦 Embed Pods Frameworks */ = {
+		5624B01466B85D3B1CF33097 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,14 +634,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYu/Pods-MoYu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		56707367AFC8196EDFF8E5F1 /* 📦 Copy Pods Resources */ = {
+		56707367AFC8196EDFF8E5F1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,14 +694,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89B48C1D6B36E6A645A33BC3 /* 📦 Copy Pods Resources */ = {
+		89B48C1D6B36E6A645A33BC3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,14 +724,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		ABD368ED9D3C0CF444FBA69E /* 📦 Check Pods Manifest.lock */ = {
+		ABD368ED9D3C0CF444FBA69E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,14 +769,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E91335AD13B64D2781E21A86 /* 📦 Embed Pods Frameworks */ = {
+		E91335AD13B64D2781E21A86 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,7 +798,6 @@
 				839F04B71D28BBA1009CC6F1 /* UISeachBar+MoYu.swift in Sources */,
 				8389C6531CB0E7DA003E96B1 /* MOHomeView.swift in Sources */,
 				83D888771CB9FD2D00E57981 /* MOHomeSearchView.swift in Sources */,
-				839F04B51D28BB75009CC6F1 /* Async.swift in Sources */,
 				83EF60A91CB8DA2900D20F08 /* MOHomeMenuCell.swift in Sources */,
 				83EF60A31CB8AD6D00D20F08 /* MOHomeItemView.swift in Sources */,
 				83EF609F1CB89B1A00D20F08 /* MOHomeMessageViewController.swift in Sources */,
