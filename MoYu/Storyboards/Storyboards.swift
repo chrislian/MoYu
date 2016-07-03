@@ -39,6 +39,7 @@ struct SB {
         
         struct Segue {
             static let leftSetting = "segueSetting"
+            static let userGuide = "segueUserGuide"
         }
         
         struct Vc {

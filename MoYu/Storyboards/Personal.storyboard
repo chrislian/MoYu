@@ -223,11 +223,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Smi-ff-LnE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3ZH-zs-kE0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-rt-Gsf">
-                                <rect key="frame" x="16" y="615" width="343" height="44"/>
+                                <rect key="frame" x="16" y="551" width="343" height="44"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9Su-t7-gZQ"/>
@@ -235,7 +235,7 @@
                                 <state key="normal" title="退出"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="WXV-gb-sH8">
-                                <rect key="frame" x="-4" y="64" width="383" height="543"/>
+                                <rect key="frame" x="-4" y="0.0" width="383" height="543"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -255,18 +255,52 @@
                     <connections>
                         <outlet property="exitButton" destination="tKF-rt-Gsf" id="AlQ-50-Fq5"/>
                         <outlet property="tableView" destination="WXV-gb-sH8" id="u9l-TI-Xje"/>
+                        <segue destination="9Y1-lC-Fjd" kind="show" identifier="segueUserGuide" id="rwk-rs-JCF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hD-Jj-cVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.5" y="450.5"/>
         </scene>
+        <!--User Guide View Controller-->
+        <scene sceneID="Gh8-Eb-TWl">
+            <objects>
+                <viewController id="9Y1-lC-Fjd" customClass="MOUserGuideViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nwO-O5-nXC"/>
+                        <viewControllerLayoutGuide type="bottom" id="yZ9-8K-AGU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Je-yY-lJj">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mmc-S7-gMk">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mmc-S7-gMk" firstAttribute="top" secondItem="nwO-O5-nXC" secondAttribute="bottom" id="c6l-ht-Gfu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mmc-S7-gMk" secondAttribute="trailing" constant="-20" id="oKN-lL-dr5"/>
+                            <constraint firstItem="mmc-S7-gMk" firstAttribute="leading" secondItem="8Je-yY-lJj" secondAttribute="leadingMargin" constant="-20" id="ugM-a8-OJR"/>
+                            <constraint firstItem="yZ9-8K-AGU" firstAttribute="top" secondItem="mmc-S7-gMk" secondAttribute="bottom" id="z7P-iB-SRO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="mmc-S7-gMk" id="tPj-oA-hbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJc-0x-83b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452.5" y="906.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dFr-5d-KUE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uBf-rY-8aR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oaI-5l-gMN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oaI-5l-gMN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.9882352941176471" green="0.72156862745098038" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>

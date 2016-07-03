@@ -76,15 +76,6 @@ extension MOSettingViewController: UITableViewDelegate{
         return 0.01
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let vc = UIViewController()
-        vc.title = datas[indexPath.section][indexPath.row]
-        vc.view.backgroundColor = UIColor.mo_background()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.textLabel?.text = datas[indexPath.section][indexPath.row]
         cell.textLabel?.font = UIFont.mo_font()
@@ -92,6 +83,21 @@ extension MOSettingViewController: UITableViewDelegate{
         
         cell.selectionStyle = .None
         cell.accessoryType = .DisclosureIndicator
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+
+        switch (indexPath.section,indexPath.row) {
+        case (1,0):
+            self.performSegueWithIdentifier(SB.Personal.Segue.userGuide, sender: nil)
+        default:
+            let vc = UIViewController()
+            vc.title = datas[indexPath.section][indexPath.row]
+            vc.view.backgroundColor = UIColor.mo_background()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
