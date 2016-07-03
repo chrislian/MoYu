@@ -42,7 +42,7 @@ class MOPublishMessageViewController: UIViewController {
     //MARK: - private method
     private func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_lightYellowColor()
+        self.view.backgroundColor = UIColor.mo_lightYellow()
         self.view.addSubview(textView)
         textView.snp_makeConstraints { (make) in
             let edge = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

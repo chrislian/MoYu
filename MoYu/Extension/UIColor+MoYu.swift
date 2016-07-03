@@ -10,28 +10,27 @@ import UIKit
 
 extension UIColor{
     
-    class func mo_mainColor()->UIColor{
+    class func mo_main()->UIColor{
         return UIColor ( red: 0.9882, green: 0.7216, blue: 0.0549, alpha: 1.0 )
     }
     
-    class func mo_backgroundColor()->UIColor{
+    class func mo_background()->UIColor{
         return UIColor ( red: 0.9451, green: 0.9451, blue: 0.9451, alpha: 1.0 )
     }
     
-    class func mo_lightYellowColor()->UIColor{
+    class func mo_lightYellow()->UIColor{
         return UIColor ( red: 0.9922, green: 0.9451, blue: 0.8353, alpha: 1.0 )
     }
     
-    class func mo_mercuryColor()->UIColor{
+    class func mo_mercury()->UIColor{
         return UIColor ( red: 0.902, green: 0.902, blue: 0.902, alpha: 1.0 )
     }
     
-    class func mo_silverColor()->UIColor{
+    class func mo_silver()->UIColor{
         return UIColor ( red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0 )
     }
     
-    class func mo_lightBlackColor()->UIColor{
+    class func mo_lightBlack()->UIColor{
         return UIColor ( red: 0.0863, green: 0.102, blue: 0.1451, alpha: 1.0 )
     }
-    
 }

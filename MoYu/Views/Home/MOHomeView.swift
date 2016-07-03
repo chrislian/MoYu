@@ -17,11 +17,11 @@ class MOHomeView: UIView {
         
         func turnToFindWork(flag:Bool){
             if flag {
-                timeLineLabel.backgroundColor = UIColor.mo_mainColor()
-                timeTitleLabel.textColor = UIColor.mo_mainColor()
+                timeLineLabel.backgroundColor = UIColor.mo_main()
+                timeTitleLabel.textColor = UIColor.mo_main()
                 timeImageView.image = UIImage(named: "home_have_time_selected")
             }else{
-                timeLineLabel.backgroundColor = UIColor.mo_mercuryColor()
+                timeLineLabel.backgroundColor = UIColor.mo_mercury()
                 timeTitleLabel.textColor = UIColor.grayColor()
                 timeImageView.image = UIImage(named: "home_have_time_unselected")
             }
@@ -29,11 +29,11 @@ class MOHomeView: UIView {
         
         func turnToPublishWork(flag:Bool){
             if flag {
-                workLineLabel.backgroundColor = UIColor.mo_mainColor()
-                workTitleLabel.textColor = UIColor.mo_mainColor()
+                workLineLabel.backgroundColor = UIColor.mo_main()
+                workTitleLabel.textColor = UIColor.mo_main()
                 workImageView.image = UIImage(named: "home_have_work_selected")
             }else{
-                workLineLabel.backgroundColor = UIColor.mo_mercuryColor()
+                workLineLabel.backgroundColor = UIColor.mo_mercury()
                 workTitleLabel.textColor = UIColor.grayColor()
                 workImageView.image = UIImage(named: "home_have_work_unseleted")
             }

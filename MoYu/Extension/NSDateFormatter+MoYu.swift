@@ -45,6 +45,4 @@ extension NSDate{
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter.dateFromString(stringDate)
     }
-    
-    
 }

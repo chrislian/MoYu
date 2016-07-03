@@ -116,10 +116,10 @@ class MOPublishSheetView: UIView {
         didSet{
             switch publishType {
             case .PartTime:
-                parttimeButton.backgroundColor = UIColor.mo_mainColor()
+                parttimeButton.backgroundColor = UIColor.mo_main()
                 taskButton.backgroundColor = UIColor.whiteColor()
             case .Task:
-                taskButton.backgroundColor = UIColor.mo_mainColor()
+                taskButton.backgroundColor = UIColor.mo_main()
                 parttimeButton.backgroundColor = UIColor.whiteColor()
             }
         }
@@ -130,7 +130,7 @@ class MOPublishSheetView: UIView {
         button.tag = MOPublishSheetMode.PartTime.rawValue
         button.addTarget(self, action: #selector(buttonClicked(_:)), forControlEvents: .TouchUpInside)
         button.setTitle("发兼职", forState: .Normal)
-        button.setTitleColor(UIColor.mo_lightBlackColor(), forState: .Normal)
+        button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.titleLabel?.textAlignment = .Center
         return button
@@ -141,7 +141,7 @@ class MOPublishSheetView: UIView {
         button.tag = MOPublishSheetMode.Task.rawValue
         button.addTarget(self, action: #selector(buttonClicked(_:)), forControlEvents: .TouchUpInside)
         button.setTitle("发任务", forState: .Normal)
-        button.setTitleColor(UIColor.mo_lightBlackColor(), forState: .Normal)
+        button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.titleLabel?.textAlignment = .Center
         return button
@@ -156,7 +156,7 @@ class MOPublishSheetView: UIView {
     
     private let locationLabel:UILabel = {
         let  label = UILabel()
-        label.textColor = UIColor.mo_lightBlackColor()
+        label.textColor = UIColor.mo_lightBlack()
         label.font = UIFont.mo_font()
         label.text = "当前位置"
         return label
@@ -164,11 +164,11 @@ class MOPublishSheetView: UIView {
     
     private lazy var publishButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.mo_lightBlackColor(), forState: .Normal)
+        button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
         button.setTitle("完善发布信息", forState: .Normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.addTarget(self, action: #selector(publishButtonClicked), forControlEvents: .TouchUpInside)
-        button.backgroundColor = UIColor.mo_mainColor()
+        button.backgroundColor = UIColor.mo_main()
         return button
     }()
     

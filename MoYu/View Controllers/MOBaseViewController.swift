@@ -14,7 +14,7 @@ class MOBaseViewController: UIViewController {
         super.viewDidLoad()
         
         if let nav = self.navigationController{
-            nav.navigationBar.tintColor = UIColor.mo_lightBlackColor()
+            nav.navigationBar.tintColor = UIColor.mo_lightBlack()
         }
         
         // Do any additional setup after loading the view.

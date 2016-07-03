@@ -29,7 +29,7 @@ class MOHomeMessageViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor.mo_mercuryColor()
+        tableView.backgroundColor = UIColor.mo_mercury()
     }
 
     //MARK: - var & let

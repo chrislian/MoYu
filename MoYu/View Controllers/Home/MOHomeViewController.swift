@@ -31,13 +31,13 @@ class MOHomeViewController: MOBaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.mo_hideHairLine(true)
+        self.navigationController?.navigationBar.mo_hide(hairLine: true)
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        self.navigationController?.navigationBar.mo_hideHairLine(false)
+        self.navigationController?.navigationBar.mo_hide(hairLine: false)
     }
 
     //MARK: - memory warning

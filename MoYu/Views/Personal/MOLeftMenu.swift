@@ -45,9 +45,9 @@ class MOLeftMenuView: UIView {
     private func updateAuthImageView(imageView:UIImageView,flag:Bool){
         var color:UIColor
         if flag {
-           color = UIColor.mo_mainColor()
+           color = UIColor.mo_main()
         }else{
-            color = UIColor.mo_mercuryColor()
+            color = UIColor.mo_mercury()
         }
         
         guard let image = imageView.image else{

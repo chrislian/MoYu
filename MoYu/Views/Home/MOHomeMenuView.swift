@@ -19,8 +19,8 @@ class MOHomeMenuView: UIView {
     //MARK: - private method
     private func setupView(){
         
-        self.backgroundColor = UIColor.mo_mainColor()
-        titleView.backgroundColor = UIColor.mo_mainColor()
+        self.backgroundColor = UIColor.mo_main()
+        titleView.backgroundColor = UIColor.mo_main()
         searchBar.backgroundImage = UIImage()
     }
     
