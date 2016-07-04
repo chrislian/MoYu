@@ -14,6 +14,9 @@
 		831C33D41CB0B1E900157B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */; };
 		831C33DF1CB0B1E900157B67 /* MoYuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33DE1CB0B1E900157B67 /* MoYuTests.swift */; };
 		831C33EA1CB0B1E900157B67 /* MoYuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33E91CB0B1E900157B67 /* MoYuUITests.swift */; };
+		833180071D2A86F200EFAF69 /* MOAccountBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */; };
+		833180091D2A895800EFAF69 /* MOAccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */; };
+		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
 		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
@@ -96,6 +99,9 @@
 		831C33E91CB0B1E900157B67 /* MoYuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuUITests.swift; sourceTree = "<group>"; };
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
+		833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAccountBindingViewController.swift; sourceTree = "<group>"; };
+		833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAccountBindingCell.swift; sourceTree = "<group>"; };
+		8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
@@ -387,6 +393,7 @@
 				838E84DB1D29492200C992CC /* MOLeftMenuViewController.swift */,
 				838E84DC1D29492200C992CC /* MOSettingViewController.swift */,
 				838E85131D294D6200C992CC /* MOUserGuideViewController.swift */,
+				833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -394,6 +401,7 @@
 		838E84DD1D29492200C992CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -403,6 +411,7 @@
 			children = (
 				838E84DF1D29492200C992CC /* MOLeftMenu.swift */,
 				838E84E01D29492200C992CC /* MOLeftTableViewCell.swift */,
+				833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -837,6 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
 				838E85141D294D6200C992CC /* MOUserGuideViewController.swift in Sources */,
@@ -849,6 +859,8 @@
 				838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */,
 				838E84F31D29492200C992CC /* MOHomeView.swift in Sources */,
 				838E84F11D29492200C992CC /* MOHomeMessageCell.swift in Sources */,
+				833180071D2A86F200EFAF69 /* MOAccountBindingViewController.swift in Sources */,
+				833180091D2A895800EFAF69 /* MOAccountBindingCell.swift in Sources */,
 				838E84F81D29492200C992CC /* MOLeftTableViewCell.swift in Sources */,
 				838E84F21D29492200C992CC /* MOHomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,

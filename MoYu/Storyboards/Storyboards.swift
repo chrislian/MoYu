@@ -35,11 +35,13 @@ struct SB {
         
         struct Cell {
             static let leftMenuCell = "cellLeftMenuIdentifier"
+            static let accountBindingCell = "cellAccountBindingIdentifier"
         }
         
         struct Segue {
             static let leftSetting = "segueSetting"
             static let userGuide = "segueUserGuide"
+            static let accountBinding = "segueAccountBinding"
         }
         
         struct Vc {
