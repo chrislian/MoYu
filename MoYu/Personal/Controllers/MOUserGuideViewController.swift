@@ -23,6 +23,7 @@ class MOUserGuideViewController: MOBaseViewController {
         
         self.view.backgroundColor = UIColor.mo_background()
         
+        self.tableView.separatorStyle = .None
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 44.0

@@ -42,13 +42,13 @@ class MOAccountBindingCell: UITableViewCell {
         let image:UIImage?
         switch item.type {
         case .QQ:
-            image = UIImage(named: "moyuLogo")
+            image = item.isBinding ? UIImage(named: "icon_qq_light") : UIImage(named: "icon_qq_grey")
         case .WeChat:
-            image = UIImage(named: "moyuLogo")
+            image = item.isBinding ? UIImage(named: "icon_wechat_light") : UIImage(named: "icon_wechat_grey")
         case .Weibo:
-            image = UIImage(named: "moyuLogo")
+            image = item.isBinding ? UIImage(named: "icon_weibo_light") : UIImage(named: "icon_weibo_grey")
         case .Phone:
-            image = UIImage(named: "moyuLogo")
+            image = item.isBinding ? UIImage(named: "icon_phone_light") : UIImage(named: "icon_phone_grey")
         }
         
         bindingButton.tag = item.type.rawValue

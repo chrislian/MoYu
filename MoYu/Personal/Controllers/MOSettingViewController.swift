@@ -48,6 +48,7 @@ class MOSettingViewController: MOBaseViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = 44.0
         self.tableView.backgroundColor = UIColor.mo_background()
+        self.tableView.separatorStyle = .None
         
         
         exitButton.addTarget(self, action: #selector(exitButtonClicked(_:)), forControlEvents: .TouchUpInside)

@@ -31,6 +31,7 @@ class MOAccountBindingViewController: MOBaseViewController {
         self.tableView.rowHeight = 44
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorStyle = .None
     }
 
     //MARK: - var & let
