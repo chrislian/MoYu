@@ -17,6 +17,8 @@
 		833180071D2A86F200EFAF69 /* MOAccountBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */; };
 		833180091D2A895800EFAF69 /* MOAccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
+		833A86361D2BFC20002E8BBD /* MOUserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86351D2BFC20002E8BBD /* MOUserHeaderCell.swift */; };
+		833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
 		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
@@ -102,6 +104,8 @@
 		833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAccountBindingViewController.swift; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAccountBindingCell.swift; sourceTree = "<group>"; };
 		8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
+		833A86351D2BFC20002E8BBD /* MOUserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserHeaderCell.swift; sourceTree = "<group>"; };
+		833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUseInfoController.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 				838E84DC1D29492200C992CC /* MOSettingViewController.swift */,
 				838E85131D294D6200C992CC /* MOUserGuideViewController.swift */,
 				833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */,
+				833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				838E84DF1D29492200C992CC /* MOLeftMenu.swift */,
 				838E84E01D29492200C992CC /* MOLeftTableViewCell.swift */,
 				833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */,
+				833A86351D2BFC20002E8BBD /* MOUserHeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -855,6 +861,7 @@
 				838E84EF1D29492200C992CC /* MOHomeMenuCell.swift in Sources */,
 				838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */,
 				838E84EA1D29492200C992CC /* MOHomeSearchViewController.swift in Sources */,
+				833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */,
 				838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */,
 				838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */,
 				838E84F31D29492200C992CC /* MOHomeView.swift in Sources */,
@@ -879,6 +886,7 @@
 				838E84F01D29492200C992CC /* MOHomeMenuView.swift in Sources */,
 				838E84E71D29492200C992CC /* MOFindWorkViewController.swift in Sources */,
 				838E84E61D29492200C992CC /* MOAppCenterTableViewCell.swift in Sources */,
+				833A86361D2BFC20002E8BBD /* MOUserHeaderCell.swift in Sources */,
 				838E84F51D29492200C992CC /* MOLeftMenuViewController.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */,
 				838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */,

@@ -36,6 +36,7 @@ struct SB {
         struct Cell {
             static let leftMenuCell = "cellLeftMenuIdentifier"
             static let accountBindingCell = "cellAccountBindingIdentifier"
+            static let userHeaderCell = "segueUseHeaderIdentifier"
         }
         
         struct Segue {
