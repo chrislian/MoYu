@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15D37867C79F4DED7F7C7CDB /* Pods_MoYu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA126A58D4CBA2C3226DFD8 /* Pods_MoYu.framework */; };
+		831632AE1D2EA3E300205211 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831632AD1D2EA3E300205211 /* Remote.swift */; };
 		831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33C91CB0B1E900157B67 /* MOAppDelegate.swift */; };
 		831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33CD1CB0B1E900157B67 /* Main.storyboard */; };
 		831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D01CB0B1E900157B67 /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		5DA126A58D4CBA2C3226DFD8 /* Pods_MoYu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoYu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6778D3C039A2DAB742A101AD /* Pods-MoYuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		752A02BA78A64F04167261F4 /* Pods-MoYuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests.release.xcconfig"; sourceTree = "<group>"; };
+		831632AD1D2EA3E300205211 /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		831C33C61CB0B1E900157B67 /* MoYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		831C33C91CB0B1E900157B67 /* MOAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOAppDelegate.swift; sourceTree = "<group>"; };
 		831C33CE1CB0B1E900157B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +197,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		831632AC1D2EA30900205211 /* RemoteRequest */ = {
+			isa = PBXGroup;
+			children = (
+				831632AD1D2EA3E300205211 /* Remote.swift */,
+			);
+			name = RemoteRequest;
+			path = Miscellaneous/RemoteRequest;
+			sourceTree = "<group>";
+		};
 		831C33BD1CB0B1E900157B67 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +235,7 @@
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
 				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
+				831632AC1D2EA30900205211 /* RemoteRequest */,
 				838E84BD1D29492200C992CC /* AppCenter */,
 				838E84C71D29492200C992CC /* Home */,
 				838E84D91D29492200C992CC /* Personal */,
@@ -865,6 +877,7 @@
 				838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */,
 				838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */,
 				838E84F31D29492200C992CC /* MOHomeView.swift in Sources */,
+				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
 				838E84F11D29492200C992CC /* MOHomeMessageCell.swift in Sources */,
 				833180071D2A86F200EFAF69 /* MOAccountBindingViewController.swift in Sources */,
 				833180091D2A895800EFAF69 /* MOAccountBindingCell.swift in Sources */,
