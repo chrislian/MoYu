@@ -22,6 +22,10 @@
 		833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
+		834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834EC40C1D322BD80046FBEF /* SignIn.storyboard */; };
+		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
+		834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4161D3236460046FBEF /* SignInByPasswordController.swift */; };
+		834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4181D3287560046FBEF /* SignInByAuthView.swift */; };
 		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
 		838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84BF1D29492200C992CC /* MOAboutJobsViewController.swift */; };
@@ -110,6 +114,10 @@
 		833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUseInfoController.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
+		834EC40C1D322BD80046FBEF /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
+		834EC4161D3236460046FBEF /* SignInByPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPasswordController.swift; sourceTree = "<group>"; };
+		834EC4181D3287560046FBEF /* SignInByAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthView.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		838E84BF1D29492200C992CC /* MOAboutJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 				838E84BD1D29492200C992CC /* AppCenter */,
 				838E84C71D29492200C992CC /* Home */,
 				838E84D91D29492200C992CC /* Personal */,
+				834EC40E1D3232C70046FBEF /* SignIn */,
 				834E3EBF1CB0BF80005B8FC3 /* Storyboards */,
 				834E3EB81CB0BE86005B8FC3 /* Resources */,
 			);
@@ -307,8 +316,43 @@
 				834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */,
 				83EF606A1CB8919800D20F08 /* AppCenter.storyboard */,
 				831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */,
+				834EC40C1D322BD80046FBEF /* SignIn.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		834EC40E1D3232C70046FBEF /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				834EC4111D3233180046FBEF /* Controllers */,
+				834EC4131D3233180046FBEF /* Models */,
+				834EC4141D3233180046FBEF /* Views */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		834EC4111D3233180046FBEF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				834EC4121D3233180046FBEF /* SignInByAuthController.swift */,
+				834EC4161D3236460046FBEF /* SignInByPasswordController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		834EC4131D3233180046FBEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		834EC4141D3233180046FBEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				834EC4181D3287560046FBEF /* SignInByAuthView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		838E84BD1D29492200C992CC /* AppCenter */ = {
@@ -596,6 +640,7 @@
 				834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */,
 				831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */,
 				831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */,
+				834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */,
 				833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -864,6 +909,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
@@ -874,6 +920,7 @@
 				838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */,
 				838E84EA1D29492200C992CC /* MOHomeSearchViewController.swift in Sources */,
 				833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */,
+				834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */,
 				838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */,
 				838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */,
 				838E84F31D29492200C992CC /* MOHomeView.swift in Sources */,
@@ -906,6 +953,7 @@
 				838E84E41D29492200C992CC /* MOPublishMessageViewController.swift in Sources */,
 				838E84E31D29492200C992CC /* MOPersonMessageViewController.swift in Sources */,
 				838E84E51D29492200C992CC /* MOAboutJobsCell.swift in Sources */,
+				834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */,
 				838E84F61D29492200C992CC /* MOSettingViewController.swift in Sources */,
 				838E84F41D29492200C992CC /* MOPublishSheetView.swift in Sources */,
 				838E850B1D294CC100C992CC /* String+MoYu.swift in Sources */,

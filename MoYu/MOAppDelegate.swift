@@ -51,7 +51,14 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
         if !mapManager.start("r9LH3rGsee4Iks2ogmnC9jMfSqWEdnIR", generalDelegate: self){
             MOLog("Manager start failed")
         }
-        self.turnToHomeViewController()
+        //self.turnToHomeViewController()
+        if let siginInVc = SB.SignIn.Vc.signIn() {
+            self.window?.rootViewController = siginInVc
+        }else{
+            self.turnToHomeViewController()
+        }
+        
+        self.window?.makeKeyAndVisible()
         return true
     }
 
@@ -90,7 +97,6 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
         frostedVc.liveBlurBackgroundStyle = .Light
         frostedVc.liveBlur = true
         self.window?.rootViewController = frostedVc
-        self.window?.makeKeyAndVisible()
     }
 }
 

@@ -9,6 +9,16 @@
 import UIKit
 
 struct SB {
+    
+    //MARK: - sign in storybaord
+    struct SignIn {
+        struct Vc{
+            static func signIn()->UIViewController?{
+                return UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController()
+            }
+        }
+    }
+    
     //MARK: - main storyboard
     struct Main {
         struct Cell {
