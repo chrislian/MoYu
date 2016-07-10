@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In By Auth Controller-->
         <scene sceneID="ZrF-Hd-Hrm">
             <objects>
-                <viewController id="uDb-PV-bAm" sceneMemberID="viewController">
+                <viewController id="uDb-PV-bAm" customClass="SignInByAuthController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H3f-T8-fXf"/>
                         <viewControllerLayoutGuide type="bottom" id="UZQ-wZ-n84"/>
@@ -188,6 +188,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="vs5-LK-hSX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="signInView" destination="Wyd-B7-0hu" id="2VA-wW-Nb2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLb-va-Xfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

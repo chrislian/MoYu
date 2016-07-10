@@ -8,20 +8,33 @@
 
 import UIKit
 
-class SignInController: UIViewController {
+class SignInByAuthController: UIViewController {
 
+    //MARK: - private method
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupView()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //MARK: - event reponse
+    func enterButtonTap(sender: UIButton){
+        MOLog("sign in")
+    }
+    
+    func authButtonTap(sender:UIButton){
+        MOLog("auth button")
     }
     
 
+    //MARK: - private method
+    private func setupView(){
+        
+        signInView.enterButton.addTarget(self, action: #selector(enterButtonTap(_:)), forControlEvents: .TouchUpInside)
+        signInView.authButton.addTarget(self, action: #selector(authButtonTap(_:)),forControlEvents: .TouchUpInside)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -32,4 +45,6 @@ class SignInController: UIViewController {
     }
     */
 
+    //MARK: - var & let
+    @IBOutlet var signInView: SignInByAuthView!
 }
