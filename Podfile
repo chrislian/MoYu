@@ -21,6 +21,7 @@ pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2
 pod 'AsyncSwift'
 pod 'IBAnimatable'
 pod 'RealmSwift'
+pod 'CryptoSwift'
 end
 
 target 'MoYuTests' do
@@ -30,4 +31,3 @@ end
 target 'MoYuUITests' do
 
 end
-
