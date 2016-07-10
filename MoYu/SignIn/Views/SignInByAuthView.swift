@@ -18,6 +18,16 @@ class SignInByAuthView: UIView {
     //MARK: - private method
     private func setupView(){
         
+        headView.layer.cornerRadius = headView.frame.size.height/2
+        headView.layer.masksToBounds = true
+        headView.layer.borderColor = UIColor.whiteColor().CGColor
+        headView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        headView.layer.shadowColor = UIColor.mo_main().CGColor
+        headView.layer.borderWidth = 0.8
+        headView.backgroundColor = UIColor.clearColor()
+        
+        headImageView.layer.cornerRadius = headImageView.frame.size.height/2
+        headImageView.layer.masksToBounds = true
         
         enterButton.layer.cornerRadius = enterButton.bounds.size.height/2
         enterButton.layer.masksToBounds = true
@@ -56,11 +66,15 @@ class SignInByAuthView: UIView {
         userProtocolButton.titleLabel?.font = UIFont.mo_font()
         userProtocolButton.titleLabel?.textColor = UIColor.whiteColor()
         userProtocolButton.setTitle("用户协议", forState: .Normal)
+        
+        orLabel.font = UIFont.mo_font(.smallest)
     }
     
 
     //MARK: - var & let
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var headImageView: UIImageView!
+    @IBOutlet weak var headView: UIView!
+    
     @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var authCodeView: UIView!
     @IBOutlet weak var enterButton: UIButton!
