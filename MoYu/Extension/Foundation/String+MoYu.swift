@@ -24,3 +24,20 @@ extension String{
         return "false"
     }
 }
+
+extension String {
+    
+    func base64Encode()->String?{
+        
+        let data = self.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        return data?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
+    }
+    
+    func base64Decode()->String?{
+        
+        guard let data = NSData(base64EncodedString: self, options: NSDataBase64DecodingOptions()) else{ return nil }
+        
+        return String(data: data, encoding: NSUTF8StringEncoding)
+    }
+}
