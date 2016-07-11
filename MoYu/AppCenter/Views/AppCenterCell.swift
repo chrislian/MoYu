@@ -1,5 +1,5 @@
 //
-//  MOAppCenterTableViewCell.swift
+//  AppCenterCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOAppCenterTableViewCell: UITableViewCell {
+class AppCenterCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

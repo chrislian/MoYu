@@ -13,7 +13,7 @@ extension UIImageView {
     
     public func mo_loadImage(urlString:String ,placeholder:UIImage){
         guard let url = NSURL(string: urlString) else{
-            MOLog("urlString:\(urlString)")
+            println("urlString:\(urlString)")
             return
         }
         self.kf_setImageWithURL(url, placeholderImage: placeholder)
@@ -47,7 +47,7 @@ public class MOImageView: UIImageView {
     public func mo_loadRoundImage(urlString:String,radius:CGFloat = 0, placeholder:UIImage){
         self.radius = radius
         guard let url = NSURL(string: urlString) else{
-            MOLog("urlString:\(urlString)")
+            println("urlString:\(urlString)")
             return
         }
         self.kf_setImageWithURL(url, placeholderImage:placeholder)

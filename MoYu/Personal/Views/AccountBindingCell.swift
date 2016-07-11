@@ -1,5 +1,5 @@
 //
-//  MOAccountBindingCell.swift
+//  AccountBindingCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/7/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOAccountBindingCell: UITableViewCell {
+class AccountBindingCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

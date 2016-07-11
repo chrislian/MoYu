@@ -1,5 +1,5 @@
 //
-//  MOPublishMessageViewController.swift
+//  PublishMessageController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/6.
@@ -9,7 +9,7 @@
 import UIKit
 import YYText
 
-class MOPublishMessageViewController: UIViewController {
+class PublishMessageController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -67,6 +67,6 @@ class MOPublishMessageViewController: UIViewController {
 }
 
 //MARK: - YYTextView Delegate
-extension MOPublishMessageViewController:YYTextViewDelegate{
+extension PublishMessageController:YYTextViewDelegate{
     
 }

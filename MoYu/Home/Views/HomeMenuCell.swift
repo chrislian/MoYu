@@ -1,5 +1,5 @@
 //
-//  MOHomeMenuCell.swift
+//  HomeMenuCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/9.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOHomeMenuCell: UITableViewCell {
+class HomeMenuCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

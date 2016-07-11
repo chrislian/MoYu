@@ -1,5 +1,5 @@
 //
-//  MOUserGuideViewController.swift
+//  UserGuideController.swift
 //  MoYu
 //
 //  Created by Chris on 16/7/3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOUserGuideViewController: MOBaseViewController {
+class UserGuideController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class MOUserGuideViewController: MOBaseViewController {
 }
 
 // MARK: - UITableView Delegate
-extension MOUserGuideViewController:UITableViewDelegate{
+extension UserGuideController:UITableViewDelegate{
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
@@ -67,7 +67,7 @@ extension MOUserGuideViewController:UITableViewDelegate{
 }
 
 // MARK: - UITableView datasource
-extension MOUserGuideViewController:UITableViewDataSource{
+extension UserGuideController:UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count

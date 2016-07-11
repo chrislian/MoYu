@@ -8,10 +8,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--App Center View Controller-->
+        <!--App Center Controller-->
         <scene sceneID="Q3G-2h-pjL">
             <objects>
-                <viewController storyboardIdentifier="AppCenterID" id="BUt-8N-X94" customClass="MOAppCenterViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppCenterID" id="BUt-8N-X94" customClass="AppCenterController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vq7-3o-Lty"/>
                         <viewControllerLayoutGuide type="bottom" id="TA2-4V-1af"/>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAppCenterIdentifier" rowHeight="44" id="d9a-FT-xmM" customClass="MOAppCenterTableViewCell" customModule="MoYu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAppCenterIdentifier" rowHeight="44" id="d9a-FT-xmM" customClass="AppCenterCell" customModule="MoYu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d9a-FT-xmM" id="hfa-cx-d4Z">
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1878" y="443"/>
         </scene>
-        <!--About Jobs View Controller-->
+        <!--About Jobs Controller-->
         <scene sceneID="7Uw-a1-baY">
             <objects>
-                <viewController id="WlO-gc-z7E" customClass="MOAboutJobsViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WlO-gc-z7E" customClass="AboutJobsController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wLL-lt-mrq"/>
                         <viewControllerLayoutGuide type="bottom" id="1yp-7Y-86t"/>
@@ -128,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAboutJobsIdentifier" rowHeight="125" id="avx-4z-Tdq" customClass="MOAboutJobsCell" customModule="MoYu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAboutJobsIdentifier" rowHeight="125" id="avx-4z-Tdq" customClass="AboutJobsCell" customModule="MoYu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="375" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="avx-4z-Tdq" id="bJs-wC-9O0">
@@ -284,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="2382" y="443"/>
         </scene>
-        <!--Publish Message View Controller-->
+        <!--Publish Message Controller-->
         <scene sceneID="jOo-Nj-I8D">
             <objects>
-                <viewController id="w2O-RQ-Azc" customClass="MOPublishMessageViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w2O-RQ-Azc" customClass="PublishMessageController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9h6-tw-YGX"/>
                         <viewControllerLayoutGuide type="bottom" id="1Sb-f2-wZC"/>
@@ -302,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="2899" y="70"/>
         </scene>
-        <!--Person Message View Controller-->
+        <!--Person Message Controller-->
         <scene sceneID="8W5-FS-SZj">
             <objects>
-                <viewController id="YkS-XY-3sF" customClass="MOPersonMessageViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YkS-XY-3sF" customClass="PersonMessageController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bQ0-bS-sJM"/>
                         <viewControllerLayoutGuide type="bottom" id="t0K-dH-0uQ"/>

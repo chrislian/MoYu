@@ -1,5 +1,5 @@
 //
-//  MOMessageViewController.swift
+//  MessageController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/9.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOHomeMessageViewController: UIViewController {
+class HomeMessageController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class MOHomeMessageViewController: UIViewController {
 
 
 //MARK: - table view delegate
-extension MOHomeMessageViewController:UITableViewDelegate{
+extension HomeMessageController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80.0
@@ -56,7 +56,7 @@ extension MOHomeMessageViewController:UITableViewDelegate{
 
 
 //MARK: - table view data source
-extension MOHomeMessageViewController:UITableViewDataSource{
+extension HomeMessageController:UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -66,7 +66,7 @@ extension MOHomeMessageViewController:UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMessage) else{
-            return MOHomeMessageCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMessage)
+            return HomeMessageCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMessage)
         }
         return cell
     }

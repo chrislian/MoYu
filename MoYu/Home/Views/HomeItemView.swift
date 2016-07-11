@@ -1,5 +1,5 @@
 //
-//  MOHomeItemView.swift
+//  HomeItemView.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/9.
@@ -14,7 +14,7 @@ enum MOHomeItemType {
     case GPS,Menu,Search
 }
 
-class MOHomeItemView: UIView {
+class HomeItemView: UIView {
 
     //MARK: - life cycle
     override init(frame: CGRect) {

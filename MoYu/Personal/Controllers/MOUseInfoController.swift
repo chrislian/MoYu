@@ -1,5 +1,5 @@
 //
-//  MOUseInfoController.swift
+//  UseInfoController.swift
 //  MoYu
 //
 //  Created by Chris on 16/7/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOUseInfoController: MOBaseViewController {
+class UseInfoController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class MOUseInfoController: MOBaseViewController {
                  [("学校",""),("课余时间",""),("实名认证",""),("商家认证","")]]
 }
 
-extension MOUseInfoController:UITableViewDelegate{
+extension UseInfoController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
@@ -73,7 +73,7 @@ extension MOUseInfoController:UITableViewDelegate{
         
         switch (indexPath.section,indexPath.row) {
         case (0,0):
-            if let cell = cell as? MOUserHeaderCell {
+            if let cell = cell as? UserHeaderCell {
                 cell.update(usename: "公子连",source:"手机登录")
             }
         default:
@@ -99,7 +99,7 @@ extension MOUseInfoController:UITableViewDelegate{
     
 }
 
-extension MOUseInfoController:UITableViewDataSource{
+extension UseInfoController:UITableViewDataSource{
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return datas.count

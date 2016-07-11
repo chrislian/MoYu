@@ -1,5 +1,5 @@
 //
-//  MOLeftTableViewCell.swift
+//  LeftMenuCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOLeftTableViewCell: UITableViewCell {
+class LeftMenuCell: UITableViewCell {
 
 
     override func awakeFromNib() {

@@ -1,5 +1,5 @@
 //
-//  MOSignInController.swift
+//  SignInController.swift
 //  MoYu
 //
 //  Created by Chris on 16/7/10.
@@ -20,11 +20,11 @@ class SignInByAuthController: UIViewController {
     
     //MARK: - event reponse
     func enterButtonTap(sender: UIButton){
-        MOLog("sign in")
+        println("sign in")
     }
     
     func authButtonTap(sender:UIButton){
-        MOLog("auth button")
+        println("auth button")
     }
     
 

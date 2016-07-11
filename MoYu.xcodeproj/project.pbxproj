@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		15D37867C79F4DED7F7C7CDB /* Pods_MoYu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA126A58D4CBA2C3226DFD8 /* Pods_MoYu.framework */; };
 		831632AE1D2EA3E300205211 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831632AD1D2EA3E300205211 /* Remote.swift */; };
-		831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33C91CB0B1E900157B67 /* MOAppDelegate.swift */; };
+		831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33C91CB0B1E900157B67 /* AppDelegate.swift */; };
 		831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33CD1CB0B1E900157B67 /* Main.storyboard */; };
 		831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D01CB0B1E900157B67 /* Assets.xcassets */; };
 		831C33D41CB0B1E900157B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */; };
 		831C33DF1CB0B1E900157B67 /* MoYuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33DE1CB0B1E900157B67 /* MoYuTests.swift */; };
 		831C33EA1CB0B1E900157B67 /* MoYuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33E91CB0B1E900157B67 /* MoYuUITests.swift */; };
-		833180071D2A86F200EFAF69 /* MOAccountBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */; };
-		833180091D2A895800EFAF69 /* MOAccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */; };
+		833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* AccountBindingController.swift */; };
+		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
-		833A86361D2BFC20002E8BBD /* MOUserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86351D2BFC20002E8BBD /* MOUserHeaderCell.swift */; };
+		833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */; };
 		833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
@@ -26,32 +26,32 @@
 		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
 		834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4161D3236460046FBEF /* SignInByPasswordController.swift */; };
 		834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4181D3287560046FBEF /* SignInByAuthView.swift */; };
-		8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* MOLog.swift */; };
+		8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* Print.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
-		838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84BF1D29492200C992CC /* MOAboutJobsViewController.swift */; };
-		838E84E21D29492200C992CC /* MOAppCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C01D29492200C992CC /* MOAppCenterViewController.swift */; };
-		838E84E31D29492200C992CC /* MOPersonMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C11D29492200C992CC /* MOPersonMessageViewController.swift */; };
-		838E84E41D29492200C992CC /* MOPublishMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C21D29492200C992CC /* MOPublishMessageViewController.swift */; };
+		838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84BF1D29492200C992CC /* AboutJobsController.swift */; };
+		838E84E21D29492200C992CC /* AppCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C01D29492200C992CC /* AppCenterController.swift */; };
+		838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C11D29492200C992CC /* PersonMessageController.swift */; };
+		838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C21D29492200C992CC /* PublishMessageController.swift */; };
 		838E84E51D29492200C992CC /* MOAboutJobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C51D29492200C992CC /* MOAboutJobsCell.swift */; };
-		838E84E61D29492200C992CC /* MOAppCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C61D29492200C992CC /* MOAppCenterTableViewCell.swift */; };
-		838E84E71D29492200C992CC /* MOFindWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C91D29492200C992CC /* MOFindWorkViewController.swift */; };
-		838E84E81D29492200C992CC /* MOHomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CA1D29492200C992CC /* MOHomeMenuViewController.swift */; };
-		838E84E91D29492200C992CC /* MOHomeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CB1D29492200C992CC /* MOHomeMessageViewController.swift */; };
-		838E84EA1D29492200C992CC /* MOHomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CC1D29492200C992CC /* MOHomeSearchViewController.swift */; };
-		838E84EB1D29492200C992CC /* MOHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CD1D29492200C992CC /* MOHomeViewController.swift */; };
-		838E84EC1D29492200C992CC /* MOPublishWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CE1D29492200C992CC /* MOPublishWorkViewController.swift */; };
-		838E84ED1D29492200C992CC /* MOHomeMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D01D29492200C992CC /* MOHomeMenuItemModel.swift */; };
-		838E84EE1D29492200C992CC /* MOHomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D21D29492200C992CC /* MOHomeItemView.swift */; };
-		838E84EF1D29492200C992CC /* MOHomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D31D29492200C992CC /* MOHomeMenuCell.swift */; };
-		838E84F01D29492200C992CC /* MOHomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D41D29492200C992CC /* MOHomeMenuView.swift */; };
-		838E84F11D29492200C992CC /* MOHomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D51D29492200C992CC /* MOHomeMessageCell.swift */; };
-		838E84F21D29492200C992CC /* MOHomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D61D29492200C992CC /* MOHomeSearchView.swift */; };
-		838E84F31D29492200C992CC /* MOHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D71D29492200C992CC /* MOHomeView.swift */; };
-		838E84F41D29492200C992CC /* MOPublishSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D81D29492200C992CC /* MOPublishSheetView.swift */; };
-		838E84F51D29492200C992CC /* MOLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DB1D29492200C992CC /* MOLeftMenuViewController.swift */; };
-		838E84F61D29492200C992CC /* MOSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DC1D29492200C992CC /* MOSettingViewController.swift */; };
-		838E84F71D29492200C992CC /* MOLeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DF1D29492200C992CC /* MOLeftMenu.swift */; };
-		838E84F81D29492200C992CC /* MOLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84E01D29492200C992CC /* MOLeftTableViewCell.swift */; };
+		838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C61D29492200C992CC /* AppCenterCell.swift */; };
+		838E84E71D29492200C992CC /* FindWorkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C91D29492200C992CC /* FindWorkController.swift */; };
+		838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CA1D29492200C992CC /* HomeMenuController.swift */; };
+		838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CB1D29492200C992CC /* HomeMessageController.swift */; };
+		838E84EA1D29492200C992CC /* HomeSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CC1D29492200C992CC /* HomeSearchController.swift */; };
+		838E84EB1D29492200C992CC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CD1D29492200C992CC /* HomeController.swift */; };
+		838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CE1D29492200C992CC /* PublishWorkController.swift */; };
+		838E84ED1D29492200C992CC /* HomeMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D01D29492200C992CC /* HomeMenuItemModel.swift */; };
+		838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D21D29492200C992CC /* HomeItemView.swift */; };
+		838E84EF1D29492200C992CC /* HomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D31D29492200C992CC /* HomeMenuCell.swift */; };
+		838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D41D29492200C992CC /* HomeMenuView.swift */; };
+		838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D51D29492200C992CC /* HomeMessageCell.swift */; };
+		838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D61D29492200C992CC /* HomeSearchView.swift */; };
+		838E84F31D29492200C992CC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D71D29492200C992CC /* HomeView.swift */; };
+		838E84F41D29492200C992CC /* PublishSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84D81D29492200C992CC /* PublishSheetView.swift */; };
+		838E84F51D29492200C992CC /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DB1D29492200C992CC /* LeftMenuViewController.swift */; };
+		838E84F61D29492200C992CC /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DC1D29492200C992CC /* SettingController.swift */; };
+		838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DF1D29492200C992CC /* LeftMenuCell.swift */; };
+		838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84E01D29492200C992CC /* LeftTableViewCell.swift */; };
 		838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84F91D2949B600C992CC /* MOBaseViewController.swift */; };
 		838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84FC1D294CC100C992CC /* NavigationBar+MoYu.swift */; };
 		838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84FD1D294CC100C992CC /* NSDateExtension.swift */; };
@@ -64,7 +64,7 @@
 		838E85101D294CC100C992CC /* UIImageView+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85051D294CC100C992CC /* UIImageView+MoYu.swift */; };
 		838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */; };
 		838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */; };
-		838E85141D294D6200C992CC /* MOUserGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85131D294D6200C992CC /* MOUserGuideViewController.swift */; };
+		838E85141D294D6200C992CC /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85131D294D6200C992CC /* UserGuideController.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
@@ -95,7 +95,7 @@
 		752A02BA78A64F04167261F4 /* Pods-MoYuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests.release.xcconfig"; sourceTree = "<group>"; };
 		831632AD1D2EA3E300205211 /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		831C33C61CB0B1E900157B67 /* MoYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		831C33C91CB0B1E900157B67 /* MOAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOAppDelegate.swift; sourceTree = "<group>"; };
+		831C33C91CB0B1E900157B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		831C33CE1CB0B1E900157B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		831C33D01CB0B1E900157B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		831C33D31CB0B1E900157B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,10 +107,10 @@
 		831C33E91CB0B1E900157B67 /* MoYuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuUITests.swift; sourceTree = "<group>"; };
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
-		833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAccountBindingViewController.swift; sourceTree = "<group>"; };
-		833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAccountBindingCell.swift; sourceTree = "<group>"; };
+		833180061D2A86F200EFAF69 /* AccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingController.swift; sourceTree = "<group>"; };
+		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
 		8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
-		833A86351D2BFC20002E8BBD /* MOUserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserHeaderCell.swift; sourceTree = "<group>"; };
+		833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderCell.swift; sourceTree = "<group>"; };
 		833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUseInfoController.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
@@ -118,32 +118,32 @@
 		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
 		834EC4161D3236460046FBEF /* SignInByPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPasswordController.swift; sourceTree = "<group>"; };
 		834EC4181D3287560046FBEF /* SignInByAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthView.swift; sourceTree = "<group>"; };
-		8389C6541CB0EA5E003E96B1 /* MOLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLog.swift; sourceTree = "<group>"; };
+		8389C6541CB0EA5E003E96B1 /* Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
-		838E84BF1D29492200C992CC /* MOAboutJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsViewController.swift; sourceTree = "<group>"; };
-		838E84C01D29492200C992CC /* MOAppCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAppCenterViewController.swift; sourceTree = "<group>"; };
-		838E84C11D29492200C992CC /* MOPersonMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPersonMessageViewController.swift; sourceTree = "<group>"; };
-		838E84C21D29492200C992CC /* MOPublishMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPublishMessageViewController.swift; sourceTree = "<group>"; };
+		838E84BF1D29492200C992CC /* AboutJobsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobsController.swift; sourceTree = "<group>"; };
+		838E84C01D29492200C992CC /* AppCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCenterController.swift; sourceTree = "<group>"; };
+		838E84C11D29492200C992CC /* PersonMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonMessageController.swift; sourceTree = "<group>"; };
+		838E84C21D29492200C992CC /* PublishMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMessageController.swift; sourceTree = "<group>"; };
 		838E84C51D29492200C992CC /* MOAboutJobsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsCell.swift; sourceTree = "<group>"; };
-		838E84C61D29492200C992CC /* MOAppCenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAppCenterTableViewCell.swift; sourceTree = "<group>"; };
-		838E84C91D29492200C992CC /* MOFindWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOFindWorkViewController.swift; sourceTree = "<group>"; };
-		838E84CA1D29492200C992CC /* MOHomeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuViewController.swift; sourceTree = "<group>"; };
-		838E84CB1D29492200C992CC /* MOHomeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMessageViewController.swift; sourceTree = "<group>"; };
-		838E84CC1D29492200C992CC /* MOHomeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeSearchViewController.swift; sourceTree = "<group>"; };
-		838E84CD1D29492200C992CC /* MOHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeViewController.swift; sourceTree = "<group>"; };
-		838E84CE1D29492200C992CC /* MOPublishWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPublishWorkViewController.swift; sourceTree = "<group>"; };
-		838E84D01D29492200C992CC /* MOHomeMenuItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuItemModel.swift; sourceTree = "<group>"; };
-		838E84D21D29492200C992CC /* MOHomeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeItemView.swift; sourceTree = "<group>"; };
-		838E84D31D29492200C992CC /* MOHomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuCell.swift; sourceTree = "<group>"; };
-		838E84D41D29492200C992CC /* MOHomeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMenuView.swift; sourceTree = "<group>"; };
-		838E84D51D29492200C992CC /* MOHomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeMessageCell.swift; sourceTree = "<group>"; };
-		838E84D61D29492200C992CC /* MOHomeSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeSearchView.swift; sourceTree = "<group>"; };
-		838E84D71D29492200C992CC /* MOHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHomeView.swift; sourceTree = "<group>"; };
-		838E84D81D29492200C992CC /* MOPublishSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPublishSheetView.swift; sourceTree = "<group>"; };
-		838E84DB1D29492200C992CC /* MOLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenuViewController.swift; sourceTree = "<group>"; };
-		838E84DC1D29492200C992CC /* MOSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOSettingViewController.swift; sourceTree = "<group>"; };
-		838E84DF1D29492200C992CC /* MOLeftMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftMenu.swift; sourceTree = "<group>"; };
-		838E84E01D29492200C992CC /* MOLeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOLeftTableViewCell.swift; sourceTree = "<group>"; };
+		838E84C61D29492200C992CC /* AppCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCenterCell.swift; sourceTree = "<group>"; };
+		838E84C91D29492200C992CC /* FindWorkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkController.swift; sourceTree = "<group>"; };
+		838E84CA1D29492200C992CC /* HomeMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuController.swift; sourceTree = "<group>"; };
+		838E84CB1D29492200C992CC /* HomeMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageController.swift; sourceTree = "<group>"; };
+		838E84CC1D29492200C992CC /* HomeSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchController.swift; sourceTree = "<group>"; };
+		838E84CD1D29492200C992CC /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		838E84CE1D29492200C992CC /* PublishWorkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishWorkController.swift; sourceTree = "<group>"; };
+		838E84D01D29492200C992CC /* HomeMenuItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuItemModel.swift; sourceTree = "<group>"; };
+		838E84D21D29492200C992CC /* HomeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeItemView.swift; sourceTree = "<group>"; };
+		838E84D31D29492200C992CC /* HomeMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuCell.swift; sourceTree = "<group>"; };
+		838E84D41D29492200C992CC /* HomeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
+		838E84D51D29492200C992CC /* HomeMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
+		838E84D61D29492200C992CC /* HomeSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
+		838E84D71D29492200C992CC /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		838E84D81D29492200C992CC /* PublishSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishSheetView.swift; sourceTree = "<group>"; };
+		838E84DB1D29492200C992CC /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		838E84DC1D29492200C992CC /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		838E84DF1D29492200C992CC /* LeftMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		838E84E01D29492200C992CC /* LeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewCell.swift; sourceTree = "<group>"; };
 		838E84F91D2949B600C992CC /* MOBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOBaseViewController.swift; sourceTree = "<group>"; };
 		838E84FC1D294CC100C992CC /* NavigationBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationBar+MoYu.swift"; sourceTree = "<group>"; };
 		838E84FD1D294CC100C992CC /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		838E85051D294CC100C992CC /* UIImageView+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MoYu.swift"; sourceTree = "<group>"; };
 		838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MoYu.swift"; sourceTree = "<group>"; };
 		838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
-		838E85131D294D6200C992CC /* MOUserGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserGuideViewController.swift; sourceTree = "<group>"; };
+		838E85131D294D6200C992CC /* UserGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		831C33C81CB0B1E900157B67 /* MoYu */ = {
 			isa = PBXGroup;
 			children = (
-				831C33C91CB0B1E900157B67 /* MOAppDelegate.swift */,
+				831C33C91CB0B1E900157B67 /* AppDelegate.swift */,
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
 				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
@@ -275,7 +275,7 @@
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				8389C6541CB0EA5E003E96B1 /* MOLog.swift */,
+				8389C6541CB0EA5E003E96B1 /* Print.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -368,10 +368,10 @@
 		838E84BE1D29492200C992CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				838E84BF1D29492200C992CC /* MOAboutJobsViewController.swift */,
-				838E84C01D29492200C992CC /* MOAppCenterViewController.swift */,
-				838E84C11D29492200C992CC /* MOPersonMessageViewController.swift */,
-				838E84C21D29492200C992CC /* MOPublishMessageViewController.swift */,
+				838E84BF1D29492200C992CC /* AboutJobsController.swift */,
+				838E84C01D29492200C992CC /* AppCenterController.swift */,
+				838E84C11D29492200C992CC /* PersonMessageController.swift */,
+				838E84C21D29492200C992CC /* PublishMessageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				838E84C51D29492200C992CC /* MOAboutJobsCell.swift */,
-				838E84C61D29492200C992CC /* MOAppCenterTableViewCell.swift */,
+				838E84C61D29492200C992CC /* AppCenterCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,12 +405,12 @@
 		838E84C81D29492200C992CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				838E84C91D29492200C992CC /* MOFindWorkViewController.swift */,
-				838E84CA1D29492200C992CC /* MOHomeMenuViewController.swift */,
-				838E84CB1D29492200C992CC /* MOHomeMessageViewController.swift */,
-				838E84CC1D29492200C992CC /* MOHomeSearchViewController.swift */,
-				838E84CD1D29492200C992CC /* MOHomeViewController.swift */,
-				838E84CE1D29492200C992CC /* MOPublishWorkViewController.swift */,
+				838E84C91D29492200C992CC /* FindWorkController.swift */,
+				838E84CA1D29492200C992CC /* HomeMenuController.swift */,
+				838E84CB1D29492200C992CC /* HomeMessageController.swift */,
+				838E84CC1D29492200C992CC /* HomeSearchController.swift */,
+				838E84CD1D29492200C992CC /* HomeController.swift */,
+				838E84CE1D29492200C992CC /* PublishWorkController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -418,7 +418,7 @@
 		838E84CF1D29492200C992CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				838E84D01D29492200C992CC /* MOHomeMenuItemModel.swift */,
+				838E84D01D29492200C992CC /* HomeMenuItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,13 +426,13 @@
 		838E84D11D29492200C992CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				838E84D21D29492200C992CC /* MOHomeItemView.swift */,
-				838E84D31D29492200C992CC /* MOHomeMenuCell.swift */,
-				838E84D41D29492200C992CC /* MOHomeMenuView.swift */,
-				838E84D51D29492200C992CC /* MOHomeMessageCell.swift */,
-				838E84D61D29492200C992CC /* MOHomeSearchView.swift */,
-				838E84D71D29492200C992CC /* MOHomeView.swift */,
-				838E84D81D29492200C992CC /* MOPublishSheetView.swift */,
+				838E84D21D29492200C992CC /* HomeItemView.swift */,
+				838E84D31D29492200C992CC /* HomeMenuCell.swift */,
+				838E84D41D29492200C992CC /* HomeMenuView.swift */,
+				838E84D51D29492200C992CC /* HomeMessageCell.swift */,
+				838E84D61D29492200C992CC /* HomeSearchView.swift */,
+				838E84D71D29492200C992CC /* HomeView.swift */,
+				838E84D81D29492200C992CC /* PublishSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,10 +450,10 @@
 		838E84DA1D29492200C992CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				838E84DB1D29492200C992CC /* MOLeftMenuViewController.swift */,
-				838E84DC1D29492200C992CC /* MOSettingViewController.swift */,
-				838E85131D294D6200C992CC /* MOUserGuideViewController.swift */,
-				833180061D2A86F200EFAF69 /* MOAccountBindingViewController.swift */,
+				838E84DB1D29492200C992CC /* LeftMenuViewController.swift */,
+				838E84DC1D29492200C992CC /* SettingController.swift */,
+				838E85131D294D6200C992CC /* UserGuideController.swift */,
+				833180061D2A86F200EFAF69 /* AccountBindingController.swift */,
 				833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */,
 			);
 			path = Controllers;
@@ -470,10 +470,10 @@
 		838E84DE1D29492200C992CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				838E84DF1D29492200C992CC /* MOLeftMenu.swift */,
-				838E84E01D29492200C992CC /* MOLeftTableViewCell.swift */,
-				833180081D2A895800EFAF69 /* MOAccountBindingCell.swift */,
-				833A86351D2BFC20002E8BBD /* MOUserHeaderCell.swift */,
+				838E84DF1D29492200C992CC /* LeftMenuCell.swift */,
+				838E84E01D29492200C992CC /* LeftTableViewCell.swift */,
+				833180081D2A895800EFAF69 /* AccountBindingCell.swift */,
+				833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,7 +591,7 @@
 		831C33BE1CB0B1E900157B67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MO;
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Chris;
@@ -911,51 +911,51 @@
 			files = (
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
-				8389C6551CB0EA5E003E96B1 /* MOLog.swift in Sources */,
+				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
-				838E85141D294D6200C992CC /* MOUserGuideViewController.swift in Sources */,
+				838E85141D294D6200C992CC /* UserGuideController.swift in Sources */,
 				838E85101D294CC100C992CC /* UIImageView+MoYu.swift in Sources */,
-				838E84ED1D29492200C992CC /* MOHomeMenuItemModel.swift in Sources */,
-				838E84EF1D29492200C992CC /* MOHomeMenuCell.swift in Sources */,
+				838E84ED1D29492200C992CC /* HomeMenuItemModel.swift in Sources */,
+				838E84EF1D29492200C992CC /* HomeMenuCell.swift in Sources */,
 				838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */,
-				838E84EA1D29492200C992CC /* MOHomeSearchViewController.swift in Sources */,
+				838E84EA1D29492200C992CC /* HomeSearchController.swift in Sources */,
 				833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */,
 				834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */,
 				838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */,
-				838E84E11D29492200C992CC /* MOAboutJobsViewController.swift in Sources */,
-				838E84F31D29492200C992CC /* MOHomeView.swift in Sources */,
+				838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */,
+				838E84F31D29492200C992CC /* HomeView.swift in Sources */,
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
-				838E84F11D29492200C992CC /* MOHomeMessageCell.swift in Sources */,
-				833180071D2A86F200EFAF69 /* MOAccountBindingViewController.swift in Sources */,
-				833180091D2A895800EFAF69 /* MOAccountBindingCell.swift in Sources */,
-				838E84F81D29492200C992CC /* MOLeftTableViewCell.swift in Sources */,
-				838E84F21D29492200C992CC /* MOHomeSearchView.swift in Sources */,
+				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
+				833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */,
+				833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */,
+				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
+				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
-				838E84E21D29492200C992CC /* MOAppCenterViewController.swift in Sources */,
-				838E84F71D29492200C992CC /* MOLeftMenu.swift in Sources */,
-				838E84EB1D29492200C992CC /* MOHomeViewController.swift in Sources */,
-				838E84E81D29492200C992CC /* MOHomeMenuViewController.swift in Sources */,
+				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
+				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
+				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
+				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
-				838E84E91D29492200C992CC /* MOHomeMessageViewController.swift in Sources */,
+				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
-				838E84EE1D29492200C992CC /* MOHomeItemView.swift in Sources */,
+				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
 				838E850C1D294CC100C992CC /* CGImage+MoYu.swift in Sources */,
-				838E84EC1D29492200C992CC /* MOPublishWorkViewController.swift in Sources */,
+				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,
 				838E850E1D294CC100C992CC /* UIFont+MoYu.swift in Sources */,
-				838E84F01D29492200C992CC /* MOHomeMenuView.swift in Sources */,
-				838E84E71D29492200C992CC /* MOFindWorkViewController.swift in Sources */,
-				838E84E61D29492200C992CC /* MOAppCenterTableViewCell.swift in Sources */,
-				833A86361D2BFC20002E8BBD /* MOUserHeaderCell.swift in Sources */,
-				838E84F51D29492200C992CC /* MOLeftMenuViewController.swift in Sources */,
-				831C33CA1CB0B1E900157B67 /* MOAppDelegate.swift in Sources */,
+				838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */,
+				838E84E71D29492200C992CC /* FindWorkController.swift in Sources */,
+				838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */,
+				833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */,
+				838E84F51D29492200C992CC /* LeftMenuViewController.swift in Sources */,
+				831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */,
 				838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */,
-				838E84E41D29492200C992CC /* MOPublishMessageViewController.swift in Sources */,
-				838E84E31D29492200C992CC /* MOPersonMessageViewController.swift in Sources */,
+				838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */,
+				838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */,
 				838E84E51D29492200C992CC /* MOAboutJobsCell.swift in Sources */,
 				834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */,
-				838E84F61D29492200C992CC /* MOSettingViewController.swift in Sources */,
-				838E84F41D29492200C992CC /* MOPublishSheetView.swift in Sources */,
+				838E84F61D29492200C992CC /* SettingController.swift in Sources */,
+				838E84F41D29492200C992CC /* PublishSheetView.swift in Sources */,
 				838E850B1D294CC100C992CC /* String+MoYu.swift in Sources */,
 				838E850A1D294CC100C992CC /* NSDateFormatter+MoYu.swift in Sources */,
 			);

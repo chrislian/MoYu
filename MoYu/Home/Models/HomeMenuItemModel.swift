@@ -1,5 +1,5 @@
 //
-//  MOHomeMenuItemModel.swift
+//  HomeMenuItemModel.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/9.
@@ -19,7 +19,7 @@ struct MOHomeMenuItem {
     
 }
 
-struct MOHomeMenuItemModel {
+struct HomeMenuItemModel {
     
     
     var datas:[MOHomeMenuItem] = []

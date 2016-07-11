@@ -1,5 +1,5 @@
 //
-//  MOSettingViewController.swift
+//  SettingController.swift
 //  MoYu
 //
 //  Created by Chris on 16/7/3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOSettingViewController: MOBaseViewController {
+class SettingController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class MOSettingViewController: MOBaseViewController {
 }
 
 // MARK: - UITableView delegate
-extension MOSettingViewController: UITableViewDelegate{
+extension SettingController: UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
@@ -105,7 +105,7 @@ extension MOSettingViewController: UITableViewDelegate{
 }
 
 // MARK: - UITableView datasource
-extension MOSettingViewController: UITableViewDataSource{
+extension SettingController: UITableViewDataSource{
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return datas.count

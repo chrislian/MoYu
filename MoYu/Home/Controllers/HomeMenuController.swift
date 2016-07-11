@@ -1,5 +1,5 @@
 //
-//  MOHomeMenuViewController.swift
+//  HomeMenuController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/9.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOHomeMenuViewController: UIViewController {
+class HomeMenuController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class MOHomeMenuViewController: UIViewController {
     
     
     @IBAction func headViewButtonClicked(sender: UIButton) {
-        MOLog("sender.tag = \(sender.tag)")
+        println("sender.tag = \(sender.tag)")
         
     }
     
@@ -61,16 +61,16 @@ class MOHomeMenuViewController: UIViewController {
     }
 
     //MARK: - var & let
-    @IBOutlet var menuView: MOHomeMenuView!
-    let menuModel = MOHomeMenuItemModel(items: 15)
+    @IBOutlet var menuView: HomeMenuView!
+    let menuModel = HomeMenuItemModel(items: 15)
 }
 
-extension MOHomeMenuViewController:UITableViewDelegate{
+extension HomeMenuController:UITableViewDelegate{
     
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        guard let tmpCell = cell as? MOHomeMenuCell else{
+        guard let tmpCell = cell as? HomeMenuCell else{
             return
         }
        tmpCell.updateCellWithImage(menuModel.datas[indexPath.row])
@@ -82,7 +82,7 @@ extension MOHomeMenuViewController:UITableViewDelegate{
     }
 }
 
-extension MOHomeMenuViewController:UITableViewDataSource{
+extension HomeMenuController:UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -92,7 +92,7 @@ extension MOHomeMenuViewController:UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMenu) else{
-            return MOHomeMenuCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMenu)
+            return HomeMenuCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMenu)
         }
         return cell
     }

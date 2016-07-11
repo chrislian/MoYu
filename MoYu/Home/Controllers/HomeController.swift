@@ -19,7 +19,7 @@ enum FindPublishWork:Int {
 }
 
 
-class MOHomeViewController: MOBaseViewController {
+class HomeController: BaseController {
 
     //MARK: - event response
     override func viewDidLoad() {
@@ -55,16 +55,16 @@ class MOHomeViewController: MOBaseViewController {
     //MARK: - event response
     @IBAction func titleButtonClicked(sender: AnyObject) {
         guard let buttonTag = HomeTitleButtonTag(rawValue: sender.tag) else{
-//            MOLog("button tag undefine , sender.tag:\(sender.tag)")
+//            println("button tag undefine , sender.tag:\(sender.tag)")
             return
         }
         switch buttonTag {
         case .partTime:
-            MOLog("兼职")
+            println("兼职")
         case .task:
-            MOLog("任务")
+            println("任务")
         case .credit: 
-            MOLog("积分购")
+            println("积分购")
         }
     }
     func leftRightBarButtonClicked(sender:UIBarButtonItem){
@@ -186,16 +186,16 @@ class MOHomeViewController: MOBaseViewController {
         return UIBarButtonItem(customView: button)
     }()
     
-    lazy var findWorkVc:MOFindWorkViewController = {
+    lazy var findWorkVc:FindWorkController = {
         
-        return MOFindWorkViewController()
+        return FindWorkController()
     }()
     
-    lazy var publishWorkVc:MOPublishWorkViewController = {
+    lazy var publishWorkVc:PublishWorkController = {
         
-        return MOPublishWorkViewController()
+        return PublishWorkController()
     }()
     
-    @IBOutlet var homeView: MOHomeView!
-    let homeItemView = MOHomeItemView()
+    @IBOutlet var homeView: HomeView!
+    let homeItemView = HomeItemView()
 }

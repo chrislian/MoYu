@@ -1,5 +1,5 @@
 //
-//  MOLog.swift
+//  println
 //  MoYu
 //
 //  Created by Chris on 16/4/3.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-func MOLog<T>(message:T,file:String=#file,method:String=#function,line:Int=#line){
+func println<T>(message:T,file:String=#file,method:String=#function,line:Int=#line){
+    
     print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+
 }

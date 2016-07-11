@@ -8,15 +8,15 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Left Menu View Controller-->
+        <!--Left Menu Controller-->
         <scene sceneID="Ken-tc-tdM">
             <objects>
-                <viewController id="iTK-JS-oxt" customClass="MOLeftMenuViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iTK-JS-oxt" customClass="LeftMenuController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wIN-R5-Ait"/>
                         <viewControllerLayoutGuide type="bottom" id="zHy-g7-vh8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HdI-TZ-Mbz" customClass="MOLeftMenuView" customModule="MoYu" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="HdI-TZ-Mbz" customClass="LeftMenuView" customModule="MoYu" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -139,7 +139,7 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLeftMenuIdentifier" rowHeight="50" id="kpc-Bh-is9" customClass="MOLeftTableViewCell" customModule="MoYu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLeftMenuIdentifier" rowHeight="50" id="kpc-Bh-is9" customClass="LeftMenuCell" customModule="MoYu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="177" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpc-Bh-is9" id="eNi-Nx-uWC">
@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="504.5" y="985.5"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Setting Controller-->
         <scene sceneID="JGL-gM-u8v">
             <objects>
-                <viewController id="y79-wa-ALV" customClass="MOSettingViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y79-wa-ALV" customClass="SettingController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FNW-5k-exy"/>
                         <viewControllerLayoutGuide type="bottom" id="Smi-ff-LnE"/>
@@ -246,7 +246,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="WXV-gb-sH8">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="543"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="1774.5" y="450.5"/>
         </scene>
-        <!--Account Binding View Controller-->
+        <!--Account Binding Controller-->
         <scene sceneID="BXZ-iD-B9C">
             <objects>
-                <viewController id="nYE-zW-xF4" customClass="MOAccountBindingViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nYE-zW-xF4" customClass="AccountBindingController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bQO-SF-4Ph"/>
                         <viewControllerLayoutGuide type="bottom" id="VOx-ED-ilw"/>
@@ -287,9 +287,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5tZ-cu-g9n">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="603"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAccountBindingIdentifier" rowHeight="44" id="cdU-C5-OrR" customClass="MOAccountBindingCell" customModule="MoYu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAccountBindingIdentifier" rowHeight="44" id="cdU-C5-OrR" customClass="AccountBindingCell" customModule="MoYu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cdU-C5-OrR" id="cCb-h7-If7">
@@ -317,13 +317,13 @@
                                                         <constraint firstAttribute="width" constant="40" id="C9V-u8-D5L"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ot-JP-zdc">
                                                     <rect key="frame" x="100" y="11" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -365,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="2368.5" y="367.5"/>
         </scene>
-        <!--User Guide View Controller-->
+        <!--User Guide Controller-->
         <scene sceneID="Gh8-Eb-TWl">
             <objects>
-                <viewController id="9Y1-lC-Fjd" customClass="MOUserGuideViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Y1-lC-Fjd" customClass="UserGuideController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwO-O5-nXC"/>
                         <viewControllerLayoutGuide type="bottom" id="yZ9-8K-AGU"/>
@@ -379,7 +379,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mmc-S7-gMk">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="603"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +420,7 @@
         <!--Use Info Controller-->
         <scene sceneID="1gB-ll-DtU">
             <objects>
-                <viewController id="r7p-or-BbU" customClass="MOUseInfoController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r7p-or-BbU" customClass="UseInfoController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f6t-BM-YHw"/>
                         <viewControllerLayoutGuide type="bottom" id="bVb-E7-h93"/>
@@ -445,9 +445,9 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="86" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-nr-zcd">
                                 <rect key="frame" x="-4" y="64" width="383" height="543"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="segueUseHeaderIdentifier" rowHeight="80" id="LjE-Qj-fAA" customClass="MOUserHeaderCell" customModule="MoYu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="segueUseHeaderIdentifier" rowHeight="80" id="LjE-Qj-fAA" customClass="UserHeaderCell" customModule="MoYu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="383" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LjE-Qj-fAA" id="xtr-ok-2Pb">
@@ -464,13 +464,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agU-Fq-vcZ">
                                                     <rect key="frame" x="88" y="40" width="68" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公子连" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BW-OF-NkJ">
                                                     <rect key="frame" x="88" y="10" width="51" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

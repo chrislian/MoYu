@@ -1,5 +1,5 @@
 //
-//  MYBaseViewController.swift
+//  BaseController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOBaseViewController: UIViewController {
+class BaseController: UIViewController {
 
     
     //MARK: - life cycle

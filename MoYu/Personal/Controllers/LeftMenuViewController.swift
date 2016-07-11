@@ -1,5 +1,5 @@
 //
-//  MOLeftMenuViewController.swift
+//  LeftMenuController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOLeftMenuViewController: MOBaseViewController {
+class LeftMenuController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -40,12 +40,12 @@ class MOLeftMenuViewController: MOBaseViewController {
                       UIImage(named: "leftRecruitCenter")!]
     
     
-    @IBOutlet var leftMenuView: MOLeftMenuView!
+    @IBOutlet var leftMenuView: LeftMenuView!
     
 }
 
 //MARK: - UITableView delegate
-extension MOLeftMenuViewController: UITableViewDelegate{
+extension LeftMenuController: UITableViewDelegate{
 
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -53,7 +53,7 @@ extension MOLeftMenuViewController: UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        guard let moCell = cell as? MOLeftTableViewCell else{
+        guard let moCell = cell as? LeftMenuCell else{
             return
         }
         
@@ -63,7 +63,7 @@ extension MOLeftMenuViewController: UITableViewDelegate{
 }
 
 //MARK: - UITableView datasource
-extension MOLeftMenuViewController: UITableViewDataSource{
+extension LeftMenuController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -75,6 +75,6 @@ extension MOLeftMenuViewController: UITableViewDataSource{
             return cell
         }
         
-        return MOLeftTableViewCell(style: .Default, reuseIdentifier: SB.Personal.Cell.leftMenuCell)
+        return LeftMenuCell(style: .Default, reuseIdentifier: SB.Personal.Cell.leftMenuCell)
     }
 }

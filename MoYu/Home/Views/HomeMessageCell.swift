@@ -1,5 +1,5 @@
 //
-//  MOHomeMessageCell.swift
+//  HomeMessageCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/9.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOHomeMessageCell: UITableViewCell {
+class HomeMessageCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

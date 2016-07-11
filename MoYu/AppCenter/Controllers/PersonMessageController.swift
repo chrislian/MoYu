@@ -1,5 +1,5 @@
 //
-//  MOPersonMessageViewController.swift
+//  PersonMessageController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/6.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class MOPersonMessageViewController: UIViewController {
+class PersonMessageController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class MOPersonMessageViewController: UIViewController {
     //MARK: - event response
     func rightBarButtonClicked(sender:UIButton){
         
-        MOLog("clear message")
+        println("clear message")
     }
     
     //MARK: - private method

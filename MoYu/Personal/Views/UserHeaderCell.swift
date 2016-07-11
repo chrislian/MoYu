@@ -1,5 +1,5 @@
 //
-//  MOUserHeaderCell.swift
+//  UserHeaderCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/7/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOUserHeaderCell: UITableViewCell {
+class UserHeaderCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

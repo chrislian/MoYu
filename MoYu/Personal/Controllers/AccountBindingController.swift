@@ -1,5 +1,5 @@
 //
-//  MOAccountBindingViewController.swift
+//  AccountBindingController
 //  MoYu
 //
 //  Created by Chris on 16/7/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOAccountBindingViewController: MOBaseViewController {
+class AccountBindingController: BaseController {
 
     
     //MARK: - life cycle
@@ -40,7 +40,7 @@ class MOAccountBindingViewController: MOBaseViewController {
 }
 
 // MARK: - UITableView Delegate
-extension MOAccountBindingViewController:UITableViewDelegate{
+extension AccountBindingController:UITableViewDelegate{
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
@@ -48,12 +48,12 @@ extension MOAccountBindingViewController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        guard let accountCell = cell as? MOAccountBindingCell else{ return }
+        guard let accountCell = cell as? AccountBindingCell else{ return }
         
         accountCell.selectionStyle = .None
         accountCell.update(acount: accountingModel.accounts[indexPath.row])
         accountCell.bindingButtonClick = {
-            MOLog("binding Button clicked: type:\($0)")
+            println("binding Button clicked: type:\($0)")
         }
     }
     
@@ -63,7 +63,7 @@ extension MOAccountBindingViewController:UITableViewDelegate{
 }
 
 // MARK: - UITableView datasource
-extension MOAccountBindingViewController:UITableViewDataSource{
+extension AccountBindingController:UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accountingModel.accounts.count

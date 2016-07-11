@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOLeftMenuView: UIView {
+class LeftMenuView: UIView {
 
     
     override func awakeFromNib() {

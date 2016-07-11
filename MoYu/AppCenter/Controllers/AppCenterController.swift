@@ -1,5 +1,5 @@
 //
-//  MOAppCenterViewController.swift
+//  AppCenterController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOAppCenterViewController: MOBaseViewController {
+class AppCenterController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class MOAppCenterViewController: MOBaseViewController {
     @IBOutlet weak var bannerView: UIView!
 }
 
-extension MOAppCenterViewController:UITableViewDelegate{
+extension AppCenterController:UITableViewDelegate{
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -83,15 +83,15 @@ extension MOAppCenterViewController:UITableViewDelegate{
     
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        guard let tmpCell = cell as? MOAppCenterTableViewCell else{
-            MOLog("cell error")
+        guard let tmpCell = cell as? AppCenterCell else{
+            println("cell error")
             return
         }
         tmpCell.updateCell(cellImages[indexPath.section][indexPath.row], text: cellTitles[indexPath.section][indexPath.row])
     }
 }
 
-extension MOAppCenterViewController:UITableViewDataSource{
+extension AppCenterController:UITableViewDataSource{
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return cellTitles.count
@@ -107,6 +107,6 @@ extension MOAppCenterViewController:UITableViewDataSource{
             return cell
         }
         
-        return MOLeftTableViewCell(style: .Default, reuseIdentifier: SB.AppCenter.Cell.appCenter)
+        return LeftMenuCell(style: .Default, reuseIdentifier: SB.AppCenter.Cell.appCenter)
     }
 }

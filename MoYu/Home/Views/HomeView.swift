@@ -1,5 +1,5 @@
 //
-//  MOHomeView.swift
+//  HomeView.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/3.
@@ -10,7 +10,7 @@ import UIKit
 
 typealias FindPublishClosure = (type:FindPublishWork)->Void
 
-class MOHomeView: UIView {
+class HomeView: UIView {
 
     //MARK: - event response
     @IBAction func selectTypeButtonClicked(sender: UIButton) {
@@ -40,7 +40,7 @@ class MOHomeView: UIView {
         }
         
         guard let type = FindPublishWork(rawValue: sender.tag) else{
-            MOLog("undefine tag")
+            println("undefine tag")
             return
         }
         

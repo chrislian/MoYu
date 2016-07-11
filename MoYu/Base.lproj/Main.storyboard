@@ -7,15 +7,15 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MOHomeViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MOHomeView" customModule="MoYu" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeView" customModule="MoYu" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -380,15 +380,15 @@
             </objects>
             <point key="canvasLocation" x="648.5" y="443.5"/>
         </scene>
-        <!--Home Menu View Controller-->
+        <!--Home Menu Controller-->
         <scene sceneID="sYT-XX-EWo">
             <objects>
-                <viewController id="gxx-DA-Z0s" customClass="MOHomeMenuViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gxx-DA-Z0s" customClass="HomeMenuController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jii-HK-cbS"/>
                         <viewControllerLayoutGuide type="bottom" id="VbM-zg-sAK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zHd-hU-PJO" customClass="MOHomeMenuView" customModule="MoYu" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="zHd-hU-PJO" customClass="HomeMenuView" customModule="MoYu" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -689,7 +689,7 @@
                                         <rect key="frame" x="0.0" y="44" width="383" height="515"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMenuIdentifier" rowHeight="80" id="p3K-jp-ZrJ" customClass="MOHomeMenuCell" customModule="MoYu" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMenuIdentifier" rowHeight="80" id="p3K-jp-ZrJ" customClass="HomeMenuCell" customModule="MoYu" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="383" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3K-jp-ZrJ" id="kPz-ah-OjH">
@@ -815,15 +815,15 @@
             </objects>
             <point key="canvasLocation" x="1746.5" y="38.5"/>
         </scene>
-        <!--Home Search View Controller-->
+        <!--Home Search Controller-->
         <scene sceneID="ocT-aw-4PZ">
             <objects>
-                <viewController id="AtK-yL-2Xg" customClass="MOHomeSearchViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AtK-yL-2Xg" customClass="HomeSearchController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cHB-3y-EQb"/>
                         <viewControllerLayoutGuide type="bottom" id="wsI-VP-VIU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="luf-yb-V7c" customClass="MOHomeSearchView" customModule="MoYu" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="luf-yb-V7c" customClass="HomeSearchView" customModule="MoYu" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -903,10 +903,10 @@
             </objects>
             <point key="canvasLocation" x="885.5" y="865"/>
         </scene>
-        <!--Home Message View Controller-->
+        <!--Home Message Controller-->
         <scene sceneID="NbZ-vr-JqB">
             <objects>
-                <viewController id="qyh-hv-aNj" customClass="MOHomeMessageViewController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qyh-hv-aNj" customClass="HomeMessageController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aay-gL-mJx"/>
                         <viewControllerLayoutGuide type="bottom" id="686-yD-dlr"/>
@@ -919,7 +919,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMessageIdentifier" rowHeight="80" id="Qbe-i0-gaZ" customClass="MOHomeMessageCell" customModule="MoYu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMessageIdentifier" rowHeight="80" id="Qbe-i0-gaZ" customClass="HomeMessageCell" customModule="MoYu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qbe-i0-gaZ" id="uzs-A2-Ed6">

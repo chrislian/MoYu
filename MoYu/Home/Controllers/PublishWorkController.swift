@@ -1,5 +1,5 @@
 //
-//  MOFindWorkViewController.swift
+//  PublishWorkController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/6.
@@ -8,16 +8,14 @@
 
 import UIKit
 
-class MOFindWorkViewController: UIViewController {
+class PublishWorkController: UIViewController {
 
-    //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor ( red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0 )
-        
+
         self.setupView()
         self.startLocation()
-        self.followMode()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -26,7 +24,7 @@ class MOFindWorkViewController: UIViewController {
         locationService.delegate = self
         mapView.viewWillAppear()
         mapView.delegate = self
-        
+        self.followMode()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -74,9 +72,22 @@ class MOFindWorkViewController: UIViewController {
         mapView.snp_makeConstraints { (make) in
             make.edges.equalTo(mapView.superview!)
         }
+        
+        self.view.addSubview(publishSheetView)
+        publishSheetView.snp_makeConstraints { (make) in
+            make.left.right.bottom.equalTo(self.view)
+        }
+        publishSheetView.bringSubviewToFront(mapView)
+        //publish button closure
+        publishSheetView.publishClosure = { type in
+            switch type {
+            case .PartTime:break
+            case .Task:break
+            }
+        }
     }
     
-
+    
     //MARK: - var & let
     lazy private var mapView:BMKMapView = {
         let map = BMKMapView()
@@ -93,16 +104,18 @@ class MOFindWorkViewController: UIViewController {
         location.allowsBackgroundLocationUpdates = true
         return location
     }()
+    
+    private let publishSheetView = PublishSheetView()
 }
 
 //MARK: - BMKMapView Delegate
-extension MOFindWorkViewController:BMKMapViewDelegate{
+extension PublishWorkController:BMKMapViewDelegate{
     
 }
 
 //MARK: - BMKLocationService Delegate
-extension MOFindWorkViewController:BMKLocationServiceDelegate{
-
+extension PublishWorkController:BMKLocationServiceDelegate{
+    
     /**
      *在地图View将要启动定位时，会调用此函数
      *@param mapView 地图View
@@ -137,5 +150,5 @@ extension MOFindWorkViewController:BMKLocationServiceDelegate{
         //print("didStopLocatingUser")
     }
     
-
+    
 }

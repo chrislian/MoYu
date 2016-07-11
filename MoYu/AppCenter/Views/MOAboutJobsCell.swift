@@ -1,5 +1,5 @@
 //
-//  MOAboutJobsTableViewCell.swift
+//  AboutJobsCell.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOAboutJobsCell: UITableViewCell {
+class AboutJobsCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

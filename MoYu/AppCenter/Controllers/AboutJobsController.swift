@@ -1,5 +1,5 @@
 //
-//  MOAboutJobsViewController.swift
+//  AboutJobsController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOAboutJobsViewController: UIViewController {
+class AboutJobsController: UIViewController {
 
     //MARK: -  life cycle
     override func viewDidLoad() {
@@ -67,7 +67,7 @@ class MOAboutJobsViewController: UIViewController {
     }()
 }
 
-extension MOAboutJobsViewController: UITableViewDelegate{
+extension AboutJobsController: UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
@@ -86,7 +86,7 @@ extension MOAboutJobsViewController: UITableViewDelegate{
     }
 }
 
-extension MOAboutJobsViewController: UITableViewDataSource{
+extension AboutJobsController: UITableViewDataSource{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 10
@@ -99,7 +99,7 @@ extension MOAboutJobsViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.aboutJobs) else{
-            return MOAboutJobsCell(style: .Default, reuseIdentifier:SB.AppCenter.Cell.aboutJobs)
+            return AboutJobsCell(style: .Default, reuseIdentifier:SB.AppCenter.Cell.aboutJobs)
         }
         return cell
     }

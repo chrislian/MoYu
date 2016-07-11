@@ -1,5 +1,5 @@
 //
-//  MOHomeSearchViewController.swift
+//  HomeSearchController.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/10.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOHomeSearchViewController: UIViewController {
+class HomeSearchController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {

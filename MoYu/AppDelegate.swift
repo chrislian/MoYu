@@ -39,7 +39,7 @@ import UIKit
 import REFrostedViewController
 
 @UIApplicationMain
-class MOAppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var mapManager = BMKMapManager()
@@ -49,14 +49,14 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if !mapManager.start("r9LH3rGsee4Iks2ogmnC9jMfSqWEdnIR", generalDelegate: self){
-            MOLog("Manager start failed")
+            println("Manager start failed")
         }
-        //self.turnToHomeViewController()
-        if let siginInVc = SB.SignIn.Vc.signIn() {
-            self.window?.rootViewController = siginInVc
-        }else{
-            self.turnToHomeViewController()
-        }
+        self.turnToHomeViewController()
+//        if let siginInVc = SB.SignIn.Vc.signIn() {
+//            self.window?.rootViewController = siginInVc
+//        }else{
+//            self.turnToHomeViewController()
+//        }
         
         self.window?.makeKeyAndVisible()
         return true
@@ -101,17 +101,17 @@ class MOAppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 //MARK: - Baidu GeneralDelegate
-extension MOAppDelegate:BMKGeneralDelegate{
+extension AppDelegate:BMKGeneralDelegate{
     
     func onGetNetworkState(iError: Int32) {
         if iError != 0{
-            MOLog("联网失败，错误码：Error\(iError)")
+            println("联网失败，错误码：Error\(iError)")
         }
     }
     
     func onGetPermissionState(iError: Int32) {
         if iError != 0{
-            MOLog("授权失败，错误码：Error\(iError)")
+            println("授权失败，错误码：Error\(iError)")
         }
     }
 }

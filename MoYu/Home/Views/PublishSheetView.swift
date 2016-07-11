@@ -1,5 +1,5 @@
 //
-//  MOPublishSheetView.swift
+//  PublishSheetView.swift
 //  MoYu
 //
 //  Created by Chris on 16/4/16.
@@ -13,7 +13,7 @@ enum MOPublishSheetMode:Int {
     case PartTime = 0,Task
 }
 
-class MOPublishSheetView: UIView {
+class PublishSheetView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: CGRectZero)
