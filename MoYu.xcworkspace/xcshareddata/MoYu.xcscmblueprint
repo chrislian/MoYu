@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A0159007FA352FFA30E4D54766D0735D46DD09F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B17407D1D41BB7DCA795DDE5AAEDEB5862BD7136" : 0,
+    "A0159007FA352FFA30E4D54766D0735D46DD09F6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "09792614-245F-4623-828A-741E53551B75",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B17407D1D41BB7DCA795DDE5AAEDEB5862BD7136" : "MoYu\/MoYu\/Miscellaneous\/SFHFKeychainUtils\/",
+    "A0159007FA352FFA30E4D54766D0735D46DD09F6" : "MoYu\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MoYu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MoYu.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.oschina.net:chrislian\/MoYu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A0159007FA352FFA30E4D54766D0735D46DD09F6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:chrislian\/SFHFKeychainUtils.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B17407D1D41BB7DCA795DDE5AAEDEB5862BD7136"
+    }
+  ]
+}

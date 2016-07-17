@@ -19,6 +19,8 @@
 		8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */; };
 		8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */; };
 		8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6451D3B407500DF6D78 /* BaseController.swift */; };
+		8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */; };
+		8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64F1D3B666C00DF6D78 /* MODevice.swift */; };
 		833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* AccountBindingController.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
@@ -113,6 +115,9 @@
 		8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPaswordeView.swift; sourceTree = "<group>"; };
 		8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocolController.swift; sourceTree = "<group>"; };
 		8327B6451D3B407500DF6D78 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		8327B64A1D3B65C200DF6D78 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		8327B64F1D3B666C00DF6D78 /* MODevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MODevice.swift; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
 		833180061D2A86F200EFAF69 /* AccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingController.swift; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
@@ -288,6 +293,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */ = {
+			isa = PBXGroup;
+			children = (
+				8327B64A1D3B65C200DF6D78 /* SFHFKeychainUtils.h */,
+				8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */,
+			);
+			path = SFHFKeychainUtils;
+			sourceTree = "<group>";
+		};
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +322,8 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */,
+				8327B64F1D3B666C00DF6D78 /* MODevice.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -927,6 +943,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
+				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
 				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
@@ -957,6 +974,7 @@
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
+				8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */,
 				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
