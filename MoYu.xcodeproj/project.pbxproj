@@ -16,6 +16,8 @@
 		831C33DF1CB0B1E900157B67 /* MoYuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33DE1CB0B1E900157B67 /* MoYuTests.swift */; };
 		831C33EA1CB0B1E900157B67 /* MoYuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33E91CB0B1E900157B67 /* MoYuUITests.swift */; };
 		8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B63E1D3B24FF00DF6D78 /* Router.swift */; };
+		8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */; };
+		8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */; };
 		833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* AccountBindingController.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
@@ -108,6 +110,8 @@
 		831C33E91CB0B1E900157B67 /* MoYuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuUITests.swift; sourceTree = "<group>"; };
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8327B63E1D3B24FF00DF6D78 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPaswordeView.swift; sourceTree = "<group>"; };
+		8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocolController.swift; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
 		833180061D2A86F200EFAF69 /* AccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingController.swift; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 			children = (
 				834EC4121D3233180046FBEF /* SignInByAuthController.swift */,
 				834EC4161D3236460046FBEF /* SignInByPasswordController.swift */,
+				8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				834EC4181D3287560046FBEF /* SignInByAuthView.swift */,
+				8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -912,8 +918,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
+				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
 				8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,

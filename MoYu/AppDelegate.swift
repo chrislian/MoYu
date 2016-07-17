@@ -51,12 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !mapManager.start("r9LH3rGsee4Iks2ogmnC9jMfSqWEdnIR", generalDelegate: self){
             println("Manager start failed")
         }
-        self.turnToHomeViewController()
-//        if let siginInVc = SB.SignIn.Vc.signIn() {
-//            self.window?.rootViewController = siginInVc
-//        }else{
-//            self.turnToHomeViewController()
-//        }
+        //self.turnToHomeViewController()
+        if let siginInVc = SB.SignIn.Vc.signIn() {
+            self.window?.rootViewController = siginInVc
+        }else{
+            self.turnToHomeViewController()
+        }
         
         self.window?.makeKeyAndVisible()
         return true
