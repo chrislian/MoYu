@@ -18,6 +18,7 @@
 		8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B63E1D3B24FF00DF6D78 /* Router.swift */; };
 		8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */; };
 		8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */; };
+		8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6451D3B407500DF6D78 /* BaseController.swift */; };
 		833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* AccountBindingController.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
@@ -55,7 +56,6 @@
 		838E84F61D29492200C992CC /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DC1D29492200C992CC /* SettingController.swift */; };
 		838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84DF1D29492200C992CC /* LeftMenuCell.swift */; };
 		838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84E01D29492200C992CC /* LeftTableViewCell.swift */; };
-		838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84F91D2949B600C992CC /* MOBaseViewController.swift */; };
 		838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84FC1D294CC100C992CC /* NavigationBar+MoYu.swift */; };
 		838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84FD1D294CC100C992CC /* NSDateExtension.swift */; };
 		838E850A1D294CC100C992CC /* NSDateFormatter+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84FE1D294CC100C992CC /* NSDateFormatter+MoYu.swift */; };
@@ -112,6 +112,7 @@
 		8327B63E1D3B24FF00DF6D78 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPaswordeView.swift; sourceTree = "<group>"; };
 		8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocolController.swift; sourceTree = "<group>"; };
+		8327B6451D3B407500DF6D78 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
 		833180061D2A86F200EFAF69 /* AccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingController.swift; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
@@ -150,7 +151,6 @@
 		838E84DC1D29492200C992CC /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		838E84DF1D29492200C992CC /* LeftMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
 		838E84E01D29492200C992CC /* LeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewCell.swift; sourceTree = "<group>"; };
-		838E84F91D2949B600C992CC /* MOBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOBaseViewController.swift; sourceTree = "<group>"; };
 		838E84FC1D294CC100C992CC /* NavigationBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationBar+MoYu.swift"; sourceTree = "<group>"; };
 		838E84FD1D294CC100C992CC /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		838E84FE1D294CC100C992CC /* NSDateFormatter+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+MoYu.swift"; sourceTree = "<group>"; };
@@ -249,6 +249,7 @@
 				831C33C91CB0B1E900157B67 /* AppDelegate.swift */,
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
+				8327B6441D3B406600DF6D78 /* Base */,
 				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
 				831632AC1D2EA30900205211 /* RemoteRequest */,
 				838E84BD1D29492200C992CC /* AppCenter */,
@@ -279,6 +280,14 @@
 			path = MoYuUITests;
 			sourceTree = "<group>";
 		};
+		8327B6441D3B406600DF6D78 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8327B6451D3B407500DF6D78 /* BaseController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,7 +308,6 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
-				838E84F91D2949B600C992CC /* MOBaseViewController.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -933,12 +941,12 @@
 				838E84EA1D29492200C992CC /* HomeSearchController.swift in Sources */,
 				833A86381D2BFC43002E8BBD /* MOUseInfoController.swift in Sources */,
 				834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */,
-				838E84FA1D2949B600C992CC /* MOBaseViewController.swift in Sources */,
 				838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */,
 				838E84F31D29492200C992CC /* HomeView.swift in Sources */,
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
 				833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */,
+				8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */,
 				833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */,
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,

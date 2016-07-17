@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RegisterProtocolController: UIViewController {
+class RegisterProtocolController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "注册协议"
+        self.setNavigation(title: "注册协议")
     }
 }
