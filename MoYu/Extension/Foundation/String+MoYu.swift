@@ -23,6 +23,10 @@ extension String{
         }
         return "false"
     }
+    
+    func mo_length()->Int{
+       return self.characters.count
+    }
 }
 
 extension String {

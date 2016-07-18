@@ -48,16 +48,26 @@ class SignInByPasswordView: UIView {
         userTextfield.textColor = UIColor.whiteColor()
         userTextfield.placeholder = "请输入您的手机号码"
         userTextfield.font = UIFont.mo_font(.smaller)
+        userTextfield.keyboardType = .NumberPad
         
         passwordTextFiled.textColor = UIColor.whiteColor()
         passwordTextFiled.placeholder = "6-25位字母、数字或下划线"
         passwordTextFiled.font = UIFont.mo_font(.smaller)
+        passwordTextFiled.keyboardType = .ASCIICapable
+        passwordTextFiled.clearButtonMode = .WhileEditing
+        passwordTextFiled.secureTextEntry = true
         
         userProtocolButton.titleLabel?.font = UIFont.mo_font()
         userProtocolButton.setTitle("用户协议", forState: .Normal)
         userProtocolButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
         
     }
+    //MARK: - public method
+    func update(header image:UIImage?){
+    
+        self.headImageView.image = image
+    }
+    
     
     
     //MARK: - var & let

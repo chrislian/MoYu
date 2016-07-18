@@ -356,6 +356,9 @@
                             <outlet property="userTextfield" destination="qQY-pw-vzg" id="RBE-ae-VhE"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="signInView" destination="vJl-Pu-PEL" id="oo6-jl-8bN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kj-QT-gV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -70,6 +70,7 @@
 		838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */; };
 		838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */; };
 		838E85141D294D6200C992CC /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85131D294D6200C992CC /* UserGuideController.swift */; };
+		83A680D61D3CB86200570699 /* SignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A680D51D3CB86200570699 /* SignInType.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
@@ -168,6 +169,7 @@
 		838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MoYu.swift"; sourceTree = "<group>"; };
 		838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
 		838E85131D294D6200C992CC /* UserGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
+		83A680D51D3CB86200570699 /* SignInType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInType.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		834EC40E1D3232C70046FBEF /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				83A680D51D3CB86200570699 /* SignInType.swift */,
 				834EC4111D3233180046FBEF /* Controllers */,
 				834EC4131D3233180046FBEF /* Models */,
 				834EC4141D3233180046FBEF /* Views */,
@@ -438,11 +441,11 @@
 		838E84C81D29492200C992CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				838E84CD1D29492200C992CC /* HomeController.swift */,
 				838E84C91D29492200C992CC /* FindWorkController.swift */,
 				838E84CA1D29492200C992CC /* HomeMenuController.swift */,
 				838E84CB1D29492200C992CC /* HomeMessageController.swift */,
 				838E84CC1D29492200C992CC /* HomeSearchController.swift */,
-				838E84CD1D29492200C992CC /* HomeController.swift */,
 				838E84CE1D29492200C992CC /* PublishWorkController.swift */,
 			);
 			path = Controllers;
@@ -969,6 +972,7 @@
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
+				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
