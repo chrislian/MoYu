@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let mainUrl = "http://www.ushesoft.com/"
+private let mainUrl = "http://www.moyu.ushesoft.com/"
 
 enum Router {
     case SignIn(phone:String, verifyCode:String)

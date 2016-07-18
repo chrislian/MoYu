@@ -70,7 +70,7 @@ class Remote{
             let json = JSON(value)
             
             let status = json["status"].intValue
-            let msg = json["msg"].string
+            let msg = json["mess"].string
             let data = json["data"]
             
             Async.main{ callback (statusCode: status,message: msg,json: data) }
