@@ -37,7 +37,7 @@ public class MOImageView: UIImageView {
                 super.image = newValue
                 return
             }
-            super.image = mg.drawRectWithRoundedCorner(radius: self.radius, self.bounds.size)
+            super.image = mg.mo_drawRectWithRoundedCorner(radius: self.radius, self.bounds.size)
         }
         get{
             return super.image
