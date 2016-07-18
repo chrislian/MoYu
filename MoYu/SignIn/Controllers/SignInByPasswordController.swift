@@ -32,7 +32,7 @@ private enum TextFieldType:Int{
     }
 }
 
-class SignInByPasswordController: BaseController {
+class SignInByPasswordController: BaseController,SignInType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +49,13 @@ class SignInByPasswordController: BaseController {
     //MARK: - event reponse
     func enterButtonClicked(sender:UIButton){
         
-        guard let username = signInView.userTextfield.text,
-            let passowrd = signInView.passwordTextFiled.text else{
+        guard let username = signInView.userTextfield.text where !username.isEmpty,
+            let password = signInView.passwordTextFiled.text where !password.isEmpty else{
                 println("手机或密码不能为空")
                 return
         }
+        
+        self.dismissSignInView()
     }
     
     
@@ -65,6 +67,8 @@ class SignInByPasswordController: BaseController {
         
         signInView.passwordTextFiled.delegate = self
         signInView.passwordTextFiled.tag = TextFieldType.Password.rawValue
+        
+        signInView.enterButton.addTarget(self, action: #selector(enterButtonClicked), forControlEvents: .TouchUpInside)
     }
     
     

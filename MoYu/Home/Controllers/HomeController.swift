@@ -19,13 +19,15 @@ enum FindPublishWork:Int {
 }
 
 
-class HomeController: BaseController {
+class HomeController: BaseController,SignInType {
 
     //MARK: - event response
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupHomeView()
+        
+        self.showSignInView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +35,12 @@ class HomeController: BaseController {
         
         self.navigationController?.navigationBar.mo_hide(hairLine: true)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)

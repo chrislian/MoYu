@@ -27,6 +27,8 @@ class Remote{
         
         Alamofire.request(.POST, urlString, parameters: parameters).responseJSON {
             
+            println("response:\($0)")
+            
             self.handleResponse($0, callback: callback)
         }
     }
