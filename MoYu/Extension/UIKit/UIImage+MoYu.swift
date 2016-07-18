@@ -58,7 +58,7 @@ extension UIImage{
 
 
 extension UIImage {
-    func drawRectWithRoundedCorner(radius  radius: CGFloat, _ sizetoFit: CGSize) -> UIImage {
+    func mo_drawRectWithRoundedCorner(radius  radius: CGFloat, _ sizetoFit: CGSize) -> UIImage {
         let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: sizetoFit)
         
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
@@ -76,16 +76,38 @@ extension UIImage {
     }
 }
 
+
+
 extension UIImage {
-    class func blurEffect(cgImage: CGImageRef, boxSize: CGFloat) -> UIImage! {
+    
+    /**
+     颜色转图片
+     
+     - parameter color:
+     
+     - returns: UIImage
+     */
+    class func mo_createImageWithColor(color:UIColor)->UIImage{
+        
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+    class func mo_blurEffect(cgImage: CGImageRef, boxSize: CGFloat) -> UIImage! {
         return UIImage(CGImage: cgImage.blurEffect(boxSize))
     }
     
-    func blurEffect(boxSize: CGFloat) -> UIImage! {
-        return UIImage(CGImage: bluredCGImage(boxSize))
+    func mo_blurEffect(boxSize: CGFloat) -> UIImage! {
+        return UIImage(CGImage: mo_bluredCGImage(boxSize))
     }
     
-    func bluredCGImage(boxSize: CGFloat) -> CGImageRef! {
+    func mo_bluredCGImage(boxSize: CGFloat) -> CGImageRef! {
         return CGImage!.blurEffect(boxSize)
     }
 }

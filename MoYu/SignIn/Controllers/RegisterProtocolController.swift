@@ -15,4 +15,16 @@ class RegisterProtocolController: BaseController {
 
         self.setNavigation(title: "注册协议")
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationBarOpaque = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationBarOpaque = false
+    }
 }

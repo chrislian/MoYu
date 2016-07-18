@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInByAuthController: UIViewController {
+class SignInByAuthController: BaseController {
 
     //MARK: - private method
     override func viewDidLoad() {
@@ -17,6 +17,13 @@ class SignInByAuthController: UIViewController {
         self.setupView()
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationBarOpaque = false
+    }
+    
     
     //MARK: - event reponse
     func enterButtonTap(sender: UIButton){
@@ -30,10 +37,6 @@ class SignInByAuthController: UIViewController {
 
     //MARK: - private method
     private func setupView(){
-        //set navigationBar opaque false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         
         signInView.enterButton.addTarget(self, action: #selector(enterButtonTap(_:)), forControlEvents: .TouchUpInside)
         signInView.authButton.addTarget(self, action: #selector(authButtonTap(_:)),forControlEvents: .TouchUpInside)

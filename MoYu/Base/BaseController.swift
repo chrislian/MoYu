@@ -27,6 +27,13 @@ class BaseController: UIViewController {
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationBarOpaque = true
+    }
+    
+    
     // MARK: private func
     @objc private func navigationButtonClicked(sender:UIButton) {
         if sender === self.leftNavigationButton{
@@ -150,6 +157,22 @@ class BaseController: UIViewController {
     
     private var rightNavigationButton: UIButton?
     
+    
+    //MARK: - public var
     var leftButtonClourse: NavigationButtonClourse?
     var rightButtonClourse: NavigationButtonClourse?
+    
+    var navigationBarOpaque:Bool = false{
+        didSet{
+            if navigationBarOpaque{
+                self.navigationController?.navigationBar.setBackgroundImage( UIImage.mo_createImageWithColor(UIColor.mo_main()), forBarMetrics: .Default)
+                self.navigationController?.navigationBar.shadowImage = UIImage.mo_createImageWithColor(UIColor.mo_silver())
+                self.navigationController?.navigationBar.translucent = false
+            }else{
+                self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+                self.navigationController?.navigationBar.shadowImage = UIImage()
+                self.navigationController?.navigationBar.translucent = true
+            }
+        }
+    }
 }
