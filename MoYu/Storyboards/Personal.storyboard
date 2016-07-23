@@ -560,14 +560,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nlv-pD-XaJ">
-                                                    <rect key="frame" x="16" y="8" width="28" height="28"/>
+                                                    <rect key="frame" x="16" y="10" width="24" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="28" id="1Vn-aW-ZqD"/>
+                                                        <constraint firstAttribute="width" constant="24" id="1Vn-aW-ZqD"/>
                                                         <constraint firstAttribute="width" secondItem="Nlv-pD-XaJ" secondAttribute="height" multiplier="1:1" id="Z1N-qQ-4ky"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kw4-Mp-KIk">
-                                                    <rect key="frame" x="52" y="11" width="34" height="21"/>
+                                                    <rect key="frame" x="48" y="11" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>

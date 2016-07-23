@@ -16,11 +16,11 @@ private enum MyPurseType{
     func image()->UIImage?{
         switch self {
         case .Balance:
-            return UIImage(named: "leftMyPurse")
+            return UIImage(named: "myPurseBalance")
         case .Recharge:
-            return UIImage(named: "leftMyPurse")
+            return UIImage(named: "myPurseRecharge")
         case .Withdraw:
-            return UIImage(named: "leftMyPurse")
+            return UIImage(named: "myPurseWithdraw")
         }
     }
     
@@ -87,6 +87,16 @@ extension MyPurseController: UITableViewDelegate{
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let title = cellItems[indexPath.row].title()
+        let vc = UIViewController()
+        vc.title = title
+        vc.view.backgroundColor = UIColor.mo_mercury()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
