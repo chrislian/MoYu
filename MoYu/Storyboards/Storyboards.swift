@@ -47,12 +47,14 @@ struct SB {
             static let leftMenuCell = "cellLeftMenuIdentifier"
             static let accountBindingCell = "cellAccountBindingIdentifier"
             static let userHeaderCell = "segueUseHeaderIdentifier"
+            static let myPurseCell = "cellMyPurseIdentifier"
         }
         
         struct Segue {
             static let leftSetting = "segueSetting"
             static let userGuide = "segueUserGuide"
             static let accountBinding = "segueAccountBinding"
+            static let myPurse = "segueMyPurse"
         }
         
         struct Vc {

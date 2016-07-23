@@ -71,6 +71,8 @@
 		838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */; };
 		838E85141D294D6200C992CC /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85131D294D6200C992CC /* UserGuideController.swift */; };
 		83A680D61D3CB86200570699 /* SignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A680D51D3CB86200570699 /* SignInType.swift */; };
+		83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */; };
+		83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
@@ -170,6 +172,8 @@
 		838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
 		838E85131D294D6200C992CC /* UserGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
 		83A680D51D3CB86200570699 /* SignInType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInType.swift; sourceTree = "<group>"; };
+		83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseController.swift; sourceTree = "<group>"; };
+		83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseCell.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
@@ -491,6 +495,7 @@
 				838E85131D294D6200C992CC /* UserGuideController.swift */,
 				833180061D2A86F200EFAF69 /* AccountBindingController.swift */,
 				833A86371D2BFC43002E8BBD /* MOUseInfoController.swift */,
+				83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				838E84E01D29492200C992CC /* LeftTableViewCell.swift */,
 				833180081D2A895800EFAF69 /* AccountBindingCell.swift */,
 				833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */,
+				83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -947,6 +953,7 @@
 			files = (
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
+				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
 				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
@@ -964,6 +971,7 @@
 				838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */,
 				838E84F31D29492200C992CC /* HomeView.swift in Sources */,
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
+				83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
 				833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */,
 				8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */,

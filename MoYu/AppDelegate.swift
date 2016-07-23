@@ -88,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let leftMenuVc = SB.Personal.Vc.leftMenu() else{
                 return
         }
+        
         let frostedVc = REFrostedViewController(contentViewController: homeVc, menuViewController: leftMenuVc)
         frostedVc.direction = .Left
         frostedVc.liveBlurBackgroundStyle = .Light

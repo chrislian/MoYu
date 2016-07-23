@@ -53,7 +53,7 @@ class BaseController: UIViewController {
         navigationTitleLable.textColor = textColor
     }
 
-    func setLeftNavigationButton(nomal image:UIImage?,highlighted:UIImage?,size:CGSize = CGSizeZero){
+    func setLeftNavigationButton(nomal image:UIImage?,highlighted:UIImage?,size:CGSize = CGSize(width: 20, height: 32)){
 
         leftNavigationButton = createButton(nomal: image, highlighted: highlighted,size: size)
         setLeftBar(button:leftNavigationButton)
@@ -64,7 +64,7 @@ class BaseController: UIViewController {
         setLeftBar(button:leftNavigationButton)
     }
 
-    func setRightNavigationButton(nomal image:UIImage?,highlighted:UIImage?,size:CGSize = CGSizeZero){
+    func setRightNavigationButton(nomal image:UIImage?,highlighted:UIImage?,size:CGSize = CGSize(width: 20, height: 32)){
         
         if rightNavigationButton != nil {
             rightNavigationButton = nil

@@ -60,7 +60,16 @@ extension LeftMenuController: UITableViewDelegate{
         moCell.updateCell(cellImages[indexPath.row], text: cellTitles[indexPath.row])
         moCell.selectionStyle = .None
     }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row == 0{
+            self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
+        }
+    }
 }
+
 
 //MARK: - UITableView datasource
 extension LeftMenuController: UITableViewDataSource{
