@@ -640,7 +640,7 @@
 				TargetAttributes = {
 					831C33C51CB0B1E900157B67 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 3RN8G6FB5H;
+						DevelopmentTeam = 78AL42KSBM;
 					};
 					831C33D91CB0B1E900157B67 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1156,14 +1156,14 @@
 			baseConfigurationReference = 9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Weilai Hao (3N982WPWDG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MoYu/BaiduMapAPI",
 				);
 				INFOPLIST_FILE = MoYu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chris.MoYu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lxb.MoYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoYu/MoYu-Bridging-Header.h";
 			};
@@ -1174,14 +1174,14 @@
 			baseConfigurationReference = B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Weilai Hao (3RN8G6FB5H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MoYu/BaiduMapAPI",
 				);
 				INFOPLIST_FILE = MoYu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chris.MoYu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lxb.MoYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MoYu/MoYu-Bridging-Header.h";
 			};
