@@ -20,7 +20,7 @@ extension SignInType where Self: UIViewController{
     
     func showSignInView(completion: (Void->Void)? = nil ){
         
-        guard let nav = SB.SignIn.Vc.signIn() else{
+        guard let nav = SB.SignIn.Vc.root() else{
             println("load signin failed")
             return
         }

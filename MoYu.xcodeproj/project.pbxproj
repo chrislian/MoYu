@@ -73,6 +73,7 @@
 		83A680D61D3CB86200570699 /* SignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A680D51D3CB86200570699 /* SignInType.swift */; };
 		83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */; };
 		83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */; };
+		83BCD61C1D47122700FA4388 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BCD61B1D47122700FA4388 /* Setting.storyboard */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
@@ -174,6 +175,7 @@
 		83A680D51D3CB86200570699 /* SignInType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInType.swift; sourceTree = "<group>"; };
 		83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseController.swift; sourceTree = "<group>"; };
 		83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseCell.swift; sourceTree = "<group>"; };
+		83BCD61B1D47122700FA4388 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
@@ -350,10 +352,11 @@
 			children = (
 				8389C6561CB0F026003E96B1 /* Storyboards.swift */,
 				831C33CD1CB0B1E900157B67 /* Main.storyboard */,
-				834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */,
 				83EF606A1CB8919800D20F08 /* AppCenter.storyboard */,
 				831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */,
 				834EC40C1D322BD80046FBEF /* SignIn.storyboard */,
+				834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */,
+				83BCD61B1D47122700FA4388 /* Setting.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */,
 				834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */,
 				833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */,
+				83BCD61C1D47122700FA4388 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

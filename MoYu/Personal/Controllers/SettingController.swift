@@ -92,9 +92,9 @@ extension SettingController: UITableViewDelegate{
 
         switch (indexPath.section,indexPath.row) {
         case (0,2):
-            self.performSegueWithIdentifier(SB.Personal.Segue.accountBinding, sender: nil)
+            self.performSegueWithIdentifier(SB.Setting.Segue.accountBinding, sender: nil)
         case (1,0):
-            self.performSegueWithIdentifier(SB.Personal.Segue.userGuide, sender: nil)
+            self.performSegueWithIdentifier(SB.Setting.Segue.userGuide, sender: nil)
         default:
             let vc = UIViewController()
             vc.title = datas[indexPath.section][indexPath.row]

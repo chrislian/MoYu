@@ -22,6 +22,16 @@ class LeftMenuController: BaseController {
         
     }
     
+    @IBAction func settingButtonClicked(sender: UIButton) {
+        
+        guard let vc = SB.Setting.Vc.root() else{
+            println("load setting vc failed")
+            return
+        }
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
     //MARK: - private method
     private func setupLeftMenuView(){
         leftMenuView.tableView.delegate = self

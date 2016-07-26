@@ -13,7 +13,7 @@ struct SB {
     //MARK: - sign in storybaord
     struct SignIn {
         struct Vc{
-            static func signIn()->UIViewController?{
+            static func root()->UIViewController?{
                 return UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController()
             }
         }
@@ -34,7 +34,7 @@ struct SB {
         }
         
         struct Vc {
-            static func home() -> UIViewController?{
+            static func root() -> UIViewController?{
                 return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             }
         }
@@ -51,18 +51,30 @@ struct SB {
         }
         
         struct Segue {
-            static let leftSetting = "segueSetting"
-            static let userGuide = "segueUserGuide"
-            static let accountBinding = "segueAccountBinding"
             static let myPurse = "segueMyPurse"
         }
         
         struct Vc {
-            static func leftMenu() -> UIViewController?{
+            static func root() -> UIViewController?{
                 return UIStoryboard(name: "Personal", bundle: nil).instantiateInitialViewController()
             }
         }
     }
+    
+    struct Setting {
+        
+        struct Segue {
+            static let userGuide = "segueUserGuide"
+            static let accountBinding = "segueAccountBinding"
+        }
+        
+        struct Vc{
+            static func root() -> UIViewController?{
+                return UIStoryboard(name: "Setting", bundle: nil).instantiateInitialViewController()
+            }
+        }
+    }
+    
     
     //MARK: - right stroyboard
     struct AppCenter{
