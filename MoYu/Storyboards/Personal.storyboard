@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="44" id="wTv-JM-w8g"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxN-gs-VL4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxN-gs-VL4">
                                 <rect key="frame" x="-4" y="623" width="383" height="44"/>
                                 <connections>
                                     <action selector="settingButtonClicked:" destination="iTK-JS-oxt" eventType="touchUpInside" id="AoA-NB-FxE"/>
@@ -190,13 +190,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.95294117649999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="bxN-gs-VL4" firstAttribute="bottom" secondItem="G1T-pO-6fe" secondAttribute="bottom" id="0uc-D2-Fii"/>
                             <constraint firstItem="G1T-pO-6fe" firstAttribute="top" secondItem="bMU-0k-Uy5" secondAttribute="bottom" id="9gH-MN-vgY"/>
+                            <constraint firstItem="bxN-gs-VL4" firstAttribute="trailing" secondItem="G1T-pO-6fe" secondAttribute="trailing" id="Aq6-rl-Gcd"/>
+                            <constraint firstItem="bxN-gs-VL4" firstAttribute="top" secondItem="G1T-pO-6fe" secondAttribute="top" id="IB0-oH-LSQ"/>
                             <constraint firstItem="G1T-pO-6fe" firstAttribute="leading" secondItem="HdI-TZ-Mbz" secondAttribute="leadingMargin" constant="-20" id="Jug-w5-MyR"/>
                             <constraint firstAttribute="trailing" secondItem="bMU-0k-Uy5" secondAttribute="trailing" id="Lxt-ZG-SDY"/>
                             <constraint firstItem="bMU-0k-Uy5" firstAttribute="top" secondItem="HdI-TZ-Mbz" secondAttribute="top" constant="20" id="NLM-So-0kh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G1T-pO-6fe" secondAttribute="trailing" constant="-20" id="S6t-MH-fTv"/>
                             <constraint firstItem="zHy-g7-vh8" firstAttribute="top" secondItem="G1T-pO-6fe" secondAttribute="bottom" id="bzZ-Ea-7QA"/>
                             <constraint firstItem="bMU-0k-Uy5" firstAttribute="leading" secondItem="HdI-TZ-Mbz" secondAttribute="leading" id="fOL-VD-PG8"/>
+                            <constraint firstItem="bxN-gs-VL4" firstAttribute="leading" secondItem="G1T-pO-6fe" secondAttribute="leading" id="tkQ-Ew-Kgs"/>
                         </constraints>
                         <connections>
                             <outlet property="headerBackView" destination="8az-vi-AiG" id="YXd-Re-kJK"/>
@@ -356,14 +360,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-gT-EQJ">
-                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
+                                <rect key="frame" x="-8" y="64" width="391" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMyPurseIdentifier" rowHeight="44" id="XHb-bB-DlX" customClass="MyPurseCell" customModule="MoYu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="114" width="383" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="391" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHb-bB-DlX" id="DDT-Cm-bMN">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="391" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nlv-pD-XaJ">
@@ -380,7 +384,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6q-gm-pyT">
-                                                    <rect key="frame" x="356" y="11" width="11" height="21"/>
+                                                    <rect key="frame" x="364" y="11" width="11" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -407,10 +411,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XKP-gT-EQJ" firstAttribute="top" secondItem="0ca-YY-Wh3" secondAttribute="bottom" id="HXu-qj-3ER"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XKP-gT-EQJ" secondAttribute="trailing" constant="-20" id="YnF-kj-W4L"/>
-                            <constraint firstItem="XKP-gT-EQJ" firstAttribute="leading" secondItem="14s-NT-TwR" secondAttribute="leadingMargin" constant="-20" id="d59-Cn-g7e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XKP-gT-EQJ" secondAttribute="trailing" constant="-24" id="YnF-kj-W4L"/>
+                            <constraint firstItem="XKP-gT-EQJ" firstAttribute="top" secondItem="0ca-YY-Wh3" secondAttribute="bottom" id="bOa-02-7h4"/>
+                            <constraint firstItem="XKP-gT-EQJ" firstAttribute="leading" secondItem="14s-NT-TwR" secondAttribute="leadingMargin" constant="-24" id="d59-Cn-g7e"/>
                             <constraint firstItem="74e-6D-LXt" firstAttribute="top" secondItem="XKP-gT-EQJ" secondAttribute="bottom" id="qjU-Tm-Dgd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HXu-qj-3ER"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="CsK-7v-AAt"/>
                     <connections>
