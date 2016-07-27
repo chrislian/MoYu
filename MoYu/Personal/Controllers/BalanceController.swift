@@ -32,10 +32,7 @@ class BalanceController: BaseController {
         self.tableView.backgroundColor = UIColor.whiteColor()
         
         self.view.addSubview( tableView )
-        tableView.snp_makeConstraints { (make) in
-            make.left.right.bottom.equalTo(self.view)
-            make.top.equalTo(self.view).offset(-64)
-        }
+ 
         
         self.extendedLayoutIncludesOpaqueBars = true
         
@@ -43,6 +40,10 @@ class BalanceController: BaseController {
         
         tableView.addSubview( self.balanceHeadView )
         
+        tableView.snp_makeConstraints { (make) in
+            make.left.right.bottom.equalTo(self.view)
+            make.top.equalTo(self.view).offset(-64)
+        }
     }
     
     //MARK: - var & let
@@ -67,7 +68,7 @@ class BalanceController: BaseController {
     
     private let headerDefaultHeight:CGFloat = 280
     private lazy var balanceHeadView: BalanceHeadView = {
-        let view = BalanceHeadView(frame:CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.headerDefaultHeight))
+        let view = BalanceHeadView(frame:CGRect(x: 0, y: -self.headerDefaultHeight, width: self.view.bounds.width, height: self.headerDefaultHeight))
         return view
     }()
 }
