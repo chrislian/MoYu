@@ -38,7 +38,6 @@ class HomeController: BaseController,SignInType {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     
