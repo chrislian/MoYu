@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 import Async
 
-typealias RemoteClourse = (statusCode:Int,message:String?,json:JSON?)->Void
+typealias RemoteClourse = (status : NetworkActionStatus ,json : JSON? ) -> Void
 
 class Remote{
     
@@ -55,13 +55,14 @@ class Remote{
                 if let error = response.result.error {
                     
                     let message = error.userInfo["NSLocalizedDescription"] as? String
-                    Async.main{ callback(statusCode: error.code, message: message, json: nil) }
+
+                    Async.main{  callback(status: .networkFailure(message: message ?? "网络似乎出了点问题..."), json: nil) }
                 }
                 return
             }
             
             if resp.statusCode != 200{
-                Async.main{ callback(statusCode: resp.statusCode, message: "网络似乎出了点问题...", json: nil) }
+                Async.main{  callback(status: .networkFailure(message: "网络似乎出了点问题..."), json: nil) }
                 return
             }
             
@@ -73,7 +74,11 @@ class Remote{
             let msg = json["mess"].string
             let data = json["data"]
             
-            Async.main{ callback (statusCode: status,message: msg,json: data) }
+            if status == 200{
+                Async.main{ callback (status:.success(message: msg ?? ""),json: data) }
+            }else{
+                Async.main{ callback (status:.userFailure(message: msg ?? "网络似乎出了点问题..."),json: data) }
+            }
         }
     }
 }

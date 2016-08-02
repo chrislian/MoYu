@@ -70,6 +70,7 @@
 		838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */; };
 		838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */; };
 		838E85141D294D6200C992CC /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85131D294D6200C992CC /* UserGuideController.swift */; };
+		839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */; };
 		839EC9611D49D97400658CE6 /* WithdrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839EC9601D49D97400658CE6 /* WithdrawController.swift */; };
 		83A680D61D3CB86200570699 /* SignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A680D51D3CB86200570699 /* SignInType.swift */; };
 		83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */; };
@@ -177,6 +178,7 @@
 		838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MoYu.swift"; sourceTree = "<group>"; };
 		838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
 		838E85131D294D6200C992CC /* UserGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
+		839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraseErrorType.swift; sourceTree = "<group>"; };
 		839EC9601D49D97400658CE6 /* WithdrawController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawController.swift; sourceTree = "<group>"; };
 		83A680D51D3CB86200570699 /* SignInType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInType.swift; sourceTree = "<group>"; };
 		83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				831632AD1D2EA3E300205211 /* Remote.swift */,
 				8327B63E1D3B24FF00DF6D78 /* Router.swift */,
+				839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */,
 			);
 			name = RemoteRequest;
 			path = Miscellaneous/RemoteRequest;
@@ -1013,6 +1016,7 @@
 				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
+				839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */,
 				838E850C1D294CC100C992CC /* CGImage+MoYu.swift in Sources */,
 				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,
 				838E850E1D294CC100C992CC /* UIFont+MoYu.swift in Sources */,

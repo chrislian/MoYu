@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 enum NavButtonDirectionType: Int{
     case Left = 0,Right
@@ -167,11 +168,11 @@ class BaseController: UIViewController {
             if navigationBarOpaque{
                 self.navigationController?.navigationBar.setBackgroundImage( UIImage.mo_createImageWithColor(UIColor.mo_main()), forBarMetrics: .Default)
                 self.navigationController?.navigationBar.shadowImage = UIImage.mo_createImageWithColor(UIColor.mo_silver())
-                self.navigationController?.navigationBar.translucent = false
+//                self.navigationController?.navigationBar.translucent = false
             }else{
                 self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
                 self.navigationController?.navigationBar.shadowImage = UIImage()
-                self.navigationController?.navigationBar.translucent = true
+//                self.navigationController?.navigationBar.translucent = true
             }
         }
     }

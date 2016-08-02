@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class SignInByAuthController: BaseController,SignInType {
+class SignInByAuthController: BaseController,SignInType,PraseErrorType {
 
     //MARK: - private method
     override func viewDidLoad() {
@@ -29,21 +30,19 @@ class SignInByAuthController: BaseController,SignInType {
     func enterButtonTap(sender: UIButton){
         println("sign in")
         
-        Router.signIn(phone: "18350210050", verifyCode: "1234").request { (statusCode, message, json) in
-            println("satusCode:\(statusCode)")
-            println("message:\(message)")
-            println("json:\(json)")
+        Router.signIn(phone: "18350210050", verifyCode: "1234").request { (status, json) in
+            if case .success = status{
+                self.dismissSignInView()
+            }else{
+                self.showError(status)
+            }
         }
-        
-        self.dismissSignInView()
     }
     
     func authButtonTap(sender:UIButton){
         
-        Router.authCode(phone: "18350210050").request { (statusCode, message, json) in
-            println("satusCode:\(statusCode)")
-            println("message:\(message)")
-            println("json:\(json)")
+        Router.authCode(phone: "18350210050").request { (status, json) in
+            self.showSuccess(status)
         }
     }
     
