@@ -29,7 +29,7 @@ class SignInByAuthController: BaseController,SignInType {
     func enterButtonTap(sender: UIButton){
         println("sign in")
         
-        Router.SignIn(phone: "18350210050", verifyCode: "1234").request { (statusCode, message, json) in
+        Router.signIn(phone: "18350210050", verifyCode: "1234").request { (statusCode, message, json) in
             println("satusCode:\(statusCode)")
             println("message:\(message)")
             println("json:\(json)")
@@ -39,7 +39,12 @@ class SignInByAuthController: BaseController,SignInType {
     }
     
     func authButtonTap(sender:UIButton){
-        println("auth button")
+        
+        Router.authCode(phone: "18350210050").request { (statusCode, message, json) in
+            println("satusCode:\(statusCode)")
+            println("message:\(message)")
+            println("json:\(json)")
+        }
     }
     
 

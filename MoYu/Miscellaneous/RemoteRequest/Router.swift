@@ -8,21 +8,23 @@
 
 import Foundation
 
-private let mainUrl = "http://www.moyu.ushesoft.com/"
+private let mainUrl = "http://moyu.ushesoft.com/api.php/api/"
 
 enum Router {
-    case SignIn(phone:String, verifyCode:String)
-    case SignOut
+    case signIn(phone:String, verifyCode:String)
+    case signOut
+    case authCode(phone:String)
     
     
     
     func urlString()->String{
         switch self {
-        case .SignIn:
-            return mainUrl + "api.php/api/login"
-        case .SignOut:
+        case .signIn:
+            return mainUrl + "login"
+        case .signOut:
             break
-
+        case .authCode:
+            return mainUrl + "getVerify"
         }
         return ""
     }
@@ -36,10 +38,12 @@ enum Router {
         }
         
         switch self {
-        case .SignIn(let phone, let code):
+        case .signIn(let phone, let code):
             parameters = ["type": 2,"device": mouid,"phonenum": phone,"verify": code]
-        case .SignOut:
+        case .signOut:
             break
+        case .authCode(let phone):
+            parameters = ["phonenum" : phone]
         }
         return parameters
     }
