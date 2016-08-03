@@ -19,14 +19,14 @@ enum NetworkActionStatus{
 }
 
 protocol PraseErrorType : SignInType {
-    func showError(status:NetworkActionStatus)
+    func showError(status:NetworkActionStatus,showSuccess:Bool)
     
     func showSuccess(status: NetworkActionStatus)
 }
 
 extension PraseErrorType where Self: BaseController{
     
-    func showError(status: NetworkActionStatus){
+    func showError(status: NetworkActionStatus ,showSuccess:Bool = false){
     
         switch status {
         case .userFailure(let message):
@@ -39,7 +39,10 @@ extension PraseErrorType where Self: BaseController{
             SVProgressHUD.showErrorWithStatus(message)
         case .userNeedLogin: 
             self.showSignInView()
-        case .success:break
+        case .success(let message):
+            if showSuccess{
+                SVProgressHUD.showSuccessWithStatus(message)
+            }
         }
     }
     
@@ -51,8 +54,11 @@ extension PraseErrorType where Self: BaseController{
         default:
             break
         }
-        
     }
     
+    func showError(message message:String){
+        
+        SVProgressHUD.showErrorWithStatus(message)
+    }
     
 }

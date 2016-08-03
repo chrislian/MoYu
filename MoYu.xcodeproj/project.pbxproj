@@ -24,6 +24,8 @@
 		833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* AccountBindingController.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
+		83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC71D51844D002E842D /* IdentifyCode.swift */; };
+		83393DCA1D51844D002E842D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC81D51844D002E842D /* Reachability.swift */; };
 		833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */; };
 		833A86381D2BFC43002E8BBD /* UseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86371D2BFC43002E8BBD /* UseInfoController.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
@@ -132,6 +134,8 @@
 		833180061D2A86F200EFAF69 /* AccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingController.swift; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
 		8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
+		83393DC71D51844D002E842D /* IdentifyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCode.swift; sourceTree = "<group>"; };
+		83393DC81D51844D002E842D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderCell.swift; sourceTree = "<group>"; };
 		833A86371D2BFC43002E8BBD /* UseInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseInfoController.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				83393DC71D51844D002E842D /* IdentifyCode.swift */,
+				83393DC81D51844D002E842D /* Reachability.swift */,
 				8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */,
 				8327B64F1D3B666C00DF6D78 /* MODevice.swift */,
 			);
@@ -1009,7 +1015,9 @@
 				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
+				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
+				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */,
