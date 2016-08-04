@@ -46,7 +46,18 @@ class UserManager {
                 realm.add(user, update: true)
             })
         }catch let error{
-            println("reaml write error: \(error)")
+            println("reaml add error: \(error)")
+        }
+    }
+    
+    func deleteUser(){
+        self.set(phone: "")
+        do{
+            try realm.write({ 
+                realm.delete(user)
+            })
+        }catch let error{
+            println("realm delete user error: \(error)")
         }
     }
     
@@ -72,6 +83,6 @@ class UserManager {
     }
     
     func set(phone number:String){
-        NSUserDefaults.standardUserDefaults().setValue(number, forKey: "userPhoneNumber")
+        NSUserDefaults.standardUserDefaults().setObject(number, forKey: "userPhoneNumber")
     }
 }

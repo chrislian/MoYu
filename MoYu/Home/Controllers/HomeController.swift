@@ -28,10 +28,8 @@ class HomeController: BaseController,SignInType {
         self.setupHomeView()
         
         
-        guard let _ = UserManager.sharedInstance.getPhoneNumber() else{
-            self.showSignInView()
-            return
-        }
+        self.checkSignIn()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,6 +91,15 @@ class HomeController: BaseController,SignInType {
     }
     
     //MARK: - private methond
+    
+    private func checkSignIn(){
+        
+        guard let phone = UserManager.sharedInstance.getPhoneNumber() where !phone.isEmpty else{
+            self.showSignInView()
+            return
+        }
+    }
+    
     private func setupHomeView(){
         
         self.navigationController?.mo_hideBackButtonTitle()

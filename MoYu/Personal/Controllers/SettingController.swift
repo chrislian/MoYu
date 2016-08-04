@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingController: BaseController {
+class SettingController: BaseController ,PraseErrorType,SignInType{
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -22,7 +22,18 @@ class SettingController: BaseController {
     
     //MARK: - event response
     func exitButtonClicked(sender:UIButton){
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        
+        let sessionID = UserManager.sharedInstance.user.sessionid
+        Router.signOut(sessionID: sessionID).request { (status, json) in
+            
+            self.showError(status,showSuccess: true)
+            
+            if case .success = status{
+                
+                UserManager.sharedInstance.deleteUser()
+                self.showSignInView()
+            }
+        }
     }
     
     
@@ -41,6 +52,11 @@ class SettingController: BaseController {
     
     //MARK: - private method
     private func setupView(){
+        
+        self.setLeftNavigationButton(nomal: UIImage(named: "tab_fanhui_a_"), highlighted: UIImage(named: "tab_fanhui_b_"))
+        self.leftButtonClourse = {[unowned self] in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
         
         self.view.backgroundColor = UIColor.mo_background()
         

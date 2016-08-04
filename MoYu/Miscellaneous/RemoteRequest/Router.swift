@@ -12,7 +12,7 @@ private let mainUrl = "http://moyu.ushesoft.com/api.php/api/"
 
 enum Router {
     case signIn(phone:String, verifyCode:String)
-    case signOut
+    case signOut(sessionID:String)
     case authCode(phone:String)
     
     
@@ -22,11 +22,10 @@ enum Router {
         case .signIn:
             return mainUrl + "login"
         case .signOut:
-            break
+            return "http://www.ushesoft.com/api.php/User/logout?"
         case .authCode:
             return mainUrl + "getVerify"
         }
-        return ""
     }
     
     func parameters() -> [String:AnyObject]? {
@@ -40,8 +39,8 @@ enum Router {
         switch self {
         case .signIn(let phone, let code):
             parameters = ["type": 2,"device": mouid,"phonenum": phone,"verify": code]
-        case .signOut:
-            break
+        case .signOut(let sessionID):
+            parameters = ["sessionid" : sessionID]
         case .authCode(let phone):
             parameters = ["phonenum" : phone]
         }
