@@ -28,15 +28,15 @@ class UserInfo: Object {
     dynamic var status = 0
     dynamic var logintime = 0
     
-//    dynamic var address = ""
-//    dynamic var merchantca = ""
-//    dynamic var intergral = ""
-//    dynamic var trade = ""
-//    dynamic var longitude = ""
-//    dynamic var latitude = ""
-//    dynamic var invitationcode = ""
-//    dynamic var autograph = ""
-//    dynamic var geohash = ""
+    dynamic var address = ""
+    dynamic var merchantca = ""
+    dynamic var intergral = ""
+    dynamic var trade = ""
+    dynamic var longitude = ""
+    dynamic var latitude = ""
+    dynamic var invitationcode = ""
+    dynamic var autograph = ""
+    dynamic var geohash = ""
 
     init(json:JSON) {
         
@@ -57,15 +57,15 @@ class UserInfo: Object {
         invite         = json["invite"].stringValue
         status         = json["status"].intValue
         logintime      = json["logintime"].intValue
-//        address        = json["address"].stringValue
-//        merchantca     = json["merchantca"].stringValue
-//        intergral      = json["intergral"].stringValue
-//        trade          = json["trade"].stringValue
-//        longitude      = json["longitude"].stringValue
-//        latitude       = json["latitude"].stringValue
-//        invitationcode = json["invitationcode"].stringValue
-//        autograph      = json["autograph"].stringValue
-//        geohash        = json["geohash"].stringValue
+        address        = json["address"].stringValue
+        merchantca     = json["merchantca"].stringValue
+        intergral      = json["intergral"].stringValue
+        trade          = json["trade"].stringValue
+        longitude      = json["longitude"].stringValue
+        latitude       = json["latitude"].stringValue
+        invitationcode = json["invitationcode"].stringValue
+        autograph      = json["autograph"].stringValue
+        geohash        = json["geohash"].stringValue
         
     }
     

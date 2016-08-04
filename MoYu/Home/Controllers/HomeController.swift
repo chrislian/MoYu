@@ -26,10 +26,6 @@ class HomeController: BaseController,SignInType {
         super.viewDidLoad()
         
         self.setupHomeView()
-        
-        
-        self.checkSignIn()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -40,6 +36,8 @@ class HomeController: BaseController,SignInType {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.checkSignIn()
     }
     
     

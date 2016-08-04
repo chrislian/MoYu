@@ -13,7 +13,7 @@ class FindWorkController: UIViewController {
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor ( red: 1.0, green: 0.4, blue: 0.4, alpha: 1.0 )
+        self.view.backgroundColor = UIColor.mo_background()
         
         self.setupView()
         self.startLocation()

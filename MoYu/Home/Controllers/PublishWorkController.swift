@@ -16,6 +16,8 @@ class PublishWorkController: UIViewController {
         self.setupView()
         self.startLocation()
         
+        self.view.backgroundColor = UIColor.mo_background()
+        
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -51,11 +51,11 @@ class SignInByAuthView: UIView {
         authButton.layer.borderColor = UIColor.mo_main().CGColor
         authButton.layer.masksToBounds = true
         
-        userTextfield.textColor = UIColor.whiteColor()
+        userTextfield.textColor = UIColor.mo_lightBlack()
         userTextfield.placeholder = "请输入您的手机号码"
         userTextfield.font = UIFont.mo_font(.smaller)
         
-        authTextFiled.textColor = UIColor.whiteColor()
+        authTextFiled.textColor = UIColor.mo_lightBlack()
         authTextFiled.placeholder = "验证码"
         authTextFiled.font = UIFont.mo_font(.smaller)
         
