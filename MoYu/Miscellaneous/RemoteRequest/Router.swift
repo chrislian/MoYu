@@ -22,7 +22,7 @@ enum Router {
         case .signIn:
             return mainUrl + "login"
         case .signOut:
-            return "http://www.ushesoft.com/api.php/User/logout?"
+            return mainUrl + "logout"
         case .authCode:
             return mainUrl + "getVerify"
         }
@@ -40,7 +40,7 @@ enum Router {
         case .signIn(let phone, let code):
             parameters = ["type": 2,"device": mouid,"phonenum": phone,"verify": code]
         case .signOut(let sessionID):
-            parameters = ["sessionid" : sessionID]
+            parameters = ["sessionid" : sessionID,"device": mouid]
         case .authCode(let phone):
             parameters = ["phonenum" : phone]
         }
