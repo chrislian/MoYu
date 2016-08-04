@@ -27,7 +27,11 @@ class HomeController: BaseController,SignInType {
         
         self.setupHomeView()
         
-        self.showSignInView()
+        
+        guard let _ = UserManager.sharedInstance.getPhoneNumber() else{
+            self.showSignInView()
+            return
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -82,6 +82,8 @@
 		83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCD61F1D47192900FA4388 /* BalanceHeadView.swift */; };
 		83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCD6211D47194B00FA4388 /* BalanceCell.swift */; };
 		83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCD6231D471E1B00FA4388 /* ConsumeHistoryModel.swift */; };
+		83D965131D52DA7200484F14 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965121D52DA7200484F14 /* UserInfo.swift */; };
+		83D965151D52DD8C00484F14 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965141D52DD8C00484F14 /* UserManager.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
@@ -192,6 +194,8 @@
 		83BCD61F1D47192900FA4388 /* BalanceHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceHeadView.swift; sourceTree = "<group>"; };
 		83BCD6211D47194B00FA4388 /* BalanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
 		83BCD6231D471E1B00FA4388 /* ConsumeHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeHistoryModel.swift; sourceTree = "<group>"; };
+		83D965121D52DA7200484F14 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		83D965141D52DD8C00484F14 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				8389C6541CB0EA5E003E96B1 /* Print.swift */,
+				83D965141D52DD8C00484F14 /* UserManager.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 		834EC4131D3233180046FBEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				83D965121D52DA7200484F14 /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1010,6 +1016,7 @@
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
+				83D965131D52DA7200484F14 /* UserInfo.swift in Sources */,
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
 				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
@@ -1041,6 +1048,7 @@
 				834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */,
 				838E84F61D29492200C992CC /* SettingController.swift in Sources */,
 				838E84F41D29492200C992CC /* PublishSheetView.swift in Sources */,
+				83D965151D52DD8C00484F14 /* UserManager.swift in Sources */,
 				839EC9611D49D97400658CE6 /* WithdrawController.swift in Sources */,
 				838E850B1D294CC100C992CC /* String+MoYu.swift in Sources */,
 				838E850A1D294CC100C992CC /* NSDateFormatter+MoYu.swift in Sources */,

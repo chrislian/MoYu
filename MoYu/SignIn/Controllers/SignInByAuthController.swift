@@ -41,7 +41,11 @@ class SignInByAuthController: BaseController,SignInType,PraseErrorType {
         }
         
         Router.signIn(phone: phoneNum, verifyCode: authCode).request { (status, json) in
-            if case .success = status{
+            if case .success = status,
+                let data = json{
+                
+                UserManager.sharedInstance.update(user: data, phone: phoneNum)
+                println("userJson:\(json)")
                 self.dismissSignInView()
             }else{
                 self.showError(status)
