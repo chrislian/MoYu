@@ -53,10 +53,7 @@ class SettingController: BaseController ,PraseErrorType,SignInType{
     //MARK: - private method
     private func setupView(){
         
-        self.setLeftNavigationButton(nomal: UIImage(named: "tab_fanhui_a_"), highlighted: UIImage(named: "tab_fanhui_b_"))
-        self.leftButtonClourse = {[unowned self] in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        self.addBackNavigationButton()
         
         self.view.backgroundColor = UIColor.mo_background()
         

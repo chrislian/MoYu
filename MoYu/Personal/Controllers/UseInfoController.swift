@@ -34,6 +34,8 @@ class UseInfoController: BaseController {
     //MARK: - private method
     private func setupView(){
 
+        self.addBackNavigationButton()
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "综合实力", style: .Done, target:self, action: #selector(rightBarButtonClick(_:)))
         
         self.view.backgroundColor = UIColor.mo_background()

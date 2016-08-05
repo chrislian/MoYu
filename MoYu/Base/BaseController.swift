@@ -49,6 +49,17 @@ class BaseController: UIViewController {
     }
     
     //MARK: public method
+    
+    /**
+     添加返回按钮
+     */
+    func addBackNavigationButton(){
+        self.setLeftNavigationButton(nomal: UIImage(named: "tab_fanhui_a_"), highlighted: UIImage(named: "tab_fanhui_b_"))
+        self.leftButtonClourse = {[unowned self] in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
     func setNavigation(title text:String, textColor:UIColor = UIColor.mo_lightBlack()) {
         navigationTitleLable.text = text
         navigationTitleLable.textColor = textColor
