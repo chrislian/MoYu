@@ -91,7 +91,7 @@ class UserInfo: Object {
     var moName: String{
         var name = self.nickname
         if name.isEmpty{
-            name = "未设置"
+            name = "无"
         }
         return name
     }

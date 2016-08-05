@@ -20,18 +20,8 @@ class LeftMenuView: UIView {
 
     func updateHeader(user user:UserInfo){
         
-        var nickname = user.nickname
-        if nickname.isEmpty{
-            nickname = "未设置"
-        }
-        
-        var phone = user.phonenum
-        if phone.isEmpty{
-            phone = "未绑定手机"
-        }
-        
-        headerUsernameLabel.text = nickname
-        headerPhoneLabel.text = phone
+        headerUsernameLabel.text = user.moName
+        headerPhoneLabel.text = user.moPhone
         
        headerImageView.mo_loadImage(user.img, placeholder: UIImage(named: "defalutHead")!)
     }
