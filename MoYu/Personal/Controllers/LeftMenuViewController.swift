@@ -22,6 +22,12 @@ class LeftMenuController: BaseController {
         
     }
     
+    @IBAction func headerTap(sender: UITapGestureRecognizer) {
+        
+        self.performSegueWithIdentifier(SB.Personal.Segue.userInfo, sender: nil)
+        
+    }
+    
     @IBAction func settingButtonClicked(sender: UIButton) {
         
         guard let vc = SB.Setting.Vc.root() else{

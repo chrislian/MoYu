@@ -53,6 +53,7 @@ struct SB {
         struct Segue {
             static let myPurse = "segueMyPurse"
             static let withdraw = "segueWithdraw"
+            static let userInfo = "segueUserInfo"
         }
         
         struct Vc {
