@@ -11,6 +11,12 @@ import RealmSwift
 import SwiftyJSON
 
 
+struct UserNotification {
+    
+    static let updateUserInfo = "com.moyu.user.notification.update.user.info"
+    
+}
+
 extension Realm{
     
     class func setDefaultRealm(phone num:String){

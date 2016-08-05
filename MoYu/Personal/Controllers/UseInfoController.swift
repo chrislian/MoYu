@@ -114,6 +114,7 @@ extension UseInfoController:UITableViewDelegate{
         switch(indexPath.section,indexPath.row){
         case (0,0):
             let vc = ChangeNicknameController()
+            vc.nickname = UserManager.sharedInstance.user.nickname
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             let vc = UIViewController()

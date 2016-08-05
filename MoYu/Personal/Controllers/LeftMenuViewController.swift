@@ -15,14 +15,33 @@ class LeftMenuController: BaseController {
         super.viewDidLoad()
 
         setupLeftMenuView()
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onReceive(notify:)), name: UserNotification.updateUserInfo, object: nil)
+        
     }
-
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
         
     }
     
     //MARK: - event response
+    
+    @objc private func onReceive(notify sender:NSNotification){
+        
+        if sender.name == UserNotification.updateUserInfo{
+            
+            leftMenuView.updateHeader(user: UserManager.sharedInstance.user)
+        }
+    }
+    
     /**
      个人信息
      

@@ -33,6 +33,7 @@ class ChangeNicknameController: BaseController, PraseErrorType {
             if let data = json ,case .success = status{
                 UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
                 self.navigationController?.popViewControllerAnimated(true)
+                NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil)
             }else{
                 self.showError(status)
             }
@@ -50,6 +51,10 @@ class ChangeNicknameController: BaseController, PraseErrorType {
         nicknameTextField.delegate = self
         if !nicknameTextField.isFirstResponder(){
             nicknameTextField.becomeFirstResponder()
+        }
+        
+        if !nickname.isEmpty{
+            nicknameTextField.text = nickname
         }
     }
     
@@ -96,6 +101,8 @@ class ChangeNicknameController: BaseController, PraseErrorType {
         label.text = "好的名字可以让你的朋友更容易记住你哦~"
         return label
     }()
+    
+    var nickname:String = ""
 }
 
 extension ChangeNicknameController: UITextFieldDelegate{
