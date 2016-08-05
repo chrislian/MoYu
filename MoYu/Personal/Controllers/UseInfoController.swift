@@ -14,9 +14,16 @@ class UseInfoController: BaseController {
         super.viewDidLoad()
         
         self.title = "个人信息"
+        
         self.setupView()
-
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.updateUserInfo()
+    }
+    
     //MARK: - event response
     
     func rightBarButtonClick(sender:UIButton){
@@ -42,10 +49,28 @@ class UseInfoController: BaseController {
         tableView.backgroundColor = UIColor.mo_background()
     }
     
+    private func updateUserInfo(){
+        
+        let user = UserManager.sharedInstance.user
+        
+        let array1 = [("昵称",user.moName),
+                      ("我的签名",user.moAutograph),
+                      ("性别",user.moSex),
+                      ("年龄","\(user.age)"),
+                      ("手机号码",user.moPhone),
+                      ("我的等级",user.moLevel)]
+        
+        let array2 = [("学校",""), ("课余时间",""), ("实名认证",""), ("商家认证","")]
+        
+        dataArrays = [array1,array2]
+        
+        self.tableView.reloadData()
+    }
+    
+    
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
-    let datas = [[("昵称","公子连"),("我的签名","屋漏偏逢连夜雨"),("性别","男"),("年龄","26"),("手机号码","18350210050"),("我的等级","vip1")],
-                 [("学校",""),("课余时间",""),("实名认证",""),("商家认证","")]]
+    var dataArrays:[[(String,String)]] = [[]]
 }
 
 extension UseInfoController:UITableViewDelegate{
@@ -68,7 +93,8 @@ extension UseInfoController:UITableViewDelegate{
         switch (indexPath.section,indexPath.row) {
         case (0,0):
             if let cell = cell as? UserHeaderCell {
-                cell.update(usename: "公子连",source:"手机登录")
+                let user = UserManager.sharedInstance.user
+                cell.update(usename: user.moName,source:"手机登录",image: user.img)
             }
         default:
             cell.textLabel?.font = UIFont.mo_font()
@@ -77,8 +103,8 @@ extension UseInfoController:UITableViewDelegate{
             cell.detailTextLabel?.font = UIFont.mo_font()
             cell.detailTextLabel?.textColor = UIColor.mo_silver()
             
-            cell.textLabel?.text = datas[indexPath.section][indexPath.row].0
-            cell.detailTextLabel?.text = datas[indexPath.section][indexPath.row].1
+            cell.textLabel?.text = dataArrays[indexPath.section][indexPath.row].0
+            cell.detailTextLabel?.text = dataArrays[indexPath.section][indexPath.row].1
         }
     }
     
@@ -92,7 +118,7 @@ extension UseInfoController:UITableViewDelegate{
         default:
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.mo_background()
-            vc.title = datas[indexPath.section][indexPath.row].0
+            vc.title = dataArrays[indexPath.section][indexPath.row].0
             self.navigationController?.pushViewController(vc, animated: true)
         }
 
@@ -103,11 +129,11 @@ extension UseInfoController:UITableViewDelegate{
 extension UseInfoController:UITableViewDataSource{
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return datas.count
+        return dataArrays.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas[section].count
+        return dataArrays[section].count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -22,12 +22,32 @@ class LeftMenuController: BaseController {
         
     }
     
+    //MARK: - event response
+    /**
+     个人信息
+     
+     - parameter sender:
+     */
     @IBAction func headerTap(sender: UITapGestureRecognizer) {
         
         self.performSegueWithIdentifier(SB.Personal.Segue.userInfo, sender: nil)
         
     }
     
+    /**
+     更改头像
+     
+     - parameter sender:
+     */
+    @IBAction func headerImageTap(sender: UITapGestureRecognizer) {
+        println("更改头像")
+    }
+    
+    /**
+     设置按钮
+     
+     - parameter sender:
+     */
     @IBAction func settingButtonClicked(sender: UIButton) {
         
         guard let vc = SB.Setting.Vc.root() else{
@@ -43,7 +63,7 @@ class LeftMenuController: BaseController {
         leftMenuView.tableView.delegate = self
         leftMenuView.tableView.dataSource = self
         
-        leftMenuView.updateUserHead(UIImage(named: "defalutHead")!, username: "墨鱼", phone: "18350210050")
+        leftMenuView.updateHeader(user: UserManager.sharedInstance.user)
         leftMenuView.isCustomerAuth = true
     }
     

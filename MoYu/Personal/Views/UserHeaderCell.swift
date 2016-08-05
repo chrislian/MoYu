@@ -17,8 +17,8 @@ class UserHeaderCell: UITableViewCell {
     }
     
     //MARK: - public method
-    func update(usename name:String, source:String = "",headerImage:UIImage? = UIImage(named: "defalutHead")){
-        headerImageView.image = headerImage
+    func update(usename name:String, source:String = "",image:String = ""){
+        headerImageView.mo_loadImage(image, placeholder: UIImage(named: "defalutHead")!)
         usernameLabel.text = name
         signInFromLabel.text = source
     }

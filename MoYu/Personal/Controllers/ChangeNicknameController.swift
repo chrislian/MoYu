@@ -74,7 +74,7 @@ class ChangeNicknameController: BaseController, PraseErrorType {
         self.view.addSubview(promptLabel)
         promptLabel.snp_makeConstraints { (make) in
             make.left.equalTo(self.view).offset(10)
-            make.top.equalTo(containerView.snp_bottom)
+            make.top.equalTo(containerView.snp_bottom).offset(5)
             make.right.equalTo(self.view)
         }
     }

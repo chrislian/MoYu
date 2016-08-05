@@ -85,4 +85,44 @@ class UserInfo: Object {
     override static func primaryKey() -> String? {
         return "phonenum"
     }
+    
+    
+    //public method
+    var moName: String{
+        var name = self.nickname
+        if name.isEmpty{
+            name = "未设置"
+        }
+        return name
+    }
+    
+    var moPhone:String{
+        var phone = self.phonenum
+        if phone.isEmpty{
+            phone = "未绑定"
+        }
+        return phone
+    }
+    
+    var moAutograph:String{
+        var string = self.autograph
+        if string.isEmpty{
+            string = "用户很懒，什么都没留下~"
+        }
+        return string
+    }
+    
+    var moSex:String{
+        if self.sex == 0{
+            return "女"
+        }
+        return "男"
+    }
+    
+    var moLevel:String {
+        
+        return "vip\(self.level)"
+        
+    }
+    
 }
