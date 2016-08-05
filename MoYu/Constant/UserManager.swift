@@ -50,6 +50,7 @@ class UserManager {
         }
     }
     
+    
     func deleteUser(){
         self.set(phone: "")
         do{

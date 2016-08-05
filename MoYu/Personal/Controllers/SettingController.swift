@@ -23,8 +23,7 @@ class SettingController: BaseController ,PraseErrorType,SignInType{
     //MARK: - event response
     func exitButtonClicked(sender:UIButton){
         
-        let sessionID = UserManager.sharedInstance.user.sessionid
-        Router.signOut(sessionID: sessionID).request { (status, json) in
+        Router.signOut.request { (status, json) in
             
             self.showError(status,showSuccess: true)
             

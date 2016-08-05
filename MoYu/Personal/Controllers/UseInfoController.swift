@@ -18,10 +18,6 @@ class UseInfoController: BaseController {
 
     }
     //MARK: - event response
-    @IBAction func returnButtonClick(sender: UIButton) {
-        
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-    }
     
     func rightBarButtonClick(sender:UIButton){
         let vc = UIViewController()
@@ -44,13 +40,9 @@ class UseInfoController: BaseController {
         tableView.dataSource = self
         tableView.separatorStyle = .None
         tableView.backgroundColor = UIColor.mo_background()
-        
-        returnButton.layer.cornerRadius = 3
-        returnButton.layer.masksToBounds = true
     }
     
     //MARK: - var & let
-    @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let datas = [[("昵称","公子连"),("我的签名","屋漏偏逢连夜雨"),("性别","男"),("年龄","26"),("手机号码","18350210050"),("我的等级","vip1")],
                  [("学校",""),("课余时间",""),("实名认证",""),("商家认证","")]]
@@ -93,10 +85,17 @@ extension UseInfoController:UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
-        vc.title = datas[indexPath.section][indexPath.row].0
-        self.navigationController?.pushViewController(vc, animated: true)
+        switch(indexPath.section,indexPath.row){
+        case (0,0):
+            let vc = ChangeNicknameController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.mo_background()
+            vc.title = datas[indexPath.section][indexPath.row].0
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+
     }
     
 }

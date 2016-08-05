@@ -85,6 +85,7 @@
 		83D965131D52DA7200484F14 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965121D52DA7200484F14 /* UserInfo.swift */; };
 		83D965151D52DD8C00484F14 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965141D52DD8C00484F14 /* UserManager.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
+		83F675131D549F2000D951AF /* ChangeNicknameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F675121D549F2000D951AF /* ChangeNicknameController.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 /* End PBXBuildFile section */
@@ -197,6 +198,7 @@
 		83D965121D52DA7200484F14 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		83D965141D52DD8C00484F14 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
+		83F675121D549F2000D951AF /* ChangeNicknameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNicknameController.swift; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				838E85131D294D6200C992CC /* UserGuideController.swift */,
 				833180061D2A86F200EFAF69 /* AccountBindingController.swift */,
 				833A86371D2BFC43002E8BBD /* UseInfoController.swift */,
+				83F675121D549F2000D951AF /* ChangeNicknameController.swift */,
 				83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */,
 				83BCD61D1D4718E200FA4388 /* BalanceController.swift */,
 				839EC9601D49D97400658CE6 /* WithdrawController.swift */,
@@ -1002,6 +1005,7 @@
 				838E84EF1D29492200C992CC /* HomeMenuCell.swift in Sources */,
 				838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */,
 				838E84EA1D29492200C992CC /* HomeSearchController.swift in Sources */,
+				83F675131D549F2000D951AF /* ChangeNicknameController.swift in Sources */,
 				833A86381D2BFC43002E8BBD /* UseInfoController.swift in Sources */,
 				834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */,
 				838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */,
