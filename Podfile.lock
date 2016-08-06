@@ -3,9 +3,11 @@ PODS:
   - AsyncSwift (1.7.2)
   - BaiduMapKit (2.10.2)
   - CryptoSwift (0.5.1)
+  - FXBlurView (1.6.4)
   - IBAnimatable (2.4)
   - Kingfisher (2.4.1)
   - MJRefresh (3.1.9)
+  - Proposer (0.9.0)
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -24,9 +26,11 @@ DEPENDENCIES:
   - AsyncSwift
   - BaiduMapKit (~> 2.0)
   - CryptoSwift
+  - FXBlurView
   - IBAnimatable
   - Kingfisher (~> 2.0)
   - MJRefresh (~> 3.0)
+  - Proposer
   - RealmSwift
   - REFrostedViewController (~> 2.0)
   - SnapKit
@@ -51,9 +55,11 @@ SPEC CHECKSUMS:
   AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
   CryptoSwift: df42dda18baf6c76347a94e227dbcc0a341304bd
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   IBAnimatable: f5dcd428e0fc41d11d3ed657c925393dd7bbaa0a
   Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  Proposer: 231565a8b6bbb1816f3670d6471e6a84e582c80c
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
@@ -64,6 +70,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
 
-PODFILE CHECKSUM: e5352c285ec543cc206e1312074500f358240538
+PODFILE CHECKSUM: 1ba0fd0f61241f3497c7145c6fd9e8b66880a765
 
 COCOAPODS: 1.0.1

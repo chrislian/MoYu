@@ -10,6 +10,7 @@ pod 'YYText',           '~> 1.0'
 pod 'REFrostedViewController', '~> 2.0'
 pod 'MJRefresh',    '~> 3.0'
 pod 'BaiduMapKit',   '~> 2.0'
+pod 'FXBlurView'
 
 #swift
 pod 'Alamofire',    '~> 3.0'
@@ -22,6 +23,8 @@ pod 'AsyncSwift'
 pod 'IBAnimatable'
 pod 'RealmSwift'
 pod 'CryptoSwift'
+pod 'Proposer'
+
 end
 
 target 'MoYuTests' do
