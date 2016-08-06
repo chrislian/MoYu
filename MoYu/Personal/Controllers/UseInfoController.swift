@@ -96,6 +96,9 @@ extension UseInfoController:UITableViewDelegate{
                 let user = UserManager.sharedInstance.user
                 cell.update(usename: user.moName,source:"手机登录",image: user.img)
             }
+        case (0,4...5):
+            cell.accessoryType = .None
+            fallthrough
         default:
             cell.textLabel?.font = UIFont.mo_font()
             cell.textLabel?.textColor = UIColor.mo_lightBlack()
@@ -115,6 +118,10 @@ extension UseInfoController:UITableViewDelegate{
         case (0,0):
             let vc = ChangeNicknameController()
             vc.nickname = UserManager.sharedInstance.user.nickname
+            self.navigationController?.pushViewController(vc, animated: true)
+        case (0,1):
+            let vc = AutoGraphController()
+            vc.autograph = UserManager.sharedInstance.user.autograph
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             let vc = UIViewController()

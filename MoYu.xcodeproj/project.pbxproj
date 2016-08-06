@@ -73,6 +73,7 @@
 		838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */; };
 		838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */; };
 		838E85141D294D6200C992CC /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E85131D294D6200C992CC /* UserGuideController.swift */; };
+		839C748B1D55FF84003DBC33 /* AutoGraphController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C748A1D55FF84003DBC33 /* AutoGraphController.swift */; };
 		839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */; };
 		839EC9611D49D97400658CE6 /* WithdrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839EC9601D49D97400658CE6 /* WithdrawController.swift */; };
 		83A680D61D3CB86200570699 /* SignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A680D51D3CB86200570699 /* SignInType.swift */; };
@@ -187,6 +188,7 @@
 		838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MoYu.swift"; sourceTree = "<group>"; };
 		838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISeachBar+MoYu.swift"; sourceTree = "<group>"; };
 		838E85131D294D6200C992CC /* UserGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
+		839C748A1D55FF84003DBC33 /* AutoGraphController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoGraphController.swift; sourceTree = "<group>"; };
 		839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraseErrorType.swift; sourceTree = "<group>"; };
 		839EC9601D49D97400658CE6 /* WithdrawController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawController.swift; sourceTree = "<group>"; };
 		83A680D51D3CB86200570699 /* SignInType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInType.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				838E85131D294D6200C992CC /* UserGuideController.swift */,
 				833180061D2A86F200EFAF69 /* AccountBindingController.swift */,
 				833A86371D2BFC43002E8BBD /* UseInfoController.swift */,
+				839C748A1D55FF84003DBC33 /* AutoGraphController.swift */,
 				83F675121D549F2000D951AF /* ChangeNicknameController.swift */,
 				83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */,
 				83BCD61D1D4718E200FA4388 /* BalanceController.swift */,
@@ -1016,6 +1019,7 @@
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
 				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
 				8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */,
+				839C748B1D55FF84003DBC33 /* AutoGraphController.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
 				838E85141D294D6200C992CC /* UserGuideController.swift in Sources */,
