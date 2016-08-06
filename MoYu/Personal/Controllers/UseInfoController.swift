@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UseInfoController: BaseController {
+class UseInfoController: BaseController,PraseErrorType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,15 @@ class UseInfoController: BaseController {
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
     var dataArrays:[[(String,String)]] = [[]]
+    
+    lazy var sexActionSheet:ActionSheetController = {
+        let actionSheet = ActionSheetController()
+        actionSheet.delegate = self
+        actionSheet.showCancelButton = false
+        actionSheet.showDestructiveButton = false
+        return actionSheet
+    }()
+    var sexValue = 0
 }
 
 extension UseInfoController:UITableViewDelegate{
@@ -88,6 +97,17 @@ extension UseInfoController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
+        func update(cell cell:UITableViewCell){
+            cell.textLabel?.font = UIFont.mo_font()
+            cell.textLabel?.textColor = UIColor.mo_lightBlack()
+            
+            cell.detailTextLabel?.font = UIFont.mo_font()
+            cell.detailTextLabel?.textColor = UIColor.mo_silver()
+            
+            cell.textLabel?.text = dataArrays[indexPath.section][indexPath.row].0
+            cell.detailTextLabel?.text = dataArrays[indexPath.section][indexPath.row].1
+        }
+        
         cell.accessoryType = .DisclosureIndicator
         
         switch (indexPath.section,indexPath.row) {
@@ -98,16 +118,9 @@ extension UseInfoController:UITableViewDelegate{
             }
         case (0,4...5):
             cell.accessoryType = .None
-            fallthrough
+            update(cell: cell)
         default:
-            cell.textLabel?.font = UIFont.mo_font()
-            cell.textLabel?.textColor = UIColor.mo_lightBlack()
-            
-            cell.detailTextLabel?.font = UIFont.mo_font()
-            cell.detailTextLabel?.textColor = UIColor.mo_silver()
-            
-            cell.textLabel?.text = dataArrays[indexPath.section][indexPath.row].0
-            cell.detailTextLabel?.text = dataArrays[indexPath.section][indexPath.row].1
+            update(cell: cell)
         }
     }
     
@@ -123,6 +136,8 @@ extension UseInfoController:UITableViewDelegate{
             let vc = AutoGraphController()
             vc.autograph = UserManager.sharedInstance.user.autograph
             self.navigationController?.pushViewController(vc, animated: true)
+        case (0,2):
+            sexActionSheet.show(self)
         default:
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.mo_background()
@@ -168,4 +183,29 @@ extension UseInfoController:UITableViewDataSource{
             return cellForOther()
         }
     }
+}
+
+extension UseInfoController: ActionSheetProtocol{
+    
+    
+    func otherButtons(sheet sheet: ActionSheetController) -> [String] {
+        return ["女","男"]
+    }
+    
+    func action(sheet sheet: ActionSheetController, selectedAtIndex: UInt) {
+        
+        if UserManager.sharedInstance.user.sex == Int(selectedAtIndex){
+            return
+        }
+        
+        Router.updateSex(value: Int(selectedAtIndex)).request { (status, json) in
+            if let data = json ,case .success = status{
+                UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
+                self.updateUserInfo()
+            }else{
+                self.showError(status)
+            }
+        }
+    }
+    
 }
