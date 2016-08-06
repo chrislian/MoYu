@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class UseInfoController: BaseController,PraseErrorType {
 
@@ -16,6 +17,7 @@ class UseInfoController: BaseController,PraseErrorType {
         self.title = "个人信息"
         
         self.setupView()
+    
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -67,6 +69,15 @@ class UseInfoController: BaseController,PraseErrorType {
         self.tableView.reloadData()
     }
     
+    private func updateUser(status : NetworkActionStatus ,json : JSON?){
+        if let data = json ,case .success = status{
+            UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
+            self.updateUserInfo()
+        }else{
+            self.showError(status)
+        }
+    }
+    
     
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
@@ -79,7 +90,35 @@ class UseInfoController: BaseController,PraseErrorType {
         actionSheet.showDestructiveButton = false
         return actionSheet
     }()
-    var sexValue = 0
+   
+    lazy var ageAlertController:UIAlertController = {
+       let alert = UIAlertController(title: "修改年龄", message: "", preferredStyle: .Alert)
+        
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { _ in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }
+        let destrctiveAction = UIAlertAction(title: "确定", style: .Destructive) { _ in
+            
+            if let text = alert.textFields?.first?.text, age = Int(text){
+                Router.updateAge(value: age).request( remote: self.updateUser )
+            }
+            
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { [unowned self ] textField in
+            
+            textField.font = UIFont.mo_font()
+            textField.textColor = UIColor.mo_lightBlack()
+            textField.text = "\(UserManager.sharedInstance.user.age)"
+            textField.delegate = self
+            textField.keyboardType = .NumberPad
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(destrctiveAction)
+        return alert
+    }()
 }
 
 extension UseInfoController:UITableViewDelegate{
@@ -138,6 +177,8 @@ extension UseInfoController:UITableViewDelegate{
             self.navigationController?.pushViewController(vc, animated: true)
         case (0,2):
             sexActionSheet.show(self)
+        case (0,3):
+            self.presentViewController(ageAlertController, animated: true, completion: nil)
         default:
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.mo_background()
@@ -198,14 +239,32 @@ extension UseInfoController: ActionSheetProtocol{
             return
         }
         
-        Router.updateSex(value: Int(selectedAtIndex)).request { (status, json) in
-            if let data = json ,case .success = status{
-                UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
-                self.updateUserInfo()
-            }else{
-                self.showError(status)
-            }
+        Router.updateSex(value: Int(selectedAtIndex)).request(remote: self.updateUser )
+    }
+    
+}
+
+extension UseInfoController: UITextFieldDelegate{
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        let text = (textField.text)! as NSString
+        if text.length > 2{
+            textField.text = text.substringToIndex(2)
         }
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let text = (textField.text)! as NSString
+        let toBeString = text.stringByReplacingCharactersInRange(range, withString: string)
+        if toBeString.characters.count > 2{
+            textField.text = (toBeString as NSString).substringToIndex(2)
+            return false
+        }else if toBeString.mo_length() == 0{
+            textField.text = "0"
+        }
+        
+        return true
+    }
 }
