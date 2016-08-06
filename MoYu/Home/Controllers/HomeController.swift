@@ -19,7 +19,7 @@ enum FindPublishWork:Int {
 }
 
 
-class HomeController: BaseController,SignInType {
+class HomeController: BaseController {
 
     //MARK: - event response
     override func viewDidLoad() {
@@ -96,6 +96,7 @@ class HomeController: BaseController,SignInType {
             self.showSignInView()
             return
         }
+
     }
     
     private func setupHomeView(){

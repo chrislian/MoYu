@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class UseInfoController: BaseController,PraseErrorType {
+class UseInfoController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,9 @@ class UseInfoController: BaseController,PraseErrorType {
         self.title = "个人信息"
         
         self.setupView()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onReceive(notify:)), name: UserNotification.updateUserInfo, object: nil)
+        
     
     }
     
@@ -24,6 +27,10 @@ class UseInfoController: BaseController,PraseErrorType {
         super.viewWillAppear(animated)
         
         self.updateUserInfo()
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     //MARK: - event response
@@ -35,6 +42,13 @@ class UseInfoController: BaseController,PraseErrorType {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    func onReceive(notify notify:NSNotification){
+        
+        if notify.name == UserNotification.updateUserInfo{
+            self.updateUserInfo()
+        }
+    }
+    
     
     //MARK: - private method
     private func setupView(){
@@ -68,16 +82,6 @@ class UseInfoController: BaseController,PraseErrorType {
         
         self.tableView.reloadData()
     }
-    
-    private func updateUser(status : NetworkActionStatus ,json : JSON?){
-        if let data = json ,case .success = status{
-            UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
-            self.updateUserInfo()
-        }else{
-            self.showError(status)
-        }
-    }
-    
     
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!

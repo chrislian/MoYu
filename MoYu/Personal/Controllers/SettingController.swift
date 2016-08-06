@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingController: BaseController ,PraseErrorType,SignInType{
+class SettingController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {

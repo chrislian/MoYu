@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import SwiftyJSON
 
 enum NavButtonDirectionType: Int{
     case Left = 0,Right
@@ -185,6 +186,18 @@ class BaseController: UIViewController {
                 self.navigationController?.navigationBar.shadowImage = UIImage()
 //                self.navigationController?.navigationBar.translucent = true
             }
+        }
+    }
+}
+
+extension BaseController: PraseErrorType{
+    //更新用户信息
+    func updateUser(status : NetworkActionStatus ,json : JSON?){
+        if let data = json ,case .success = status{
+            UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
+            NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil, userInfo: nil)
+        }else{
+            self.showError(status)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChangeNicknameController: BaseController, PraseErrorType {
+class ChangeNicknameController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,8 @@ class ChangeNicknameController: BaseController, PraseErrorType {
         
         Router.changeNickname(name: nickname).request { (status, json) in
             
-            if let data = json ,case .success = status{
-                UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
-                self.navigationController?.popViewControllerAnimated(true)
-                NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil)
-            }else{
-                self.showError(status)
-            }
+            self.updateUser(status, json: json)
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     

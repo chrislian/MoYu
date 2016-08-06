@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AutoGraphController: BaseController, PraseErrorType {
+class AutoGraphController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,8 @@ class AutoGraphController: BaseController, PraseErrorType {
         
         Router.updateAutograph(string: autograph).request { (status, json) in
             
-            if let data = json ,case .success = status{
-                UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
-                self.navigationController?.popViewControllerAnimated(true)
-                NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil)
-            }else{
-                self.showError(status)
-            }
+            self.updateUser(status, json: json)
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     

@@ -32,7 +32,7 @@ private enum TextFieldType:Int{
     }
 }
 
-class SignInByPasswordController: BaseController,SignInType {
+class SignInByPasswordController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

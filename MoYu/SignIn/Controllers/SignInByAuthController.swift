@@ -13,7 +13,7 @@ private enum TextFieldType:Int{
     case phoneNum = 0,authCode
 }
 
-class SignInByAuthController: BaseController,SignInType,PraseErrorType {
+class SignInByAuthController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
