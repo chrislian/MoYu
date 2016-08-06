@@ -59,7 +59,8 @@ class LeftMenuController: BaseController {
      - parameter sender:
      */
     @IBAction func headerImageTap(sender: UITapGestureRecognizer) {
-        println("更改头像")
+        
+        self.sourceActionSheet.show( self )
     }
     
     /**
@@ -97,6 +98,15 @@ class LeftMenuController: BaseController {
     
     @IBOutlet var leftMenuView: LeftMenuView!
     
+    
+    lazy var sourceActionSheet:ActionSheetController = {
+        let actionSheet = ActionSheetController()
+        actionSheet.delegate = self
+        actionSheet.showCancelButton = false
+        actionSheet.showDestructiveButton = false
+        return actionSheet
+    }()
+    
 }
 
 //MARK: - UITableView delegate
@@ -130,7 +140,7 @@ extension LeftMenuController: UITableViewDelegate{
 extension LeftMenuController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return cellTitles.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -141,4 +151,23 @@ extension LeftMenuController: UITableViewDataSource{
         
         return LeftMenuCell(style: .Default, reuseIdentifier: SB.Personal.Cell.leftMenuCell)
     }
+}
+
+
+extension LeftMenuController: ActionSheetProtocol{
+    
+    
+    func otherButtons(sheet sheet: ActionSheetController) -> [String] {
+        return ["拍照","从手机相册选择"]
+    }
+    
+    func action(sheet sheet: ActionSheetController, selectedAtIndex: UInt) {
+        
+        if selectedAtIndex == 0{
+            println("拍照")
+        }else if selectedAtIndex == 1{
+            println("从手机相册选择")
+        }
+    }
+    
 }
