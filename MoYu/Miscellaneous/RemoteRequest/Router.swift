@@ -19,12 +19,13 @@ enum Router {
     case updateAutograph(string:String)
     case updateSex(value:Int)
     case updateAge(value:Int)
+    case updateAvatar(string:String)
     
     func request(remote clourse: RemoteClourse){
         
         println("urlString:\(self.urlString())")
-        println("parameters:\(self.parameters())")
-        
+//        println("parameters:\(self.parameters())")
+//        
         Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
     }
     
@@ -42,7 +43,7 @@ extension Router{
             suffix = "logout"
         case .authCode:
             suffix = "getVerify"
-        case .changeNickname, .updateAutograph, updateSex, .updateAge:
+        case .changeNickname, .updateAutograph, updateSex, .updateAge, updateAvatar:
             suffix = "personalInformation"
         }
         return mainUrl + suffix
@@ -85,6 +86,8 @@ extension Router{
             parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "sex": value]
         case .updateAge(let value):
             parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "age": value]
+        case .updateAvatar(let base64String):
+            parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "photo": base64String]
         }
         return parameters
     }

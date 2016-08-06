@@ -26,6 +26,10 @@ class LeftMenuView: UIView {
        headerImageView.mo_loadImage(user.img, placeholder: UIImage(named: "defalutHead")!)
     }
     
+    func update(avator image:UIImage){
+        headerImageView.image = image
+    }
+    
     private func setupView(){
         
         headerImageView.layer.cornerRadius = headerImageView.bounds.size.height/2.0

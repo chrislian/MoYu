@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Proposer
 
 class LeftMenuController: BaseController {
 
@@ -87,6 +88,48 @@ class LeftMenuController: BaseController {
         leftMenuView.isCustomerAuth = true
     }
     
+    private func openPhotoLibrary(){
+        let openCameraRoll: ProposerAction = { [weak self] in
+            
+            guard UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) else {
+                //self?.alertCanNotAccessCameraRoll()
+                self?.showError(message: "不能访问您的相册！\n但您可以在iOS设置里修改设定。")
+                return
+            }
+            
+            if let strongSelf = self {
+                strongSelf.imagePicker.sourceType = .PhotoLibrary
+                strongSelf.presentViewController(strongSelf.imagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        proposeToAccess(.Photos, agreed: openCameraRoll, rejected: {
+            //self.alertCanNotAccessCameraRoll()
+            self.showError(message: "不能访问您的相册！\n但您可以在iOS设置里修改设定。")
+        })
+    }
+    
+    private func openCameraRoll(){
+        let openCamera: ProposerAction = { [weak self] in
+            
+            guard UIImagePickerController.isSourceTypeAvailable(.Camera) else {
+                self?.showError(message: "不能打开您的相机！\n但您可以在iOS设置里修改设定。")
+                return
+            }
+            
+            if let strongSelf = self {
+                strongSelf.imagePicker.sourceType = .Camera
+                strongSelf.presentViewController(strongSelf.imagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        proposeToAccess(.Camera, agreed: openCamera, rejected: {
+           self.showError(message: "不能打开您的相机！\n但您可以在iOS设置里修改设定。")
+        })
+    }
+    
+    
+    
     //MARK: - var & let
     let cellTitles = ["我的钱包","兼职管理","消息中心","推荐有奖","招募中心"]
     let cellImages = [UIImage(named: "leftMyPurse")!,
@@ -105,6 +148,13 @@ class LeftMenuController: BaseController {
         actionSheet.showCancelButton = false
         actionSheet.showDestructiveButton = false
         return actionSheet
+    }()
+    
+    private lazy var imagePicker: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        return imagePicker
     }()
     
 }
@@ -164,10 +214,30 @@ extension LeftMenuController: ActionSheetProtocol{
     func action(sheet sheet: ActionSheetController, selectedAtIndex: UInt) {
         
         if selectedAtIndex == 0{
-            println("拍照")
+            openCameraRoll()
         }else if selectedAtIndex == 1{
-            println("从手机相册选择")
+            openPhotoLibrary()
         }
     }
-    
 }
+
+
+// MARK: UIImagePicker
+
+extension LeftMenuController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        defer {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        let image = image.largestCenteredSquareImage().resizeToTargetSize(CGSize(width: 100, height: 100))
+        
+        guard let base64String = image.image2Base64() else{ return }
+        
+        Router.updateAvatar(string: base64String).request( remote: self.updateUser )
+        
+    }
+}
+
