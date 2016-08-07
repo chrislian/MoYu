@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 import SwiftyJSON
 import Async
 
@@ -200,9 +199,8 @@ extension BaseController: PraseErrorType{
         if let data = json ,case .success = status{
             UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
             NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil, userInfo: nil)
-        }else{
-            self.show(error:status)
         }
+        self.show(error: status, showSuccess: true)
     }
 }
 

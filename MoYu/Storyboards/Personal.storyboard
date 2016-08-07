@@ -119,11 +119,16 @@
                                                         <outletCollection property="gestureRecognizers" destination="jSS-3g-S7O" appends="YES" id="2ST-8d-7AW"/>
                                                     </connections>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-rx-rxQ">
+                                                    <rect key="frame" x="38" y="38" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="OfZ-zF-6Ns" firstAttribute="centerX" secondItem="8az-vi-AiG" secondAttribute="centerX" id="8Sy-zN-bls"/>
+                                                <constraint firstItem="p7B-rx-rxQ" firstAttribute="centerX" secondItem="OfZ-zF-6Ns" secondAttribute="centerX" id="FTg-jS-dGU"/>
                                                 <constraint firstAttribute="width" secondItem="8az-vi-AiG" secondAttribute="height" multiplier="1:1" id="FaZ-Op-bwl"/>
                                                 <constraint firstItem="OfZ-zF-6Ns" firstAttribute="centerY" secondItem="8az-vi-AiG" secondAttribute="centerY" id="PcZ-Fy-VGm"/>
+                                                <constraint firstItem="p7B-rx-rxQ" firstAttribute="centerY" secondItem="OfZ-zF-6Ns" secondAttribute="centerY" id="WCw-T7-qvE"/>
                                                 <constraint firstAttribute="height" constant="95" id="xie-pH-BZ2"/>
                                             </constraints>
                                         </view>
@@ -220,6 +225,7 @@
                     <navigationItem key="navigationItem" id="p6k-NP-KIQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="p7B-rx-rxQ" id="qnj-rc-j8G"/>
                         <outlet property="leftMenuView" destination="HdI-TZ-Mbz" id="hfy-I5-SH6"/>
                         <segue destination="4a5-ez-j4O" kind="presentation" identifier="segueMyPurse" id="ARU-lW-ZCT"/>
                         <segue destination="TXM-yh-c3M" kind="presentation" identifier="segueUserInfo" id="nNb-RL-dvi"/>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 enum NetworkActionStatus{
     case success(message:String)

@@ -86,6 +86,9 @@ class LeftMenuController: BaseController {
         
         leftMenuView.updateHeader(user: UserManager.sharedInstance.user)
         leftMenuView.isCustomerAuth = true
+        
+        activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.stopAnimating()
     }
     
     private func openPhotoLibrary(){
@@ -138,6 +141,7 @@ class LeftMenuController: BaseController {
     
     
     @IBOutlet var leftMenuView: LeftMenuView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     
     lazy var sourceActionSheet:ActionSheetController = {
@@ -240,8 +244,13 @@ extension LeftMenuController: UIImagePickerControllerDelegate, UINavigationContr
 //            leftMenuView.update(avator: decodeImage)
 //            println("imageSize:\(decodeImage.size)")
 //        }        
-        Router.updateAvatar(string: base64String).request( remote: self.updateUser )
         
+        activityIndicatorView.startAnimating()
+        
+        Router.updateAvatar(string: base64String).request{
+            self.updateUser($0, json: $1)
+            self.activityIndicatorView.stopAnimating()
+        }
     }
 }
 

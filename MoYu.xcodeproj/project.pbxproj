@@ -296,7 +296,7 @@
 				831C33C91CB0B1E900157B67 /* AppDelegate.swift */,
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
-				833457261D55E04E008FFFF9 /* MOKit */,
+				833457261D55E04E008FFFF9 /* MoKit */,
 				8327B6441D3B406600DF6D78 /* Base */,
 				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
 				831632AC1D2EA30900205211 /* RemoteRequest */,
@@ -354,12 +354,13 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
-		833457261D55E04E008FFFF9 /* MOKit */ = {
+		833457261D55E04E008FFFF9 /* MoKit */ = {
 			isa = PBXGroup;
 			children = (
 				8332409A1D56FD43006C7203 /* AlertView */,
 				8334572B1D55F3FC008FFFF9 /* ActionSheet */,
 			);
+			name = MoKit;
 			path = MOKit;
 			sourceTree = "<group>";
 		};

@@ -16,7 +16,6 @@ PODS:
   - REFrostedViewController (2.4.8)
   - SnapKit (0.21.1)
   - Spring (1.0.3)
-  - SVProgressHUD (2.0.3)
   - SwiftDate (3.0.8)
   - SwiftyJSON (2.3.2)
   - YYText (1.0.5)
@@ -35,7 +34,6 @@ DEPENDENCIES:
   - REFrostedViewController (~> 2.0)
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
-  - SVProgressHUD (~> 2.0)
   - SwiftDate (~> 3.0)
   - SwiftyJSON (~> 2.0)
   - YYText (~> 1.0)
@@ -65,11 +63,10 @@ SPEC CHECKSUMS:
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
-  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
 
-PODFILE CHECKSUM: 1ba0fd0f61241f3497c7145c6fd9e8b66880a765
+PODFILE CHECKSUM: dfceff4efddb0f76dc1466373d766197713552d0
 
 COCOAPODS: 1.0.1

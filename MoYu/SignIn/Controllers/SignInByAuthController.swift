@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 private enum TextFieldType:Int{
     case phoneNum = 0,authCode
