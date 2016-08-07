@@ -15,13 +15,16 @@ enum Router {
     case signIn(phone:String, verifyCode:String)
     case signOut
     case authCode(phone:String)
-    case changeNickname(name:String)
+    case updateNickname(name:String)
     case updateAutograph(string:String)
     case updateSex(value:Int)
     case updateAge(value:Int)
-    case updateAvatar(string:String)
+    case updateAvatar(string:String)//跟新头像
     
     case financial//财务信息
+    case feedback(type:String, title:String, content:String) //反馈
+    
+    
     
     func request(remote clourse: RemoteClourse){
         
@@ -41,19 +44,21 @@ extension Router{
         switch self {
         case .signIn:
             suffix = "login"
+            
         case .signOut:
             suffix = "logout"
+            
         case .authCode:
             suffix = "getVerify"
-        case .changeNickname,
-             .updateAutograph,
-             .updateSex,
-             .updateAge,
-             .updateAvatar:
+            
+        case .updateNickname, .updateAutograph, .updateSex, .updateAge, .updateAvatar:
             suffix = "personalInformation"
             
         case .financial:
             suffix = "financialInformation"
+            
+        case .feedback:
+            suffix = "feedback"
         }
         return mainUrl + suffix
     }
@@ -104,7 +109,7 @@ extension Router{
         case .authCode(let phone):
             parameters = ["phonenum" : phone]
             
-        case .changeNickname(let name):
+        case .updateNickname(let name):
             parameters = compose(parameters: ["nickname": name])
             
         case .updateAutograph(let autograph):
@@ -118,6 +123,9 @@ extension Router{
             
         case .updateAvatar(let base64String):
             parameters = compose(parameters: ["photo": base64String])
+            
+        case .feedback(let type, let title, let content):
+            parameters = compose(parameters: ["type":type, "title":title, "content": content])
         }
         return parameters
     }

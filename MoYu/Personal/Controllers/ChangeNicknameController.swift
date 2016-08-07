@@ -28,7 +28,7 @@ class ChangeNicknameController: BaseController {
             return
         }
         
-        Router.changeNickname(name: nickname).request { (status, json) in
+        Router.updateNickname(name: nickname).request { (status, json) in
             
             self.updateUser(status, json: json)
             self.navigationController?.popViewControllerAnimated(true)
