@@ -346,15 +346,15 @@
                         <viewControllerLayoutGuide type="bottom" id="74e-6D-LXt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="14s-NT-TwR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XKP-gT-EQJ">
-                                <rect key="frame" x="-8" y="64" width="391" height="603"/>
+                                <rect key="frame" x="-8" y="0.0" width="391" height="603"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMyPurseIdentifier" rowHeight="44" id="XHb-bB-DlX" customClass="MyPurseCell" customModule="MoYu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="114" width="391" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="391" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHb-bB-DlX" id="DDT-Cm-bMN">
                                             <rect key="frame" x="0.0" y="0.0" width="391" height="43"/>
@@ -431,7 +431,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qpe-13-FMG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vm5-pi-1HC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -445,7 +445,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4a5-ez-j4O" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dNg-cp-iZH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dNg-cp-iZH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.98039215686274506" green="0.69019607843137254" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
