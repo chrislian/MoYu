@@ -15,7 +15,7 @@ import Spring
     optional func config(sheet sheet:ActionSheetController, cancelButton: UIButton)
     
     optional func otherButtons(sheet sheet:ActionSheetController)->[String]
-    optional func action(sheet sheet: ActionSheetController, selectedAtIndex: UInt)
+    optional func action(sheet sheet: ActionSheetController, selectedAtIndex: Int)
 }
 
 private let buttonHeight:CGFloat = 36
@@ -95,7 +95,7 @@ class ActionSheetController: UIViewController {
         dismiss { 
             guard let button = button as? ActionSheetButton else{ return }
             
-            self.delegate?.action?(sheet: self, selectedAtIndex: button.buttonIndex )
+            self.delegate?.action?(sheet: self, selectedAtIndex: Int(button.buttonIndex) )
         }
     }
     

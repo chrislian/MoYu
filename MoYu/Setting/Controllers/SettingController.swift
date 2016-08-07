@@ -107,6 +107,9 @@ extension SettingController: UITableViewDelegate{
             self.performSegueWithIdentifier(SB.Setting.Segue.accountBinding, sender: nil)
         case (1,0):
             self.performSegueWithIdentifier(SB.Setting.Segue.userGuide, sender: nil)
+        case (2,2):
+            let vc = FeedbackController()
+            self.navigationController?.pushViewController(vc, animated: true)
         default:
             let vc = UIViewController()
             vc.title = datas[indexPath.section][indexPath.row]

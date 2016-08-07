@@ -29,6 +29,8 @@
 		833240AF1D574F9D006C7203 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240A91D574F9D006C7203 /* SettingController.swift */; };
 		833240B01D574F9D006C7203 /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240AA1D574F9D006C7203 /* UserGuideController.swift */; };
 		833240B11D574F9D006C7203 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240AC1D574F9D006C7203 /* AccountBindingModel.swift */; };
+		833240B31D575038006C7203 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240B21D575038006C7203 /* FeedbackController.swift */; };
+		833240B51D57538D006C7203 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240B41D57538D006C7203 /* FeedbackView.swift */; };
 		8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */; };
 		83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC71D51844D002E842D /* IdentifyCode.swift */; };
 		83393DCA1D51844D002E842D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC81D51844D002E842D /* Reachability.swift */; };
@@ -148,6 +150,8 @@
 		833240A91D574F9D006C7203 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		833240AA1D574F9D006C7203 /* UserGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
 		833240AC1D574F9D006C7203 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
+		833240B21D575038006C7203 /* FeedbackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
+		833240B41D57538D006C7203 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetController.swift; sourceTree = "<group>"; };
 		83393DC71D51844D002E842D /* IdentifyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCode.swift; sourceTree = "<group>"; };
 		83393DC81D51844D002E842D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -368,9 +372,10 @@
 		833240A71D574F9D006C7203 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				833240A81D574F9D006C7203 /* AccountBindingController.swift */,
 				833240A91D574F9D006C7203 /* SettingController.swift */,
+				833240A81D574F9D006C7203 /* AccountBindingController.swift */,
 				833240AA1D574F9D006C7203 /* UserGuideController.swift */,
+				833240B21D575038006C7203 /* FeedbackController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 		833240AD1D574F9D006C7203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				833240B41D57538D006C7203 /* FeedbackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1096,12 +1102,14 @@
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
 				83D965131D52DA7200484F14 /* UserInfo.swift in Sources */,
+				833240B31D575038006C7203 /* FeedbackController.swift in Sources */,
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
 				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
+				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
 				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,

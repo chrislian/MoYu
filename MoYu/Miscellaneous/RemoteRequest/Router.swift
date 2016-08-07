@@ -29,8 +29,8 @@ enum Router {
     func request(remote clourse: RemoteClourse){
         
         println("urlString:\(self.urlString())")
-//        println("parameters:\(self.parameters())")
-//        
+        println("parameters:\(self.parameters())")
+        
         Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
     }
     

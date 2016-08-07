@@ -237,13 +237,13 @@ extension UseInfoController: ActionSheetProtocol{
         return ["女","男"]
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: UInt) {
+    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int) {
         
-        if UserManager.sharedInstance.user.sex == Int(selectedAtIndex){
+        if UserManager.sharedInstance.user.sex == selectedAtIndex{
             return
         }
         
-        Router.updateSex(value: Int(selectedAtIndex)).request(remote: self.updateUser )
+        Router.updateSex(value: selectedAtIndex).request(remote: self.updateUser )
     }
     
 }

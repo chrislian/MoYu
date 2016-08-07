@@ -213,7 +213,7 @@ extension LeftMenuController: ActionSheetProtocol{
         return ["拍照","从手机相册选择"]
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: UInt) {
+    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int) {
         
         if selectedAtIndex == 0{
             openCameraRoll()
