@@ -43,7 +43,11 @@ extension Router{
             suffix = "logout"
         case .authCode:
             suffix = "getVerify"
-        case .changeNickname, .updateAutograph, updateSex, .updateAge, updateAvatar:
+        case .changeNickname,
+             .updateAutograph,
+             .updateSex,
+             .updateAge,
+             .updateAvatar:
             suffix = "personalInformation"
         }
         return mainUrl + suffix
