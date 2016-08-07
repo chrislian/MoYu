@@ -292,6 +292,14 @@ public extension UIImage {
 
 extension UIImage{
 
+    func imageFrom(base64 string:String) -> UIImage?{
+        
+        if let decodeImageData = NSData(base64EncodedString: string, options: .IgnoreUnknownCharacters) {
+            return UIImage(data: decodeImageData)
+        }
+        return nil
+    }
+    
     func image2Base64()->String?{
         
         var imageData:NSData?

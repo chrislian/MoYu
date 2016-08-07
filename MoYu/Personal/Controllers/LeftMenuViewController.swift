@@ -236,6 +236,12 @@ extension LeftMenuController: UIImagePickerControllerDelegate, UINavigationContr
         
         guard let base64String = image.image2Base64() else{ return }
         
+//        if let decodeImageData = NSData(base64EncodedString: base64String, options: .IgnoreUnknownCharacters),
+//            let decodeImage = UIImage(data: decodeImageData){
+//            
+//            leftMenuView.update(avator: decodeImage)
+//            println("imageSize:\(decodeImage.size)")
+//        }        
         Router.updateAvatar(string: base64String).request( remote: self.updateUser )
         
     }
