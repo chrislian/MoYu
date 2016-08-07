@@ -26,6 +26,7 @@
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
 		833240971D56E579006C7203 /* MoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240941D56E579006C7203 /* MoAlert.swift */; };
 		833240981D56E579006C7203 /* MoHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240951D56E579006C7203 /* MoHUD.swift */; };
+		833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8332409C1D56FD43006C7203 /* OLGhostAlertView.m */; };
 		8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */; };
 		83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC71D51844D002E842D /* IdentifyCode.swift */; };
 		83393DCA1D51844D002E842D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC81D51844D002E842D /* Reachability.swift */; };
@@ -143,6 +144,8 @@
 		8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
 		833240941D56E579006C7203 /* MoAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoAlert.swift; sourceTree = "<group>"; };
 		833240951D56E579006C7203 /* MoHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoHUD.swift; sourceTree = "<group>"; };
+		8332409B1D56FD43006C7203 /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
+		8332409C1D56FD43006C7203 /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
 		8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetController.swift; sourceTree = "<group>"; };
 		83393DC71D51844D002E842D /* IdentifyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCode.swift; sourceTree = "<group>"; };
 		83393DC81D51844D002E842D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -342,9 +345,19 @@
 			path = SFHFKeychainUtils;
 			sourceTree = "<group>";
 		};
+		8332409A1D56FD43006C7203 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8332409B1D56FD43006C7203 /* OLGhostAlertView.h */,
+				8332409C1D56FD43006C7203 /* OLGhostAlertView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		833457261D55E04E008FFFF9 /* MOKit */ = {
 			isa = PBXGroup;
 			children = (
+				8332409A1D56FD43006C7203 /* AlertView */,
 				8334572B1D55F3FC008FFFF9 /* ActionSheet */,
 			);
 			path = MOKit;
@@ -1043,6 +1056,7 @@
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
 				8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */,
 				83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */,
+				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,
 				83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
 				833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */,

@@ -24,7 +24,7 @@ class ChangeNicknameController: BaseController {
     @objc private func rightBarButtonClick(sender:UIButton){
         
         guard let nickname = self.nicknameTextField.text where !nickname.isEmpty else{
-            self.showError(message: "昵称不能为空")
+            self.show(message: "昵称不能为空")
             return
         }
         

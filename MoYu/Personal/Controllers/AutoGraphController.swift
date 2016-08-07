@@ -24,7 +24,7 @@ class AutoGraphController: BaseController {
     @objc private func rightBarButtonClick(sender:UIButton){
         
         guard let autograph = self.autographTextField.text where !autograph.isEmpty else{
-            self.showError(message: "什么都没说呢~")
+            self.show(message: "什么都没说呢~")
             return
         }
         

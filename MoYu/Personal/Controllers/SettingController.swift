@@ -25,7 +25,7 @@ class SettingController: BaseController {
         
         Router.signOut.request { (status, json) in
             
-            self.showError(status,showSuccess: true)
+            self.show(error: status, showSuccess: true)
             
             if case .success = status{
                 

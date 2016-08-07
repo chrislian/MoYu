@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import SwiftyJSON
+import Async
 
 enum NavButtonDirectionType: Int{
     case Left = 0,Right
@@ -188,6 +189,9 @@ class BaseController: UIViewController {
             }
         }
     }
+    
+    private let alertView = OLGhostAlertView()
+    private let alertViewLock = NSLock()
 }
 
 extension BaseController: PraseErrorType{
@@ -197,8 +201,72 @@ extension BaseController: PraseErrorType{
             UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
             NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil, userInfo: nil)
         }else{
-            self.showError(status)
+            self.show(error:status)
         }
     }
 }
+
+
+// MARK: - Show Message
+extension BaseController{
+    
+    func show(message message: String){
+        self.showMessage(title: message)
+    }
+    
+    func showMessage(title title: String, message: String){
+        self.showMessage(title: title, message: message, completed: nil)
+    }
+    
+    func showMessage(title title: String, message: String? = nil,timeout: NSTimeInterval = 2,forced: Bool = false, completed: (() -> Void)? = nil){
+        Async.main{
+            self.alertViewLock.lock()
+            
+            if let _ = self.alertView.superview{
+                self.alertView.hide(false)
+            }
+            
+            self.alertView.position = .Center
+            self.alertView.completionBlock = completed
+            
+            if let msg = message{
+                self.alertView.message = msg
+            }else{
+                self.alertView.message = nil
+            }
+            self.alertView.title = title
+            self.alertView.customView = nil
+            
+            if forced{
+                self.alertView.showInWindow()
+            }else{
+                self.alertView.show()
+            }
+            self.alertViewLock.unlock()
+        }
+    }
+    
+    func showCustomView(customView: UIView,timeout: NSTimeInterval = 2, completed: (() -> Void)?){
+
+        Async.main {
+            if let _ = self.alertView.superview{
+                self.alertView.hide(false)
+            }
+            self.alertView.position = .Center
+            self.alertView.completionBlock = completed
+            self.alertView.timeout = timeout
+            self.alertView.backgroundColor = UIColor ( red: 0.9882, green: 0.7569, blue: 0.051, alpha: 0.8 )
+            self.alertView.title = ""
+            self.alertView.customView = customView
+            self.alertView.show()
+        }
+    }
+    
+    func dismissMessage(){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2), dispatch_get_main_queue()) { [weak self]() -> Void in
+            self?.alertView.hide(false)
+        }
+    }
+}
+
 
