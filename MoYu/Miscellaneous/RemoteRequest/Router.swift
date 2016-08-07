@@ -63,31 +63,36 @@ extension Router{
         return UserManager.sharedInstance.user.id
     }
     
+    private func MOUID()->String{
+        return MODevice.MOUID()!
+    }
+    
+    private func personalInfo(key key:String,value:AnyObject) -> [String: AnyObject]{
+        
+        return ["userid":userID(), "sessionid": sessionID(), "device":MOUID(), key:value]
+    }
+    
     private func parameters() -> [String:AnyObject]? {
         
         var parameters:[String:AnyObject]? = nil
         
-        guard let mouid = MODevice.MOUID() else{
-            return parameters
-        }
-        
         switch self {
         case .signIn(let phone, let code):
-            parameters = ["type": 2,"device": mouid,"phonenum": phone,"verify": code]
+            parameters = ["type": 2,"device": MOUID(),"phonenum": phone,"verify": code]
         case .signOut:
-            parameters = ["sessionid" : self.sessionID(),"device": mouid]
+            parameters = ["sessionid" : self.sessionID(),"device": MOUID()]
         case .authCode(let phone):
             parameters = ["phonenum" : phone]
         case .changeNickname(let name):
-            parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "nickname": name]
+            parameters = personalInfo(key: "nickname", value: name)
         case .updateAutograph(let autograph):
-            parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "autograph": autograph]
-        case .updateSex(let value):
-            parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "sex": value]
-        case .updateAge(let value):
-            parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "age": value]
+            parameters = personalInfo(key: "autograph", value: autograph)
+        case .updateSex(let sex):
+            parameters = personalInfo(key: "sex", value: sex)
+        case .updateAge(let age):
+            parameters = personalInfo(key: "age", value: age)
         case .updateAvatar(let base64String):
-            parameters = ["userid":self.userID(), "sessionid": self.sessionID(), "device":mouid, "photo": base64String]
+            parameters = personalInfo(key: "photo", value: base64String)
         }
         return parameters
     }
