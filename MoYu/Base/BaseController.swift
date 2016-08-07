@@ -10,6 +10,9 @@ import UIKit
 import SwiftyJSON
 import Async
 
+private let backImageNormal = UIImage(named: "tab_fanhui_a_")!.mo_changeColor(UIColor.mo_lightBlack())
+private let backImageHighlighted = UIImage(named: "tab_fanhui_b_")!.mo_changeColor(UIColor.mo_main())
+
 enum NavButtonDirectionType: Int{
     case Left = 0,Right
 }
@@ -55,7 +58,7 @@ class BaseController: UIViewController {
      添加返回按钮
      */
     func addBackNavigationButton(){
-        self.setLeftNavigationButton(nomal: UIImage(named: "tab_fanhui_a_"), highlighted: UIImage(named: "tab_fanhui_b_"))
+        self.setLeftNavigationButton(nomal: backImageNormal, highlighted: backImageHighlighted)
         self.leftButtonClourse = {[unowned self] in
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -160,8 +163,8 @@ class BaseController: UIViewController {
         let button = UIButton(frame:CGRect(x: 0, y: 0, width: 21, height: 30))
         button.backgroundColor = UIColor.clearColor()
         button.imageEdgeInsets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        button.setImage(UIImage(named: "tab_fanhui_a_"), forState: .Normal)
-        button.setImage(UIImage(named: "tab_fanhui_b_"), forState: .Highlighted)
+        button.setImage(backImageNormal, forState: .Normal)
+        button.setImage(backImageHighlighted, forState: .Highlighted)
         button.contentMode = .Center
         button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
         button.addTarget(self, action: #selector(BaseController.navigationButtonClicked(_:)), forControlEvents: .TouchUpInside)
