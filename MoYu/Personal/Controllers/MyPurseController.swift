@@ -45,6 +45,11 @@ class MyPurseController: BaseController {
         self.title = "我的钱包"
         
         self.setupView()
+        
+        
+        Router.financial.request { (status, json) in
+            self.show(error: status)
+        }
     }
     
     //MARK: - private method

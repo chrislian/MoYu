@@ -21,6 +21,8 @@ enum Router {
     case updateAge(value:Int)
     case updateAvatar(string:String)
     
+    case financial//财务信息
+    
     func request(remote clourse: RemoteClourse){
         
         println("urlString:\(self.urlString())")
@@ -49,6 +51,9 @@ extension Router{
              .updateAge,
              .updateAvatar:
             suffix = "personalInformation"
+            
+        case .financial:
+            suffix = "financialInformation"
         }
         return mainUrl + suffix
     }
@@ -71,9 +76,19 @@ extension Router{
         return MODevice.MOUID()!
     }
     
-    private func personalInfo(key key:String,value:AnyObject) -> [String: AnyObject]{
+    private func compose(parameters parameters: [String: AnyObject]? = nil) -> [String: AnyObject]{
         
-        return ["userid":userID(), "sessionid": sessionID(), "device":MOUID(), key:value]
+        let base:[String:AnyObject] = ["userid":userID(), "sessionid": sessionID(), "device":MOUID()]
+        
+        guard let parameters = parameters else { return base }
+        
+        let array = base.map{ $0 } + parameters.map{ $0 }
+        
+        return array.reduce( [:], combine: {
+            var tmp = $0
+            tmp[$1.0] = $1.1
+            return tmp
+        })
     }
     
     private func parameters() -> [String:AnyObject]? {
@@ -83,20 +98,26 @@ extension Router{
         switch self {
         case .signIn(let phone, let code):
             parameters = ["type": 2,"device": MOUID(),"phonenum": phone,"verify": code]
-        case .signOut:
-            parameters = ["sessionid" : self.sessionID(),"device": MOUID()]
+        case .signOut,.financial:
+            parameters = compose()
+            
         case .authCode(let phone):
             parameters = ["phonenum" : phone]
+            
         case .changeNickname(let name):
-            parameters = personalInfo(key: "nickname", value: name)
+            parameters = compose(parameters: ["nickname": name])
+            
         case .updateAutograph(let autograph):
-            parameters = personalInfo(key: "autograph", value: autograph)
+            parameters = compose(parameters: ["autograph": autograph])
+            
         case .updateSex(let sex):
-            parameters = personalInfo(key: "sex", value: sex)
+            parameters = compose(parameters: ["sex": sex])
+            
         case .updateAge(let age):
-            parameters = personalInfo(key: "age", value: age)
+            parameters = compose(parameters: ["age": age])
+            
         case .updateAvatar(let base64String):
-            parameters = personalInfo(key: "photo", value: base64String)
+            parameters = compose(parameters: ["photo": base64String])
         }
         return parameters
     }
