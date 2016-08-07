@@ -28,6 +28,10 @@ class SignInByAuthController: BaseController {
         self.navigationBarOpaque = false
     }
     
+    deinit{
+        countDownTimer?.invalidate()
+    }
+    
     
     //MARK: - event reponse
     func enterButtonTap(sender: UIButton){
@@ -57,6 +61,8 @@ class SignInByAuthController: BaseController {
         guard let phoneNum = signInView.userTextfield.text where checkValidatePhone(signInView.userTextfield) else{
             return
         }
+        
+        self.lockCurrent(button: signInView.authButton, waitSectionds: 60)
         
         Router.authCode(phone: phoneNum).request { (status, json) in
             self.show(error: status, showSuccess: true)
@@ -112,6 +118,23 @@ class SignInByAuthController: BaseController {
 
     //MARK: - var & let
     @IBOutlet var signInView: SignInByAuthView!
+    
+    private var countDownTime = 60
+    private var countDownLabel :UILabel = {
+        let label = UILabel()
+        
+        label.backgroundColor = UIColor.mo_lightYellow()
+        label.font = UIFont.mo_font(.smallest)
+        label.textAlignment = .Center
+        label.text = "60s重新获取"
+        label.textColor = UIColor.mo_silver()
+        
+        return label
+    }()
+    
+    private var countDownButton:UIButton?
+    private var countDownTimer:NSTimer?
+    
 }
 
 extension SignInByAuthController : UITextFieldDelegate{
@@ -159,6 +182,38 @@ extension SignInByAuthController : UITextFieldDelegate{
         case .authCode:
             return handleInputTextField(6)
         }
+    }
+}
+
+
+extension SignInByAuthController{
+    
+    func updateCountDownLabel(){
+        countDownTime -= 1
+        countDownLabel.text = "\(countDownTime)s重新获取"
+        
+        if countDownTime <= 0{
+            
+            countDownButton?.enabled = true
+            countDownLabel.removeFromSuperview()
+            countDownTimer?.invalidate()
+        }
+    }
+    
+    func lockCurrent(button button:UIButton, waitSectionds:Int){
+        
+        countDownTimer?.invalidate()
+        
+        countDownTime = waitSectionds
+        
+        countDownLabel.text = "\(countDownTime)s重新获取"
+        
+        button.enabled = false
+        countDownButton = button
+        countDownButton?.addSubview(countDownLabel)
+        
+        countDownLabel.frame = button.bounds
+        countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateCountDownLabel), userInfo: nil, repeats: true)
     }
 }
 
