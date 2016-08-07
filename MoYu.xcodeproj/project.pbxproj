@@ -24,6 +24,8 @@
 		833180071D2A86F200EFAF69 /* AccountBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180061D2A86F200EFAF69 /* AccountBindingController.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */; };
+		833240971D56E579006C7203 /* MoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240941D56E579006C7203 /* MoAlert.swift */; };
+		833240981D56E579006C7203 /* MoHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240951D56E579006C7203 /* MoHUD.swift */; };
 		8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */; };
 		83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC71D51844D002E842D /* IdentifyCode.swift */; };
 		83393DCA1D51844D002E842D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC81D51844D002E842D /* Reachability.swift */; };
@@ -139,6 +141,8 @@
 		833180061D2A86F200EFAF69 /* AccountBindingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingController.swift; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
 		8331800A1D2A901F00EFAF69 /* AccountBindingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingModel.swift; sourceTree = "<group>"; };
+		833240941D56E579006C7203 /* MoAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoAlert.swift; sourceTree = "<group>"; };
+		833240951D56E579006C7203 /* MoHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoHUD.swift; sourceTree = "<group>"; };
 		8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetController.swift; sourceTree = "<group>"; };
 		83393DC71D51844D002E842D /* IdentifyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCode.swift; sourceTree = "<group>"; };
 		83393DC81D51844D002E842D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -357,6 +361,8 @@
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				833240941D56E579006C7203 /* MoAlert.swift */,
+				833240951D56E579006C7203 /* MoHUD.swift */,
 				8389C6541CB0EA5E003E96B1 /* Print.swift */,
 				83D965141D52DD8C00484F14 /* UserManager.swift */,
 			);
@@ -1016,6 +1022,7 @@
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
 				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
+				833240981D56E579006C7203 /* MoHUD.swift in Sources */,
 				8331800B1D2A901F00EFAF69 /* AccountBindingModel.swift in Sources */,
 				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
 				8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */,
@@ -1064,6 +1071,7 @@
 				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,
 				838E850E1D294CC100C992CC /* UIFont+MoYu.swift in Sources */,
 				838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */,
+				833240971D56E579006C7203 /* MoAlert.swift in Sources */,
 				838E84E71D29492200C992CC /* FindWorkController.swift in Sources */,
 				838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */,
 				833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */,

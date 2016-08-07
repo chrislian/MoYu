@@ -92,8 +92,7 @@ class LeftMenuController: BaseController {
         let openCameraRoll: ProposerAction = { [weak self] in
             
             guard UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) else {
-                //self?.alertCanNotAccessCameraRoll()
-                self?.showError(message: "不能访问您的相册！\n但您可以在iOS设置里修改设定。")
+                self?.alertCanNotAccessCameraRoll()
                 return
             }
             
@@ -104,8 +103,7 @@ class LeftMenuController: BaseController {
         }
         
         proposeToAccess(.Photos, agreed: openCameraRoll, rejected: {
-            //self.alertCanNotAccessCameraRoll()
-            self.showError(message: "不能访问您的相册！\n但您可以在iOS设置里修改设定。")
+            self.alertCanNotAccessCameraRoll()
         })
     }
     
@@ -113,7 +111,7 @@ class LeftMenuController: BaseController {
         let openCamera: ProposerAction = { [weak self] in
             
             guard UIImagePickerController.isSourceTypeAvailable(.Camera) else {
-                self?.showError(message: "不能打开您的相机！\n但您可以在iOS设置里修改设定。")
+                self?.alertCanNotOpenCamera()
                 return
             }
             
@@ -124,7 +122,7 @@ class LeftMenuController: BaseController {
         }
         
         proposeToAccess(.Camera, agreed: openCamera, rejected: {
-           self.showError(message: "不能打开您的相机！\n但您可以在iOS设置里修改设定。")
+            self.alertCanNotOpenCamera()
         })
     }
     
