@@ -15,6 +15,7 @@
 		831C33D41CB0B1E900157B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33D21CB0B1E900157B67 /* LaunchScreen.storyboard */; };
 		831C33DF1CB0B1E900157B67 /* MoYuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33DE1CB0B1E900157B67 /* MoYuTests.swift */; };
 		831C33EA1CB0B1E900157B67 /* MoYuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33E91CB0B1E900157B67 /* MoYuUITests.swift */; };
+		83213EDD1D58C6CB000D8691 /* RecuritCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83213EDC1D58C6CB000D8691 /* RecuritCenterController.swift */; };
 		8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B63E1D3B24FF00DF6D78 /* Router.swift */; };
 		8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */; };
 		8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */; };
@@ -139,6 +140,7 @@
 		831C33E51CB0B1E900157B67 /* MoYuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoYuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		831C33E91CB0B1E900157B67 /* MoYuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuUITests.swift; sourceTree = "<group>"; };
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83213EDC1D58C6CB000D8691 /* RecuritCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecuritCenterController.swift; sourceTree = "<group>"; };
 		8327B63E1D3B24FF00DF6D78 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPaswordeView.swift; sourceTree = "<group>"; };
 		8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocolController.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 				839EC9601D49D97400658CE6 /* WithdrawController.swift */,
 				83829ECC1D58679100CD6587 /* MessageCenterController.swift */,
 				83829ED41D58877B00CD6587 /* RecommendController.swift */,
+				83213EDC1D58C6CB000D8691 /* RecuritCenterController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1101,6 +1104,7 @@
 				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
 				838E85101D294CC100C992CC /* UIImageView+MoYu.swift in Sources */,
+				83213EDD1D58C6CB000D8691 /* RecuritCenterController.swift in Sources */,
 				838E84ED1D29492200C992CC /* HomeMenuItemModel.swift in Sources */,
 				838E84EF1D29492200C992CC /* HomeMenuCell.swift in Sources */,
 				838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */,

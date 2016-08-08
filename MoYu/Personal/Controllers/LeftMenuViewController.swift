@@ -194,6 +194,8 @@ extension LeftMenuController: UITableViewDelegate{
             self.performSegueWithIdentifier(SB.Personal.Segue.messageCenter, sender: nil)
         case 3:
             self.performSegueWithIdentifier(SB.Personal.Segue.recommend, sender: nil)
+        case 4:
+            self.performSegueWithIdentifier(SB.Personal.Segue.recuritCenter, sender: nil)
         default :break
         }
         

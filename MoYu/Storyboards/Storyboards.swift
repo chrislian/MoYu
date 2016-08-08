@@ -57,6 +57,7 @@ struct SB {
             static let userInfo = "segueUserInfo"
             static let messageCenter = "segueMessageCenter"
             static let recommend = "segueRecommned"
+            static let recuritCenter = "segueRecruit"
         }
         
         struct Vc {
