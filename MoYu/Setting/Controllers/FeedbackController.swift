@@ -24,11 +24,15 @@ class FeedbackController: BaseController {
     //MARK: - event reponse
     func typeButtonTap(button:UIButton){
         
+        self.view.endEditing(true)
+        
         typeActionSheet.show(self)
         
     }
     
     private func leftBarItemTap(){
+        
+        self.view.endEditing(true)
         
         guard let title = feedbackView.titleText.text where !title.isEmpty else{
             
@@ -41,7 +45,7 @@ class FeedbackController: BaseController {
             return
         }
         
-        Router.feedback(type: String(selectIndex), title: title, content: content).request { (status, json) in
+        Router.feedback(type: String(selectIndex + 1), title: title, content: content).request { (status, json) in
             self.show(error: status)
             
             if case .success = status{
