@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutJobsController: UIViewController {
+class AboutJobsController: BaseController {
 
     //MARK: -  life cycle
     override func viewDidLoad() {
@@ -16,6 +16,12 @@ class AboutJobsController: UIViewController {
         
         self.title = "职来职往"
         self.setupView()
+        
+        Router.aboutJob(page: 1).request { (status, json) in
+            
+            self.show(error: status)
+        }
+        
     }
     
     

@@ -9,7 +9,7 @@
 import UIKit
 import YYText
 
-class PublishMessageController: UIViewController {
+class PublishMessageController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {

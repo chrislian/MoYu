@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class PersonMessageController: UIViewController {
+class PersonMessageController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
