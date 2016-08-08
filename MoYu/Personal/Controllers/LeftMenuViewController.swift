@@ -183,7 +183,18 @@ extension LeftMenuController: UITableViewDelegate{
         
         if indexPath.row == 0{
             self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
+        }else if indexPath.row == 1{
+            
         }
+        switch indexPath.row{
+        case 0:
+            self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
+        case 1:break
+        case 2:
+            self.performSegueWithIdentifier(SB.Personal.Segue.messageCenter, sender: nil)
+        default :break
+        }
+        
     }
 }
 

@@ -42,6 +42,10 @@
 		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
 		834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4161D3236460046FBEF /* SignInByPasswordController.swift */; };
 		834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4181D3287560046FBEF /* SignInByAuthView.swift */; };
+		83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECC1D58679100CD6587 /* MessageCenterController.swift */; };
+		83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */; };
+		83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */; };
+		83829ED31D586DF900CD6587 /* MoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED21D586DF900CD6587 /* MoConfig.swift */; };
 		8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* Print.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
 		838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84BF1D29492200C992CC /* AboutJobsController.swift */; };
@@ -163,6 +167,10 @@
 		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
 		834EC4161D3236460046FBEF /* SignInByPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPasswordController.swift; sourceTree = "<group>"; };
 		834EC4181D3287560046FBEF /* SignInByAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthView.swift; sourceTree = "<group>"; };
+		83829ECC1D58679100CD6587 /* MessageCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterController.swift; sourceTree = "<group>"; };
+		83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
+		83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterModel.swift; sourceTree = "<group>"; };
+		83829ED21D586DF900CD6587 /* MoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoConfig.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		838E84BF1D29492200C992CC /* AboutJobsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobsController.swift; sourceTree = "<group>"; };
@@ -441,6 +449,7 @@
 				83393DC81D51844D002E842D /* Reachability.swift */,
 				8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */,
 				8327B64F1D3B666C00DF6D78 /* MODevice.swift */,
+				83829ED21D586DF900CD6587 /* MoConfig.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -610,6 +619,7 @@
 				83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */,
 				83BCD61D1D4718E200FA4388 /* BalanceController.swift */,
 				839EC9601D49D97400658CE6 /* WithdrawController.swift */,
+				83829ECC1D58679100CD6587 /* MessageCenterController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -618,6 +628,7 @@
 			isa = PBXGroup;
 			children = (
 				83BCD6231D471E1B00FA4388 /* ConsumeHistoryModel.swift */,
+				83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -632,6 +643,7 @@
 				83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */,
 				83BCD61F1D47192900FA4388 /* BalanceHeadView.swift */,
 				83BCD6211D47194B00FA4388 /* BalanceCell.swift */,
+				83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1072,6 +1084,7 @@
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
+				83829ED31D586DF900CD6587 /* MoConfig.swift in Sources */,
 				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				833240981D56E579006C7203 /* MoHUD.swift in Sources */,
@@ -1106,6 +1119,7 @@
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
 				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
+				83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
@@ -1115,6 +1129,7 @@
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */,
+				83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */,
 				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
@@ -1130,6 +1145,7 @@
 				838E84E71D29492200C992CC /* FindWorkController.swift in Sources */,
 				838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */,
 				833240AF1D574F9D006C7203 /* SettingController.swift in Sources */,
+				83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */,
 				833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */,
 				838E84F51D29492200C992CC /* LeftMenuViewController.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */,
@@ -1281,6 +1297,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

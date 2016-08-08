@@ -23,6 +23,8 @@ enum Router {
     
     case financial//财务信息
     case feedback(type:String, title:String, content:String) //反馈
+    case messageCenter
+    case recruitCenter
     
     
     
@@ -33,7 +35,6 @@ enum Router {
         
         Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
     }
-    
 }
 
 // MARK: - urlString
@@ -59,6 +60,9 @@ extension Router{
             
         case .feedback:
             suffix = "feedback"
+            
+        case .messageCenter, recruitCenter:
+            suffix = "getNewsList"
         }
         return mainUrl + suffix
     }
@@ -126,6 +130,10 @@ extension Router{
             
         case .feedback(let type, let title, let content):
             parameters = compose(parameters: ["type":type, "title":title, "content": content])
+        case .messageCenter:
+            parameters = compose(parameters: ["category_id":39])
+        case .recruitCenter:
+            parameters = compose(parameters: ["category_id":40])
         }
         return parameters
     }

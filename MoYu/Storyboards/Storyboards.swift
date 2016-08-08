@@ -48,12 +48,14 @@ struct SB {
             static let accountBindingCell = "cellAccountBindingIdentifier"
             static let userHeaderCell = "segueUseHeaderIdentifier"
             static let myPurseCell = "cellMyPurseIdentifier"
+            static let messageCenterCell = "cellMessageCenterIdenetifier"
         }
         
         struct Segue {
             static let myPurse = "segueMyPurse"
             static let withdraw = "segueWithdraw"
             static let userInfo = "segueUserInfo"
+            static let messageCenter = "segueMessageCenter"
         }
         
         struct Vc {

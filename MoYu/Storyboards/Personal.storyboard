@@ -229,6 +229,7 @@
                         <outlet property="leftMenuView" destination="HdI-TZ-Mbz" id="hfy-I5-SH6"/>
                         <segue destination="4a5-ez-j4O" kind="presentation" identifier="segueMyPurse" id="ARU-lW-ZCT"/>
                         <segue destination="TXM-yh-c3M" kind="presentation" identifier="segueUserInfo" id="nNb-RL-dvi"/>
+                        <segue destination="MlR-ty-ptA" kind="presentation" identifier="segueMessageCenter" id="zlB-vn-U6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hU-ro-ou4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -457,7 +458,105 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8H-GQ-gld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308.5" y="2014.5"/>
+            <point key="canvasLocation" x="1308.5" y="1998.5"/>
+        </scene>
+        <!--Message Center Controller-->
+        <scene sceneID="mKB-Lb-NmD">
+            <objects>
+                <viewController id="cKd-7U-Lgl" customClass="MessageCenterController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xk5-SQ-qz3"/>
+                        <viewControllerLayoutGuide type="bottom" id="O6I-Vx-mJM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2TO-zd-Ey7">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="240" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="30g-fv-BZd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMessageCenterIdenetifier" rowHeight="240" id="9uB-M1-24w" customClass="MessageCenterCell" customModule="MoYu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9uB-M1-24w" id="HKO-am-SVh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巴西里约奥运会开幕式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReG-vJ-ndQ">
+                                                    <rect key="frame" x="8" y="8" width="359" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="V53-Ql-q99"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BsV-Zh-0qg">
+                                                    <rect key="frame" x="8" y="32" width="359" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="et9-et-Agz"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016 巴西里约热内卢奥运会正式开幕。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqy-I9-Xpx">
+                                                    <rect key="frame" x="8" y="181" width="359" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8月6日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjJ-Qn-Ey6">
+                                                    <rect key="frame" x="8" y="160" width="359" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="a6X-hq-5t6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ReG-vJ-ndQ" firstAttribute="top" secondItem="HKO-am-SVh" secondAttribute="topMargin" id="50X-XY-XbJ"/>
+                                                <constraint firstItem="dqy-I9-Xpx" firstAttribute="top" secondItem="LjJ-Qn-Ey6" secondAttribute="bottom" id="9kz-yd-uzC"/>
+                                                <constraint firstItem="ReG-vJ-ndQ" firstAttribute="leading" secondItem="HKO-am-SVh" secondAttribute="leadingMargin" id="Bil-4e-N2F"/>
+                                                <constraint firstItem="dqy-I9-Xpx" firstAttribute="leading" secondItem="HKO-am-SVh" secondAttribute="leadingMargin" id="Dr3-i6-FqU"/>
+                                                <constraint firstItem="ReG-vJ-ndQ" firstAttribute="trailing" secondItem="HKO-am-SVh" secondAttribute="trailingMargin" id="EZG-H1-Jus"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dqy-I9-Xpx" secondAttribute="bottom" id="NOR-bn-P1U"/>
+                                                <constraint firstItem="BsV-Zh-0qg" firstAttribute="trailing" secondItem="HKO-am-SVh" secondAttribute="trailingMargin" id="bCZ-sn-uwT"/>
+                                                <constraint firstItem="LjJ-Qn-Ey6" firstAttribute="trailing" secondItem="HKO-am-SVh" secondAttribute="trailingMargin" id="cw6-pS-Zx5"/>
+                                                <constraint firstItem="dqy-I9-Xpx" firstAttribute="trailing" secondItem="HKO-am-SVh" secondAttribute="trailingMargin" id="ibs-K7-h5o"/>
+                                                <constraint firstItem="BsV-Zh-0qg" firstAttribute="top" secondItem="ReG-vJ-ndQ" secondAttribute="bottom" id="kL2-OC-gS3"/>
+                                                <constraint firstItem="LjJ-Qn-Ey6" firstAttribute="top" secondItem="BsV-Zh-0qg" secondAttribute="bottom" constant="8" id="maq-T0-4Wr"/>
+                                                <constraint firstItem="LjJ-Qn-Ey6" firstAttribute="leading" secondItem="HKO-am-SVh" secondAttribute="leadingMargin" id="qC1-0c-hMa"/>
+                                                <constraint firstItem="BsV-Zh-0qg" firstAttribute="leading" secondItem="HKO-am-SVh" secondAttribute="leadingMargin" id="wry-cG-7ad"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="dqy-I9-Xpx" id="HL1-6C-mJ5"/>
+                                            <outlet property="dateLabel" destination="LjJ-Qn-Ey6" id="UKH-kP-LWM"/>
+                                            <outlet property="thumbnialImageHeight" destination="et9-et-Agz" id="iZc-BT-MgA"/>
+                                            <outlet property="thumbnialImageView" destination="BsV-Zh-0qg" id="CGn-wO-LzH"/>
+                                            <outlet property="titleLabel" destination="ReG-vJ-ndQ" id="sR9-n8-QLJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="30g-fv-BZd" firstAttribute="bottom" secondItem="O6I-Vx-mJM" secondAttribute="top" id="OOP-yj-0Kk"/>
+                            <constraint firstItem="30g-fv-BZd" firstAttribute="top" secondItem="xk5-SQ-qz3" secondAttribute="bottom" id="fjw-Qe-CwL"/>
+                            <constraint firstAttribute="trailing" secondItem="30g-fv-BZd" secondAttribute="trailing" id="iN9-4e-fw1"/>
+                            <constraint firstItem="30g-fv-BZd" firstAttribute="leading" secondItem="2TO-zd-Ey7" secondAttribute="leading" id="juv-wE-vFo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="To2-N0-Opt"/>
+                    <connections>
+                        <outlet property="tableView" destination="30g-fv-BZd" id="K4U-bt-Xla"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tww-Eq-51z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774.5" y="2770.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QZs-yr-pjd">
@@ -478,6 +577,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xn7-ed-gZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1308.5" y="1213.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q4C-mb-w7h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MlR-ty-ptA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7op-H4-ztz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.96470588235294119" green="0.63137254901960782" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cKd-7U-Lgl" kind="relationship" relationship="rootViewController" id="hvO-Eb-lDJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oD-kb-ApN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308.5" y="2779.5"/>
         </scene>
     </scenes>
     <resources>
