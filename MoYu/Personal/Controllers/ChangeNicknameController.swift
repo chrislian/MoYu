@@ -21,7 +21,7 @@ class ChangeNicknameController: BaseController {
     }
     
     //MARK: - event response
-    @objc private func rightBarButtonClick(sender:UIButton){
+    @objc private func rightBarButtonClick(){
         
         guard let nickname = self.nicknameTextField.text where !nickname.isEmpty else{
             self.show(message: "昵称不能为空")
@@ -41,7 +41,10 @@ class ChangeNicknameController: BaseController {
         
         self.view.backgroundColor = UIColor.mo_background()
         
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Done, target:self, action: #selector(rightBarButtonClick(_:)))
+        self.addRightNavigationButton(title: "保存")
+        rightButtonClourse = {[unowned self] in
+            self.rightBarButtonClick()
+        }
         
         nicknameTextField.delegate = self
         if !nicknameTextField.isFirstResponder(){

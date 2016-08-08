@@ -35,7 +35,7 @@ class UseInfoController: BaseController {
     
     //MARK: - event response
     
-    func rightBarButtonClick(sender:UIButton){
+    func rightBarButtonClick(){
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         vc.title = "综合实力"
@@ -55,7 +55,10 @@ class UseInfoController: BaseController {
 
         self.addBackNavigationButton()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "综合实力", style: .Done, target:self, action: #selector(rightBarButtonClick(_:)))
+        self.addRightNavigationButton(title: "综合实力")
+        rightButtonClourse = {[unowned self] in
+            self.rightBarButtonClick()
+        }
         
         self.view.backgroundColor = UIColor.mo_background()
         

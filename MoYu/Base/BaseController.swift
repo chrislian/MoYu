@@ -64,6 +64,12 @@ class BaseController: UIViewController {
         }
     }
     
+    func addRightNavigationButton(title title:String){
+        let attribute = NSAttributedString(string: title, attributes: [NSFontAttributeName:UIFont.mo_font(), NSForegroundColorAttributeName : UIColor.mo_lightBlack() ] )
+        self.setRightNavigationButton(attributedString: attribute)
+    }
+    
+    
     func setNavigation(title text:String, textColor:UIColor = UIColor.mo_lightBlack()) {
         navigationTitleLable.text = text
         navigationTitleLable.textColor = textColor

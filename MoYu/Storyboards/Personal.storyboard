@@ -230,6 +230,7 @@
                         <segue destination="4a5-ez-j4O" kind="presentation" identifier="segueMyPurse" id="ARU-lW-ZCT"/>
                         <segue destination="TXM-yh-c3M" kind="presentation" identifier="segueUserInfo" id="nNb-RL-dvi"/>
                         <segue destination="MlR-ty-ptA" kind="presentation" identifier="segueMessageCenter" id="zlB-vn-U6Z"/>
+                        <segue destination="Sxr-QA-pUk" kind="presentation" identifier="segueRecommned" id="NUN-fs-24U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hU-ro-ou4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,7 +245,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="705.5" y="2485.5"/>
+            <point key="canvasLocation" x="636.5" y="3710.5"/>
         </scene>
         <!--Use Info Controller-->
         <scene sceneID="1gB-ll-DtU">
@@ -597,11 +598,123 @@
             </objects>
             <point key="canvasLocation" x="1308.5" y="2779.5"/>
         </scene>
+        <!--Recommend Controller-->
+        <scene sceneID="Erh-bp-CcN">
+            <objects>
+                <viewController id="t3K-na-0zS" customClass="RecommendController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TJ4-Tf-YWR"/>
+                        <viewControllerLayoutGuide type="bottom" id="nSX-iC-bMB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fyE-cD-t2L" customClass="RecommendView" customModule="MoYu" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddl-Ks-Z8r">
+                                <rect key="frame" x="16" y="12" width="343" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recommendDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-4a-LWC">
+                                        <rect key="frame" x="4" y="4" width="335" height="202"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请好友可以获得积分哦~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK2-bw-RV4">
+                                        <rect key="frame" x="4" y="206" width="335" height="34"/>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="unq-NS-hCm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ghj-4a-LWC" secondAttribute="trailing" constant="4" id="8ay-1c-jri"/>
+                                    <constraint firstAttribute="bottom" secondItem="aK2-bw-RV4" secondAttribute="bottom" id="8jd-5B-lc7"/>
+                                    <constraint firstItem="aK2-bw-RV4" firstAttribute="leading" secondItem="ddl-Ks-Z8r" secondAttribute="leading" constant="4" id="M0O-35-FGp"/>
+                                    <constraint firstItem="aK2-bw-RV4" firstAttribute="top" secondItem="Ghj-4a-LWC" secondAttribute="bottom" id="Q0U-9f-pje"/>
+                                    <constraint firstItem="Ghj-4a-LWC" firstAttribute="top" secondItem="ddl-Ks-Z8r" secondAttribute="top" constant="4" id="lno-oz-gT6"/>
+                                    <constraint firstItem="Ghj-4a-LWC" firstAttribute="leading" secondItem="ddl-Ks-Z8r" secondAttribute="leading" constant="4" id="mrp-wR-gxX"/>
+                                    <constraint firstAttribute="trailing" secondItem="aK2-bw-RV4" secondAttribute="trailing" constant="4" id="sEE-UJ-m8H"/>
+                                    <constraint firstAttribute="height" constant="240" id="u4c-8W-z5f"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-68-nYu">
+                                <rect key="frame" x="16" y="282" width="343" height="44"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gKh-Xw-oIU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="邀请好友">
+                                    <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="inviteFriendTap:" destination="t3K-na-0zS" eventType="touchUpInside" id="nvK-g1-w87"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feB-xN-SjD">
+                                <rect key="frame" x="260" y="334" width="99" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="推荐更多任务 &gt;&gt;">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moreRecommendTap:" destination="t3K-na-0zS" eventType="touchUpInside" id="5XT-Kw-yum"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ddl-Ks-Z8r" firstAttribute="trailing" secondItem="fyE-cD-t2L" secondAttribute="trailingMargin" id="5Dq-OP-FyM"/>
+                            <constraint firstItem="dPd-68-nYu" firstAttribute="leading" secondItem="fyE-cD-t2L" secondAttribute="leadingMargin" id="5f4-KM-Crh"/>
+                            <constraint firstItem="ddl-Ks-Z8r" firstAttribute="leading" secondItem="fyE-cD-t2L" secondAttribute="leadingMargin" id="Cs1-2r-Xnn"/>
+                            <constraint firstItem="feB-xN-SjD" firstAttribute="top" secondItem="dPd-68-nYu" secondAttribute="bottom" constant="8" id="L7d-bj-fKI"/>
+                            <constraint firstItem="ddl-Ks-Z8r" firstAttribute="top" secondItem="TJ4-Tf-YWR" secondAttribute="bottom" constant="12" id="Q2C-3y-vot"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dPd-68-nYu" secondAttribute="trailing" id="XWv-7M-CQz"/>
+                            <constraint firstItem="dPd-68-nYu" firstAttribute="top" secondItem="ddl-Ks-Z8r" secondAttribute="bottom" constant="30" id="bUV-0g-T2P"/>
+                            <constraint firstItem="feB-xN-SjD" firstAttribute="trailing" secondItem="fyE-cD-t2L" secondAttribute="trailingMargin" id="dsT-wi-CS9"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="inviteFriendButton" destination="dPd-68-nYu" id="VSG-gF-rRf"/>
+                            <outlet property="promptBackView" destination="ddl-Ks-Z8r" id="IHP-FN-Hmq"/>
+                            <outlet property="promptImageView" destination="Ghj-4a-LWC" id="avX-RX-RNm"/>
+                            <outlet property="promptLabel" destination="aK2-bw-RV4" id="1zB-NF-lKS"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Kq-2M-YeG"/>
+                    <connections>
+                        <outlet property="recommendView" destination="fyE-cD-t2L" id="gd0-Lj-xRg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MF-pd-Lzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774.5" y="3532.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fUv-6E-nIJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sxr-QA-pUk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="n8A-ig-xfN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.96470588239999999" green="0.63137254899999995" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t3K-na-0zS" kind="relationship" relationship="rootViewController" id="fwb-SK-aJx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cS6-Z1-9j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308.5" y="3532.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="defalutHead" width="67" height="67"/>
         <image name="leftMyPurse" width="32" height="35"/>
         <image name="leftNameAuth" width="24" height="20"/>
         <image name="leftSetting" width="32" height="35"/>
+        <image name="recommendDefault" width="226" height="132"/>
     </resources>
 </document>

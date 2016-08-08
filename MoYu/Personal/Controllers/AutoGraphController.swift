@@ -21,7 +21,7 @@ class AutoGraphController: BaseController {
     }
     
     //MARK: - event response
-    @objc private func rightBarButtonClick(sender:UIButton){
+    @objc private func rightBarButtonClick(){
         
         guard let autograph = self.autographTextField.text where !autograph.isEmpty else{
             self.show(message: "什么都没说呢~")
@@ -40,8 +40,11 @@ class AutoGraphController: BaseController {
     private func setupView(){
         
         self.view.backgroundColor = UIColor.mo_background()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Done, target:self, action: #selector(rightBarButtonClick(_:)))
+
+        self.addRightNavigationButton(title: "保存")
+        rightButtonClourse = {[unowned self] in
+            self.rightBarButtonClick()
+        }
         
         autographTextField.delegate = self
         if !autographTextField.isFirstResponder(){

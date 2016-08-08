@@ -46,6 +46,8 @@
 		83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */; };
 		83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */; };
 		83829ED31D586DF900CD6587 /* MoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED21D586DF900CD6587 /* MoConfig.swift */; };
+		83829ED51D58877B00CD6587 /* RecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED41D58877B00CD6587 /* RecommendController.swift */; };
+		83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED61D588A4600CD6587 /* RecommendView.swift */; };
 		8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* Print.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
 		838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84BF1D29492200C992CC /* AboutJobsController.swift */; };
@@ -171,6 +173,8 @@
 		83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
 		83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterModel.swift; sourceTree = "<group>"; };
 		83829ED21D586DF900CD6587 /* MoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoConfig.swift; sourceTree = "<group>"; };
+		83829ED41D58877B00CD6587 /* RecommendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendController.swift; sourceTree = "<group>"; };
+		83829ED61D588A4600CD6587 /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		838E84BF1D29492200C992CC /* AboutJobsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobsController.swift; sourceTree = "<group>"; };
@@ -620,6 +624,7 @@
 				83BCD61D1D4718E200FA4388 /* BalanceController.swift */,
 				839EC9601D49D97400658CE6 /* WithdrawController.swift */,
 				83829ECC1D58679100CD6587 /* MessageCenterController.swift */,
+				83829ED41D58877B00CD6587 /* RecommendController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -644,6 +649,7 @@
 				83BCD61F1D47192900FA4388 /* BalanceHeadView.swift */,
 				83BCD6211D47194B00FA4388 /* BalanceCell.swift */,
 				83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */,
+				83829ED61D588A4600CD6587 /* RecommendView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1081,6 +1087,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BCD61E1D4718E200FA4388 /* BalanceController.swift in Sources */,
+				83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */,
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
@@ -1114,6 +1121,7 @@
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
+				83829ED51D58877B00CD6587 /* RecommendController.swift in Sources */,
 				83D965131D52DA7200484F14 /* UserInfo.swift in Sources */,
 				833240B31D575038006C7203 /* FeedbackController.swift in Sources */,
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,

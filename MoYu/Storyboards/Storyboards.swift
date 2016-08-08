@@ -56,6 +56,7 @@ struct SB {
             static let withdraw = "segueWithdraw"
             static let userInfo = "segueUserInfo"
             static let messageCenter = "segueMessageCenter"
+            static let recommend = "segueRecommned"
         }
         
         struct Vc {
