@@ -28,14 +28,7 @@ enum Router {
     case recruitCenter//招募中心
     case aboutJob(page:Int)//职来职往
     
-    func request(remote clourse: RemoteClourse){
-        
-        println("urlString:\(self.urlString())")
-        println("parameters:\(self.parameters())")
-        
-        Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
-    }
-  
+    
 }
 
 extension Router: RouterType{

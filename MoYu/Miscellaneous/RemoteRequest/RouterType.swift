@@ -18,6 +18,7 @@ protocol RouterType {
     
     func compose(parameters parameters: [String:AnyObject]?) -> [String: AnyObject]
     
+    func request(remote clourse: RemoteClourse)
     
     //required
     func parameters() -> [String:AnyObject]?
@@ -26,6 +27,15 @@ protocol RouterType {
 }
 
 extension RouterType {
+    
+    func request(remote clourse: RemoteClourse){
+        
+        println("urlString:\(self.urlString())")
+        println("parameters:\(self.parameters())")
+        
+        Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
+    }
+    
     
     func sessionID()->String{
         
