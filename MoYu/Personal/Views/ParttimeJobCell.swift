@@ -30,10 +30,11 @@ class ParttimeJobCell: UITableViewCell {
         
         if type == 1{
             progressViewHeightConstraint.constant = 4.0
-            progressView.backgroundColor = UIColor.whiteColor()
+            workProgress.hidden = true
         }else{
             progressViewHeightConstraint.constant = 16.0
-            progressView.backgroundColor = UIColor.mo_lightBlack()
+            workProgress.hidden = false
+            workProgress.setProgress(0.68, animated: true)
         }
     }
     
@@ -56,6 +57,13 @@ class ParttimeJobCell: UITableViewCell {
         titleLabel.textColor = UIColor.mo_lightBlack()
         titleLabel.font = UIFont.mo_font(.big)
         
+        
+        progressView.addSubview(workProgress)
+        workProgress.snp_makeConstraints { (make) in
+            make.center.equalTo(progressView)
+            make.size.equalTo(CGSize(width: 150, height: 5))
+        }
+        
     }
     
     //MARK: - var & let
@@ -68,4 +76,13 @@ class ParttimeJobCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var avatorImageView: UIImageView!
+    
+    lazy var workProgress: UIProgressView = {
+        let progress = UIProgressView(progressViewStyle: .Bar)
+        progress.progressTintColor = UIColor.mo_main()
+        progress.trackTintColor = UIColor.mo_silver()
+        progress.layer.cornerRadius = 2.5
+        progress.layer.masksToBounds = true
+        return progress
+    }()
 }

@@ -422,6 +422,7 @@
 		833457261D55E04E008FFFF9 /* MoKit */ = {
 			isa = PBXGroup;
 			children = (
+				837D40B01D59E151003A17EF /* ProgressView */,
 				8332409A1D56FD43006C7203 /* AlertView */,
 				8334572B1D55F3FC008FFFF9 /* ActionSheet */,
 			);
@@ -531,6 +532,14 @@
 			);
 			path = Views;
 			sourceTree = "<group>";
+		};
+		837D40B01D59E151003A17EF /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ProgressView;
+			path = MoYu/MoKit/ProgressView;
+			sourceTree = SOURCE_ROOT;
 		};
 		838E84BD1D29492200C992CC /* AppCenter */ = {
 			isa = PBXGroup;
