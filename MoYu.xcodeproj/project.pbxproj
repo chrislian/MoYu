@@ -97,6 +97,9 @@
 		83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCD6211D47194B00FA4388 /* BalanceCell.swift */; };
 		83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BCD6231D471E1B00FA4388 /* ConsumeHistoryModel.swift */; };
 		83C593121D59736100699A01 /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593111D59736100699A01 /* RouterType.swift */; };
+		83C593141D598D9000699A01 /* ParttimeJobManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */; };
+		83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593151D59ACB000699A01 /* ParttimeJobCell.swift */; };
+		83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593171D59B41000699A01 /* ParttimeJobView.swift */; };
 		83D965131D52DA7200484F14 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965121D52DA7200484F14 /* UserInfo.swift */; };
 		83D965151D52DD8C00484F14 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965141D52DD8C00484F14 /* UserManager.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
@@ -226,6 +229,9 @@
 		83BCD6211D47194B00FA4388 /* BalanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
 		83BCD6231D471E1B00FA4388 /* ConsumeHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumeHistoryModel.swift; sourceTree = "<group>"; };
 		83C593111D59736100699A01 /* RouterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
+		83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobManagerController.swift; sourceTree = "<group>"; };
+		83C593151D59ACB000699A01 /* ParttimeJobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobCell.swift; sourceTree = "<group>"; };
+		83C593171D59B41000699A01 /* ParttimeJobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobView.swift; sourceTree = "<group>"; };
 		83D965121D52DA7200484F14 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		83D965141D52DD8C00484F14 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
@@ -631,6 +637,7 @@
 				83829ECC1D58679100CD6587 /* MessageCenterController.swift */,
 				83829ED41D58877B00CD6587 /* RecommendController.swift */,
 				83213EDC1D58C6CB000D8691 /* RecuritCenterController.swift */,
+				83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -656,6 +663,8 @@
 				83BCD6211D47194B00FA4388 /* BalanceCell.swift */,
 				83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */,
 				83829ED61D588A4600CD6587 /* RecommendView.swift */,
+				83C593151D59ACB000699A01 /* ParttimeJobCell.swift */,
+				83C593171D59B41000699A01 /* ParttimeJobView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1093,6 +1102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BCD61E1D4718E200FA4388 /* BalanceController.swift in Sources */,
+				83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */,
 				83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */,
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
@@ -1141,6 +1151,7 @@
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
+				83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */,
 				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
@@ -1149,6 +1160,7 @@
 				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
+				83C593141D598D9000699A01 /* ParttimeJobManagerController.swift in Sources */,
 				839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */,
 				838E850C1D294CC100C992CC /* CGImage+MoYu.swift in Sources */,
 				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,

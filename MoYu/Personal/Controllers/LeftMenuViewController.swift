@@ -189,7 +189,8 @@ extension LeftMenuController: UITableViewDelegate{
         switch indexPath.row{
         case 0:
             self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
-        case 1:break
+        case 1:
+            self.performSegueWithIdentifier(SB.Personal.Segue.parttimeJob, sender: nil)
         case 2:
             self.performSegueWithIdentifier(SB.Personal.Segue.messageCenter, sender: nil)
         case 3:

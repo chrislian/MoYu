@@ -49,6 +49,7 @@ struct SB {
             static let userHeaderCell = "segueUseHeaderIdentifier"
             static let myPurseCell = "cellMyPurseIdentifier"
             static let messageCenterCell = "cellMessageCenterIdenetifier"
+            static let parttimeJobCell = "cellParttimeJobIdentifier"
         }
         
         struct Segue {
@@ -58,6 +59,7 @@ struct SB {
             static let messageCenter = "segueMessageCenter"
             static let recommend = "segueRecommned"
             static let recuritCenter = "segueRecruit"
+            static let parttimeJob = "seguePartTimeJob"
         }
         
         struct Vc {
