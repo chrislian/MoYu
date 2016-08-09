@@ -28,8 +28,6 @@ enum Router {
     case recruitCenter//招募中心
     case aboutJob(page:Int)//职来职往
     
-    
-    
     func request(remote clourse: RemoteClourse){
         
         println("urlString:\(self.urlString())")
@@ -37,47 +35,19 @@ enum Router {
         
         Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
     }
+  
 }
 
-// MARK: - request parameters
-extension Router{
-
-    private func sessionID()->String{
-        
-        return UserManager.sharedInstance.user.sessionid
-    }
+extension Router: RouterType{
     
-    private func userID()->String{
-        
-        return UserManager.sharedInstance.user.id
-    }
-    
-    private func MOUID()->String{
-        return MODevice.MOUID()!
-    }
-    
-    private func compose(parameters parameters: [String: AnyObject]? = nil) -> [String: AnyObject]{
-        
-        let base:[String:AnyObject] = ["userid":userID(), "sessionid": sessionID(), "device":MOUID()]
-        
-        guard let parameters = parameters else { return base }
-        
-        let array = base.map{ $0 } + parameters.map{ $0 }
-        
-        return array.reduce( [:], combine: {
-            var tmp = $0
-            tmp[$1.0] = $1.1
-            return tmp
-        })
-    }
-    
-    private func parameters() -> [String:AnyObject]? {
+    // MARK: - request parameters
+    func parameters() -> [String:AnyObject]? {
         
         var parameters:[String:AnyObject]? = nil
         
         switch self {
         case .signIn(let phone, let code):
-            parameters = ["type": 2,"device": MOUID(),"phonenum": phone,"verify": code]
+            parameters = ["type": 2,"device": self.MOUID(),"phonenum": phone,"verify": code]
         case .signOut,.financial:
             parameters = compose()
             
@@ -108,18 +78,14 @@ extension Router{
         case .recruitCenter:
             parameters = compose(parameters: ["category_id":40])
             
-        case .aboutJob(let page):break
+        case .aboutJob(let page):
             parameters = compose(parameters: ["page":page])
         }
         return parameters
     }
-}
-
-
-// MARK: - urlString
-extension Router{
     
-    private func urlString()->String{
+    // MARK: - urlString
+    func urlString()->String{
         let suffix:String
         switch self {
         case .signIn:
