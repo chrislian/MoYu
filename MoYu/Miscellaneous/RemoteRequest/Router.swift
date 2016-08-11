@@ -27,6 +27,8 @@ enum Router {
     case messageCenter//消息中心
     case recruitCenter//招募中心
     case aboutJob(page:Int)//职来职往
+    case myTaskList(page:Int)//个人发布的兼职列表
+    case myParttimeJobList(page:Int)//获取个人兼职列表
     
     
 }
@@ -63,16 +65,22 @@ extension Router: RouterType{
             parameters = compose(parameters: ["photo": base64String])
             
         case .feedback(let type, let title, let content):
-            parameters = compose(parameters: ["type":type, "title":title, "content": content])
+            parameters = compose(parameters: ["type": type, "title": title, "content": content])
             
         case .messageCenter:
-            parameters = compose(parameters: ["category_id":39])
+            parameters = compose(parameters: ["category_id": 39])
             
         case .recruitCenter:
-            parameters = compose(parameters: ["category_id":40])
+            parameters = compose(parameters: ["category_id": 40])
             
         case .aboutJob(let page):
-            parameters = compose(parameters: ["page":page])
+            parameters = compose(parameters: ["page": page])
+            
+        case .myTaskList(let page):
+            parameters = compose(parameters: ["page": page])
+            
+        case .myParttimeJobList(let page):
+            parameters = compose(parameters: ["page": page])
         }
         return parameters
     }
@@ -104,6 +112,12 @@ extension Router: RouterType{
             
         case .aboutJob:
             suffix = "getJobZoneLists"
+            
+        case .myTaskList:
+            suffix = "getMyTaskList"
+            
+        case .myParttimeJobList:
+            suffix =  "getMyPartTimeJobsList"
         }
         return mainUrl + suffix
     }

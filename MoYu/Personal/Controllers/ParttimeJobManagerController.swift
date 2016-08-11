@@ -25,6 +25,13 @@ class ParttimeJobManagerController: BaseController {
         self.title = "兼职管理"
         
         self.setupView()
+        
+//        Router.myParttimeJobList(page: 1).request { (status, json) in
+//            print("status:\(status)")
+//        }
+//        Router.myTaskList(page: 1).request { (status, json) in
+//            print("status:\(status)")
+//        }
     }
     
     //MARK: - event reponse
