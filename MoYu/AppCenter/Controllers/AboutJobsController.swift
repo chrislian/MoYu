@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AboutJobsController: BaseController {
 
@@ -17,12 +18,19 @@ class AboutJobsController: BaseController {
         self.title = "职来职往"
         self.setupView()
         
-        Router.aboutJob(page: 1).request { (status, json) in
-            
-            self.show(error: status)
-        }
-        
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Router.aboutJob(page: 1).request { [weak self] (status, json) in
+            
+            self?.show(error: status)
+            
+            self?.updateJob(list: json)
+        }
+    }
+    
     
     
     //MARK: - event response
@@ -49,7 +57,20 @@ class AboutJobsController: BaseController {
         }
     }
     
+    
+    private func updateJob(list json:JSON?){
+        
+        aboutJobModel = AboutJobModel(json: json)
+        if aboutJobModel.items.count > 0{
+            tableView.reloadData()
+        }
+    }
+    
+    
     //MARK: - var & let
+    
+    var aboutJobModel = AboutJobModel()
+    
     @IBOutlet weak var tableView: UITableView!
     
     lazy var rightBarButton:UIBarButtonItem = {
@@ -83,19 +104,25 @@ extension AboutJobsController: UITableViewDelegate{
         return 10.0
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.selectionStyle = .None
+        
+        guard let cell = cell as? AboutJobsCell else{
+            return
+        }
+        cell.update(item: aboutJobModel.items[indexPath.section])
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
 
 extension AboutJobsController: UITableViewDataSource{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 10
+        return aboutJobModel.items.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,9 +131,6 @@ extension AboutJobsController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.aboutJobs) else{
-            return AboutJobsCell(style: .Default, reuseIdentifier:SB.AppCenter.Cell.aboutJobs)
-        }
-        return cell
+        return AboutJobsCell.cell(tableView: tableView)
     }
 }

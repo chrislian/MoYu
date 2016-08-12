@@ -43,6 +43,7 @@
 		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
 		834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4161D3236460046FBEF /* SignInByPasswordController.swift */; };
 		834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4181D3287560046FBEF /* SignInByAuthView.swift */; };
+		83558FF61D5E0CBA008D5883 /* AboutJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */; };
 		83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECC1D58679100CD6587 /* MessageCenterController.swift */; };
 		83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */; };
 		83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */; };
@@ -175,6 +176,7 @@
 		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
 		834EC4161D3236460046FBEF /* SignInByPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPasswordController.swift; sourceTree = "<group>"; };
 		834EC4181D3287560046FBEF /* SignInByAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthView.swift; sourceTree = "<group>"; };
+		83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobModel.swift; sourceTree = "<group>"; };
 		83829ECC1D58679100CD6587 /* MessageCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterController.swift; sourceTree = "<group>"; };
 		83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
 		83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterModel.swift; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 		838E84C31D29492200C992CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				838E84F31D29492200C992CC /* HomeView.swift in Sources */,
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
 				8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */,
+				83558FF61D5E0CBA008D5883 /* AboutJobModel.swift in Sources */,
 				83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */,
 				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,
 				83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */,

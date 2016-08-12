@@ -13,17 +13,35 @@ class AboutJobsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.setupCell()
+    
     }
     
+    //MARK: - public method
+    class func cell(tableView tableView:UITableView)->AboutJobsCell{
+        
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.aboutJobs) as? AboutJobsCell else{
+            return AboutJobsCell(style: .Default, reuseIdentifier: SB.AppCenter.Cell.aboutJobs)
+        }
+        return cell
+    }
+    
+    func update(item item:AboutJobItem){
+        
+        dateLabel.text = item.create_time.mo_ToString(.Detail)
+        usernameLabel.text = item.nickname
+        commentLabel.text = item.memo
+    }
+    
+    
+    //MARK: - private method
+    private func setupCell(){
+    
+    }
 
+    //MARK: - var & let
     @IBOutlet weak var headImageView: MOImageView!
-    @IBOutlet weak var usernameLabel: UIView!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
 }
