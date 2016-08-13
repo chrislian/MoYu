@@ -25,10 +25,12 @@ enum Router {
     case feedback(type:String, title:String, content:String) //用户反馈
     case messageCenter//消息中心
     case recruitCenter//招募中心
-    case aboutJob(page:Int)//职来职往
+    
     case myTaskList(page:Int)//个人发布的兼职列表
     case myParttimeJobList(page:Int)//获取个人兼职列表
     
+    case jobZoneList(page:Int)//职来职往
+    case jobZoneZan(id:String, value:Bool)//职来职往点赞
     
 }
 
@@ -72,7 +74,7 @@ extension Router: RouterType{
         case .recruitCenter:
             parameters = compose(parameters: ["category_id": 40])
             
-        case .aboutJob(let page):
+        case .jobZoneList(let page):
             parameters = compose(parameters: ["page": page])
             
         case .myTaskList(let page):
@@ -80,6 +82,9 @@ extension Router: RouterType{
             
         case .myParttimeJobList(let page):
             parameters = compose(parameters: ["page": page])
+            
+        case .jobZoneZan(let id, _):
+            parameters = compose(parameters: ["id":id])
         }
         return parameters
     }
@@ -109,7 +114,7 @@ extension Router: RouterType{
         case .messageCenter, recruitCenter:
             suffix = "getNewsList"
             
-        case .aboutJob:
+        case .jobZoneList:
             suffix = "getJobZoneLists"
             
         case .myTaskList:
@@ -117,6 +122,9 @@ extension Router: RouterType{
             
         case .myParttimeJobList:
             suffix =  "getMyPartTimeJobsList"
+            
+        case .jobZoneZan:
+            suffix = "postJobZoneZan"
         }
         return mainUrl + suffix
     }

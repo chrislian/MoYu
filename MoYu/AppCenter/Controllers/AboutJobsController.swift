@@ -23,7 +23,7 @@ class AboutJobsController: BaseController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        Router.aboutJob(page: 1).request { [weak self] (status, json) in
+        Router.jobZoneList(page: 1).request { [weak self] (status, json) in
             
             self?.show(error: status)
             
@@ -64,6 +64,16 @@ class AboutJobsController: BaseController {
         if aboutJobModel.items.count > 0{
             tableView.reloadData()
         }
+    }
+    
+    private func zanTap(withUserID id:String){
+        Router.jobZoneZan(id: id, value: true).request { (status, json) in
+            self.show(error: status, showSuccess: true)
+        }
+    }
+    
+    private func commentTap(withUserID id:String){
+        
     }
     
     
@@ -111,6 +121,20 @@ extension AboutJobsController: UITableViewDelegate{
             return
         }
         cell.update(item: aboutJobModel.items[indexPath.section])
+        
+        cell.zanClourse = { [unowned self] userID in
+            
+            guard let id = userID else{
+                return
+            }
+            self.zanTap(withUserID: id)
+        }
+        
+        cell.commentClourse = { [unowned self] userID in
+            guard let id = userID else{ return }
+            
+            self.commentTap(withUserID: id)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

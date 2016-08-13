@@ -192,8 +192,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyv-g4-DyZ">
                                                     <rect key="frame" x="0.0" y="66" width="375" height="50"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_zan" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-3y-sbR">
+                                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_zan" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-3y-sbR">
                                                             <rect key="frame" x="16" y="33" width="40" height="17"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="Faf-Kb-5mJ"/>
                                                             </constraints>
@@ -253,10 +254,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="commentImageView" destination="WNv-ew-z5q" id="zgP-uU-t8d"/>
                                             <outlet property="commentLabel" destination="P87-2b-UHx" id="hPK-Tp-hvm"/>
                                             <outlet property="dateLabel" destination="bqE-Uy-geR" id="VA9-rI-eZT"/>
                                             <outlet property="headImageView" destination="voA-l1-fTX" id="Sur-Bf-bcU"/>
                                             <outlet property="usernameLabel" destination="8P6-17-xYx" id="jCY-4Q-2o5"/>
+                                            <outlet property="zanImageView" destination="tPO-3y-sbR" id="6W3-Y6-xcq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

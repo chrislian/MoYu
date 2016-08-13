@@ -31,17 +31,44 @@ class AboutJobsCell: UITableViewCell {
         dateLabel.text = item.create_time.mo_ToString(.Detail)
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
+        
+        userID = item.userid
     }
     
     
     //MARK: - private method
-    private func setupCell(){
     
+    dynamic private func zanTap(sender:UITapGestureRecognizer){
+        
+        self.zanClourse?(userID)
     }
+    dynamic private func commentTap(sender:UITapGestureRecognizer){
+        
+        self.zanClourse?(userID)
+    }
+    
+    private func setupCell(){
+        
+        zanImageView.userInteractionEnabled = true
+        commentImageView.userInteractionEnabled = true
+        
+        let zan = UITapGestureRecognizer(target: self, action: #selector(zanTap(_:)))
+        zanImageView.addGestureRecognizer(zan)
+        
+        let comment = UITapGestureRecognizer(target: self, action: #selector(commentTap(_:)))
+        commentImageView.addGestureRecognizer(comment)
+    }
+
 
     //MARK: - var & let
     @IBOutlet weak var headImageView: MOImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentImageView: UIImageView!
+    @IBOutlet weak var zanImageView: UIImageView!
+    
+    private var userID:String?
+    var zanClourse:(String?->Void)?
+    var commentClourse:(String?->Void)?
 }

@@ -56,13 +56,13 @@ class Remote{
                     
                     let message = error.userInfo["NSLocalizedDescription"] as? String
 
-                    Async.main{  callback(status: .networkFailure(message: message ?? "网络似乎出了点问题..."), json: nil) }
+                    Async.main{  callback(status: .networkFailure(message: message ?? "网络似乎出了点问题.~"), json: nil) }
                 }
                 return
             }
             
             if resp.statusCode != 200{
-                Async.main{  callback(status: .networkFailure(message: "网络似乎出了点问题..."), json: nil) }
+                Async.main{  callback(status: .networkFailure(message: "网络似乎出了点问题~"), json: nil) }
                 return
             }
             
@@ -76,8 +76,12 @@ class Remote{
             
             if status == 200{
                 Async.main{ callback (status:.success(message: msg ?? ""),json: data) }
+            }else if status == 202 {
+                Async.main{ callback (status: .userNeedLogin,json: nil) }
+            }else if status == 203 {
+                Async.main{ callback (status:.userFailure(message:"请求服务器发生错误~"), json:nil ) }
             }else{
-                Async.main{ callback (status:.userFailure(message: msg ?? "网络似乎出了点问题..."),json: data) }
+                Async.main{ callback (status:.userFailure(message: msg ?? "服务器似乎出了点问题~"),json: data) }
             }
         }
     }
