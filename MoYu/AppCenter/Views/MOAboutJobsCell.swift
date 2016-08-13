@@ -32,7 +32,7 @@ class AboutJobsCell: UITableViewCell {
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
         
-        userID = item.userid
+        userID = item.id
     }
     
     
