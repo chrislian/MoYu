@@ -44,7 +44,7 @@ class AboutJobsCell: UITableViewCell {
     }
     dynamic private func commentTap(sender:UITapGestureRecognizer){
         
-        self.zanClourse?(jobZoneItem)
+        self.commentClourse?(jobZoneItem)
     }
     
     private func setupCell(){

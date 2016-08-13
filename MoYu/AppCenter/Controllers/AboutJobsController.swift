@@ -89,6 +89,10 @@ class AboutJobsController: BaseController {
     
     private func commentTap(withItem item:AboutJobItem){
         
+        let vc = BaseController()
+        vc.view.backgroundColor = UIColor.mo_background()
+        vc.title = "评论"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

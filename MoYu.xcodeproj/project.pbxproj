@@ -56,7 +56,7 @@
 		838E84E21D29492200C992CC /* AppCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C01D29492200C992CC /* AppCenterController.swift */; };
 		838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C11D29492200C992CC /* PersonMessageController.swift */; };
 		838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C21D29492200C992CC /* PublishMessageController.swift */; };
-		838E84E51D29492200C992CC /* MOAboutJobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C51D29492200C992CC /* MOAboutJobsCell.swift */; };
+		838E84E51D29492200C992CC /* AboutJobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C51D29492200C992CC /* AboutJobsCell.swift */; };
 		838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C61D29492200C992CC /* AppCenterCell.swift */; };
 		838E84E71D29492200C992CC /* FindWorkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C91D29492200C992CC /* FindWorkController.swift */; };
 		838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84CA1D29492200C992CC /* HomeMenuController.swift */; };
@@ -189,7 +189,7 @@
 		838E84C01D29492200C992CC /* AppCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCenterController.swift; sourceTree = "<group>"; };
 		838E84C11D29492200C992CC /* PersonMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonMessageController.swift; sourceTree = "<group>"; };
 		838E84C21D29492200C992CC /* PublishMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMessageController.swift; sourceTree = "<group>"; };
-		838E84C51D29492200C992CC /* MOAboutJobsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOAboutJobsCell.swift; sourceTree = "<group>"; };
+		838E84C51D29492200C992CC /* AboutJobsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobsCell.swift; sourceTree = "<group>"; };
 		838E84C61D29492200C992CC /* AppCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCenterCell.swift; sourceTree = "<group>"; };
 		838E84C91D29492200C992CC /* FindWorkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkController.swift; sourceTree = "<group>"; };
 		838E84CA1D29492200C992CC /* HomeMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuController.swift; sourceTree = "<group>"; };
@@ -575,7 +575,7 @@
 		838E84C41D29492200C992CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				838E84C51D29492200C992CC /* MOAboutJobsCell.swift */,
+				838E84C51D29492200C992CC /* AboutJobsCell.swift */,
 				838E84C61D29492200C992CC /* AppCenterCell.swift */,
 			);
 			path = Views;
@@ -1193,7 +1193,7 @@
 				838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */,
 				838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */,
 				838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */,
-				838E84E51D29492200C992CC /* MOAboutJobsCell.swift in Sources */,
+				838E84E51D29492200C992CC /* AboutJobsCell.swift in Sources */,
 				834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */,
 				838E84F41D29492200C992CC /* PublishSheetView.swift in Sources */,
 				83D965151D52DD8C00484F14 /* UserManager.swift in Sources */,
