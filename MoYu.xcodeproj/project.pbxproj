@@ -101,6 +101,7 @@
 		83C593141D598D9000699A01 /* ParttimeJobManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */; };
 		83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593151D59ACB000699A01 /* ParttimeJobCell.swift */; };
 		83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593171D59B41000699A01 /* ParttimeJobView.swift */; };
+		83CE8A8F1D5F2FC30082208D /* LegalProvisionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE8A8E1D5F2FC30082208D /* LegalProvisionsController.swift */; };
 		83D7A4351D5F006D00C28F31 /* RefreshViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */; };
 		83D7A43B1D5F05AE00C28F31 /* ActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */; };
 		83D7A43C1D5F05AE00C28F31 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A43A1D5F05AE00C28F31 /* ActivityIndicatorView.m */; };
@@ -238,6 +239,7 @@
 		83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobManagerController.swift; sourceTree = "<group>"; };
 		83C593151D59ACB000699A01 /* ParttimeJobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobCell.swift; sourceTree = "<group>"; };
 		83C593171D59B41000699A01 /* ParttimeJobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobView.swift; sourceTree = "<group>"; };
+		83CE8A8E1D5F2FC30082208D /* LegalProvisionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalProvisionsController.swift; sourceTree = "<group>"; };
 		83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewType.swift; sourceTree = "<group>"; };
 		83D7A4371D5F05AE00C28F31 /* ActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorAnimation.h; sourceTree = "<group>"; };
 		83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorAnimation.m; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				833240A81D574F9D006C7203 /* AccountBindingController.swift */,
 				833240AA1D574F9D006C7203 /* UserGuideController.swift */,
 				833240B21D575038006C7203 /* FeedbackController.swift */,
+				83CE8A8E1D5F2FC30082208D /* LegalProvisionsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1179,6 +1182,7 @@
 				838E84F31D29492200C992CC /* HomeView.swift in Sources */,
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
 				8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */,
+				83CE8A8F1D5F2FC30082208D /* LegalProvisionsController.swift in Sources */,
 				83558FF61D5E0CBA008D5883 /* AboutJobModel.swift in Sources */,
 				83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */,
 				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,

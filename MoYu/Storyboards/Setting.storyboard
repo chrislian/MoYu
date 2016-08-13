@@ -54,6 +54,7 @@
                         <segue destination="vll-7j-GoZ" kind="show" identifier="segueAccountBinding" id="mdx-3g-ff6">
                             <nil key="action"/>
                         </segue>
+                        <segue destination="nLf-fp-Cx3" kind="show" identifier="segueLegalProvisions" id="5iT-Md-SbB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbM-Nd-lgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,6 +152,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8D-bJ-GfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1992.5" y="1407.5"/>
+        </scene>
+        <!--Legal Provisions Controller-->
+        <scene sceneID="fyk-cw-Jgv">
+            <objects>
+                <viewController id="nLf-fp-Cx3" customClass="LegalProvisionsController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="erp-Vw-SUP"/>
+                        <viewControllerLayoutGuide type="bottom" id="j9F-Uu-95g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dgd-ez-JuM">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="M6C-qT-Ing">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M6C-qT-Ing" firstAttribute="top" secondItem="erp-Vw-SUP" secondAttribute="bottom" id="4cF-mM-lvw"/>
+                            <constraint firstItem="M6C-qT-Ing" firstAttribute="leading" secondItem="Dgd-ez-JuM" secondAttribute="leadingMargin" constant="-20" id="Sbr-RI-Wqv"/>
+                            <constraint firstItem="j9F-Uu-95g" firstAttribute="top" secondItem="M6C-qT-Ing" secondAttribute="bottom" id="ZP7-4B-8QH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M6C-qT-Ing" secondAttribute="trailing" constant="-20" id="p2t-qw-fme"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="M6C-qT-Ing" id="2UJ-X5-92C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pRa-CE-6mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988.5" y="1417.5"/>
         </scene>
         <!--User Guide Controller-->
         <scene sceneID="VIQ-zI-BFC">

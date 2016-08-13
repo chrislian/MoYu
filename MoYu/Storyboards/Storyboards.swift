@@ -74,6 +74,7 @@ struct SB {
         struct Segue {
             static let userGuide = "segueUserGuide"
             static let accountBinding = "segueAccountBinding"
+            static let legalProvisions = "segueLegalProvisions"
         }
         
         struct Vc{

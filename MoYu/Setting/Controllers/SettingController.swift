@@ -61,6 +61,7 @@ class SettingController: BaseController {
         self.tableView.rowHeight = 44.0
         self.tableView.backgroundColor = UIColor.mo_background()
         self.tableView.separatorStyle = .None
+        self.tableView.tableFooterView = UIView()
         
         
         exitButton.addTarget(self, action: #selector(exitButtonClicked(_:)), forControlEvents: .TouchUpInside)
@@ -107,6 +108,8 @@ extension SettingController: UITableViewDelegate{
             self.performSegueWithIdentifier(SB.Setting.Segue.accountBinding, sender: nil)
         case (1,0):
             self.performSegueWithIdentifier(SB.Setting.Segue.userGuide, sender: nil)
+        case (2,1):
+            self.performSegueWithIdentifier(SB.Setting.Segue.legalProvisions, sender: nil)
         case (2,2):
             let vc = FeedbackController()
             self.navigationController?.pushViewController(vc, animated: true)
