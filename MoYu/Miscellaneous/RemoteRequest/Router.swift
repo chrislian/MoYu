@@ -28,10 +28,14 @@ enum Router {
     
     case myTaskList(page:Int)//个人发布的兼职列表
     case myParttimeJobList(page:Int)//获取个人兼职列表
+    case allPartTimeJobList(page:Int, location: MoYuLocation?)//获取所有兼职列表
+    
     
     case jobZoneList(page:Int)//职来职往
     case jobZoneZan(id:String, value:Bool)//职来职往点赞
     case commitJobZone(message:String)//发布职来职往
+    
+    
     
 }
 
@@ -89,6 +93,15 @@ extension Router: RouterType{
             
         case .commitJobZone(let message):
             parameters = compose(parameters: ["memo": message] )
+            
+        case .allPartTimeJobList(let page, let location):
+            
+            var tmp:[String:AnyObject] = ["page": page]
+            if let tmpLocation = location{
+                tmp["latitude"] = tmpLocation.latitude
+                tmp["longtitude"] = tmpLocation.longtitude
+            }
+            parameters = compose(parameters: tmp)
         }
         return parameters
     }
@@ -132,6 +145,9 @@ extension Router: RouterType{
             
         case .commitJobZone:
             suffix = "postJobZone"
+            
+        case .allPartTimeJobList:
+            suffix = "getAllPartTimeJobList"
         }
         return mainUrl + suffix
     }

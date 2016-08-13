@@ -22,3 +22,11 @@ func sendMessage(name:String, object:AnyObject? = nil,userInfo: [NSObject : AnyO
         NSNotificationCenter.defaultCenter().postNotificationName(name, object: object, userInfo: userInfo)
     }
 }
+
+/**
+ *  坐标
+ */
+struct MoYuLocation {
+    var latitude:Double = 0
+    var longtitude:Double = 0
+}

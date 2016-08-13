@@ -93,6 +93,8 @@ class FindWorkController: UIViewController {
         location.allowsBackgroundLocationUpdates = true
         return location
     }()
+    
+    var location = MoYuLocation()
 }
 
 //MARK: - BMKMapView Delegate
@@ -127,6 +129,8 @@ extension FindWorkController:BMKLocationServiceDelegate{
     func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
         //print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
+        
+        location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longtitude: userLocation.location.coordinate.longitude)
     }
     
     /**

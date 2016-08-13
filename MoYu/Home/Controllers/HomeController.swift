@@ -56,7 +56,11 @@ class HomeController: BaseController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        
+        if let vc = segue.destinationViewController.childViewControllers.last as? HomeMenuController {
+            vc.location = findWorkVc.location
+        }
+        
     }
     
     //MARK: - event response

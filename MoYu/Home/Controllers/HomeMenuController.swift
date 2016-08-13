@@ -8,13 +8,17 @@
 
 import UIKit
 
-class HomeMenuController: UIViewController {
+class HomeMenuController: BaseController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupMenuView()
+        
+        Router.allPartTimeJobList(page: 1, location: location).request { (status, json) in
+            self.show(error: status)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -63,6 +67,7 @@ class HomeMenuController: UIViewController {
     //MARK: - var & let
     @IBOutlet var menuView: HomeMenuView!
     let menuModel = HomeMenuItemModel(items: 15)
+    var location:MoYuLocation?
 }
 
 extension HomeMenuController:UITableViewDelegate{
