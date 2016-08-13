@@ -34,9 +34,22 @@ class PublishMessageController: BaseController {
     }
     
     //MARK: 
-    func rightBarButtonClicked(sender:UIButton){
+    func rightBarButtonClicked(){
         
-        print("发布")
+        self.view.endEditing( true )
+        
+        let text = textView.text
+        if text.length == 0{
+            self.show(message: "内容不能为空")
+            return
+        }
+        Router.commitJobZone(message: text).request { (status, json) in
+            
+            self.show(error: status)
+            if case .success = status {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
     
     //MARK: - private method
@@ -48,8 +61,11 @@ class PublishMessageController: BaseController {
             let edge = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             make.edges.equalTo(textView.superview!).inset(edge)
         }
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(rightBarButtonClicked(_:)))
+
+        self.addRightNavigationButton(title: "提交")
+        self.rightButtonClourse = { [unowned self] in
+            self.rightBarButtonClicked()
+        }
     }
     
     //MARK: - var & let

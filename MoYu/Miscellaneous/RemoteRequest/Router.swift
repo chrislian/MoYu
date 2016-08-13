@@ -31,6 +31,7 @@ enum Router {
     
     case jobZoneList(page:Int)//职来职往
     case jobZoneZan(id:String, value:Bool)//职来职往点赞
+    case commitJobZone(message:String)//发布职来职往
     
 }
 
@@ -85,6 +86,9 @@ extension Router: RouterType{
             
         case .jobZoneZan(let id, _):
             parameters = compose(parameters: ["id":id])
+            
+        case .commitJobZone(let message):
+            parameters = compose(parameters: ["memo": message] )
         }
         return parameters
     }
@@ -125,6 +129,9 @@ extension Router: RouterType{
             
         case .jobZoneZan:
             suffix = "postJobZoneZan"
+            
+        case .commitJobZone:
+            suffix = "postJobZone"
         }
         return mainUrl + suffix
     }
