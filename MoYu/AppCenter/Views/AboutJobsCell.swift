@@ -31,6 +31,7 @@ class AboutJobsCell: UITableViewCell {
         dateLabel.text = item.create_time.mo_ToString(.Detail)
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
+        //headImageView.mo_loadRoundImage(item.avator, placeholder: UIImage(named: "defalutHead")!)
         
         jobZoneItem = item
     }

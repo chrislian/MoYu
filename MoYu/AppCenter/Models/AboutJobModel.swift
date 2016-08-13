@@ -35,6 +35,10 @@ struct AboutJobItem{
         create_time = NSDate( timeIntervalSince1970: json["create_time"].doubleValue )
     }
     
+    var avator:String {
+        
+        return mainUrl + photo
+    }
 }
 
 

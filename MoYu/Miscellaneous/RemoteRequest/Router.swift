@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let mainUrl = "http://moyu.ushesoft.com/api.php/api/"
+let mainUrl = "http://moyu.ushesoft.com/api.php/api/"
 
 enum Router {
     
