@@ -17,7 +17,7 @@ struct AboutJobItem{
     let memo: String
     let nickname: String
     let status: Int
-    let zan: Bool
+    var zan: Bool
     let userid: String
     let create_time:NSDate
     

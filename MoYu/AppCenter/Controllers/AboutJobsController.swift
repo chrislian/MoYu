@@ -23,12 +23,7 @@ class AboutJobsController: BaseController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        Router.jobZoneList(page: 1).request { [weak self] (status, json) in
-            
-            self?.show(error: status)
-            
-            self?.updateJob(list: json)
-        }
+       updateData(withPage: 1)
     }
     
     
@@ -57,22 +52,42 @@ class AboutJobsController: BaseController {
         }
     }
     
+    private func updateData(withPage page:Int){
+        Router.jobZoneList(page: page).request { [weak self] (status, json) in
+            
+            self?.show(error: status)
+            
+            self?.updateJob(list: json)
+        }
+    }
     
     private func updateJob(list json:JSON?){
         
         aboutJobModel = AboutJobModel(json: json)
         if aboutJobModel.items.count > 0{
+            aboutJobModel.items.sortInPlace{ $0.create_time.compare($1.create_time) == .OrderedDescending }
             tableView.reloadData()
         }
     }
     
-    private func zanTap(withUserID id:String){
-        Router.jobZoneZan(id: id, value: true).request { (status, json) in
+    private func zanTap(withItem item:AboutJobItem){
+        
+        if item.zan{
+            
+            self.show(message: "已点过赞了~")
+            return
+        }
+        
+        Router.jobZoneZan(id: item.id, value: true).request { (status, json) in
             self.show(error: status, showSuccess: true)
+            
+            if case .success = status {
+                self.updateData(withPage: 1)
+            }
         }
     }
     
-    private func commentTap(withUserID id:String){
+    private func commentTap(withItem item:AboutJobItem){
         
     }
     
@@ -122,18 +137,18 @@ extension AboutJobsController: UITableViewDelegate{
         }
         cell.update(item: aboutJobModel.items[indexPath.section])
         
-        cell.zanClourse = { [unowned self] userID in
+        cell.zanClourse = { [unowned self] jobZoneItem in
             
-            guard let id = userID else{
+            guard let item = jobZoneItem else{
                 return
             }
-            self.zanTap(withUserID: id)
+            self.zanTap(withItem: item)
         }
         
-        cell.commentClourse = { [unowned self] userID in
-            guard let id = userID else{ return }
+        cell.commentClourse = { [unowned self] jobZoneItem in
+            guard let item = jobZoneItem else{ return }
             
-            self.commentTap(withUserID: id)
+            self.commentTap(withItem: item)
         }
     }
     

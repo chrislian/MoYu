@@ -32,7 +32,7 @@ class AboutJobsCell: UITableViewCell {
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
         
-        userID = item.id
+        jobZoneItem = item
     }
     
     
@@ -40,11 +40,11 @@ class AboutJobsCell: UITableViewCell {
     
     dynamic private func zanTap(sender:UITapGestureRecognizer){
         
-        self.zanClourse?(userID)
+        self.zanClourse?(jobZoneItem)
     }
     dynamic private func commentTap(sender:UITapGestureRecognizer){
         
-        self.zanClourse?(userID)
+        self.zanClourse?(jobZoneItem)
     }
     
     private func setupCell(){
@@ -68,7 +68,7 @@ class AboutJobsCell: UITableViewCell {
     @IBOutlet weak var commentImageView: UIImageView!
     @IBOutlet weak var zanImageView: UIImageView!
     
-    private var userID:String?
-    var zanClourse:(String?->Void)?
-    var commentClourse:(String?->Void)?
+    private var jobZoneItem:AboutJobItem?
+    var zanClourse:(AboutJobItem?->Void)?
+    var commentClourse:(AboutJobItem?->Void)?
 }
