@@ -101,6 +101,10 @@
 		83C593141D598D9000699A01 /* ParttimeJobManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */; };
 		83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593151D59ACB000699A01 /* ParttimeJobCell.swift */; };
 		83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593171D59B41000699A01 /* ParttimeJobView.swift */; };
+		83D7A4351D5F006D00C28F31 /* RefreshViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */; };
+		83D7A43B1D5F05AE00C28F31 /* ActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */; };
+		83D7A43C1D5F05AE00C28F31 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A43A1D5F05AE00C28F31 /* ActivityIndicatorView.m */; };
+		83D7A43F1D5F07B300C28F31 /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A43E1D5F07B300C28F31 /* RefreshHeaderView.m */; };
 		83D965131D52DA7200484F14 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965121D52DA7200484F14 /* UserInfo.swift */; };
 		83D965151D52DD8C00484F14 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965141D52DD8C00484F14 /* UserManager.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
@@ -234,6 +238,13 @@
 		83C593131D598D9000699A01 /* ParttimeJobManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobManagerController.swift; sourceTree = "<group>"; };
 		83C593151D59ACB000699A01 /* ParttimeJobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobCell.swift; sourceTree = "<group>"; };
 		83C593171D59B41000699A01 /* ParttimeJobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobView.swift; sourceTree = "<group>"; };
+		83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewType.swift; sourceTree = "<group>"; };
+		83D7A4371D5F05AE00C28F31 /* ActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorAnimation.h; sourceTree = "<group>"; };
+		83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorAnimation.m; sourceTree = "<group>"; };
+		83D7A4391D5F05AE00C28F31 /* ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorView.h; sourceTree = "<group>"; };
+		83D7A43A1D5F05AE00C28F31 /* ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorView.m; sourceTree = "<group>"; };
+		83D7A43D1D5F07B300C28F31 /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RefreshHeaderView.h; path = ActivityIndicatorView/RefreshHeaderView.h; sourceTree = "<group>"; };
+		83D7A43E1D5F07B300C28F31 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RefreshHeaderView.m; path = ActivityIndicatorView/RefreshHeaderView.m; sourceTree = "<group>"; };
 		83D965121D52DA7200484F14 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		83D965141D52DD8C00484F14 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
@@ -427,6 +438,7 @@
 				837D40B01D59E151003A17EF /* ProgressView */,
 				8332409A1D56FD43006C7203 /* AlertView */,
 				8334572B1D55F3FC008FFFF9 /* ActionSheet */,
+				83D7A4311D5EFF4600C28F31 /* RefreshView */,
 			);
 			name = MoKit;
 			path = MOKit;
@@ -704,6 +716,29 @@
 				838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		83D7A4311D5EFF4600C28F31 /* RefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */,
+				83D7A4361D5F05AE00C28F31 /* ActivityIndicatorView */,
+				83D7A43D1D5F07B300C28F31 /* RefreshHeaderView.h */,
+				83D7A43E1D5F07B300C28F31 /* RefreshHeaderView.m */,
+			);
+			name = RefreshView;
+			path = MoYu/MoKit/RefreshView;
+			sourceTree = SOURCE_ROOT;
+		};
+		83D7A4361D5F05AE00C28F31 /* ActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				83D7A4371D5F05AE00C28F31 /* ActivityIndicatorAnimation.h */,
+				83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */,
+				83D7A4391D5F05AE00C28F31 /* ActivityIndicatorView.h */,
+				83D7A43A1D5F05AE00C28F31 /* ActivityIndicatorView.m */,
+			);
+			path = ActivityIndicatorView;
 			sourceTree = "<group>";
 		};
 		AA65D61154422FDF04B3BC87 /* Frameworks */ = {
@@ -1118,6 +1153,8 @@
 				83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */,
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
+				83D7A43C1D5F05AE00C28F31 /* ActivityIndicatorView.m in Sources */,
+				83D7A43B1D5F05AE00C28F31 /* ActivityIndicatorAnimation.m in Sources */,
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
 				83829ED31D586DF900CD6587 /* MoConfig.swift in Sources */,
 				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
@@ -1128,6 +1165,7 @@
 				839C748B1D55FF84003DBC33 /* AutoGraphController.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
+				83D7A43F1D5F07B300C28F31 /* RefreshHeaderView.m in Sources */,
 				838E85101D294CC100C992CC /* UIImageView+MoYu.swift in Sources */,
 				83213EDD1D58C6CB000D8691 /* RecuritCenterController.swift in Sources */,
 				838E84ED1D29492200C992CC /* HomeMenuItemModel.swift in Sources */,
@@ -1174,6 +1212,7 @@
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
 				83C593141D598D9000699A01 /* ParttimeJobManagerController.swift in Sources */,
+				83D7A4351D5F006D00C28F31 /* RefreshViewType.swift in Sources */,
 				839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */,
 				838E850C1D294CC100C992CC /* CGImage+MoYu.swift in Sources */,
 				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,

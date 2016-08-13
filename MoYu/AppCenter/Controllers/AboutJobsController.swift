@@ -9,24 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-class AboutJobsController: BaseController {
+class AboutJobsController: BaseController, RefreshViewType {
 
     //MARK: -  life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "职来职往"
+        
         self.setupView()
-        
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       updateData(withPage: 1)
-    }
-    
-    
     
     //MARK: - event response
     func rightBarButtonClicked(sender:UIButton){
@@ -37,8 +29,14 @@ class AboutJobsController: BaseController {
         self.performSegueWithIdentifier(SB.AppCenter.Segue.publishMsg, sender: self)
     }
     
+    func refreshAction() {
+        
+        updateData(withPage: 1)
+    }
+    
     //MARK: - private method
     private func setupView(){
+    
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -50,6 +48,9 @@ class AboutJobsController: BaseController {
             make.right.equalTo(publishButton.superview!).offset(-30)
             make.bottom.equalTo(publishButton.superview!).offset(-60)
         }
+        
+        self.addRefreshView()
+        self.beginRefresh()
     }
     
     private func updateData(withPage page:Int){
@@ -58,6 +59,8 @@ class AboutJobsController: BaseController {
             self?.show(error: status)
             
             self?.updateJob(list: json)
+            
+            self?.endRefresh()
         }
     }
     
@@ -101,6 +104,7 @@ class AboutJobsController: BaseController {
     var aboutJobModel = AboutJobModel()
     
     @IBOutlet weak var tableView: UITableView!
+    lazy var refreshScrollView: UIScrollView = self.tableView
     
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
