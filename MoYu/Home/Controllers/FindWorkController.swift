@@ -94,7 +94,7 @@ class FindWorkController: UIViewController {
         return location
     }()
     
-    var location:MoYuLocation?
+    var location = MoYuLocation()
 }
 
 //MARK: - BMKMapView Delegate

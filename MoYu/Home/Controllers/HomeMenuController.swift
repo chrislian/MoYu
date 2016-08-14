@@ -110,7 +110,7 @@ class HomeMenuController: BaseController,RefreshViewType {
     lazy var refreshScrollView: UIScrollView = self.menuView.tableView
     
     var modelArray : [HomeMenuModel] = []
-    var location:MoYuLocation?
+    var location = MoYuLocation()
     
     private var canLoadMore = true
     private var currentPage = 1
