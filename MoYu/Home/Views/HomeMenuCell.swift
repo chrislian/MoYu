@@ -17,13 +17,21 @@ class HomeMenuCell: UITableViewCell {
     }
 
     //MARK: - public method
-    func updateCellWithImage(item:MOHomeMenuItem){
+    
+    class func cell(tableView tableView:UITableView) -> HomeMenuCell {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMenu) as? HomeMenuCell else{
+            return HomeMenuCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMenu)
+        }
+        return cell
+    }
+    
+    func update(item item:HomeMenuModel){
         
-        cellImageView.image = UIImage(named: item.imageName)
-        cellTitleLabel.text = item.title
-        publishDateLabel.text = item.date
-        areaLabel.text = item.area
-        priceLabel.text = item.price
+        cellImageView.image = UIImage(named: "home_menu_sender")
+        cellTitleLabel.text = item.content
+        publishDateLabel.text = item.createtime.mo_ToString(.Detail)
+        areaLabel.text = item.address
+        priceLabel.text = "\(item.commission)¥/天"
     }
     
     

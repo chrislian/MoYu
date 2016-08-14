@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeMenuController: BaseController {
+class HomeMenuController: BaseController,RefreshViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -16,9 +16,7 @@ class HomeMenuController: BaseController {
         
         setupMenuView()
         
-        Router.allPartTimeJobList(page: 1, location: location).request { (status, json) in
-            self.show(error: status)
-        }
+        loadMoreData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -63,27 +61,87 @@ class HomeMenuController: BaseController {
         menuView.tableView.delegate = self
         menuView.tableView.rowHeight = 80.0
     }
+    
+    func refreshAction() {
+        
+        self.currentPage = 1
+        
+        loadMoreData()
+    }
+    
+    private func loadMoreData(){
+        
+        Router.allPartTimeJobList(page: currentPage, location: location).request { [weak self] (status, json) in
+            
+            guard let strongSelf = self else { return }
+            
+            strongSelf.show(error: status)
+            
+            if case .success = status, let data = json?["reslist"].array{
+                
+                let array = data.map( HomeMenuModel.init )
+                
+                if array.count < MoDefaultLoadMoreCount{
+                    strongSelf.canLoadMore = false
+                }else{
+                    strongSelf.canLoadMore = true
+                }
+                
+                if strongSelf.currentPage == 1{
+                    strongSelf.modelArray = array
+                }else{
+                    strongSelf.modelArray.appendContentsOf(array)
+                }
+                
+                strongSelf.menuView.tableView.reloadData()
+            }
+        }
+    }
+    
 
     //MARK: - var & let
     @IBOutlet var menuView: HomeMenuView!
-    let menuModel = HomeMenuItemModel(items: 15)
+    
+    lazy var refreshScrollView: UIScrollView = self.menuView.tableView
+    
+    var modelArray : [HomeMenuModel] = []
     var location:MoYuLocation?
+    
+    private var canLoadMore = true
+    private var currentPage = 1
 }
 
 extension HomeMenuController:UITableViewDelegate{
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+
+        if self.canLoadMore && (indexPath.row >= modelArray.count - MoDefaultLoadMoreCount)
+            && modelArray.count >= MoDefaultLoadMoreCount {
+            self.currentPage += 1
+            self.loadMoreData()
+        }
         
         guard let tmpCell = cell as? HomeMenuCell else{
             return
         }
-       tmpCell.updateCellWithImage(menuModel.datas[indexPath.row])
+        tmpCell.update(item: modelArray[indexPath.row])
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let vc = BaseController()
+        vc.view.backgroundColor = UIColor.mo_background()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -91,15 +149,12 @@ extension HomeMenuController:UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return menuModel.rows
+        return modelArray.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMenu) else{
-            return HomeMenuCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMenu)
-        }
-        return cell
+
+        return HomeMenuCell.cell(tableView: tableView)
     }
 }
 

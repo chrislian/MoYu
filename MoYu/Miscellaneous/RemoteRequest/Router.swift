@@ -99,7 +99,7 @@ extension Router: RouterType{
             var tmp:[String:AnyObject] = ["page": page]
             if let tmpLocation = location{
                 tmp["latitude"] = tmpLocation.latitude
-                tmp["longtitude"] = tmpLocation.longtitude
+                tmp["longitude"] = tmpLocation.longitude
             }
             parameters = compose(parameters: tmp)
         }

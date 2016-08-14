@@ -94,7 +94,7 @@ class FindWorkController: UIViewController {
         return location
     }()
     
-    var location = MoYuLocation()
+    var location:MoYuLocation?
 }
 
 //MARK: - BMKMapView Delegate
@@ -130,7 +130,7 @@ extension FindWorkController:BMKLocationServiceDelegate{
         //print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
         
-        location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longtitude: userLocation.location.coordinate.longitude)
+        location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
     }
     
     /**

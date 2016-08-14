@@ -15,6 +15,8 @@ let MoScreenWidth  = UIScreen.mainScreen().bounds.size.width
 let MoScreenHeight = UIScreen.mainScreen().bounds.size.height
 let MoScreenBounds = UIScreen.mainScreen().bounds
 
+let MoDefaultLoadMoreCount = 10
+
 
 func sendMessage(name:String, object:AnyObject? = nil,userInfo: [NSObject : AnyObject]? = nil){
 
@@ -28,5 +30,5 @@ func sendMessage(name:String, object:AnyObject? = nil,userInfo: [NSObject : AnyO
  */
 struct MoYuLocation {
     var latitude:Double = 0
-    var longtitude:Double = 0
+    var longitude:Double = 0
 }
