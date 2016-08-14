@@ -34,13 +34,6 @@ class HomeController: BaseController {
         self.navigationController?.navigationBar.mo_hide(hairLine: true)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.checkSignIn()
-    }
-    
-    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -93,15 +86,6 @@ class HomeController: BaseController {
     }
     
     //MARK: - private methond
-    
-    private func checkSignIn(){
-        
-        guard let phone = UserManager.sharedInstance.getPhoneNumber() where !phone.isEmpty else{
-            self.showSignInView()
-            return
-        }
-
-    }
     
     private func setupHomeView(){
         

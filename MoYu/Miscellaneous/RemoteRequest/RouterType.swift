@@ -53,7 +53,15 @@ extension RouterType {
     
     func compose(parameters parameters: [String: AnyObject]? = nil) -> [String: AnyObject]{
         
-        let base:[String:AnyObject] = ["userid": self.userID(), "sessionid": self.sessionID(), "device": self.MOUID()]
+        var base:[String:AnyObject] = ["device": self.MOUID()]
+        
+        if !self.userID().isEmpty{
+            base["userid"] = self.userID()
+        }
+        if !self.sessionID().isEmpty{
+            base["sessionid"] = self.sessionID()
+        }
+        
         
         guard let parameters = parameters else { return base }
         

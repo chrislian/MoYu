@@ -37,6 +37,8 @@ class UserManager {
     
     private(set) var user = UserInfo()
     
+    private(set) var isLoginIn = false
+    
     let realm = try! Realm()
     
     func update(user json:JSON, phone:String){
@@ -46,6 +48,8 @@ class UserManager {
         self.set(phone: phone)
         
         user = UserInfo(json: json)
+        
+        self.isLoginIn = true
         
         do{
             try realm.write({ 
@@ -58,6 +62,9 @@ class UserManager {
     
     
     func deleteUser(){
+        
+        self.isLoginIn = false
+        
         self.set(phone: "")
         do{
             try realm.write({ 

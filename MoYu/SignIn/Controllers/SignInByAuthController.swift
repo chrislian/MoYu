@@ -20,6 +20,7 @@ class SignInByAuthController: BaseController {
 
         self.setupView()
         
+        self.addBackNavigationButton()
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -17,20 +17,12 @@ class LeftMenuController: BaseController {
 
         setupLeftMenuView()
         
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onReceive(notify:)), name: UserNotification.updateUserInfo, object: nil)
         
     }
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        
-        
     }
     
     //MARK: - event response
@@ -50,6 +42,11 @@ class LeftMenuController: BaseController {
      */
     @IBAction func headerTap(sender: UITapGestureRecognizer) {
         
+        if !UserManager.sharedInstance.isLoginIn{
+            self.showSignInView()
+            return
+        }
+        
         self.performSegueWithIdentifier(SB.Personal.Segue.userInfo, sender: nil)
         
     }
@@ -61,6 +58,11 @@ class LeftMenuController: BaseController {
      */
     @IBAction func headerImageTap(sender: UITapGestureRecognizer) {
         
+        if !UserManager.sharedInstance.isLoginIn{
+            self.showSignInView()
+            return
+        }
+        
         self.sourceActionSheet.show( self )
     }
     
@@ -70,6 +72,11 @@ class LeftMenuController: BaseController {
      - parameter sender:
      */
     @IBAction func settingButtonClicked(sender: UIButton) {
+        
+        if !UserManager.sharedInstance.isLoginIn{
+            self.showSignInView()
+            return
+        }
         
         guard let vc = SB.Setting.Vc.root() else{
             println("load setting vc failed")
@@ -181,11 +188,12 @@ extension LeftMenuController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if indexPath.row == 0{
-            self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
-        }else if indexPath.row == 1{
-            
+        
+        if !UserManager.sharedInstance.isLoginIn{
+            self.showSignInView()
+            return
         }
+        
         switch indexPath.row{
         case 0:
             self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
