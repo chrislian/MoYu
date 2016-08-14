@@ -16,6 +16,8 @@ class HomeMenuController: BaseController,RefreshViewType {
         
         setupMenuView()
         
+        addRefreshView()
+        
         loadMoreData()
     }
     
@@ -73,7 +75,10 @@ class HomeMenuController: BaseController,RefreshViewType {
         
         Router.allPartTimeJobList(page: currentPage, location: location).request { [weak self] (status, json) in
             
+            
             guard let strongSelf = self else { return }
+            
+            strongSelf.endRefresh()
             
             strongSelf.show(error: status)
             
