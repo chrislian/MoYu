@@ -128,7 +128,7 @@ extension HomeMenuController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
 
-        if self.canLoadMore && (indexPath.row >= modelArray.count - MoDefaultLoadMoreCount)
+        if self.canLoadMore && (indexPath.row >= modelArray.count - 3)
             && modelArray.count >= MoDefaultLoadMoreCount {
             self.currentPage += 1
             self.loadMoreData()
