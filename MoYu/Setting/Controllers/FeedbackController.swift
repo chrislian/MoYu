@@ -80,7 +80,7 @@ class FeedbackController: BaseController {
     
     private let feedbackView = FeedbackView()
     
-    private let feedbackTypes = ["开 发", "合 作", "其 他"]
+    private let feedbackTypes = ["广告合作", "开发建议"]
     private var selectIndex = 0
     
     lazy var typeActionSheet: ActionSheetController = {
