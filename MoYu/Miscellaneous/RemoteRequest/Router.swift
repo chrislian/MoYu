@@ -35,6 +35,8 @@ enum Router {
     case jobZoneZan(id:String, value:Bool)//职来职往点赞
     case commitJobZone(message:String)//发布职来职往
     
+    case postParttimeJob(parameter: [String: AnyObject])
+    case postTask(paramter: [String:AnyObject])
     
     
 }
@@ -102,7 +104,14 @@ extension Router: RouterType{
                 tmp["longitude"] = tmpLocation.longitude
             }
             parameters = compose(parameters: tmp)
+        
+        case .postParttimeJob(let parameter):
+            parameters = compose(parameters: parameter)
+            
+        case .postTask(let paramter):
+            parameters = compose(parameters: paramter)
         }
+        
         return parameters
     }
     
@@ -148,6 +157,12 @@ extension Router: RouterType{
             
         case .allPartTimeJobList:
             suffix = "getAllPartTimeJobList"
+            
+        case .postParttimeJob:
+            suffix = "postPartTimeJob"
+            
+        case .postTask:
+            suffix = "postTask"
         }
         return mainUrl + suffix
     }

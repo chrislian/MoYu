@@ -22,6 +22,7 @@
 		8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6451D3B407500DF6D78 /* BaseController.swift */; };
 		8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */; };
 		8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64F1D3B666C00DF6D78 /* MODevice.swift */; };
+		83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83289B7D1D64A0B700EF765D /* PostJobModel.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		833240971D56E579006C7203 /* MoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240941D56E579006C7203 /* MoAlert.swift */; };
 		833240981D56E579006C7203 /* MoHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240951D56E579006C7203 /* MoHUD.swift */; };
@@ -158,6 +159,7 @@
 		8327B64A1D3B65C200DF6D78 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		8327B64F1D3B666C00DF6D78 /* MODevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MODevice.swift; sourceTree = "<group>"; };
+		83289B7D1D64A0B700EF765D /* PostJobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostJobModel.swift; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
 		833240941D56E579006C7203 /* MoAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoAlert.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				838E84D01D29492200C992CC /* HomeMenuModel.swift */,
+				83289B7D1D64A0B700EF765D /* PostJobModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1221,6 +1224,7 @@
 				838E850C1D294CC100C992CC /* CGImage+MoYu.swift in Sources */,
 				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,
 				838E850E1D294CC100C992CC /* UIFont+MoYu.swift in Sources */,
+				83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */,
 				833240B11D574F9D006C7203 /* AccountBindingModel.swift in Sources */,
 				833240AE1D574F9D006C7203 /* AccountBindingController.swift in Sources */,
 				838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */,
