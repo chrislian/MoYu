@@ -1,9 +1,9 @@
 //
-//  MQActionSheet.swift
+//  ActionSheetController.swift
 //  meiqu
 //
-//  Created by shenfh on 16/3/24.
-//  Copyright © 2016年 com.meiqu.com. All rights reserved.
+//  Created by chris on 16/8/2.
+//  Copyright © 2016年 com.moyu.com. All rights reserved.
 //
 
 import UIKit
