@@ -23,12 +23,19 @@ class PostPartimeJobDetailController: BaseController {
     //MARK: - event reponse
     dynamic private func submitButtonClicked(sender:UIButton){
         println("提交兼职")
+        
+        var model = PostPartTimeJobModel()
+        model.simulateData()
+        Router.postParttimeJob(parameter: model.combination()).request { (status, json) in
+            self.show(error: status, showSuccess: true)
+        }
     }
     
     //MARK: - private method
     
     private func setupView(){
         
+
     }
     
     private func layout(){

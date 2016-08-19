@@ -31,6 +31,20 @@ struct PostPartTimeJobModel {
         "education": education, "workingtime": workingtime, "longitude": longitude, "latitude":latitude ]
         
     }
+    
+    mutating func simulateData(){
+        self.name = "年轻人的第一个兼职"
+        self.city = "厦门"
+        self.commission = "200"
+        self.address = "小农村"
+        self.content = "我也不知道为什么,就是突然想发一个兼职"
+        self.sum = 99
+        self.time = String( NSDate().timeIntervalSince1970 )
+        self.sex = 1
+        self.profession = "市场营销"
+        self.workingtime = String( NSDate().timeIntervalSince1970 )
+        
+    }
 }
 
 struct PostTaskModel {
