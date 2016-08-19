@@ -37,7 +37,7 @@ class LocationHeadView: UIView {
         
         self.addSubview(locationLab)
         locationLab.snp_makeConstraints { (make) in
-            make.left.equalTo(self).offset(10)
+            make.left.equalTo(self).offset(20)
             make.right.equalTo(self).offset(-10)
             make.top.equalTo(line0.snp_bottom)
         }
@@ -62,7 +62,7 @@ class LocationHeadView: UIView {
         let  label = UILabel()
         label.textColor = UIColor.mo_lightBlack()
         label.font = UIFont.mo_font()
-        label.text = "当前位置：定位中。。。"
+        label.text = "当前位置：定位中..."
         return label
     }()
     

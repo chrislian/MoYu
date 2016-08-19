@@ -22,6 +22,10 @@ class SelectCityController: BaseController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.backgroundColor = UIColor.mo_background()
+    
+    let headView = UIView(frame:CGRectMake(0,0,MoScreenWidth,60))
+    headView.addSubview(locationHeadView)
+    tableView.tableHeaderView = headView;
     }
 
     private func loadLocationData(){
@@ -39,8 +43,9 @@ class SelectCityController: BaseController {
     }
     
     //MARK: - var & let
-    @IBOutlet weak var locationHeadView: LocationHeadView!
+    
     @IBOutlet weak var tableView: UITableView!
+    var locationHeadView = LocationHeadView(frame:CGRectMake(0,16,MoScreenWidth,44))
     
     var cityPlist:[String: [String] ] = {
         
@@ -75,6 +80,23 @@ extension SelectCityController:UITableViewDelegate{
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0
+    }
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel(frame:CGRect(x: 20, y: 0, width: MoScreenWidth - 20, height: 30))
+        label.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        label.font = UIFont.mo_font()
+        label.textColor = UIColor.grayColor()
+        label.text = "     手动选择"
+        return label
+    }
+
 }
 
 

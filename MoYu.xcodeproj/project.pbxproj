@@ -41,6 +41,8 @@
 		833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */; };
 		833A86381D2BFC43002E8BBD /* UseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86371D2BFC43002E8BBD /* UseInfoController.swift */; };
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
+		833F087A1D674AEA009A4275 /* HotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F08791D674AEA009A4275 /* HotSearchView.swift */; };
+		833F087C1D674C06009A4275 /* HotSearchMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
 		834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834EC40C1D322BD80046FBEF /* SignIn.storyboard */; };
 		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
@@ -186,6 +188,8 @@
 		833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderCell.swift; sourceTree = "<group>"; };
 		833A86371D2BFC43002E8BBD /* UseInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseInfoController.swift; sourceTree = "<group>"; };
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		833F08791D674AEA009A4275 /* HotSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotSearchView.swift; sourceTree = "<group>"; };
+		833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotSearchMenuCell.swift; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		834EC40C1D322BD80046FBEF /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
@@ -668,6 +672,8 @@
 				838E84D71D29492200C992CC /* HomeView.swift */,
 				838E84D81D29492200C992CC /* PublishSheetView.swift */,
 				838CF1181D634FD3002BDC24 /* LocationHeadView.swift */,
+				833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */,
+				833F08791D674AEA009A4275 /* HotSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1187,6 +1193,7 @@
 				83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */,
 				83289B821D64A60C00EF765D /* PostTaskController.swift in Sources */,
 				83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */,
+				833F087C1D674C06009A4275 /* HotSearchMenuCell.swift in Sources */,
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
 				83D7A43C1D5F05AE00C28F31 /* ActivityIndicatorView.m in Sources */,
@@ -1200,6 +1207,7 @@
 				8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */,
 				839C748B1D55FF84003DBC33 /* AutoGraphController.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
+				833F087A1D674AEA009A4275 /* HotSearchView.swift in Sources */,
 				838E850D1D294CC100C992CC /* UIColor+MoYu.swift in Sources */,
 				83D7A43F1D5F07B300C28F31 /* RefreshHeaderView.m in Sources */,
 				838E85101D294CC100C992CC /* UIImageView+MoYu.swift in Sources */,

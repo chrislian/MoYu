@@ -831,11 +831,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OmP-Mx-QDU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="NME-zj-cDg" customClass="LocationHeadView" customModule="MoYu" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -847,7 +842,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationHeadView" destination="NME-zj-cDg" id="UzY-a8-4hg"/>
                         <outlet property="tableView" destination="OmP-Mx-QDU" id="Srf-gK-3GA"/>
                     </connections>
                 </viewController>
@@ -870,66 +864,50 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-uu-krE">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="44"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" placeholder="输入感兴趣的兼职" translatesAutoresizingMaskIntoConstraints="NO" id="usK-BQ-iEN">
-                                        <rect key="frame" x="8" y="0.0" width="317" height="44"/>
-                                        <color key="barTintColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <searchBar contentMode="redraw" placeholder="输入感兴趣的兼职" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="usK-BQ-iEN">
+                                        <rect key="frame" x="8" y="0.0" width="367" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfq-wl-IbX">
-                                        <rect key="frame" x="325" y="0.0" width="50" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="z4d-rZ-AA5"/>
-                                        </constraints>
-                                        <state key="normal" title="取消">
-                                            <color key="titleColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelButtonClicked:" destination="AtK-yL-2Xg" eventType="touchUpInside" id="pFE-gX-WwS"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="usK-BQ-iEN" secondAttribute="bottom" id="1Zi-ez-cpi"/>
-                                    <constraint firstAttribute="bottom" secondItem="qfq-wl-IbX" secondAttribute="bottom" id="Lhd-cC-I60"/>
-                                    <constraint firstItem="qfq-wl-IbX" firstAttribute="leading" secondItem="usK-BQ-iEN" secondAttribute="trailing" id="PXi-Wk-cNg"/>
-                                    <constraint firstItem="qfq-wl-IbX" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="top" id="YeK-t3-ZmQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="usK-BQ-iEN" secondAttribute="trailing" constant="8" id="TPI-su-bpw"/>
                                     <constraint firstAttribute="bottom" secondItem="usK-BQ-iEN" secondAttribute="bottom" id="dRs-iO-rWz"/>
-                                    <constraint firstItem="qfq-wl-IbX" firstAttribute="leading" secondItem="usK-BQ-iEN" secondAttribute="trailing" id="eGH-Op-FKC"/>
-                                    <constraint firstAttribute="trailing" secondItem="qfq-wl-IbX" secondAttribute="trailing" constant="8" id="gwZ-pY-4im"/>
                                     <constraint firstItem="usK-BQ-iEN" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="top" id="ilS-ah-x0F"/>
-                                    <constraint firstAttribute="bottom" secondItem="qfq-wl-IbX" secondAttribute="bottom" id="pJ2-Ss-ge1"/>
                                     <constraint firstAttribute="height" constant="44" id="whQ-pX-IBn"/>
                                     <constraint firstItem="usK-BQ-iEN" firstAttribute="leading" secondItem="DOs-uu-krE" secondAttribute="leading" constant="8" id="zAC-qm-mhc"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="dRs-iO-rWz"/>
-                                        <exclude reference="Lhd-cC-I60"/>
-                                        <exclude reference="PXi-Wk-cNg"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-eZ-esM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ztu-Nr-1PS">
                                 <rect key="frame" x="-4" y="44" width="383" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Pbr-eZ-esM" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="bottom" id="1Rr-OY-2D8"/>
-                            <constraint firstItem="wsI-VP-VIU" firstAttribute="top" secondItem="Pbr-eZ-esM" secondAttribute="bottom" id="DYZ-O5-8hz"/>
-                            <constraint firstItem="Pbr-eZ-esM" firstAttribute="leading" secondItem="luf-yb-V7c" secondAttribute="leadingMargin" constant="-20" id="TuZ-dr-0m7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ztu-Nr-1PS" secondAttribute="trailing" constant="-20" id="7hz-wb-jUz"/>
+                            <constraint firstItem="Ztu-Nr-1PS" firstAttribute="leading" secondItem="luf-yb-V7c" secondAttribute="leadingMargin" constant="-20" id="9DI-3C-4ef"/>
+                            <constraint firstItem="wsI-VP-VIU" firstAttribute="top" secondItem="Ztu-Nr-1PS" secondAttribute="bottom" id="Ixp-lo-IV9"/>
                             <constraint firstItem="DOs-uu-krE" firstAttribute="leading" secondItem="luf-yb-V7c" secondAttribute="leadingMargin" constant="-20" id="Ypd-VR-csx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DOs-uu-krE" secondAttribute="trailing" constant="-20" id="hbW-Zp-9OJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pbr-eZ-esM" secondAttribute="trailing" constant="-20" id="r8b-id-vSw"/>
+                            <constraint firstItem="Ztu-Nr-1PS" firstAttribute="top" secondItem="DOs-uu-krE" secondAttribute="bottom" id="peW-6V-22C"/>
                             <constraint firstItem="DOs-uu-krE" firstAttribute="top" secondItem="cHB-3y-EQb" secondAttribute="bottom" id="uby-GR-tt6"/>
                         </constraints>
                         <connections>
                             <outlet property="searchBar" destination="usK-BQ-iEN" id="H1s-1C-EOq"/>
+                            <outlet property="tableView" destination="Ztu-Nr-1PS" id="Xb0-zY-ave"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="1iF-uv-10f"/>
+                    <connections>
+                        <outlet property="seachView" destination="luf-yb-V7c" id="4HT-gN-8fq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCk-JO-EK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
