@@ -23,6 +23,8 @@
 		8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */; };
 		8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64F1D3B666C00DF6D78 /* MODevice.swift */; };
 		83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83289B7D1D64A0B700EF765D /* PostJobModel.swift */; };
+		83289B801D64A60200EF765D /* PostParttimeJobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83289B7F1D64A60200EF765D /* PostParttimeJobController.swift */; };
+		83289B821D64A60C00EF765D /* PostTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83289B811D64A60C00EF765D /* PostTaskController.swift */; };
 		833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833180081D2A895800EFAF69 /* AccountBindingCell.swift */; };
 		833240971D56E579006C7203 /* MoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240941D56E579006C7203 /* MoAlert.swift */; };
 		833240981D56E579006C7203 /* MoHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240951D56E579006C7203 /* MoHUD.swift */; };
@@ -160,6 +162,8 @@
 		8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		8327B64F1D3B666C00DF6D78 /* MODevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MODevice.swift; sourceTree = "<group>"; };
 		83289B7D1D64A0B700EF765D /* PostJobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostJobModel.swift; sourceTree = "<group>"; };
+		83289B7F1D64A60200EF765D /* PostParttimeJobController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostParttimeJobController.swift; sourceTree = "<group>"; };
+		83289B811D64A60C00EF765D /* PostTaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTaskController.swift; sourceTree = "<group>"; };
 		833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MoYu-Bridging-Header.h"; path = "../MoYu-Bridging-Header.h"; sourceTree = "<group>"; };
 		833180081D2A895800EFAF69 /* AccountBindingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBindingCell.swift; sourceTree = "<group>"; };
 		833240941D56E579006C7203 /* MoAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoAlert.swift; sourceTree = "<group>"; };
@@ -617,6 +621,8 @@
 				838E84CB1D29492200C992CC /* HomeMessageController.swift */,
 				838E84CC1D29492200C992CC /* HomeSearchController.swift */,
 				838E84CE1D29492200C992CC /* PublishWorkController.swift */,
+				83289B7F1D64A60200EF765D /* PostParttimeJobController.swift */,
+				83289B811D64A60C00EF765D /* PostTaskController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1156,6 +1162,7 @@
 			files = (
 				83BCD61E1D4718E200FA4388 /* BalanceController.swift in Sources */,
 				83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */,
+				83289B821D64A60C00EF765D /* PostTaskController.swift in Sources */,
 				83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */,
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
@@ -1191,6 +1198,7 @@
 				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,
 				83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
+				83289B801D64A60200EF765D /* PostParttimeJobController.swift in Sources */,
 				8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */,
 				833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */,
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,

@@ -83,8 +83,13 @@ class PublishWorkController: UIViewController {
         //publish button closure
         publishSheetView.publishClosure = { type in
             switch type {
-            case .PartTime:break
-            case .Task:break
+            case .PartTime:
+                let vc = PostParttimeJobController()
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            case .Task:
+                let vc = PostTaskController()
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
