@@ -10,6 +10,7 @@ import UIKit
 
 class PostParttimeJobController: BaseController {
 
+    //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,8 +19,18 @@ class PostParttimeJobController: BaseController {
         self.setupView()
     }
 
+    //MARK: - event response
+    dynamic private func nextButtonClicked(sender:UIButton){
+        
+        let vc = PostPartimeJobDetailController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //MARK: - private method
     private func setupView(){
+        
+        self.view.backgroundColor = UIColor.mo_background()
+        
         self.view.addSubview(tableView)
         tableView.snp_makeConstraints { (make) in
             make.left.right.top.equalTo(self.view)
@@ -55,7 +66,11 @@ class PostParttimeJobController: BaseController {
         button.titleLabel?.font = UIFont.mo_font(.bigger)
         button.backgroundColor = UIColor.mo_main()
         button.layer.borderColor = UIColor.mo_lightBlack().CGColor
-        button.layer.borderWidth = 0.8
+        button.layer.borderWidth = 0.5
+        button.layer.cornerRadius = 3
+        button.layer.masksToBounds = true
+        
+        button.addTarget(self, action: #selector(PostParttimeJobController.nextButtonClicked(_:)), forControlEvents: .TouchUpInside)
         return button
     }()
 

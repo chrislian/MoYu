@@ -119,6 +119,7 @@
 		83F675131D549F2000D951AF /* ChangeNicknameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F675121D549F2000D951AF /* ChangeNicknameController.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
+		EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoYuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPartimeJobDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,6 +645,7 @@
 				838E84CE1D29492200C992CC /* PublishWorkController.swift */,
 				838CF11F1D636136002BDC24 /* SelectCityController.swift */,
 				83289B7F1D64A60200EF765D /* PostParttimeJobController.swift */,
+				EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */,
 				83289B811D64A60C00EF765D /* PostTaskController.swift */,
 			);
 			path = Controllers;
@@ -1225,6 +1228,7 @@
 				8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */,
 				833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */,
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
+				EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */,
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
 				83829ED51D58877B00CD6587 /* RecommendController.swift in Sources */,
