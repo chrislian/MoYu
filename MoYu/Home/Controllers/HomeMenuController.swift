@@ -43,7 +43,7 @@ class HomeMenuController: BaseController,RefreshViewType {
 
     //MARK: - event reponse
     @IBAction func leftButtonClicked(sender: UIButton) {
-        
+        self.performSegueWithIdentifier(SB.Main.Segue.selectCity, sender: nil)
     }
     
     @IBAction func rightButtonClicked(sender: UIButton) {

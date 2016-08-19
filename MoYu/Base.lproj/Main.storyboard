@@ -809,11 +809,51 @@
                     <navigationItem key="navigationItem" id="IcM-k8-t7m"/>
                     <connections>
                         <outlet property="menuView" destination="zHd-hU-PJO" id="kZA-dx-xQ8"/>
+                        <segue destination="Gdg-OJ-oUa" kind="show" identifier="segueSelectCity" id="ytJ-SJ-5ge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbO-fC-MXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1746.5" y="38.5"/>
+        </scene>
+        <!--Select City Controller-->
+        <scene sceneID="M7k-Kh-ZOX">
+            <objects>
+                <viewController id="Gdg-OJ-oUa" customClass="SelectCityController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rug-RS-3Mr"/>
+                        <viewControllerLayoutGuide type="bottom" id="kuu-vd-ZXg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YqW-XD-0Fg">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OmP-Mx-QDU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="NME-zj-cDg" customClass="LocationHeadView" customModule="MoYu" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OmP-Mx-QDU" firstAttribute="leading" secondItem="YqW-XD-0Fg" secondAttribute="leading" id="JIV-HM-T3x"/>
+                            <constraint firstAttribute="trailing" secondItem="OmP-Mx-QDU" secondAttribute="trailing" id="Q2N-he-w6J"/>
+                            <constraint firstItem="OmP-Mx-QDU" firstAttribute="bottom" secondItem="kuu-vd-ZXg" secondAttribute="top" id="dub-xj-WQW"/>
+                            <constraint firstItem="OmP-Mx-QDU" firstAttribute="top" secondItem="YqW-XD-0Fg" secondAttribute="top" id="r12-Pb-91r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationHeadView" destination="NME-zj-cDg" id="UzY-a8-4hg"/>
+                        <outlet property="tableView" destination="OmP-Mx-QDU" id="Srf-gK-3GA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbm-yw-iAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285.5" y="38.5"/>
         </scene>
         <!--Home Search Controller-->
         <scene sceneID="ocT-aw-4PZ">

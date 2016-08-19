@@ -48,7 +48,7 @@ extension LegalProvisionsController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        cell.textLabel?.text = datas[indexPath.row];
+        cell.textLabel?.text = datas[indexPath.row]
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
         

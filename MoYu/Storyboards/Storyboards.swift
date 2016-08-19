@@ -31,6 +31,8 @@ struct SB {
             static let homeMessage = "segueHomeMessage"
             static let homeMenu = "segueHomeMenu"
             static let homeSearch = "segueHomeSearch"
+            static let selectCity = "segueSelectCity"
+            
         }
         
         struct Vc {

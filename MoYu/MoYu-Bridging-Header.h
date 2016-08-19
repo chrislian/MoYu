@@ -22,6 +22,7 @@
 #import "SFHFKeychainUtils.h"
 #import "OLGhostAlertView.h"
 #import "RefreshHeaderView.h"
+#import "SNLocationManager.h"
 
 
 

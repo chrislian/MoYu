@@ -55,6 +55,10 @@
 		83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED61D588A4600CD6587 /* RecommendView.swift */; };
 		8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6541CB0EA5E003E96B1 /* Print.swift */; };
 		8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389C6561CB0F026003E96B1 /* Storyboards.swift */; };
+		838CF1191D634FD3002BDC24 /* LocationHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CF1181D634FD3002BDC24 /* LocationHeadView.swift */; };
+		838CF11E1D635AEE002BDC24 /* SNLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 838CF11D1D635AEE002BDC24 /* SNLocationManager.m */; };
+		838CF1211D636136002BDC24 /* SelectCityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838CF11F1D636136002BDC24 /* SelectCityController.swift */; };
+		838CF1241D6365D2002BDC24 /* cityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 838CF1231D6365D2002BDC24 /* cityData.plist */; };
 		838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84BF1D29492200C992CC /* AboutJobsController.swift */; };
 		838E84E21D29492200C992CC /* AppCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C01D29492200C992CC /* AppCenterController.swift */; };
 		838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E84C11D29492200C992CC /* PersonMessageController.swift */; };
@@ -196,6 +200,11 @@
 		83829ED61D588A4600CD6587 /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		8389C6541CB0EA5E003E96B1 /* Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		8389C6561CB0F026003E96B1 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		838CF1181D634FD3002BDC24 /* LocationHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHeadView.swift; sourceTree = "<group>"; };
+		838CF11C1D635AEE002BDC24 /* SNLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLocationManager.h; sourceTree = "<group>"; };
+		838CF11D1D635AEE002BDC24 /* SNLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLocationManager.m; sourceTree = "<group>"; };
+		838CF11F1D636136002BDC24 /* SelectCityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCityController.swift; sourceTree = "<group>"; };
+		838CF1231D6365D2002BDC24 /* cityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityData.plist; sourceTree = "<group>"; };
 		838E84BF1D29492200C992CC /* AboutJobsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobsController.swift; sourceTree = "<group>"; };
 		838E84C01D29492200C992CC /* AppCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCenterController.swift; sourceTree = "<group>"; };
 		838E84C11D29492200C992CC /* PersonMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonMessageController.swift; sourceTree = "<group>"; };
@@ -484,6 +493,7 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				838CF11B1D635AEE002BDC24 /* SNLocation */,
 				83393DC71D51844D002E842D /* IdentifyCode.swift */,
 				83393DC81D51844D002E842D /* Reachability.swift */,
 				8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */,
@@ -496,6 +506,7 @@
 		834E3EB81CB0BE86005B8FC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				838CF1231D6365D2002BDC24 /* cityData.plist */,
 				833080EB1CBFE9B6006D5FD6 /* MoYu-Bridging-Header.h */,
 				831C33D01CB0B1E900157B67 /* Assets.xcassets */,
 				831C33D51CB0B1E900157B67 /* Info.plist */,
@@ -564,6 +575,15 @@
 			path = MoYu/MoKit/ProgressView;
 			sourceTree = SOURCE_ROOT;
 		};
+		838CF11B1D635AEE002BDC24 /* SNLocation */ = {
+			isa = PBXGroup;
+			children = (
+				838CF11C1D635AEE002BDC24 /* SNLocationManager.h */,
+				838CF11D1D635AEE002BDC24 /* SNLocationManager.m */,
+			);
+			path = SNLocation;
+			sourceTree = "<group>";
+		};
 		838E84BD1D29492200C992CC /* AppCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +641,7 @@
 				838E84CB1D29492200C992CC /* HomeMessageController.swift */,
 				838E84CC1D29492200C992CC /* HomeSearchController.swift */,
 				838E84CE1D29492200C992CC /* PublishWorkController.swift */,
+				838CF11F1D636136002BDC24 /* SelectCityController.swift */,
 				83289B7F1D64A60200EF765D /* PostParttimeJobController.swift */,
 				83289B811D64A60C00EF765D /* PostTaskController.swift */,
 			);
@@ -646,6 +667,7 @@
 				838E84D61D29492200C992CC /* HomeSearchView.swift */,
 				838E84D71D29492200C992CC /* HomeView.swift */,
 				838E84D81D29492200C992CC /* PublishSheetView.swift */,
+				838CF1181D634FD3002BDC24 /* LocationHeadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -892,6 +914,7 @@
 				831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */,
 				834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */,
 				833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */,
+				838CF1241D6365D2002BDC24 /* cityData.plist in Resources */,
 				83BCD61C1D47122700FA4388 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1220,6 +1243,7 @@
 				83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */,
 				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
+				838CF1191D634FD3002BDC24 /* LocationHeadView.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */,
 				83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */,
@@ -1235,10 +1259,12 @@
 				83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */,
 				833240B11D574F9D006C7203 /* AccountBindingModel.swift in Sources */,
 				833240AE1D574F9D006C7203 /* AccountBindingController.swift in Sources */,
+				838CF1211D636136002BDC24 /* SelectCityController.swift in Sources */,
 				838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */,
 				833240B01D574F9D006C7203 /* UserGuideController.swift in Sources */,
 				833240971D56E579006C7203 /* MoAlert.swift in Sources */,
 				838E84E71D29492200C992CC /* FindWorkController.swift in Sources */,
+				838CF11E1D635AEE002BDC24 /* SNLocationManager.m in Sources */,
 				838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */,
 				833240AF1D574F9D006C7203 /* SettingController.swift in Sources */,
 				83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */,
