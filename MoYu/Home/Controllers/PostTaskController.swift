@@ -14,8 +14,6 @@ class PostTaskController: BaseController {
         super.viewDidLoad()
 
     }
-
-    
 }
 
 

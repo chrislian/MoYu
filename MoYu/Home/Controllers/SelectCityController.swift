@@ -8,7 +8,22 @@
 
 import UIKit
 
-class SelectCityController: BaseController {
+class CityModel {
+    
+    var title: NSAttributedString
+    var subTitle: NSAttributedString
+    var isVisible: Bool
+    var items: [String]
+    
+    init() {
+        title = NSAttributedString(string: "KKKK")
+        subTitle = NSAttributedString()
+        isVisible = false
+        items = ["AAAA","SSS","DDD","FFF","GGG"]
+    }
+}
+
+class SelectCityController: CollapsableTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +70,32 @@ class SelectCityController: BaseController {
         }
         return dic
     }()
+    
+    // MARK: - Collapsable
+    private var items: [CityModel] =  {
+        
+        var models:[CityModel] = []
+        for i in 0...6{
+            models.append(CityModel())
+        }
+        return models
+    }()
+    
+    override func model() -> [CityModel]? {
+        return items
+    }
+    
+    override func singleOpenSelectionOnly() -> Bool {
+        return true
+    }
+    
+    override func collapsableTableView() -> UITableView? {
+        return tableView
+    }
 }
 
 //MARK: - table view delegate
-extension SelectCityController:UITableViewDelegate{
+extension SelectCityController{
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44.0
@@ -66,9 +103,11 @@ extension SelectCityController:UITableViewDelegate{
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        let keys = cityPlist.sort{ $0.0 < $1.0 }.map{ $0.0 }
+        //let keys = cityPlist.sort{ $0.0 < $1.0 }.map{ $0.0 }
         
-        cell.textLabel?.text = keys[indexPath.row]
+        guard let model = self.model() else{ return }
+        
+        cell.textLabel?.text = model[indexPath.section].items[indexPath.row]
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
         
@@ -82,33 +121,42 @@ extension SelectCityController:UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30.0
+        return 44.0
     }
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel(frame:CGRect(x: 20, y: 0, width: MoScreenWidth - 20, height: 30))
-        label.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        label.font = UIFont.mo_font()
-        label.textColor = UIColor.grayColor()
-        label.text = "     手动选择"
-        return label
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("CityHeaderView") as? CityHeaderView
+        
+        if header == nil{
+            header = CityHeaderView(reuseIdentifier: "CityHeaderView")
+        }
+        
+        header?.sectionIndex = section
+        header?.interactionDelegate = self
+        header?.delegate = self
+        
+        guard let model = self.model() else {
+            return nil
+        }
+        header?.sectionTitleLabel.attributedText = model[section].title
+        return header
     }
+}
 
+extension SelectCityController: CitySectionHeaderViewDelegate{
+    func sectionHeaderView(section:Int, open: Bool){
+        println("section = \(section), open :\(open)")
+    }
 }
 
 
 //MARK: - table view data source
-extension SelectCityController:UITableViewDataSource{
+extension SelectCityController{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return cityPlist.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "selectCityIndentifier"
         guard let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) else{

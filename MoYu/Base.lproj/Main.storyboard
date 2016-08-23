@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zrU-jx-Qdn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zrU-jx-Qdn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -62,7 +62,7 @@
                                             <constraint firstItem="8aP-1c-DTs" firstAttribute="top" secondItem="f7h-iB-O0w" secondAttribute="top" id="x2X-c9-tlU"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENF-IO-mao">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENF-IO-mao">
                                         <rect key="frame" x="108" y="0.0" width="59" height="55"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ph-Vh-bV8">
@@ -546,23 +546,23 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWM-om-1TU">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWM-om-1TU">
                                                 <rect key="frame" x="130" y="0.0" width="123" height="43"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能排序" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-f1-uGM">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="智能排序" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-f1-uGM">
                                                         <rect key="frame" x="8" y="13" width="84" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_pull_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kDO-ew-xB3">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_pull_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kDO-ew-xB3">
                                                         <rect key="frame" x="92" y="17" width="10" height="10"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="10" id="crJ-f4-QbE"/>
                                                             <constraint firstAttribute="width" secondItem="kDO-ew-xB3" secondAttribute="height" multiplier="1:1" id="pVh-Ya-ohC"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZI-Lc-6UC">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZI-Lc-6UC">
                                                         <rect key="frame" x="122" y="9" width="1" height="25"/>
                                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -570,7 +570,7 @@
                                                             <constraint firstAttribute="height" constant="25" id="oAJ-rz-7j6"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-ZP-WAu">
+                                                    <button opaque="NO" tag="101" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-ZP-WAu">
                                                         <rect key="frame" x="0.0" y="0.0" width="123" height="43"/>
                                                         <connections>
                                                             <action selector="headViewButtonClicked:" destination="gxx-DA-Z0s" eventType="touchUpInside" id="FrI-fl-9xV"/>
@@ -690,10 +690,10 @@
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHomeMenuIdentifier" rowHeight="80" id="p3K-jp-ZrJ" customClass="HomeMenuCell" customModule="MoYu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="383" height="80"/>
+                                                <rect key="frame" x="0.0" y="49.5" width="383" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3K-jp-ZrJ" id="kPz-ah-OjH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="383" height="79"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="383" height="79.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务员和传菜员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RQ-9n-azV">
@@ -941,7 +941,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qbe-i0-gaZ" id="uzs-A2-Ed6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defalutHead" translatesAutoresizingMaskIntoConstraints="NO" id="KFl-xD-7sY" customClass="MOImageView" customModule="MoYu" customModuleProvider="target">
