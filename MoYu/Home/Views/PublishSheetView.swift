@@ -43,6 +43,21 @@ class PublishSheetView: UIView {
                 make.height.equalTo(44)
             })
             
+            view.addSubview(parttimeJobLine)
+            parttimeJobLine.snp_makeConstraints(closure: { (make) in
+                make.left.equalTo(view).offset(15)
+                make.bottom.equalTo(view)
+                make.height.equalTo(3)
+            })
+            
+            view.addSubview(taskJobLine)
+            taskJobLine.snp_makeConstraints(closure: { (make) in
+                make.right.equalTo(view).offset(-15)
+                make.bottom.equalTo(view)
+                make.left.equalTo(parttimeJobLine.snp_right).offset(20)
+                make.size.equalTo(parttimeJobLine)
+            })
+            
             view.addSubview(parttimeButton)
             view.addSubview(taskButton)
             parttimeButton.snp_makeConstraints { (make) in
@@ -116,11 +131,15 @@ class PublishSheetView: UIView {
         didSet{
             switch publishType {
             case .PartTime:
-                parttimeButton.backgroundColor = UIColor.mo_main()
-                taskButton.backgroundColor = UIColor.whiteColor()
+                parttimeButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
+                parttimeJobLine.backgroundColor = UIColor.mo_main()
+                taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+                taskJobLine.backgroundColor = UIColor.clearColor()
             case .Task:
-                taskButton.backgroundColor = UIColor.mo_main()
-                parttimeButton.backgroundColor = UIColor.whiteColor()
+                parttimeJobLine.backgroundColor = UIColor.clearColor()
+                taskJobLine.backgroundColor = UIColor.mo_main()
+                parttimeButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+                taskButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
             }
         }
     }
@@ -172,5 +191,16 @@ class PublishSheetView: UIView {
         return button
     }()
     
-    
+    private lazy var parttimeJobLine :UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 1
+        view.layer.masksToBounds = true
+        return view
+    }()
+    private lazy var taskJobLine :UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 1
+        view.layer.masksToBounds = true
+        return view
+    }()
 }
