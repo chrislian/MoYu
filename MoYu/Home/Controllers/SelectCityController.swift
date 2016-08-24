@@ -34,9 +34,9 @@ class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionT
     tableView.delegate = self
     tableView.dataSource = self
     tableView.backgroundColor = UIColor.mo_background()
-    tableView.separatorStyle = .None
+//    tableView.separatorStyle = .None
     
-    let headView = UIView(frame:CGRectMake(0,0,MoScreenWidth,60))
+    let headView = UIView(frame:CGRectMake(0,0,MoScreenWidth,80))
     headView.addSubview(locationHeadView)
     tableView.tableHeaderView = headView;
     }
@@ -58,7 +58,7 @@ class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionT
     //MARK: - var & let
     
     @IBOutlet weak var tableView: UITableView!
-    var locationHeadView = LocationHeadView(frame:CGRectMake(0,16,MoScreenWidth,44))
+    var locationHeadView = LocationHeadView(frame:CGRectMake(0,0,MoScreenWidth,80))
     
     // MARK: - Collapsable
     private var items: [CityModel] =  {
@@ -67,7 +67,7 @@ class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionT
             let dic = NSDictionary(contentsOfFile: path) as? [String: [String]] else{
                 return  []
         }
-        return dic.map( CityModel.init )
+        return dic.map( CityModel.init )//.sort { $0.provinceName > $1.provinceName }
     }()
     
     var collapsableTableView: UITableView {
@@ -120,6 +120,7 @@ extension SelectCityController :UITableViewDelegate{
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
         cell.selectionStyle = .None
+        cell.backgroundColor = UIColor.mo_mercury()
     }
     
     
