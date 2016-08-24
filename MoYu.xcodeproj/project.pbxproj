@@ -504,10 +504,10 @@
 		834E3EB61CB0BE86005B8FC3 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */,
 				838CF11B1D635AEE002BDC24 /* SNLocation */,
 				83393DC71D51844D002E842D /* IdentifyCode.swift */,
 				83393DC81D51844D002E842D /* Reachability.swift */,
-				8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */,
 				8327B64F1D3B666C00DF6D78 /* MODevice.swift */,
 				83829ED21D586DF900CD6587 /* MoConfig.swift */,
 			);
