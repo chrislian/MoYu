@@ -13,46 +13,25 @@ protocol CitySectionHeaderViewDelegate: class{
     func sectionHeaderView(section:Int, open: Bool)
 }
 
-class CityHeaderView: UITableViewHeaderFooterView,CollapsableTableViewSectionHeaderProtocol {
+class CityHeaderView: UITableViewHeaderFooterView {
     
-    weak var delegate: CitySectionHeaderViewDelegate?
-    
-    var sectionIndex: Int = 0
-    lazy var sectionTitleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor.mo_main()
-        label.font = UIFont.mo_font()
-        return label
-    }()
-   
-    
+    //MARK: - init
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-//        
-//        // 修正autolayout布局报width或height为0
-//        self.frame.size = CGSizeMake(CGFloat.max, 56)
+        self.contentView.backgroundColor = UIColor.whiteColor()
+        
         self.addSubview(sectionTitleLabel)
         sectionTitleLabel.snp_makeConstraints { (make) in
-            make.centerY.equalTo(self)
-            make.left.equalTo(self).offset(20)
+            make.top.bottom.equalTo(self)
+            make.left.equalTo(self).offset(10)
         }
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    weak var interactionDelegate: CollapsableTableViewSectionHeaderInteractionProtocol!
-    
-    func open(animated: Bool) {
-        self.delegate?.sectionHeaderView(sectionIndex, open: true)
-    }
-    
-    func close(animated: Bool) {
-        self.delegate?.sectionHeaderView(sectionIndex, open: false)
-    }
-
+    //MARK: - event response
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         super.touchesEnded(touches, withEvent: event)
@@ -61,6 +40,31 @@ class CityHeaderView: UITableViewHeaderFooterView,CollapsableTableViewSectionHea
             return
         }
         let point = touch.locationInView(self)
-        interactionDelegate?.userTappedView(self, atPoint: point)
+        self.interactionClourse?(atPoint:point)
+    }
+    
+    //MARK: - var & let
+    weak var delegate: CitySectionHeaderViewDelegate?
+    
+    var interactionClourse:((atPoint: CGPoint)-> Void)?
+
+    var sectionIndex: Int = 0
+    lazy var sectionTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.mo_lightBlack()
+        label.font = UIFont.mo_font()
+        return label
+    }()
+}
+
+// MARK: - CollapsableHeaderType
+extension CityHeaderView: CollapsableHeaderType{
+    
+    func open(animated animated: Bool) {
+        self.delegate?.sectionHeaderView(sectionIndex, open: true)
+    }
+    
+    func close(animated animated: Bool) {
+        self.delegate?.sectionHeaderView(sectionIndex, open: false)
     }
 }

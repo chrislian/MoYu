@@ -8,22 +8,19 @@
 
 import UIKit
 
-class CityModel {
+class CityModel:CollapsableDataType {
     
-    var title: NSAttributedString
-    var subTitle: NSAttributedString
-    var isVisible: Bool
+    var isVisible: Bool = false
+    var provinceName: String
     var items: [String]
     
-    init() {
-        title = NSAttributedString(string: "KKKK")
-        subTitle = NSAttributedString()
-        isVisible = false
-        items = ["AAAA","SSS","DDD","FFF","GGG"]
+    init(input:(name:String, citys:[String])) {
+        provinceName = input.name
+        items = input.citys.filter{ $0 != "不限" }
     }
 }
 
-class SelectCityController: CollapsableTableViewController {
+class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionType{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +34,7 @@ class SelectCityController: CollapsableTableViewController {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.backgroundColor = UIColor.mo_background()
+    tableView.separatorStyle = .None
     
     let headView = UIView(frame:CGRectMake(0,0,MoScreenWidth,60))
     headView.addSubview(locationHeadView)
@@ -62,72 +60,97 @@ class SelectCityController: CollapsableTableViewController {
     @IBOutlet weak var tableView: UITableView!
     var locationHeadView = LocationHeadView(frame:CGRectMake(0,16,MoScreenWidth,44))
     
-    var cityPlist:[String: [String] ] = {
-        
-        guard let path = NSBundle.mainBundle().pathForResource("cityData", ofType: "plist"),
-            let dic = NSDictionary(contentsOfFile: path) as? [String: [String]] else{
-                return  [:]
-        }
-        return dic
-    }()
-    
     // MARK: - Collapsable
     private var items: [CityModel] =  {
         
-        var models:[CityModel] = []
-        for i in 0...6{
-            models.append(CityModel())
+        guard let path = NSBundle.mainBundle().pathForResource("cityData", ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) as? [String: [String]] else{
+                return  []
         }
-        return models
+        return dic.map( CityModel.init )
     }()
     
-    override func model() -> [CityModel]? {
-        return items
+    var collapsableTableView: UITableView {
+        return self.tableView
     }
-    
-    override func singleOpenSelectionOnly() -> Bool {
-        return true
-    }
-    
-    override func collapsableTableView() -> UITableView? {
-        return tableView
+
+    var collapsableData: [CityModel] {
+        return self.items
     }
 }
 
 //MARK: - table view delegate
-extension SelectCityController{
+extension SelectCityController :UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44.0
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        //let keys = cityPlist.sort{ $0.0 < $1.0 }.map{ $0.0 }
-        
-        guard let model = self.model() else{ return }
-        
-        cell.textLabel?.text = model[indexPath.section].items[indexPath.row]
-        cell.textLabel?.font = UIFont.mo_font()
-        cell.textLabel?.textColor = UIColor.mo_lightBlack()
-        
-        cell.selectionStyle = .None
-        cell.accessoryType = .DisclosureIndicator
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
     }
+    
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
+        return 1
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let line = UIView()
+        line.frame = CGRect(x: 0, y: 0, width: MoScreenWidth, height: 1)
+        line.backgroundColor = UIColor.mo_background()
+        return line
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        guard let headerType = view as? CollapsableHeaderType else {
+            return
+        }
+        
+        if (items[section].isVisible ?? false) {
+            headerType.open(animated: false)
+        } else {
+            headerType.close(animated: false)
+        }
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        cell.textLabel?.text = self.items[indexPath.section].items[indexPath.row]
+        cell.textLabel?.font = UIFont.mo_font()
+        cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        cell.selectionStyle = .None
+    }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        println("select indexPath: \(indexPath)")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+// MARK: - 选择区回调
+extension SelectCityController: CitySectionHeaderViewDelegate{
+    func sectionHeaderView(section:Int, open: Bool){
+        //println("section = \(section), open :\(open)")
+    }
+}
+
+
+//MARK: - table view data source
+extension SelectCityController: UITableViewDataSource{
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return items.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let menuSection = items[section]
+        
+        return (menuSection.isVisible ?? false) ? menuSection.items.count : 0
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("CityHeaderView") as? CityHeaderView
         
         if header == nil{
@@ -135,36 +158,22 @@ extension SelectCityController{
         }
         
         header?.sectionIndex = section
-        header?.interactionDelegate = self
+        header?.interactionClourse = { [weak self] (point) in
+            self?.userTappedView(header!, atPoint: point)
+        }
         header?.delegate = self
         
-        guard let model = self.model() else {
-            return nil
-        }
-        header?.sectionTitleLabel.attributedText = model[section].title
+        header?.sectionTitleLabel.text = items[section].provinceName
         return header
     }
-}
-
-extension SelectCityController: CitySectionHeaderViewDelegate{
-    func sectionHeaderView(section:Int, open: Bool){
-        println("section = \(section), open :\(open)")
-    }
-}
-
-
-//MARK: - table view data source
-extension SelectCityController{
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "selectCityIndentifier"
         guard let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) else{
             
             return UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
-            
         }
-        
         return cell
     }
 }

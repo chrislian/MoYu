@@ -120,9 +120,8 @@
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		83F675131D549F2000D951AF /* ChangeNicknameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F675121D549F2000D951AF /* ChangeNicknameController.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
-		ED1C6BEC1D6C3E7B00AC7394 /* CollapsableTableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEA1D6C3E7B00AC7394 /* CollapsableTableProtocols.swift */; };
-		ED1C6BED1D6C3E7B00AC7394 /* CollapsableTableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEB1D6C3E7B00AC7394 /* CollapsableTableScene.swift */; };
 		ED1C6BEF1D6C492F00AC7394 /* CityHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */; };
+		ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 		EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */; };
 /* End PBXBuildFile section */
@@ -278,9 +277,8 @@
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoYuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED1C6BEA1D6C3E7B00AC7394 /* CollapsableTableProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableProtocols.swift; sourceTree = "<group>"; };
-		ED1C6BEB1D6C3E7B00AC7394 /* CollapsableTableScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableTableScene.swift; sourceTree = "<group>"; };
 		ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeaderView.swift; sourceTree = "<group>"; };
+		ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableType.swift; sourceTree = "<group>"; };
 		EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPartimeJobDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -805,8 +803,7 @@
 		ED1C6BE91D6C3E7B00AC7394 /* CollapsableTable */ = {
 			isa = PBXGroup;
 			children = (
-				ED1C6BEA1D6C3E7B00AC7394 /* CollapsableTableProtocols.swift */,
-				ED1C6BEB1D6C3E7B00AC7394 /* CollapsableTableScene.swift */,
+				ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */,
 			);
 			path = CollapsableTable;
 			sourceTree = "<group>";
@@ -1220,7 +1217,6 @@
 				83D7A43B1D5F05AE00C28F31 /* ActivityIndicatorAnimation.m in Sources */,
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
 				83829ED31D586DF900CD6587 /* MoConfig.swift in Sources */,
-				ED1C6BEC1D6C3E7B00AC7394 /* CollapsableTableProtocols.swift in Sources */,
 				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				833240981D56E579006C7203 /* MoHUD.swift in Sources */,
@@ -1289,6 +1285,7 @@
 				838E850E1D294CC100C992CC /* UIFont+MoYu.swift in Sources */,
 				83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */,
 				833240B11D574F9D006C7203 /* AccountBindingModel.swift in Sources */,
+				ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */,
 				833240AE1D574F9D006C7203 /* AccountBindingController.swift in Sources */,
 				838CF1211D636136002BDC24 /* SelectCityController.swift in Sources */,
 				838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */,
@@ -1305,7 +1302,6 @@
 				838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */,
 				838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */,
 				838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */,
-				ED1C6BED1D6C3E7B00AC7394 /* CollapsableTableScene.swift in Sources */,
 				838E84E51D29492200C992CC /* AboutJobsCell.swift in Sources */,
 				834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */,
 				838E84F41D29492200C992CC /* PublishSheetView.swift in Sources */,
