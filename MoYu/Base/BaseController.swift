@@ -207,7 +207,6 @@ extension BaseController: PraseErrorType{
     func updateUser(status : NetworkActionStatus ,json : JSON?){
         if let data = json ,case .success = status{
             UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
-            NSNotificationCenter.defaultCenter().postNotificationName(UserNotification.updateUserInfo, object: nil, userInfo: nil)
         }
         self.show(error: status, showSuccess: true)
     }

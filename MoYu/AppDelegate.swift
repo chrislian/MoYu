@@ -55,6 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
+        if let phone = UserManager.sharedInstance.getPhoneNumber() where !phone.isEmpty{
+            println("当前登录手机号码为:\(phone)")
+        } else{
+            println("未登录")
+        }
+        
         return true
     }
 

@@ -35,7 +35,11 @@ class UserManager {
 
     static let sharedInstance = UserManager()
     
-    private(set) var user = UserInfo()
+    private(set) var user = UserInfo(){
+        didSet{
+            sendMessage(UserNotification.updateUserInfo)
+        }
+    }
     
     private(set) var isLoginIn = false
     
@@ -48,7 +52,6 @@ class UserManager {
         self.set(phone: phone)
         
         user = UserInfo(json: json)
-        
         self.isLoginIn = true
         
         do{
@@ -62,14 +65,15 @@ class UserManager {
     
     
     func deleteUser(){
-        
-        self.isLoginIn = false
-        
         self.set(phone: "")
         do{
             try realm.write({ 
                 realm.delete(user)
             })
+
+            user = UserInfo()
+            self.isLoginIn = false
+            
         }catch let error{
             println("realm delete user error: \(error)")
         }
@@ -81,6 +85,7 @@ class UserManager {
             return false
         }
         self.user = user
+        self.isLoginIn = true
         return true
     }
     
