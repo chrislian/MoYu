@@ -38,6 +38,12 @@ class HomeMenuController: BaseController,RefreshViewType {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        if segue.identifier == SB.Main.Segue.selectCity,
+            let vc = segue.destinationViewController as? SelectCityController{
+            vc.changeCityClourse = { [unowned self] city in
+                self.currentCity = city
+            }
+        }
     }
 
 
@@ -114,6 +120,12 @@ class HomeMenuController: BaseController,RefreshViewType {
     
     private var canLoadMore = true
     private var currentPage = 1
+    
+    private var currentCity = "厦门" {
+        willSet{
+            menuView.cityLabel.text = newValue
+        }
+    }
 }
 
 extension HomeMenuController:UITableViewDelegate{

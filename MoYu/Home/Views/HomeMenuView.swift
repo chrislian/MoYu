@@ -29,4 +29,5 @@ class HomeMenuView: UIView {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cityLabel: UILabel!
 }

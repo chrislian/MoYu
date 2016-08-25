@@ -58,9 +58,9 @@ class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionT
     //MARK: - var & let
     
     @IBOutlet weak var tableView: UITableView!
-    var locationHeadView = LocationHeadView(frame:CGRectMake(0,0,MoScreenWidth,80))
     
-    // MARK: - Collapsable
+    private var locationHeadView = LocationHeadView(frame:CGRectMake(0,0,MoScreenWidth,80))
+    
     private var items: [CityModel] =  {
         
         guard let path = NSBundle.mainBundle().pathForResource("cityData", ofType: "plist"),
@@ -70,6 +70,10 @@ class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionT
         return dic.map( CityModel.init )//.sort { $0.provinceName > $1.provinceName }
     }()
     
+    var changeCityClourse: ( String->Void )?
+    
+    
+    // MARK: - Collapsable
     var collapsableTableView: UITableView {
         return self.tableView
     }
@@ -126,8 +130,17 @@ extension SelectCityController :UITableViewDelegate{
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        println("select indexPath: \(indexPath)")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let city = self.items[indexPath.section].items[indexPath.row]
+        let alert = UIAlertController(title: "提示", message: "是否切换到 \(city)?", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: "确定", style: .Default) { [unowned self] _ in
+            self.changeCityClourse?(city)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 // MARK: - 选择区回调

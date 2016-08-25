@@ -801,6 +801,7 @@
                             <constraint firstItem="1y5-as-Vwf" firstAttribute="leading" secondItem="zHd-hU-PJO" secondAttribute="leadingMargin" constant="-20" id="qB3-8b-1yc"/>
                         </constraints>
                         <connections>
+                            <outlet property="cityLabel" destination="3J7-jv-r9R" id="Yvm-3v-o80"/>
                             <outlet property="searchBar" destination="6PP-QS-USo" id="LbH-Kl-RTK"/>
                             <outlet property="tableView" destination="k3h-W7-B9W" id="AEi-fJ-c5q"/>
                             <outlet property="titleView" destination="mDx-cG-IZt" id="HC4-Jx-B8v"/>
