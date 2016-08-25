@@ -132,14 +132,26 @@ class PublishSheetView: UIView {
             switch publishType {
             case .PartTime:
                 parttimeButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
-                parttimeJobLine.backgroundColor = UIColor.mo_main()
                 taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-                taskJobLine.backgroundColor = UIColor.clearColor()
+                
+                UIView.animateWithDuration(0.3, animations: { 
+                        self.parttimeJobLine.backgroundColor = UIColor.mo_main()
+                        self.taskJobLine.backgroundColor = UIColor.clearColor()
+                    }, completion: {_ in
+                        self.parttimeJobLine.backgroundColor = UIColor.mo_main()
+                        self.taskJobLine.backgroundColor = UIColor.clearColor()
+                })
             case .Task:
-                parttimeJobLine.backgroundColor = UIColor.clearColor()
-                taskJobLine.backgroundColor = UIColor.mo_main()
+                
                 parttimeButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
                 taskButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
+                UIView.animateWithDuration(0.3, animations: { 
+                        self.parttimeJobLine.backgroundColor = UIColor.clearColor()
+                        self.taskJobLine.backgroundColor = UIColor.mo_main()
+                    }, completion: { _ in
+                        self.parttimeJobLine.backgroundColor = UIColor.clearColor()
+                        self.taskJobLine.backgroundColor = UIColor.mo_main()
+                })
             }
         }
     }
