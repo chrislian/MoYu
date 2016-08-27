@@ -141,6 +141,10 @@ extension PostParttimeJobController: UITableViewDelegate{
         switch (indexPath.section,indexPath.row) {
         case (0,0):
             categoryTypeAction.show(self)
+        case (0,2):
+            let promptController = PromptController()
+            promptController.show(self)
+            
         case (1,0):
             sexTypeAction.show(self)
         default:

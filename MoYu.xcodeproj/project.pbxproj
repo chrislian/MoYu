@@ -36,6 +36,8 @@
 		833240B31D575038006C7203 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240B21D575038006C7203 /* FeedbackController.swift */; };
 		833240B51D57538D006C7203 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833240B41D57538D006C7203 /* FeedbackView.swift */; };
 		8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */; };
+		8334C84B1D71504D00977C2A /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334C84A1D71504D00977C2A /* PromptView.swift */; };
+		8334C84D1D71674100977C2A /* PromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334C84C1D71674100977C2A /* PromptController.swift */; };
 		83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC71D51844D002E842D /* IdentifyCode.swift */; };
 		83393DCA1D51844D002E842D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83393DC81D51844D002E842D /* Reachability.swift */; };
 		833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */; };
@@ -186,6 +188,8 @@
 		833240B21D575038006C7203 /* FeedbackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		833240B41D57538D006C7203 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		8334572C1D55F3FC008FFFF9 /* ActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetController.swift; sourceTree = "<group>"; };
+		8334C84A1D71504D00977C2A /* PromptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		8334C84C1D71674100977C2A /* PromptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptController.swift; sourceTree = "<group>"; };
 		83393DC71D51844D002E842D /* IdentifyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCode.swift; sourceTree = "<group>"; };
 		83393DC81D51844D002E842D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		833A86351D2BFC20002E8BBD /* UserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderCell.swift; sourceTree = "<group>"; };
@@ -466,6 +470,7 @@
 				ED1C6BE91D6C3E7B00AC7394 /* CollapsableTable */,
 				837D40B01D59E151003A17EF /* ProgressView */,
 				8332409A1D56FD43006C7203 /* AlertView */,
+				8334C8491D71503D00977C2A /* PromptView */,
 				8334572B1D55F3FC008FFFF9 /* ActionSheet */,
 				83D7A4311D5EFF4600C28F31 /* RefreshView */,
 			);
@@ -480,6 +485,16 @@
 			);
 			path = ActionSheet;
 			sourceTree = "<group>";
+		};
+		8334C8491D71503D00977C2A /* PromptView */ = {
+			isa = PBXGroup;
+			children = (
+				8334C84A1D71504D00977C2A /* PromptView.swift */,
+				8334C84C1D71674100977C2A /* PromptController.swift */,
+			);
+			name = PromptView;
+			path = MoYu/MoKit/PromptView;
+			sourceTree = SOURCE_ROOT;
 		};
 		834E3EB41CB0BE86005B8FC3 /* Constant */ = {
 			isa = PBXGroup;
@@ -1230,6 +1245,7 @@
 				83D7A43F1D5F07B300C28F31 /* RefreshHeaderView.m in Sources */,
 				838E85101D294CC100C992CC /* UIImageView+MoYu.swift in Sources */,
 				83213EDD1D58C6CB000D8691 /* RecuritCenterController.swift in Sources */,
+				8334C84B1D71504D00977C2A /* PromptView.swift in Sources */,
 				838E84ED1D29492200C992CC /* HomeMenuModel.swift in Sources */,
 				838E84EF1D29492200C992CC /* HomeMenuCell.swift in Sources */,
 				838E85121D294CC100C992CC /* UISeachBar+MoYu.swift in Sources */,
@@ -1308,6 +1324,7 @@
 				83D965151D52DD8C00484F14 /* UserManager.swift in Sources */,
 				839EC9611D49D97400658CE6 /* WithdrawController.swift in Sources */,
 				838E850B1D294CC100C992CC /* String+MoYu.swift in Sources */,
+				8334C84D1D71674100977C2A /* PromptController.swift in Sources */,
 				838E850A1D294CC100C992CC /* NSDateFormatter+MoYu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
