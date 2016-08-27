@@ -47,8 +47,7 @@ class PostParttimeJobController: BaseController {
     }
     
     //MARK: - var & let
-    private let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
-    
+
     private lazy var tableView:UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
         tableView.rowHeight = 44.0
@@ -82,10 +81,21 @@ class PostParttimeJobController: BaseController {
         return actionSheet
     }()
     
+    lazy var sexTypeAction:ActionSheetController = {
+        let actionSheet = ActionSheetController()
+        actionSheet.delegate = self
+        actionSheet.showCancelButton = false
+        actionSheet.showDestructiveButton = false
+        return actionSheet
+    }()
+    
+    private let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
+    
     lazy var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
     
+    lazy var sexTypeInfo = ["不限", "女", "男"]
+    
     lazy var postModel = PostPartTimeJobModel()
-
 }
 
 //MARK: - UITableView delegate
@@ -116,17 +126,23 @@ extension PostParttimeJobController: UITableViewDelegate{
             }else{
                 detailText = catetoryTypeInfo[postModel.type - 1]
             }
+        case (1,0):
+            detailText = sexTypeInfo[postModel.sex]
+            
         default: break
         }
         cell.detailTextLabel?.text = detailText
+
     }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         switch (indexPath.section,indexPath.row) {
         case (0,0):
             categoryTypeAction.show(self)
+        case (1,0):
+            sexTypeAction.show(self)
         default:
             break
         }
@@ -147,11 +163,11 @@ extension PostParttimeJobController: UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellId = "postTimeJobIdentifier"
-        
         guard let cell = tableView.dequeueReusableCellWithIdentifier(cellId) else{
             return UITableViewCell(style: .Value1, reuseIdentifier: cellId)
         }
         return cell
+
     }
 }
 
@@ -159,15 +175,22 @@ extension PostParttimeJobController: ActionSheetProtocol{
     
     func otherButtons(sheet sheet:ActionSheetController)->[String]{
         
-        return catetoryTypeInfo
+        if sheet == categoryTypeAction{
+            return catetoryTypeInfo
+        }else if sheet == sexTypeAction{
+            return sexTypeInfo
+        }
+        
+        return []
     }
     
     func action(sheet sheet: ActionSheetController, selectedAtIndex: Int){
+        
         if sheet === categoryTypeAction{
-            
             postModel.type = selectedAtIndex + 1
-            let index = NSIndexPath(forRow: 0, inSection: 0)
-            self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Automatic)
+        }else if sheet === sexTypeAction{
+            postModel.sex = selectedAtIndex
         }
+        self.tableView.reloadData()
     }
 }
