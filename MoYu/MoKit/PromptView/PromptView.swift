@@ -29,7 +29,7 @@ class PromptView: SpringView {
     //MARK: - private method
     private func setupView(type:PromptViewType){
         
-        self.backgroundColor = UIColor.mo_lightYellow()
+        self.backgroundColor = UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0 )
         
         self.addSubview(titleLabel)
         titleLabel.snp_makeConstraints { (make) in
@@ -64,7 +64,7 @@ class PromptView: SpringView {
             make.right.equalTo(self).offset(-10)
             make.top.equalTo(view1.snp_bottom).offset(10)
             make.bottom.equalTo(self).offset(-10)
-            make.height.equalTo(44)
+            make.height.equalTo(40)
         }
         layout(view2: view2, type: type)
     }
@@ -104,13 +104,12 @@ class PromptView: SpringView {
                 make.width.equalTo(cancelButton)
             })
         }
-        
     }
     
     
     //MARK: - var & let
     
-    private let titleLabel:UILabel = {
+    let titleLabel:UILabel = {
         let label = UILabel()
         label.textColor = UIColor.mo_main()
         label.font = UIFont.mo_font(.bigger)
@@ -131,7 +130,7 @@ class PromptView: SpringView {
         return label
     }()
     
-    private let textfield:UITextField = {
+    let textfield:UITextField = {
         let text = UITextField()
         text.font = UIFont.mo_font()
         text.textColor = UIColor.mo_lightBlack()

@@ -89,6 +89,13 @@ class PostParttimeJobController: BaseController {
         return actionSheet
     }()
     
+    lazy var employeePrompt = PromptController.instance(title: "人数", confirm: "提交", configClourse: {
+        (textfield:UITextField) ->Int in
+        textfield.placeholder = "在此输入需要的人数"
+        textfield.keyboardType = .NumberPad
+        return 2
+    })    
+    
     private let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
     
     lazy var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
@@ -126,8 +133,15 @@ extension PostParttimeJobController: UITableViewDelegate{
             }else{
                 detailText = catetoryTypeInfo[postModel.type - 1]
             }
+        case (0,2)://人数
+            if postModel.sum == 0{
+                detailText = "不限"
+            }else{
+                detailText = "\(postModel.sum)人"
+            }
         case (1,0):
             detailText = sexTypeInfo[postModel.sex]
+            
             
         default: break
         }
@@ -142,8 +156,13 @@ extension PostParttimeJobController: UITableViewDelegate{
         case (0,0):
             categoryTypeAction.show(self)
         case (0,2):
-            let promptController = PromptController()
-            promptController.show(self)
+            employeePrompt.show(self)
+            employeePrompt.confirmClourse = { [unowned self] in
+                if let sum = Int($0) {
+                    self.postModel.sum = sum
+                    self.tableView.reloadData()
+                }
+            }
             
         case (1,0):
             sexTypeAction.show(self)
