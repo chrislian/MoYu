@@ -15,7 +15,7 @@ struct PostPartTimeJobModel {
     var content = ""
     var sum = 0
     var type = 0
-    var time = ""
+    var time = NSDate().mo_dateByAddingDays(-1)
     var sex = 0
     var profession = "不限"
     var education = "不限"
@@ -27,7 +27,7 @@ struct PostPartTimeJobModel {
     func combination()->[String: AnyObject]{
         
         return ["name": name, "city": city, "commission": commission, "address": address,
-                "content": content, "sum":sum, "type": type, "time": time, "sex": sex, "profession": profession,
+                "content": content, "sum":sum, "type": type, "time": time.timeIntervalSince1970, "sex": sex, "profession": profession,
         "education": education, "workingtime": workingtime, "longitude": longitude, "latitude":latitude ]
         
     }

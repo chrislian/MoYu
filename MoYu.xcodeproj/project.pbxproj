@@ -51,6 +51,7 @@
 		834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4161D3236460046FBEF /* SignInByPasswordController.swift */; };
 		834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4181D3287560046FBEF /* SignInByAuthView.swift */; };
 		83558FF61D5E0CBA008D5883 /* AboutJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */; };
+		8365C85C1D71D7BE00A7604D /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365C85B1D71D7BE00A7604D /* DatePickerController.swift */; };
 		83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECC1D58679100CD6587 /* MessageCenterController.swift */; };
 		83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */; };
 		83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */; };
@@ -203,6 +204,7 @@
 		834EC4161D3236460046FBEF /* SignInByPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPasswordController.swift; sourceTree = "<group>"; };
 		834EC4181D3287560046FBEF /* SignInByAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthView.swift; sourceTree = "<group>"; };
 		83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobModel.swift; sourceTree = "<group>"; };
+		8365C85B1D71D7BE00A7604D /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		83829ECC1D58679100CD6587 /* MessageCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterController.swift; sourceTree = "<group>"; };
 		83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
 		83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterModel.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				8334C8491D71503D00977C2A /* PromptView */,
 				8334572B1D55F3FC008FFFF9 /* ActionSheet */,
 				83D7A4311D5EFF4600C28F31 /* RefreshView */,
+				8365C85A1D71D7A100A7604D /* DatePicker */,
 			);
 			name = MoKit;
 			path = MOKit;
@@ -591,6 +594,15 @@
 				8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8365C85A1D71D7A100A7604D /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				8365C85B1D71D7BE00A7604D /* DatePickerController.swift */,
+			);
+			name = DatePicker;
+			path = ../MoKit/DatePicker;
 			sourceTree = "<group>";
 		};
 		837D40B01D59E151003A17EF /* ProgressView */ = {
@@ -1276,6 +1288,7 @@
 				833240B31D575038006C7203 /* FeedbackController.swift in Sources */,
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
+				8365C85C1D71D7BE00A7604D /* DatePickerController.swift in Sources */,
 				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
 				83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,

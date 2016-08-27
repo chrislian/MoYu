@@ -122,6 +122,8 @@ class PostParttimeJobController: BaseController {
         return 3
     }
     
+    var datePickerController = DatePickerController()
+    
     private let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
     
     lazy var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
@@ -159,6 +161,12 @@ extension PostParttimeJobController: UITableViewDelegate{
             }else{
                 detailText = catetoryTypeInfo[postModel.type - 1]
             }
+        case (0,1):
+            var date = postModel.time
+            if postModel.time.mo_isYesterday(){
+                date = NSDate().mo_dateByAddingDays(1)
+            }
+            detailText = NSDate.mo_stringFromDatetime2(date)
         case (0,2)://人数
             if postModel.sum == 0{
                 detailText = "不限"
@@ -188,6 +196,16 @@ extension PostParttimeJobController: UITableViewDelegate{
         switch (indexPath.section,indexPath.row) {
         case (0,0):
             categoryTypeAction.show(self)
+        case (0,1):
+            var date = postModel.time
+            if postModel.time.mo_isYesterday(){
+                date = NSDate().mo_dateByAddingDays(1)
+            }
+            datePickerController.show(self,date: date)
+            datePickerController.submitClourse = { [unowned self] in
+                self.postModel.time = $0
+                self.tableView.reloadData()
+            }
         case (0,2):
             employeePrompt.show(self)
             employeePrompt.confirmClourse = { [unowned self] in

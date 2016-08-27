@@ -40,6 +40,12 @@ extension NSDate{
         return dateFormatter.stringFromDate(date)
     }
     
+    class func mo_stringFromDatetime2(date:NSDate) ->String{
+        let dateFormatter = NSDate.mo_dateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.stringFromDate(date)
+    }
+    
     class func mo_datetimeFromString(stringDate:String) -> NSDate?{
         let dateFormatter = NSDate.mo_dateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
