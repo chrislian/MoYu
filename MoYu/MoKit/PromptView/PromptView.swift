@@ -136,6 +136,7 @@ class PromptView: SpringView {
         text.textColor = UIColor.mo_lightBlack()
         text.placeholder = "在此输入内容"
         text.borderStyle = .None
+        text.clearButtonMode = .WhileEditing
         return text
     }()
     

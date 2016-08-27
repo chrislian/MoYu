@@ -43,6 +43,13 @@ class PromptController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        promptView.endEditing(true)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 
     //MARK: - private method
     private func setupView(){
@@ -69,7 +76,6 @@ class PromptController: UIViewController {
      - parameter text:           标题
      - parameter confirm:        确认文本信息
      - parameter configClourse:  配置UITextField, 返回最大输入长度
-     - parameter confirmClourse: 确认返回内容
      
      - returns: PromptController
      */
@@ -111,6 +117,14 @@ class PromptController: UIViewController {
 }
 
 extension PromptController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        return true
+    }
     
     func textFieldDidEndEditing(textField: UITextField) {
         

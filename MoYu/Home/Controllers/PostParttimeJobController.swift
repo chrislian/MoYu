@@ -91,10 +91,36 @@ class PostParttimeJobController: BaseController {
     
     lazy var employeePrompt = PromptController.instance(title: "人数", confirm: "提交", configClourse: {
         (textfield:UITextField) ->Int in
-        textfield.placeholder = "在此输入需要的人数"
+        textfield.placeholder = "请输入需要的人数"
         textfield.keyboardType = .NumberPad
         return 2
-    })    
+    })
+    
+    lazy var professionPrompt = PromptController.instance(title: "专业", confirm: "提交") {
+        (textfield:UITextField) -> Int in
+        textfield.placeholder = "请输入专业限制"
+        return 20
+    }
+    
+    lazy var educationPrompt = PromptController.instance(title: "学历", confirm: "提交") {
+        (textfield: UITextField) -> Int in
+        textfield.placeholder = "请输入最低要求学历"
+        return 10
+    }
+    
+    lazy var commissionPrompt = PromptController.instance(title: "金额", confirm: "提交") {
+        (textfield:UITextField) -> Int in
+        textfield.placeholder = "请输入支付每份工作的的金额"
+        textfield.keyboardType = .DecimalPad
+        return 6
+    }
+    
+    lazy var taskTimePrompt = PromptController.instance(title: "金额", confirm: "提交") {
+        (textfield:UITextField) -> Int in
+        textfield.placeholder = "请输入每份工作的工时"
+        textfield.keyboardType = .DecimalPad
+        return 3
+    }
     
     private let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
     
@@ -141,7 +167,14 @@ extension PostParttimeJobController: UITableViewDelegate{
             }
         case (1,0):
             detailText = sexTypeInfo[postModel.sex]
-            
+        case (1,1):
+            detailText = postModel.profession
+        case (1,2):
+            detailText = postModel.education
+        case (2,0):
+            detailText = String(format: "%.2f元", postModel.commission)
+        case (2,1):
+            detailText = String(format: "%.1f小时", postModel.workingtime)
             
         default: break
         }
@@ -166,6 +199,48 @@ extension PostParttimeJobController: UITableViewDelegate{
             
         case (1,0):
             sexTypeAction.show(self)
+        case (1,1):
+            professionPrompt.show(self)
+            professionPrompt.confirmClourse = { [unowned self] in
+                if $0.isEmpty{
+                    self.postModel.profession = "不限"
+                }else{
+                    self.postModel.profession = $0
+                }
+                self.tableView.reloadData()
+            }
+        case (1,2):
+            educationPrompt.show(self)
+            educationPrompt.confirmClourse = { [unowned self] in
+                if $0.isEmpty{
+                    self.postModel.education = "不限"
+                }else{
+                    self.postModel.education = $0
+                }
+                self.tableView.reloadData()
+            }
+            
+        case (2,0):
+            commissionPrompt.show(self)
+            commissionPrompt.confirmClourse = { [unowned self] in
+                if let value = Double($0) where !$0.isEmpty{
+                    self.postModel.commission = value
+                }else{
+                    self.postModel.commission = 0
+                }
+                self.tableView.reloadData()
+            }
+        case (2,1):
+            taskTimePrompt.show(self)
+            taskTimePrompt.confirmClourse = { [unowned self] in
+                if let value = Double($0) where !$0.isEmpty{
+                    self.postModel.workingtime = value
+                }else{
+                    self.postModel.workingtime = 0
+                }
+                self.tableView.reloadData()
+            }
+            
         default:
             break
         }
