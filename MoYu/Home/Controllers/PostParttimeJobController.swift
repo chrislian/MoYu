@@ -73,8 +73,22 @@ class PostParttimeJobController: BaseController {
         button.addTarget(self, action: #selector(PostParttimeJobController.nextButtonClicked(_:)), forControlEvents: .TouchUpInside)
         return button
     }()
+    
+    lazy var categoryTypeAction:ActionSheetController = {
+        let actionSheet = ActionSheetController()
+        actionSheet.delegate = self
+        actionSheet.showCancelButton = false
+        actionSheet.showDestructiveButton = false
+        return actionSheet
+    }()
+    
+    lazy var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
+    
+    lazy var postModel = PostPartTimeJobModel()
 
 }
+
+//MARK: - UITableView delegate
 extension PostParttimeJobController: UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -90,14 +104,36 @@ extension PostParttimeJobController: UITableViewDelegate{
         cell.textLabel?.text = dataArrays[indexPath.section][indexPath.row]
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        
+        cell.detailTextLabel?.font = UIFont.mo_font()
+        cell.detailTextLabel?.textColor = UIColor.mo_silver()
+        
+        var detailText = ""
+        switch(indexPath.section,indexPath.row){
+        case (0,0)://类型
+            if postModel.type == 0{
+                detailText = "请选择"
+            }else{
+                detailText = catetoryTypeInfo[postModel.type - 1]
+            }
+        default: break
+        }
+        cell.detailTextLabel?.text = detailText
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        //TODO:
+        
+        switch (indexPath.section,indexPath.row) {
+        case (0,0):
+            categoryTypeAction.show(self)
+        default:
+            break
+        }
     }
 }
 
+// MARK: - UITableView DataSource
 extension PostParttimeJobController: UITableViewDataSource{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -113,9 +149,25 @@ extension PostParttimeJobController: UITableViewDataSource{
         let cellId = "postTimeJobIdentifier"
         
         guard let cell = tableView.dequeueReusableCellWithIdentifier(cellId) else{
-            return UITableViewCell(style: .Default, reuseIdentifier: cellId)
+            return UITableViewCell(style: .Value1, reuseIdentifier: cellId)
         }
         return cell
     }
+}
+
+extension PostParttimeJobController: ActionSheetProtocol{
     
+    func otherButtons(sheet sheet:ActionSheetController)->[String]{
+        
+        return catetoryTypeInfo
+    }
+    
+    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int){
+        if sheet === categoryTypeAction{
+            
+            postModel.type = selectedAtIndex + 1
+            let index = NSIndexPath(forRow: 0, inSection: 0)
+            self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: .Automatic)
+        }
+    }
 }

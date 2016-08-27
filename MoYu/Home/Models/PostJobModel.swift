@@ -18,9 +18,9 @@ struct PostPartTimeJobModel {
     var type = 0
     var time = ""
     var sex = 0
-    var profession = ""
-    var education = ""
-    var workingtime = ""
+    var profession = "不限"
+    var education = "不限"
+    var workingtime:Double = 0
     var longitude:Double = 0
     var latitude:Double = 0
     
@@ -42,8 +42,7 @@ struct PostPartTimeJobModel {
         self.time = String( NSDate().timeIntervalSince1970 )
         self.sex = 1
         self.profession = "市场营销"
-        self.workingtime = String( NSDate().timeIntervalSince1970 )
-        
+        self.workingtime = 0
     }
 }
 
