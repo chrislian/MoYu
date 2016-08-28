@@ -22,7 +22,27 @@ class PostPartimeJobDetailController: BaseController {
     
     //MARK: - event reponse
     dynamic private func submitButtonClicked(sender:UIButton){
-        println("提交兼职")
+        
+        if titleText.text.length == 0{
+            self.show(message: "标题不能为空")
+            return
+        }
+        
+        if contentText.text.length == 0{
+            self.show(message: "内容不能为空")
+            return
+        }
+        
+        self.postModel.name = titleText.text
+        self.postModel.content = contentText.text
+    
+        Router.postParttimeJob(parameter: self.postModel.combination() ).request { (status, json) in
+            self.show(error: status, showSuccess: true)
+            
+            if case .success = status{
+                self.navigationController?.popToRootViewControllerAnimated( true )
+            }
+        }
     }
     
     //MARK: - private method
@@ -67,7 +87,7 @@ class PostPartimeJobDetailController: BaseController {
     
     //MARK: - var & let
     
-    var postModel: PostPartTimeJobModel?
+    var postModel = PostPartTimeJobModel()
     
     private lazy var titleText:YYTextView = {
         let text = YYTextView()
@@ -104,7 +124,7 @@ class PostPartimeJobDetailController: BaseController {
     private lazy var submitButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.mo_main()
-        button.setTitle("确认", forState: .Normal)
+        button.setTitle("发布", forState: .Normal)
         button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
         button.titleLabel?.font = UIFont.mo_font(.big)
         button.addTarget(self, action: #selector(submitButtonClicked(_:)), forControlEvents: .TouchUpInside)
@@ -118,7 +138,6 @@ class PostPartimeJobDetailController: BaseController {
 }
 
 extension PostPartimeJobDetailController: YYTextViewDelegate{
-    
     
     func textView(textView: YYTextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
