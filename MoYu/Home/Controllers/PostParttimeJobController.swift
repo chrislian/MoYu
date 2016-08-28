@@ -186,7 +186,7 @@ extension PostParttimeJobController: UITableViewDelegate{
             if postModel.time.mo_isYesterday(){
                 detailText = "请选择"
             }else{
-                detailText = NSDate.mo_stringFromDatetime2( NSDate().mo_dateByAddingDays(1) )
+                detailText = NSDate.mo_stringFromDatetime2( postModel.time )
             }
             
         case (0,2)://人数
