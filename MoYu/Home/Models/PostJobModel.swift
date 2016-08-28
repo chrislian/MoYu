@@ -11,7 +11,7 @@ import Foundation
 struct PostPartTimeJobModel {
     var name = ""
     var city = ""
-    var address = ""
+    var address = "软件园"
     var content = ""
     var sum = 0
     var type = 0

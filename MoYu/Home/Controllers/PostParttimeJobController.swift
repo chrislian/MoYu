@@ -63,7 +63,7 @@ class PostParttimeJobController: BaseController {
             make.right.equalTo(self.view).offset(-20)
             make.bottom.equalTo(self.view).offset(-10)
             make.top.equalTo(tableView.snp_bottom).offset(10)
-            make.height.equalTo(50)
+            make.height.equalTo(44)
         }
     }
     
