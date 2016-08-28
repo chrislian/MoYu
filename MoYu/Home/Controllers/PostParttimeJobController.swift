@@ -22,7 +22,28 @@ class PostParttimeJobController: BaseController {
     //MARK: - event response
     dynamic private func nextButtonClicked(sender:UIButton){
         
+        if postModel.type == 0{
+            self.show(message: "工作种类还没有选择哦~")
+            return
+        }
+        
+        if postModel.time.mo_isYesterday(){
+            self.show(message: "工作时间还未选择哦~")
+            return
+        }
+        
+        if postModel.commission == 0{
+            self.show(message: "金额还未设置哦~")
+            return
+        }
+        
+        if postModel.workingtime == 0{
+            self.show(message: "工时还未设置哦~")
+            return
+        }
+        
         let vc = PostPartimeJobDetailController()
+        vc.postModel = postModel
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -162,11 +183,12 @@ extension PostParttimeJobController: UITableViewDelegate{
                 detailText = catetoryTypeInfo[postModel.type - 1]
             }
         case (0,1):
-            var date = postModel.time
             if postModel.time.mo_isYesterday(){
-                date = NSDate().mo_dateByAddingDays(1)
+                detailText = "请选择"
+            }else{
+                detailText = NSDate.mo_stringFromDatetime2( NSDate().mo_dateByAddingDays(1) )
             }
-            detailText = NSDate.mo_stringFromDatetime2(date)
+            
         case (0,2)://人数
             if postModel.sum == 0{
                 detailText = "不限"

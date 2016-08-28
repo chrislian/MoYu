@@ -66,6 +66,9 @@ class PostPartimeJobDetailController: BaseController {
 
     
     //MARK: - var & let
+    
+    var postModel: PostPartTimeJobModel?
+    
     private lazy var titleText:YYTextView = {
         let text = YYTextView()
         text.backgroundColor = UIColor.whiteColor()
