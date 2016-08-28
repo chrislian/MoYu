@@ -125,4 +125,8 @@ class UserInfo: Object {
         
     }
     
+    var avatorUrl:String{
+        return "http://moyu.ushesoft.com/" + self.img
+    }
+    
 }

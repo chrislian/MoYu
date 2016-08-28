@@ -10,7 +10,7 @@ import Foundation
 
 struct PostPartTimeJobModel {
     var name = ""
-    var city = ""
+    var city = "厦门"
     var address = "软件园"
     var content = ""
     var sum = 0
@@ -21,13 +21,13 @@ struct PostPartTimeJobModel {
     var education = "不限"
     var commission:Double = 0
     var workingtime:Double = 0
-    var longitude:Double = 0
-    var latitude:Double = 0
+    var longitude:Double = 11.23123
+    var latitude:Double = 123.2323
     
     func combination()->[String: AnyObject]{
         
         return ["name": name, "city": city, "commission": commission, "address": address,
-                "content": content, "sum":sum, "type": type, "time": time.timeIntervalSince1970, "sex": sex, "profession": profession,
+                "content": content, "sum":sum, "type": type, "time": NSDate.mo_stringFromDatetime2(self.time), "sex": sex, "profession": profession,
         "education": education, "workingtime": workingtime, "longitude": longitude, "latitude":latitude ]
         
     }

@@ -62,7 +62,6 @@ extension RouterType {
             base["sessionid"] = self.sessionID()
         }
         
-        
         guard let parameters = parameters else { return base }
         
         let array = base.map{ $0 } + parameters.map{ $0 }

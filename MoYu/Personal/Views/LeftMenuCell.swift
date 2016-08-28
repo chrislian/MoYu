@@ -23,7 +23,7 @@ class LeftMenuView: UIView {
         headerUsernameLabel.text = user.moName
         headerPhoneLabel.text = user.moPhone
         
-       headerImageView.mo_loadImage(user.img, placeholder: UIImage(named: "defalutHead")!)
+       headerImageView.mo_loadImage(user.avatorUrl, placeholder: UIImage(named: "defalutHead")!)
     }
     
     func update(avator image:UIImage){
