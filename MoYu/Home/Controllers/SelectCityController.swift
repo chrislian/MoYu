@@ -14,9 +14,11 @@ class CityModel:CollapsableDataType {
     var provinceName: String
     var items: [String]
     
-    init(input:(name:String, citys:[String])) {
-        provinceName = input.name
-        items = input.citys.filter{ $0 != "不限" }
+    
+    init(input:(state:String, cities:[String])){
+        provinceName = input.state
+        items = input.cities
+        items.removeFirst()
     }
 }
 
@@ -61,14 +63,27 @@ class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionT
     
     private var locationHeadView = LocationHeadView(frame:CGRectMake(0,0,MoScreenWidth,80))
     
-    private var items: [CityModel] =  {
-        
-        guard let path = NSBundle.mainBundle().pathForResource("cityData", ofType: "plist"),
-            let dic = NSDictionary(contentsOfFile: path) as? [String: [String]] else{
-                return  []
+    /// 综合两份列表。。。取出城市列表，各自的列表都不是很友好
+    private var items: [CityModel] = {
+        guard let path1 = NSBundle.mainBundle().pathForResource("city", ofType: "plist"),
+            let stateArray = NSArray(contentsOfFile: path1) as? [[String:AnyObject]] else{
+                return []
         }
-        return dic.map( CityModel.init )//.sort { $0.provinceName > $1.provinceName }
+        let states = stateArray.flatMap{ $0["state"] as? String }
+        
+        guard let path2 = NSBundle.mainBundle().pathForResource("cityData", ofType: "plist"),
+            let dictionary = NSDictionary(contentsOfFile: path2) as? [String: [String]]else{
+            return []
+        }
+        
+        return states.flatMap{ state -> CityModel? in
+            guard let cities = dictionary[state] else{
+                return nil
+            }
+            return CityModel(input: (state:state, cities:cities) )
+        }
     }()
+    
     
     var changeCityClourse: ( String->Void )?
     
