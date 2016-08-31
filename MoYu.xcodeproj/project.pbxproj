@@ -46,6 +46,7 @@
 		833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E212C1CB15CE20046F582 /* InfoPlist.strings */; };
 		833F087A1D674AEA009A4275 /* HotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F08791D674AEA009A4275 /* HotSearchView.swift */; };
 		833F087C1D674C06009A4275 /* HotSearchMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */; };
+		8347C0C81D76FB84006CCF68 /* PublishTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
 		834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834EC40C1D322BD80046FBEF /* SignIn.storyboard */; };
 		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
@@ -200,6 +201,7 @@
 		833E212C1CB15CE20046F582 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		833F08791D674AEA009A4275 /* HotSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotSearchView.swift; sourceTree = "<group>"; };
 		833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotSearchMenuCell.swift; sourceTree = "<group>"; };
+		8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishTaskCell.swift; sourceTree = "<group>"; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		834EC40C1D322BD80046FBEF /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
@@ -713,6 +715,7 @@
 				833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */,
 				833F08791D674AEA009A4275 /* HotSearchView.swift */,
 				ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */,
+				8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1300,6 +1303,7 @@
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
+				8347C0C81D76FB84006CCF68 /* PublishTaskCell.swift in Sources */,
 				83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */,
 				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,

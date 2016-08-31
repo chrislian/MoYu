@@ -35,13 +35,16 @@ struct PostPartTimeJobModel {
 
 struct PostTaskModel {
     var name = ""
-    var address = ""
-    var commission = ""
+    var address = "www.usoft.com"
+    var commission:Double = 0
     var content = ""
-    var type = ""
+    var type = -1
     var step = ""
+    var sum = 0
+    var longitude:Double = 11.23123
+    var latitude:Double = 123.2323
     
     func combination()->[String: AnyObject]{
-        return ["name": name, "address": address, "commission": commission, "content": content, "type": type, "step": step]
+        return ["name": name, "address": address, "commission": commission, "content": content, "type": type, "step": step, "sum": sum,"longitude": longitude, "latitude":latitude ]
     }
 }
