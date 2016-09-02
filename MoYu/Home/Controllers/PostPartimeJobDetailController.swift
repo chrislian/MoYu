@@ -150,7 +150,7 @@ extension PostPartimeJobDetailController: YYTextViewDelegate{
             
             if toBeString.characters.count > maxLength{
                 textView.text = (toBeString as NSString).substringToIndex(maxLength)
-                self.showMessage(title: "内容超过上限了~")
+                self.show(message: "内容超过上限了")
                 return false
             }
             return true
@@ -162,7 +162,7 @@ extension PostPartimeJobDetailController: YYTextViewDelegate{
             let toBeString = string.stringByReplacingCharactersInRange(range, withString: text)
             if toBeString.characters.count > maxLength{
                 textView.text = (toBeString as NSString).substringToIndex(maxLength)
-                self.showMessage(title: "内容超过上限了~")
+                self.show(message: "内容超过上限了~")
                 return false
             }
             return true

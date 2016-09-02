@@ -9,6 +9,7 @@
 import UIKit
 
 enum NetworkActionStatus{
+    
     case success(message:String)
     case userNeedLogin
     case userFailure(message:String)
@@ -24,7 +25,7 @@ protocol PraseErrorType : SignInType {
     func show(success status: NetworkActionStatus)
 }
 
-extension PraseErrorType where Self: BaseController{
+extension PraseErrorType where Self: AlertViewType, Self:UIViewController{
     
     func show(error status: NetworkActionStatus ,showSuccess:Bool = false){
     
