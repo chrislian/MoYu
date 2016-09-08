@@ -67,6 +67,8 @@ class HomeController: BaseController {
             println("兼职")
         case .task:
             println("任务")
+            guard let vc = SB.Task.root else{ return }
+            presentViewController(vc, animated: true, completion: nil)
         case .credit: 
             println("积分购")
         }

@@ -126,6 +126,8 @@
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		83F675131D549F2000D951AF /* ChangeNicknameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F675121D549F2000D951AF /* ChangeNicknameController.swift */; };
 		83F801E71D81939A00DC4D60 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F801E61D81939A00DC4D60 /* Task.storyboard */; };
+		83F801ED1D8198E800DC4D60 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F801EC1D8198E800DC4D60 /* TaskController.swift */; };
+		83F801EF1D819E5400DC4D60 /* TopTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F801EE1D819E5400DC4D60 /* TopTitleView.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED1C6BEF1D6C492F00AC7394 /* CityHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */; };
 		ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */; };
@@ -287,6 +289,8 @@
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		83F675121D549F2000D951AF /* ChangeNicknameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNicknameController.swift; sourceTree = "<group>"; };
 		83F801E61D81939A00DC4D60 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
+		83F801EC1D8198E800DC4D60 /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		83F801EE1D819E5400DC4D60 /* TopTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTitleView.swift; sourceTree = "<group>"; };
 		9C5D7D1718BB4C69509AFABD /* Pods-MoYu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.debug.xcconfig"; sourceTree = "<group>"; };
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 				831632AC1D2EA30900205211 /* RemoteRequest */,
 				838E84BD1D29492200C992CC /* AppCenter */,
 				838E84C71D29492200C992CC /* Home */,
+				83F801E81D81988800DC4D60 /* Task */,
 				838E84D91D29492200C992CC /* Personal */,
 				833240A61D574F9D006C7203 /* Setting */,
 				834EC40E1D3232C70046FBEF /* SignIn */,
@@ -827,6 +832,39 @@
 				83D7A43A1D5F05AE00C28F31 /* ActivityIndicatorView.m */,
 			);
 			path = ActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		83F801E81D81988800DC4D60 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				83F801EA1D8198C200DC4D60 /* Models */,
+				83F801EB1D8198C200DC4D60 /* Views */,
+				83F801E91D8198C200DC4D60 /* Controllers */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		83F801E91D8198C200DC4D60 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83F801EC1D8198E800DC4D60 /* TaskController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		83F801EA1D8198C200DC4D60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		83F801EB1D8198C200DC4D60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83F801EE1D819E5400DC4D60 /* TopTitleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AA65D61154422FDF04B3BC87 /* Frameworks */ = {
@@ -1318,6 +1356,7 @@
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */,
 				83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */,
+				83F801ED1D8198E800DC4D60 /* TaskController.swift in Sources */,
 				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,
@@ -1347,6 +1386,7 @@
 				838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */,
 				838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */,
 				838E84E51D29492200C992CC /* AboutJobsCell.swift in Sources */,
+				83F801EF1D819E5400DC4D60 /* TopTitleView.swift in Sources */,
 				834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */,
 				838E84F41D29492200C992CC /* PublishSheetView.swift in Sources */,
 				83D965151D52DD8C00484F14 /* UserManager.swift in Sources */,
