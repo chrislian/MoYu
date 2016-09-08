@@ -78,7 +78,7 @@ class LeftMenuController: BaseController {
             return
         }
         
-        guard let vc = SB.Setting.Vc.root() else{
+        guard let vc = SB.Setting.root else{
             println("load setting vc failed")
             return
         }

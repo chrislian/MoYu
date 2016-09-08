@@ -90,8 +90,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func turnToHomeViewController(){
         
-        guard let homeVc = SB.Main.Vc.root(),
-            let leftMenuVc = SB.Personal.Vc.root() else{
+        guard let homeVc = SB.Main.root,
+            let leftMenuVc = SB.Personal.root else{
                 return
         }
         

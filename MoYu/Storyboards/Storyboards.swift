@@ -9,13 +9,11 @@
 import UIKit
 
 struct SB {
-    
+   
     //MARK: - sign in storybaord
     struct SignIn {
-        struct Vc{
-            static func root()->UIViewController?{
-                return UIStoryboard(name: "SignIn", bundle: nil).instantiateInitialViewController()
-            }
+        static var root:UIViewController?{
+            return SB.vc(storyboard: "SignIn")
         }
     }
     
@@ -35,14 +33,12 @@ struct SB {
             
         }
         
-        struct Vc {
-            static func root() -> UIViewController?{
-                return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-            }
+        static var root:UIViewController?{
+            return SB.vc(storyboard: "Main")
         }
     }
     
-    //MARK: - left storyboard
+    //MARK: - personal storyboard
     struct Personal {
         
         struct Cell {
@@ -64,13 +60,12 @@ struct SB {
             static let parttimeJob = "seguePartTimeJob"
         }
         
-        struct Vc {
-            static func root() -> UIViewController?{
-                return UIStoryboard(name: "Personal", bundle: nil).instantiateInitialViewController()
-            }
+        static var root:UIViewController?{
+            return SB.vc(storyboard: "Personal")
         }
     }
     
+    //MARK: - setting storyboard
     struct Setting {
         
         struct Segue {
@@ -79,10 +74,8 @@ struct SB {
             static let legalProvisions = "segueLegalProvisions"
         }
         
-        struct Vc{
-            static func root() -> UIViewController?{
-                return UIStoryboard(name: "Setting", bundle: nil).instantiateInitialViewController()
-            }
+        static var root:UIViewController?{
+            return SB.vc(storyboard: "Setting")
         }
     }
     
@@ -100,8 +93,54 @@ struct SB {
             static let publishMsg = "seguePublishMessage"
         }
         
-        struct Vc{
-        
+        static var root:UIViewController?{
+            return SB.vc(storyboard: "AppCenter")
         }
+    }
+    
+    //MARK: - task storyboard
+    struct Task {
+        struct Cell {
+            
+        }
+        
+        struct Segue {
+            
+        }
+        
+        static var root:UIViewController?{
+            return SB.vc(storyboard: "Task")
+        }
+    }
+}
+
+// MARK: - Storyboard 方法
+extension SB{
+
+    /**
+     从 `storyboard`获取 root view controller
+     
+     - parameter name:       storyboard name
+     - parameter bundle:     bundle id
+     
+     - returns: UIViewController
+     */
+    static func vc(storyboard name:String, bundle:NSBundle? = nil)->UIViewController?{
+        
+        return UIStoryboard(name: name, bundle: bundle).instantiateInitialViewController()
+    }
+    
+    /**
+     从 `storyboard`获取制定的vc
+     
+     - parameter name:       storyboard name
+     - parameter bundle:     bundle
+     - parameter identifier:
+     
+     - returns: UIViewController
+     */
+    static func vc(storyboard name:String, bundle:NSBundle? = nil, identifier:String)-> UIViewController{
+        
+        return UIStoryboard(name: name, bundle: bundle).instantiateViewControllerWithIdentifier(identifier)
     }
 }
