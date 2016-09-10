@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PostParttimeJobController: BaseController {
+class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "发布兼职"
+        mo_navigationBar(title: "发布兼职")
         
         self.setupView()
     }
@@ -152,6 +152,10 @@ class PostParttimeJobController: BaseController {
     lazy var sexTypeInfo = ["不限", "女", "男"]
     
     lazy var postModel = PostPartTimeJobModel()
+    
+    //alert 
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
 }
 
 //MARK: - UITableView delegate

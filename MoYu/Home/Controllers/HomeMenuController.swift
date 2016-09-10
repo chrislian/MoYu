@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeMenuController: BaseController,RefreshViewType {
+class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, AlertViewType{
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -126,6 +126,10 @@ class HomeMenuController: BaseController,RefreshViewType {
             menuView.cityLabel.text = newValue
         }
     }
+    
+    //alert 
+    var alertLock: NSLock = NSLock()
+    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension HomeMenuController:UITableViewDelegate{
@@ -156,7 +160,7 @@ extension HomeMenuController:UITableViewDelegate{
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let vc = BaseController()
+        let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         self.navigationController?.pushViewController(vc, animated: true)
     }

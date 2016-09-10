@@ -9,13 +9,14 @@
 import UIKit
 import YYText
 
-class PostPartimeJobDetailController: BaseController {
+class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "发布兼职"
     
+        mo_navigationBar(title: "发布兼职")
+        
         self.layout()
         self.setupView()
     }
@@ -134,6 +135,9 @@ class PostPartimeJobDetailController: BaseController {
         button.layer.masksToBounds = true
         return button
     }()
+    
+    var alertLock: NSLock = NSLock()
+    var alertView: OLGhostAlertView = OLGhostAlertView()
     
 }
 

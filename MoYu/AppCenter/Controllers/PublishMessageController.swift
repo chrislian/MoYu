@@ -9,13 +9,14 @@
 import UIKit
 import YYText
 
-class PublishMessageController: BaseController {
+class PublishMessageController: UIViewController, PraseErrorType, AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "发布消息"
+        mo_navigationBar(title: "发布消息")
+
         setupView()
     }
     
@@ -33,8 +34,8 @@ class PublishMessageController: BaseController {
         }
     }
     
-    //MARK: 
-    func rightBarButtonClicked(){
+    //MARK:  - event response
+    func rightBarItem(tap sender:AnyObject){
         
         self.view.endEditing( true )
         
@@ -62,10 +63,8 @@ class PublishMessageController: BaseController {
             make.edges.equalTo(textView.superview!).inset(edge)
         }
 
-        self.addRightNavigationButton(title: "提交")
-        self.rightButtonClourse = { [unowned self] in
-            self.rightBarButtonClicked()
-        }
+        let rightBarButton = UIBarButtonItem(title: "提交", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        navigationItem.rightBarButtonItem = rightBarButton
     }
     
     //MARK: - var & let
@@ -79,6 +78,10 @@ class PublishMessageController: BaseController {
         textView.delegate = self
         return textView
     }()
+    
+    //alert
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
     
 }
 

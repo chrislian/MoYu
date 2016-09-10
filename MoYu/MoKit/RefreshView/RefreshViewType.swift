@@ -15,7 +15,7 @@ protocol RefreshViewType {
     func refreshAction()
 }
 
-extension RefreshViewType where Self: BaseController{
+extension RefreshViewType where Self: UIViewController{
     
     func beginRefresh(){
         

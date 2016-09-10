@@ -8,24 +8,22 @@
 
 import UIKit
 
-class PostTaskController: BaseController {
+class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "发布任务"
+        mo_navigationBar(title: "发布任务")
         
-        self.addRightNavigationButton(title: "发布")
-        self.rightButtonClourse = { [unowned self] in
-            self.handleRightButtonTap()
-        }
+        let rightBarButton = UIBarButtonItem(title: "提交", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        navigationItem.rightBarButtonItem = rightBarButton
         
         self.setupView()
     }
     
     //MARK: - public method
-    @objc private func handleRightButtonTap(){
+    @objc private func rightBarItem(tap sender:AnyObject){
         
         self.view.endEditing(true)
         
@@ -123,6 +121,9 @@ class PostTaskController: BaseController {
     
     
     var taskModel = PostTaskModel()
+    
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
 }
 
 // MARK: - UITableViewDelegate

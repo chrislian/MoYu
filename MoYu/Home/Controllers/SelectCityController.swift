@@ -22,7 +22,7 @@ class CityModel:CollapsableDataType {
     }
 }
 
-class SelectCityController: BaseController ,CollapsableSectionHeaderInteractionType{
+class SelectCityController: UIViewController ,CollapsableSectionHeaderInteractionType{
 
     override func viewDidLoad() {
         super.viewDidLoad()

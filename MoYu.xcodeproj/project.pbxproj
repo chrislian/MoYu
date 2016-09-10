@@ -20,7 +20,6 @@
 		8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B63E1D3B24FF00DF6D78 /* Router.swift */; };
 		8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */; };
 		8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */; };
-		8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6451D3B407500DF6D78 /* BaseController.swift */; };
 		8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */; };
 		8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B64F1D3B666C00DF6D78 /* MODevice.swift */; };
 		83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83289B7D1D64A0B700EF765D /* PostJobModel.swift */; };
@@ -177,7 +176,6 @@
 		8327B63E1D3B24FF00DF6D78 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPaswordeView.swift; sourceTree = "<group>"; };
 		8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocolController.swift; sourceTree = "<group>"; };
-		8327B6451D3B407500DF6D78 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		8327B64A1D3B65C200DF6D78 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		8327B64B1D3B65C200DF6D78 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		8327B64F1D3B666C00DF6D78 /* MODevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MODevice.swift; sourceTree = "<group>"; };
@@ -384,7 +382,6 @@
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
 				833457261D55E04E008FFFF9 /* MoKit */,
-				8327B6441D3B406600DF6D78 /* Base */,
 				834E3EB61CB0BE86005B8FC3 /* Miscellaneous */,
 				831632AC1D2EA30900205211 /* RemoteRequest */,
 				838E84BD1D29492200C992CC /* AppCenter */,
@@ -415,14 +412,6 @@
 				831C33EB1CB0B1E900157B67 /* Info.plist */,
 			);
 			path = MoYuUITests;
-			sourceTree = "<group>";
-		};
-		8327B6441D3B406600DF6D78 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				8327B6451D3B407500DF6D78 /* BaseController.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */ = {
@@ -1332,7 +1321,6 @@
 				839F1FE91D83B996006F1ED9 /* UIViewController+MoYu.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
 				83289B801D64A60200EF765D /* PostParttimeJobController.swift in Sources */,
-				8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */,
 				833180091D2A895800EFAF69 /* AccountBindingCell.swift in Sources */,
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
 				EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */,

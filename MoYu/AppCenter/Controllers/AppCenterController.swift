@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AppCenterController: BaseController {
+class AppCenterController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "应用中心"
+        mo_navigationBar(title: "应用中心")
         self.setupAppCenterView()
     }
     

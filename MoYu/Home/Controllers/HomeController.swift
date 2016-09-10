@@ -19,13 +19,15 @@ enum FindPublishWork:Int {
 }
 
 
-class HomeController: BaseController {
+class HomeController: UIViewController {
 
     //MARK: - event response
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupHomeView()
+        
+        navigationController?.mo_hideBackButtonTitle()
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -9,13 +9,14 @@
 import UIKit
 import SnapKit
 
-class PersonMessageController: BaseController {
+class PersonMessageController: UIViewController {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        mo_navigationBar(title: "消息")
         
-        self.title = "消息"
         setupMessageView()
     }
     

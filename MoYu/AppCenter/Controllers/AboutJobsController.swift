@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class AboutJobsController: BaseController, RefreshViewType {
+class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, RefreshViewType {
 
     //MARK: -  life cycle
     override func viewDidLoad() {
@@ -92,7 +92,7 @@ class AboutJobsController: BaseController, RefreshViewType {
     
     private func commentTap(withItem item:AboutJobItem){
         
-        let vc = BaseController()
+        let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         vc.title = "评论"
         self.navigationController?.pushViewController(vc, animated: true)
@@ -125,6 +125,10 @@ class AboutJobsController: BaseController, RefreshViewType {
         button.addTarget(self, action: #selector(publishButtonClicked(_:)), forControlEvents: .TouchUpInside)
         return button
     }()
+    
+    //alert
+    var alertLock: NSLock = NSLock()
+    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension AboutJobsController: UITableViewDelegate{
