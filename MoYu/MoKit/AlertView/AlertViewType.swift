@@ -33,7 +33,7 @@ extension AlertViewType{
             self.alertView.position = .Center
             self.alertView.completionBlock = completed
             
-            self.alertView.message = subTitle ?? ""
+            self.alertView.message = subTitle
             self.alertView.title = aTitle
             self.alertView.customView = nil
             

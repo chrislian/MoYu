@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AutoGraphController: BaseController {
+class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigation(title: "个性签名")
+        mo_navigationBar(title: "个性签名")
         
         self.layout()
         
@@ -21,7 +21,7 @@ class AutoGraphController: BaseController {
     }
     
     //MARK: - event response
-    @objc private func rightBarButtonClick(){
+    @objc private func rightBarItem(tap sender:AnyObject){
         
         guard let autograph = self.autographTextField.text where !autograph.isEmpty else{
             self.showAlert(message: "什么都没说呢~")
@@ -41,10 +41,8 @@ class AutoGraphController: BaseController {
         
         self.view.backgroundColor = UIColor.mo_background()
 
-        self.addRightNavigationButton(title: "保存")
-        rightButtonClourse = {[unowned self] in
-            self.rightBarButtonClick()
-        }
+        let rightBarButton = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        navigationItem.rightBarButtonItem = rightBarButton
         
         autographTextField.delegate = self
         if !autographTextField.isFirstResponder(){
@@ -101,6 +99,10 @@ class AutoGraphController: BaseController {
     }()
     
     var autograph:String = ""
+    
+    //mark 
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
 }
 
 extension AutoGraphController: UITextFieldDelegate{

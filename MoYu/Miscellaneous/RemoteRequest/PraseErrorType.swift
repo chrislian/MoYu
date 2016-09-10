@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 enum NetworkActionStatus{
     
@@ -55,5 +56,14 @@ extension PraseErrorType where Self: AlertViewType, Self:UIViewController{
         default:
             break
         }
+    }
+    
+    
+    //更新用户信息
+    func updateUser(status : NetworkActionStatus ,json : JSON?){
+        if let data = json ,case .success = status{
+            UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
+        }
+        self.show(error: status, showSuccess: true)
     }
 }

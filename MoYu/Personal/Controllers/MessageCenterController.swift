@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageCenterController: BaseController {
+class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -16,15 +16,23 @@ class MessageCenterController: BaseController {
 
         setupView()
         
-        self.title = "消息中心"
+        mo_navigationBar(title: "消息中心")
         
-        self.addBackNavigationButton()
+        navigationItem.leftBarButtonItems = leftBarButtonItems
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.updateMessage()
+    }
+    
+    
+    //MARK: - event response
+    
+    func backButton(tap sender:AnyObject){
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: - private method
@@ -58,6 +66,16 @@ class MessageCenterController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     
     lazy var messageModel = MessageCenterModel()
+    
+    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
+        spaceItem.width = 1//-16
+        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MessageCenterController.backButton(tap:)))
+        return [spaceItem, barButton]
+    }()
+    
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
 }
 
 extension MessageCenterController: UITableViewDelegate{

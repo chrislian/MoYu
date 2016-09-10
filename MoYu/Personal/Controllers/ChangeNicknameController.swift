@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ChangeNicknameController: BaseController {
+class ChangeNicknameController: UIViewController,PraseErrorType,AlertViewType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigation(title: "修改昵称")
+        mo_navigationBar(title: "修改昵称")
         
         self.layout()
         
@@ -21,7 +21,7 @@ class ChangeNicknameController: BaseController {
     }
     
     //MARK: - event response
-    @objc private func rightBarButtonClick(){
+    @objc private func rightBarItem(tap sender:AnyObject){
         
         guard let nickname = self.nicknameTextField.text where !nickname.isEmpty else{
             self.showAlert(message: "昵称不能为空")
@@ -41,10 +41,8 @@ class ChangeNicknameController: BaseController {
         
         self.view.backgroundColor = UIColor.mo_background()
         
-        self.addRightNavigationButton(title: "保存")
-        rightButtonClourse = {[unowned self] in
-            self.rightBarButtonClick()
-        }
+        let rightBarButton = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        navigationItem.rightBarButtonItem = rightBarButton
         
         nicknameTextField.delegate = self
         if !nicknameTextField.isFirstResponder(){
@@ -101,6 +99,10 @@ class ChangeNicknameController: BaseController {
     }()
     
     var nickname:String = ""
+    
+    //mark
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
 }
 
 extension ChangeNicknameController: UITextFieldDelegate{

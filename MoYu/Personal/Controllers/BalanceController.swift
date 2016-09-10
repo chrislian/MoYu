@@ -8,21 +8,28 @@
 
 import UIKit
 
-class BalanceController: BaseController {
+class BalanceController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
         
-        self.title = "财务信息"
+        mo_navigationBar(title: "财务信息")
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.navigationBarOpaque = false
+        navigationController?.mo_navigationBar(opaque: false)
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.mo_navigationBar(opaque: true)
+    }
+    
     
     
     //MARK: - private method
@@ -119,13 +126,9 @@ extension BalanceController{
         
         //切换透明背景
         if y - 2 > -headerDefaultHeight {
-            if !self.navigationBarOpaque{
-                self.navigationBarOpaque = true
-            }
+            navigationController?.mo_navigationBar(opaque: true)
         } else {
-            if self.navigationBarOpaque{
-                self.navigationBarOpaque = false
-            }
+            navigationController?.mo_navigationBar(opaque: false)
         }
     }
 }

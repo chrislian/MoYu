@@ -9,7 +9,7 @@
 import UIKit
 import Proposer
 
-class LeftMenuController: BaseController {
+class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -166,6 +166,10 @@ class LeftMenuController: BaseController {
         return imagePicker
     }()
     
+    //alert
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
+    
 }
 
 //MARK: - UITableView delegate
@@ -269,7 +273,6 @@ extension LeftMenuController: UIImagePickerControllerDelegate, UINavigationContr
             self.activityIndicatorView.stopAnimating()
             sendMessage(UserNotification.updateUserInfo)
         }
-        
     }
 }
 

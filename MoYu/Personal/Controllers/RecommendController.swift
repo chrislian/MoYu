@@ -8,14 +8,14 @@
 
 import UIKit
 
-class RecommendController: BaseController {
+class RecommendController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "推荐有奖"
+        mo_navigationBar(title: "推荐有奖")
         
-        self.addBackNavigationButton()
+        navigationItem.leftBarButtonItems = leftBarButtonItems
         
         self.setupView()
     }
@@ -35,22 +35,31 @@ class RecommendController: BaseController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    dynamic private func leftBarItemTap(){
+    dynamic private func rightBarItem(tap sender:AnyObject){
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
+    func backButton(tap sender:AnyObject){
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     //MARK: - private method
     func setupView(){
 
-        self.addRightNavigationButton(title: "分享")
-        self.rightButtonClourse = { [unowned  self] in
-            self.leftBarItemTap()
-        }
+        let rightBarButton = UIBarButtonItem(title: "分享", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        navigationItem.rightBarButtonItem = rightBarButton
     }
     
     //MARK: - var & let
     @IBOutlet var recommendView: RecommendView!
+    
+    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
+        spaceItem.width = 1//-16
+        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MessageCenterController.backButton(tap:)))
+        return [spaceItem, barButton]
+    }()
 }

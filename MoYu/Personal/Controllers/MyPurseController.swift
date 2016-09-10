@@ -37,7 +37,7 @@ private enum MyPurseType{
     
 }
 
-class MyPurseController: BaseController {
+class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +52,16 @@ class MyPurseController: BaseController {
         }
     }
     
+    //MARK: - event response
+    @objc private func backButton(tap sender:AnyObject){
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     //MARK: - private method
     private func setupView(){
         
-        self.addBackNavigationButton()
+        navigationItem.leftBarButtonItems = leftBarButtonItems
 
         tableView.separatorStyle = .None
         
@@ -82,6 +88,18 @@ class MyPurseController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var cellItems:[MyPurseType] = self.setupCells()
+    
+    
+    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
+        spaceItem.width = 1//-16
+        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MyPurseController.backButton(tap:)))
+        return [spaceItem, barButton]
+    }()
+    
+    //alert
+    var alertLock: NSLock = NSLock()
+    var alertView: OLGhostAlertView = OLGhostAlertView()
     
 }
 
