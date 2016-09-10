@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountBindingController: BaseController {
+class AccountBindingController: UIViewController {
 
     
     //MARK: - life cycle
@@ -17,7 +17,7 @@ class AccountBindingController: BaseController {
         
         self.setupView()
         
-        self.title = "账号绑定"
+        mo_navigationBar(title: "站好绑定")
         
     }
     

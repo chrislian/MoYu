@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kpK-LO-Yd3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kpK-LO-Yd3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -388,9 +388,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpK-LO-Yd3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mbl-Dk-KtY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="nav_back" backIndicatorTransitionMaskImage="nav_back" id="mbl-Dk-KtY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -405,8 +406,9 @@
     </scenes>
     <resources>
         <image name="moyuLogo" width="60" height="60"/>
+        <image name="nav_back" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qtD-bO-00y"/>
+        <segue reference="Kg9-Y2-qdL"/>
     </inferredMetricsTieBreakers>
 </document>

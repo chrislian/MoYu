@@ -9,12 +9,12 @@
 import UIKit
 import YYText
 
-class FeedbackController: BaseController {
+class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       self.title = "用户反馈"
+       mo_navigationBar(title: "用户反馈")
         
         self.setupView()
         
@@ -30,7 +30,7 @@ class FeedbackController: BaseController {
         
     }
     
-    private func leftBarItemTap(){
+    @objc private func rightBarItem(tap sender:AnyObject){
         
         self.view.endEditing(true)
         
@@ -57,11 +57,8 @@ class FeedbackController: BaseController {
     //MARK: - private method
     private func setupView(){
         
-        let attribute = NSAttributedString(string: "提交", attributes: [NSFontAttributeName:UIFont.mo_font(), NSForegroundColorAttributeName : UIColor.mo_lightBlack() ] )
-        self.setRightNavigationButton(attributedString: attribute)
-        self.rightButtonClourse = { [unowned  self] in
-            self.leftBarItemTap()
-        }
+        let rightBarButton = UIBarButtonItem(title: "提交", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        navigationItem.rightBarButtonItem = rightBarButton
         
         
         self.view.addSubview(feedbackView)
@@ -90,6 +87,10 @@ class FeedbackController: BaseController {
         actionSheet.showDestructiveButton = false
         return actionSheet
     }()
+    
+    //alert
+    var alertLock: NSLock = NSLock()
+    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension FeedbackController: YYTextViewDelegate{

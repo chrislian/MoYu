@@ -32,7 +32,7 @@ private enum TextFieldType:Int{
     }
 }
 
-class SignInByPasswordController: BaseController {
+class SignInByPasswordController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +40,13 @@ class SignInByPasswordController: BaseController {
         self.setupView()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.navigationBarOpaque = false
-    }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.mo_navigationBar(opaque: false)
+    }
+
     //MARK: - event reponse
     func enterButtonClicked(sender:UIButton){
         
@@ -55,7 +56,7 @@ class SignInByPasswordController: BaseController {
                 return
         }
         
-        self.dismissSignInView()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

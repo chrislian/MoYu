@@ -8,23 +8,24 @@
 
 import UIKit
 
-class RegisterProtocolController: BaseController {
+class RegisterProtocolController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setNavigation(title: "注册协议")
+        mo_navigationBar(title: "注册协议")
+
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.navigationBarOpaque = true
+       navigationController?.mo_navigationBar(opaque: true)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.navigationBarOpaque = false
+       navigationController?.mo_navigationBar(opaque: false)
     }
 }

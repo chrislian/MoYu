@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LegalProvisionsController: BaseController {
+class LegalProvisionsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "法律条款"
+        
+        mo_navigationBar(title: "法律条款")
         
         self.setupView()
     }

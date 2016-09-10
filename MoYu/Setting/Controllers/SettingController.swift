@@ -8,15 +8,19 @@
 
 import UIKit
 
-class SettingController: BaseController {
+class SettingController: UIViewController,PraseErrorType, AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "设置"
+        mo_navigationBar(title: "设置")
         
-        self.setupView()
+        navigationController?.mo_hideBackButtonTitle()
+        
+        navigationController?.mo_navigationBar(opaque: true)
+        
+        setupView()
     }
 
     
@@ -35,24 +39,17 @@ class SettingController: BaseController {
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func backButton(tap button:AnyObject){
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
 
-    
     //MARK: - public method
     
     //MARK: - private method
     private func setupView(){
         
-        self.addBackNavigationButton()
+        navigationItem.leftBarButtonItems = leftBarButtonItems
         
         self.view.backgroundColor = UIColor.mo_background()
         
@@ -77,9 +74,21 @@ class SettingController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var exitButton: UIButton!
     
+    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
+        spaceItem.width = 1//-16
+        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(SettingController.backButton(tap:)))
+        return [spaceItem, barButton]
+    }()
+    
+    
     private let datas:[[String]] = [["常用地址","密码修改","账号绑定","音效开关","微信免支付"],
                                          ["用户指南"],
                                          ["关于应用","法律条款","用户反馈"]]
+    
+    //alert
+    var alertView: OLGhostAlertView = OLGhostAlertView()
+    var alertLock: NSLock = NSLock()
     
 }
 

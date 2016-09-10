@@ -12,21 +12,17 @@ private enum TextFieldType:Int{
     case phoneNum = 0,authCode
 }
 
-class SignInByAuthController: BaseController {
+class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupView()
+        setupView()
         
-        self.addBackNavigationButton()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        navigationController?.mo_hideBackButtonTitle()
+        navigationController?.mo_navigationBar(opaque: false)
         
-        self.navigationBarOpaque = false
     }
     
     deinit{
@@ -70,10 +66,18 @@ class SignInByAuthController: BaseController {
         }
     }
     
+    func close(tap sender:AnyObject){
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 
     //MARK: - private method
 
     private func setupView(){
+        
+        navigationItem.leftBarButtonItems = leftBarButtonItems
+        
         
         signInView.enterButton.addTarget(self, action: #selector(enterButtonTap(_:)), forControlEvents: .TouchUpInside)
         signInView.authButton.addTarget(self, action: #selector(authButtonTap(_:)),forControlEvents: .TouchUpInside)
@@ -133,8 +137,20 @@ class SignInByAuthController: BaseController {
         return label
     }()
     
+    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
+        spaceItem.width = 1//-16
+        let barButton = UIBarButtonItem(image: UIImage(named: "nav_close"), style: .Done, target: self, action: #selector(SignInByAuthController.close(tap:)))
+        return [spaceItem, barButton]
+    }()
+    
+    
     private var countDownButton:UIButton?
     private var countDownTimer:NSTimer?
+    
+    //alertview
+    var alertLock: NSLock = NSLock()
+    var alertView: OLGhostAlertView = OLGhostAlertView()
     
 }
 

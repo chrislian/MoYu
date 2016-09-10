@@ -8,12 +8,12 @@
 
 import UIKit
 
-class UserGuideController: BaseController {
+class UserGuideController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "用户指南"
+        mo_navigationBar(title: "用户指南")
         
         self.setupView()
     }
