@@ -76,8 +76,7 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
 
     private func setupView(){
         
-        navigationItem.leftBarButtonItems = leftBarButtonItems
-        
+        mo_rootLeftBackButton(image: UIImage(named: "nav_close"))
         
         signInView.enterButton.addTarget(self, action: #selector(enterButtonTap(_:)), forControlEvents: .TouchUpInside)
         signInView.authButton.addTarget(self, action: #selector(authButtonTap(_:)),forControlEvents: .TouchUpInside)
@@ -136,14 +135,6 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
         
         return label
     }()
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_close"), style: .Done, target: self, action: #selector(SignInByAuthController.close(tap:)))
-        return [spaceItem, barButton]
-    }()
-    
     
     private var countDownButton:UIButton?
     private var countDownTimer:NSTimer?

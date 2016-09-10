@@ -14,8 +14,7 @@ class RecommendController: UIViewController {
         super.viewDidLoad()
 
         mo_navigationBar(title: "推荐有奖")
-        
-        navigationItem.leftBarButtonItems = leftBarButtonItems
+        mo_rootLeftBackButton()
         
         self.setupView()
     }
@@ -55,11 +54,4 @@ class RecommendController: UIViewController {
     
     //MARK: - var & let
     @IBOutlet var recommendView: RecommendView!
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MessageCenterController.backButton(tap:)))
-        return [spaceItem, barButton]
-    }()
 }

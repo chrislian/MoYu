@@ -18,7 +18,7 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
         
         mo_navigationBar(title: "消息中心")
         
-        navigationItem.leftBarButtonItems = leftBarButtonItems
+        mo_rootLeftBackButton()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,11 +29,6 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
     
     
     //MARK: - event response
-    
-    func backButton(tap sender:AnyObject){
-        
-        dismissViewControllerAnimated(true, completion: nil)
-    }
     
     //MARK: - private method
     private func setupView(){
@@ -66,13 +61,6 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
     @IBOutlet weak var tableView: UITableView!
     
     lazy var messageModel = MessageCenterModel()
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MessageCenterController.backButton(tap:)))
-        return [spaceItem, barButton]
-    }()
     
     var alertView: OLGhostAlertView = OLGhostAlertView()
     var alertLock: NSLock = NSLock()

@@ -35,11 +35,6 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
     
     //MARK: - event response
     
-    func backButton(tap sender:AnyObject){
-        
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     func rightBarItem(tap sender:AnyObject){
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
@@ -61,7 +56,7 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         navigationController?.mo_hideBackButtonTitle()
         navigationController?.mo_navigationBar(opaque: true)
         
-        navigationItem.leftBarButtonItems = leftBarButtonItems
+        mo_rootLeftBackButton()
 
         let rightBarButton = UIBarButtonItem(title: "综合实力", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
@@ -132,15 +127,7 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         alert.addAction(destrctiveAction)
         return alert
     }()
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(UseInfoController.backButton(tap:)))
-        return [spaceItem, barButton]
-    }()
-    
-    
+
     //alert
     var alertLock: NSLock = NSLock()
     var alertView: OLGhostAlertView = OLGhostAlertView()

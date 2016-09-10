@@ -13,9 +13,9 @@ class RecuritCenterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "招募中心"
+        mo_rootLeftBackButton()
         
-        navigationItem.leftBarButtonItems = leftBarButtonItems
+        mo_navigationBar(title: "招募中心")
         
         bannerImageView.clipsToBounds = true
     }
@@ -36,11 +36,4 @@ class RecuritCenterController: UIViewController {
     
     //MARK: - var & let
     @IBOutlet weak var bannerImageView: UIImageView!
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MessageCenterController.backButton(tap:)))
-        return [spaceItem, barButton]
-    }()
 }

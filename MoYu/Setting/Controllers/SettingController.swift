@@ -39,17 +39,11 @@ class SettingController: UIViewController,PraseErrorType, AlertViewType {
         }
     }
     
-    func backButton(tap button:AnyObject){
-        
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    //MARK: - public method
-    
     //MARK: - private method
     private func setupView(){
+ 
         
-        navigationItem.leftBarButtonItems = leftBarButtonItems
+        mo_rootLeftBackButton()
         
         self.view.backgroundColor = UIColor.mo_background()
         
@@ -73,14 +67,6 @@ class SettingController: UIViewController,PraseErrorType, AlertViewType {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var exitButton: UIButton!
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(SettingController.backButton(tap:)))
-        return [spaceItem, barButton]
-    }()
-    
     
     private let datas:[[String]] = [["常用地址","密码修改","账号绑定","音效开关","微信免支付"],
                                          ["用户指南"],

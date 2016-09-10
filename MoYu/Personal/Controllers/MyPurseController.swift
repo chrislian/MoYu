@@ -61,7 +61,7 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
     //MARK: - private method
     private func setupView(){
         
-        navigationItem.leftBarButtonItems = leftBarButtonItems
+        mo_rootLeftBackButton()
 
         tableView.separatorStyle = .None
         
@@ -88,14 +88,6 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var cellItems:[MyPurseType] = self.setupCells()
-    
-    
-    private lazy var leftBarButtonItems:[UIBarButtonItem] = {
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
-        spaceItem.width = 1//-16
-        let barButton = UIBarButtonItem(image: UIImage(named: "nav_back"), style: .Done, target: self, action: #selector(MyPurseController.backButton(tap:)))
-        return [spaceItem, barButton]
-    }()
     
     //alert
     var alertLock: NSLock = NSLock()
