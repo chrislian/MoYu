@@ -31,18 +31,18 @@ extension PraseErrorType where Self: AlertViewType, Self:UIViewController{
     
         switch status {
         case .userFailure(let message):
-            self.show(message: message)
+            self.showAlert(message: message)
         case .systemFailure(let message):
-            self.show(message: message)
+            self.showAlert(message: message)
         case .networkFailure(let message):
-            self.show(message: message)
+            self.showAlert(message: message)
         case .otherFailure(let message):
-            self.show(message: message)
+            self.showAlert(message: message)
         case .userNeedLogin: 
             self.showSignInView()
         case .success(let message):
             if showSuccess{
-                self.show(message: message)
+                self.showAlert(message: message)
             }
         }
     }
@@ -51,7 +51,7 @@ extension PraseErrorType where Self: AlertViewType, Self:UIViewController{
         
         switch status{
         case .success(let message):
-            self.show(message: message)
+            self.showAlert(message: message)
         default:
             break
         }

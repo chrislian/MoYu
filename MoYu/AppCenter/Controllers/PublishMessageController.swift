@@ -40,7 +40,7 @@ class PublishMessageController: BaseController {
         
         let text = textView.text
         if text.length == 0{
-            self.show(message: "内容不能为空")
+            self.showAlert(message: "内容不能为空")
             return
         }
         Router.commitJobZone(message: text).request { (status, json) in

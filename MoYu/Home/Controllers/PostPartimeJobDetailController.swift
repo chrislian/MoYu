@@ -24,12 +24,12 @@ class PostPartimeJobDetailController: BaseController {
     dynamic private func submitButtonClicked(sender:UIButton){
         
         if titleText.text.length == 0{
-            self.show(message: "标题不能为空")
+            self.showAlert(message: "标题不能为空")
             return
         }
         
         if contentText.text.length == 0{
-            self.show(message: "内容不能为空")
+            self.showAlert(message: "内容不能为空")
             return
         }
         
@@ -150,7 +150,7 @@ extension PostPartimeJobDetailController: YYTextViewDelegate{
             
             if toBeString.characters.count > maxLength{
                 textView.text = (toBeString as NSString).substringToIndex(maxLength)
-                self.show(message: "内容超过上限了")
+                self.showAlert(message: "内容超过上限了")
                 return false
             }
             return true
@@ -162,7 +162,7 @@ extension PostPartimeJobDetailController: YYTextViewDelegate{
             let toBeString = string.stringByReplacingCharactersInRange(range, withString: text)
             if toBeString.characters.count > maxLength{
                 textView.text = (toBeString as NSString).substringToIndex(maxLength)
-                self.show(message: "内容超过上限了~")
+                self.showAlert(message: "内容超过上限了~")
                 return false
             }
             return true

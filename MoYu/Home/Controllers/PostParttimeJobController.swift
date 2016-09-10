@@ -23,22 +23,22 @@ class PostParttimeJobController: BaseController {
     dynamic private func nextButtonClicked(sender:UIButton){
         
         if postModel.type == 0{
-            self.show(message: "工作种类还没有选择哦~")
+            self.showAlert(message: "工作种类还没有选择哦~")
             return
         }
         
         if postModel.time.mo_isYesterday(){
-            self.show(message: "工作时间还未选择哦~")
+            self.showAlert(message: "工作时间还未选择哦~")
             return
         }
         
         if postModel.commission == 0{
-            self.show(message: "金额还未设置哦~")
+            self.showAlert(message: "金额还未设置哦~")
             return
         }
         
         if postModel.workingtime == 0{
-            self.show(message: "工时还未设置哦~")
+            self.showAlert(message: "工时还未设置哦~")
             return
         }
         

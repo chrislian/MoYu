@@ -17,4 +17,31 @@ extension UINavigationController{
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), forBarMetrics:UIBarMetrics.Default)
         
     }
+    
+    
+    /**
+     导航栏不透明
+     
+     - parameter value: true false
+     */
+    func mo_navigationBar(opaque value:Bool){
+        if value{
+            self.navigationBar.setBackgroundImage( UIImage.mo_createImageWithColor(UIColor.mo_background()), forBarMetrics: .Default)
+            self.navigationBar.shadowImage = UIImage.mo_createImageWithColor(UIColor.mo_silver())
+            //            self.navigationController?.navigationBar.translucent = false
+        }else{
+            self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+            self.navigationBar.shadowImage = UIImage()
+            //            self.navigationController?.navigationBar.translucent = true
+        }
+    }
+    
+    /**
+     隐藏返回标题
+     */
+    class func mo_hideBackTitle(){
+        
+        let offset = UIOffset(horizontal: 0, vertical: -60)
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(offset, forBarMetrics: .Default)
+    }
 }

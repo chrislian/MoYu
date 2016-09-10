@@ -95,7 +95,7 @@ class SignInByAuthController: BaseController {
         }
         
         guard let text = signInView.authTextFiled.text where text.mo_length() == 6 else{
-            self.show(message: "验证码长度不正确")
+            self.showAlert(message: "验证码长度不正确")
             return false
         }
         return true
@@ -104,12 +104,12 @@ class SignInByAuthController: BaseController {
     private func checkValidatePhone(textFiled: UITextField)->Bool{
         
         guard let text = textFiled.text else{
-            self.show(message: "手机号码不能为空")
+            self.showAlert(message: "手机号码不能为空")
             return false
         }
         
         if text.mo_length() != 11 || !IdentifyCode.validatePhone(phone: text){
-            self.show(message: "手机号码格式不正确")
+            self.showAlert(message: "手机号码格式不正确")
             return false
         }
         

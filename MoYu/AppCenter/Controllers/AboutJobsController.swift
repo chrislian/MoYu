@@ -77,7 +77,7 @@ class AboutJobsController: BaseController, RefreshViewType {
         
         if item.zan{
             
-            self.show(message: "已点过赞了~")
+            self.showAlert(message: "已点过赞了~")
             return
         }
         

@@ -30,37 +30,37 @@ class PostTaskController: BaseController {
         self.view.endEditing(true)
         
         if taskModel.name.isEmpty {
-            self.show(message: "标题不能为空~")
+            self.showAlert(message: "标题不能为空~")
             return
         }
         
         if taskModel.commission == 0{
-            self.show(message: "金额不能为空~")
+            self.showAlert(message: "金额不能为空~")
             return
         }
         
         if taskModel.type < 0{
-            self.show(message: "请选择任务类型~")
+            self.showAlert(message: "请选择任务类型~")
             return
         }
         
         if taskModel.sum < 0{
-            self.show(message: "订单数量不能为空")
+            self.showAlert(message: "订单数量不能为空")
         }
         
         
         if taskModel.address.isEmpty{
-            self.show(message: "web 地址不能为空~")
+            self.showAlert(message: "web 地址不能为空~")
             return
         }
         
         if taskModel.step.isEmpty{
-            self.show(message: "还未填写任务步骤~")
+            self.showAlert(message: "还未填写任务步骤~")
             return
         }
         
         if taskModel.content.isEmpty{
-            self.show(message: "还未填写任务内容~")
+            self.showAlert(message: "还未填写任务内容~")
         }
         
         Router.postTask(paramter: taskModel.combination()).request { (status, json) in

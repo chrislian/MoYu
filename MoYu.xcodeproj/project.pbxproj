@@ -47,7 +47,7 @@
 		833F087A1D674AEA009A4275 /* HotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F08791D674AEA009A4275 /* HotSearchView.swift */; };
 		833F087C1D674C06009A4275 /* HotSearchMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */; };
 		8347C0C81D76FB84006CCF68 /* PublishTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */; };
-		834CF1D51D79ACF100880D9C /* GhostAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CF1D41D79ACF100880D9C /* GhostAlertView.swift */; };
+		834CF1D51D79ACF100880D9C /* AlertViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CF1D41D79ACF100880D9C /* AlertViewType.swift */; };
 		834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */; };
 		834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834EC40C1D322BD80046FBEF /* SignIn.storyboard */; };
 		834EC4151D3233180046FBEF /* SignInByAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4121D3233180046FBEF /* SignInByAuthController.swift */; };
@@ -104,6 +104,7 @@
 		839C748B1D55FF84003DBC33 /* AutoGraphController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C748A1D55FF84003DBC33 /* AutoGraphController.swift */; };
 		839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */; };
 		839EC9611D49D97400658CE6 /* WithdrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839EC9601D49D97400658CE6 /* WithdrawController.swift */; };
+		839F1FE91D83B996006F1ED9 /* UIViewController+MoYu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F1FE81D83B996006F1ED9 /* UIViewController+MoYu.swift */; };
 		83A680D61D3CB86200570699 /* SignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A680D51D3CB86200570699 /* SignInType.swift */; };
 		83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */; };
 		83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */; };
@@ -206,7 +207,7 @@
 		833F08791D674AEA009A4275 /* HotSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotSearchView.swift; sourceTree = "<group>"; };
 		833F087B1D674C06009A4275 /* HotSearchMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotSearchMenuCell.swift; sourceTree = "<group>"; };
 		8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishTaskCell.swift; sourceTree = "<group>"; };
-		834CF1D41D79ACF100880D9C /* GhostAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GhostAlertView.swift; path = MoYu/MoKit/AlertView/GhostAlertView.swift; sourceTree = SOURCE_ROOT; };
+		834CF1D41D79ACF100880D9C /* AlertViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertViewType.swift; path = MoYu/MoKit/AlertView/AlertViewType.swift; sourceTree = SOURCE_ROOT; };
 		834E3EC41CB0C0F7005B8FC3 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
 		834EC40C1D322BD80046FBEF /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		834EC4121D3233180046FBEF /* SignInByAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthController.swift; sourceTree = "<group>"; };
@@ -264,6 +265,7 @@
 		839C748A1D55FF84003DBC33 /* AutoGraphController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoGraphController.swift; sourceTree = "<group>"; };
 		839DBA351D50C9BE00D155B8 /* PraseErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraseErrorType.swift; sourceTree = "<group>"; };
 		839EC9601D49D97400658CE6 /* WithdrawController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawController.swift; sourceTree = "<group>"; };
+		839F1FE81D83B996006F1ED9 /* UIViewController+MoYu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+MoYu.swift"; sourceTree = "<group>"; };
 		83A680D51D3CB86200570699 /* SignInType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInType.swift; sourceTree = "<group>"; };
 		83AAFE9A1D43168B00E39EB4 /* MyPurseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseController.swift; sourceTree = "<group>"; };
 		83AAFE9C1D43224B00E39EB4 /* MyPurseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPurseCell.swift; sourceTree = "<group>"; };
@@ -435,7 +437,7 @@
 		8332409A1D56FD43006C7203 /* AlertView */ = {
 			isa = PBXGroup;
 			children = (
-				834CF1D41D79ACF100880D9C /* GhostAlertView.swift */,
+				834CF1D41D79ACF100880D9C /* AlertViewType.swift */,
 				8332409B1D56FD43006C7203 /* OLGhostAlertView.h */,
 				8332409C1D56FD43006C7203 /* OLGhostAlertView.m */,
 			);
@@ -807,6 +809,7 @@
 				838E85051D294CC100C992CC /* UIImageView+MoYu.swift */,
 				838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */,
 				838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */,
+				839F1FE81D83B996006F1ED9 /* UIViewController+MoYu.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1326,6 +1329,7 @@
 				83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */,
 				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,
 				83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */,
+				839F1FE91D83B996006F1ED9 /* UIViewController+MoYu.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
 				83289B801D64A60200EF765D /* PostParttimeJobController.swift in Sources */,
 				8327B6461D3B407500DF6D78 /* BaseController.swift in Sources */,
@@ -1394,7 +1398,7 @@
 				838E850B1D294CC100C992CC /* String+MoYu.swift in Sources */,
 				8334C84D1D71674100977C2A /* PromptController.swift in Sources */,
 				838E850A1D294CC100C992CC /* NSDateFormatter+MoYu.swift in Sources */,
-				834CF1D51D79ACF100880D9C /* GhostAlertView.swift in Sources */,
+				834CF1D51D79ACF100880D9C /* AlertViewType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

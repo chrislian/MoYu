@@ -36,12 +36,12 @@ class FeedbackController: BaseController {
         
         guard let title = feedbackView.titleText.text where !title.isEmpty else{
             
-            self.show(message: "标题不能为空")
+            self.showAlert(message: "标题不能为空")
             return
         }
         
         guard let content = feedbackView.contentText.text where !content.isEmpty else{
-            self.show(message: "内容不能为空")
+            self.showAlert(message: "内容不能为空")
             return
         }
         

@@ -7,24 +7,25 @@
 //
 
 import UIKit
+import Async
 
 protocol AlertViewType {
     
     var alertView : OLGhostAlertView { set get }
     var alertLock : NSLock { get set }
     
-    func show(message aTitle:String, subTitle:String?, timout:NSTimeInterval, forced:Bool, completed:(Void->Void)?)
+    func showAlert(message aTitle:String, subTitle:String?, timout:NSTimeInterval, forced:Bool, completed:(Void->Void)?)
     
-    func show(customView view: UIView, timeout: NSTimeInterval , backgroundColor: UIColor, completed: (Void -> Void)?)
+    func showAlert(customView view: UIView, timeout: NSTimeInterval , backgroundColor: UIColor, completed: (Void -> Void)?)
     
     func dismiss()
 }
 
 extension AlertViewType{
 
-    func show(message aTitle:String, subTitle:String? = nil, timout:NSTimeInterval = 2, forced:Bool = false, completed:(Void->Void)? = nil){
+    func showAlert(message aTitle:String, subTitle:String? = nil, timout:NSTimeInterval = 2, forced:Bool = false, completed:(Void->Void)? = nil){
         
-        mainThread {
+        Async.main {
             self.alertLock.lock()
             if self.alertView.visible{
                 self.alertView.hide()
@@ -45,9 +46,9 @@ extension AlertViewType{
         }
     }
     
-    func show(customView view: UIView, timeout: NSTimeInterval = 2, backgroundColor: UIColor = UIColor.lightGrayColor() ,completed: (Void -> Void)? = nil){
+    func showAlert(customView view: UIView, timeout: NSTimeInterval = 2, backgroundColor: UIColor = UIColor.lightGrayColor() ,completed: (Void -> Void)? = nil){
         
-        mainThread {
+        Async.main {
             if self.alertView.visible{
                 self.alertView.hide()
             }
