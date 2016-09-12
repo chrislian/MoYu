@@ -11,6 +11,7 @@ pod 'REFrostedViewController', '~> 2.0'
 pod 'MJRefresh',    '~> 3.0'
 pod 'BaiduMapKit',   '~> 2.0'
 pod 'FXBlurView'
+pod 'NinaPagerView'
 
 #swift
 pod 'Alamofire',    '~> 3.0'
