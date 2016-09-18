@@ -43,6 +43,7 @@ enum Router {
     
     //任务
     case allTask(page:Int)//所有任务
+    case taskCategory(type:TaskDetailType, page:Int)//任务分类 1.应用体验， 2.问卷调查，3.其他
     //
     
 }
@@ -121,8 +122,10 @@ extension Router: RouterType{
         
         case .allTask(let page):
             parameters = compose(parameters: ["page": page])
+            
+        case .taskCategory(let type, let page):
+            parameters = compose(parameters: ["page": page, "type":type.rawValue] )
         }
-        
         
         return parameters
     }
@@ -181,6 +184,9 @@ extension Router: RouterType{
             
         case .allTask:
             suffix = "getAllTaskList"
+            
+        case .taskCategory:
+            suffix = "getClassTaskList"
         }
         return mainUrl + suffix
     }

@@ -10,21 +10,15 @@ import UIKit
 
 
 enum TaskDetailType:Int {
-    case all = 0, appExperience,handbill,other
-    
+    case all = 0, appExperience, handbill, other
     
     func remoteData(page page:Int, clourse:RemoteClourse){
-        
         
         switch self {
         case .all:
             Router.allTask(page: page).request(remote: clourse)
-        case .appExperience:
-            Router.allTask(page: page).request(remote: clourse)//todo: - 更改接口
-        case .handbill:
-            Router.allTask(page: page).request(remote: clourse)
-        case .other: 
-            Router.allTask(page: page).request(remote: clourse)
+        default:
+            Router.taskCategory(type: self, page: page).request(remote: clourse)
         }
     }
 }
