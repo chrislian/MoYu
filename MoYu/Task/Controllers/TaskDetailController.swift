@@ -38,27 +38,15 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
 
         addRefreshView()
         beginRefresh()
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        tableView.snp_updateConstraints { (make) in
-            make.edges.equalTo(view)
-        }
     }
     
     //MARK: - private method
-    
     private func setupView(){
         
         view.backgroundColor = UIColor.mo_background()
         
         view.addSubview(tableView)
-        tableView.snp_makeConstraints { (make) in
-            make.left.right.bottom.top.equalTo(view).offset(0)
-        }
+        tableView.frame = CGRect(origin: CGPoint(x: 0,y: -32), size: CGSize(width: MoScreenWidth, height: view.frame.size.height - 50))
     }
 
     //MARK: - var & let
@@ -67,7 +55,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     var taskDetailType = TaskDetailType.all
     
-    private lazy var tableView:UITableView = {
+    lazy var tableView:UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
         tableView.backgroundColor = UIColor.mo_background()
         tableView.tableFooterView = UIView()
@@ -135,11 +123,11 @@ extension TaskDetailController: RefreshViewType{
 extension TaskDetailController: UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
+        return 8.0
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 8.0
+        return 0.01
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

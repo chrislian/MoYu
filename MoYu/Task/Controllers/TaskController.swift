@@ -58,7 +58,6 @@ class TaskController: UIViewController {
         vcs[3].taskDetailType = .other
         vcs[3].title = "其他"
         
-        
         let pagerView = NinaPagerView(frame: CGRect.zero, withTitles: ["全部","应用体验", "问卷调查", "其他"], withVCs: vcs)
         return pagerView
     }()
