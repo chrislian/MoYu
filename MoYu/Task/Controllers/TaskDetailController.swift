@@ -118,6 +118,7 @@ extension TaskDetailController: RefreshViewType{
     }
 }
 
+// MARK: - UITableViewDelegate
 extension TaskDetailController: UITableViewDelegate{
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -136,7 +137,7 @@ extension TaskDetailController: UITableViewDelegate{
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
        //load more
-        if self.canLoadMore && (indexPath.row >= taskItems.count - 3)
+        if self.canLoadMore && (indexPath.section >= taskItems.count - 3)
             && taskItems.count >= MoDefaultLoadMoreCount {
             
             currentPage += 1
@@ -157,6 +158,7 @@ extension TaskDetailController: UITableViewDelegate{
     }
 }
 
+// MARK: - UITableViewDataSource
 extension TaskDetailController:UITableViewDataSource{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
