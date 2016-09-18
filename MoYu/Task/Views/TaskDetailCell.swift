@@ -29,21 +29,22 @@ class TaskDetailCell: UITableViewCell {
     }
     
     func update(item model:TaskModel){
-        //TODO: -
         
-        //avatorImageView.mo_loadRoundImage("", radius: avatorImageView.bounds.size.width/2, placeholder: UIImage(named: "defaultAvator"))
+        avatorImageView.mo_loadRoundImage("", radius: avatorImageView.bounds.size.width/2)
         
+        titleLabel.text = model.name
+        
+        contentLabel.text = model.content
+        
+        stepLabel.text = model.step
+        
+        amountLabel.text = String(format: "¥%.02f元", model.commission)
     }
     
     //MARK: - private method
     private func setupCell(){
         amountLabel.textColor = UIColor.mo_main()
         amountLabel.font = UIFont.mo_font(.biggest)
-        
-        rightButton.backgroundColor = UIColor.mo_main()
-        rightButton.setTitle("注册", forState: .Normal)
-        rightButton.layer.cornerRadius = rightButton.bounds.size.height/2
-        rightButton.layer.masksToBounds = true
         
         stepLabel.textColor = UIColor.mo_lightBlack()
         stepLabel.font = UIFont.mo_font(.smaller)
@@ -59,11 +60,9 @@ class TaskDetailCell: UITableViewCell {
         
     }
     
-    
     //MARK: - var & let
     
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

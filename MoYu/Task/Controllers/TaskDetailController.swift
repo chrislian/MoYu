@@ -99,8 +99,6 @@ extension TaskDetailController: RefreshViewType{
             
             guard case .success = status, let data = json?["reslist"].array else{ return }
             
-            println("list.count:\(data.count)")
-            
             let array = data.map( TaskModel.init )
             
             if array.count < MoDefaultLoadMoreCount{

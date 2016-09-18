@@ -11,7 +11,7 @@ import Kingfisher
 
 extension UIImageView {
     
-    public func mo_loadImage(urlString:String ,placeholder:UIImage?){
+    public func mo_loadImage(urlString:String ,placeholder:UIImage? = UIImage(named: "defaultAvator")){
         guard let url = NSURL(string: urlString) else{
             println("urlString:\(urlString)")
             return
@@ -44,7 +44,7 @@ public class MOImageView: UIImageView {
         }
     }
     
-    public func mo_loadRoundImage(urlString:String,radius:CGFloat = 0, placeholder:UIImage?){
+    public func mo_loadRoundImage(urlString:String,radius:CGFloat = 0, placeholder:UIImage? = UIImage(named: "defaultAvator")){
         self.radius = radius
         guard let url = NSURL(string: urlString) else{
             println("urlString:\(urlString)")

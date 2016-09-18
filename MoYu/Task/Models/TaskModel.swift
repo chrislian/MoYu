@@ -15,7 +15,7 @@ struct TaskModel {
     var ordernum = ""
     var name = ""
     var issuer = ""
-    var commission = ""
+    var commission = 0.0
     var createtime = ""
     var status = 0
     var content = ""
@@ -34,7 +34,7 @@ struct TaskModel {
         ordernum = json["ordernum"].stringValue
         name = json["name"].stringValue
         issuer = json["issur"].stringValue
-        commission = json["commission"].stringValue
+        commission = json["commission"].doubleValue
         createtime = json["createtime"].stringValue
         status = json["status"].intValue
         content = json["content"].stringValue
