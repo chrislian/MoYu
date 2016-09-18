@@ -41,6 +41,10 @@ enum Router {
     case postTask(paramter: [String:AnyObject])//发布任务
     case searchParttimeJob(page:Int,keyword:String)//兼职关键字搜索
     
+    //任务
+    case allTask(page:Int)//所有任务
+    //
+    
 }
 
 extension Router: RouterType{
@@ -114,7 +118,11 @@ extension Router: RouterType{
             parameters = compose(parameters: paramter)
         case .searchParttimeJob(let page, let keyword):
             parameters = compose(parameters: ["page":page,"title":keyword])
+        
+        case .allTask(let page):
+            parameters = compose(parameters: ["page": page])
         }
+        
         
         return parameters
     }
@@ -170,6 +178,9 @@ extension Router: RouterType{
             
         case .searchParttimeJob:
             suffix = "getPartTimeJobTitle"
+            
+        case .allTask:
+            suffix = "getAllTaskList"
         }
         return mainUrl + suffix
     }

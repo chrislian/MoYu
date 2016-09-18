@@ -78,11 +78,6 @@ class PublishMessageController: UIViewController, PraseErrorType, AlertViewType 
         textView.delegate = self
         return textView
     }()
-    
-    //alert
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
-    
 }
 
 //MARK: - YYTextView Delegate

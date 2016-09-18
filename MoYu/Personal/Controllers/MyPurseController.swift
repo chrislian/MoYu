@@ -88,11 +88,6 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var cellItems:[MyPurseType] = self.setupCells()
-    
-    //alert
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    
 }
 
 extension MyPurseController: UITableViewDelegate{

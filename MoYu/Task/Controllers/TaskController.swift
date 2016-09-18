@@ -48,8 +48,18 @@ class TaskController: UIViewController {
     
     var pagerView: NinaPagerView = {
         let colors = [UIColor.mo_main(), UIColor.mo_lightBlack(), UIColor.mo_main(),UIColor.whiteColor()]
-        let vcs = [UIViewController(),UIViewController(),UIViewController(),UIViewController()]
-        let pagerView = NinaPagerView(frame: CGRect.zero, withTitles: ["全部","应用体验过", "问卷调查", "其他"], withVCs: vcs)
+        let vcs = [TaskDetailController(),TaskDetailController(),TaskDetailController(),TaskDetailController()]
+        vcs[0].taskDetailType = .all
+        vcs[0].title = "全部"
+        vcs[1].taskDetailType = .appExperience
+        vcs[1].title = "应用体验"
+        vcs[2].taskDetailType = .handbill
+        vcs[2].title = "问卷调查"
+        vcs[3].taskDetailType = .other
+        vcs[3].title = "其他"
+        
+        
+        let pagerView = NinaPagerView(frame: CGRect.zero, withTitles: ["全部","应用体验", "问卷调查", "其他"], withVCs: vcs)
         return pagerView
     }()
 }

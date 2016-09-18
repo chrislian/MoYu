@@ -61,9 +61,6 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
     @IBOutlet weak var tableView: UITableView!
     
     lazy var messageModel = MessageCenterModel()
-    
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
 }
 
 extension MessageCenterController: UITableViewDelegate{

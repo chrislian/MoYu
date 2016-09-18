@@ -126,10 +126,6 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
             menuView.cityLabel.text = newValue
         }
     }
-    
-    //alert 
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension HomeMenuController:UITableViewDelegate{

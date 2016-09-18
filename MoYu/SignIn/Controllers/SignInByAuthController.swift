@@ -138,11 +138,6 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
     
     private var countDownButton:UIButton?
     private var countDownTimer:NSTimer?
-    
-    //alertview
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    
 }
 
 extension SignInByAuthController : UITextFieldDelegate{

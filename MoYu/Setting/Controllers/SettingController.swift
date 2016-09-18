@@ -71,11 +71,6 @@ class SettingController: UIViewController,PraseErrorType, AlertViewType {
     private let datas:[[String]] = [["常用地址","密码修改","账号绑定","音效开关","微信免支付"],
                                          ["用户指南"],
                                          ["关于应用","法律条款","用户反馈"]]
-    
-    //alert
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
-    
 }
 
 // MARK: - UITableView delegate

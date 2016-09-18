@@ -117,6 +117,10 @@
 		83C593161D59ACB000699A01 /* ParttimeJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593151D59ACB000699A01 /* ParttimeJobCell.swift */; };
 		83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C593171D59B41000699A01 /* ParttimeJobView.swift */; };
 		83CE8A8F1D5F2FC30082208D /* LegalProvisionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CE8A8E1D5F2FC30082208D /* LegalProvisionsController.swift */; };
+		83D3F09C1D8974CF0017DCB2 /* TaskDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D3F09B1D8974CF0017DCB2 /* TaskDetailController.swift */; };
+		83D3F09E1D89806B0017DCB2 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D3F09D1D89806B0017DCB2 /* TaskModel.swift */; };
+		83D3F0A31D8987EF0017DCB2 /* TaskDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D3F0A11D8987EF0017DCB2 /* TaskDetailCell.swift */; };
+		83D3F0A41D8987EF0017DCB2 /* TaskDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D3F0A21D8987EF0017DCB2 /* TaskDetailCell.xib */; };
 		83D7A4351D5F006D00C28F31 /* RefreshViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */; };
 		83D7A43B1D5F05AE00C28F31 /* ActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */; };
 		83D7A43C1D5F05AE00C28F31 /* ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A43A1D5F05AE00C28F31 /* ActivityIndicatorView.m */; };
@@ -277,6 +281,10 @@
 		83C593151D59ACB000699A01 /* ParttimeJobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobCell.swift; sourceTree = "<group>"; };
 		83C593171D59B41000699A01 /* ParttimeJobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobView.swift; sourceTree = "<group>"; };
 		83CE8A8E1D5F2FC30082208D /* LegalProvisionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalProvisionsController.swift; sourceTree = "<group>"; };
+		83D3F09B1D8974CF0017DCB2 /* TaskDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailController.swift; sourceTree = "<group>"; };
+		83D3F09D1D89806B0017DCB2 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		83D3F0A11D8987EF0017DCB2 /* TaskDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailCell.swift; sourceTree = "<group>"; };
+		83D3F0A21D8987EF0017DCB2 /* TaskDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailCell.xib; sourceTree = "<group>"; };
 		83D7A4341D5F006D00C28F31 /* RefreshViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewType.swift; sourceTree = "<group>"; };
 		83D7A4371D5F05AE00C28F31 /* ActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorAnimation.h; sourceTree = "<group>"; };
 		83D7A4381D5F05AE00C28F31 /* ActivityIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorAnimation.m; sourceTree = "<group>"; };
@@ -840,6 +848,7 @@
 			isa = PBXGroup;
 			children = (
 				83F801EC1D8198E800DC4D60 /* TaskController.swift */,
+				83D3F09B1D8974CF0017DCB2 /* TaskDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -847,6 +856,7 @@
 		83F801EA1D8198C200DC4D60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				83D3F09D1D89806B0017DCB2 /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -855,6 +865,8 @@
 			isa = PBXGroup;
 			children = (
 				83F801EE1D819E5400DC4D60 /* TopTitleView.swift */,
+				83D3F0A11D8987EF0017DCB2 /* TaskDetailCell.swift */,
+				83D3F0A21D8987EF0017DCB2 /* TaskDetailCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1004,6 +1016,7 @@
 				834E3EC51CB0C0F7005B8FC3 /* Personal.storyboard in Resources */,
 				83F801E71D81939A00DC4D60 /* Task.storyboard in Resources */,
 				831C33D11CB0B1E900157B67 /* Assets.xcassets in Resources */,
+				83D3F0A41D8987EF0017DCB2 /* TaskDetailCell.xib in Resources */,
 				831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */,
 				834EC40D1D322BD80046FBEF /* SignIn.storyboard in Resources */,
 				833E212D1CB15CE20046F582 /* InfoPlist.strings in Resources */,
@@ -1294,6 +1307,7 @@
 				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
 				8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */,
 				839C748B1D55FF84003DBC33 /* AutoGraphController.swift in Sources */,
+				83D3F0A31D8987EF0017DCB2 /* TaskDetailCell.swift in Sources */,
 				8389C6551CB0EA5E003E96B1 /* Print.swift in Sources */,
 				833F087A1D674AEA009A4275 /* HotSearchView.swift in Sources */,
 				ED1C6BEF1D6C492F00AC7394 /* CityHeaderView.swift in Sources */,
@@ -1331,6 +1345,7 @@
 				83C593121D59736100699A01 /* RouterType.swift in Sources */,
 				833240B31D575038006C7203 /* FeedbackController.swift in Sources */,
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,
+				83D3F09C1D8974CF0017DCB2 /* TaskDetailController.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
 				8365C85C1D71D7BE00A7604D /* DatePickerController.swift in Sources */,
 				83A680D61D3CB86200570699 /* SignInType.swift in Sources */,
@@ -1338,6 +1353,7 @@
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
+				83D3F09E1D89806B0017DCB2 /* TaskModel.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
 				8347C0C81D76FB84006CCF68 /* PublishTaskCell.swift in Sources */,

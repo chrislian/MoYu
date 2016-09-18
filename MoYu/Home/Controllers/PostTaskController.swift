@@ -121,9 +121,6 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
     
     
     var taskModel = PostTaskModel()
-    
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
 }
 
 // MARK: - UITableViewDelegate

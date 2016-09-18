@@ -152,10 +152,6 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     lazy var sexTypeInfo = ["不限", "女", "男"]
     
     lazy var postModel = PostPartTimeJobModel()
-    
-    //alert 
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
 }
 
 //MARK: - UITableView delegate

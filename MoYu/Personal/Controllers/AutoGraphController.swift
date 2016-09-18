@@ -99,10 +99,6 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
     }()
     
     var autograph:String = ""
-    
-    //mark 
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
 }
 
 extension AutoGraphController: UITextFieldDelegate{

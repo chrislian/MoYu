@@ -99,10 +99,6 @@ class ChangeNicknameController: UIViewController,PraseErrorType,AlertViewType {
     }()
     
     var nickname:String = ""
-    
-    //mark
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
 }
 
 extension ChangeNicknameController: UITextFieldDelegate{

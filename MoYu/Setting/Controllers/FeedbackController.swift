@@ -87,10 +87,6 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
         actionSheet.showDestructiveButton = false
         return actionSheet
     }()
-    
-    //alert
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension FeedbackController: YYTextViewDelegate{

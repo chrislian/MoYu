@@ -11,9 +11,6 @@ import Async
 
 protocol AlertViewType {
     
-    var alertView : OLGhostAlertView { set get }
-    var alertLock : NSLock { get set }
-    
     func showAlert(message aTitle:String, subTitle:String?, timout:NSTimeInterval, forced:Bool, completed:(Void->Void)?)
     
     func showAlert(customView view: UIView, timeout: NSTimeInterval , backgroundColor: UIColor, completed: (Void -> Void)?)
@@ -22,7 +19,17 @@ protocol AlertViewType {
 }
 
 extension AlertViewType{
-
+    
+    var alertView: OLGhostAlertView{
+        
+        return MoAlertView.shareInstance.alertView
+    }
+    
+    var alertLock:NSLock{
+        
+        return MoAlertView.shareInstance.alertLock
+    }
+    
     func showAlert(message aTitle:String, subTitle:String? = nil, timout:NSTimeInterval = 2, forced:Bool = false, completed:(Void->Void)? = nil){
         
         Async.main {
@@ -49,6 +56,7 @@ extension AlertViewType{
     func showAlert(customView view: UIView, timeout: NSTimeInterval = 2, backgroundColor: UIColor = UIColor.lightGrayColor() ,completed: (Void -> Void)? = nil){
         
         Async.main {
+
             if self.alertView.visible{
                 self.alertView.hide()
             }
@@ -69,10 +77,11 @@ extension AlertViewType{
             self.alertView.hide(true)
         }
     }
-    
 }
 
-class AlertView : AlertViewType{
+private class MoAlertView : AlertViewType{
+    
+    static let shareInstance = MoAlertView()
     
     lazy var alertView = OLGhostAlertView()
     lazy var alertLock = NSLock()

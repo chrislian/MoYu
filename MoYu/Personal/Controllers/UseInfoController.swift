@@ -127,10 +127,6 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         alert.addAction(destrctiveAction)
         return alert
     }()
-
-    //alert
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension UseInfoController:UITableViewDelegate{

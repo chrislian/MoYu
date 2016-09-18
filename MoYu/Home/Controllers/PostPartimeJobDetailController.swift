@@ -135,10 +135,6 @@ class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertView
         button.layer.masksToBounds = true
         return button
     }()
-    
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    
 }
 
 extension PostPartimeJobDetailController: YYTextViewDelegate{

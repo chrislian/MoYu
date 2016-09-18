@@ -126,9 +126,6 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         return button
     }()
     
-    //alert
-    var alertLock: NSLock = NSLock()
-    var alertView: OLGhostAlertView = OLGhostAlertView()
 }
 
 extension AboutJobsController: UITableViewDelegate{

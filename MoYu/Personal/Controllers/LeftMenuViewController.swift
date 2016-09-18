@@ -165,11 +165,6 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
         imagePicker.allowsEditing = true
         return imagePicker
     }()
-    
-    //alert
-    var alertView: OLGhostAlertView = OLGhostAlertView()
-    var alertLock: NSLock = NSLock()
-    
 }
 
 //MARK: - UITableView delegate

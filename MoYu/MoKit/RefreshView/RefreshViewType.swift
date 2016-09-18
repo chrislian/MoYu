@@ -10,7 +10,7 @@ import UIKit
 
 protocol RefreshViewType {
     
-    var refreshScrollView: UIScrollView { set get }
+    var refreshScrollView: UIScrollView { get }
     
     func refreshAction()
 }
