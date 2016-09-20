@@ -6,7 +6,7 @@ use_frameworks!
 target 'MoYu' do
 #objective-c
 #pod 'SVProgressHUD',    '~> 2.0'
-pod 'YYText',           '~> 1.0'
+pod 'YYText',           '~> 1.0.7'
 pod 'REFrostedViewController', '~> 2.0'
 pod 'MJRefresh',    '~> 3.0'
 pod 'BaiduMapKit',   '~> 2.0'

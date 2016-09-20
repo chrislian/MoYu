@@ -19,7 +19,7 @@ PODS:
   - Spring (1.0.3)
   - SwiftDate (3.0.8)
   - SwiftyJSON (2.3.2)
-  - YYText (1.0.5)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -38,7 +38,7 @@ DEPENDENCIES:
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftDate (~> 3.0)
   - SwiftyJSON (~> 2.0)
-  - YYText (~> 1.0)
+  - YYText (~> 1.0.7)
 
 EXTERNAL SOURCES:
   Spring:
@@ -68,8 +68,8 @@ SPEC CHECKSUMS:
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: bbb6e4cd0d68d6e144bcaaf0c8e44c7e38023a74
+PODFILE CHECKSUM: f12dcafcb41309a8b75853a415120b9f016131b3
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.2
