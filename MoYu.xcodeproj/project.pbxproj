@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		15D37867C79F4DED7F7C7CDB /* Pods_MoYu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA126A58D4CBA2C3226DFD8 /* Pods_MoYu.framework */; };
 		830B66281D728A2E0070CF8C /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 830B66271D728A2E0070CF8C /* city.plist */; };
+		830C06751D91853000C94374 /* TaskAppTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C06741D91853000C94374 /* TaskAppTestController.swift */; };
+		830C06771D91855B00C94374 /* TaskHandbillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C06761D91855B00C94374 /* TaskHandbillController.swift */; };
 		831632AE1D2EA3E300205211 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831632AD1D2EA3E300205211 /* Remote.swift */; };
 		831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33C91CB0B1E900157B67 /* AppDelegate.swift */; };
 		831C33CF1CB0B1E900157B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831C33CD1CB0B1E900157B67 /* Main.storyboard */; };
@@ -54,6 +56,7 @@
 		834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834EC4181D3287560046FBEF /* SignInByAuthView.swift */; };
 		83558FF61D5E0CBA008D5883 /* AboutJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */; };
 		8365C85C1D71D7BE00A7604D /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365C85B1D71D7BE00A7604D /* DatePickerController.swift */; };
+		8375F53D1D9621A2006EBC7B /* TaskStepDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375F53C1D9621A2006EBC7B /* TaskStepDetailCell.swift */; };
 		83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECC1D58679100CD6587 /* MessageCenterController.swift */; };
 		83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */; };
 		83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */; };
@@ -163,6 +166,8 @@
 		6778D3C039A2DAB742A101AD /* Pods-MoYuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		752A02BA78A64F04167261F4 /* Pods-MoYuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuTests/Pods-MoYuTests.release.xcconfig"; sourceTree = "<group>"; };
 		830B66271D728A2E0070CF8C /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
+		830C06741D91853000C94374 /* TaskAppTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAppTestController.swift; sourceTree = "<group>"; };
+		830C06761D91855B00C94374 /* TaskHandbillController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskHandbillController.swift; sourceTree = "<group>"; };
 		831632AD1D2EA3E300205211 /* Remote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 		831C33C61CB0B1E900157B67 /* MoYu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoYu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		831C33C91CB0B1E900157B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 		834EC4181D3287560046FBEF /* SignInByAuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByAuthView.swift; sourceTree = "<group>"; };
 		83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutJobModel.swift; sourceTree = "<group>"; };
 		8365C85B1D71D7BE00A7604D /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		8375F53C1D9621A2006EBC7B /* TaskStepDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStepDetailCell.swift; sourceTree = "<group>"; };
 		83829ECC1D58679100CD6587 /* MessageCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterController.swift; sourceTree = "<group>"; };
 		83829ECE1D586A9100CD6587 /* MessageCenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterCell.swift; sourceTree = "<group>"; };
 		83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterModel.swift; sourceTree = "<group>"; };
@@ -849,6 +855,8 @@
 			children = (
 				83F801EC1D8198E800DC4D60 /* TaskController.swift */,
 				83D3F09B1D8974CF0017DCB2 /* TaskDetailController.swift */,
+				830C06741D91853000C94374 /* TaskAppTestController.swift */,
+				830C06761D91855B00C94374 /* TaskHandbillController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -867,6 +875,7 @@
 				83F801EE1D819E5400DC4D60 /* TopTitleView.swift */,
 				83D3F0A11D8987EF0017DCB2 /* TaskDetailCell.swift */,
 				83D3F0A21D8987EF0017DCB2 /* TaskDetailCell.xib */,
+				8375F53C1D9621A2006EBC7B /* TaskStepDetailCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1360,6 +1369,7 @@
 				83D965131D52DA7200484F14 /* UserInfo.swift in Sources */,
 				83C593121D59736100699A01 /* RouterType.swift in Sources */,
 				833240B31D575038006C7203 /* FeedbackController.swift in Sources */,
+				830C06751D91853000C94374 /* TaskAppTestController.swift in Sources */,
 				83BCD6241D471E1B00FA4388 /* ConsumeHistoryModel.swift in Sources */,
 				83D3F09C1D8974CF0017DCB2 /* TaskDetailController.swift in Sources */,
 				838E85091D294CC100C992CC /* NSDateExtension.swift in Sources */,
@@ -1394,8 +1404,10 @@
 				833240B11D574F9D006C7203 /* AccountBindingModel.swift in Sources */,
 				ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */,
 				833240AE1D574F9D006C7203 /* AccountBindingController.swift in Sources */,
+				8375F53D1D9621A2006EBC7B /* TaskStepDetailCell.swift in Sources */,
 				838CF1211D636136002BDC24 /* SelectCityController.swift in Sources */,
 				838E84F01D29492200C992CC /* HomeMenuView.swift in Sources */,
+				830C06771D91855B00C94374 /* TaskHandbillController.swift in Sources */,
 				833240B01D574F9D006C7203 /* UserGuideController.swift in Sources */,
 				833240971D56E579006C7203 /* MoAlert.swift in Sources */,
 				838E84E71D29492200C992CC /* FindWorkController.swift in Sources */,

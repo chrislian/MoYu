@@ -26,7 +26,16 @@ class TaskController: UIViewController {
         pagerView = NinaPagerView()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let vc = segue.destinationViewController as? TaskAppTestController{
+            vc.taskModel = selectModel
+        }
+        
+    }
+    
     //MARK: - private method
+    
     private func setupView(){
         
         titleView.tapClourse = { [unowned self] type in
@@ -39,26 +48,59 @@ class TaskController: UIViewController {
         pagerView.frame = view.bounds
     }
     
+    private func taskDetail(by type:TaskDetailType) -> TaskDetailController{
+        
+        let vc = TaskDetailController()
+        vc.taskDetailType = type
+        
+        switch type{
+        case .all:
+            vc.title = "全部"
+        case .appExperience:
+            vc.title = "应用体验"
+        case .handbill:
+            vc.title = "问卷调查"
+        case .other:
+            vc.title = "其他"
+        }
+        
+        vc.selectClourse = { [unowned self] (type,model) in
+            
+            self.selectModel = model
+            
+            switch type {
+            case .appExperience:
+                self.performSegueWithIdentifier(SB.Task.Segue.appExperience, sender: nil)
+            case .handbill:
+                self.performSegueWithIdentifier(SB.Task.Segue.handbill, sender: nil)
+            default:
+                break
+            }
+        }
+        return vc
+    }
+    
     
     //MARK: - var & let
-    lazy var titleView: TopTitleView = {
+    private lazy var titleView: TopTitleView = {
         let view = TopTitleView(frame: CGRect(x: 0, y: 0, width: 240, height: 43 ), type:.middle)
         return view
     }()
     
-    var pagerView: NinaPagerView = {
-        let colors = [UIColor.mo_main(), UIColor.mo_lightBlack(), UIColor.mo_main(),UIColor.whiteColor()]
-        let vcs = [TaskDetailController(),TaskDetailController(),TaskDetailController(),TaskDetailController()]
-        vcs[0].taskDetailType = .all
-        vcs[0].title = "全部"
-        vcs[1].taskDetailType = .appExperience
-        vcs[1].title = "应用体验"
-        vcs[2].taskDetailType = .handbill
-        vcs[2].title = "问卷调查"
-        vcs[3].taskDetailType = .other
-        vcs[3].title = "其他"
+    private lazy var pagerView: NinaPagerView = {
+    
+        let controllers = (0...3).flatMap{ TaskDetailType(rawValue: $0) }.map( self.taskDetail )
         
-        let pagerView = NinaPagerView(frame: CGRect.zero, withTitles: ["全部","应用体验", "问卷调查", "其他"], withVCs: vcs)
+        let titles = controllers.flatMap{ $0.title }
+
+        let pagerView = NinaPagerView(frame: CGRect.zero, withTitles: titles, withVCs: controllers)
+        
+        pagerView.selectTitleColor = UIColor.mo_main()
+        pagerView.unSelectTitleColor = UIColor.mo_lightBlack()
+        pagerView.underlineColor = UIColor.mo_main()
+        
         return pagerView
     }()
+    
+    private var selectModel:TaskModel?
 }

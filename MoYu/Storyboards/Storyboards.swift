@@ -101,11 +101,12 @@ struct SB {
     //MARK: - task storyboard
     struct Task {
         struct Cell {
-            
+            static let appExperience = "cellAppExperience"
         }
         
         struct Segue {
-            
+            static let appExperience = "segueTaskAppExperience"
+            static let handbill = "segueHandbill"
         }
         
         static var root:UIViewController?{
