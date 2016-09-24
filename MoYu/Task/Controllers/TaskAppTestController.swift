@@ -16,8 +16,7 @@ final class TaskAppTestController: UIViewController {
 
         setupView()
         
-        let title = self.taskModel?.name ?? "应用体验"
-        mo_navigationBar(title: title)
+        mo_navigationBar(title: "任务详情")
     }
     
     //MARK: - event response
@@ -89,7 +88,7 @@ extension TaskAppTestController: UITableViewDelegate{
         cell.selectionStyle = .None
         
         if let cell = cell as? TaskDetailCell, model = taskModel {
-            cell.update(item: model)
+            cell.update(item: model, onlyContent:true)
         }else if let cell = cell as? TaskStepDetailCell, model = taskModel{
             if indexPath.section == 1{
                 cell.update(model: model, isStep: true)

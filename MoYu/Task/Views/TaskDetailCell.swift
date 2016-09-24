@@ -28,20 +28,42 @@ class TaskDetailCell: UITableViewCell {
         return cell
     }
     
-    func update(item model:TaskModel){
+    func update(item model:TaskModel, onlyContent:Bool = false){
         
         avatorImageView.mo_loadRoundImage("", radius: avatorImageView.bounds.size.width/2)
         
-        titleLabel.text = model.name
-        
-        contentLabel.text = model.content
-        
-        stepLabel.text = model.step
-        
-        amountLabel.text = String(format: "¥%.02f元", model.commission)
+        if onlyContent{
+            titleLabel.text = ""
+            
+            contentLabel.text = model.name
+            
+            stepLabel.text = ""
+        }else{
+            
+            titleLabel.text = model.name
+            
+            contentLabel.text = model.content
+            
+            stepLabel.text = model.step
+        }
+        amountLabel.attributedText = commission(model.commission)
     }
     
     //MARK: - private method
+    
+    private func commission( value:Double)->NSAttributedString{
+        
+        let color = UIColor ( red: 1.0, green: 0.502, blue: 0.0, alpha: 1.0 )
+        let attrString = NSMutableAttributedString()
+        let str1 = NSAttributedString(string: "+ ", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: UIFont.mo_font(.smaller)])
+        let str2 = NSAttributedString(string: String(format: "%0.2f",value), attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: UIFont.mo_font(.biggest)])
+        let str3 = NSAttributedString(string: "元", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: UIFont.mo_font(.smallest)])
+        attrString.appendAttributedString(str1)
+        attrString.appendAttributedString(str2)
+        attrString.appendAttributedString(str3)
+        return attrString
+    }
+    
     private func setupCell(){
         amountLabel.textColor = UIColor.mo_main()
         amountLabel.font = UIFont.mo_font(.biggest)
