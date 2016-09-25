@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NinaPagerView
 
 class TaskController: UIViewController {
 
@@ -23,7 +22,6 @@ class TaskController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
-        pagerView = NinaPagerView()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -32,6 +30,19 @@ class TaskController: UIViewController {
             vc.taskModel = selectModel
         }
         
+    }
+    
+    //MARK: - event response
+    
+    @objc private func segmentedControlChanged(){
+        
+        if selectedType.rawValue == segmentedView.selectedIndex{
+            return
+        }
+        
+        guard let type = TaskDetailType(rawValue: segmentedView.selectedIndex) else{ return }
+        
+        selectedType = type
     }
     
     //MARK: - private method
@@ -44,8 +55,19 @@ class TaskController: UIViewController {
             }
         }
         
-        self.view.addSubview(pagerView)
-        pagerView.frame = view.bounds
+        headerView.backgroundColor = UIColor.mo_background()
+        subView.backgroundColor = UIColor.mo_background()
+        
+        headerView.addSubview(segmentedView)
+        
+        addChildViewController(pageController)
+        subView.addSubview(pageController.view)
+        pageController.didMoveToParentViewController(self)
+        
+        pageController.view.snp_makeConstraints { (make) in
+            make.edges.equalTo(subView)
+        }
+        selectedType = .all
     }
     
     private func taskDetail(by type:TaskDetailType) -> TaskDetailController{
@@ -87,20 +109,40 @@ class TaskController: UIViewController {
         return view
     }()
     
-    private lazy var pagerView: NinaPagerView = {
-    
-        let controllers = (0...3).flatMap{ TaskDetailType(rawValue: $0) }.map( self.taskDetail )
+    private lazy var subControllers:[UIViewController] = {
         
-        let titles = controllers.flatMap{ $0.title }
-
-        let pagerView = NinaPagerView(frame: CGRect.zero, withTitles: titles, withVCs: controllers)
-        
-        pagerView.selectTitleColor = UIColor.mo_main()
-        pagerView.unSelectTitleColor = UIColor.mo_lightBlack()
-        pagerView.underlineColor = UIColor.mo_main()
-        
-        return pagerView
+        return (0...3).flatMap{ TaskDetailType(rawValue: $0) }.map( self.taskDetail )
     }()
     
+    
     private var selectModel:TaskModel?
+    
+    private var pageController:UIPageViewController = {
+        let vc = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        vc.view.backgroundColor = UIColor.mo_background()
+        return vc
+    }()
+    
+    private lazy var segmentedView:SegmentedControl = {
+        let control = SegmentedControl(frame: CGRect(x: 0, y: 0, width: MoScreenWidth, height: 36))
+        control.segments = ["全部","应用体验","问卷调查","其他"]
+        control.backgroundColor = UIColor.whiteColor()
+        control.selectedTitleColor = UIColor.mo_main()
+        control.titleColor = UIColor.mo_lightBlack()
+        control.highlightedTitleColor = UIColor.mo_lightBlack()
+        control.selectedBackgroundColor = UIColor.mo_main()
+        control.selectedBackgroundViewHeight = 2
+        control.titleFontSize = 15
+        control.addTarget(self, action: #selector(TaskController.segmentedControlChanged), forControlEvents: .TouchUpInside)
+        return control
+    }()
+    
+    private var selectedType:TaskDetailType = .all{
+        didSet{
+
+            pageController.setViewControllers([subControllers[selectedType.rawValue]], direction: .Forward, animated: true, completion: nil)
+        }
+    }
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var subView: UIView!
 }

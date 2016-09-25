@@ -34,6 +34,8 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
         beginRefresh()
     }
     
+    
+    
     //MARK: - private method
     private func setupView(){
         
@@ -41,6 +43,9 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
         
         view.addSubview(tableView)
         tableView.frame = CGRect(origin: CGPoint(x: 0,y: -32), size: CGSize(width: MoScreenWidth, height: view.frame.size.height - 50))
+//        tableView.snp_makeConstraints { (make) in
+//            make.left.right.top.bottom.equalTo(view)
+//        }
     }
 
     //MARK: - var & let
@@ -56,7 +61,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
         tableView.separatorStyle = .None
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.tableHeaderView = UIView()
         tableView.registerNib(UINib(nibName: String(TaskDetailCell), bundle: nil),
                               forCellReuseIdentifier: TaskDetailCell.identifier)
         return tableView

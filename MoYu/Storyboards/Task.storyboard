@@ -17,10 +17,34 @@
                     <view key="view" contentMode="scaleToFill" id="ZMs-Fj-igY">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dq-aV-D2j">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="3Gp-fD-XTs"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzL-57-zaY">
+                                <rect key="frame" x="-4" y="36" width="383" height="567"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OzL-57-zaY" firstAttribute="leading" secondItem="ZMs-Fj-igY" secondAttribute="leadingMargin" constant="-20" id="2WR-WJ-b6I"/>
+                            <constraint firstItem="0dq-aV-D2j" firstAttribute="leading" secondItem="ZMs-Fj-igY" secondAttribute="leadingMargin" constant="-20" id="BUv-38-uke"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OzL-57-zaY" secondAttribute="trailing" constant="-20" id="G96-Z1-0Xt"/>
+                            <constraint firstItem="cly-4u-Eyg" firstAttribute="top" secondItem="OzL-57-zaY" secondAttribute="bottom" id="GHg-D5-A6g"/>
+                            <constraint firstItem="0dq-aV-D2j" firstAttribute="top" secondItem="Vjt-eF-97T" secondAttribute="bottom" id="JXM-gD-qNz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0dq-aV-D2j" secondAttribute="trailing" constant="-20" id="hsr-xV-6q3"/>
+                            <constraint firstItem="OzL-57-zaY" firstAttribute="top" secondItem="0dq-aV-D2j" secondAttribute="bottom" id="mJf-H3-MzP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v9b-6j-whR"/>
                     <connections>
+                        <outlet property="headerView" destination="0dq-aV-D2j" id="wMk-m2-3Ww"/>
+                        <outlet property="subView" destination="OzL-57-zaY" id="w8S-qV-MLm"/>
                         <segue destination="0oF-8w-neU" kind="show" identifier="segueHandbill" id="ryb-62-cBo"/>
                         <segue destination="5cX-sz-PMa" kind="show" identifier="segueTaskAppExperience" id="siR-h8-Tnh"/>
                     </connections>
