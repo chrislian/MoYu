@@ -19,6 +19,7 @@
 		831C33DF1CB0B1E900157B67 /* MoYuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33DE1CB0B1E900157B67 /* MoYuTests.swift */; };
 		831C33EA1CB0B1E900157B67 /* MoYuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C33E91CB0B1E900157B67 /* MoYuUITests.swift */; };
 		83213EDD1D58C6CB000D8691 /* RecuritCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83213EDC1D58C6CB000D8691 /* RecuritCenterController.swift */; };
+		83253EF41D97765D00F53402 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83253EF31D97765D00F53402 /* SegmentedControl.swift */; };
 		8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B63E1D3B24FF00DF6D78 /* Router.swift */; };
 		8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */; };
 		8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */; };
@@ -182,6 +183,7 @@
 		831C33E91CB0B1E900157B67 /* MoYuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoYuUITests.swift; sourceTree = "<group>"; };
 		831C33EB1CB0B1E900157B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83213EDC1D58C6CB000D8691 /* RecuritCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecuritCenterController.swift; sourceTree = "<group>"; };
+		83253EF31D97765D00F53402 /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedControl.swift; path = MoYu/MoKit/SegmentedControl/SegmentedControl.swift; sourceTree = SOURCE_ROOT; };
 		8327B63E1D3B24FF00DF6D78 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8327B6401D3B365400DF6D78 /* SignInByPaswordeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInByPaswordeView.swift; sourceTree = "<group>"; };
 		8327B6421D3B3D9200DF6D78 /* RegisterProtocolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocolController.swift; sourceTree = "<group>"; };
@@ -428,6 +430,14 @@
 			path = MoYuUITests;
 			sourceTree = "<group>";
 		};
+		83253EF21D9775FB00F53402 /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				83253EF31D97765D00F53402 /* SegmentedControl.swift */,
+			);
+			name = SegmentedControl;
+			sourceTree = "<group>";
+		};
 		8327B6471D3B65C200DF6D78 /* SFHFKeychainUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +498,7 @@
 		833457261D55E04E008FFFF9 /* MoKit */ = {
 			isa = PBXGroup;
 			children = (
+				83253EF21D9775FB00F53402 /* SegmentedControl */,
 				ED1C6BE91D6C3E7B00AC7394 /* CollapsableTable */,
 				837D40B01D59E151003A17EF /* ProgressView */,
 				8332409A1D56FD43006C7203 /* AlertView */,
@@ -1415,6 +1426,7 @@
 				838E84E61D29492200C992CC /* AppCenterCell.swift in Sources */,
 				833240AF1D574F9D006C7203 /* SettingController.swift in Sources */,
 				83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */,
+				83253EF41D97765D00F53402 /* SegmentedControl.swift in Sources */,
 				833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */,
 				838E84F51D29492200C992CC /* LeftMenuViewController.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */,
