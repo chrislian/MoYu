@@ -28,8 +28,9 @@ class TaskController: UIViewController {
         
         if let vc = segue.destinationViewController as? TaskAppTestController{
             vc.taskModel = selectModel
+        }else if let vc = segue.destinationViewController as? TaskHandbillController{
+            vc.taskModel = selectModel
         }
-        
     }
     
     //MARK: - event response
@@ -86,15 +87,19 @@ class TaskController: UIViewController {
             vc.title = "其他"
         }
         
-        vc.selectClourse = { [unowned self] (type,model) in
+        vc.selectClourse = { [unowned self] (model) in
             
             self.selectModel = model
             
-            switch type {
-            case .appExperience:
+            switch model.type {
+            case "1":
                 self.performSegueWithIdentifier(SB.Task.Segue.appExperience, sender: nil)
-            case .handbill:
+            case "2":
                 self.performSegueWithIdentifier(SB.Task.Segue.handbill, sender: nil)
+                
+            case "3":
+                //TODO: - other
+                break
             default:
                 break
             }

@@ -77,7 +77,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     var canLoadMore = false
     
-    var selectClourse:((type:TaskDetailType, model:TaskModel)->Void)?
+    var selectClourse:((model:TaskModel)->Void)?
 }
 
 // MARK: - RefreshViewType
@@ -159,7 +159,7 @@ extension TaskDetailController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        selectClourse?(type: taskDetailType, model: taskItems[indexPath.section])
+        selectClourse?(model: taskItems[indexPath.section])
         
     }
 }
