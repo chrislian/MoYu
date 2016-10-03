@@ -31,6 +31,12 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
         setupView()
 
         addRefreshView()
+//        beginRefresh()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         beginRefresh()
     }
     
