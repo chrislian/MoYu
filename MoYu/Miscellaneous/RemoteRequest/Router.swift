@@ -28,8 +28,8 @@ enum Router {
     case messageCenter//消息中心
     case recruitCenter//招募中心
     
-    case myTaskList(page:Int)//个人发布的兼职列表
-    case myParttimeJobList(page:Int)//获取个人兼职列表
+    case myTaskList(page:Int)//个人接收的兼职和任务列表
+    case myParttimeJobList(page:Int)//获取个人发布的和兼职列表
     case allPartTimeJobList(page:Int, location: MoYuLocation?)//获取所有兼职列表
     
     

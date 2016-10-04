@@ -24,22 +24,96 @@ class ParttimeJobCell: UITableViewCell {
         }
         return cell
     }
-    
-    func update(item type:Int){
+  
+    func update(cellType type:JobManagerCellType){
         
-        
-        if type == 1{
-            progressViewHeightConstraint.constant = 4.0
-            workProgress.isHidden = true
-        }else{
-            progressViewHeightConstraint.constant = 16.0
-            workProgress.isHidden = false
-            workProgress.setProgress(0.68, animated: true)
+        switch type {
+        case .getParttime(let model):
+            updateGet(status: model.status,
+                   title: model.name,
+                   content: model.content,
+                   time: model.createtime,
+                   amount: model.commission)
+            
+        case .getTask(let model):
+            updateGet(status: model.status,
+                   title: model.name,
+                   content: model.content,
+                   time: model.disposetime,
+                   amount: model.commission)
+        case .postTask(let model):
+            
+            updatePost(status: model.status,
+                       title: model.name,
+                       content: model.content,
+                       time: model.createtime,
+                       amount: model.commission,
+                       progress: model.order/model.sum)
+            
+        case .postParttime(let model):
+            updatePost(status: model.status,
+                       title: model.name,
+                       content: model.content,
+                       time: model.createtime,
+                       amount: model.commission,
+                       progress: model.order/model.sum)
         }
+        
     }
     
     
     //MARK: - private method
+    
+    fileprivate func updateGet(status:Int, title:String, content:String, time:Double, amount:Double){
+        
+        if status == 1{
+            statusLabel.text = "进行中"
+        }else if status == 2{
+            statusLabel.text = "等待商家确认"
+        }else{
+            statusLabel.text = ""
+        }
+        
+        titleLabel.text = title
+        briefLabel.text = content
+    
+    
+        let date = Date(timeIntervalSince1970: time)
+        dateLabel.text = Date.mo_stringFromDatetime2(date)
+        
+        amountLabel.text = String(format: "%0.2f元", amount)
+        
+        progressViewHeightConstraint.constant = 0
+        progressView.isHidden = true
+        
+        avatorImageView.mo_loadImage("")
+    }
+    
+    fileprivate func updatePost(status:Int, title:String, content:String,time:Double, amount:Double, progress:Double){
+        if status == 1{
+            statusLabel.text = "进行中"
+        }else if status == 2{
+            statusLabel.text = "已完成"
+        }else{
+            statusLabel.text = ""
+        }
+        titleLabel.text = title
+        briefLabel.text = content
+        
+        let date = Date(timeIntervalSince1970: time)
+        dateLabel.text = Date.mo_stringFromDatetime2(date)
+        
+        amountLabel.text = String(format: "%0.2f元", amount)
+        
+        progressViewHeightConstraint.constant = 16
+        workProgress.isHidden = false
+        
+        workProgress.setProgress(Float(progress), animated: true)
+        
+        avatorImageView.mo_loadImage("")
+    }
+    
+    
     fileprivate func setupCell(){
         
         progressView.backgroundColor = UIColor.white

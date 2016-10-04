@@ -131,6 +131,10 @@
 		83D7A43F1D5F07B300C28F31 /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D7A43E1D5F07B300C28F31 /* RefreshHeaderView.m */; };
 		83D965131D52DA7200484F14 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965121D52DA7200484F14 /* UserInfo.swift */; };
 		83D965151D52DD8C00484F14 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D965141D52DD8C00484F14 /* UserManager.swift */; };
+		83E1BE151DA397340058F7B9 /* MyPostPartTimeJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1BE141DA397340058F7B9 /* MyPostPartTimeJob.swift */; };
+		83E1BE171DA397590058F7B9 /* MyPostTaskJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1BE161DA397590058F7B9 /* MyPostTaskJob.swift */; };
+		83E1BE191DA3AFBD0058F7B9 /* MyGetTaskJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1BE181DA3AFBD0058F7B9 /* MyGetTaskJob.swift */; };
+		83E1BE1B1DA3AFC80058F7B9 /* MyGetPartTimeJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1BE1A1DA3AFC80058F7B9 /* MyGetPartTimeJob.swift */; };
 		83EF606B1CB8919800D20F08 /* AppCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EF606A1CB8919800D20F08 /* AppCenter.storyboard */; };
 		83F675131D549F2000D951AF /* ChangeNicknameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F675121D549F2000D951AF /* ChangeNicknameController.swift */; };
 		83F801E71D81939A00DC4D60 /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F801E61D81939A00DC4D60 /* Task.storyboard */; };
@@ -315,6 +319,10 @@
 		83D7A43E1D5F07B300C28F31 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RefreshHeaderView.m; path = ActivityIndicatorView/RefreshHeaderView.m; sourceTree = "<group>"; };
 		83D965121D52DA7200484F14 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		83D965141D52DD8C00484F14 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		83E1BE141DA397340058F7B9 /* MyPostPartTimeJob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostPartTimeJob.swift; sourceTree = "<group>"; };
+		83E1BE161DA397590058F7B9 /* MyPostTaskJob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostTaskJob.swift; sourceTree = "<group>"; };
+		83E1BE181DA3AFBD0058F7B9 /* MyGetTaskJob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetTaskJob.swift; sourceTree = "<group>"; };
+		83E1BE1A1DA3AFC80058F7B9 /* MyGetPartTimeJob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetPartTimeJob.swift; sourceTree = "<group>"; };
 		83EF606A1CB8919800D20F08 /* AppCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppCenter.storyboard; sourceTree = "<group>"; };
 		83F675121D549F2000D951AF /* ChangeNicknameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNicknameController.swift; sourceTree = "<group>"; };
 		83F801E61D81939A00DC4D60 /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
@@ -793,6 +801,10 @@
 			children = (
 				83BCD6231D471E1B00FA4388 /* ConsumeHistoryModel.swift */,
 				83829ED01D586D4E00CD6587 /* MessageCenterModel.swift */,
+				83E1BE141DA397340058F7B9 /* MyPostPartTimeJob.swift */,
+				83E1BE161DA397590058F7B9 /* MyPostTaskJob.swift */,
+				83E1BE1A1DA3AFC80058F7B9 /* MyGetPartTimeJob.swift */,
+				83E1BE181DA3AFBD0058F7B9 /* MyGetTaskJob.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1349,11 +1361,14 @@
 				83829ED71D588A4600CD6587 /* RecommendView.swift in Sources */,
 				833F087C1D674C06009A4275 /* HotSearchMenuCell.swift in Sources */,
 				8327B6431D3B3D9200DF6D78 /* RegisterProtocolController.swift in Sources */,
+				83E1BE171DA397590058F7B9 /* MyPostTaskJob.swift in Sources */,
 				83BCD6201D47192900FA4388 /* BalanceHeadView.swift in Sources */,
 				83D7A43C1D5F05AE00C28F31 /* ActivityIndicatorView.m in Sources */,
+				83E1BE191DA3AFBD0058F7B9 /* MyGetTaskJob.swift in Sources */,
 				83D7A43B1D5F05AE00C28F31 /* ActivityIndicatorAnimation.m in Sources */,
 				8327B6501D3B666C00DF6D78 /* MODevice.swift in Sources */,
 				83829ED31D586DF900CD6587 /* MoConfig.swift in Sources */,
+				83E1BE1B1DA3AFC80058F7B9 /* MyGetPartTimeJob.swift in Sources */,
 				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
 				833240981D56E579006C7203 /* MoHUD.swift in Sources */,
@@ -1406,6 +1421,7 @@
 				83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
+				83E1BE151DA397340058F7B9 /* MyPostPartTimeJob.swift in Sources */,
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
 				83D3F09E1D89806B0017DCB2 /* TaskModel.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
