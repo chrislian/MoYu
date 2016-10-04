@@ -48,7 +48,7 @@ extension RouterType {
     }
     
     func MOUID()->String{
-        return MODevice.MOUID()!
+        return MODevice.MOUID() ?? ""
     }
     
     func compose(parameters: [String: AnyObject]? = nil) -> [String: AnyObject]{

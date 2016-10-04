@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 let baseUrl = "http://moyu.ushesoft.com/"
 
