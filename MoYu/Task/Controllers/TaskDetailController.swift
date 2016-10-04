@@ -34,7 +34,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
 //        beginRefresh()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         beginRefresh()
@@ -77,7 +77,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     var canLoadMore = false
     
-    var selectClourse:((model:TaskModel)->Void)?
+    var selectClourse:((_ model:TaskModel)->Void)?
 }
 
 // MARK: - RefreshViewType
@@ -159,7 +159,7 @@ extension TaskDetailController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        selectClourse?(model: taskItems[indexPath.section])
+        selectClourse?(taskItems[indexPath.section])
         
     }
 }

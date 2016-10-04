@@ -22,7 +22,7 @@ final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType
     }
     
     //MARK: - event response
-    @IBAction func taskButtonTap(sender: UIButton) {
+    @IBAction func taskButtonTap(_ sender: UIButton) {
         
         guard let model = taskModel else{ return }
         
@@ -40,24 +40,24 @@ final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType
     }
     
     //MARK: - private methods
-    private func updateTaskButton(status status:Int){
+    private func updateTaskButton(status:Int){
         
         taskButton.tag = status
         if status == 0 {
             taskButton.backgroundColor = UIColor.mo_main()
-            taskButton.setTitle("开始任务", forState: .Normal)
-            taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-            taskButton.enabled = true
+            taskButton.setTitle("开始任务", for: .normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            taskButton.isEnabled = true
         }else if status == 1{
             taskButton.backgroundColor = UIColor.mo_main()
-            taskButton.setTitle("确认完成", forState: .Normal)
-            taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-            taskButton.enabled = true
+            taskButton.setTitle("确认完成", for: .normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            taskButton.isEnabled = true
         }else if status == 2{
-            taskButton.backgroundColor = UIColor.grayColor()
-            taskButton.setTitle("等待商家确认", forState: .Normal)
-            taskButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-            taskButton.enabled = false
+            taskButton.backgroundColor = UIColor.gray
+            taskButton.setTitle("等待商家确认", for: .normal)
+            taskButton.setTitleColor(UIColor.white, for: .normal)
+            taskButton.isEnabled = false
         }
     }
     

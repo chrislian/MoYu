@@ -127,12 +127,12 @@ extension Router: RouterType{
             parameters = compose(parameters: ["page": page as AnyObject])
             
         case .taskCategory(let type, let page):
-            parameters = compose(parameters: ["page": page, "type":type.rawValue] )
+            parameters = compose(parameters: ["page": page as AnyObject, "type":type.rawValue as AnyObject] )
             
         case .postTaskStatus(let order, let status):
-            parameters = compose(parameters: ["ordernum":order, "status":status])
+            parameters = compose(parameters: ["ordernum":order as AnyObject, "status":status as AnyObject])
         case .postPartTimeStatus(let order, let status):
-            parameters = compose(parameters: ["ordernum":order, "status":status])
+            parameters = compose(parameters: ["ordernum":order as AnyObject, "status":status as AnyObject])
         }
         
         return parameters

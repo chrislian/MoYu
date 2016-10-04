@@ -24,11 +24,10 @@ class TaskController: UIViewController {
 
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if let vc = segue.destinationViewController as? TaskAppTestController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TaskAppTestController{
             vc.taskModel = selectModel
-        }else if let vc = segue.destinationViewController as? TaskHandbillController{
+        }else if let vc = segue.destination as? TaskHandbillController{
             vc.taskModel = selectModel
         }
     }
@@ -93,9 +92,9 @@ class TaskController: UIViewController {
             
             switch model.type {
             case "1":
-                self.performSegueWithIdentifier(SB.Task.Segue.appExperience, sender: nil)
+                self.performSegue(withIdentifier: SB.Task.Segue.appExperience, sender: nil)
             case "2":
-                self.performSegueWithIdentifier(SB.Task.Segue.handbill, sender: nil)
+                self.performSegue(withIdentifier: SB.Task.Segue.handbill, sender: nil)
                 
             case "3":
                 //TODO: - other

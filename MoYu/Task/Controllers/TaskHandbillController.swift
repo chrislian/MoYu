@@ -22,8 +22,8 @@ class TaskHandbillController: UIViewController,PraseErrorType,AlertViewType {
     }
 
     //MARK: - event response
-    @IBAction func taskButtonTap(sender: UIButton) {
-        
+
+    @IBAction func taskButtonTap(_ sender: UIButton) {
         guard let model = taskModel else{ return }
         
         Router.postPartTimeStatus(order: model.ordernum, status: sender.tag).request { (status, json) in
@@ -38,27 +38,26 @@ class TaskHandbillController: UIViewController,PraseErrorType,AlertViewType {
             }
         }
     }
-    
     //MARK: - private methods
     
-    private func updateTaskButton(status status:Int){
+    private func updateTaskButton(status:Int){
         
         taskButton.tag = status
         if status == 0 {
             taskButton.backgroundColor = UIColor.mo_main()
-            taskButton.setTitle("开始任务", forState: .Normal)
-            taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-            taskButton.enabled = true
+            taskButton.setTitle("开始任务", for: .normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            taskButton.isEnabled = true
         }else if status == 1{
             taskButton.backgroundColor = UIColor.mo_main()
-            taskButton.setTitle("确认完成", forState: .Normal)
-            taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-            taskButton.enabled = true
+            taskButton.setTitle("确认完成", for: .normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            taskButton.isEnabled = true
         }else if status == 2{
-            taskButton.backgroundColor = UIColor.grayColor()
-            taskButton.setTitle("等待商家确认", forState: .Normal)
-            taskButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-            taskButton.enabled = false
+            taskButton.backgroundColor = UIColor.gray
+            taskButton.setTitle("等待商家确认", for: .normal)
+            taskButton.setTitleColor(UIColor.white, for: .normal)
+            taskButton.isEnabled = false
         }
     }
     
@@ -66,12 +65,12 @@ class TaskHandbillController: UIViewController,PraseErrorType,AlertViewType {
         
         tableView.backgroundColor = UIColor.mo_background()
         tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.registerNib(UINib(nibName: String(TaskDetailCell),bundle: nil), forCellReuseIdentifier: TaskDetailCell.identifier)
-        tableView.registerClass(TaskStepDetailCell.self, forCellReuseIdentifier: TaskStepDetailCell.identifier)
+        tableView.register(UINib(nibName: String(describing: TaskDetailCell.self),bundle: nil), forCellReuseIdentifier: TaskDetailCell.identifier)
+        tableView.register(TaskStepDetailCell.self, forCellReuseIdentifier: TaskStepDetailCell.identifier)
     }
     
     //MARK: - var & let
@@ -84,7 +83,7 @@ class TaskHandbillController: UIViewController,PraseErrorType,AlertViewType {
 // MARK: - UITableViewDelegate
 extension TaskHandbillController: UITableViewDelegate{
 
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if section == 0{
             return 0.01
@@ -92,7 +91,7 @@ extension TaskHandbillController: UITableViewDelegate{
         return 30.0
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         func headerLabel(title:String)->UILabel{
             let label = UILabel()
@@ -103,13 +102,13 @@ extension TaskHandbillController: UITableViewDelegate{
         }
         
         if section == 1{
-            return headerLabel("内容")
+            return headerLabel(title: "内容")
         }
         
         return nil
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.section {
         case 0:
@@ -119,13 +118,13 @@ extension TaskHandbillController: UITableViewDelegate{
         }
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
-        if let cell = cell as? TaskDetailCell, model = taskModel {
+        if let cell = cell as? TaskDetailCell, let model = taskModel {
             cell.update(item: model, onlyContent:true)
-        }else if let cell = cell as? TaskStepDetailCell, model = taskModel{
+        }else if let cell = cell as? TaskStepDetailCell, let model = taskModel{
             cell.update(model: model, isStep: false)
         }
     }
@@ -134,15 +133,15 @@ extension TaskHandbillController: UITableViewDelegate{
 // MARK: - UITableViewDataSource
 extension TaskHandbillController: UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    private func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
             return TaskDetailCell.cell(tableView: tableView)
