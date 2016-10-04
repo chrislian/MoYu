@@ -19,14 +19,14 @@ class TaskController: UIViewController {
         setupView()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let vc = segue.destinationViewController as? TaskAppTestController{
+        if let vc = segue.destination as? TaskAppTestController{
             vc.taskModel = selectModel
         }
         
@@ -34,7 +34,7 @@ class TaskController: UIViewController {
     
     //MARK: - event response
     
-    @objc private func segmentedControlChanged(){
+    @objc fileprivate func segmentedControlChanged(){
         
         if selectedType.rawValue == segmentedView.selectedIndex{
             return
@@ -47,11 +47,11 @@ class TaskController: UIViewController {
     
     //MARK: - private method
     
-    private func setupView(){
+    fileprivate func setupView(){
         
         titleView.tapClourse = { [unowned self] type in
             if type != .middle{
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
         
@@ -62,15 +62,15 @@ class TaskController: UIViewController {
         
         addChildViewController(pageController)
         subView.addSubview(pageController.view)
-        pageController.didMoveToParentViewController(self)
+        pageController.didMove(toParentViewController: self)
         
-        pageController.view.snp_makeConstraints { (make) in
+        pageController.view.snp.makeConstraints { (make) in
             make.edges.equalTo(subView)
         }
         selectedType = .all
     }
     
-    private func taskDetail(by type:TaskDetailType) -> TaskDetailController{
+    fileprivate func taskDetail(by type:TaskDetailType) -> TaskDetailController{
         
         let vc = TaskDetailController()
         vc.taskDetailType = type
@@ -92,9 +92,9 @@ class TaskController: UIViewController {
             
             switch type {
             case .appExperience:
-                self.performSegueWithIdentifier(SB.Task.Segue.appExperience, sender: nil)
+                self.performSegue(withIdentifier: SB.Task.Segue.appExperience, sender: nil)
             case .handbill:
-                self.performSegueWithIdentifier(SB.Task.Segue.handbill, sender: nil)
+                self.performSegue(withIdentifier: SB.Task.Segue.handbill, sender: nil)
             default:
                 break
             }
@@ -104,43 +104,43 @@ class TaskController: UIViewController {
     
     
     //MARK: - var & let
-    private lazy var titleView: TopTitleView = {
+    fileprivate lazy var titleView: TopTitleView = {
         let view = TopTitleView(frame: CGRect(x: 0, y: 0, width: 240, height: 43 ), type:.middle)
         return view
     }()
     
-    private lazy var subControllers:[UIViewController] = {
+    fileprivate lazy var subControllers:[UIViewController] = {
         
         return (0...3).flatMap{ TaskDetailType(rawValue: $0) }.map( self.taskDetail )
     }()
     
     
-    private var selectModel:TaskModel?
+    fileprivate var selectModel:TaskModel?
     
-    private var pageController:UIPageViewController = {
-        let vc = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+    fileprivate var pageController:UIPageViewController = {
+        let vc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         vc.view.backgroundColor = UIColor.mo_background()
         return vc
     }()
     
-    private lazy var segmentedView:SegmentedControl = {
+    fileprivate lazy var segmentedView:SegmentedControl = {
         let control = SegmentedControl(frame: CGRect(x: 0, y: 0, width: MoScreenWidth, height: 36))
         control.segments = ["全部","应用体验","问卷调查","其他"]
-        control.backgroundColor = UIColor.whiteColor()
+        control.backgroundColor = UIColor.white
         control.selectedTitleColor = UIColor.mo_main()
         control.titleColor = UIColor.mo_lightBlack()
         control.highlightedTitleColor = UIColor.mo_lightBlack()
         control.selectedBackgroundColor = UIColor.mo_main()
         control.selectedBackgroundViewHeight = 2
         control.titleFontSize = 15
-        control.addTarget(self, action: #selector(TaskController.segmentedControlChanged), forControlEvents: .TouchUpInside)
+        control.addTarget(self, action: #selector(TaskController.segmentedControlChanged), for: .touchUpInside)
         return control
     }()
     
-    private var selectedType:TaskDetailType = .all{
+    fileprivate var selectedType:TaskDetailType = .all{
         didSet{
 
-            pageController.setViewControllers([subControllers[selectedType.rawValue]], direction: .Forward, animated: true, completion: nil)
+            pageController.setViewControllers([subControllers[selectedType.rawValue]], direction: .forward, animated: true, completion: nil)
         }
     }
     @IBOutlet weak var headerView: UIView!

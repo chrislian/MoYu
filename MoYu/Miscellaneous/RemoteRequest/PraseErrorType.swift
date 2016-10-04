@@ -60,7 +60,7 @@ extension PraseErrorType where Self: AlertViewType, Self:UIViewController{
     
     
     //更新用户信息
-    func updateUser(status : NetworkActionStatus ,json : JSON?){
+    func updateUser(_ status : NetworkActionStatus ,json : JSON?){
         if let data = json ,case .success = status{
             UserManager.sharedInstance.update(user: data, phone: UserManager.sharedInstance.user.phonenum)
         }

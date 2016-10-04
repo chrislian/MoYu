@@ -17,19 +17,19 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
 
         setupLeftMenuView()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onReceive(notify:)), name: UserNotification.updateUserInfo, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateUserInfo), object: nil)
         
     }
     
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - event response
     
-    @objc private func onReceive(notify sender:NSNotification){
+    @objc fileprivate func onReceive(notify sender:Notification){
         
-        if sender.name == UserNotification.updateUserInfo{
+        if sender.name.rawValue == UserNotification.updateUserInfo{
             
             leftMenuView.updateHeader(user: UserManager.sharedInstance.user)
         }
@@ -40,14 +40,14 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
      
      - parameter sender:
      */
-    @IBAction func headerTap(sender: UITapGestureRecognizer) {
+    @IBAction func headerTap(_ sender: UITapGestureRecognizer) {
         
         if !UserManager.sharedInstance.isLoginIn{
             self.showSignInView()
             return
         }
         
-        self.performSegueWithIdentifier(SB.Personal.Segue.userInfo, sender: nil)
+        self.performSegue(withIdentifier: SB.Personal.Segue.userInfo, sender: nil)
         
     }
     
@@ -56,7 +56,7 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
      
      - parameter sender:
      */
-    @IBAction func headerImageTap(sender: UITapGestureRecognizer) {
+    @IBAction func headerImageTap(_ sender: UITapGestureRecognizer) {
         
         if !UserManager.sharedInstance.isLoginIn{
             self.showSignInView()
@@ -71,7 +71,7 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
      
      - parameter sender:
      */
-    @IBAction func settingButtonClicked(sender: UIButton) {
+    @IBAction func settingButtonClicked(_ sender: UIButton) {
         
         if !UserManager.sharedInstance.isLoginIn{
             self.showSignInView()
@@ -83,11 +83,11 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
             return
         }
         
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
         
     }
     //MARK: - private method
-    private func setupLeftMenuView(){
+    fileprivate func setupLeftMenuView(){
         leftMenuView.tableView.delegate = self
         leftMenuView.tableView.dataSource = self
         
@@ -98,40 +98,40 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
         activityIndicatorView.stopAnimating()
     }
     
-    private func openPhotoLibrary(){
+    fileprivate func openPhotoLibrary(){
         let openCameraRoll: ProposerAction = { [weak self] in
             
-            guard UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) else {
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
                 self?.alertCanNotAccessCameraRoll()
                 return
             }
             
             if let strongSelf = self {
-                strongSelf.imagePicker.sourceType = .PhotoLibrary
-                strongSelf.presentViewController(strongSelf.imagePicker, animated: true, completion: nil)
+                strongSelf.imagePicker.sourceType = .photoLibrary
+                strongSelf.present(strongSelf.imagePicker, animated: true, completion: nil)
             }
         }
         
-        proposeToAccess(.Photos, agreed: openCameraRoll, rejected: {
+        proposeToAccess(.photos, agreed: openCameraRoll, rejected: {
             self.alertCanNotAccessCameraRoll()
         })
     }
     
-    private func openCameraRoll(){
+    fileprivate func openCameraRoll(){
         let openCamera: ProposerAction = { [weak self] in
             
-            guard UIImagePickerController.isSourceTypeAvailable(.Camera) else {
+            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
                 self?.alertCanNotOpenCamera()
                 return
             }
             
             if let strongSelf = self {
-                strongSelf.imagePicker.sourceType = .Camera
-                strongSelf.presentViewController(strongSelf.imagePicker, animated: true, completion: nil)
+                strongSelf.imagePicker.sourceType = .camera
+                strongSelf.present(strongSelf.imagePicker, animated: true, completion: nil)
             }
         }
         
-        proposeToAccess(.Camera, agreed: openCamera, rejected: {
+        proposeToAccess(.camera, agreed: openCamera, rejected: {
             self.alertCanNotOpenCamera()
         })
     }
@@ -159,7 +159,7 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
         return actionSheet
     }()
     
-    private lazy var imagePicker: UIImagePickerController = {
+    fileprivate lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -171,21 +171,21 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
 extension LeftMenuController: UITableViewDelegate{
 
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let moCell = cell as? LeftMenuCell else{
             return
         }
         
-        moCell.updateCell(cellImages[indexPath.row], text: cellTitles[indexPath.row])
-        moCell.selectionStyle = .None
+        moCell.updateCell(cellImages[(indexPath as NSIndexPath).row], text: cellTitles[(indexPath as NSIndexPath).row])
+        moCell.selectionStyle = .none
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         
         if !UserManager.sharedInstance.isLoginIn{
@@ -193,17 +193,17 @@ extension LeftMenuController: UITableViewDelegate{
             return
         }
         
-        switch indexPath.row{
+        switch (indexPath as NSIndexPath).row{
         case 0:
-            self.performSegueWithIdentifier(SB.Personal.Segue.myPurse, sender: nil)
+            self.performSegue(withIdentifier: SB.Personal.Segue.myPurse, sender: nil)
         case 1:
-            self.performSegueWithIdentifier(SB.Personal.Segue.parttimeJob, sender: nil)
+            self.performSegue(withIdentifier: SB.Personal.Segue.parttimeJob, sender: nil)
         case 2:
-            self.performSegueWithIdentifier(SB.Personal.Segue.messageCenter, sender: nil)
+            self.performSegue(withIdentifier: SB.Personal.Segue.messageCenter, sender: nil)
         case 3:
-            self.performSegueWithIdentifier(SB.Personal.Segue.recommend, sender: nil)
+            self.performSegue(withIdentifier: SB.Personal.Segue.recommend, sender: nil)
         case 4:
-            self.performSegueWithIdentifier(SB.Personal.Segue.recuritCenter, sender: nil)
+            self.performSegue(withIdentifier: SB.Personal.Segue.recuritCenter, sender: nil)
         default :break
         }
         
@@ -214,17 +214,17 @@ extension LeftMenuController: UITableViewDelegate{
 //MARK: - UITableView datasource
 extension LeftMenuController: UITableViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellTitles.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(SB.Personal.Cell.leftMenuCell){
+        if let cell = tableView.dequeueReusableCell(withIdentifier: SB.Personal.Cell.leftMenuCell){
             return cell
         }
         
-        return LeftMenuCell(style: .Default, reuseIdentifier: SB.Personal.Cell.leftMenuCell)
+        return LeftMenuCell(style: .default, reuseIdentifier: SB.Personal.Cell.leftMenuCell)
     }
 }
 
@@ -232,11 +232,11 @@ extension LeftMenuController: UITableViewDataSource{
 extension LeftMenuController: ActionSheetProtocol{
     
     
-    func otherButtons(sheet sheet: ActionSheetController) -> [String] {
+    func otherButtons(sheet: ActionSheetController) -> [String] {
         return ["拍照","从手机相册选择"]
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int) {
+    func action(sheet: ActionSheetController, selectedAtIndex: Int) {
         
         if selectedAtIndex == 0{
             openCameraRoll()
@@ -251,10 +251,10 @@ extension LeftMenuController: ActionSheetProtocol{
 
 extension LeftMenuController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
         
         defer {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
         
         let image = image.largestCenteredSquareImage().resizeToTargetSize(CGSize(width: 100, height: 100))

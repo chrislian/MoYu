@@ -9,7 +9,7 @@
 import Foundation
 
 enum AccountType:Int {
-    case QQ,WeChat,Weibo,Phone
+    case qq,weChat,weibo,phone
 }
 
 struct AccountItem {
@@ -24,10 +24,10 @@ struct MOAccountBindingModel {
     let accounts:[AccountItem]
     
     init(){
-        let qq = AccountItem(isBinding: true, name: "QQ", status: "331713696",type: .QQ)
-        let wechat = AccountItem(isBinding: false, name: "微信", status: "",type: .WeChat)
-        let weibo = AccountItem(isBinding: true, name: "微博", status: "公子连",type: .Weibo)
-        let phone = AccountItem(isBinding: true, name: "手机", status: "18350210050",type:.Phone)
+        let qq = AccountItem(isBinding: true, name: "QQ", status: "331713696",type: .qq)
+        let wechat = AccountItem(isBinding: false, name: "微信", status: "",type: .weChat)
+        let weibo = AccountItem(isBinding: true, name: "微博", status: "公子连",type: .weibo)
+        let phone = AccountItem(isBinding: true, name: "手机", status: "18350210050",type:.phone)
         
         accounts = [qq,wechat,weibo,phone]
     }

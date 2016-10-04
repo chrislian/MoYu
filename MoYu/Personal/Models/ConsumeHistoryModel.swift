@@ -10,13 +10,13 @@ import Foundation
 
 struct ConsumeHistoryItem{
     
-    let date:NSDate
+    let date:Date
     let imageUrl:String
     let consume:Int
     let detail:String
     
     init(){
-        date = NSDate()
+        date = Date()
         imageUrl = ""
         consume = 100
         detail = "话费充值 18350210050"

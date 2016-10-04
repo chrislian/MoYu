@@ -126,7 +126,7 @@ extension SB{
      
      - returns: UIViewController
      */
-    static func vc(storyboard name:String, bundle:NSBundle? = nil)->UIViewController?{
+    static func vc(storyboard name:String, bundle:Bundle? = nil)->UIViewController?{
         
         return UIStoryboard(name: name, bundle: bundle).instantiateInitialViewController()
     }
@@ -140,8 +140,8 @@ extension SB{
      
      - returns: UIViewController
      */
-    static func vc(storyboard name:String, bundle:NSBundle? = nil, identifier:String)-> UIViewController{
+    static func vc(storyboard name:String, bundle:Bundle? = nil, identifier:String)-> UIViewController{
         
-        return UIStoryboard(name: name, bundle: bundle).instantiateViewControllerWithIdentifier(identifier)
+        return UIStoryboard(name: name, bundle: bundle).instantiateViewController(withIdentifier: identifier)
     }
 }

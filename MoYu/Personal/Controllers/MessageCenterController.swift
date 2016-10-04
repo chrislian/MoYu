@@ -21,7 +21,7 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
         mo_rootLeftBackButton()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.updateMessage()
@@ -31,7 +31,7 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
     //MARK: - event response
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.backgroundColor = UIColor.mo_background()
         tableView.backgroundColor = UIColor.mo_background()
@@ -39,10 +39,10 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
     }
     
-    private func updateMessage(){
+    fileprivate func updateMessage(){
         
         Router.messageCenter.request { (status, json) in
             
@@ -65,28 +65,28 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
 
 extension MessageCenterController: UITableViewDelegate{
 
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10.0
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let cell  = cell as? MessageCenterCell else{
             return
         }
-        cell.update(item: messageModel.items[indexPath.section] )
+        cell.update(item: messageModel.items[(indexPath as NSIndexPath).section] )
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
@@ -98,20 +98,20 @@ extension MessageCenterController: UITableViewDelegate{
 extension MessageCenterController: UITableViewDataSource{
 
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return messageModel.items.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = MessageCenterCell.cell(tableView: tableView)
-        cell.accessoryType = .None
+        cell.accessoryType = .none
         return cell
     }
 }

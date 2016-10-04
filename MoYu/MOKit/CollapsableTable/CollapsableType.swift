@@ -10,8 +10,8 @@ import UIKit
 
 protocol CollapsableHeaderType {
     
-    func open(animated animated:Bool)
-    func close(animated animated:Bool)
+    func open(animated:Bool)
+    func close(animated:Bool)
 }
 
 protocol CollapsableDataType {
@@ -31,13 +31,13 @@ protocol CollapsableSectionHeaderInteractionType{
     
     var collapsableData: [DataType] { get }
     
-    func userTappedView<T: UITableViewHeaderFooterView where T: CollapsableHeaderType>(view: T, atPoint:CGPoint)
+    func userTappedView<T: UITableViewHeaderFooterView>(_ view: T, atPoint:CGPoint) where T: CollapsableHeaderType
 }
 
 
 extension CollapsableSectionHeaderInteractionType where Self: UIViewController {
     
-    func userTappedView<T : UITableViewHeaderFooterView where T : CollapsableHeaderType>(headerView: T, atPoint location: CGPoint) {
+    func userTappedView<T : UITableViewHeaderFooterView>(_ headerView: T, atPoint location: CGPoint) where T : CollapsableHeaderType {
         
         guard let tappedSection = sectionForUserSelection(inTableView: self.collapsableTableView, atTouchLocation: location, inView: headerView) else{ return }
         
@@ -50,21 +50,21 @@ extension CollapsableSectionHeaderInteractionType where Self: UIViewController {
             if tappedSection == section {
                 
                 model.isVisible = !model.isVisible
-                toggleCollapseTableView(atSection: section, dataType: model, inTableView: self.collapsableTableView, usingAnimation: foundOpenUnchosenMenuSection ? .Bottom: .Top, headerType: headerView)
+                toggleCollapseTableView(atSection: section, dataType: model, inTableView: self.collapsableTableView, usingAnimation: foundOpenUnchosenMenuSection ? .bottom: .top, headerType: headerView)
                 
             } else if model.isVisible {
                 model.isVisible = !model.isVisible
                 
                 foundOpenUnchosenMenuSection = true
-                let headerType = self.collapsableTableView.headerViewForSection(section) as? CollapsableHeaderType
-                toggleCollapseTableView(atSection: section, dataType: model, inTableView: self.collapsableTableView, usingAnimation: (tappedSection > section) ? .Top: .Bottom, headerType: headerType)
+                let headerType = self.collapsableTableView.headerView(forSection: section) as? CollapsableHeaderType
+                toggleCollapseTableView(atSection: section, dataType: model, inTableView: self.collapsableTableView, usingAnimation: (tappedSection > section) ? .top: .bottom, headerType: headerType)
             }
             section += 1
         }
         self.collapsableTableView.endUpdates()
     }
     
-    private func toggleCollapseTableView<DataType: CollapsableDataType>(atSection section:Int,
+    fileprivate func toggleCollapseTableView<DataType: CollapsableDataType>(atSection section:Int,
                                                    dataType: DataType,
                                                    inTableView: UITableView,
                                                    usingAnimation: UITableViewRowAnimation,
@@ -73,28 +73,28 @@ extension CollapsableSectionHeaderInteractionType where Self: UIViewController {
     let indexPaths = self.indexPaths(section, menuSection: dataType)
         if dataType.isVisible{
             headerType?.open(animated: true)
-            inTableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: usingAnimation)
+            inTableView.insertRows(at: indexPaths, with: usingAnimation)
         }else{
             headerType?.close(animated: true)
-            inTableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: usingAnimation)
+            inTableView.deleteRows(at: indexPaths, with: usingAnimation)
         }
     }
     
-    private func sectionForUserSelection(inTableView tableView: UITableView, atTouchLocation location:CGPoint, inView view: UIView) -> Int? {
+    fileprivate func sectionForUserSelection(inTableView tableView: UITableView, atTouchLocation location:CGPoint, inView view: UIView) -> Int? {
         
-        for i in 0..<tableView.numberOfSections where view == tableView.headerViewForSection(i){
+        for i in 0..<tableView.numberOfSections where view == tableView.headerView(forSection: i){
             return i
         }
         
         return nil
     }
     
-    private func indexPaths<DataType: CollapsableDataType>(section: Int, menuSection: DataType) -> [NSIndexPath] {
+    fileprivate func indexPaths<DataType: CollapsableDataType>(_ section: Int, menuSection: DataType) -> [IndexPath] {
         
-        var collector = [NSIndexPath]()
+        var collector = [IndexPath]()
         
         for i in 0..<menuSection.items.count{
-            collector.append(NSIndexPath(forRow: i, inSection: section))
+            collector.append(IndexPath(row: i, section: section))
         }
         
         return collector

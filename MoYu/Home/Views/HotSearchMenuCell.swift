@@ -22,11 +22,11 @@ class HotSearchMenuCell: UICollectionViewCell {
     }
     
     // MARK: - private method
-    private func layout(){
+    fileprivate func layout(){
 //        self.backgroundColor = UIColor.redColor()
         self.addSubview(imageView)
 //        imageView.backgroundColor = UIColor.blueColor()
-        imageView.snp_makeConstraints { (make) in
+        imageView.snp.makeConstraints { (make) in
             make.top.equalTo(self)
             make.centerX.equalTo(self)
             make.width.equalTo(53)
@@ -34,12 +34,12 @@ class HotSearchMenuCell: UICollectionViewCell {
         
         self.addSubview(textLabel)
 //        textLabel.backgroundColor = UIColor.orangeColor()
-        textLabel.textAlignment = .Center
+        textLabel.textAlignment = .center
         textLabel.textColor = UIColor.mo_lightBlack()
         textLabel.font = UIFont.mo_font(.smallest)
-        textLabel.snp_makeConstraints { (make) in
+        textLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
-            make.top.equalTo(imageView.snp_bottom).offset(2)
+            make.top.equalTo(imageView.snp.bottom).offset(2)
             make.height.equalTo(15)
             make.bottom.equalTo(self).offset(-10)
             
@@ -50,7 +50,7 @@ class HotSearchMenuCell: UICollectionViewCell {
     
     lazy var imageView :UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()

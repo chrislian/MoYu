@@ -16,8 +16,8 @@ extension UINavigationBar{
      - parameter hide: ture or false
      */
     func mo_hide(hairLine hide:Bool){
-        func findHairLineUnder(view:UIView) -> UIImageView? {
-            if view.isKindOfClass(UIImageView) && view.bounds.height <= 1.0 {
+        func findHairLineUnder(_ view:UIView) -> UIImageView? {
+            if view.isKind(of: UIImageView.self) && view.bounds.height <= 1.0 {
                 return view as? UIImageView
             }
             for subview in view.subviews {
@@ -29,7 +29,7 @@ extension UINavigationBar{
         guard let imageView = findHairLineUnder(self) else{
             return
         }
-        imageView.hidden = hide
+        imageView.isHidden = hide
     }
     
 }

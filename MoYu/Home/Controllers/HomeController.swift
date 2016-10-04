@@ -15,7 +15,7 @@ enum HomeTitleButtonTag:Int {
 
 enum FindPublishWork:Int {
     
-    case FindWork = 100,PublishWork
+    case findWork = 100,publishWork
 }
 
 
@@ -30,13 +30,13 @@ class HomeController: UIViewController {
         navigationController?.mo_hideBackButtonTitle()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.mo_hide(hairLine: true)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         self.navigationController?.navigationBar.mo_hide(hairLine: false)
@@ -50,16 +50,16 @@ class HomeController: UIViewController {
     
 
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let vc = segue.destinationViewController.childViewControllers.last as? HomeMenuController {
+        if let vc = segue.destination.childViewControllers.last as? HomeMenuController {
             vc.location = findWorkVc.location
         }
         
     }
     
     //MARK: - event response
-    @IBAction func titleButtonClicked(sender: AnyObject) {
+    @IBAction func titleButtonClicked(_ sender: AnyObject) {
         guard let buttonTag = HomeTitleButtonTag(rawValue: sender.tag) else{
 //            println("button tag undefine , sender.tag:\(sender.tag)")
             return
@@ -70,28 +70,28 @@ class HomeController: UIViewController {
         case .task:
             println("任务")
             guard let vc = SB.Task.root else{ return }
-            presentViewController(vc, animated: true, completion: nil)
+            present(vc, animated: true, completion: nil)
         case .credit: 
             println("积分购")
         }
     }
-    func leftRightBarButtonClicked(sender:UIBarButtonItem){
+    func leftRightBarButtonClicked(_ sender:UIBarButtonItem){
         if sender.tag == 0 {
             self.view.endEditing(true)
             self.frostedViewController.presentMenuViewController()
         }else if sender.tag == 1{
-            performSegueWithIdentifier(SB.Main.Segue.appCenter, sender: self)
+            performSegue(withIdentifier: SB.Main.Segue.appCenter, sender: self)
         }
     }
     
-    @IBAction func tapGestureHomeMessage(sender: UITapGestureRecognizer) {
+    @IBAction func tapGestureHomeMessage(_ sender: UITapGestureRecognizer) {
         
-        self.performSegueWithIdentifier(SB.Main.Segue.homeMessage, sender: self)
+        self.performSegue(withIdentifier: SB.Main.Segue.homeMessage, sender: self)
     }
     
     //MARK: - private methond
     
-    private func setupHomeView(){
+    fileprivate func setupHomeView(){
         
         self.navigationController?.mo_hideBackButtonTitle()
         self.navigationItem.leftBarButtonItem = leftBarButton
@@ -105,20 +105,20 @@ class HomeController: UIViewController {
         
         self.homeItemView.homeItemClosure = {[unowned self] type in
             switch type {
-            case .GPS:
-                if self.findPublishType == .FindWork{
+            case .gps:
+                if self.findPublishType == .findWork{
                     self.findWorkVc.followMode()
                 }
-            case .Menu:
-                self.performSegueWithIdentifier(SB.Main.Segue.homeMenu, sender: self)
-            case .Search:
-                self.performSegueWithIdentifier(SB.Main.Segue.homeSearch, sender: self)
+            case .menu:
+                self.performSegue(withIdentifier: SB.Main.Segue.homeMenu, sender: self)
+            case .search:
+                self.performSegue(withIdentifier: SB.Main.Segue.homeSearch, sender: self)
             }
         }
     }
     
     
-    private func changeChildView(type:FindPublishWork){
+    fileprivate func changeChildView(_ type:FindPublishWork){
     
         func addFindWorkToChild(){
             
@@ -127,13 +127,13 @@ class HomeController: UIViewController {
             
             self.addChildViewController(findWorkVc)
             self.homeView.mapBaseView.addSubview(findWorkVc.view)
-            findWorkVc.view.snp_makeConstraints { (make) in
+            findWorkVc.view.snp.makeConstraints { (make) in
                 make.edges.equalTo(findWorkVc.view.superview!)
             }
-            findWorkVc.didMoveToParentViewController(self)
+            findWorkVc.didMove(toParentViewController: self)
             
             self.homeView.mapBaseView.addSubview(homeItemView)
-            homeItemView.snp_makeConstraints { (make) in
+            homeItemView.snp.makeConstraints { (make) in
                 make.right.equalTo(homeItemView.superview!).offset(-8)
                 make.bottom.equalTo(homeItemView.superview!).offset(-80)
                 make.width.equalTo(60)
@@ -150,22 +150,22 @@ class HomeController: UIViewController {
             
             self.addChildViewController(publishWorkVc)
             self.homeView.mapBaseView.addSubview(publishWorkVc.view)
-            publishWorkVc.view.snp_makeConstraints { (make) in
+            publishWorkVc.view.snp.makeConstraints { (make) in
                 make.edges.equalTo(publishWorkVc.view.superview!)
             }
-            publishWorkVc.didMoveToParentViewController(self)
+            publishWorkVc.didMove(toParentViewController: self)
         }
         
         switch findPublishType {
-        case .FindWork:
+        case .findWork:
             addFindWorkToChild()
-        case .PublishWork:
+        case .publishWork:
             addPublishWorkToChild()
         }
     }
     
     //MARK: - var & let
-    var findPublishType:FindPublishWork = .FindWork{
+    var findPublishType:FindPublishWork = .findWork{
         didSet{
             if findPublishType != oldValue {
                 changeChildView(findPublishType)
@@ -176,10 +176,10 @@ class HomeController: UIViewController {
     lazy var leftBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
         let image = UIImage(named: "homeLeftTop")
-        button.setBackgroundImage(image, forState: .Normal)
-        button.setTitle("", forState: .Normal)
+        button.setBackgroundImage(image, for: UIControlState())
+        button.setTitle("", for: UIControlState())
         button.tag = 0
-        button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), for: .touchUpInside)
         
         return UIBarButtonItem(customView: button)
     }()
@@ -187,10 +187,10 @@ class HomeController: UIViewController {
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         let image = UIImage(named: "homeRightTop")
-        button.setBackgroundImage(image, forState: .Normal)
-        button.setTitle("", forState: .Normal)
+        button.setBackgroundImage(image, for: UIControlState())
+        button.setTitle("", for: UIControlState())
         button.tag = 1
-        button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), for: .touchUpInside)
         
         return UIBarButtonItem(customView: button)
     }()

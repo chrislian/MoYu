@@ -10,20 +10,23 @@ import Foundation
 
 struct MODevice {
     
-    private static let serviceName = "com.chris.moyu"
-    private static let userName = "MoYu"
+    fileprivate static let serviceName = "com.chris.moyu"
+    fileprivate static let userName = "MoYu"
     
     static func MOUID()->String?{
         
-        if let mouid = try? SFHFKeychainUtils.getPasswordForUsername(userName, andServiceName: serviceName) where !mouid.isEmpty{
-            return mouid
-        }
         
-        if let uuid = UIDevice.currentDevice().identifierForVendor?.UUIDString,
-            let _ = try? SFHFKeychainUtils.storeUsername(userName, andPassword: uuid, forServiceName: serviceName, updateExisting: true){
-            return uuid
-        }
-        println("get MOUID failed")
-        return nil
+        //有问题
+        
+//        if let mouid = try? SFHFKeychainUtils.getPasswordForUsername(userName, andServiceName: serviceName) , !mouid.isEmpty{
+//            return mouid
+//        }
+//        
+//        if let uuid = UIDevice.current.identifierForVendor?.uuidString,
+//            let _ = try? SFHFKeychainUtils.storeUsername(userName, andPassword: uuid, forServiceName: serviceName, updateExisting: true){
+//            return uuid
+//        }
+//        println("get MOUID failed")
+        return UIDevice.current.identifierForVendor?.uuidString
     }
 }

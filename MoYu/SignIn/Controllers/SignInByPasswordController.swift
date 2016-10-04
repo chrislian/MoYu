@@ -10,23 +10,23 @@ import UIKit
 
 private enum TextFieldType:Int{
 
-    case Username = 1
-    case Password
+    case username = 1
+    case password
     
     func maxLength()->Int{
         switch self {
-        case .Username:
+        case .username:
             return 11
-        case .Password:
+        case .password:
             return 25
         }
     }
     
     func minLength()->Int{
         switch self {
-        case .Username:
+        case .username:
             return 11
-        case .Password:
+        case .password:
             return 6
         }
     }
@@ -41,35 +41,35 @@ class SignInByPasswordController: UIViewController {
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.mo_navigationBar(opaque: false)
     }
 
     //MARK: - event reponse
-    func enterButtonClicked(sender:UIButton){
+    func enterButtonClicked(_ sender:UIButton){
         
-        guard let username = signInView.userTextfield.text where !username.isEmpty,
-            let password = signInView.passwordTextFiled.text where !password.isEmpty else{
+        guard let username = signInView.userTextfield.text , !username.isEmpty,
+            let password = signInView.passwordTextFiled.text , !password.isEmpty else{
                 println("手机或密码不能为空")
                 return
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         signInView.userTextfield.delegate = self
-        signInView.userTextfield.tag = TextFieldType.Username.rawValue
+        signInView.userTextfield.tag = TextFieldType.username.rawValue
         
         signInView.passwordTextFiled.delegate = self
-        signInView.passwordTextFiled.tag = TextFieldType.Password.rawValue
+        signInView.passwordTextFiled.tag = TextFieldType.password.rawValue
         
-        signInView.enterButton.addTarget(self, action: #selector(enterButtonClicked), forControlEvents: .TouchUpInside)
+        signInView.enterButton.addTarget(self, action: #selector(enterButtonClicked), for: .touchUpInside)
     }
     
     
@@ -78,12 +78,12 @@ class SignInByPasswordController: UIViewController {
 
 extension SignInByPasswordController:UITextFieldDelegate{
 
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         //
         print("end editing")
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let type = TextFieldType(rawValue: textField.tag) else{  return true }
         

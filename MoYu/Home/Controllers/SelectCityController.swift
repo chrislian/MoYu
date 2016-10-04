@@ -32,20 +32,20 @@ class SelectCityController: UIViewController ,CollapsableSectionHeaderInteractio
     }
 
     //MARK: - private method
-   private func setupTableView(){
+   fileprivate func setupTableView(){
     tableView.delegate = self
     tableView.dataSource = self
     tableView.backgroundColor = UIColor.mo_background()
 //    tableView.separatorStyle = .None
     
-    let headView = UIView(frame:CGRectMake(0,0,MoScreenWidth,80))
+    let headView = UIView(frame:CGRect(x: 0,y: 0,width: MoScreenWidth,height: 80))
     headView.addSubview(locationHeadView)
     tableView.tableHeaderView = headView;
     }
 
-    private func loadLocationData(){
+    fileprivate func loadLocationData(){
         
-        SNLocationManager.shareLocationManager().startUpdatingLocationWithSuccess({ (location, placemark) in
+        SNLocationManager.share().startUpdatingLocation(success: { (location, placemark) in
             if let city = placemark?.locality {
                 self.locationHeadView.locationLab.text = "当前位置：" + city
             }else{
@@ -61,17 +61,17 @@ class SelectCityController: UIViewController ,CollapsableSectionHeaderInteractio
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var locationHeadView = LocationHeadView(frame:CGRectMake(0,0,MoScreenWidth,80))
+    fileprivate var locationHeadView = LocationHeadView(frame:CGRect(x: 0,y: 0,width: MoScreenWidth,height: 80))
     
     /// 综合两份列表。。。取出城市列表，各自的列表都不是很友好
-    private var items: [CityModel] = {
-        guard let path1 = NSBundle.mainBundle().pathForResource("city", ofType: "plist"),
+    fileprivate var items: [CityModel] = {
+        guard let path1 = Bundle.main.path(forResource: "city", ofType: "plist"),
             let stateArray = NSArray(contentsOfFile: path1) as? [[String:AnyObject]] else{
                 return []
         }
         let states = stateArray.flatMap{ $0["state"] as? String }
         
-        guard let path2 = NSBundle.mainBundle().pathForResource("cityData", ofType: "plist"),
+        guard let path2 = Bundle.main.path(forResource: "cityData", ofType: "plist"),
             let dictionary = NSDictionary(contentsOfFile: path2) as? [String: [String]]else{
             return []
         }
@@ -85,7 +85,7 @@ class SelectCityController: UIViewController ,CollapsableSectionHeaderInteractio
     }()
     
     
-    var changeCityClourse: ( String->Void )?
+    var changeCityClourse: ( (String)->Void )?
     
     
     // MARK: - Collapsable
@@ -101,66 +101,66 @@ class SelectCityController: UIViewController ,CollapsableSectionHeaderInteractio
 //MARK: - table view delegate
 extension SelectCityController :UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 1
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let line = UIView()
         line.frame = CGRect(x: 0, y: 0, width: MoScreenWidth, height: 1)
         line.backgroundColor = UIColor.mo_background()
         return line
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         guard let headerType = view as? CollapsableHeaderType else {
             return
         }
         
-        if (items[section].isVisible ?? false) {
+        if (items[section].isVisible ) {
             headerType.open(animated: false)
         } else {
             headerType.close(animated: false)
         }
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.textLabel?.text = self.items[indexPath.section].items[indexPath.row]
+        cell.textLabel?.text = self.items[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         cell.backgroundColor = UIColor.mo_mercury()
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let city = self.items[indexPath.section].items[indexPath.row]
-        let alert = UIAlertController(title: "提示", message: "是否切换到 \(city)?", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
-        let confirmAction = UIAlertAction(title: "确定", style: .Default) { [unowned self] _ in
+        tableView.deselectRow(at: indexPath, animated: true)
+        let city = self.items[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
+        let alert = UIAlertController(title: "提示", message: "是否切换到 \(city)?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: "确定", style: .default) { [unowned self] _ in
             self.changeCityClourse?(city)
-            self.navigationController?.popViewControllerAnimated(true)
+            let _ = self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(cancelAction)
         alert.addAction(confirmAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 // MARK: - 选择区回调
 extension SelectCityController: CitySectionHeaderViewDelegate{
-    func sectionHeaderView(section:Int, open: Bool){
+    func sectionHeaderView(_ section:Int, open: Bool){
         //println("section = \(section), open :\(open)")
     }
 }
@@ -169,18 +169,18 @@ extension SelectCityController: CitySectionHeaderViewDelegate{
 //MARK: - table view data source
 extension SelectCityController: UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let menuSection = items[section]
         
-        return (menuSection.isVisible ?? false) ? menuSection.items.count : 0
+        return (menuSection.isVisible ) ? menuSection.items.count : 0
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("CityHeaderView") as? CityHeaderView
+    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CityHeaderView") as? CityHeaderView
         
         if header == nil{
             header = CityHeaderView(reuseIdentifier: "CityHeaderView")
@@ -196,12 +196,12 @@ extension SelectCityController: UITableViewDataSource{
         return header
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "selectCityIndentifier"
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) else{
             
-            return UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+            return UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
         return cell
     }

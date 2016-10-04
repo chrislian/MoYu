@@ -19,7 +19,7 @@ class PromptController: UIViewController {
         self.setupView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         promptView.animation = "slideUp"
@@ -27,35 +27,35 @@ class PromptController: UIViewController {
     }
     
     //MARK: - event response
-    @objc private func buttonTap(cancel sender:UIButton){
+    @objc fileprivate func buttonTap(cancel sender:UIButton){
         
         promptView.endEditing(true)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @objc private func buttonTap(confirm sender:UIButton){
+    @objc fileprivate func buttonTap(confirm sender:UIButton){
         
         promptView.endEditing(true)
         
         self.confirmClourse?(promptView.textfield.text ?? "")
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         promptView.endEditing(true)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.addSubview(promptView)
-        promptView.snp_makeConstraints { (make) in
+        promptView.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(12)
             make.right.equalTo(self.view).offset(-12)
             make.centerY.equalTo(self.view).offset(-50)
@@ -63,9 +63,9 @@ class PromptController: UIViewController {
         
         promptView.textfield.delegate = self
         
-        promptView.cancelButton.addTarget(self, action: #selector(buttonTap(cancel:)), forControlEvents: .TouchUpInside)
+        promptView.cancelButton.addTarget(self, action: #selector(buttonTap(cancel:)), for: .touchUpInside)
         
-        promptView.confirmButton.addTarget(self, action: #selector(buttonTap(confirm:)), forControlEvents: .TouchUpInside)
+        promptView.confirmButton.addTarget(self, action: #selector(buttonTap(confirm:)), for: .touchUpInside)
     }
     
 
@@ -81,36 +81,36 @@ class PromptController: UIViewController {
      */
     class func instance(title text: String? = nil,
                         confirm: String? = nil,
-                        configClourse: (UITextField->Int)? = nil ) -> PromptController{
+                        configClourse: ((UITextField)->Int)? = nil ) -> PromptController{
         
         let vc = PromptController()
         vc.promptView.titleLabel.text = text
-        vc.promptView.confirmButton.setTitle(confirm, forState: .Normal)
+        vc.promptView.confirmButton.setTitle(confirm, for: UIControlState())
         if let length = configClourse?(vc.promptView.textfield){
             vc.textMaxLength = length
         }
         return vc
     }
     
-    func show(inViewController: UIViewController){
+    func show(_ inViewController: UIViewController){
         
-        self.modalPresentationStyle = .OverCurrentContext
-        inViewController.view.window?.rootViewController?.presentViewController(self, animated: false, completion: { [unowned self] _ in
+        self.modalPresentationStyle = .overCurrentContext
+        inViewController.view.window?.rootViewController?.present(self, animated: false, completion: { [unowned self] _ in
             self.promptView.textfield.becomeFirstResponder()
         })
     }
     
     //MARK: - var & let
-    private let promptView:PromptView = {
+    fileprivate let promptView:PromptView = {
         let view = PromptView(type: .input)
         view.layer.cornerRadius = 3
         view.layer.masksToBounds = true
-        view.layer.borderColor = UIColor.mo_mercury().CGColor
+        view.layer.borderColor = UIColor.mo_mercury().cgColor
         view.layer.borderWidth = 0.7
         return view
     }()
     
-    var confirmClourse:(String->Void)?
+    var confirmClourse:((String)->Void)?
     
     //textfield maxlength
     var textMaxLength = 0
@@ -118,28 +118,28 @@ class PromptController: UIViewController {
 
 extension PromptController: UITextFieldDelegate{
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
         let text = (textField.text)! as NSString
         if text.length > textMaxLength{
-            textField.text = text.substringToIndex(textMaxLength)
+            textField.text = text.substring(to: textMaxLength)
         }
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let text = (textField.text)! as NSString
-        let toBeString = text.stringByReplacingCharactersInRange(range, withString: string)
+        let toBeString = text.replacingCharacters(in: range, with: string)
         if toBeString.characters.count > textMaxLength{
-            textField.text = (toBeString as NSString).substringToIndex(textMaxLength)
+            textField.text = (toBeString as NSString).substring(to: textMaxLength)
             return false
         }
         return true

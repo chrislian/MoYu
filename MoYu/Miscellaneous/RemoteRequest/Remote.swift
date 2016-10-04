@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 import Async
 
-typealias RemoteClourse = (status : NetworkActionStatus ,json : JSON? ) -> Void
+typealias RemoteClourse = (_ status : NetworkActionStatus ,_ json : JSON? ) -> Void
 
 class Remote{
     
@@ -23,12 +23,10 @@ class Remote{
      - parameter parameters: 参数
      - parameter callback:   @see RemoteClourse
      */
-    class func post(url urlString:String, parameters:[String:AnyObject]? = nil ,callback:RemoteClourse){
+    class func post(url urlString:String, parameters:[String:AnyObject]? = nil ,callback:@escaping RemoteClourse){
         
-        Alamofire.request(.POST, urlString, parameters: parameters).responseJSON {
-            
-            println("response:\($0)")
-            
+        Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON {
+             println("response:\($0)")
             self.handleResponse($0, callback: callback)
         }
     }
@@ -40,29 +38,26 @@ class Remote{
      - parameter parameters: 参数
      - parameter callback:   @see RemoteClourse
      */
-    class func get(url urlString:String ,parameters:[String:AnyObject]? = nil, callback:RemoteClourse){
-        Alamofire.request(.GET, urlString, parameters: parameters).responseJSON {
-            
-            self.handleResponse($0, callback: callback)
+    class func get(url urlString:String ,parameters:[String:AnyObject]? = nil, callback:@escaping RemoteClourse){
+
+        Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON {
+             self.handleResponse($0, callback: callback)
         }
     }
     
     //MARK: - private method
-    private class func handleResponse(response:Response<AnyObject, NSError>, callback : RemoteClourse){
+    fileprivate class func handleResponse(_ response:DataResponse<Any>, callback : @escaping RemoteClourse){
         Async.background{
             
             guard let resp = response.response else{
-                if let error = response.result.error {
-                    
-                    let message = error.userInfo["NSLocalizedDescription"] as? String
-
-                    Async.main{  callback(status: .networkFailure(message: message ?? "网络似乎出了点问题.~"), json: nil) }
+                if let error = response.result.error{
+                    Async.main{  callback(.networkFailure(message: error.localizedDescription), nil) }
                 }
-                return
+                return 
             }
             
             if resp.statusCode != 200{
-                Async.main{  callback(status: .networkFailure(message: "网络似乎出了点问题~"), json: nil) }
+                Async.main{  callback(.networkFailure(message: "网络似乎出了点问题~"), nil) }
                 return
             }
             
@@ -75,13 +70,13 @@ class Remote{
             let data = json["data"]
             
             if status == 200{
-                Async.main{ callback (status:.success(message: msg ?? ""),json: data) }
+                Async.main{ callback (.success(message: msg ?? ""),data) }
             }else if status == 202 {
-                Async.main{ callback (status: .userNeedLogin,json: nil) }
+                Async.main{ callback (.userNeedLogin,nil) }
             }else if status == 203 {
-                Async.main{ callback (status:.userFailure(message:"请求服务器发生错误~"), json:nil ) }
+                Async.main{ callback (.userFailure(message:"请求服务器发生错误~"), nil ) }
             }else{
-                Async.main{ callback (status:.userFailure(message: msg ?? "服务器似乎出了点问题~"),json: data) }
+                Async.main{ callback (.userFailure(message: msg ?? "服务器似乎出了点问题~"),data) }
             }
         }
     }

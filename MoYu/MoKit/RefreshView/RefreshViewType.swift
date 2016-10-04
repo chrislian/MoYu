@@ -19,7 +19,7 @@ extension RefreshViewType where Self: UIViewController{
     
     func beginRefresh(){
         
-        guard let headerView = refreshScrollView.mj_header as? RefreshView where !headerView.isRefreshing() else{
+        guard let headerView = refreshScrollView.mj_header as? RefreshView , !headerView.isRefreshing() else{
             return
         }
         
@@ -27,7 +27,7 @@ extension RefreshViewType where Self: UIViewController{
     }
     
     func endRefresh(){
-        guard let headerView = refreshScrollView.mj_header as? RefreshView where headerView.isRefreshing() else{
+        guard let headerView = refreshScrollView.mj_header as? RefreshView , headerView.isRefreshing() else{
             return
         }
         
@@ -41,7 +41,7 @@ extension RefreshViewType where Self: UIViewController{
         }
     }
     
-    func addRefreshView(clourse:Void->Void){
+    func addRefreshView(_ clourse:@escaping (Void)->Void){
         
         refreshScrollView.mj_header = RefreshView.refresh( clourse )
         
@@ -51,7 +51,7 @@ extension RefreshViewType where Self: UIViewController{
 
 private class RefreshView: RefreshHeaderView {
     
-    class func refresh(block:()->Void )->RefreshView {
+    class func refresh(_ block:@escaping ()->Void )->RefreshView {
         let refreshView = RefreshView()
         refreshView.refreshingBlock = block
         return refreshView

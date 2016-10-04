@@ -18,9 +18,9 @@ class ParttimeJobView: UIView {
     }
 
     //MARK: - event response
-    dynamic private func buttonTap(button:UIButton){
+    dynamic fileprivate func buttonTap(_ button:UIButton){
         
-        guard let type = ParttimeJobType(rawValue: button.tag) where buttonType != type else{
+        guard let type = ParttimeJobType(rawValue: button.tag) , buttonType != type else{
             return
         }
         
@@ -28,37 +28,37 @@ class ParttimeJobView: UIView {
         
         self.updateButton(type: type)
         
-        self.changeButtonType?(type:type)
+        self.changeButtonType?(type)
     }
     
     
-    func updateButton(type type:ParttimeJobType){
+    func updateButton(type:ParttimeJobType){
         
         switch type{
         case .recurit:
-            myRecuritButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
+            myRecuritButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
             myRecuritLine.backgroundColor = UIColor.mo_main()
-            myPublicButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-            myPublicLine.backgroundColor = UIColor.whiteColor()
+            myPublicButton.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+            myPublicLine.backgroundColor = UIColor.white
         case .announce:
-            myPublicButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
+            myPublicButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
             myPublicLine.backgroundColor = UIColor.mo_main()
-            myRecuritButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
-            myRecuritLine.backgroundColor = UIColor.whiteColor()
+            myRecuritButton.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+            myRecuritLine.backgroundColor = UIColor.white
         }
     }
     
     //MARK: - private method
     
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.updateButton(type: buttonType)
         
         myRecuritButton.titleLabel?.font = UIFont.mo_font()
         myPublicButton.titleLabel?.font = UIFont.mo_font()
         
-        myRecuritButton.addTarget(self, action: #selector(buttonTap(_:)), forControlEvents: .TouchUpInside)
-        myPublicButton.addTarget(self, action: #selector(buttonTap(_:)), forControlEvents: .TouchUpInside)
+        myRecuritButton.addTarget(self, action: #selector(buttonTap(_:)), for: .touchUpInside)
+        myPublicButton.addTarget(self, action: #selector(buttonTap(_:)), for: .touchUpInside)
         
         myRecuritButton.tag = ParttimeJobType.recurit.rawValue
         myPublicButton.tag = ParttimeJobType.announce.rawValue
@@ -74,5 +74,5 @@ class ParttimeJobView: UIView {
     
     var buttonType = ParttimeJobType.recurit
     
-    var changeButtonType:((type:ParttimeJobType)->Void)?
+    var changeButtonType:((_ type:ParttimeJobType)->Void)?
 }

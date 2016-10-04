@@ -19,7 +19,7 @@ struct AboutJobItem{
     let status: Int
     var zan: Bool
     let userid: String
-    let create_time:NSDate
+    let create_time:Date
     
     init(json:JSON){
         
@@ -32,7 +32,7 @@ struct AboutJobItem{
         zan = json["zan"].boolValue
         userid = json["userid"].stringValue
         
-        create_time = NSDate( timeIntervalSince1970: json["create_time"].doubleValue )
+        create_time = Date( timeIntervalSince1970: json["create_time"].doubleValue )
     }
     
     var avator:String {

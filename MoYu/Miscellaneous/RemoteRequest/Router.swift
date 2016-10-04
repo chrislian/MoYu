@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 let baseUrl = "http://moyu.ushesoft.com/"
 
@@ -50,6 +51,7 @@ enum Router {
 
 extension Router: RouterType{
     
+    
     // MARK: - request parameters
     func parameters() -> [String:AnyObject]? {
         
@@ -57,58 +59,58 @@ extension Router: RouterType{
         
         switch self {
         case .signIn(let phone, let code):
-            parameters = ["type": 2,"device": self.MOUID(),"phonenum": phone,"verify": code]
+            parameters = ["type": 2 as AnyObject,"device": self.MOUID() as AnyObject,"phonenum": phone as AnyObject,"verify": code as AnyObject]
         case .signOut,.financial:
             parameters = compose()
             
         case .authCode(let phone):
-            parameters = ["phonenum" : phone]
+            parameters = ["phonenum" : phone as AnyObject]
             
         case .updateNickname(let name):
-            parameters = compose(parameters: ["nickname": name])
+            parameters = compose(parameters: ["nickname": name as AnyObject])
             
         case .updateAutograph(let autograph):
-            parameters = compose(parameters: ["autograph": autograph])
+            parameters = compose(parameters: ["autograph": autograph as AnyObject])
             
         case .updateSex(let sex):
-            parameters = compose(parameters: ["sex": sex])
+            parameters = compose(parameters: ["sex": sex as AnyObject])
             
         case .updateAge(let age):
-            parameters = compose(parameters: ["age": age])
+            parameters = compose(parameters: ["age": age as AnyObject])
             
         case .updateAvatar(let base64String):
-            parameters = compose(parameters: ["photo": base64String])
+            parameters = compose(parameters: ["photo": base64String as AnyObject])
             
         case .feedback(let type, let title, let content):
-            parameters = compose(parameters: ["type": type, "title": title, "content": content])
+            parameters = compose(parameters: ["type": type as AnyObject, "title": title as AnyObject, "content": content as AnyObject])
             
         case .messageCenter:
-            parameters = compose(parameters: ["category_id": 39])
+            parameters = compose(parameters: ["category_id": 39 as AnyObject])
             
         case .recruitCenter:
-            parameters = compose(parameters: ["category_id": 40])
+            parameters = compose(parameters: ["category_id": 40 as AnyObject])
             
         case .jobZoneList(let page):
-            parameters = compose(parameters: ["page": page])
+            parameters = compose(parameters: ["page": page as AnyObject])
             
         case .myTaskList(let page):
-            parameters = compose(parameters: ["page": page])
+            parameters = compose(parameters: ["page": page as AnyObject])
             
         case .myParttimeJobList(let page):
-            parameters = compose(parameters: ["page": page])
+            parameters = compose(parameters: ["page": page as AnyObject])
             
         case .jobZoneZan(let id, _):
-            parameters = compose(parameters: ["id":id])
+            parameters = compose(parameters: ["id":id as AnyObject])
             
         case .commitJobZone(let message):
-            parameters = compose(parameters: ["memo": message] )
+            parameters = compose(parameters: ["memo": message as AnyObject] )
             
         case .allPartTimeJobList(let page, let location):
             
-            var tmp:[String:AnyObject] = ["page": page]
+            var tmp:[String:AnyObject] = ["page": page as AnyObject]
             if let tmpLocation = location{
-                tmp["latitude"] = tmpLocation.latitude
-                tmp["longitude"] = tmpLocation.longitude
+                tmp["latitude"] = tmpLocation.latitude as AnyObject?
+                tmp["longitude"] = tmpLocation.longitude as AnyObject?
             }
             parameters = compose(parameters: tmp)
         
@@ -118,13 +120,13 @@ extension Router: RouterType{
         case .postTask(let paramter):
             parameters = compose(parameters: paramter)
         case .searchParttimeJob(let page, let keyword):
-            parameters = compose(parameters: ["page":page,"title":keyword])
+            parameters = compose(parameters: ["page":page as AnyObject,"title":keyword as AnyObject])
         
         case .allTask(let page):
-            parameters = compose(parameters: ["page": page])
+            parameters = compose(parameters: ["page": page as AnyObject])
             
         case .taskCategory(let type, let page):
-            parameters = compose(parameters: ["page": page, "type":type.rawValue] )
+            parameters = compose(parameters: ["page": page as AnyObject, "type":type.rawValue as AnyObject] )
         }
         
         return parameters
@@ -152,7 +154,7 @@ extension Router: RouterType{
         case .feedback:
             suffix = "feedback"
             
-        case .messageCenter, recruitCenter:
+        case .messageCenter, .recruitCenter:
             suffix = "getNewsList"
             
         case .jobZoneList:

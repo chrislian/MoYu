@@ -10,10 +10,10 @@ import UIKit
 
 class MyPurseCell: UITableViewCell {
 
-    class func cell(tableView:UITableView)->MyPurseCell{
-        var cell = tableView.dequeueReusableCellWithIdentifier(SB.Personal.Cell.myPurseCell)  as? MyPurseCell
+    class func cell(_ tableView:UITableView)->MyPurseCell{
+        var cell = tableView.dequeueReusableCell(withIdentifier: SB.Personal.Cell.myPurseCell)  as? MyPurseCell
         if cell == nil{
-            cell = MyPurseCell(style: .Default, reuseIdentifier: SB.Personal.Cell.myPurseCell)
+            cell = MyPurseCell(style: .default, reuseIdentifier: SB.Personal.Cell.myPurseCell)
         }
         cell?.setupCell()
         return cell!
@@ -29,8 +29,8 @@ class MyPurseCell: UITableViewCell {
     
     
     //MARK: - pirvate method
-    private func setupCell(){
-        iconImageView.contentMode = .ScaleAspectFit
+    fileprivate func setupCell(){
+        iconImageView.contentMode = .scaleAspectFit
         leftLabel.textColor = UIColor.mo_lightBlack()
         leftLabel.font = UIFont.mo_font()
         

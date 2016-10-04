@@ -19,12 +19,12 @@ extension UISearchBar{
         
         guard let tmpView = self.subviews.first else { return }
         
-        for subview in tmpView.subviews where subview.isKindOfClass(NSClassFromString("UITextField")!){
+        for subview in tmpView.subviews where subview.isKind(of: NSClassFromString("UITextField")!){
             subview.layer.borderWidth = 0.5
             if isSelected{
-                subview.layer.borderColor = UIColor.mo_main().CGColor
+                subview.layer.borderColor = UIColor.mo_main().cgColor
             }else{
-                subview.layer.borderColor = UIColor.mo_mercury().CGColor
+                subview.layer.borderColor = UIColor.mo_mercury().cgColor
             }
             subview.layer.cornerRadius = 14
             subview.layer.masksToBounds = true

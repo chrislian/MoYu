@@ -18,25 +18,25 @@ class HomeMenuCell: UITableViewCell {
 
     //MARK: - public method
     
-    class func cell(tableView tableView:UITableView) -> HomeMenuCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMenu) as? HomeMenuCell else{
-            return HomeMenuCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMenu)
+    class func cell(tableView:UITableView) -> HomeMenuCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SB.Main.Cell.homeMenu) as? HomeMenuCell else{
+            return HomeMenuCell(style: .default, reuseIdentifier: SB.Main.Cell.homeMenu)
         }
         return cell
     }
     
-    func update(item item:HomeMenuModel){
+    func update(item:HomeMenuModel){
         
         cellImageView.image = UIImage(named: "home_menu_sender")
         cellTitleLabel.text = item.content
-        publishDateLabel.text = item.createtime.mo_ToString(.Detail)
+        publishDateLabel.text = item.createtime.mo_ToString(.detail)
         areaLabel.text = item.address
         priceLabel.text = "\(item.commission)¥/天"
     }
     
     
     //MARK: - prvate method
-    private func setupCell(){
+    fileprivate func setupCell(){
         
     }
     

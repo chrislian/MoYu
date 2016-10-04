@@ -18,13 +18,13 @@ class BalanceController: UIViewController {
         mo_navigationBar(title: "财务信息")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.mo_navigationBar(opaque: false)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         navigationController?.mo_navigationBar(opaque: true)
@@ -33,10 +33,10 @@ class BalanceController: UIViewController {
     
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.whiteColor()
-        self.tableView.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
+        self.tableView.backgroundColor = UIColor.white
         
         self.view.addSubview( tableView )
  
@@ -47,7 +47,7 @@ class BalanceController: UIViewController {
         
         tableView.addSubview( self.balanceHeadView )
         
-        tableView.snp_makeConstraints { (make) in
+        tableView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(self.view)
             make.top.equalTo(self.view).offset(-64)
         }
@@ -55,8 +55,8 @@ class BalanceController: UIViewController {
     
     //MARK: - var & let
     
-    private lazy var tableView:UITableView = {
-        let tableView = UITableView(frame: CGRectZero, style: .Grouped)
+    fileprivate lazy var tableView:UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.rowHeight = 55.0
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,7 +65,7 @@ class BalanceController: UIViewController {
     }()
     
     
-    private lazy var cellItems: [ConsumeHistoryItem] = {
+    fileprivate lazy var cellItems: [ConsumeHistoryItem] = {
         var items:[ConsumeHistoryItem] = []
         for i in 0..<10{
             items.append( ConsumeHistoryItem())
@@ -73,8 +73,8 @@ class BalanceController: UIViewController {
         return items
     }()
     
-    private let headerDefaultHeight:CGFloat = 280
-    private lazy var balanceHeadView: BalanceHeadView = {
+    fileprivate let headerDefaultHeight:CGFloat = 280
+    fileprivate lazy var balanceHeadView: BalanceHeadView = {
         let view = BalanceHeadView(frame:CGRect(x: 0, y: -self.headerDefaultHeight, width: self.view.bounds.width, height: self.headerDefaultHeight))
         return view
     }()
@@ -82,30 +82,30 @@ class BalanceController: UIViewController {
 
 extension BalanceController : UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let cell = cell as? BalanceCell else{
             return
         }
         
-        cell.update( cellItems[indexPath.row] )
+        cell.update( cellItems[(indexPath as NSIndexPath).row] )
     }
 }
 
 extension BalanceController : UITableViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellItems.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = BalanceCell.cell(tableView: tableView)
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -114,7 +114,7 @@ extension BalanceController : UITableViewDataSource{
 //MARK: - UIScrollView
 extension BalanceController{
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let y = scrollView.contentOffset.y + 64
         if y < -headerDefaultHeight {

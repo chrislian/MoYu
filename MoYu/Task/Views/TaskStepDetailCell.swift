@@ -29,8 +29,8 @@ class TaskStepDetailCell: UITableViewCell {
     
     class func cell(tableView aTableView:UITableView) ->TaskStepDetailCell{
         
-        guard let cell = aTableView.dequeueReusableCellWithIdentifier( identifier) as? TaskStepDetailCell else{
-            return TaskStepDetailCell(style: .Default, reuseIdentifier: identifier)
+        guard let cell = aTableView.dequeueReusableCell( withIdentifier: identifier) as? TaskStepDetailCell else{
+            return TaskStepDetailCell(style: .default, reuseIdentifier: identifier)
         }
         return cell
     }
@@ -46,19 +46,19 @@ class TaskStepDetailCell: UITableViewCell {
     
     
     //MARK: - private methods
-    private func setupCell(){
+    fileprivate func setupCell(){
         
         contentView.addSubview(stepTextView)
-        stepTextView.snp_makeConstraints { (make) in
-            make.edges.equalTo(contentView).inset(EdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+        stepTextView.snp.makeConstraints { (make) in
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
         }
     }
     
-    private lazy var stepTextView:YYTextView = {
+    fileprivate lazy var stepTextView:YYTextView = {
         let text = YYTextView()
         text.textColor = UIColor.mo_lightBlack()
         text.font = UIFont.mo_font()
-        text.editable = false
+        text.isEditable = false
         return text;
     }()
 }

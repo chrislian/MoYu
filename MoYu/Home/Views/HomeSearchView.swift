@@ -17,7 +17,7 @@ class HomeSearchView: UIView {
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         searchBar.backgroundImage = UIImage()
         searchBar.tintColor = UIColor.mo_main()

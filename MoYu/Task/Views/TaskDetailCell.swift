@@ -20,10 +20,10 @@ class TaskDetailCell: UITableViewCell {
         return "taskDetailCell"
     }
     
-    class func cell(tableView tableView:UITableView)->TaskDetailCell{
+    class func cell(tableView:UITableView)->TaskDetailCell{
 
-        guard let cell = tableView.dequeueReusableCellWithIdentifier( identifier ) as? TaskDetailCell else{
-            return TaskDetailCell(style: .Default, reuseIdentifier: identifier)
+        guard let cell = tableView.dequeueReusableCell( withIdentifier: identifier ) as? TaskDetailCell else{
+            return TaskDetailCell(style: .default, reuseIdentifier: identifier)
         }
         return cell
     }
@@ -51,20 +51,20 @@ class TaskDetailCell: UITableViewCell {
     
     //MARK: - private method
     
-    private func commission( value:Double)->NSAttributedString{
+    fileprivate func commission( _ value:Double)->NSAttributedString{
         
         let color = UIColor ( red: 1.0, green: 0.502, blue: 0.0, alpha: 1.0 )
         let attrString = NSMutableAttributedString()
         let str1 = NSAttributedString(string: "+ ", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: UIFont.mo_font(.smaller)])
         let str2 = NSAttributedString(string: String(format: "%0.2f",value), attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: UIFont.mo_font(.biggest)])
         let str3 = NSAttributedString(string: "元", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: UIFont.mo_font(.smallest)])
-        attrString.appendAttributedString(str1)
-        attrString.appendAttributedString(str2)
-        attrString.appendAttributedString(str3)
+        attrString.append(str1)
+        attrString.append(str2)
+        attrString.append(str3)
         return attrString
     }
     
-    private func setupCell(){
+    fileprivate func setupCell(){
         amountLabel.textColor = UIColor.mo_main()
         amountLabel.font = UIFont.mo_font(.biggest)
         
@@ -77,7 +77,7 @@ class TaskDetailCell: UITableViewCell {
         titleLabel.textColor = UIColor.mo_lightBlack()
         titleLabel.font = UIFont.mo_font(.bigger)
         
-        avatorImageView.contentMode = .ScaleAspectFill
+        avatorImageView.contentMode = .scaleAspectFill
         avatorImageView.clipsToBounds = true
         
     }

@@ -13,52 +13,52 @@ class LocationHeadView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         self.setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         self.setupView()
 //        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         let line0 = self.setupLineView()
         let line1 = self.setupLineView()
         
         self.addSubview(line0)
-        line0.snp_makeConstraints { (make) in
+        line0.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self)
             make.height.equalTo(1)
         }
         
         self.addSubview(locationLab)
-        locationLab.snp_makeConstraints { (make) in
+        locationLab.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(10)
             make.right.equalTo(self).offset(-10)
-            make.top.equalTo(line0.snp_bottom)
+            make.top.equalTo(line0.snp.bottom)
         }
     
         self.addSubview(line1)
-        line1.snp_makeConstraints { (make) in
+        line1.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
-            make.top.equalTo(locationLab.snp_bottom)
+            make.top.equalTo(locationLab.snp.bottom)
             make.height.equalTo(line0)
         }
         
         self.addSubview(subTitleLabel)
-        subTitleLabel.snp_makeConstraints { (make) in
+        subTitleLabel.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(self)
             make.height.equalTo(36)
-            make.top.equalTo(line1.snp_bottom)
+            make.top.equalTo(line1.snp.bottom)
         }
     }
     
     
-   private func setupLineView() -> UIView{
+   fileprivate func setupLineView() -> UIView{
         let lineView = UIView()
         lineView.backgroundColor = UIColor.mo_mercury()
         return lineView
@@ -73,7 +73,7 @@ class LocationHeadView: UIView {
         return label
     }()
     
-    private let subTitleLabel:UILabel = {
+    fileprivate let subTitleLabel:UILabel = {
         let label = UILabel()
         label.backgroundColor = UIColor.mo_background()
         label.text = "    手动选择"

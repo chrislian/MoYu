@@ -55,6 +55,11 @@ static SNLocationManager * _manager = nil;
         NSLog(@"请打开定位服务");
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请打开定位服务，才能使用定位功能" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
         [alertView show];
+//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"抱歉" message:@"请打开定位服务，才能使用定位功能" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil];
+//        [alertController addAction:cancel];
+        
+        
         return;
     }
     self.locationManager.delegate = self;

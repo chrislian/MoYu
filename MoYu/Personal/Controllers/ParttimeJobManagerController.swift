@@ -37,11 +37,11 @@ class ParttimeJobManagerController: UIViewController {
     //MARK: - event response
     func backButton(tap sender:AnyObject){
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.backgroundColor = UIColor.mo_background()
         parttimeJobView.backgroundColor = UIColor.mo_background()
@@ -66,7 +66,7 @@ class ParttimeJobManagerController: UIViewController {
 
 extension ParttimeJobManagerController: UITableViewDelegate{
 
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let cell = cell as? ParttimeJobCell else{ return }
         
@@ -74,8 +74,8 @@ extension ParttimeJobManagerController: UITableViewDelegate{
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
        let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
@@ -86,18 +86,18 @@ extension ParttimeJobManagerController: UITableViewDelegate{
 
 extension ParttimeJobManagerController: UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 10
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = ParttimeJobCell.cell(tableView: tableView)
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

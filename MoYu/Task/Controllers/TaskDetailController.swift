@@ -12,7 +12,7 @@ import UIKit
 enum TaskDetailType:Int {
     case all = 0, appExperience, handbill, other
     
-    func remoteData(page page:Int, clourse:RemoteClourse){
+    func remoteData(page:Int, clourse:@escaping RemoteClourse){
         
         switch self {
         case .all:
@@ -37,13 +37,13 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         view.backgroundColor = UIColor.mo_background()
         
         view.addSubview(tableView)
         tableView.frame = CGRect(origin: CGPoint(x: 0,y: -32), size: CGSize(width: MoScreenWidth, height: view.frame.size.height - 50))
-//        tableView.snp_makeConstraints { (make) in
+//        tableView.snp.makeConstraints { (make) in
 //            make.left.right.top.bottom.equalTo(view)
 //        }
     }
@@ -55,14 +55,14 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     var taskDetailType = TaskDetailType.all
     
     lazy var tableView:UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.backgroundColor = UIColor.mo_background()
         tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = UIView()
-        tableView.registerNib(UINib(nibName: String(TaskDetailCell), bundle: nil),
+        tableView.register(UINib(nibName: String(describing: TaskDetailCell.self), bundle: nil),
                               forCellReuseIdentifier: TaskDetailCell.identifier)
         return tableView
     }()
@@ -71,7 +71,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     var canLoadMore = false
     
-    var selectClourse:((type:TaskDetailType, model:TaskModel)->Void)?
+    var selectClourse:((_ type:TaskDetailType, _ model:TaskModel)->Void)?
 }
 
 // MARK: - RefreshViewType
@@ -90,7 +90,7 @@ extension TaskDetailController: RefreshViewType{
         
     }
     
-    private func loadMoreData(page page:Int){
+    fileprivate func loadMoreData(page:Int){
         
         taskDetailType.remoteData(page: page) {[weak self] (status, json) in
             
@@ -111,7 +111,7 @@ extension TaskDetailController: RefreshViewType{
             if page == 1{
                 self?.taskItems = array
             }else{
-                self?.taskItems.appendContentsOf( array )
+                self?.taskItems.append( contentsOf: array )
             }
             
             self?.tableView.reloadData()
@@ -122,23 +122,23 @@ extension TaskDetailController: RefreshViewType{
 // MARK: - UITableViewDelegate
 extension TaskDetailController: UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8.0
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
        //load more
-        if self.canLoadMore && (indexPath.section >= taskItems.count - 3)
+        if self.canLoadMore && ((indexPath as NSIndexPath).section >= taskItems.count - 3)
             && taskItems.count >= MoDefaultLoadMoreCount {
             
             currentPage += 1
@@ -146,14 +146,14 @@ extension TaskDetailController: UITableViewDelegate{
         }
         
         guard let cell = cell as? TaskDetailCell else{ return }
-        cell.update(item: taskItems[indexPath.section] )
-        cell.selectionStyle = .None
+        cell.update(item: taskItems[(indexPath as NSIndexPath).section] )
+        cell.selectionStyle = .none
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        selectClourse?(type: taskDetailType, model: taskItems[indexPath.section])
+        selectClourse?(taskDetailType, taskItems[(indexPath as NSIndexPath).section])
         
     }
 }
@@ -161,15 +161,15 @@ extension TaskDetailController: UITableViewDelegate{
 // MARK: - UITableViewDataSource
 extension TaskDetailController:UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return taskItems.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return TaskDetailCell.cell(tableView: tableView)
     }

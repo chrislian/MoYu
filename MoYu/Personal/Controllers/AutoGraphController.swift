@@ -21,9 +21,9 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
     }
     
     //MARK: - event response
-    @objc private func rightBarItem(tap sender:AnyObject){
+    @objc fileprivate func rightBarItem(tap sender:AnyObject){
         
-        guard let autograph = self.autographTextField.text where !autograph.isEmpty else{
+        guard let autograph = self.autographTextField.text , !autograph.isEmpty else{
             self.showAlert(message: "什么都没说呢~")
             return
         }
@@ -31,21 +31,21 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
         Router.updateAutograph(string: autograph).request { (status, json) in
             
             self.updateUser(status, json: json)
-            self.navigationController?.popViewControllerAnimated(true)
+            let _ = self.navigationController?.popViewController(animated: true)
         }
     }
     
     //MARK: - private method
     
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.backgroundColor = UIColor.mo_background()
 
-        let rightBarButton = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        let rightBarButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
         
         autographTextField.delegate = self
-        if !autographTextField.isFirstResponder(){
+        if !autographTextField.isFirstResponder{
             autographTextField.becomeFirstResponder()
         }
         
@@ -54,34 +54,34 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
         }
     }
     
-    private func layout(){
+    fileprivate func layout(){
         
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.whiteColor()
+        containerView.backgroundColor = UIColor.white
         self.view.addSubview(containerView)
-        containerView.snp_makeConstraints { (make) in
+        containerView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(10)
             make.left.right.equalTo(self.view)
             make.bottom.lessThanOrEqualTo(self.view)
         }
         
         containerView.addSubview(autographTextField)
-        autographTextField.snp_makeConstraints { (make) in
+        autographTextField.snp.makeConstraints { (make) in
             make.left.equalTo(containerView).offset(20)
             make.top.bottom.right.equalTo(containerView)
             make.height.equalTo(44)
         }
         
         self.view.addSubview(promptLabel)
-        promptLabel.snp_makeConstraints { (make) in
+        promptLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(10)
-            make.top.equalTo(containerView.snp_bottom).offset(5)
+            make.top.equalTo(containerView.snp.bottom).offset(5)
             make.right.equalTo(self.view)
         }
     }
     
     //MARK: - var & let
-    private let autographTextField:UITextField = {
+    fileprivate let autographTextField:UITextField = {
         let textfield = UITextField()
         textfield.font = UIFont.mo_font()
         textfield.textColor = UIColor.mo_lightBlack()
@@ -89,9 +89,9 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
         return textfield
     }()
     
-    private let promptLabel:UILabel = {
+    fileprivate let promptLabel:UILabel = {
         let label = UILabel()
-        label.textAlignment = .Left
+        label.textAlignment = .left
         label.textColor = UIColor.mo_lightBlack()
         label.font = UIFont.mo_font(.smaller)
         label.text = ""
@@ -103,20 +103,20 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
 
 extension AutoGraphController: UITextFieldDelegate{
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
         let text = (textField.text)! as NSString
         if text.length > 40{
-            textField.text = text.substringToIndex(40)
+            textField.text = text.substring(to: 40)
         }
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let text = (textField.text)! as NSString
-        let toBeString = text.stringByReplacingCharactersInRange(range, withString: string)
+        let toBeString = text.replacingCharacters(in: range, with: string)
         if toBeString.characters.count > 40{
-            textField.text = (toBeString as NSString).substringToIndex(40)
+            textField.text = (toBeString as NSString).substring(to: 40)
             return false
         }
         return true

@@ -20,7 +20,7 @@ class PublishWorkController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         locationService.delegate = self
@@ -29,7 +29,7 @@ class PublishWorkController: UIViewController {
         self.followMode()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         locationService.delegate = nil
@@ -68,26 +68,26 @@ class PublishWorkController: UIViewController {
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.addSubview(mapView)
-        mapView.snp_makeConstraints { (make) in
+        mapView.snp.makeConstraints { (make) in
             make.edges.equalTo(mapView.superview!)
         }
         
         self.view.addSubview(publishSheetView)
-        publishSheetView.snp_makeConstraints { (make) in
+        publishSheetView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(self.view)
         }
-        publishSheetView.bringSubviewToFront(mapView)
+        publishSheetView.bringSubview(toFront: mapView)
         //publish button closure
         publishSheetView.publishClosure = { type in
             switch type {
-            case .PartTime:
+            case .partTime:
                 let vc = PostParttimeJobController()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
-            case .Task:
+            case .task:
                 let vc = PostTaskController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -96,7 +96,7 @@ class PublishWorkController: UIViewController {
     
     
     //MARK: - var & let
-    lazy private var mapView:BMKMapView = {
+    lazy fileprivate var mapView:BMKMapView = {
         let map = BMKMapView()
         map.minZoomLevel = 6
         map.maxZoomLevel = 20
@@ -106,13 +106,13 @@ class PublishWorkController: UIViewController {
         return map
     }()
     
-    lazy private var locationService:BMKLocationService = {
+    lazy fileprivate var locationService:BMKLocationService = {
         let location = BMKLocationService()
         location.allowsBackgroundLocationUpdates = true
         return location
     }()
     
-    private let publishSheetView = PublishSheetView()
+    fileprivate let publishSheetView = PublishSheetView()
 }
 
 //MARK: - BMKMapView Delegate
@@ -135,7 +135,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      *用户方向更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdateUserHeading(userLocation: BMKUserLocation!) {
+    func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
         //print("heading is \(userLocation.heading)")
         mapView.updateLocationData(userLocation)
     }
@@ -144,7 +144,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      *用户位置更新后，会调用此函数
      *@param userLocation 新的用户位置
      */
-    func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
+    func didUpdate(_ userLocation: BMKUserLocation!) {
         //print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         mapView.updateLocationData(userLocation)
     }

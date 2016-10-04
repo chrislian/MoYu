@@ -21,25 +21,25 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
         loadMoreData()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         self.view.endEditing(true)
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
     }
     
 
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == SB.Main.Segue.selectCity,
-            let vc = segue.destinationViewController as? SelectCityController{
+            let vc = segue.destination as? SelectCityController{
             vc.changeCityClourse = { [unowned self] city in
                 self.currentCity = city
             }
@@ -48,22 +48,22 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
 
 
     //MARK: - event reponse
-    @IBAction func leftButtonClicked(sender: UIButton) {
-        self.performSegueWithIdentifier(SB.Main.Segue.selectCity, sender: nil)
+    @IBAction func leftButtonClicked(_ sender: UIButton) {
+        self.performSegue(withIdentifier: SB.Main.Segue.selectCity, sender: nil)
     }
     
-    @IBAction func rightButtonClicked(sender: UIButton) {
+    @IBAction func rightButtonClicked(_ sender: UIButton) {
         
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     
-    @IBAction func headViewButtonClicked(sender: UIButton) {
+    @IBAction func headViewButtonClicked(_ sender: UIButton) {
         println("sender.tag = \(sender.tag)")
         
     }
     
-    private func setupMenuView(){
+    fileprivate func setupMenuView(){
         
         menuView.tableView.dataSource = self
         menuView.tableView.delegate = self
@@ -77,7 +77,7 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
         loadMoreData()
     }
     
-    private func loadMoreData(){
+    fileprivate func loadMoreData(){
         
         Router.allPartTimeJobList(page: currentPage, location: location).request { [weak self] (status, json) in
             
@@ -101,7 +101,7 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
                 if strongSelf.currentPage == 1{
                     strongSelf.modelArray = array
                 }else{
-                    strongSelf.modelArray.appendContentsOf(array)
+                    strongSelf.modelArray.append(contentsOf: array)
                 }
                 
                 strongSelf.menuView.tableView.reloadData()
@@ -118,10 +118,10 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
     var modelArray : [HomeMenuModel] = []
     var location = MoYuLocation()
     
-    private var canLoadMore = true
-    private var currentPage = 1
+    fileprivate var canLoadMore = true
+    fileprivate var currentPage = 1
     
-    private var currentCity = "厦门" {
+    fileprivate var currentCity = "厦门" {
         willSet{
             menuView.cityLabel.text = newValue
         }
@@ -130,17 +130,17 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
 
 extension HomeMenuController:UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
-        if self.canLoadMore && (indexPath.row >= modelArray.count - 3)
+        if self.canLoadMore && ((indexPath as NSIndexPath).row >= modelArray.count - 3)
             && modelArray.count >= MoDefaultLoadMoreCount {
             self.currentPage += 1
             self.loadMoreData()
@@ -149,12 +149,12 @@ extension HomeMenuController:UITableViewDelegate{
         guard let tmpCell = cell as? HomeMenuCell else{
             return
         }
-        tmpCell.update(item: modelArray[indexPath.row])
+        tmpCell.update(item: modelArray[(indexPath as NSIndexPath).row])
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
@@ -164,12 +164,12 @@ extension HomeMenuController:UITableViewDelegate{
 
 extension HomeMenuController:UITableViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return modelArray.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         return HomeMenuCell.cell(tableView: tableView)
     }

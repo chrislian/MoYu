@@ -19,15 +19,15 @@ extension UIFont{
         case biggest = 18.0
     }
     
-    class func mo_font(type:MoYuFont = .normal) -> UIFont {
-        return UIFont.systemFontOfSize(type.rawValue)
+    class func mo_font(_ type:MoYuFont = .normal) -> UIFont {
+        return UIFont.systemFont(ofSize: type.rawValue)
     }
     
-    class func mo_boldFont(type:MoYuFont = .normal) -> UIFont {
-        return UIFont.boldSystemFontOfSize(type.rawValue)
+    class func mo_boldFont(_ type:MoYuFont = .normal) -> UIFont {
+        return UIFont.boldSystemFont(ofSize: type.rawValue)
     }
     
-    class func mo_italicFont(type:MoYuFont = .normal) -> UIFont {
-        return UIFont.italicSystemFontOfSize(type.rawValue)
+    class func mo_italicFont(_ type:MoYuFont = .normal) -> UIFont {
+        return UIFont.italicSystemFont(ofSize: type.rawValue)
     }
 }

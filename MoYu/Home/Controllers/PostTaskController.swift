@@ -16,14 +16,14 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
         
         mo_navigationBar(title: "发布任务")
         
-        let rightBarButton = UIBarButtonItem(title: "提交", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        let rightBarButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
         
         self.setupView()
     }
     
     //MARK: - public method
-    @objc private func rightBarItem(tap sender:AnyObject){
+    @objc fileprivate func rightBarItem(tap sender:AnyObject){
         
         self.view.endEditing(true)
         
@@ -66,25 +66,25 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
             self.show(error: status, showSuccess: true)
             
             if case .success = status{
-                self.navigationController?.popViewControllerAnimated(true)
+                let _ = self.navigationController?.popViewController(animated: true)
             }
         }
         
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.addSubview(tableView)
-        tableView.snp_makeConstraints { (make) in
+        tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
     }
     
     //MARK: - var & let
-    private lazy var tableView:UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
+    fileprivate lazy var tableView:UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
 //        tableView.separatorStyle = .None
@@ -92,10 +92,10 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
         return tableView
     }()
     
-    private let cellPrompts = [["请在此输入标题"],
+    fileprivate let cellPrompts = [["请在此输入标题"],
                                ["类别","金额","订单数"],
                                ["请在此输入web地址","请在此输入详细步骤", "请在此输入内容"]]
-    private let taskTypeDetail = ["用户体验调查", "问卷调查", "其他"]
+    fileprivate let taskTypeDetail = ["用户体验调查", "问卷调查", "其他"]
     
     lazy var taskTypeAction:ActionSheetController = {
         let actionSheet = ActionSheetController()
@@ -108,14 +108,14 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
     lazy var amountPrompt = PromptController.instance(title: "金额", confirm: "提交", configClourse: {
         (textfield:UITextField) ->Int in
         textfield.placeholder = "请输入支付的金额"
-        textfield.keyboardType = .DecimalPad
+        textfield.keyboardType = .decimalPad
         return 6
     })
     
     lazy var sumPrompt = PromptController.instance(title: "订单数", confirm: "提交", configClourse: {
         (textfield:UITextField) ->Int in
         textfield.placeholder = "请输入订单总数"
-        textfield.keyboardType = .NumberPad
+        textfield.keyboardType = .numberPad
         return 4
     })
     
@@ -126,8 +126,8 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
 // MARK: - UITableViewDelegate
 extension PostTaskController: UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        switch (indexPath.section, indexPath.row) {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (0...1,_):
             return 44
         case (2,0):
@@ -137,22 +137,22 @@ extension PostTaskController: UITableViewDelegate{
         }
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        func cellForText(placeholder:String, maxLength:Int,clourse:(String->Void)){
+        func cellForText(_ placeholder:String, maxLength:Int,clourse:@escaping ((String)->Void)){
             guard let cell = cell as? PublishTaskCell else{ return }
             cell.update(placeholder, maxLength: maxLength, clourse: clourse)
         }
         
-        switch (indexPath.section, indexPath.row) {
+        switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (0,0):
             cellForText(cellPrompts[0][0], maxLength: 40){
                 self.taskModel.name = $0
@@ -200,9 +200,9 @@ extension PostTaskController: UITableViewDelegate{
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-        switch (indexPath.section, indexPath.row) {
+        switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (1,0):
             taskTypeAction.show(self)
         case (1,1):
@@ -230,25 +230,25 @@ extension PostTaskController: UITableViewDelegate{
 // MARK: - UITableViewDataSource
 extension PostTaskController: UITableViewDataSource{
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return cellPrompts.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellPrompts[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         func defaultCell()->UITableViewCell{
             let cellId = "postTaskIdentifier"
-            guard let cell = tableView.dequeueReusableCellWithIdentifier(cellId) else{
-                return UITableViewCell(style: .Value1, reuseIdentifier: cellId)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId) else{
+                return UITableViewCell(style: .value1, reuseIdentifier: cellId)
             }
             return cell
         }
         
-        switch (indexPath.section, indexPath.row) {
+        switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (0,0),(2,_):
             return PublishTaskCell.cell(tableView: tableView)
         case(1, 0...2 ):
@@ -268,12 +268,12 @@ extension PostTaskController: UITableViewDataSource{
 // MARK: - ActionSheetProtocol
 extension PostTaskController: ActionSheetProtocol{
     
-    func otherButtons(sheet sheet:ActionSheetController)->[String]{
+    func otherButtons(sheet:ActionSheetController)->[String]{
         
         return taskTypeDetail
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int){
+    func action(sheet: ActionSheetController, selectedAtIndex: Int){
         
         self.taskModel.type = selectedAtIndex
         self.tableView.reloadData()

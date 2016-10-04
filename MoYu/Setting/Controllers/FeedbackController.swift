@@ -22,7 +22,7 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
     }
     
     //MARK: - event reponse
-    func typeButtonTap(button:UIButton){
+    func typeButtonTap(_ button:UIButton){
         
         self.view.endEditing(true)
         
@@ -30,17 +30,17 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
         
     }
     
-    @objc private func rightBarItem(tap sender:AnyObject){
+    @objc fileprivate func rightBarItem(tap sender:AnyObject){
         
         self.view.endEditing(true)
         
-        guard let title = feedbackView.titleText.text where !title.isEmpty else{
+        guard let title = feedbackView.titleText.text , !title.isEmpty else{
             
             self.showAlert(message: "标题不能为空")
             return
         }
         
-        guard let content = feedbackView.contentText.text where !content.isEmpty else{
+        guard let content = feedbackView.contentText.text , !content.isEmpty else{
             self.showAlert(message: "内容不能为空")
             return
         }
@@ -49,20 +49,20 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
             self.show(error: status)
             
             if case .success = status{
-                self.navigationController?.popViewControllerAnimated( true )
+                let _ = self.navigationController?.popViewController( animated: true )
             }
         }
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
-        let rightBarButton = UIBarButtonItem(title: "提交", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        let rightBarButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
         
         
         self.view.addSubview(feedbackView)
-        feedbackView.snp_makeConstraints { (make) in
+        feedbackView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
@@ -70,15 +70,15 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
         
         feedbackView.contentText.delegate = self
         feedbackView.titleText.delegate = self
-        feedbackView.typeButton.addTarget(self, action: #selector(typeButtonTap(_:)), forControlEvents: .TouchUpInside)
-        feedbackView.typeButton.setTitle(feedbackTypes[0], forState: .Normal)
+        feedbackView.typeButton.addTarget(self, action: #selector(typeButtonTap(_:)), for: .touchUpInside)
+        feedbackView.typeButton.setTitle(feedbackTypes[0], for: UIControlState())
     }
     
     
-    private let feedbackView = FeedbackView()
+    fileprivate let feedbackView = FeedbackView()
     
-    private let feedbackTypes = ["广告合作", "开发建议"]
-    private var selectIndex = 0
+    fileprivate let feedbackTypes = ["广告合作", "开发建议"]
+    fileprivate var selectIndex = 0
     
     lazy var typeActionSheet: ActionSheetController = {
         let actionSheet = ActionSheetController()
@@ -91,21 +91,21 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
 
 extension FeedbackController: YYTextViewDelegate{
     
-    func textViewDidEndEditing(textView: YYTextView) {
+    func textViewDidEndEditing(_ textView: YYTextView) {
         
     }
     
-    func textView(textView: YYTextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: YYTextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         func handleContentView()-> Bool {
             let maxLength = 500
             let string = (textView.text)! as NSString
-            let toBeString = string.stringByReplacingCharactersInRange(range, withString: text)
+            let toBeString = string.replacingCharacters(in: range, with: text)
             
             feedbackView.countDownLabel.text = "\(toBeString.length)/\(maxLength)"
             
             if toBeString.characters.count > maxLength{
-                textView.text = (toBeString as NSString).substringToIndex(maxLength)
+                textView.text = (toBeString as NSString).substring(to: maxLength)
                 return false
             }
             return true
@@ -114,9 +114,9 @@ extension FeedbackController: YYTextViewDelegate{
         func handleTitleView()->Bool{
             let maxLength = 40
             let string = (textView.text)! as NSString
-            let toBeString = string.stringByReplacingCharactersInRange(range, withString: text)
+            let toBeString = string.replacingCharacters(in: range, with: text)
             if toBeString.characters.count > maxLength{
-                textView.text = (toBeString as NSString).substringToIndex(maxLength)
+                textView.text = (toBeString as NSString).substring(to: maxLength)
                 return false
             }
             return true
@@ -132,14 +132,14 @@ extension FeedbackController: YYTextViewDelegate{
 
 extension FeedbackController : ActionSheetProtocol{
     
-    func otherButtons(sheet sheet: ActionSheetController) -> [String] {
+    func otherButtons(sheet: ActionSheetController) -> [String] {
         
         return feedbackTypes
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int) {
+    func action(sheet: ActionSheetController, selectedAtIndex: Int) {
         
-        feedbackView.typeButton.setTitle(feedbackTypes[selectedAtIndex], forState: .Normal)
+        feedbackView.typeButton.setTitle(feedbackTypes[selectedAtIndex], for: UIControlState())
         
         selectIndex = selectedAtIndex
     }

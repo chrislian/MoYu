@@ -20,21 +20,21 @@ class RecommendController: UIViewController {
     }
     
     //MARK: - event response
-    @IBAction func inviteFriendTap(sender: AnyObject) {
+    @IBAction func inviteFriendTap(_ sender: AnyObject) {
         
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func moreRecommendTap(sender: UIButton) {
+    @IBAction func moreRecommendTap(_ sender: UIButton) {
         
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    dynamic private func rightBarItem(tap sender:AnyObject){
+    dynamic fileprivate func rightBarItem(tap sender:AnyObject){
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -42,13 +42,13 @@ class RecommendController: UIViewController {
 
     func backButton(tap sender:AnyObject){
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: - private method
     func setupView(){
 
-        let rightBarButton = UIBarButtonItem(title: "分享", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        let rightBarButton = UIBarButtonItem(title: "分享", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
     }
     

@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var mapManager = BMKMapManager()
 
     //MARK: - AppDelegate
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         if !mapManager.start("r9LH3rGsee4Iks2ogmnC9jMfSqWEdnIR", generalDelegate: self){
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
-        if let phone = UserManager.sharedInstance.getPhoneNumber() where !phone.isEmpty{
+        if let phone = UserManager.sharedInstance.getPhoneNumber() , !phone.isEmpty{
             println("当前登录手机号码为:\(phone)")
         } else{
             println("未登录")
@@ -64,25 +64,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
@@ -96,9 +96,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let frostedVc = REFrostedViewController(contentViewController: homeVc, menuViewController: leftMenuVc)
-        frostedVc.direction = .Left
-        frostedVc.liveBlurBackgroundStyle = .Light
-        frostedVc.liveBlur = true
+        frostedVc?.direction = .left
+        frostedVc?.liveBlurBackgroundStyle = .light
+        frostedVc?.liveBlur = true
         self.window?.rootViewController = frostedVc
     }
 }
@@ -106,13 +106,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //MARK: - Baidu GeneralDelegate
 extension AppDelegate:BMKGeneralDelegate{
     
-    func onGetNetworkState(iError: Int32) {
+    func onGetNetworkState(_ iError: Int32) {
         if iError != 0{
             println("联网失败，错误码：Error\(iError)")
         }
     }
     
-    func onGetPermissionState(iError: Int32) {
+    func onGetPermissionState(_ iError: Int32) {
         if iError != 0{
             println("授权失败，错误码：Error\(iError)")
         }

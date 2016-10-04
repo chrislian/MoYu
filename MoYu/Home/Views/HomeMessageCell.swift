@@ -18,7 +18,7 @@ class HomeMessageCell: UITableViewCell {
     }
 
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         //TODO:
     }
     

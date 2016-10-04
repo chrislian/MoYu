@@ -12,14 +12,14 @@ class HotSearchView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         setupView()
     }
     
@@ -46,8 +46,8 @@ class HotSearchView: UIView {
         flowLayout.minimumLineSpacing = 0
         
         let collectionView = UICollectionView(frame: CGRect(x: 40, y: 40, width: MoScreenWidth-80, height: 160), collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = UIColor.whiteColor()
-        collectionView.registerClass(HotSearchMenuCell.self , forCellWithReuseIdentifier: "hotSearchCellIndentifier")
+        collectionView.backgroundColor = UIColor.white
+        collectionView.register(HotSearchMenuCell.self , forCellWithReuseIdentifier: "hotSearchCellIndentifier")
         return collectionView
     }()
     

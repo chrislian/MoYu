@@ -19,11 +19,11 @@ class UserGuideController: UIViewController {
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.backgroundColor = UIColor.mo_background()
         
-        self.tableView.separatorStyle = .None
+        self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 44.0
@@ -34,32 +34,32 @@ class UserGuideController: UIViewController {
     //MARK: - let & var
     @IBOutlet weak var tableView: UITableView!
     
-    private let datas = ["商家指南","任务指南","积分规则"]
+    fileprivate let datas = ["商家指南","任务指南","积分规则"]
 }
 
 // MARK: - UITableView Delegate
 extension UserGuideController:UITableViewDelegate{
 
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.textLabel?.text = datas[indexPath.row]
+        cell.textLabel?.text = datas[(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
         
-        cell.selectionStyle = .None
-        cell.accessoryType = .DisclosureIndicator
+        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = UIViewController()
-        vc.title = datas[indexPath.row]
+        vc.title = datas[(indexPath as NSIndexPath).row]
         vc.view.backgroundColor = UIColor.mo_background()
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -69,16 +69,16 @@ extension UserGuideController:UITableViewDelegate{
 // MARK: - UITableView datasource
 extension UserGuideController:UITableViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "userGuideIndentifier"
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) else{
             
-            return UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+            return UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
         
         return cell

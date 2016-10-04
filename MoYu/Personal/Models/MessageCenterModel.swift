@@ -11,7 +11,7 @@ import SwiftyJSON
 
 struct MessageCenterItem {
 
-    var createTime:NSDate?
+    var createTime:Date?
     let description:String
     let title:String
     
@@ -22,7 +22,7 @@ struct MessageCenterItem {
         title = json["title"].stringValue
         
         if let value = json["create_time"].int{
-            createTime = NSDate(timeIntervalSince1970: NSTimeInterval(value) )
+            createTime = Date(timeIntervalSince1970: TimeInterval(value) )
         }
     }
 }

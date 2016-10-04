@@ -18,19 +18,19 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         
         self.setupView()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onReceive(notify:)), name: UserNotification.updateUserInfo, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateUserInfo), object: nil)
         
     
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.updateUserInfo()
     }
     
     deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - event response
@@ -42,34 +42,34 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func onReceive(notify notify:NSNotification){
+    func onReceive(notify:Notification){
         
-        if notify.name == UserNotification.updateUserInfo{
+        if notify.name.rawValue == UserNotification.updateUserInfo{
             self.updateUserInfo()
         }
     }
     
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
 
         navigationController?.mo_hideBackButtonTitle()
         navigationController?.mo_navigationBar(opaque: true)
         
         mo_rootLeftBackButton()
 
-        let rightBarButton = UIBarButtonItem(title: "综合实力", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        let rightBarButton = UIBarButtonItem(title: "综合实力", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
         
         self.view.backgroundColor = UIColor.mo_background()
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.mo_background()
     }
     
-    private func updateUserInfo(){
+    fileprivate func updateUserInfo(){
         
         let user = UserManager.sharedInstance.user
         
@@ -100,28 +100,28 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
     }()
    
     lazy var ageAlertController:UIAlertController = {
-       let alert = UIAlertController(title: "修改年龄", message: "", preferredStyle: .Alert)
+       let alert = UIAlertController(title: "修改年龄", message: "", preferredStyle: .alert)
         
         
-        let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { _ in
-            alert.dismissViewControllerAnimated(true, completion: nil)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel) { _ in
+            alert.dismiss(animated: true, completion: nil)
         }
-        let destrctiveAction = UIAlertAction(title: "确定", style: .Destructive) { _ in
+        let destrctiveAction = UIAlertAction(title: "确定", style: .destructive) { _ in
             
-            if let text = alert.textFields?.first?.text, age = Int(text){
+            if let text = alert.textFields?.first?.text, let age = Int(text){
                 Router.updateAge(value: age).request( remote: self.updateUser )
             }
             
-            alert.dismissViewControllerAnimated(true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
         }
         
-        alert.addTextFieldWithConfigurationHandler { [unowned self ] textField in
+        alert.addTextField { [unowned self ] textField in
             
             textField.font = UIFont.mo_font()
             textField.textColor = UIColor.mo_lightBlack()
             textField.text = "\(UserManager.sharedInstance.user.age)"
             textField.delegate = self
-            textField.keyboardType = .NumberPad
+            textField.keyboardType = .numberPad
         }
         alert.addAction(cancelAction)
         alert.addAction(destrctiveAction)
@@ -131,50 +131,50 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
 
 extension UseInfoController:UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 && indexPath.section == 0{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).row == 0 && (indexPath as NSIndexPath).section == 0{
             return 80.0
         }
         return 44.0
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        func update(cell cell:UITableViewCell){
+        func update(cell:UITableViewCell){
             cell.textLabel?.font = UIFont.mo_font()
             cell.textLabel?.textColor = UIColor.mo_lightBlack()
             
             cell.detailTextLabel?.font = UIFont.mo_font()
             cell.detailTextLabel?.textColor = UIColor.mo_silver()
             
-            cell.textLabel?.text = dataArrays[indexPath.section][indexPath.row].0
-            cell.detailTextLabel?.text = dataArrays[indexPath.section][indexPath.row].1
+            cell.textLabel?.text = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].0
+            cell.detailTextLabel?.text = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].1
         }
         
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         
-        switch (indexPath.section,indexPath.row) {
+        switch ((indexPath as NSIndexPath).section,(indexPath as NSIndexPath).row) {
         case (0,0):
             if let cell = cell as? UserHeaderCell {
                 let user = UserManager.sharedInstance.user
                 cell.update(usename: user.moName,source:"手机登录",image: user.img)
             }
         case (0,4...5):
-            cell.accessoryType = .None
+            cell.accessoryType = .none
             update(cell: cell)
         default:
             update(cell: cell)
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        switch(indexPath.section,indexPath.row){
+        switch((indexPath as NSIndexPath).section,(indexPath as NSIndexPath).row){
         case (0,0):
             let vc = ChangeNicknameController()
             vc.nickname = UserManager.sharedInstance.user.nickname
@@ -186,11 +186,11 @@ extension UseInfoController:UITableViewDelegate{
         case (0,2):
             sexActionSheet.show(self)
         case (0,3):
-            self.presentViewController(ageAlertController, animated: true, completion: nil)
+            self.present(ageAlertController, animated: true, completion: nil)
         default:
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.mo_background()
-            vc.title = dataArrays[indexPath.section][indexPath.row].0
+            vc.title = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].0
             self.navigationController?.pushViewController(vc, animated: true)
         }
 
@@ -200,32 +200,32 @@ extension UseInfoController:UITableViewDelegate{
 
 extension UseInfoController:UITableViewDataSource{
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return dataArrays.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArrays[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         func cellForHeader()->UITableViewCell{
-            guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Personal.Cell.userHeaderCell) else{
-                return UITableViewCell(style: .Default, reuseIdentifier: SB.Personal.Cell.userHeaderCell)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SB.Personal.Cell.userHeaderCell) else{
+                return UITableViewCell(style: .default, reuseIdentifier: SB.Personal.Cell.userHeaderCell)
             }
             return cell
         }
         
         func cellForOther()->UITableViewCell{
             let cellIdentifier = "userInfoCellIdentifier"
-            guard let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) else{
-                return UITableViewCell(style: .Value1, reuseIdentifier: cellIdentifier)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) else{
+                return UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             }
             return cell
         }
         
-        switch (indexPath.section,indexPath.row) {
+        switch ((indexPath as NSIndexPath).section,(indexPath as NSIndexPath).row) {
         case (0,0):
             return cellForHeader()
         default:
@@ -237,11 +237,11 @@ extension UseInfoController:UITableViewDataSource{
 extension UseInfoController: ActionSheetProtocol{
     
     
-    func otherButtons(sheet sheet: ActionSheetController) -> [String] {
+    func otherButtons(sheet: ActionSheetController) -> [String] {
         return ["女","男"]
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int) {
+    func action(sheet: ActionSheetController, selectedAtIndex: Int) {
         
         if UserManager.sharedInstance.user.sex == selectedAtIndex{
             return
@@ -254,20 +254,20 @@ extension UseInfoController: ActionSheetProtocol{
 
 extension UseInfoController: UITextFieldDelegate{
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
         let text = (textField.text)! as NSString
         if text.length > 2{
-            textField.text = text.substringToIndex(2)
+            textField.text = text.substring(to: 2)
         }
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let text = (textField.text)! as NSString
-        let toBeString = text.stringByReplacingCharactersInRange(range, withString: string)
+        let toBeString = text.replacingCharacters(in: range, with: string)
         if toBeString.characters.count > 2{
-            textField.text = (toBeString as NSString).substringToIndex(2)
+            textField.text = (toBeString as NSString).substring(to: 2)
             return false
         }else if toBeString.mo_length() == 0{
             textField.text = "0"

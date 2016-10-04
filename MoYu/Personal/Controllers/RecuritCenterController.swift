@@ -23,10 +23,10 @@ class RecuritCenterController: UIViewController {
     //MARK: - event response
     func backButton(tap sender:AnyObject){
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func buttonClicked(sender: UIButton) {
+    @IBAction func buttonClicked(_ sender: UIButton) {
         
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()

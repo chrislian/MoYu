@@ -11,9 +11,9 @@ import Async
 
 protocol AlertViewType {
     
-    func showAlert(message aTitle:String, subTitle:String?, timout:NSTimeInterval, forced:Bool, completed:(Void->Void)?)
+    func showAlert(message aTitle:String, subTitle:String?, timout:TimeInterval, forced:Bool, completed:((Void)->Void)?)
     
-    func showAlert(customView view: UIView, timeout: NSTimeInterval , backgroundColor: UIColor, completed: (Void -> Void)?)
+    func showAlert(customView view: UIView, timeout: TimeInterval , backgroundColor: UIColor, completed: ((Void) -> Void)?)
     
     func dismiss()
 }
@@ -30,14 +30,14 @@ extension AlertViewType{
         return MoAlertView.shareInstance.alertLock
     }
     
-    func showAlert(message aTitle:String, subTitle:String? = nil, timout:NSTimeInterval = 2, forced:Bool = false, completed:(Void->Void)? = nil){
+    func showAlert(message aTitle:String, subTitle:String? = nil, timout:TimeInterval = 2, forced:Bool = false, completed:((Void)->Void)? = nil){
         
         Async.main {
             self.alertLock.lock()
-            if self.alertView.visible{
+            if self.alertView.isVisible{
                 self.alertView.hide()
             }
-            self.alertView.position = .Center
+            self.alertView.position = .center
             self.alertView.completionBlock = completed
             
             self.alertView.message = subTitle
@@ -53,14 +53,14 @@ extension AlertViewType{
         }
     }
     
-    func showAlert(customView view: UIView, timeout: NSTimeInterval = 2, backgroundColor: UIColor = UIColor.lightGrayColor() ,completed: (Void -> Void)? = nil){
+    func showAlert(customView view: UIView, timeout: TimeInterval = 2, backgroundColor: UIColor = UIColor.lightGray ,completed: ((Void) -> Void)? = nil){
         
         Async.main {
 
-            if self.alertView.visible{
+            if self.alertView.isVisible{
                 self.alertView.hide()
             }
-            self.alertView.position = .Center
+            self.alertView.position = .center
             self.alertView.completionBlock = completed
             self.alertView.timeout = timeout
             self.alertView.backgroundColor = backgroundColor
@@ -72,7 +72,7 @@ extension AlertViewType{
     
     func dismiss(){
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(2) / Double(NSEC_PER_SEC)) {
             
             self.alertView.hide(true)
         }

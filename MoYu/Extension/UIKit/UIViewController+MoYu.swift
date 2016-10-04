@@ -20,19 +20,19 @@ extension UIViewController{
         self.navigationItem.titleView = nil
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 43))
-        label.backgroundColor = UIColor.clearColor()
+        label.backgroundColor = UIColor.clear
         label.textColor = UIColor.mo_lightBlack()
         label.font = UIFont.mo_font(.bigger)
-        label.textAlignment = .Center
+        label.textAlignment = .center
         label.text = aTitle
         
         self.navigationItem.titleView  = label
     }
     
     //MARK: - event response
-    @objc private func mo_dismissViewController(tap sender:AnyObject){
+    @objc fileprivate func mo_dismissViewController(tap sender:AnyObject){
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     /**
@@ -44,9 +44,9 @@ extension UIViewController{
         
         self.navigationItem.leftBarButtonItems = {
             
-            let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil , action: nil)
+            let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil , action: nil)
             spaceItem.width = -8//-16
-            let barButton = UIBarButtonItem(image: name, style: .Done, target: self, action: #selector(mo_dismissViewController(tap:)))
+            let barButton = UIBarButtonItem(image: name, style: .done, target: self, action: #selector(mo_dismissViewController(tap:)))
             return [spaceItem, barButton]
         }()
     }

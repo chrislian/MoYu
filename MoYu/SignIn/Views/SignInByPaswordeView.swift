@@ -17,15 +17,15 @@ class SignInByPasswordView: UIView {
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         headView.layer.cornerRadius = headView.frame.size.height/2
         headView.layer.masksToBounds = true
-        headView.layer.borderColor = UIColor.whiteColor().CGColor
+        headView.layer.borderColor = UIColor.white.cgColor
         headView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        headView.layer.shadowColor = UIColor.mo_main().CGColor
+        headView.layer.shadowColor = UIColor.mo_main().cgColor
         headView.layer.borderWidth = 0.8
-        headView.backgroundColor = UIColor.clearColor()
+        headView.backgroundColor = UIColor.clear
         
         headImageView.layer.cornerRadius = headImageView.frame.size.height/2
         headImageView.layer.masksToBounds = true
@@ -33,7 +33,7 @@ class SignInByPasswordView: UIView {
         enterButton.layer.cornerRadius = enterButton.bounds.size.height/2
         enterButton.layer.masksToBounds = true
         enterButton.titleLabel?.font = UIFont.mo_font(.bigger)
-        enterButton.titleLabel?.textColor = UIColor.whiteColor()
+        enterButton.titleLabel?.textColor = UIColor.white
         enterButton.backgroundColor = UIColor.mo_main()
         
         userNameView.backgroundColor = UIColor ( red: 1.0, green: 0.8, blue: 0.4, alpha: 0.2 )
@@ -45,21 +45,21 @@ class SignInByPasswordView: UIView {
         passwordCodeView.layer.masksToBounds = true
         
         
-        userTextfield.textColor = UIColor.whiteColor()
+        userTextfield.textColor = UIColor.white
         userTextfield.placeholder = "请输入您的手机号码"
         userTextfield.font = UIFont.mo_font(.smaller)
-        userTextfield.keyboardType = .NumberPad
+        userTextfield.keyboardType = .numberPad
         
-        passwordTextFiled.textColor = UIColor.whiteColor()
+        passwordTextFiled.textColor = UIColor.white
         passwordTextFiled.placeholder = "6-25位字母、数字或下划线"
         passwordTextFiled.font = UIFont.mo_font(.smaller)
-        passwordTextFiled.keyboardType = .ASCIICapable
-        passwordTextFiled.clearButtonMode = .WhileEditing
-        passwordTextFiled.secureTextEntry = true
+        passwordTextFiled.keyboardType = .asciiCapable
+        passwordTextFiled.clearButtonMode = .whileEditing
+        passwordTextFiled.isSecureTextEntry = true
         
         userProtocolButton.titleLabel?.font = UIFont.mo_font()
-        userProtocolButton.setTitle("用户协议", forState: .Normal)
-        userProtocolButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
+        userProtocolButton.setTitle("用户协议", for: UIControlState())
+        userProtocolButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
         
     }
     //MARK: - public method

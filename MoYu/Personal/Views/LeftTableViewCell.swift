@@ -17,7 +17,7 @@ class LeftMenuCell: UITableViewCell {
     }
     
     //MARK: - public method
-    func updateCell(image:UIImage , text:String){
+    func updateCell(_ image:UIImage , text:String){
         cellImageView.image = image
         cellTextLabel.text = text
     }

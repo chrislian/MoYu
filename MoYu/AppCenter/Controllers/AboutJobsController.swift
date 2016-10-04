@@ -21,12 +21,12 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     }
     
     //MARK: - event response
-    func rightBarButtonClicked(sender:UIButton){
-        self.performSegueWithIdentifier(SB.AppCenter.Segue.personMsg, sender: self)
+    func rightBarButtonClicked(_ sender:UIButton){
+        self.performSegue(withIdentifier: SB.AppCenter.Segue.personMsg, sender: self)
     }
     
-    func publishButtonClicked(sender:UIButton){
-        self.performSegueWithIdentifier(SB.AppCenter.Segue.publishMsg, sender: self)
+    func publishButtonClicked(_ sender:UIButton){
+        self.performSegue(withIdentifier: SB.AppCenter.Segue.publishMsg, sender: self)
     }
     
     func refreshAction() {
@@ -35,7 +35,7 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
     
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,7 +43,7 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         self.navigationItem.rightBarButtonItem = rightBarButton
         
         self.view.addSubview(publishButton)
-        publishButton.snp_makeConstraints { (make) in
+        publishButton.snp.makeConstraints { (make) in
             make.height.width.equalTo(60)
             make.right.equalTo(publishButton.superview!).offset(-30)
             make.bottom.equalTo(publishButton.superview!).offset(-60)
@@ -53,7 +53,7 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         self.beginRefresh()
     }
     
-    private func updateData(withPage page:Int){
+    fileprivate func updateData(withPage page:Int){
         Router.jobZoneList(page: page).request { [weak self] (status, json) in
             
             self?.show(error: status)
@@ -64,16 +64,16 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         }
     }
     
-    private func updateJob(list json:JSON?){
+    fileprivate func updateJob(list json:JSON?){
         
         aboutJobModel = AboutJobModel(json: json)
         if aboutJobModel.items.count > 0{
-            aboutJobModel.items.sortInPlace{ $0.create_time.compare($1.create_time) == .OrderedDescending }
+            aboutJobModel.items.sort{ $0.create_time.compare($1.create_time) == .orderedDescending }
             tableView.reloadData()
         }
     }
     
-    private func zanTap(withItem item:AboutJobItem){
+    fileprivate func zanTap(withItem item:AboutJobItem){
         
         if item.zan{
             
@@ -90,7 +90,7 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         }
     }
     
-    private func commentTap(withItem item:AboutJobItem){
+    fileprivate func commentTap(withItem item:AboutJobItem){
         
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.mo_background()
@@ -109,20 +109,20 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         let image = UIImage(named:"icon_message")
-        button.setBackgroundImage(image, forState: .Normal)
-        button.setTitle("", forState: .Normal)
+        button.setBackgroundImage(image, for: UIControlState())
+        button.setTitle("", for: UIControlState())
         button.tag = 1
-        button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), for: .touchUpInside)
         
         return UIBarButtonItem(customView: button)
     }()
     
     lazy var publishButton:UIButton = {
-        let button = UIButton(type: .Custom)
-        button.setTitle("", forState: .Normal)
-        button.contentMode = .ScaleAspectFit
-        button.setImage(UIImage(named:"icon_publish"), forState: .Normal)
-        button.addTarget(self, action: #selector(publishButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        let button = UIButton(type: .custom)
+        button.setTitle("", for: UIControlState())
+        button.contentMode = .scaleAspectFit
+        button.setImage(UIImage(named:"icon_publish"), for: UIControlState())
+        button.addTarget(self, action: #selector(publishButtonClicked(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -130,21 +130,21 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
 
 extension AboutJobsController: UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10.0
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.selectionStyle = .None
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
         
         guard let cell = cell as? AboutJobsCell else{
             return
         }
-        cell.update(item: aboutJobModel.items[indexPath.section])
+        cell.update(item: aboutJobModel.items[(indexPath as NSIndexPath).section])
         
         cell.zanClourse = { [unowned self] jobZoneItem in
             
@@ -161,23 +161,23 @@ extension AboutJobsController: UITableViewDelegate{
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension AboutJobsController: UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return aboutJobModel.items.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return AboutJobsCell.cell(tableView: tableView)
     }

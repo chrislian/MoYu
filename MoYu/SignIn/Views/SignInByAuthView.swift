@@ -16,15 +16,15 @@ class SignInByAuthView: UIView {
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         headView.layer.cornerRadius = headView.frame.size.height/2
         headView.layer.masksToBounds = true
-        headView.layer.borderColor = UIColor.whiteColor().CGColor
+        headView.layer.borderColor = UIColor.white.cgColor
         headView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        headView.layer.shadowColor = UIColor.mo_main().CGColor
+        headView.layer.shadowColor = UIColor.mo_main().cgColor
         headView.layer.borderWidth = 0.8
-        headView.backgroundColor = UIColor.clearColor()
+        headView.backgroundColor = UIColor.clear
         
         headImageView.layer.cornerRadius = headImageView.frame.size.height/2
         headImageView.layer.masksToBounds = true
@@ -32,7 +32,7 @@ class SignInByAuthView: UIView {
         enterButton.layer.cornerRadius = enterButton.bounds.size.height/2
         enterButton.layer.masksToBounds = true
         enterButton.titleLabel?.font = UIFont.mo_font(.bigger)
-        enterButton.titleLabel?.textColor = UIColor.whiteColor()
+        enterButton.titleLabel?.textColor = UIColor.white
         enterButton.backgroundColor = UIColor.mo_main()
         
         userNameView.backgroundColor = UIColor ( red: 1.0, green: 0.8, blue: 0.4, alpha: 0.2 )
@@ -43,12 +43,12 @@ class SignInByAuthView: UIView {
         authCodeView.layer.cornerRadius = authCodeView.bounds.size.height/2
         authCodeView.layer.masksToBounds = true
         
-        authButton.setTitle("获取验证码", forState: .Normal)
+        authButton.setTitle("获取验证码", for: UIControlState())
         authButton.titleLabel?.font = UIFont.mo_font(.smallest)
-        authButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
+        authButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
         authButton.layer.cornerRadius = authButton.bounds.size.height/2
         authButton.layer.borderWidth = 0.8
-        authButton.layer.borderColor = UIColor.mo_main().CGColor
+        authButton.layer.borderColor = UIColor.mo_main().cgColor
         authButton.layer.masksToBounds = true
         
         userTextfield.textColor = UIColor.mo_lightBlack()
@@ -60,12 +60,12 @@ class SignInByAuthView: UIView {
         authTextFiled.font = UIFont.mo_font(.smaller)
         
         enterByPasswordButton.titleLabel?.font = UIFont.mo_font()
-        enterByPasswordButton.titleLabel?.textColor = UIColor.whiteColor()
-        enterByPasswordButton.setTitle("密码登录", forState: .Normal)
+        enterByPasswordButton.titleLabel?.textColor = UIColor.white
+        enterByPasswordButton.setTitle("密码登录", for: UIControlState())
         
         userProtocolButton.titleLabel?.font = UIFont.mo_font()
-        userProtocolButton.titleLabel?.textColor = UIColor.whiteColor()
-        userProtocolButton.setTitle("用户协议", forState: .Normal)
+        userProtocolButton.titleLabel?.textColor = UIColor.white
+        userProtocolButton.setTitle("用户协议", for: UIControlState())
         
         orLabel.font = UIFont.mo_font(.smallest)
     }

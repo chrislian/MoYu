@@ -33,15 +33,15 @@ extension String {
     
     func base64Encode()->String?{
         
-        let data = self.dataUsingEncoding(NSUTF8StringEncoding)
+        let data = self.data(using: String.Encoding.utf8)
         
-        return data?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
+        return data?.base64EncodedString(options: NSData.Base64EncodingOptions())
     }
     
     func base64Decode()->String?{
         
-        guard let data = NSData(base64EncodedString: self, options: NSDataBase64DecodingOptions()) else{ return nil }
+        guard let data = Data(base64Encoded: self, options: NSData.Base64DecodingOptions()) else{ return nil }
         
-        return String(data: data, encoding: NSUTF8StringEncoding)
+        return String(data: data, encoding: String.Encoding.utf8)
     }
 }

@@ -11,7 +11,7 @@ import SnapKit
 
 
 enum MOHomeItemType {
-    case GPS,Menu,Search
+    case gps,menu,search
 }
 
 class HomeItemView: UIView {
@@ -28,90 +28,90 @@ class HomeItemView: UIView {
     }
     
     //MARK: - event response
-    @objc private func tapGesture1Clicked(sender:UITapGestureRecognizer){
+    @objc fileprivate func tapGesture1Clicked(_ sender:UITapGestureRecognizer){
         guard let closure = homeItemClosure else{
             return
         }
-        closure(type: .GPS)
+        closure(.gps)
     }
-    @objc private func tapGesture2Clicked(sender:UITapGestureRecognizer){
+    @objc fileprivate func tapGesture2Clicked(_ sender:UITapGestureRecognizer){
         guard let closure = homeItemClosure else{
             return
         }
-        closure(type: .Menu)
+        closure(.menu)
     }
-    @objc private func tapGesture3Clicked(sender:UITapGestureRecognizer){
+    @objc fileprivate func tapGesture3Clicked(_ sender:UITapGestureRecognizer){
         guard let closure = homeItemClosure else{
             return
         }
-        closure(type: .Search)
+        closure(.search)
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
         self.addSubview(gpsImageView)
-        gpsImageView.snp_makeConstraints { (make) in
+        gpsImageView.snp.makeConstraints { (make) in
             make.top.equalTo(gpsImageView.superview!)
             make.centerX.equalTo(gpsImageView.superview!)
             make.height.width.equalTo(50)
         }
         
         self.addSubview(menuImageView)
-        menuImageView.snp_makeConstraints { (make) in
+        menuImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(menuImageView.superview!)
-            make.top.equalTo(gpsImageView.snp_bottom).offset(8)
+            make.top.equalTo(gpsImageView.snp.bottom).offset(8)
             make.width.height.equalTo(gpsImageView)
         }
         
         self.addSubview(searchImageView)
-        searchImageView.snp_makeConstraints { (make) in
+        searchImageView.snp.makeConstraints { (make) in
             make.bottom.lessThanOrEqualTo(searchImageView.superview!)
             make.centerX.equalTo(searchImageView.superview!)
-            make.top.equalTo(menuImageView.snp_bottom).offset(8)
+            make.top.equalTo(menuImageView.snp.bottom).offset(8)
             make.width.height.equalTo(gpsImageView)
         }
     }
     
     
     //MARK: - var & let 
-    lazy private var gpsImageView:UIImageView = {
+    lazy fileprivate var gpsImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "home_GPS")
-        imageView.backgroundColor = UIColor.clearColor()
-        imageView.userInteractionEnabled = true
+        imageView.backgroundColor = UIColor.clear
+        imageView.isUserInteractionEnabled = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture1Clicked(_:)))
         imageView.addGestureRecognizer(tapGesture)
         return imageView
     }()
     
-    lazy private var menuImageView:UIImageView = {
+    lazy fileprivate var menuImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "home_menu")
-        imageView.backgroundColor = UIColor.clearColor()
-        imageView.userInteractionEnabled = true
+        imageView.backgroundColor = UIColor.clear
+        imageView.isUserInteractionEnabled = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture2Clicked(_:)))
         imageView.addGestureRecognizer(tapGesture)
         return imageView
     }()
     
-    lazy private var searchImageView:UIImageView = {
+    lazy fileprivate var searchImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "home_search")
-        imageView.backgroundColor = UIColor.clearColor()
-        imageView.userInteractionEnabled = true
+        imageView.backgroundColor = UIColor.clear
+        imageView.isUserInteractionEnabled = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture3Clicked(_:)))
         imageView.addGestureRecognizer(tapGesture)
         return imageView
     }()
     
-    var homeItemClosure:((type:MOHomeItemType)->Void)?
+    var homeItemClosure:((_ type:MOHomeItemType)->Void)?
 }

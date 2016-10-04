@@ -21,72 +21,72 @@ class BalanceHeadView: UIView {
     }
     
     
-    @objc private func withdrawButtonClicked(button:UIButton){
+    @objc fileprivate func withdrawButtonClicked(_ button:UIButton){
         println("提现")
     }
     
-    private func layout(){
+    fileprivate func layout(){
     
         //top
         self.addSubview(cycleView)
-        cycleView.snp_makeConstraints { (make) in
+        cycleView.snp.makeConstraints { (make) in
             make.center.equalTo(self )
             make.size.equalTo(CGSize(width: 100, height: 100))
         }
         
         cycleView.addSubview(balanceLabel)
-        balanceLabel.snp_makeConstraints { (make) in
+        balanceLabel.snp.makeConstraints { (make) in
             make.center.equalTo(self.cycleView)
         }
         
         cycleView.addSubview(balanceTitleLabel)
-        balanceTitleLabel.snp_makeConstraints { (make) in
+        balanceTitleLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(balanceLabel)
-            make.bottom.equalTo(balanceLabel.snp_top)
+            make.bottom.equalTo(balanceLabel.snp.top)
         }
         
         //bottom
         self.addSubview(consumeDetailLabel)
-        consumeDetailLabel.snp_makeConstraints { (make) in
+        consumeDetailLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self)
             make.bottom.equalTo(self).offset(-10)
         }
         
         self.addSubview(leftLineView)
-        leftLineView.snp_makeConstraints { (make) in
+        leftLineView.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(16)
             make.centerY.equalTo(consumeDetailLabel)
-            make.right.equalTo(consumeDetailLabel.snp_left).offset(-10)
+            make.right.equalTo(consumeDetailLabel.snp.left).offset(-10)
             make.height.equalTo(0.5)
         }
         
         self.addSubview(rightLineView)
-        rightLineView.snp_makeConstraints { (make) in
+        rightLineView.snp.makeConstraints { (make) in
             make.right.equalTo(self).offset(-16)
             make.centerY.equalTo(consumeDetailLabel)
-            make.left.equalTo(consumeDetailLabel.snp_right).offset(10)
+            make.left.equalTo(consumeDetailLabel.snp.right).offset(10)
             make.height.equalTo(leftLineView)
         }
         
         //middle
         self.addSubview(withdrawView)
-        withdrawView.snp_makeConstraints { (make) in
+        withdrawView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self)
             make.bottom.equalTo(consumeDetailLabel).offset(-30)
             make.top.greaterThanOrEqualTo(cycleView).offset(20)
         }
         
         withdrawView.addSubview(withdrawImageView)
-        withdrawImageView.snp_makeConstraints { (make) in
+        withdrawImageView.snp.makeConstraints { (make) in
             make.left.top.bottom.equalTo(withdrawView)
             make.size.equalTo(CGSize(width: 20, height: 20))
         }
         
         withdrawView.addSubview(withdrawLabel)
-        withdrawLabel.snp_makeConstraints { (make) in
+        withdrawLabel.snp.makeConstraints { (make) in
             make.right.top.bottom.equalTo(withdrawView)
             make.height.equalTo(withdrawImageView)
-            make.left.equalTo(withdrawImageView.snp_right).offset(5)
+            make.left.equalTo(withdrawImageView.snp.right).offset(5)
         }
     }
     
@@ -103,7 +103,7 @@ class BalanceHeadView: UIView {
         let label = UILabel()
         label.font = UIFont.mo_boldFont(.biggest)
         label.textColor = UIColor.mo_silver()
-        label.textAlignment = .Center
+        label.textAlignment = .center
         label.text = "8800.00"
         return label
         
@@ -113,26 +113,26 @@ class BalanceHeadView: UIView {
         let label = UILabel()
         label.font = UIFont.mo_font(.smaller)
         label.textColor = UIColor.mo_silver()
-        label.textAlignment = .Center
+        label.textAlignment = .center
         label.text = "余额(元)"
         return label
     }()
     
     let withdrawView : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.whiteColor()
-        view.layer.borderColor = UIColor.mo_lightBlack().CGColor
+        view.backgroundColor = UIColor.white
+        view.layer.borderColor = UIColor.mo_lightBlack().cgColor
         view.layer.borderWidth = 0.8
         return view
     }()
     
-    private let withdrawImageView:UIImageView = {
+    fileprivate let withdrawImageView:UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "defalutHead")
         return imageView
     }()
     
-    private let withdrawLabel:UILabel = {
+    fileprivate let withdrawLabel:UILabel = {
         let label = UILabel()
         label.text = "提现 "
         label.textColor = UIColor.mo_lightBlack()
@@ -140,26 +140,26 @@ class BalanceHeadView: UIView {
         return label
     }()
     
-    private lazy var withdrawButton: UIButton = {
+    fileprivate lazy var withdrawButton: UIButton = {
         let button = UIButton()
-        button.setTitle("", forState: .Normal)
-        button.addTarget(self, action: #selector(BalanceHeadView.withdrawButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        button.setTitle("", for: UIControlState())
+        button.addTarget(self, action: #selector(BalanceHeadView.withdrawButtonClicked(_:)), for: .touchUpInside)
         return button
     }()
     
     
-    private let leftLineView: UIView = {
+    fileprivate let leftLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.mo_silver()
         return view
     }()
-    private let rightLineView: UIView = {
+    fileprivate let rightLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.mo_silver()
         return view
     }()
     
-    private let consumeDetailLabel:UILabel = {
+    fileprivate let consumeDetailLabel:UILabel = {
         let label = UILabel()
         label.text = "余额明细"
         label.textColor = UIColor.mo_silver()

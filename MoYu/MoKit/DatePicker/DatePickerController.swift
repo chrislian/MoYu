@@ -18,7 +18,7 @@ class DatePickerController: UIViewController {
         self.setupView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.view.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5 )
@@ -29,27 +29,27 @@ class DatePickerController: UIViewController {
     
     //MARK: - evnet reponse
     
-    @objc private func buttonTap(cancel sender:UIButton){
+    @objc fileprivate func buttonTap(cancel sender:UIButton){
         
         self.dismiss()
     }
     
-    @objc private func buttonTap(submit sender: UIButton){
+    @objc fileprivate func buttonTap(submit sender: UIButton){
         
         self.submitClourse?(datePicker.date)
         self.dismiss()
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.dismiss()
     }
     
     //MARK: - public method
-    func show(inViewController:UIViewController, date:NSDate? = nil){
-        self.modalPresentationStyle = .OverCurrentContext
+    func show(_ inViewController:UIViewController, date:Date? = nil){
+        self.modalPresentationStyle = .overCurrentContext
         let vc = inViewController.view.window?.rootViewController
-        vc?.presentViewController(self, animated: false, completion: nil)
+        vc?.present(self, animated: false, completion: nil)
         
         if let date = date{
             self.datePicker.setDate(date, animated: true)
@@ -60,75 +60,75 @@ class DatePickerController: UIViewController {
     
     
     //MARK: - private method
-    private func dismiss(){
+    fileprivate func dismiss(){
         
-        self.view.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.clear
 
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.addSubview(contentView)
-        contentView.snp_makeConstraints { (make) in
+        contentView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(self.view)
         }
         
         contentView.addSubview(datePicker)
-        datePicker.snp_makeConstraints { (make) in
+        datePicker.snp.makeConstraints { (make) in
             make.bottom.left.right.equalTo(contentView)
         }
         
 
         contentView.addSubview(cancelButton)
-        cancelButton.snp_makeConstraints { (make) in
+        cancelButton.snp.makeConstraints { (make) in
             make.left.top.equalTo(contentView)
-            make.bottom.equalTo(datePicker.snp_top)
+            make.bottom.equalTo(datePicker.snp.top)
             make.width.equalTo(60)
         }
         
         contentView.addSubview(submitButton)
-        submitButton.snp_makeConstraints { (make) in
+        submitButton.snp.makeConstraints { (make) in
             make.right.top.equalTo(contentView)
-            make.bottom.equalTo(datePicker.snp_top)
+            make.bottom.equalTo(datePicker.snp.top)
             make.width.equalTo(cancelButton)
-            make.left.greaterThanOrEqualTo(cancelButton.snp_right).offset(5)
+            make.left.greaterThanOrEqualTo(cancelButton.snp.right).offset(5)
         }
     }
     
     
     //MARK: - var & let
     
-    private lazy var contentView: SpringView = {
+    fileprivate lazy var contentView: SpringView = {
         let view = SpringView()
         view.backgroundColor = UIColor.mo_background()
         return view
     }()
     
-    private lazy var datePicker:UIDatePicker = {
+    fileprivate lazy var datePicker:UIDatePicker = {
         let date = UIDatePicker()
-        date.datePickerMode = .DateAndTime
-        date.minimumDate = NSDate()
+        date.datePickerMode = .dateAndTime
+        date.minimumDate = Date()
         return date
     }()
     
-    private lazy var cancelButton:UIButton = {
+    fileprivate lazy var cancelButton:UIButton = {
         let button = UIButton()
-        button.setTitle("取消", forState: .Normal)
-        button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+        button.setTitle("取消", for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
-        button.addTarget(self, action: #selector(DatePickerController.buttonTap(cancel:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(DatePickerController.buttonTap(cancel:)), for: .touchUpInside)
         return button
     }()
     
-    private lazy var submitButton:UIButton = {
+    fileprivate lazy var submitButton:UIButton = {
         let button = UIButton()
-        button.setTitle("确定", forState: .Normal)
-        button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+        button.setTitle("确定", for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
-        button.addTarget(self, action: #selector(DatePickerController.buttonTap(submit:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(DatePickerController.buttonTap(submit:)), for: .touchUpInside)
         return button
     }()
     
-    var submitClourse:(NSDate->Void)?
+    var submitClourse:((Date)->Void)?
 }

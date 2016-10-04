@@ -11,27 +11,22 @@ import Kingfisher
 
 extension UIImageView {
     
-    public func mo_loadImage(urlString:String ,placeholder:UIImage? = UIImage(named: "defaultAvator")){
-        guard let url = NSURL(string: urlString) else{
-            println("urlString:\(urlString)")
-            return
-        }
-        self.kf_setImageWithURL(url, placeholderImage: placeholder)
+    public func mo_loadImage(_ urlString:String ,placeholder:UIImage? = UIImage(named: "defaultAvator")){
+        self.kf.setImage(with: URL(string: urlString), placeholder: placeholder)
     }
     
-    public func mo_captureImage(rect: CGRect) -> UIImage?{
-        if let image = self.image, cgImage = CGImageCreateWithImageInRect(image.CGImage, rect){
-            return UIImage(CGImage: cgImage)
+    public func mo_captureImage(_ rect: CGRect) -> UIImage?{
+        if let image = self.image, let cgImage = image.cgImage?.cropping(to: rect){
+            return UIImage(cgImage: cgImage)
         }
-        
         return nil
     }
 }
 
 
-public class MOImageView: UIImageView {
+open class MOImageView: UIImageView {
     
-    public override var image: UIImage? {
+    open override var image: UIImage? {
         set {
             guard let mg = newValue else {
                 super.image = newValue
@@ -44,14 +39,10 @@ public class MOImageView: UIImageView {
         }
     }
     
-    public func mo_loadRoundImage(urlString:String,radius:CGFloat = 0, placeholder:UIImage? = UIImage(named: "defaultAvator")){
+    open func mo_loadRoundImage(_ urlString:String,radius:CGFloat = 0, placeholder:UIImage? = UIImage(named: "defaultAvator")){
         self.radius = radius
-        guard let url = NSURL(string: urlString) else{
-            println("urlString:\(urlString)")
-            return
-        }
-        self.kf_setImageWithURL(url, placeholderImage:placeholder)
+        self.kf.setImage(with: URL(string: urlString), placeholder: placeholder)
     }
     
-    private var radius:CGFloat = 0
+    fileprivate var radius:CGFloat = 0
 }

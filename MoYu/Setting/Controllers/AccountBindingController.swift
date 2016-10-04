@@ -26,52 +26,52 @@ class AccountBindingController: UIViewController {
     //MARK: - public method
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.tableView.rowHeight = 44
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.separatorStyle = .None
+        self.tableView.separatorStyle = .none
     }
 
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
-    private lazy var accountingModel = MOAccountBindingModel()
+    fileprivate lazy var accountingModel = MOAccountBindingModel()
 }
 
 // MARK: - UITableView Delegate
 extension AccountBindingController:UITableViewDelegate{
 
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let accountCell = cell as? AccountBindingCell else{ return }
         
-        accountCell.selectionStyle = .None
-        accountCell.update(acount: accountingModel.accounts[indexPath.row])
+        accountCell.selectionStyle = .none
+        accountCell.update(acount: accountingModel.accounts[(indexPath as NSIndexPath).row])
         accountCell.bindingButtonClick = {
             println("binding Button clicked: type:\($0)")
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 // MARK: - UITableView datasource
 extension AccountBindingController:UITableViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accountingModel.accounts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Personal.Cell.accountBindingCell) else{
-            return UITableViewCell(style: .Default, reuseIdentifier: SB.Personal.Cell.accountBindingCell)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SB.Personal.Cell.accountBindingCell) else{
+            return UITableViewCell(style: .default, reuseIdentifier: SB.Personal.Cell.accountBindingCell)
         }
         return cell
     }

@@ -18,41 +18,41 @@ class AccountBindingCell: UITableViewCell {
     
     
     //MARK: - event response
-    func bindingButtonClicked(sender:UIButton){
+    func bindingButtonClicked(_ sender:UIButton){
         
         guard let type = AccountType(rawValue: sender.tag) else { return }
         
-        self.bindingButtonClick?(type:type)
+        self.bindingButtonClick?(type)
     }
 
     //MARK: - public method
     func update(acount item:AccountItem){
         if item.isBinding{
-            if item.type == .Phone{
-                bindingButton.setTitle("修改", forState: .Normal)
+            if item.type == .phone{
+                bindingButton.setTitle("修改", for: UIControlState())
             }
-            bindingButton.setTitle("解绑", forState: .Normal)
-            bindingButton.setTitleColor(UIColor.mo_silver(), forState: .Normal)
-            bindingButton.layer.borderColor = UIColor.mo_silver().CGColor
+            bindingButton.setTitle("解绑", for: UIControlState())
+            bindingButton.setTitleColor(UIColor.mo_silver(), for: UIControlState())
+            bindingButton.layer.borderColor = UIColor.mo_silver().cgColor
         }else{
-            bindingButton.setTitleColor(UIColor.mo_main(), forState: .Normal)
-            bindingButton.setTitle("绑定", forState: .Normal)
-            bindingButton.layer.borderColor = UIColor.mo_main().CGColor
+            bindingButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
+            bindingButton.setTitle("绑定", for: UIControlState())
+            bindingButton.layer.borderColor = UIColor.mo_main().cgColor
         }
         let image:UIImage?
         switch item.type {
-        case .QQ:
+        case .qq:
             image = item.isBinding ? UIImage(named: "icon_qq_light") : UIImage(named: "icon_qq_grey")
-        case .WeChat:
+        case .weChat:
             image = item.isBinding ? UIImage(named: "icon_wechat_light") : UIImage(named: "icon_wechat_grey")
-        case .Weibo:
+        case .weibo:
             image = item.isBinding ? UIImage(named: "icon_weibo_light") : UIImage(named: "icon_weibo_grey")
-        case .Phone:
+        case .phone:
             image = item.isBinding ? UIImage(named: "icon_phone_light") : UIImage(named: "icon_phone_grey")
         }
         
         bindingButton.tag = item.type.rawValue
-        bindingButton.addTarget(self, action: #selector(bindingButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        bindingButton.addTarget(self, action: #selector(bindingButtonClicked(_:)), for: .touchUpInside)
         
         accountImageView.image = image
         accountStatusLabel.text = item.status
@@ -60,8 +60,8 @@ class AccountBindingCell: UITableViewCell {
     }
     
     //MARK: - private method
-    private func setupCell(){
-        accountImageView.contentMode = .ScaleAspectFill
+    fileprivate func setupCell(){
+        accountImageView.contentMode = .scaleAspectFill
         accountImageView.layer.cornerRadius = accountImageView.frame.size.width/2
         accountImageView.layer.masksToBounds = true
         
@@ -80,7 +80,7 @@ class AccountBindingCell: UITableViewCell {
     
     //MARK: - var & let
     
-    var bindingButtonClick:((type:AccountType)->Void)?
+    var bindingButtonClick:((_ type:AccountType)->Void)?
     
     @IBOutlet weak var bindingButton: UIButton!
     @IBOutlet weak var accountStatusLabel: UILabel!

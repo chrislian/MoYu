@@ -18,7 +18,7 @@ class LeftMenuView: UIView {
     
     //MARK: - public method
 
-    func updateHeader(user user:UserInfo){
+    func updateHeader(user:UserInfo){
         
         headerUsernameLabel.text = user.moName
         headerPhoneLabel.text = user.moPhone
@@ -30,18 +30,18 @@ class LeftMenuView: UIView {
         headerImageView.image = image
     }
     
-    private func setupView(){
+    fileprivate func setupView(){
         
         headerImageView.layer.cornerRadius = headerImageView.bounds.size.height/2.0
         headerImageView.layer.masksToBounds = true
         
         headerBackView.layer.cornerRadius = headerBackView.bounds.size.height/2.0
         headerBackView.layer.masksToBounds = true
-        headerBackView.layer.borderColor = UIColor.whiteColor().CGColor
+        headerBackView.layer.borderColor = UIColor.white.cgColor
         headerBackView.layer.borderWidth = 2.0
         
         //tableView
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.bounces = false
         
         //auth
@@ -49,7 +49,7 @@ class LeftMenuView: UIView {
         isCustomerAuth = false
     }
 
-    private func updateAuthImageView(imageView:UIImageView,flag:Bool){
+    fileprivate func updateAuthImageView(_ imageView:UIImageView,flag:Bool){
         var color:UIColor
         if flag {
            color = UIColor.mo_main()
@@ -83,11 +83,11 @@ class LeftMenuView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet private weak var headerView: UIView!
-    @IBOutlet private weak var headerBackView: UIView!
-    @IBOutlet private weak var headerImageView: UIImageView!
-    @IBOutlet private weak var headerCustomAuthImageView: UIImageView!
-    @IBOutlet private weak var headerMerchantAuthImageView: UIImageView!
-    @IBOutlet private weak var headerUsernameLabel: UILabel!
-    @IBOutlet private weak var headerPhoneLabel: UILabel!
+    @IBOutlet fileprivate weak var headerView: UIView!
+    @IBOutlet fileprivate weak var headerBackView: UIView!
+    @IBOutlet fileprivate weak var headerImageView: UIImageView!
+    @IBOutlet fileprivate weak var headerCustomAuthImageView: UIImageView!
+    @IBOutlet fileprivate weak var headerMerchantAuthImageView: UIImageView!
+    @IBOutlet fileprivate weak var headerUsernameLabel: UILabel!
+    @IBOutlet fileprivate weak var headerPhoneLabel: UILabel!
 }

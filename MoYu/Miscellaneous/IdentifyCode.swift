@@ -12,14 +12,14 @@ struct RegexHelper {
     let regex: NSRegularExpression?
     init?(_ pattern: String) {
         do{
-            regex = try NSRegularExpression(pattern: pattern, options: .CaseInsensitive)
+            regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
         }catch{
             return nil
         }
     }
     
-    func match(input: String) -> Bool {
-        guard let res = regex?.matchesInString(input,options: [], range: NSMakeRange(0, input.characters.count)) else{
+    func match(_ input: String) -> Bool {
+        guard let res = regex?.matches(in: input,options: [], range: NSMakeRange(0, input.characters.count)) else{
             return false
         }
         return res.count > 0

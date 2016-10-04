@@ -8,7 +8,7 @@
 
 import Foundation
 
-func println<T>(message:T,file:String=#file,method:String=#function,line:Int=#line){
+func println<T>(_ message:T,file:String=#file,method:String=#function,line:Int=#line){
     
     print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
 

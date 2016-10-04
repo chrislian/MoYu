@@ -18,17 +18,17 @@ class AboutJobsCell: UITableViewCell {
     }
     
     //MARK: - public method
-    class func cell(tableView tableView:UITableView)->AboutJobsCell{
+    class func cell(tableView:UITableView)->AboutJobsCell{
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.aboutJobs) as? AboutJobsCell else{
-            return AboutJobsCell(style: .Default, reuseIdentifier: SB.AppCenter.Cell.aboutJobs)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SB.AppCenter.Cell.aboutJobs) as? AboutJobsCell else{
+            return AboutJobsCell(style: .default, reuseIdentifier: SB.AppCenter.Cell.aboutJobs)
         }
         return cell
     }
     
-    func update(item item:AboutJobItem){
+    func update(item:AboutJobItem){
         
-        dateLabel.text = item.create_time.mo_ToString(.Detail)
+        dateLabel.text = item.create_time.mo_ToString(.detail)
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
         //headImageView.mo_loadRoundImage(item.avator, placeholder: UIImage(named: "defalutHead")!)
@@ -39,19 +39,19 @@ class AboutJobsCell: UITableViewCell {
     
     //MARK: - private method
     
-    dynamic private func zanTap(sender:UITapGestureRecognizer){
+    dynamic fileprivate func zanTap(_ sender:UITapGestureRecognizer){
         
         self.zanClourse?(jobZoneItem)
     }
-    dynamic private func commentTap(sender:UITapGestureRecognizer){
+    dynamic fileprivate func commentTap(_ sender:UITapGestureRecognizer){
         
         self.commentClourse?(jobZoneItem)
     }
     
-    private func setupCell(){
+    fileprivate func setupCell(){
         
-        zanImageView.userInteractionEnabled = true
-        commentImageView.userInteractionEnabled = true
+        zanImageView.isUserInteractionEnabled = true
+        commentImageView.isUserInteractionEnabled = true
         
         let zan = UITapGestureRecognizer(target: self, action: #selector(zanTap(_:)))
         zanImageView.addGestureRecognizer(zan)
@@ -69,7 +69,7 @@ class AboutJobsCell: UITableViewCell {
     @IBOutlet weak var commentImageView: UIImageView!
     @IBOutlet weak var zanImageView: UIImageView!
     
-    private var jobZoneItem:AboutJobItem?
-    var zanClourse:(AboutJobItem?->Void)?
-    var commentClourse:(AboutJobItem?->Void)?
+    fileprivate var jobZoneItem:AboutJobItem?
+    var zanClourse:((AboutJobItem?)->Void)?
+    var commentClourse:((AboutJobItem?)->Void)?
 }

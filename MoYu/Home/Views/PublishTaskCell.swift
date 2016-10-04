@@ -22,15 +22,15 @@ class PublishTaskCell: UITableViewCell {
     }
     
     //MARK: - public method
-    static func cell(tableView tableView:UITableView) -> PublishTaskCell {
+    static func cell(tableView:UITableView) -> PublishTaskCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(String(PublishTaskCell)) as? PublishTaskCell else{
-            return PublishTaskCell(style: .Default, reuseIdentifier: String(PublishTaskCell))
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PublishTaskCell.self)) as? PublishTaskCell else{
+            return PublishTaskCell(style: .default, reuseIdentifier: String(describing: PublishTaskCell.self))
         }
         return cell
     }
     
-    func update(placeholder:String, maxLength:Int, clourse:(String->Void)){
+    func update(_ placeholder:String, maxLength:Int, clourse:@escaping ((String)->Void)){
         inputTextView.placeholderText = placeholder
         self.maxLength = maxLength
         self.endClourse = clourse
@@ -38,10 +38,10 @@ class PublishTaskCell: UITableViewCell {
     
     
     //MARK: - private method
-    private func setupCell(){
+    fileprivate func setupCell(){
         
         self.contentView.addSubview(inputTextView)
-        inputTextView.snp_makeConstraints { (make) in
+        inputTextView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentView).inset(UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
         }
     }
@@ -49,9 +49,9 @@ class PublishTaskCell: UITableViewCell {
  
     //MARK: - var & let 
     
-    private var maxLength = 0
+    fileprivate var maxLength = 0
     
-    private lazy var inputTextView:YYTextView = {
+    fileprivate lazy var inputTextView:YYTextView = {
         
         let textView = YYTextView()
         textView.placeholderFont = UIFont.mo_font()
@@ -62,28 +62,28 @@ class PublishTaskCell: UITableViewCell {
         return textView
     }()
     
-    private var endClourse:(String->Void)?
+    fileprivate var endClourse:((String)->Void)?
 
 }
 
 extension PublishTaskCell: YYTextViewDelegate{
     
-    func textViewDidEndEditing(textView: YYTextView) {
+    func textViewDidEndEditing(_ textView: YYTextView) {
         
         endClourse?(textView.text)
     }
     
-    func textViewShouldEndEditing(textView: YYTextView) -> Bool {
+    func textViewShouldEndEditing(_ textView: YYTextView) -> Bool {
         
         return true
     }
     
-    func textView(textView: YYTextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: YYTextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         let string = (textView.text)! as NSString
-        let toBeString = string.stringByReplacingCharactersInRange(range, withString: text)
+        let toBeString = string.replacingCharacters(in: range, with: text)
         if toBeString.characters.count > maxLength && maxLength > 0{
-            textView.text = (toBeString as NSString).substringToIndex(maxLength)
+            textView.text = (toBeString as NSString).substring(to: maxLength)
             return false
         }
         

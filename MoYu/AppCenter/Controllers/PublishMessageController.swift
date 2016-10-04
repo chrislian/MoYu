@@ -20,16 +20,16 @@ class PublishMessageController: UIViewController, PraseErrorType, AlertViewType 
         setupView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         textView.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if textView.isFirstResponder(){
+        if textView.isFirstResponder{
             textView.resignFirstResponder()
         }
     }
@@ -40,30 +40,30 @@ class PublishMessageController: UIViewController, PraseErrorType, AlertViewType 
         self.view.endEditing( true )
         
         let text = textView.text
-        if text.length == 0{
+        if text?.length == 0{
             self.showAlert(message: "内容不能为空")
             return
         }
-        Router.commitJobZone(message: text).request { (status, json) in
+        Router.commitJobZone(message: text!).request { (status, json) in
             
             self.show(error: status)
             if case .success = status {
-                self.navigationController?.popViewControllerAnimated(true)
+                let _ = self.navigationController?.popViewController(animated: true)
             }
         }
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.backgroundColor = UIColor.mo_lightYellow()
         self.view.addSubview(textView)
-        textView.snp_makeConstraints { (make) in
+        textView.snp.makeConstraints { (make) in
             let edge = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             make.edges.equalTo(textView.superview!).inset(edge)
         }
 
-        let rightBarButton = UIBarButtonItem(title: "提交", style: .Plain, target: self, action: #selector(rightBarItem(tap:)))
+        let rightBarButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
     }
     
@@ -72,9 +72,9 @@ class PublishMessageController: UIViewController, PraseErrorType, AlertViewType 
         let textView = YYTextView()
         textView.placeholderText = "来爆料一下兼职过程中的新鲜事情吧..."
         textView.placeholderFont = UIFont.mo_font()
-        textView.placeholderTextColor = UIColor.lightGrayColor()
+        textView.placeholderTextColor = UIColor.lightGray
         textView.font = UIFont.mo_font()
-        textView.textColor = UIColor.darkGrayColor()
+        textView.textColor = UIColor.darkGray
         textView.delegate = self
         return textView
     }()

@@ -16,7 +16,7 @@ struct HomeMenuModel{
     let commission:String
     let complain:Int
     let content:String
-    let createtime:NSDate
+    let createtime:Date
     let education:String
     let geohash:String
     let id:String
@@ -30,9 +30,9 @@ struct HomeMenuModel{
     let sex:Int
     let status:Int
     let sum:Int
-    let time:NSDate
+    let time:Date
     let userid:String
-    let workingtime:NSDate
+    let workingtime:Date
     
     init(json:JSON){
         address = json["address"].stringValue
@@ -40,7 +40,7 @@ struct HomeMenuModel{
         commission = json["commission"].stringValue
         complain = json["complain"].intValue
         content = json["content"].stringValue
-        createtime = NSDate(timeIntervalSince1970: json["createtime"].doubleValue)
+        createtime = Date(timeIntervalSince1970: json["createtime"].doubleValue)
         education = json["education"].stringValue
         geohash = json["geohash"].stringValue
         id = json["id"].stringValue
@@ -54,8 +54,8 @@ struct HomeMenuModel{
         sex = json["sex"].intValue
         status = json["status"].intValue
         sum = json["sum"].intValue
-        time = NSDate.init(timeIntervalSince1970: json["time"].doubleValue)
+        time = Date.init(timeIntervalSince1970: json["time"].doubleValue)
         userid = json["userid"].stringValue
-        workingtime = NSDate(timeIntervalSince1970: json["workingtime"].doubleValue)
+        workingtime = Date(timeIntervalSince1970: json["workingtime"].doubleValue)
     }
 }

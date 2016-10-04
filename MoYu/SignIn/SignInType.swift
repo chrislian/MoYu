@@ -11,25 +11,25 @@ import UIKit
 
 protocol SignInType {
     
-    func showSignInView(completion: (Void->Void)?)
+    func showSignInView(_ completion: ((Void)->Void)?)
     
-    func dismissSignInView( completion: (Void->Void)? )
+    func dismissSignInView( _ completion: ((Void)->Void)? )
 }
 
 extension SignInType where Self: UIViewController{
     
-    func showSignInView(completion: (Void->Void)? = nil ){
+    func showSignInView(_ completion: ((Void)->Void)? = nil ){
         
         guard let nav = SB.SignIn.root else{
             println("load signin failed")
             return
         }
         
-        self.presentViewController(nav, animated: true, completion: completion)
+        self.present(nav, animated: true, completion: completion)
     }
     
-    func dismissSignInView( completion: (Void->Void)? = nil ){
+    func dismissSignInView( _ completion: ((Void)->Void)? = nil ){
         
-        self.dismissViewControllerAnimated(true, completion: completion )
+        self.dismiss(animated: true, completion: completion )
     }
 }

@@ -24,9 +24,9 @@ class UserHeaderCell: UITableViewCell {
     }
     
     //MARK: - private method
-    private func setupCell(){
+    fileprivate func setupCell(){
     
-        headerImageView.contentMode = .ScaleAspectFill
+        headerImageView.contentMode = .scaleAspectFill
         headerImageView.layer.cornerRadius = headerImageView.frame.size.width/2
         headerImageView.layer.masksToBounds = true
         

@@ -23,7 +23,7 @@ extension Realm{
         
         var config = Realm.Configuration()
         // 使用默认的目录，但是使用用户名来替换默认的文件名
-        config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(num).realm")
+        config.fileURL = config.fileURL?.deletingLastPathComponent().appendingPathComponent("\(num).realm")
         
         // 将这个配置应用到默认的 Realm 数据库当中
         Realm.Configuration.defaultConfiguration = config
@@ -35,13 +35,13 @@ class UserManager {
 
     static let sharedInstance = UserManager()
     
-    private(set) var user = UserInfo(){
+    fileprivate(set) var user = UserInfo(){
         didSet{
             sendMessage(UserNotification.updateUserInfo)
         }
     }
     
-    private(set) var isLoginIn = false
+    fileprivate(set) var isLoginIn = false
     
     let realm = try! Realm()
     
@@ -81,7 +81,7 @@ class UserManager {
     
     func getUserBy(phone num:String)->Bool{
         
-        guard let user = realm.objectForPrimaryKey(UserInfo.self, key: num) else{
+        guard let user = realm.object(ofType: UserInfo.self, forPrimaryKey: num as AnyObject) else{
             return false
         }
         self.user = user
@@ -91,17 +91,17 @@ class UserManager {
     
     func getPhoneNumber()->String?{
         
-        guard let phone =  NSUserDefaults.standardUserDefaults().valueForKey("userPhoneNumber") as? String else{
+        guard let phone =  UserDefaults.standard.value(forKey: "userPhoneNumber") as? String else{
             return nil
         }
         
-        self.getUserBy(phone: phone)
+        let _ = self.getUserBy(phone: phone)
         
         return phone
         
     }
     
     func set(phone number:String){
-        NSUserDefaults.standardUserDefaults().setObject(number, forKey: "userPhoneNumber")
+        UserDefaults.standard.set(number, forKey: "userPhoneNumber")
     }
 }

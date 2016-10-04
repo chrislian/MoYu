@@ -14,7 +14,7 @@ extension UINavigationController{
      隐藏导航条返回键的 title
      */
     func mo_hideBackButtonTitle(){
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), forBarMetrics:UIBarMetrics.Default)
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), for:UIBarMetrics.default)
         
     }
     
@@ -26,11 +26,11 @@ extension UINavigationController{
      */
     func mo_navigationBar(opaque value:Bool, tintColor:UIColor = UIColor.mo_main()){
         if value{
-            self.navigationBar.setBackgroundImage( UIImage.mo_createImageWithColor( tintColor ), forBarMetrics: .Default)
+            self.navigationBar.setBackgroundImage( UIImage.mo_createImageWithColor( tintColor ), for: .default)
             self.navigationBar.shadowImage = UIImage.mo_createImageWithColor(UIColor.mo_silver())
             //            self.navigationController?.navigationBar.translucent = false
         }else{
-            self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+            self.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationBar.shadowImage = UIImage()
             //            self.navigationController?.navigationBar.translucent = true
         }
@@ -42,6 +42,6 @@ extension UINavigationController{
     class func mo_hideBackTitle(){
         
         let offset = UIOffset(horizontal: 0, vertical: -60)
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(offset, forBarMetrics: .Default)
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(offset, for: .default)
     }
 }

@@ -10,27 +10,27 @@ import UIKit
 
 
 private enum MyPurseType{
-    case Balance(amount:Float)
-    case Recharge,Withdraw
+    case balance(amount:Float)
+    case recharge,withdraw
     
     func image()->UIImage?{
         switch self {
-        case .Balance:
+        case .balance:
             return UIImage(named: "myPurseBalance")
-        case .Recharge:
+        case .recharge:
             return UIImage(named: "myPurseRecharge")
-        case .Withdraw:
+        case .withdraw:
             return UIImage(named: "myPurseWithdraw")
         }
     }
     
     func title()->String{
         switch self{
-        case .Balance:
+        case .balance:
             return "余额"
-        case .Recharge:
+        case .recharge:
             return "提现"
-        case .Withdraw:
+        case .withdraw:
             return "充值"
         }
     }
@@ -53,17 +53,17 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
     }
     
     //MARK: - event response
-    @objc private func backButton(tap sender:AnyObject){
+    @objc fileprivate func backButton(tap sender:AnyObject){
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         mo_rootLeftBackButton()
 
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         
         tableView.backgroundColor = UIColor.mo_background()
         
@@ -73,12 +73,12 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
         tableView.rowHeight = 44
     }
     
-    private func setupCells(balance amount:Float = 0)->[MyPurseType]{
+    fileprivate func setupCells(balance amount:Float = 0)->[MyPurseType]{
         
         var cellItems = [MyPurseType]()
-        cellItems.append(.Balance(amount: amount))
-        cellItems.append(.Withdraw)
-        cellItems.append(.Recharge)
+        cellItems.append(.balance(amount: amount))
+        cellItems.append(.withdraw)
+        cellItems.append(.recharge)
         
         return cellItems
     }
@@ -87,25 +87,25 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
     
-    private lazy var cellItems:[MyPurseType] = self.setupCells()
+    fileprivate lazy var cellItems:[MyPurseType] = self.setupCells()
 }
 
 extension MyPurseController: UITableViewDelegate{
 
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
 
-        switch cellItems[indexPath.row] {
-        case .Balance(_):
+        switch cellItems[(indexPath as NSIndexPath).row] {
+        case .balance(_):
             let vc = BalanceController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
-            let title = cellItems[indexPath.row].title()
+            let title = cellItems[(indexPath as NSIndexPath).row].title()
             let vc = UIViewController()
             vc.title = title
             vc.view.backgroundColor = UIColor.mo_mercury()
@@ -117,21 +117,21 @@ extension MyPurseController: UITableViewDelegate{
 
 extension MyPurseController: UITableViewDataSource{
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellItems.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var balance = ""
-        let image = cellItems[indexPath.row].image()
-        let title = cellItems[indexPath.row].title()
+        let image = cellItems[(indexPath as NSIndexPath).row].image()
+        let title = cellItems[(indexPath as NSIndexPath).row].title()
         
         let cell = MyPurseCell.cell(tableView)
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         
-        switch cellItems[indexPath.row] {
-        case .Balance(let amount):
+        switch cellItems[(indexPath as NSIndexPath).row] {
+        case .balance(let amount):
             balance = String(format: "%.2f",amount) + "元"
         default:break
         }

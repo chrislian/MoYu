@@ -23,12 +23,12 @@ class FeedbackView: UIView {
     }
     
     //MARK: - private method    
-    private func layout(){
+    fileprivate func layout(){
         
         let view = UIView()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         self.addSubview(view)
-        view.snp_makeConstraints { (make) in
+        view.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
             make.height.equalTo(44)
             make.top.equalTo(self).offset(10)
@@ -38,15 +38,15 @@ class FeedbackView: UIView {
         label.text = "类型"
         label.textColor = UIColor.mo_lightBlack()
         view.addSubview(label)
-        label.snp_makeConstraints { (make) in
+        label.snp.makeConstraints { (make) in
             make.left.equalTo(view).offset(20)
             make.centerY.equalTo(view)
             make.width.equalTo(40)
         }
         
         view.addSubview(typeButton)
-        typeButton.snp_makeConstraints { (make) in
-            make.left.equalTo(label.snp_right).offset(8)
+        typeButton.snp.makeConstraints { (make) in
+            make.left.equalTo(label.snp.right).offset(8)
             make.right.equalTo(view).offset(-20)
             make.top.equalTo(view).offset(5)
             make.bottom.equalTo(view).offset(-5)
@@ -54,34 +54,34 @@ class FeedbackView: UIView {
         
         //title
         self.addSubview(titleText)
-        titleText.snp_makeConstraints { (make) in
+        titleText.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
             make.height.equalTo(49)
-            make.top.equalTo(view.snp_bottom).offset(20)
+            make.top.equalTo(view.snp.bottom).offset(20)
         }
         
         //content
         self.addSubview(contentText)
-        contentText.snp_makeConstraints { (make) in
+        contentText.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
-            make.top.equalTo(titleText.snp_bottom).offset(20)
+            make.top.equalTo(titleText.snp.bottom).offset(20)
             make.height.equalTo(250)
         }
         
         self.addSubview(countDownLabel)
-        countDownLabel.snp_makeConstraints { (make) in
+        countDownLabel.snp.makeConstraints { (make) in
             make.right.equalTo(self).offset(-8)
-            make.top.equalTo(contentText.snp_bottom).offset(8)
+            make.top.equalTo(contentText.snp.bottom).offset(8)
         }
     }
     
     //MARK: - var & let
     lazy var typeButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.mo_main(), forState: .Normal)
+        button.setTitleColor(UIColor.mo_main(), for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
-        button.setTitle("开 发", forState: .Normal)
-        button.layer.borderColor = UIColor.mo_main().CGColor
+        button.setTitle("开 发", for: UIControlState())
+        button.layer.borderColor = UIColor.mo_main().cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
@@ -95,7 +95,7 @@ class FeedbackView: UIView {
         
         text.placeholderTextColor = UIColor.mo_silver()
         text.textColor = UIColor.mo_lightBlack()
-        text.backgroundColor = UIColor.whiteColor()
+        text.backgroundColor = UIColor.white
         
         text.placeholderText = "请输入标题"
         
@@ -109,7 +109,7 @@ class FeedbackView: UIView {
         
         text.placeholderTextColor = UIColor.mo_silver()
         text.textColor = UIColor.mo_lightBlack()
-        text.backgroundColor = UIColor.whiteColor()
+        text.backgroundColor = UIColor.white
         
         text.placeholderText = "请输入您的宝贵意见"
     

@@ -24,19 +24,19 @@ class AppCenterController: UIViewController {
     }
 
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
     
     //MARK: - private method
-    private func setupAppCenterView(){
+    fileprivate func setupAppCenterView(){
         tableView.backgroundColor = UIColor.mo_background()
         bannerView.backgroundColor = UIColor.mo_background()
         
         tableView.bounces = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
     }
     
     //MARK: - var & let
@@ -54,59 +54,59 @@ class AppCenterController: UIViewController {
 extension AppCenterController:UITableViewDelegate{
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0  {
-            self.performSegueWithIdentifier(SB.AppCenter.Segue.aboutJobs, sender: self)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == 0 && (indexPath as NSIndexPath).row == 0  {
+            self.performSegue(withIdentifier: SB.AppCenter.Segue.aboutJobs, sender: self)
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10.0
     }
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10.0
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor  = UIColor.mo_background()
         return view
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor  = UIColor.mo_background()
         return view
     }
     
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tmpCell = cell as? AppCenterCell else{
             println("cell error")
             return
         }
-        tmpCell.updateCell(cellImages[indexPath.section][indexPath.row], text: cellTitles[indexPath.section][indexPath.row])
+        tmpCell.updateCell(cellImages[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row], text: cellTitles[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
     }
 }
 
 extension AppCenterController:UITableViewDataSource{
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return cellTitles.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellTitles[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(SB.AppCenter.Cell.appCenter){
+        if let cell = tableView.dequeueReusableCell(withIdentifier: SB.AppCenter.Cell.appCenter){
             return cell
         }
         
-        return LeftMenuCell(style: .Default, reuseIdentifier: SB.AppCenter.Cell.appCenter)
+        return LeftMenuCell(style: .default, reuseIdentifier: SB.AppCenter.Cell.appCenter)
     }
 }

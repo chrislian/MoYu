@@ -20,7 +20,7 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     }
 
     //MARK: - event response
-    dynamic private func nextButtonClicked(sender:UIButton){
+    dynamic fileprivate func nextButtonClicked(_ sender:UIButton){
         
         if postModel.type == 0{
             self.showAlert(message: "工作种类还没有选择哦~")
@@ -48,49 +48,49 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     }
     
     //MARK: - private method
-    private func setupView(){
+    fileprivate func setupView(){
         
         self.view.backgroundColor = UIColor.mo_background()
         
         self.view.addSubview(tableView)
-        tableView.snp_makeConstraints { (make) in
+        tableView.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(self.view)
         }
         
         self.view.addSubview(nextButton)
-        nextButton.snp_makeConstraints { (make) in
+        nextButton.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(20)
             make.right.equalTo(self.view).offset(-20)
             make.bottom.equalTo(self.view).offset(-10)
-            make.top.equalTo(tableView.snp_bottom).offset(10)
+            make.top.equalTo(tableView.snp.bottom).offset(10)
             make.height.equalTo(44)
         }
     }
     
     //MARK: - var & let
 
-    private lazy var tableView:UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
+    fileprivate lazy var tableView:UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.rowHeight = 44.0
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.mo_background()
         return tableView
     }()
     
-    private lazy var nextButton:UIButton = {
+    fileprivate lazy var nextButton:UIButton = {
         let button = UIButton()
-        button.setTitle("下一步", forState: .Normal)
-        button.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+        button.setTitle("下一步", for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font(.bigger)
         button.backgroundColor = UIColor.mo_main()
-        button.layer.borderColor = UIColor.mo_lightBlack().CGColor
+        button.layer.borderColor = UIColor.mo_lightBlack().cgColor
         button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
         
-        button.addTarget(self, action: #selector(PostParttimeJobController.nextButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(PostParttimeJobController.nextButtonClicked(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -113,7 +113,7 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     lazy var employeePrompt = PromptController.instance(title: "人数", confirm: "提交", configClourse: {
         (textfield:UITextField) ->Int in
         textfield.placeholder = "请输入需要的人数"
-        textfield.keyboardType = .NumberPad
+        textfield.keyboardType = .numberPad
         return 2
     })
     
@@ -132,20 +132,20 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     lazy var commissionPrompt = PromptController.instance(title: "金额", confirm: "提交") {
         (textfield:UITextField) -> Int in
         textfield.placeholder = "请输入支付每份工作的的金额"
-        textfield.keyboardType = .DecimalPad
+        textfield.keyboardType = .decimalPad
         return 6
     }
     
     lazy var taskTimePrompt = PromptController.instance(title: "金额", confirm: "提交") {
         (textfield:UITextField) -> Int in
         textfield.placeholder = "请输入每份工作的工时"
-        textfield.keyboardType = .DecimalPad
+        textfield.keyboardType = .decimalPad
         return 3
     }
     
     var datePickerController = DatePickerController()
     
-    private let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
+    fileprivate let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
     
     lazy var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
     
@@ -157,17 +157,17 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
 //MARK: - UITableView delegate
 extension PostParttimeJobController: UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10.0
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.textLabel?.text = dataArrays[indexPath.section][indexPath.row]
+        cell.textLabel?.text = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
         cell.textLabel?.textColor = UIColor.mo_lightBlack()
         
@@ -175,7 +175,7 @@ extension PostParttimeJobController: UITableViewDelegate{
         cell.detailTextLabel?.textColor = UIColor.mo_silver()
         
         var detailText = ""
-        switch(indexPath.section,indexPath.row){
+        switch((indexPath as NSIndexPath).section,(indexPath as NSIndexPath).row){
         case (0,0)://类型
             if postModel.type == 0{
                 detailText = "请选择"
@@ -186,7 +186,7 @@ extension PostParttimeJobController: UITableViewDelegate{
             if postModel.time.mo_isYesterday(){
                 detailText = "请选择"
             }else{
-                detailText = NSDate.mo_stringFromDatetime2( postModel.time )
+                detailText = Date.mo_stringFromDatetime2( postModel.time )
             }
             
         case (0,2)://人数
@@ -212,16 +212,16 @@ extension PostParttimeJobController: UITableViewDelegate{
 
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        switch (indexPath.section,indexPath.row) {
+        switch ((indexPath as NSIndexPath).section,(indexPath as NSIndexPath).row) {
         case (0,0):
             categoryTypeAction.show(self)
         case (0,1):
             var date = postModel.time
             if postModel.time.mo_isYesterday(){
-                date = NSDate().mo_dateByAddingDays(1)
+                date = Date().mo_dateByAddingDays(1)
             }
             datePickerController.show(self,date: date)
             datePickerController.submitClourse = { [unowned self] in
@@ -263,7 +263,7 @@ extension PostParttimeJobController: UITableViewDelegate{
         case (2,0):
             commissionPrompt.show(self)
             commissionPrompt.confirmClourse = { [unowned self] in
-                if let value = Double($0) where !$0.isEmpty{
+                if let value = Double($0) , !$0.isEmpty{
                     self.postModel.commission = value
                 }else{
                     self.postModel.commission = 0
@@ -273,7 +273,7 @@ extension PostParttimeJobController: UITableViewDelegate{
         case (2,1):
             taskTimePrompt.show(self)
             taskTimePrompt.confirmClourse = { [unowned self] in
-                if let value = Double($0) where !$0.isEmpty{
+                if let value = Double($0) , !$0.isEmpty{
                     self.postModel.workingtime = value
                 }else{
                     self.postModel.workingtime = 0
@@ -290,19 +290,19 @@ extension PostParttimeJobController: UITableViewDelegate{
 // MARK: - UITableView DataSource
 extension PostParttimeJobController: UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return dataArrays.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArrays[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellId = "postTimeJobIdentifier"
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(cellId) else{
-            return UITableViewCell(style: .Value1, reuseIdentifier: cellId)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId) else{
+            return UITableViewCell(style: .value1, reuseIdentifier: cellId)
         }
         return cell
 
@@ -311,7 +311,7 @@ extension PostParttimeJobController: UITableViewDataSource{
 
 extension PostParttimeJobController: ActionSheetProtocol{
     
-    func otherButtons(sheet sheet:ActionSheetController)->[String]{
+    func otherButtons(sheet:ActionSheetController)->[String]{
         
         if sheet == categoryTypeAction{
             return catetoryTypeInfo
@@ -322,7 +322,7 @@ extension PostParttimeJobController: ActionSheetProtocol{
         return []
     }
     
-    func action(sheet sheet: ActionSheetController, selectedAtIndex: Int){
+    func action(sheet: ActionSheetController, selectedAtIndex: Int){
         
         if sheet === categoryTypeAction{
             postModel.type = selectedAtIndex + 1

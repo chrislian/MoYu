@@ -17,13 +17,13 @@ class RegisterProtocolController: UIViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
        navigationController?.mo_navigationBar(opaque: true)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
        navigationController?.mo_navigationBar(opaque: false)

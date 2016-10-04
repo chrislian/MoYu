@@ -20,12 +20,12 @@ class HomeMessageController: UIViewController {
 
 
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
     
     //MARK: - private method
-    private func setupMessageView(){
+    fileprivate func setupMessageView(){
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,17 +40,17 @@ class HomeMessageController: UIViewController {
 //MARK: - table view delegate
 extension HomeMessageController:UITableViewDelegate{
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -58,15 +58,15 @@ extension HomeMessageController:UITableViewDelegate{
 //MARK: - table view data source
 extension HomeMessageController:UITableViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 12
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SB.Main.Cell.homeMessage) else{
-            return HomeMessageCell(style: .Default, reuseIdentifier: SB.Main.Cell.homeMessage)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SB.Main.Cell.homeMessage) else{
+            return HomeMessageCell(style: .default, reuseIdentifier: SB.Main.Cell.homeMessage)
         }
         return cell
     }

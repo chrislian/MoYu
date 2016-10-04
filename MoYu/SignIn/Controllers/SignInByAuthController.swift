@@ -31,12 +31,12 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
     
     
     //MARK: - event reponse
-    func enterButtonTap(sender: UIButton){
+    func enterButtonTap(_ sender: UIButton){
         
         self.view.endEditing(true)
         
         guard let phoneNum = signInView.userTextfield.text,
-            let authCode = signInView.authTextFiled.text where enterButtonCheck() else{
+            let authCode = signInView.authTextFiled.text , enterButtonCheck() else{
                 return
         }
         
@@ -53,9 +53,9 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
         }
     }
     
-    func authButtonTap(sender:UIButton){
+    func authButtonTap(_ sender:UIButton){
         
-        guard let phoneNum = signInView.userTextfield.text where checkValidatePhone(signInView.userTextfield) else{
+        guard let phoneNum = signInView.userTextfield.text , checkValidatePhone(signInView.userTextfield) else{
             return
         }
         
@@ -68,43 +68,43 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
     
     func close(tap sender:AnyObject){
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 
     //MARK: - private method
 
-    private func setupView(){
+    fileprivate func setupView(){
         
         mo_rootLeftBackButton(image: UIImage(named: "nav_close"))
         
-        signInView.enterButton.addTarget(self, action: #selector(enterButtonTap(_:)), forControlEvents: .TouchUpInside)
-        signInView.authButton.addTarget(self, action: #selector(authButtonTap(_:)),forControlEvents: .TouchUpInside)
+        signInView.enterButton.addTarget(self, action: #selector(enterButtonTap(_:)), for: .touchUpInside)
+        signInView.authButton.addTarget(self, action: #selector(authButtonTap(_:)),for: .touchUpInside)
         
         signInView.userTextfield.delegate = self
         signInView.authTextFiled.delegate = self
         
-        signInView.userTextfield.keyboardType = .NumberPad
-        signInView.authTextFiled.keyboardType = .NumberPad
+        signInView.userTextfield.keyboardType = .numberPad
+        signInView.authTextFiled.keyboardType = .numberPad
         
         signInView.userTextfield.tag = TextFieldType.phoneNum.rawValue
         signInView.authTextFiled.tag = TextFieldType.authCode.rawValue
     }
     
-    private func enterButtonCheck()->Bool{
+    fileprivate func enterButtonCheck()->Bool{
         
         if !checkValidatePhone(signInView.userTextfield){
             return false
         }
         
-        guard let text = signInView.authTextFiled.text where text.mo_length() == 6 else{
+        guard let text = signInView.authTextFiled.text , text.mo_length() == 6 else{
             self.showAlert(message: "验证码长度不正确")
             return false
         }
         return true
     }
     
-    private func checkValidatePhone(textFiled: UITextField)->Bool{
+    fileprivate func checkValidatePhone(_ textFiled: UITextField)->Bool{
         
         guard let text = textFiled.text else{
             self.showAlert(message: "手机号码不能为空")
@@ -123,31 +123,31 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
     //MARK: - var & let
     @IBOutlet var signInView: SignInByAuthView!
     
-    private var countDownTime = 60
-    private var countDownLabel :UILabel = {
+    fileprivate var countDownTime = 60
+    fileprivate var countDownLabel :UILabel = {
         let label = UILabel()
         
         label.backgroundColor = UIColor.mo_lightYellow()
         label.font = UIFont.mo_font(.smallest)
-        label.textAlignment = .Center
+        label.textAlignment = .center
         label.text = "60s重新获取"
         label.textColor = UIColor.mo_silver()
         
         return label
     }()
     
-    private var countDownButton:UIButton?
-    private var countDownTimer:NSTimer?
+    fileprivate var countDownButton:UIButton?
+    fileprivate var countDownTimer:Timer?
 }
 
 extension SignInByAuthController : UITextFieldDelegate{
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
-        func handleInputTextField(maxLength: Int) {
+        func handleInputTextField(_ maxLength: Int) {
             let text = (textField.text)! as NSString
             if text.length > maxLength{
-                textField.text = text.substringToIndex(maxLength)
+                textField.text = text.substring(to: maxLength)
             }
         }
         
@@ -163,13 +163,13 @@ extension SignInByAuthController : UITextFieldDelegate{
         }
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        func handleInputTextField(maxLength: Int)-> Bool {
+        func handleInputTextField(_ maxLength: Int)-> Bool {
             let text = (textField.text)! as NSString
-            let toBeString = text.stringByReplacingCharactersInRange(range, withString: string)
+            let toBeString = text.replacingCharacters(in: range, with: string)
             if toBeString.characters.count > maxLength{
-                textField.text = (toBeString as NSString).substringToIndex(maxLength)
+                textField.text = (toBeString as NSString).substring(to: maxLength)
                 return false
             }
             return true
@@ -197,13 +197,13 @@ extension SignInByAuthController{
         
         if countDownTime <= 0{
             
-            countDownButton?.enabled = true
+            countDownButton?.isEnabled = true
             countDownLabel.removeFromSuperview()
             countDownTimer?.invalidate()
         }
     }
     
-    func lockCurrent(button button:UIButton, waitSectionds:Int){
+    func lockCurrent(button:UIButton, waitSectionds:Int){
         
         countDownTimer?.invalidate()
         
@@ -211,12 +211,12 @@ extension SignInByAuthController{
         
         countDownLabel.text = "\(countDownTime)s重新获取"
         
-        button.enabled = false
+        button.isEnabled = false
         countDownButton = button
         countDownButton?.addSubview(countDownLabel)
         
         countDownLabel.frame = button.bounds
-        countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(updateCountDownLabel), userInfo: nil, repeats: true)
+        countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountDownLabel), userInfo: nil, repeats: true)
     }
 }
 

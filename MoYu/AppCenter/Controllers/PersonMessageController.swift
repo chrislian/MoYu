@@ -21,7 +21,7 @@ class PersonMessageController: UIViewController {
     }
     
     //MARK: - event response
-    func rightBarButtonClicked(sender:UIButton){
+    func rightBarButtonClicked(_ sender:UIButton){
         
         println("clear message")
     }
@@ -31,9 +31,9 @@ class PersonMessageController: UIViewController {
         
         let backgroundImageView:UIImageView = {
             let imageView = UIImageView()
-            imageView.contentMode = .ScaleAspectFit
+            imageView.contentMode = .scaleAspectFit
             self.view.addSubview(imageView)
-            imageView.snp_makeConstraints { (make) in
+            imageView.snp.makeConstraints { (make) in
                 make.center.equalTo(imageView.superview!)
                 make.height.width.equalTo(200)
             }
@@ -41,14 +41,14 @@ class PersonMessageController: UIViewController {
         }()
         backgroundImageView.image = UIImage(named: "no_message")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "清空", style: .Plain, target: self, action: #selector(rightBarButtonClicked(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "清空", style: .plain, target: self, action: #selector(rightBarButtonClicked(_:)))
     }
     
     //MARK: - var & let
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 24))
-        button.setTitle("清空", forState: .Normal)
-        button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
+        button.setTitle("清空", for: UIControlState())
+        button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), for: .touchUpInside)
         
         return UIBarButtonItem(customView: button)
     }()  

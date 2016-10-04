@@ -17,18 +17,18 @@ extension UIImage{
      
      - returns: UIImage
      */
-    func mo_scaleToSize(size:CGSize) -> UIImage {
+    func mo_scaleToSize(_ size:CGSize) -> UIImage {
         
         //1.创建一个bitmap的context
         //2.把他设置成为当前正在使用的 context
         UIGraphicsBeginImageContext(size)
         //3.绘制改变大小的图片
-        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
         //4.从当前的context出堆栈
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         //5.返回新的改变大小后的图片
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
     
     /**
@@ -38,41 +38,40 @@ extension UIImage{
      
      - returns: new Image
      */
-    func mo_changeColor(color:UIColor)->UIImage{
+    func mo_changeColor(_ color:UIColor)->UIImage{
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()
-        CGContextTranslateCTM(context, 0, self.size.height)
-        CGContextScaleCTM(context, 1.0, -1.0)
-        CGContextSetBlendMode(context, .Normal)
-        let rect = CGRect(origin: CGPointZero, size: self.size)
-        CGContextClipToMask(context, rect, self.CGImage)
+        context?.translateBy(x: 0, y: self.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        context?.setBlendMode(.normal)
+        let rect = CGRect(origin: CGPoint.zero, size: self.size)
+        context?.clip(to: rect, mask: self.cgImage!)
         color.setFill()
-        CGContextFillRect(context, rect)
+        context?.fill(rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
  
 }
 
 
 extension UIImage {
-    func mo_drawRectWithRoundedCorner(radius  radius: CGFloat, _ sizetoFit: CGSize) -> UIImage {
+    func mo_drawRectWithRoundedCorner(radius: CGFloat, _ sizetoFit: CGSize) -> UIImage {
         let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: sizetoFit)
         
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
-        CGContextAddPath(UIGraphicsGetCurrentContext(),
-                         UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners,
-                            cornerRadii: CGSize(width: radius, height: radius)).CGPath)
-        CGContextClip(UIGraphicsGetCurrentContext())
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+        UIGraphicsGetCurrentContext()?.addPath(UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.allCorners,
+                            cornerRadii: CGSize(width: radius, height: radius)).cgPath)
+        UIGraphicsGetCurrentContext()?.clip()
         
-        self.drawInRect(rect)
-        CGContextDrawPath(UIGraphicsGetCurrentContext(), .FillStroke)
+        self.draw(in: rect)
+        UIGraphicsGetCurrentContext()?.drawPath(using: .fillStroke)
         let output = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        return output
+        return output!
     }
 }
 
@@ -87,28 +86,28 @@ extension UIImage {
      
      - returns: UIImage
      */
-    class func mo_createImageWithColor(color:UIColor)->UIImage{
+    class func mo_createImageWithColor(_ color:UIColor)->UIImage{
         
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
     
-    class func mo_blurEffect(cgImage: CGImageRef, boxSize: CGFloat) -> UIImage! {
-        return UIImage(CGImage: cgImage.blurEffect(boxSize))
+    class func mo_blurEffect(_ cgImage: CGImage, boxSize: CGFloat) -> UIImage! {
+        return UIImage(cgImage: cgImage.blurEffect(boxSize))
     }
     
-    func mo_blurEffect(boxSize: CGFloat) -> UIImage! {
-        return UIImage(CGImage: mo_bluredCGImage(boxSize))
+    func mo_blurEffect(_ boxSize: CGFloat) -> UIImage! {
+        return UIImage(cgImage: mo_bluredCGImage(boxSize))
     }
     
-    func mo_bluredCGImage(boxSize: CGFloat) -> CGImageRef! {
-        return CGImage!.blurEffect(boxSize)
+    func mo_bluredCGImage(_ boxSize: CGFloat) -> CGImage! {
+        return cgImage!.blurEffect(boxSize)
     }
 }
 
@@ -131,42 +130,42 @@ public extension UIImage {
         let posX = (originalWidth  - edge) / 2.0
         let posY = (originalHeight - edge) / 2.0
         
-        let cropSquare = CGRectMake(posX, posY, edge, edge)
+        let cropSquare = CGRect(x: posX, y: posY, width: edge, height: edge)
         
-        let imageRef = CGImageCreateWithImageInRect(self.CGImage, cropSquare)!
+        let imageRef = self.cgImage?.cropping(to: cropSquare)!
         
-        return UIImage(CGImage: imageRef, scale: scale, orientation: self.imageOrientation)
+        return UIImage(cgImage: imageRef!, scale: scale, orientation: self.imageOrientation)
     }
     
-    public func resizeToTargetSize(targetSize: CGSize) -> UIImage {
+    public func resizeToTargetSize(_ targetSize: CGSize) -> UIImage {
         let size = self.size
         
         let widthRatio  = targetSize.width  / self.size.width
         let heightRatio = targetSize.height / self.size.height
         
-        let scale = UIScreen.mainScreen().scale
+        let scale = UIScreen.main.scale
         let newSize: CGSize
         if(widthRatio > heightRatio) {
-            newSize = CGSizeMake(scale * floor(size.width * heightRatio), scale * floor(size.height * heightRatio))
+            newSize = CGSize(width: scale * floor(size.width * heightRatio), height: scale * floor(size.height * heightRatio))
         } else {
-            newSize = CGSizeMake(scale * floor(size.width * widthRatio), scale * floor(size.height * widthRatio))
+            newSize = CGSize(width: scale * floor(size.width * widthRatio), height: scale * floor(size.height * widthRatio))
         }
         
-        let rect = CGRectMake(0, 0, floor(newSize.width), floor(newSize.height))
+        let rect = CGRect(x: 0, y: 0, width: floor(newSize.width), height: floor(newSize.height))
         
         //println("size: \(size), newSize: \(newSize), rect: \(rect)")
         
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        self.drawInRect(rect)
+        self.draw(in: rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return newImage
+        return newImage!
     }
     
-    public func scaleToMinSideLength(sideLength: CGFloat) -> UIImage {
+    public func scaleToMinSideLength(_ sideLength: CGFloat) -> UIImage {
         
-        let pixelSideLength = sideLength * UIScreen.mainScreen().scale
+        let pixelSideLength = sideLength * UIScreen.main.scale
         
         //println("pixelSideLength: \(pixelSideLength)")
         //println("size: \(size)")
@@ -200,13 +199,13 @@ public extension UIImage {
             newSize = CGSize(width: floor(newWidth), height: floor(newHeight))
         }
         
-        if scale == UIScreen.mainScreen().scale {
+        if scale == UIScreen.main.scale {
             let newSize = CGSize(width: floor(newSize.width / scale), height: floor(newSize.height / scale))
             //println("A scaleToMinSideLength newSize: \(newSize)")
             
             UIGraphicsBeginImageContextWithOptions(newSize, false, scale)
-            let rect = CGRectMake(0, 0, newSize.width, newSize.height)
-            self.drawInRect(rect)
+            let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+            self.draw(in: rect)
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
@@ -219,8 +218,8 @@ public extension UIImage {
         } else {
             //println("B scaleToMinSideLength newSize: \(newSize)")
             UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-            let rect = CGRectMake(0, 0, newSize.width, newSize.height)
-            self.drawInRect(rect)
+            let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+            self.draw(in: rect)
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
@@ -233,60 +232,60 @@ public extension UIImage {
     }
     
     public func fixRotation() -> UIImage {
-        if self.imageOrientation == .Up {
+        if self.imageOrientation == .up {
             return self
         }
         
         let width = self.size.width
         let height = self.size.height
         
-        var transform = CGAffineTransformIdentity
+        var transform = CGAffineTransform.identity
         
         switch self.imageOrientation {
-        case .Down, .DownMirrored:
-            transform = CGAffineTransformTranslate(transform, width, height)
-            transform = CGAffineTransformRotate(transform, CGFloat(M_PI))
+        case .down, .downMirrored:
+            transform = transform.translatedBy(x: width, y: height)
+            transform = transform.rotated(by: CGFloat(M_PI))
             
-        case .Left, .LeftMirrored:
-            transform = CGAffineTransformTranslate(transform, width, 0)
-            transform = CGAffineTransformRotate(transform, CGFloat(M_PI_2))
+        case .left, .leftMirrored:
+            transform = transform.translatedBy(x: width, y: 0)
+            transform = transform.rotated(by: CGFloat(M_PI_2))
             
-        case .Right, .RightMirrored:
-            transform = CGAffineTransformTranslate(transform, 0, height)
-            transform = CGAffineTransformRotate(transform, CGFloat(-M_PI_2))
+        case .right, .rightMirrored:
+            transform = transform.translatedBy(x: 0, y: height)
+            transform = transform.rotated(by: CGFloat(-M_PI_2))
             
         default:
             break
         }
         
         switch self.imageOrientation {
-        case .UpMirrored, .DownMirrored:
-            transform = CGAffineTransformTranslate(transform, width, 0);
-            transform = CGAffineTransformScale(transform, -1, 1);
+        case .upMirrored, .downMirrored:
+            transform = transform.translatedBy(x: width, y: 0);
+            transform = transform.scaledBy(x: -1, y: 1);
             
-        case .LeftMirrored, .RightMirrored:
-            transform = CGAffineTransformTranslate(transform, height, 0);
-            transform = CGAffineTransformScale(transform, -1, 1);
+        case .leftMirrored, .rightMirrored:
+            transform = transform.translatedBy(x: height, y: 0);
+            transform = transform.scaledBy(x: -1, y: 1);
             
         default:
             break
         }
         
-        let selfCGImage = self.CGImage
-        let context = CGBitmapContextCreate(nil, Int(width), Int(height), CGImageGetBitsPerComponent(selfCGImage), 0, CGImageGetColorSpace(selfCGImage), CGImageGetBitmapInfo(selfCGImage).rawValue);
+        let selfCGImage = self.cgImage
+        let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: (selfCGImage?.bitsPerComponent)!, bytesPerRow: 0, space: (selfCGImage?.colorSpace!)!, bitmapInfo: (selfCGImage?.bitmapInfo.rawValue)!);
         
-        CGContextConcatCTM(context, transform)
+        context?.concatenate(transform)
         
         switch self.imageOrientation {
-        case .Left, .LeftMirrored, .Right, .RightMirrored:
-            CGContextDrawImage(context, CGRectMake(0,0, height, width), selfCGImage)
+        case .left, .leftMirrored, .right, .rightMirrored:
+            context?.draw(selfCGImage!, in: CGRect(x: 0,y: 0, width: height, height: width))
             
         default:
-            CGContextDrawImage(context, CGRectMake(0,0, width, height), selfCGImage)
+            context?.draw(selfCGImage!, in: CGRect(x: 0,y: 0, width: width, height: height))
         }
         
-        let cgImage = CGBitmapContextCreateImage(context)!
-        return UIImage(CGImage: cgImage)
+        let cgImage = context?.makeImage()!
+        return UIImage(cgImage: cgImage!)
     }
 }
 
@@ -294,7 +293,7 @@ extension UIImage{
 
     func imageFrom(base64 string:String) -> UIImage?{
         
-        if let decodeImageData = NSData(base64EncodedString: string, options: .IgnoreUnknownCharacters) {
+        if let decodeImageData = Data(base64Encoded: string, options: .ignoreUnknownCharacters) {
             return UIImage(data: decodeImageData)
         }
         return nil
@@ -302,23 +301,26 @@ extension UIImage{
     
     func image2Base64()->String?{
         
-        var imageData:NSData?
+        var imageData:Data?
         if self.hasAlpha(){
             imageData = UIImagePNGRepresentation(self)
         }else{
             imageData = UIImageJPEGRepresentation(self, 1)
         }
         
-        return imageData?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        return imageData?.base64EncodedString(options: .lineLength64Characters)
     }
     
     func hasAlpha()->Bool{
-        let alpha = CGImageGetAlphaInfo(self.CGImage)
+        
+        guard let alpha = self.cgImage?.alphaInfo else{
+            return false
+        }
         switch alpha {
-        case .PremultipliedLast,
-             .PremultipliedFirst,
-             .Last,
-             .First: return true
+        case .premultipliedLast,
+             .premultipliedFirst,
+             .last,
+             .first: return true
             
         default: return false
         }

@@ -20,20 +20,20 @@ final class TaskAppTestController: UIViewController {
     }
     
     //MARK: - event response
-    @IBAction func taskButtonTap(sender: AnyObject) {
+    @IBAction func taskButtonTap(_ sender: AnyObject) {
         
     }
     
     //MARK: - private methods
-    private func setupView(){
+    fileprivate func setupView(){
         
         tableView.backgroundColor = UIColor.mo_background()
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorStyle = .None
-        tableView.registerNib(UINib(nibName: String(TaskDetailCell),bundle: nil), forCellReuseIdentifier: TaskDetailCell.identifier)
-        tableView.registerClass(TaskStepDetailCell.self, forCellReuseIdentifier: TaskStepDetailCell.identifier)
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: String(describing: TaskDetailCell.self),bundle: nil), forCellReuseIdentifier: TaskDetailCell.identifier)
+        tableView.register(TaskStepDetailCell.self, forCellReuseIdentifier: TaskStepDetailCell.identifier)
     }
     
     //MARK: - var & let
@@ -46,7 +46,7 @@ final class TaskAppTestController: UIViewController {
 // MARK: - UITableViewDelegate
 extension TaskAppTestController: UITableViewDelegate{
 
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if section == 0{
             return 0.01
@@ -54,9 +54,9 @@ extension TaskAppTestController: UITableViewDelegate{
         return 30.0
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        func headerLabel(title:String)->UILabel{
+        func headerLabel(_ title:String)->UILabel{
             let label = UILabel()
             label.text = "  " + title
             label.textColor = UIColor.mo_lightBlack()
@@ -73,9 +73,9 @@ extension TaskAppTestController: UITableViewDelegate{
         return nil
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        switch indexPath.section {
+        switch (indexPath as NSIndexPath).section {
         case 0:
             return 80
         default:
@@ -83,14 +83,14 @@ extension TaskAppTestController: UITableViewDelegate{
         }
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
-        if let cell = cell as? TaskDetailCell, model = taskModel {
+        if let cell = cell as? TaskDetailCell, let model = taskModel {
             cell.update(item: model, onlyContent:true)
-        }else if let cell = cell as? TaskStepDetailCell, model = taskModel{
-            if indexPath.section == 1{
+        }else if let cell = cell as? TaskStepDetailCell, let model = taskModel{
+            if (indexPath as NSIndexPath).section == 1{
                 cell.update(model: model, isStep: true)
             }else{
                 cell.update(model: model, isStep: false)
@@ -102,16 +102,16 @@ extension TaskAppTestController: UITableViewDelegate{
 // MARK: - UITableViewDataSource
 extension TaskAppTestController: UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        switch indexPath.section {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch (indexPath as NSIndexPath).section {
         case 0:
             return TaskDetailCell.cell(tableView: tableView)
         default:
