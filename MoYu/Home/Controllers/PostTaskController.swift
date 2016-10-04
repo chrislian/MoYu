@@ -163,7 +163,7 @@ extension PostTaskController: UITableViewDelegate{
             if taskModel.type < 0{
                 cell.detailTextLabel?.text = "请选择"
             }else{
-                cell.detailTextLabel?.text = taskTypeDetail[taskModel.type]
+                cell.detailTextLabel?.text = taskTypeDetail[taskModel.type - 1]
             }
             
         case (1, 1):
@@ -275,7 +275,7 @@ extension PostTaskController: ActionSheetProtocol{
     
     func action(sheet: ActionSheetController, selectedAtIndex: Int){
         
-        self.taskModel.type = selectedAtIndex
+        self.taskModel.type = selectedAtIndex + 1
         self.tableView.reloadData()
     }
 }

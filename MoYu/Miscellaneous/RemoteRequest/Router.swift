@@ -45,7 +45,8 @@ enum Router {
     //任务
     case allTask(page:Int)//所有任务
     case taskCategory(type:TaskDetailType, page:Int)//任务分类 1.应用体验， 2.问卷调查，3.其他
-    //
+    case postTaskStatus(order:String, status:Int)//status 0,接任务， 1.用户完成， 2.商家完成
+    case postPartTimeStatus(order:String,status:Int)//status 0,接任务， 1.用户完成， 2.商家完成
     
 }
 
@@ -126,7 +127,12 @@ extension Router: RouterType{
             parameters = compose(parameters: ["page": page as AnyObject])
             
         case .taskCategory(let type, let page):
-            parameters = compose(parameters: ["page": page as AnyObject, "type":type.rawValue as AnyObject] )
+            parameters = compose(parameters: ["page": page, "type":type.rawValue] )
+            
+        case .postTaskStatus(let order, let status):
+            parameters = compose(parameters: ["ordernum":order, "status":status])
+        case .postPartTimeStatus(let order, let status):
+            parameters = compose(parameters: ["ordernum":order, "status":status])
         }
         
         return parameters
@@ -189,6 +195,11 @@ extension Router: RouterType{
             
         case .taskCategory:
             suffix = "getClassTaskList"
+            
+        case .postTaskStatus:
+            suffix = "postTaskStatus"
+        case .postPartTimeStatus:
+            suffix = "postPartTimeStatus"
         }
         return mainUrl + suffix
     }

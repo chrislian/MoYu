@@ -8,24 +8,60 @@
 
 import UIKit
 
-final class TaskAppTestController: UIViewController {
+final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType {
 
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mo_navigationBar(title: "任务详情")
+        
         setupView()
         
-        mo_navigationBar(title: "任务详情")
+        updateTaskButton(status: taskModel?.status ?? 0)
     }
     
     //MARK: - event response
-    @IBAction func taskButtonTap(_ sender: AnyObject) {
+    @IBAction func taskButtonTap(sender: UIButton) {
         
+        guard let model = taskModel else{ return }
+        
+        Router.postTaskStatus(order: model.ordernum, status: sender.tag).request { (status, json) in
+            
+            self.show(error: status, showSuccess: true)
+            
+            if case .success = status, let json = json{
+                
+                let model = TaskModel(json:json)
+                self.taskModel = model
+                self.updateTaskButton(status: model.status)
+            }
+        }
     }
     
     //MARK: - private methods
-    fileprivate func setupView(){
+    private func updateTaskButton(status status:Int){
+        
+        taskButton.tag = status
+        if status == 0 {
+            taskButton.backgroundColor = UIColor.mo_main()
+            taskButton.setTitle("开始任务", forState: .Normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+            taskButton.enabled = true
+        }else if status == 1{
+            taskButton.backgroundColor = UIColor.mo_main()
+            taskButton.setTitle("确认完成", forState: .Normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack(), forState: .Normal)
+            taskButton.enabled = true
+        }else if status == 2{
+            taskButton.backgroundColor = UIColor.grayColor()
+            taskButton.setTitle("等待商家确认", forState: .Normal)
+            taskButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            taskButton.enabled = false
+        }
+    }
+    
+    private func setupView(){
         
         tableView.backgroundColor = UIColor.mo_background()
         tableView.tableFooterView = UIView()
