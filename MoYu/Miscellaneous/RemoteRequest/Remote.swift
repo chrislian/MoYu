@@ -23,7 +23,7 @@ class Remote{
      - parameter parameters: 参数
      - parameter callback:   @see RemoteClourse
      */
-    class func post(url urlString:String, parameters:[String:AnyObject]? = nil ,callback:@escaping RemoteClourse){
+    class func post(url urlString:String, parameters:JSONDictionary? = nil ,callback:@escaping RemoteClourse){
         
         Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON {
              println("response:\($0)")
@@ -38,7 +38,7 @@ class Remote{
      - parameter parameters: 参数
      - parameter callback:   @see RemoteClourse
      */
-    class func get(url urlString:String ,parameters:[String:AnyObject]? = nil, callback:@escaping RemoteClourse){
+    class func get(url urlString:String ,parameters:JSONDictionary? = nil, callback:@escaping RemoteClourse){
 
         Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON {
              self.handleResponse($0, callback: callback)

@@ -18,7 +18,8 @@ final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType
         
         setupView()
         
-        updateTaskButton(status: taskModel?.status ?? 0)
+//        updateTaskButton(status: taskModel?.status ?? 0)
+        self .checkOrderStatus()
     }
     
     //MARK: - event response
@@ -40,6 +41,19 @@ final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType
     }
     
     //MARK: - private methods
+    private func checkOrderStatus(){
+        
+        guard let orderId = taskModel?.ordernum else{ return }
+        
+        Router.checkTaskStatus(order: orderId).request { (status, json) in
+            self.show(error: status)
+            if case .success = status, let json = json{
+                let orderStatus = json["status"].intValue
+                self.updateTaskButton(status: orderStatus)
+            }
+        }
+    }
+    
     private func updateTaskButton(status:Int){
         
         taskButton.tag = status

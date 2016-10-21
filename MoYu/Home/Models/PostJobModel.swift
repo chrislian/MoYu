@@ -24,11 +24,11 @@ struct PostPartTimeJobModel {
     var longitude:Double = 11.23123
     var latitude:Double = 123.2323
     
-    func combination()->[String: AnyObject]{
+    func combination()->JSONDictionary{
         
-        return ["name": name as AnyObject, "city": city as AnyObject, "commission": commission as AnyObject, "address": address as AnyObject,
-                "content": content as AnyObject, "sum":sum as AnyObject, "type": type as AnyObject, "time": Date.mo_stringFromDatetime2(self.time) as AnyObject, "sex": sex as AnyObject, "profession": profession as AnyObject,
-        "education": education as AnyObject, "workingtime": workingtime as AnyObject, "longitude": longitude as AnyObject, "latitude":latitude as AnyObject ]
+        return ["name": name , "city": city , "commission": commission , "address": address ,
+                "content": content , "sum":sum , "type": type , "time": Date.mo_stringFromDatetime2(self.time) , "sex": sex , "profession": profession ,
+        "education": education , "workingtime": workingtime , "longitude": longitude , "latitude":latitude  ]
         
     }
 }
@@ -44,7 +44,7 @@ struct PostTaskModel {
     var longitude:Double = 11.23123
     var latitude:Double = 123.2323
     
-    func combination()->[String: AnyObject]{
-        return ["name": name as AnyObject, "address": address as AnyObject, "commission": commission as AnyObject, "content": content as AnyObject, "type": type as AnyObject, "step": step as AnyObject, "sum": sum as AnyObject,"longitude": longitude as AnyObject, "latitude":latitude as AnyObject ]
+    func combination()->JSONDictionary{
+        return ["name": name , "address": address , "commission": commission , "content": content , "type": type , "step": step , "sum": sum ,"longitude": longitude , "latitude":latitude  ]
     }
 }

@@ -37,8 +37,8 @@ enum Router {
     case jobZoneZan(id:String, value:Bool)//职来职往点赞
     case commitJobZone(message:String)//发布职来职往
     
-    case postParttimeJob(parameter: [String: AnyObject])//发布兼职
-    case postTask(paramter: [String:AnyObject])//发布任务
+    case postParttimeJob(parameter: JSONDictionary)//发布兼职
+    case postTask(paramter: JSONDictionary)//发布任务
     case searchParttimeJob(page:Int,keyword:String)//兼职关键字搜索
     
     //任务
@@ -46,6 +46,7 @@ enum Router {
     case taskCategory(type:TaskDetailType, page:Int)//任务分类 1.应用体验， 2.问卷调查，3.其他
     case postTaskStatus(order:String, status:Int)//status 0,接任务， 1.用户完成， 2.商家完成
     case postPartTimeStatus(order:String,status:Int)//status 0,接任务， 1.用户完成， 2.商家完成
+    case checkTaskStatus(order:String)//查看订单状态
     
 }
 
@@ -53,64 +54,64 @@ extension Router: RouterType{
     
     
     // MARK: - request parameters
-    func parameters() -> [String:AnyObject]? {
+    func parameters() -> JSONDictionary? {
         
-        var parameters:[String:AnyObject]? = nil
+        var parameters:JSONDictionary? = nil
         
         switch self {
         case .signIn(let phone, let code):
-            parameters = ["type": 2 as AnyObject,"device": self.MOUID() as AnyObject,"phonenum": phone as AnyObject,"verify": code as AnyObject]
+            parameters = ["type": 2 ,"device": self.MOUID() ,"phonenum": phone ,"verify": code ]
         case .signOut,.financial:
             parameters = compose()
             
         case .authCode(let phone):
-            parameters = ["phonenum" : phone as AnyObject]
+            parameters = ["phonenum" : phone ]
             
         case .updateNickname(let name):
-            parameters = compose(parameters: ["nickname": name as AnyObject])
+            parameters = compose(parameters: ["nickname": name ])
             
         case .updateAutograph(let autograph):
-            parameters = compose(parameters: ["autograph": autograph as AnyObject])
+            parameters = compose(parameters: ["autograph": autograph ])
             
         case .updateSex(let sex):
-            parameters = compose(parameters: ["sex": sex as AnyObject])
+            parameters = compose(parameters: ["sex": sex ])
             
         case .updateAge(let age):
-            parameters = compose(parameters: ["age": age as AnyObject])
+            parameters = compose(parameters: ["age": age ])
             
         case .updateAvatar(let base64String):
-            parameters = compose(parameters: ["photo": base64String as AnyObject])
+            parameters = compose(parameters: ["photo": base64String ])
             
         case .feedback(let type, let title, let content):
-            parameters = compose(parameters: ["type": type as AnyObject, "title": title as AnyObject, "content": content as AnyObject])
+            parameters = compose(parameters: ["type": type , "title": title , "content": content ])
             
         case .messageCenter:
-            parameters = compose(parameters: ["category_id": 39 as AnyObject])
+            parameters = compose(parameters: ["category_id": 39 ])
             
         case .recruitCenter:
-            parameters = compose(parameters: ["category_id": 40 as AnyObject])
+            parameters = compose(parameters: ["category_id": 40 ])
             
         case .jobZoneList(let page):
-            parameters = compose(parameters: ["page": page as AnyObject])
+            parameters = compose(parameters: ["page": page ])
             
         case .myTaskList(let page):
-            parameters = compose(parameters: ["page": page as AnyObject])
+            parameters = compose(parameters: ["page": page ])
             
         case .myParttimeJobList(let page):
-            parameters = compose(parameters: ["page": page as AnyObject])
+            parameters = compose(parameters: ["page": page ])
             
         case .jobZoneZan(let id, _):
-            parameters = compose(parameters: ["id":id as AnyObject])
+            parameters = compose(parameters: ["id":id ])
             
         case .commitJobZone(let message):
-            parameters = compose(parameters: ["memo": message as AnyObject] )
+            parameters = compose(parameters: ["memo": message ] )
             
         case .allPartTimeJobList(let page, let location):
             
-            var tmp:[String:AnyObject] = ["page": page as AnyObject]
+            var tmp:JSONDictionary = ["page": page ]
             if let tmpLocation = location{
-                tmp["latitude"] = tmpLocation.latitude as AnyObject?
-                tmp["longitude"] = tmpLocation.longitude as AnyObject?
+                tmp["latitude"] = tmpLocation.latitude
+                tmp["longitude"] = tmpLocation.longitude
             }
             parameters = compose(parameters: tmp)
         
@@ -120,18 +121,21 @@ extension Router: RouterType{
         case .postTask(let paramter):
             parameters = compose(parameters: paramter)
         case .searchParttimeJob(let page, let keyword):
-            parameters = compose(parameters: ["page":page as AnyObject,"title":keyword as AnyObject])
+            parameters = compose(parameters: ["page":page ,"title":keyword ])
         
         case .allTask(let page):
-            parameters = compose(parameters: ["page": page as AnyObject])
+            parameters = compose(parameters: ["page": page ])
             
         case .taskCategory(let type, let page):
-            parameters = compose(parameters: ["page": page as AnyObject, "type":type.rawValue as AnyObject] )
+            parameters = compose(parameters: ["page": page , "type":type.rawValue ] )
             
         case .postTaskStatus(let order, let status):
-            parameters = compose(parameters: ["ordernum":order as AnyObject, "status":status as AnyObject])
+            parameters = compose(parameters: ["ordernum":order , "status":status ])
         case .postPartTimeStatus(let order, let status):
-            parameters = compose(parameters: ["ordernum":order as AnyObject, "status":status as AnyObject])
+            parameters = compose(parameters: ["ordernum":order , "status":status ])
+            
+        case .checkTaskStatus(let order):
+            parameters = compose(parameters: ["ordernum":order ])
         }
         
         return parameters
@@ -199,6 +203,8 @@ extension Router: RouterType{
             suffix = "postTaskStatus"
         case .postPartTimeStatus:
             suffix = "postPartTimeStatus"
+        case .checkTaskStatus:
+            suffix = "testS"
         }
         return mainUrl + suffix
     }

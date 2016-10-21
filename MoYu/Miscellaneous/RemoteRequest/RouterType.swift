@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias JSONDictionary = [String:Any]
+
 protocol RouterType {
     
     func sessionID()->String
@@ -16,12 +18,12 @@ protocol RouterType {
     
     func MOUID()->String
     
-    func compose(parameters: [String:AnyObject]?) -> [String: AnyObject]
+    func compose(parameters: JSONDictionary?) -> JSONDictionary
     
     func request(remote clourse: @escaping RemoteClourse)
     
     //required
-    func parameters() -> [String:AnyObject]?
+    func parameters() -> JSONDictionary?
     //required
     func urlString()->String
 }
@@ -51,15 +53,15 @@ extension RouterType {
         return MODevice.MOUID() ?? ""
     }
     
-    func compose(parameters: [String: AnyObject]? = nil) -> [String: AnyObject]{
+    func compose(parameters: JSONDictionary? = nil) -> JSONDictionary{
         
-        var base:[String:AnyObject] = ["device": self.MOUID() as AnyObject]
+        var base:JSONDictionary = ["device": self.MOUID() ]
         
         if !self.userID().isEmpty{
-            base["userid"] = self.userID() as AnyObject?
+            base["userid"] = self.userID()
         }
         if !self.sessionID().isEmpty{
-            base["sessionid"] = self.sessionID() as AnyObject?
+            base["sessionid"] = self.sessionID()
         }
         
         guard let parameters = parameters else { return base }

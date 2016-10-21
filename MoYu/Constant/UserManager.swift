@@ -81,7 +81,7 @@ class UserManager {
     
     func getUserBy(phone num:String)->Bool{
         
-        guard let user = realm.object(ofType: UserInfo.self, forPrimaryKey: num as AnyObject) else{
+        guard let user = realm.object(ofType: UserInfo.self, forPrimaryKey: num) else{
             return false
         }
         self.user = user
