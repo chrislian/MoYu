@@ -22,7 +22,7 @@ pod 'AsyncSwift', '~> 2.0.0'
 pod 'CryptoSwift', '~> 0.6.0'
 pod 'Proposer', '~> 1.0.0'
 pod 'RealmSwift'
-
+pod 'IQKeyboardManagerSwift'
 end
 
 target 'MoYuTests' do

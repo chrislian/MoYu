@@ -3,6 +3,7 @@ PODS:
   - AsyncSwift (2.0.0)
   - BaiduMapKit (2.10.2)
   - CryptoSwift (0.6.0)
+  - IQKeyboardManagerSwift (4.0.7)
   - Kingfisher (3.1.1)
   - MJRefresh (3.1.12)
   - Proposer (1.0.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - AsyncSwift (~> 2.0.0)
   - BaiduMapKit (~> 2.0)
   - CryptoSwift (~> 0.6.0)
+  - IQKeyboardManagerSwift
   - Kingfisher (~> 3.0)
   - MJRefresh (~> 3.0)
   - Proposer (~> 1.0.0)
@@ -39,6 +41,7 @@ SPEC CHECKSUMS:
   AsyncSwift: 6ba6ed9ecb51344458063f7c86fe447ab824e313
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
   CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Proposer: 73303728e11cb6dbe27102deac0da82956a51f16
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 207e2c8a34009aff19b2ce21936de855f2ae75ba
+PODFILE CHECKSUM: 90fa6f323f91ed490b54aec44459b81916e2231b
 
 COCOAPODS: 1.1.0.beta.2
