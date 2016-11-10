@@ -17,7 +17,7 @@ class AccountBindingController: UIViewController {
         
         self.setupView()
         
-        mo_navigationBar(title: "站好绑定")
+        mo_navigationBar(title: "账号绑定")
         
     }
     
