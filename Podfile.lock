@@ -3,7 +3,7 @@ PODS:
   - AsyncSwift (2.0.0)
   - BaiduMapKit (2.10.2)
   - CryptoSwift (0.6.0)
-  - IQKeyboardManagerSwift (4.0.7)
+  - IQKeyboardManagerSwift (4.0.6)
   - Kingfisher (3.1.1)
   - MJRefresh (3.1.12)
   - Proposer (1.0.0)
@@ -41,7 +41,7 @@ SPEC CHECKSUMS:
   AsyncSwift: 6ba6ed9ecb51344458063f7c86fe447ab824e313
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
   CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
-  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
+  IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Proposer: 73303728e11cb6dbe27102deac0da82956a51f16
