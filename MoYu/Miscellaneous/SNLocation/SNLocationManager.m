@@ -53,13 +53,16 @@ static SNLocationManager * _manager = nil;
     BOOL isLocationEnabled = [CLLocationManager locationServicesEnabled];
     if (!isLocationEnabled) {
         NSLog(@"请打开定位服务");
-        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请打开定位服务，才能使用定位功能" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-        [alertView show];
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"抱歉" message:@"请打开定位服务，才能使用定位功能" preferredStyle:UIAlertControllerStyleAlert];
-//        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil];
-//        [alertController addAction:cancel];
-        
-        
+//        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请打开定位服务，才能使用定位功能" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+//        [alertView show];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"抱歉" message:@"请打开定位服务，才能使用定位功能" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancel];
+        UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+        if (window) {
+            UIViewController *vc = window.rootViewController;
+            [vc presentViewController:alertController animated:true completion:nil];
+        }
         return;
     }
     self.locationManager.delegate = self;
