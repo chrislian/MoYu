@@ -9,7 +9,7 @@ target 'MoYu' do
 pod 'YYText',           '~> 1.0.7'
 pod 'REFrostedViewController', '~> 2.0'
 pod 'MJRefresh',    '~> 3.0'
-pod 'BaiduMapKit',   '~> 2.0'
+pod 'BaiduMapKit',   '~> 3.0'
 
 #swift
 pod 'Alamofire',    '~> 4.0'

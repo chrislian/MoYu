@@ -1,28 +1,28 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.1.0)
   - AsyncSwift (2.0.0)
-  - BaiduMapKit (2.10.2)
-  - CryptoSwift (0.6.0)
-  - IQKeyboardManagerSwift (4.0.6)
-  - Kingfisher (3.1.1)
+  - BaiduMapKit (3.1.0)
+  - CryptoSwift (0.6.6)
+  - IQKeyboardManagerSwift (4.0.7)
+  - Kingfisher (3.2.1)
   - MJRefresh (3.1.12)
   - Proposer (1.0.0)
-  - Realm (2.0.1):
-    - Realm/Headers (= 2.0.1)
-  - Realm/Headers (2.0.1)
-  - RealmSwift (2.0.1):
-    - Realm (= 2.0.1)
+  - Realm (2.0.4):
+    - Realm/Headers (= 2.0.4)
+  - Realm/Headers (2.0.4)
+  - RealmSwift (2.0.4):
+    - Realm (= 2.0.4)
   - REFrostedViewController (2.4.8)
-  - SnapKit (3.0.1)
+  - SnapKit (3.0.2)
   - Spring (1.0.3)
-  - SwiftDate (4.0.3)
-  - SwiftyJSON (3.1.0)
+  - SwiftDate (4.0.7)
+  - SwiftyJSON (3.1.1)
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AsyncSwift (~> 2.0.0)
-  - BaiduMapKit (~> 2.0)
+  - BaiduMapKit (~> 3.0)
   - CryptoSwift (~> 0.6.0)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 3.0)
@@ -37,23 +37,23 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: e266cf991b933498df791e645e0d8ac294492153
   AsyncSwift: 6ba6ed9ecb51344458063f7c86fe447ab824e313
-  BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
-  CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
-  IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
-  Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
+  BaiduMapKit: 4cfaedb118cff7e157e9771859a4bf65a261b2a1
+  CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Proposer: 73303728e11cb6dbe27102deac0da82956a51f16
-  Realm: 0557ee0e4ab4f0936c90e370056d1ed6265f93d6
-  RealmSwift: 64e00af79bdcd7d2a7a23fdc1cb3faf22b80ae4c
+  Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
+  RealmSwift: 01e8db006035f16003e6307ae8eae1adccce68db
   REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
-  SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
-  SwiftDate: 8ee0ba571aabf62a3c44585620c199f868f063e9
-  SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
+  SwiftDate: 0efb04a6751b1ab804049b2b09a69848cd304c12
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 90fa6f323f91ed490b54aec44459b81916e2231b
+PODFILE CHECKSUM: 094c9bcea5fa4994c1b8f30f017325e5b463d7f9
 
 COCOAPODS: 1.1.0.beta.2
