@@ -25,6 +25,26 @@ class FindWorkAnnotationView: BMKAnnotationView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - public method
+    func updateSelect(status isSelected:Bool){
+        
+        if isSelected {
+            self.bounds = CGRect(x: 0, y: 0, width: 80, height: 85)
+            avatorImageView.snp.updateConstraints{ (make) in
+                make.size.equalTo(CGSize(width: 66, height: 66))
+            }
+            annotationImageView.image = UIImage(named: "avatarActiveBg")
+        }else{
+            self.bounds = CGRect(x: 0, y: 0, width: 60, height: 64)
+            avatorImageView.snp.updateConstraints{ (make) in
+                make.size.equalTo(CGSize(width: 46, height: 46))
+            }
+            annotationImageView.image = UIImage(named: "avatarBg")
+        }
+        self.layoutIfNeeded()
+    }
+    
+    
     //MARK: - private method
     private func setupView(){
         
@@ -39,6 +59,7 @@ class FindWorkAnnotationView: BMKAnnotationView {
             make.centerX.equalTo(annotationImageView)
             make.centerY.equalTo(annotationImageView).offset(-4)
         }
+        
     }
     
     

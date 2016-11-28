@@ -33,7 +33,9 @@ class FindWorkController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.addAnnotations()
+//        self.updateWorks(self.location)
+        
+//        self.addAnnotations()
     }
     
     
@@ -84,14 +86,26 @@ class FindWorkController: UIViewController {
         }
     }
     
-    private func addAnnotations(){
+    private func updateWorks(_ location:MoYuLocation){
         
-        mapView.addAnnotation(self.annotation1)
-        
-        mapView.addAnnotation(self.annotation2)
-        
+        Router.allPartTimeJobList(page: 1, location: location).request { [weak self] (status, json) in
+            if case .success = status, let data = json?["reslist"].array{
+                
+                let array = data.map( HomeMenuModel.init )
+                self?.dataArray = array
+                self?.annotations = array.flatMap{
+                    
+                    if let latitude = Double($0.latitude), let longitude = Double($0.longitude){
+                        let annotation = BMKPointAnnotation()
+                        annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+                        annotation.title = ""
+                        return annotation
+                    }
+                    return nil
+                }
+            }
+        }
     }
-    
 
     //MARK: - var & let
     lazy fileprivate var mapView:BMKMapView = {
@@ -110,23 +124,30 @@ class FindWorkController: UIViewController {
         return location
     }()
     
+    var updateWorksFlag = true
+    var location = MoYuLocation(){
+        willSet{
+            if updateWorksFlag{
+                updateWorksFlag = false
+                self.updateWorks(newValue)
+            }
+        }
+    }
     
-    lazy var annotation1:BMKPointAnnotation = {
-        
-        let annotation = BMKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(24.494, 118.19)
-//        annotation.title = "自定义标题"
-        return annotation
-    }()
-    lazy var annotation2:BMKPointAnnotation = {
-        
-        let annotation = BMKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(24.490, 118.193)
-        //        annotation.title = "自定义标题"
-        return annotation
-    }()
+    var dataArray:[HomeMenuModel] = []
     
-    var location = MoYuLocation()
+    var annotations:[BMKPointAnnotation] = []{
+        willSet{
+            for annotation in annotations{
+                mapView.removeAnnotation(annotation)
+            }
+        }
+        didSet{
+            for annotation in annotations{
+                mapView.addAnnotation(annotation)
+            }
+        }
+    }
 }
 
 //MARK: - BMKMapView Delegate
@@ -140,39 +161,25 @@ extension FindWorkController:BMKMapViewDelegate{
      */
     func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
         
-        if annotation === self.annotation1{
-            let annotationViewID = "findWorkAnnotation"
-            let annotationView = FindWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
-            annotationView?.tag = 1
-            return annotationView
-        }else if annotation === self.annotation2{
-            let annotationViewID = "findWorkAnnotation2"
-            let annotationView = FindWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
-            annotationView?.tag = 2
-            return annotationView
-        }
-        return nil
-
+        let annotationViewID = "findWorkAnnotation"
+        let annotationView = FindWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
+        annotationView?.canShowCallout = false
+        return annotationView
     }
     
-    /**
-     *当选中一个annotation views时，调用此接口
-     *@param mapView 地图View
-     *@param views 选中的annotation views
-     */
     func mapView(_ mapView: BMKMapView!, didSelect view: BMKAnnotationView!) {
-        println("选中了标注 tag = \(view.tag)")
+        
+        if let view = view as? FindWorkAnnotationView {
+            view.updateSelect(status: true)
+        }
     }
 
-    /**
-     *当取消选中一个annotation views时，调用此接口
-     *@param mapView 地图View
-     *@param views 取消选中的annotation views
-     */
     func mapView(_ mapView: BMKMapView!, didDeselect view: BMKAnnotationView!) {
-        println("取消选中标注 tag = \(view.tag)")
+        
+        if let view = view as? FindWorkAnnotationView {
+            view.updateSelect(status: false)
+        }
     }
-    
 }
 
 //MARK: - BMKLocationService Delegate
@@ -200,7 +207,7 @@ extension FindWorkController:BMKLocationServiceDelegate{
      *@param userLocation 新的用户位置
      */
     func didUpdate(_ userLocation: BMKUserLocation!) {
-//        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
+        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         //lat:24.4914423140249 lon:118.181261416303
         mapView.updateLocationData(userLocation)
         

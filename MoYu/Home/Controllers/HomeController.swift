@@ -135,7 +135,8 @@ class HomeController: UIViewController {
             self.homeView.mapBaseView.addSubview(homeItemView)
             homeItemView.snp.makeConstraints { (make) in
                 make.right.equalTo(homeItemView.superview!).offset(-8)
-                make.bottom.equalTo(homeItemView.superview!).offset(-80)
+//                make.bottom.equalTo(homeItemView.superview!).offset(-80)
+                make.centerY.equalTo(homeItemView.superview!).offset(-80)
                 make.width.equalTo(60)
                 make.height.equalTo(180)
             }
