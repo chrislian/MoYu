@@ -144,6 +144,7 @@
 		ED1C6BEF1D6C492F00AC7394 /* CityHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */; };
 		ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
+		EDF736CB1DEC08F300423E4A /* FindWorkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */; };
 		EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */; };
 /* End PBXBuildFile section */
 
@@ -334,6 +335,7 @@
 		B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoYuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeaderView.swift; sourceTree = "<group>"; };
 		ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableType.swift; sourceTree = "<group>"; };
+		EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnotationView.swift; sourceTree = "<group>"; };
 		EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPartimeJobDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -764,6 +766,7 @@
 				833F08791D674AEA009A4275 /* HotSearchView.swift */,
 				ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */,
 				8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */,
+				EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1442,6 +1445,7 @@
 				83D7A4351D5F006D00C28F31 /* RefreshViewType.swift in Sources */,
 				839DBA361D50C9BE00D155B8 /* PraseErrorType.swift in Sources */,
 				838E850C1D294CC100C992CC /* CGImage+MoYu.swift in Sources */,
+				EDF736CB1DEC08F300423E4A /* FindWorkAnnotationView.swift in Sources */,
 				838E84EC1D29492200C992CC /* PublishWorkController.swift in Sources */,
 				838E850E1D294CC100C992CC /* UIFont+MoYu.swift in Sources */,
 				83289B7E1D64A0B700EF765D /* PostJobModel.swift in Sources */,
