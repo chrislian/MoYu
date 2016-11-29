@@ -226,7 +226,7 @@ extension FindWorkController:BMKLocationServiceDelegate{
      *@param userLocation 新的用户位置
      */
     func didUpdate(_ userLocation: BMKUserLocation!) {
-        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
+//        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         //lat:24.4914423140249 lon:118.181261416303
         mapView.updateLocationData(userLocation)
         

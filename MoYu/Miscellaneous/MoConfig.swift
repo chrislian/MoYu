@@ -56,3 +56,13 @@ struct MoYuLocation {
     var latitude:Double = 0
     var longitude:Double = 0
 }
+
+struct MoYuPlatform {
+    static let isSimulator: Bool = {
+        var isSim = false
+        #if arch(i386) || arch(x86_64)
+            isSim = true
+        #endif
+        return isSim
+    }()
+}
