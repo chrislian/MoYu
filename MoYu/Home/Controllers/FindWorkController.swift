@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Async
 
 class FindWorkController: UIViewController {
 
@@ -27,17 +28,8 @@ class FindWorkController: UIViewController {
         locationService.delegate = self
         mapView.viewWillAppear()
         mapView.delegate = self
-        
+        findWorkCardView.dismiss(0)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        self.updateWorks(self.location)
-        
-//        self.addAnnotations()
-    }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -83,6 +75,13 @@ class FindWorkController: UIViewController {
         self.view.addSubview(mapView)
         mapView.snp.makeConstraints { (make) in
             make.edges.equalTo(mapView.superview!)
+        }
+        
+        mapView.addSubview(findWorkCardView)
+        findWorkCardView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(mapView).offset(-28)
+            make.left.right.equalTo(mapView)
+            make.height.equalTo(140)
         }
     }
     
@@ -148,6 +147,10 @@ class FindWorkController: UIViewController {
             }
         }
     }
+    
+    lazy var findWorkCardView:FindWorkCardView = FindWorkCardView()
+    
+    var isSelectItem = false
 }
 
 //MARK: - BMKMapView Delegate
@@ -172,12 +175,23 @@ extension FindWorkController:BMKMapViewDelegate{
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: true)
         }
+        
+        isSelectItem = true
+        findWorkCardView.show()
     }
 
     func mapView(_ mapView: BMKMapView!, didDeselect view: BMKAnnotationView!) {
         
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: false)
+        }
+        isSelectItem = false
+        
+        let when = DispatchTime.now() + 0.1
+        DispatchQueue.main.asyncAfter(deadline: when){
+            if !self.isSelectItem{
+                self.findWorkCardView.dismiss()
+            }
         }
     }
 }
