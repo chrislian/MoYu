@@ -14,7 +14,12 @@ class FindWorkCardView: SpringView {
     //MARK: - life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.red
+        self.backgroundColor = UIColor.clear
+        
+        self.addSubview(collectionView)
+        collectionView.snp.makeConstraints{
+            $0.edges.equalTo(self).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +38,6 @@ class FindWorkCardView: SpringView {
         isVisable = true
     }
     
-    //MARK: - private methods
     func dismiss(_ duration:TimeInterval = 0.7){
         
         if isVisable{
@@ -42,10 +46,27 @@ class FindWorkCardView: SpringView {
             self.duration = CGFloat(duration)
             self.animate()
         }
-        
         isVisable = false
     }
+    //MARK: - private methods
+
     
     //MARK: - var & let
     private(set) var isVisable = true
+    
+    let collectionView:UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: MoScreenWidth - 20, height: 140)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
+        
+        let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        view.backgroundColor = UIColor.clear
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
+        view.register(UINib(nibName: String(describing: FindWorkCardCell.self), bundle: nil), forCellWithReuseIdentifier: FindWorkCardCell.identifier)
+        return view
+    }()
 }

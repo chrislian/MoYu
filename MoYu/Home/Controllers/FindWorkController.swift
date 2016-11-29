@@ -83,6 +83,8 @@ class FindWorkController: UIViewController {
             make.left.right.equalTo(mapView)
             make.height.equalTo(140)
         }
+        findWorkCardView.collectionView.delegate = self
+        findWorkCardView.collectionView.dataSource = self
     }
     
     private func updateWorks(_ location:MoYuLocation){
@@ -235,6 +237,53 @@ extension FindWorkController:BMKLocationServiceDelegate{
     func didStopLocatingUser() {
         //print("didStopLocatingUser")
     }
-    
-
 }
+
+
+extension FindWorkController: UICollectionViewDelegateFlowLayout{
+    
+//    collectionviewitem
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: MoScreenWidth - 30, height: 140)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension FindWorkController:UICollectionViewDelegate{
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension FindWorkController: UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindWorkCardCell.identifier, for: indexPath)
+//        if let cell = cell as? FindWorkCardCell{
+        
+//            cell.update(model: model)
+//        }
+        
+        return cell
+    }
+}
+
+
+
