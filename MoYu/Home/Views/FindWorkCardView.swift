@@ -57,7 +57,7 @@ class FindWorkCardView: SpringView {
     let collectionView:UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: MoScreenWidth - 20, height: 140)
+        layout.itemSize = CGSize(width: MoScreenWidth, height: 140)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -66,6 +66,7 @@ class FindWorkCardView: SpringView {
         view.backgroundColor = UIColor.clear
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
+        view.isPagingEnabled = true
         view.register(UINib(nibName: String(describing: FindWorkCardCell.self), bundle: nil), forCellWithReuseIdentifier: FindWorkCardCell.identifier)
         return view
     }()

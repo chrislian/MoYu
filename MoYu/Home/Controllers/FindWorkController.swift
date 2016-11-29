@@ -93,7 +93,7 @@ class FindWorkController: UIViewController {
             if case .success = status, let data = json?["reslist"].array{
                 
                 let array = data.map( HomeMenuModel.init )
-                self?.dataArray = array
+                
                 self?.annotations = array.flatMap{
                     
                     if let latitude = Double($0.latitude), let longitude = Double($0.longitude){
@@ -104,6 +104,9 @@ class FindWorkController: UIViewController {
                     }
                     return nil
                 }
+                
+                self?.dataArray = array
+                self?.findWorkCardView.collectionView.reloadData()
             }
         }
     }
@@ -239,27 +242,8 @@ extension FindWorkController:BMKLocationServiceDelegate{
     }
 }
 
-
-extension FindWorkController: UICollectionViewDelegateFlowLayout{
-    
-//    collectionviewitem
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: MoScreenWidth - 30, height: 140)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-}
-
 // MARK: - UICollectionViewDelegate
 extension FindWorkController:UICollectionViewDelegate{
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
@@ -270,17 +254,16 @@ extension FindWorkController:UICollectionViewDelegate{
 extension FindWorkController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return dataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindWorkCardCell.identifier, for: indexPath)
-//        if let cell = cell as? FindWorkCardCell{
+        if let cell = cell as? FindWorkCardCell{
         
-//            cell.update(model: model)
-//        }
-        
+            cell.update(model: dataArray[indexPath.row])
+        }
         return cell
     }
 }

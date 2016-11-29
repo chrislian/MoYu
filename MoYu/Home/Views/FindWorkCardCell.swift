@@ -13,7 +13,8 @@ class FindWorkCardCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = UIColor.clear
+        
+        setupCell()
     }
     
     static var identifier:String{
@@ -27,9 +28,17 @@ class FindWorkCardCell: UICollectionViewCell {
         subTitleLabel.text = model.address
         
         usernameLabel.text = model.name
+        
+        payLabel.text = "\(model.commission)元/次"
     }
     
     //MARK: - private methods
+    
+    private func setupCell(){
+        self.backgroundColor = UIColor.clear
+
+        payLabel.textColor = UIColor.mo_main()
+    }
     
     
     //MARK: - var & let
