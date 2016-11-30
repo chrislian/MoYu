@@ -22,7 +22,7 @@ class FindWorkCardCell: UICollectionViewCell {
     }
     
     //MARK: - public methods
-    func update(model:HomeMenuModel){
+    func update(model:HomeMenuModel,myLocation:MoYuLocation){
         
         titleLabel.text = model.content
         subTitleLabel.text = model.address
@@ -30,6 +30,12 @@ class FindWorkCardCell: UICollectionViewCell {
         usernameLabel.text = model.name
         
         payLabel.text = "\(model.commission)元/次"
+        
+        var distance = "未知"
+        if let latitude = Double(model.latitude), let longitude = Double(model.longitude){
+            distance = myLocation.distance(latitude: latitude, longitude: longitude)
+        }
+        distanceLabel.text = distance
     }
     
     //MARK: - private methods

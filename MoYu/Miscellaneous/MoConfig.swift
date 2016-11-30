@@ -55,6 +55,26 @@ func sendMessage(_ name:String, object:AnyObject? = nil,userInfo: [AnyHashable: 
 struct MoYuLocation {
     var latitude:Double = 0
     var longitude:Double = 0
+    
+    func distance(latitude:Double, longitude:Double)->String{
+
+        if self.latitude == 0 || self.longitude == 0 || latitude == 0 || longitude == 0 {
+            return "未知"
+        }
+        
+        let point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(self.latitude, self.longitude))
+        let point2 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(latitude, longitude))
+        let distance = BMKMetersBetweenMapPoints(point1,point2)
+        
+        switch distance {
+        case let value where value >= 0 && value < 1000:
+            return "\(Int(distance))m"
+        case let value where value < 0:
+            return "未知"
+        default:
+            return String(format: "%0.2fkm", distance/1000)
+        }
+    }
 }
 
 struct MoYuPlatform {

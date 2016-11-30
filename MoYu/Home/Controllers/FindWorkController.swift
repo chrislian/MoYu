@@ -142,24 +142,45 @@ class FindWorkController: UIViewController {
     
     var annotations:[BMKPointAnnotation] = []{
         willSet{
-            for annotation in annotations{
-                mapView.removeAnnotation(annotation)
-            }
+            mapView.removeAnnotations(annotations)
         }
         didSet{
-            for annotation in annotations{
-                mapView.addAnnotation(annotation)
-            }
+            mapView.addAnnotations(annotations)
         }
     }
     
     lazy var findWorkCardView:FindWorkCardView = FindWorkCardView()
     
     var isSelectItem = false
+    
+    var currentAnnotationView:FindWorkAnnotationView?
 }
 
 //MARK: - BMKMapView Delegate
 extension FindWorkController:BMKMapViewDelegate{
+    
+    private func dismissFindWorkCardView(){
+        isSelectItem = false
+        
+        let when = DispatchTime.now() + 0.1
+        DispatchQueue.main.asyncAfter(deadline: when){
+            if !self.isSelectItem{
+                self.findWorkCardView.dismiss()
+            }
+        }
+    }
+    
+    private func showFindWorkCardView(){
+        
+        isSelectItem = true
+        findWorkCardView.show()
+    }
+    
+    private func deselectCurrentAnnotationView(){
+        if let view = currentAnnotationView{
+            mapView.deselectAnnotation(view.annotation, animated: true)
+        }
+    }
     
     /**
      *根据anntation生成对应的View
@@ -179,26 +200,27 @@ extension FindWorkController:BMKMapViewDelegate{
         
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: true)
+            currentAnnotationView = view
         }
         
-        isSelectItem = true
-        findWorkCardView.show()
+        showFindWorkCardView()
     }
 
     func mapView(_ mapView: BMKMapView!, didDeselect view: BMKAnnotationView!) {
         
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: false)
+            currentAnnotationView = nil
         }
-        isSelectItem = false
         
-        let when = DispatchTime.now() + 0.1
-        DispatchQueue.main.asyncAfter(deadline: when){
-            if !self.isSelectItem{
-                self.findWorkCardView.dismiss()
-            }
-        }
+        dismissFindWorkCardView()
     }
+    
+    func mapView(_ mapView: BMKMapView!, regionWillChangeAnimated animated: Bool) {
+        
+        deselectCurrentAnnotationView()
+    }
+    
 }
 
 //MARK: - BMKLocationService Delegate
@@ -262,7 +284,7 @@ extension FindWorkController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindWorkCardCell.identifier, for: indexPath)
         if let cell = cell as? FindWorkCardCell{
         
-            cell.update(model: dataArray[indexPath.row])
+            cell.update(model: dataArray[indexPath.row], myLocation:location)
         }
         return cell
     }
