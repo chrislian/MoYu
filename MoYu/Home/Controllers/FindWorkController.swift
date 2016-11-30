@@ -91,22 +91,8 @@ class FindWorkController: UIViewController {
         
         Router.allPartTimeJobList(page: 1, location: location).request { [weak self] (status, json) in
             if case .success = status, let data = json?["reslist"].array{
-                
-                let array = data.map( HomeMenuModel.init )
-                
-                self?.annotations = array.flatMap{
-                    
-                    if let latitude = Double($0.latitude), let longitude = Double($0.longitude){
-                        let annotation = BMKPointAnnotation()
-                        annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-                        annotation.title = ""
-                        return annotation
-                    }
-                    return nil
-                }
-                
-                self?.dataArray = array
-                self?.findWorkCardView.collectionView.reloadData()
+
+                self?.findWorkAnnotations = data.map( HomeMenuModel.init ).map( FindWorkAnnoation.init )
             }
         }
     }
@@ -138,16 +124,21 @@ class FindWorkController: UIViewController {
         }
     }
     
-    var dataArray:[HomeMenuModel] = []
-    
-    var annotations:[BMKPointAnnotation] = []{
-        willSet{
-            mapView.removeAnnotations(annotations)
-        }
+    var dataArray:[FindWorkAnnoation] = []{
         didSet{
-            mapView.addAnnotations(annotations)
+            findWorkCardView.collectionView.reloadData()
         }
     }
+    
+    var findWorkAnnotations:[FindWorkAnnoation] = []{
+        willSet{
+            mapView.removeAnnotations(findWorkAnnotations)
+        }
+        didSet{
+            mapView.addAnnotations(findWorkAnnotations)
+        }
+    }
+    
     
     lazy var findWorkCardView:FindWorkCardView = FindWorkCardView()
     
@@ -201,6 +192,10 @@ extension FindWorkController:BMKMapViewDelegate{
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: true)
             currentAnnotationView = view
+        }
+        
+        if let anotation = view.annotation as? FindWorkAnnoation{
+            dataArray = [anotation]
         }
         
         showFindWorkCardView()
@@ -284,7 +279,7 @@ extension FindWorkController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindWorkCardCell.identifier, for: indexPath)
         if let cell = cell as? FindWorkCardCell{
         
-            cell.update(model: dataArray[indexPath.row], myLocation:location)
+            cell.update(annotation: dataArray[indexPath.row],myLocation: location)
         }
         return cell
     }
