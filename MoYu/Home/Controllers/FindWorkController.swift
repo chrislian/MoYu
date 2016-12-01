@@ -104,6 +104,7 @@ class FindWorkController: UIViewController {
         map.maxZoomLevel = 20
         map.zoomLevel = 16
         map.logoPosition = BMKLogoPositionRightBottom
+        
 
         let param = BMKLocationViewDisplayParam()
         param.isRotateAngleValid = true// 跟随态旋转角度是否生效
@@ -181,6 +182,7 @@ extension FindWorkController:BMKMapViewDelegate{
         }
     }
     
+    
     /**
      *根据anntation生成对应的View
      *@param mapView 地图View
@@ -252,7 +254,9 @@ extension FindWorkController:BMKLocationServiceDelegate{
     func didUpdate(_ userLocation: BMKUserLocation!) {
 //        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         //lat:24.4914423140249 lon:118.181261416303
+        userLocation.title = nil
         mapView.updateLocationData(userLocation)
+        
         
         location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
     }

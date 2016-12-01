@@ -155,6 +155,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      */
     func didUpdate(_ userLocation: BMKUserLocation!) {
         //print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
+        userLocation.title = nil
         mapView.updateLocationData(userLocation)
     }
     
