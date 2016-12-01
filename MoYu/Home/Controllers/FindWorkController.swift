@@ -103,8 +103,16 @@ class FindWorkController: UIViewController {
         map.minZoomLevel = 6
         map.maxZoomLevel = 20
         map.zoomLevel = 16
-        
         map.logoPosition = BMKLogoPositionRightBottom
+
+        let param = BMKLocationViewDisplayParam()
+        param.isRotateAngleValid = true// 跟随态旋转角度是否生效
+        param.isAccuracyCircleShow = false// 精度圈是否显示
+        param.locationViewImgName = "social_currentLocation"// 定位图标名称
+        param.locationViewOffsetX = 0//定位图标偏移量(经度)
+        param.locationViewOffsetY = 0// 定位图标偏移量(纬度)
+        map.updateLocationView(with: param)//调用此方法后自定义定位图层生效
+
         return map
     }()
     
@@ -192,13 +200,13 @@ extension FindWorkController:BMKMapViewDelegate{
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: true)
             currentAnnotationView = view
+            showFindWorkCardView()
         }
         
         if let anotation = view.annotation as? FindWorkAnnoation{
             dataArray = [anotation]
         }
         
-        showFindWorkCardView()
     }
 
     func mapView(_ mapView: BMKMapView!, didDeselect view: BMKAnnotationView!) {
@@ -206,9 +214,8 @@ extension FindWorkController:BMKMapViewDelegate{
         if let view = view as? FindWorkAnnotationView {
             view.updateSelect(status: false)
             currentAnnotationView = nil
+            dismissFindWorkCardView()
         }
-        
-        dismissFindWorkCardView()
     }
     
     func mapView(_ mapView: BMKMapView!, regionWillChangeAnimated animated: Bool) {

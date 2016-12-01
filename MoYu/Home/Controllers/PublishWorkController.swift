@@ -103,6 +103,15 @@ class PublishWorkController: UIViewController {
         map.zoomLevel = 16
         
         map.logoPosition = BMKLogoPositionRightBottom
+        
+        let param = BMKLocationViewDisplayParam()
+        param.isRotateAngleValid = true// 跟随态旋转角度是否生效
+        param.isAccuracyCircleShow = false// 精度圈是否显示
+        param.locationViewImgName = "social_currentLocation"// 定位图标名称
+        param.locationViewOffsetX = 0//定位图标偏移量(经度)
+        param.locationViewOffsetY = 0// 定位图标偏移量(纬度)
+        map.updateLocationView(with: param)//调用此方法后自定义定位图层生效
+        
         return map
     }()
     
