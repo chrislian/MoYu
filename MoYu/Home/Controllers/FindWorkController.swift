@@ -103,7 +103,7 @@ class FindWorkController: UIViewController {
         map.minZoomLevel = 6
         map.maxZoomLevel = 20
         map.zoomLevel = 16
-        map.logoPosition = BMKLogoPositionRightBottom
+        map.logoPosition = BMKLogoPositionLeftBottom
         
 
         let param = BMKLocationViewDisplayParam()

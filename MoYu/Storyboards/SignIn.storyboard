@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kpK-LO-Yd3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kpK-LO-Yd3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sign In By Auth Controller-->
@@ -35,7 +38,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ve4-aK-2zI" firstAttribute="leading" secondItem="OM0-Jj-SdG" secondAttribute="trailing" constant="8" id="2lU-US-7yu"/>
                                     <constraint firstAttribute="trailing" secondItem="Ve4-aK-2zI" secondAttribute="trailing" constant="8" id="PhF-Ab-JZm"/>
@@ -69,7 +72,7 @@
                                         <state key="normal" title="获取验证码"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0ps-zQ-Nhb" firstAttribute="leading" secondItem="73b-yS-gld" secondAttribute="leading" constant="8" id="412-de-Fh8"/>
                                     <constraint firstItem="0ps-zQ-Nhb" firstAttribute="centerY" secondItem="73b-yS-gld" secondAttribute="centerY" id="6bC-Nv-xy2"/>
@@ -88,47 +91,47 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRz-19-zkq">
                                 <rect key="frame" x="16" y="312" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Bge-j0-dPJ"/>
                                 </constraints>
                                 <state key="normal" title="进入">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpL-1H-DwJ">
-                                <rect key="frame" x="299" y="629" width="60" height="30"/>
+                                <rect key="frame" x="297" y="629" width="62" height="30"/>
                                 <state key="normal" title="密码登录">
-                                    <color key="titleColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="nzV-z3-amj" kind="show" id="Iue-fw-hm5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-7m-AVe">
-                                <rect key="frame" x="16" y="629" width="60" height="30"/>
+                                <rect key="frame" x="16" y="629" width="62" height="30"/>
                                 <state key="normal" title="用户协议">
-                                    <color key="titleColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="8hH-EC-jYu" kind="show" id="Kg9-Y2-qdL"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-VC-jBs">
-                                <rect key="frame" x="16" y="620" width="152" height="1"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="620" width="151.5" height="1"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-ZB-Bcr">
-                                <rect key="frame" x="208" y="620" width="151" height="1"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="207.5" y="620" width="151.5" height="1"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="6zs-Sv-ah5"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJD-kL-zF1">
-                                <rect key="frame" x="176" y="610" width="24" height="21"/>
+                                <rect key="frame" x="175.5" y="610" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6Z-dO-3qx">
@@ -142,7 +145,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NFW-gf-TqD" firstAttribute="centerX" secondItem="R6Z-dO-3qx" secondAttribute="centerX" id="NJQ-vo-fM6"/>
                                     <constraint firstAttribute="width" secondItem="R6Z-dO-3qx" secondAttribute="height" multiplier="1:1" id="enj-SM-xz0"/>
@@ -151,7 +154,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.94509803920000002" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.94509803920000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MEr-7m-AVe" firstAttribute="top" secondItem="nxR-VC-jBs" secondAttribute="bottom" constant="8" id="3gV-t3-6O8"/>
                             <constraint firstItem="bdj-ZB-Bcr" firstAttribute="width" secondItem="nxR-VC-jBs" secondAttribute="width" id="4EU-BV-FHu"/>
@@ -199,14 +202,13 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="vs5-LK-hSX"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="signInView" destination="Wyd-B7-0hu" id="2VA-wW-Nb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLb-va-Xfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198.5" y="523.5"/>
+            <point key="canvasLocation" x="314" y="522"/>
         </scene>
         <!--Sign In By Password Controller-->
         <scene sceneID="PgN-cO-JIe">
@@ -231,7 +233,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="Aso-eY-aoE"/>
                                     <constraint firstItem="WlL-8Z-Rvf" firstAttribute="centerX" secondItem="iOT-99-wd7" secondAttribute="centerX" id="CMp-vM-9vp"/>
@@ -260,7 +262,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="8ei-Cx-QAZ" firstAttribute="leading" secondItem="bcd-TK-lJC" secondAttribute="leading" constant="8" id="49N-xo-HYe"/>
                                     <constraint firstAttribute="trailing" secondItem="qQY-pw-vzg" secondAttribute="trailing" constant="8" id="A4r-O0-Xls"/>
@@ -286,7 +288,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="jt9-m7-deX" firstAttribute="leading" secondItem="6MA-VF-B73" secondAttribute="leading" constant="8" id="0AT-zD-hHk"/>
                                     <constraint firstAttribute="height" constant="44" id="A96-ns-8Uo"/>
@@ -303,15 +305,15 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0m-if-zMx">
                                 <rect key="frame" x="16" y="312" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gz6-1p-dut"/>
                                 </constraints>
                                 <state key="normal" title="登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-vU-cFp">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-vU-cFp">
                                 <rect key="frame" x="158" y="392" width="60" height="30"/>
                                 <state key="normal" title="用户协议"/>
                                 <connections>
@@ -319,7 +321,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.94509803920000002" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.94509803920000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NOh-vU-cFp" firstAttribute="centerX" secondItem="vJl-Pu-PEL" secondAttribute="centerX" id="1gV-po-W8J"/>
                             <constraint firstItem="z0m-if-zMx" firstAttribute="top" secondItem="6MA-VF-B73" secondAttribute="bottom" constant="44" id="8z5-ma-X5V"/>
@@ -375,7 +377,7 @@
                     <view key="view" contentMode="scaleToFill" id="kx2-aT-Qkn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.94509803920000002" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.94509803920000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duN-kW-qGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -387,12 +389,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpK-LO-Yd3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="nav_back" backIndicatorTransitionMaskImage="nav_back" id="mbl-Dk-KtY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.98823529409999999" green="0.72156862749999995" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -401,7 +402,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nW8-0g-MRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="524"/>
+            <point key="canvasLocation" x="-927" y="523"/>
         </scene>
     </scenes>
     <resources>

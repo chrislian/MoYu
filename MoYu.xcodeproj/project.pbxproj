@@ -143,6 +143,7 @@
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
 		ED1C6BEF1D6C492F00AC7394 /* CityHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */; };
 		ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */; };
+		ED24BA0F1DF15D5400845597 /* PublishWorkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24BA0E1DF15D5400845597 /* PublishWorkAnnotationView.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 		ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7631DED34090088CD22 /* FindWorkCardView.swift */; };
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
@@ -339,6 +340,7 @@
 		B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoYuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeaderView.swift; sourceTree = "<group>"; };
 		ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableType.swift; sourceTree = "<group>"; };
+		ED24BA0E1DF15D5400845597 /* PublishWorkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishWorkAnnotationView.swift; sourceTree = "<group>"; };
 		ED56A7631DED34090088CD22 /* FindWorkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardView.swift; sourceTree = "<group>"; };
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 				ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */,
 				8347C0C71D76FB84006CCF68 /* PublishTaskCell.swift */,
 				EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */,
+				ED24BA0E1DF15D5400845597 /* PublishWorkAnnotationView.swift */,
 				ED56A7631DED34090088CD22 /* FindWorkCardView.swift */,
 				ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */,
 				ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */,
@@ -1485,6 +1488,7 @@
 				831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */,
 				838E85081D294CC100C992CC /* NavigationBar+MoYu.swift in Sources */,
 				838E84E41D29492200C992CC /* PublishMessageController.swift in Sources */,
+				ED24BA0F1DF15D5400845597 /* PublishWorkAnnotationView.swift in Sources */,
 				838E84E31D29492200C992CC /* PersonMessageController.swift in Sources */,
 				838E84E51D29492200C992CC /* AboutJobsCell.swift in Sources */,
 				83F801EF1D819E5400DC4D60 /* TopTitleView.swift in Sources */,

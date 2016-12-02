@@ -8,12 +8,13 @@
 
 import UIKit
 import SnapKit
+import Spring
 
 enum MOPublishSheetMode:Int {
     case partTime = 0,task
 }
 
-class PublishSheetView: UIView {
+class PublishSheetView: SpringView {
     
     override init(frame: CGRect) {
         super.init(frame: CGRect.zero)
@@ -24,6 +25,29 @@ class PublishSheetView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - public methods
+    func show(){
+        if !isVisable{
+            self.animation = "slideUp"
+            self.curve = "easeIn"
+            self.duration = 1
+            self.animate()
+        }
+        isVisable = true
+    }
+    
+    func dismiss(_ duration:TimeInterval = 0.7){
+        
+        if isVisable{
+            self.animation = "fadeOut"
+            self.curve = "easeIn"
+            self.duration = CGFloat(duration)
+            self.animate()
+        }
+        isVisable = false
+    }
+
     
     //MARK: - private method
     fileprivate func setupView(){
@@ -125,6 +149,9 @@ class PublishSheetView: UIView {
     
     
     //MARK: - var & let
+    
+    private(set) var isVisable = true
+    
     var publishClosure:((_ type:MOPublishSheetMode)->Void)?
     
     fileprivate var publishType:MOPublishSheetMode = .partTime{

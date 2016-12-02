@@ -27,6 +27,8 @@ class PublishWorkController: UIViewController {
         mapView.viewWillAppear()
         mapView.delegate = self
         self.followMode()
+        
+        publishSheetView.dismiss(0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,9 +79,11 @@ class PublishWorkController: UIViewController {
         
         self.view.addSubview(publishSheetView)
         publishSheetView.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(self.view)
+            make.left.equalTo(self.view).offset(10)
+            make.right.equalTo(self.view).offset(-10)
+            make.bottom.equalTo(self.view).offset(-28)
         }
-        publishSheetView.bringSubview(toFront: mapView)
+        self.view.bringSubview(toFront: publishSheetView)
         //publish button closure
         publishSheetView.publishClosure = { type in
             switch type {
@@ -94,6 +98,14 @@ class PublishWorkController: UIViewController {
         }
     }
     
+    private func makeAnnotation(location:MoYuLocation) ->BMKPointAnnotation{
+
+        let annotation = BMKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+        annotation.title = ""
+        return annotation;
+    }
+    
     
     //MARK: - var & let
     lazy fileprivate var mapView:BMKMapView = {
@@ -102,7 +114,7 @@ class PublishWorkController: UIViewController {
         map.maxZoomLevel = 20
         map.zoomLevel = 16
         
-        map.logoPosition = BMKLogoPositionRightBottom
+        map.logoPosition = BMKLogoPositionLeftBottom
         
         let param = BMKLocationViewDisplayParam()
         param.isRotateAngleValid = true// 跟随态旋转角度是否生效
@@ -122,11 +134,59 @@ class PublishWorkController: UIViewController {
     }()
     
     fileprivate let publishSheetView = PublishSheetView()
+    
+    private var publishWorkAnnotation:BMKPointAnnotation?
+
+    private var locationFlag = false
+    fileprivate var location = MoYuLocation(){
+        willSet{
+//            if locationFlag {
+//                return
+//            }
+//            locationFlag = true
+            if let annotation = self.publishWorkAnnotation {
+                self.mapView.removeAnnotation(annotation)
+            }
+            self.publishWorkAnnotation = self.makeAnnotation(location: newValue)
+            self.mapView.addAnnotation(self.publishWorkAnnotation)
+            self.mapView.isSelectedAnnotationViewFront = true
+        }
+    }
 }
 
 //MARK: - BMKMapView Delegate
 extension PublishWorkController:BMKMapViewDelegate{
     
+    /**
+     *根据anntation生成对应的View
+     *@param mapView 地图View
+     *@param annotation 指定的标注
+     *@return 生成的标注View
+     */
+//    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+//        
+//        let annotationViewID = "publishWorkAnnotation"
+//        let annotationView = PublishWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
+//        annotationView?.canShowCallout = false
+//        return annotationView
+//    }
+    
+    func mapView(_ mapView: BMKMapView!, didSelect view: BMKAnnotationView!) {
+        
+        publishSheetView.show()
+        
+    }
+    
+    func mapView(_ mapView: BMKMapView!, didDeselect view: BMKAnnotationView!) {
+        
+//        publishSheetView.dismiss()
+        
+    }
+    
+    func mapView(_ mapView: BMKMapView!, regionWillChangeAnimated animated: Bool) {
+        
+//        publishSheetView.dismiss()
+    }
 }
 
 //MARK: - BMKLocationService Delegate
@@ -157,6 +217,9 @@ extension PublishWorkController:BMKLocationServiceDelegate{
         //print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         userLocation.title = nil
         mapView.updateLocationData(userLocation)
+        
+        
+        location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
     }
     
     /**
