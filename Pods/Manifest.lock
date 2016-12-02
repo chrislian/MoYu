@@ -1,0 +1,59 @@
+PODS:
+  - Alamofire (4.1.0)
+  - AsyncSwift (2.0.0)
+  - BaiduMapKit (3.1.0)
+  - CryptoSwift (0.6.6)
+  - IQKeyboardManagerSwift (4.0.7)
+  - Kingfisher (3.2.1)
+  - MJRefresh (3.1.12)
+  - Proposer (1.0.0)
+  - Realm (2.0.4):
+    - Realm/Headers (= 2.0.4)
+  - Realm/Headers (2.0.4)
+  - RealmSwift (2.0.4):
+    - Realm (= 2.0.4)
+  - REFrostedViewController (2.4.8)
+  - SnapKit (3.0.2)
+  - Spring (1.0.3)
+  - SwiftDate (4.0.7)
+  - SwiftyJSON (3.1.1)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AsyncSwift (~> 2.0.0)
+  - BaiduMapKit (~> 3.0)
+  - CryptoSwift (~> 0.6.0)
+  - IQKeyboardManagerSwift
+  - Kingfisher (~> 3.0)
+  - MJRefresh (~> 3.0)
+  - Proposer (~> 1.0.0)
+  - RealmSwift
+  - REFrostedViewController (~> 2.0)
+  - SnapKit (~> 3.0)
+  - Spring (~> 1.0)
+  - SwiftDate (~> 4.0)
+  - SwiftyJSON
+  - YYText (~> 1.0.7)
+
+SPEC CHECKSUMS:
+  Alamofire: e266cf991b933498df791e645e0d8ac294492153
+  AsyncSwift: 6ba6ed9ecb51344458063f7c86fe447ab824e313
+  BaiduMapKit: 4cfaedb118cff7e157e9771859a4bf65a261b2a1
+  CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Proposer: 73303728e11cb6dbe27102deac0da82956a51f16
+  Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
+  RealmSwift: 01e8db006035f16003e6307ae8eae1adccce68db
+  REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftDate: 0efb04a6751b1ab804049b2b09a69848cd304c12
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 094c9bcea5fa4994c1b8f30f017325e5b463d7f9
+
+COCOAPODS: 1.1.0.beta.2
