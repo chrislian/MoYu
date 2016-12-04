@@ -34,12 +34,16 @@ class FindWorkAnnotationView: BMKAnnotationView {
                 make.size.equalTo(CGSize(width: 66, height: 66))
             }
             annotationImageView.image = UIImage(named: "avatarActiveBg")
+            
+            let pointY = (85.0 - 64.0/2.0)/85.0
+            self.layer.anchorPoint = CGPoint(x: 0.5, y: pointY)
         }else{
             self.bounds = CGRect(x: 0, y: 0, width: 60, height: 64)
             avatorImageView.snp.updateConstraints{ (make) in
                 make.size.equalTo(CGSize(width: 46, height: 46))
             }
             annotationImageView.image = UIImage(named: "avatarBg")
+            self.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         }
         self.layoutIfNeeded()
     }
