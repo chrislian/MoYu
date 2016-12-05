@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PublishWorkController: UIViewController {
 
@@ -105,6 +106,21 @@ class PublishWorkController: UIViewController {
         annotation.title = ""
         return annotation;
     }
+       fileprivate func reverseGeoLocation(location:MoYuLocation){
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(CLLocation(latitude: location.latitude, longitude: location.longitude), completionHandler: { (array,error) in
+            
+            if let array = array , array.count > 0,
+                let placeMark = array.first{
+                var city = placeMark.locality
+                if city == nil{
+                    city = placeMark.administrativeArea
+                }
+                println("city = \(city), name = \(placeMark.name)")
+            }
+        })
+    }
     
     
     //MARK: - var & let
@@ -133,6 +149,7 @@ class PublishWorkController: UIViewController {
         return location
     }()
     
+    
     fileprivate let publishSheetView = PublishSheetView()
     
     private var publishWorkAnnotation:BMKPointAnnotation?
@@ -144,6 +161,7 @@ class PublishWorkController: UIViewController {
 //                return
 //            }
 //            locationFlag = true
+            self.reverseGeoLocation(location: newValue)
             if let annotation = self.publishWorkAnnotation {
                 self.mapView.removeAnnotation(annotation)
             }
