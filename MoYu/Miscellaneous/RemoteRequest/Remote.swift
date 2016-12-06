@@ -26,7 +26,7 @@ class Remote{
     class func post(url urlString:String, parameters:JSONDictionary? = nil ,callback:@escaping RemoteClourse){
         
         Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON {
-             println("response:\($0)")
+//             println("response:\($0)")
             self.handleResponse($0, callback: callback)
         }
     }

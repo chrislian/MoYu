@@ -32,8 +32,8 @@ extension RouterType {
     
     func request(remote clourse: @escaping RemoteClourse){
         
-        println("urlString:\(self.urlString())")
-        println("parameters:\(self.parameters())")
+//        println("urlString:\(self.urlString())")
+//        println("parameters:\(self.parameters())")
         
         Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
     }

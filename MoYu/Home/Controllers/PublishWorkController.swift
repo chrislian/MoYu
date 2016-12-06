@@ -24,9 +24,9 @@ class PublishWorkController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        locationService.delegate = self
         mapView.viewWillAppear()
         
-        locationService.delegate = self
         mapView.delegate = self
         geocodeSearch.delegate = self
         
@@ -38,9 +38,9 @@ class PublishWorkController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        locationService.delegate = nil
         mapView.viewWillDisappear()
         
-        locationService.delegate = nil
         mapView.delegate = nil
         geocodeSearch.delegate = nil
         
@@ -111,20 +111,14 @@ class PublishWorkController: UIViewController {
         annotation.title = ""
         return annotation;
     }
-       fileprivate func reverseGeoLocation(location:MoYuLocation){
-        let geocoder = CLGeocoder()
+    
+    fileprivate func reverseGeoLocation(location:MoYuLocation){
         
-        geocoder.reverseGeocodeLocation(CLLocation(latitude: location.latitude, longitude: location.longitude), completionHandler: { (array,error) in
-            
-            if let array = array , array.count > 0,
-                let placeMark = array.first{
-                var city = placeMark.locality
-                if city == nil{
-                    city = placeMark.administrativeArea
-                }
-                println("city = \(city), name = \(placeMark.name)")
-            }
-        })
+        let reverseGeoCodeSearchOption = BMKReverseGeoCodeOption()
+        reverseGeoCodeSearchOption.reverseGeoPoint = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+        if !geocodeSearch.reverseGeoCode(reverseGeoCodeSearchOption){
+            println("反 geo检索发送失败")
+        }
     }
     
     
@@ -165,13 +159,8 @@ class PublishWorkController: UIViewController {
     
     private var publishWorkAnnotation:BMKPointAnnotation?
 
-    private var locationFlag = false
     fileprivate var location = MoYuLocation(){
         willSet{
-//            if locationFlag {
-//                return
-//            }
-//            locationFlag = true
             self.reverseGeoLocation(location: newValue)
             if let annotation = self.publishWorkAnnotation {
                 self.mapView.removeAnnotation(annotation)
@@ -181,7 +170,6 @@ class PublishWorkController: UIViewController {
             self.mapView.isSelectedAnnotationViewFront = true
         }
     }
-    
 }
 
 //MARK: - BMKMapView Delegate
@@ -264,6 +252,12 @@ extension PublishWorkController:BMKLocationServiceDelegate{
 
 extension PublishWorkController: BMKGeoCodeSearchDelegate{
     
-    
-    
+    func onGetReverseGeoCodeResult(_ searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
+        
+        if error == BMK_SEARCH_NO_ERROR {
+            self.publishSheetView.locationLabel.text = result.address ?? "未知位置"
+        }else{
+            println("error:\(error)");
+        }
+    }
 }

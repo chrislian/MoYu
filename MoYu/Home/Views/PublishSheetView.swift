@@ -212,7 +212,7 @@ class PublishSheetView: SpringView {
         return imageView
     }()
     
-    fileprivate let locationLabel:UILabel = {
+    let locationLabel:UILabel = {
         let  label = UILabel()
         label.textColor = UIColor.mo_lightBlack()
         label.font = UIFont.mo_font()
