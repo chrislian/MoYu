@@ -24,9 +24,12 @@ class PublishWorkController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        locationService.delegate = self
         mapView.viewWillAppear()
+        
+        locationService.delegate = self
         mapView.delegate = self
+        geocodeSearch.delegate = self
+        
         self.followMode()
         
         publishSheetView.dismiss(0)
@@ -35,9 +38,11 @@ class PublishWorkController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        locationService.delegate = nil
         mapView.viewWillDisappear()
+        
+        locationService.delegate = nil
         mapView.delegate = nil
+        geocodeSearch.delegate = nil
         
     }
     
@@ -150,6 +155,12 @@ class PublishWorkController: UIViewController {
     }()
     
     
+    lazy fileprivate var geocodeSearch: BMKGeoCodeSearch = {
+        let search = BMKGeoCodeSearch()
+        return search;
+    }()
+    
+    
     fileprivate let publishSheetView = PublishSheetView()
     
     private var publishWorkAnnotation:BMKPointAnnotation?
@@ -170,6 +181,7 @@ class PublishWorkController: UIViewController {
             self.mapView.isSelectedAnnotationViewFront = true
         }
     }
+    
 }
 
 //MARK: - BMKMapView Delegate
@@ -247,6 +259,11 @@ extension PublishWorkController:BMKLocationServiceDelegate{
     func didStopLocatingUser() {
         //print("didStopLocatingUser")
     }
+    
+}
+
+extension PublishWorkController: BMKGeoCodeSearchDelegate{
+    
     
     
 }
