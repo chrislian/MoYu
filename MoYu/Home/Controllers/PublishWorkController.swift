@@ -91,14 +91,16 @@ class PublishWorkController: UIViewController {
         }
         self.view.bringSubview(toFront: publishSheetView)
         //publish button closure
-        publishSheetView.publishClosure = { type in
+        publishSheetView.publishClosure = {[unowned self] type in
             switch type {
             case .partTime:
                 let vc = PostParttimeJobController()
+                vc.location = self.location
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case .task:
                 let vc = PostTaskController()
+                vc.location = self.location
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -215,7 +217,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      *@param mapView 地图View
      */
     func willStartLocatingUser() {
-        //print("willStartLocatingUser");
+//        print("willStartLocatingUser");
     }
     
     /**
@@ -223,7 +225,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      *@param userLocation 新的用户位置
      */
     func didUpdateUserHeading(_ userLocation: BMKUserLocation!) {
-        //print("heading is \(userLocation.heading)")
+//        print("heading is \(userLocation.heading)")
         mapView.updateLocationData(userLocation)
     }
     
@@ -232,7 +234,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      *@param userLocation 新的用户位置
      */
     func didUpdate(_ userLocation: BMKUserLocation!) {
-        //print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
+        print("didUpdateUserLocation lat:\(userLocation.location.coordinate.latitude) lon:\(userLocation.location.coordinate.longitude)")
         userLocation.title = nil
         mapView.updateLocationData(userLocation)
         
@@ -245,7 +247,7 @@ extension PublishWorkController:BMKLocationServiceDelegate{
      *@param mapView 地图View
      */
     func didStopLocatingUser() {
-        //print("didStopLocatingUser")
+//        print("didStopLocatingUser")
     }
     
 }

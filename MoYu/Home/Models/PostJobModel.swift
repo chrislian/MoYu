@@ -21,8 +21,8 @@ struct PostPartTimeJobModel {
     var education = "不限"
     var commission:Double = 0
     var workingtime:Double = 0
-    var longitude:Double = 11.23123
-    var latitude:Double = 123.2323
+    var longitude:Double = 0
+    var latitude:Double = 0
     
     func combination()->JSONDictionary{
         

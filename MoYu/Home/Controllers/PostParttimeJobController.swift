@@ -147,11 +147,21 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     
     fileprivate let dataArrays = [["种类","时间", "人数"], ["性别", "专业", "学历"], ["金额", "工时"]]
     
-    lazy var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
+    lazy fileprivate var catetoryTypeInfo = ["餐厅" ,"日薪" ,"模特" ,"派单" ,"服务员" ,"促销" ,"客服" ,"麦当劳"]
     
-    lazy var sexTypeInfo = ["不限", "女", "男"]
+    lazy fileprivate var sexTypeInfo = ["不限", "女", "男"]
     
-    lazy var postModel = PostPartTimeJobModel()
+    lazy fileprivate var postModel = PostPartTimeJobModel()
+    
+    var location:MoYuLocation{
+        set(newValue){
+            postModel.latitude = newValue.latitude
+            postModel.longitude = newValue.longitude
+        }
+        get{
+            return MoYuLocation(latitude: postModel.latitude, longitude: postModel.longitude)
+        }
+    }
 }
 
 //MARK: - UITableView delegate

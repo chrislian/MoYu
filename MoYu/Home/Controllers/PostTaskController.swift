@@ -121,6 +121,15 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
     
     
     var taskModel = PostTaskModel()
+    var location:MoYuLocation{
+        set(newValue){
+            taskModel.latitude = newValue.latitude
+            taskModel.longitude = newValue.longitude
+        }
+        get{
+            return MoYuLocation(latitude: taskModel.latitude, longitude: taskModel.longitude)
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
