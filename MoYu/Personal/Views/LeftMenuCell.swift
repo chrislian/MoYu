@@ -23,12 +23,13 @@ class LeftMenuView: UIView {
         headerUsernameLabel.text = user.moName
         headerPhoneLabel.text = user.moPhone
         
-       headerImageView.mo_loadImage(user.avatorUrl, placeholder: UIImage(named: "defalutHead")!)
+       headerImageView.mo_loadImage(user.avatorUrl)
+//        headerImageView.image = UIImage(named: "defaultAvator")
     }
     
-    func update(avator image:UIImage){
-        headerImageView.image = image
-    }
+//    func update(avator image:UIImage){
+//        headerImageView.image = image
+//    }
     
     fileprivate func setupView(){
         
