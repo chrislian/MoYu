@@ -132,6 +132,7 @@ class PublishWorkController: UIViewController {
         map.zoomLevel = 16
         
         map.logoPosition = BMKLogoPositionLeftBottom
+        map.showsUserLocation = false
         
         let param = BMKLocationViewDisplayParam()
         param.isRotateAngleValid = true// 跟随态旋转角度是否生效
@@ -163,6 +164,10 @@ class PublishWorkController: UIViewController {
 
     fileprivate var location = MoYuLocation(){
         willSet{
+            
+            if (location.latitude == newValue.latitude) && (location.longitude == newValue.longitude) {
+                return
+            }
             self.reverseGeoLocation(location: newValue)
             if let annotation = self.publishWorkAnnotation {
                 self.mapView.removeAnnotation(annotation)
@@ -183,29 +188,47 @@ extension PublishWorkController:BMKMapViewDelegate{
      *@param annotation 指定的标注
      *@return 生成的标注View
      */
-//    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
-//        
-//        let annotationViewID = "publishWorkAnnotation"
-//        let annotationView = PublishWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
-//        annotationView?.canShowCallout = false
-//        return annotationView
-//    }
+    func mapView(_ mapView: BMKMapView!, viewFor annotation: BMKAnnotation!) -> BMKAnnotationView! {
+        
+        let annotationViewID = "publishWorkAnnotation"
+        let annotationView = FindWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
+        annotationView?.isDraggable = true
+        annotationView?.canShowCallout = false
+        return annotationView
+    }
     
     func mapView(_ mapView: BMKMapView!, didSelect view: BMKAnnotationView!) {
         
-        publishSheetView.show()
-        
+        if let view = view as? FindWorkAnnotationView{
+            view.updateSelect(status: true)
+            publishSheetView.show()
+        }
     }
     
     func mapView(_ mapView: BMKMapView!, didDeselect view: BMKAnnotationView!) {
         
-//        publishSheetView.dismiss()
+        if let view = view as? FindWorkAnnotationView{
+            view.updateSelect(status: false)
+            publishSheetView.dismiss()
+        }
         
     }
     
     func mapView(_ mapView: BMKMapView!, regionWillChangeAnimated animated: Bool) {
         
-//        publishSheetView.dismiss()
+        if let view = view as? FindWorkAnnotationView{
+            view.updateSelect(status: false)
+            publishSheetView.dismiss()
+        }
+    }
+    
+    func mapView(_ mapView: BMKMapView!, onClickedMapBlank coordinate: CLLocationCoordinate2D) {
+        
+        if publishSheetView.isVisable{
+            publishSheetView.dismiss()
+        }else{
+         location = MoYuLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        }
     }
 }
 
@@ -238,8 +261,9 @@ extension PublishWorkController:BMKLocationServiceDelegate{
         userLocation.title = nil
         mapView.updateLocationData(userLocation)
         
-        
-        location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
+        if location.latitude == 0 || location.longitude == 0{
+            location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
+        }
     }
     
     /**
