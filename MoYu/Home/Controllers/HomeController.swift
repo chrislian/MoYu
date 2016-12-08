@@ -34,28 +34,24 @@ class HomeController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.mo_hide(hairLine: true)
+        
+        mapController.mapViewWillAppear()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         self.navigationController?.navigationBar.mo_hide(hairLine: false)
+        
+        mapController.mapViewWillDisappear()
     }
-
-    //MARK: - memory warning
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let vc = segue.destination.childViewControllers.last as? HomeMenuController {
-            vc.location = findWorkVc.location
+            vc.location = mapController.currentLocation
         }
-        
     }
     
     //MARK: - event response
@@ -97,17 +93,19 @@ class HomeController: UIViewController {
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.navigationItem.rightBarButtonItem = rightBarButton
         
-        self.changeChildView(findPublishType)
         
-        self.homeView.fpClosure = { [unowned self] type in
-            self.findPublishType = type
+        homeView.mapBaseView.addSubview(mapController.view)
+        mapController.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(homeView.mapBaseView)
         }
+        mapController.didMove(toParentViewController: self)
+        findPublishType = .findWork
         
-        self.homeItemView.homeItemClosure = {[unowned self] type in
+        mapController.findWorkLeftView.homeItemClosure = {[unowned self] type in
             switch type {
             case .gps:
                 if self.findPublishType == .findWork{
-                    self.findWorkVc.followMode()
+                    self.mapController.followMode()
                 }
             case .menu:
                 self.performSegue(withIdentifier: SB.Main.Segue.homeMenu, sender: self)
@@ -115,62 +113,17 @@ class HomeController: UIViewController {
                 self.performSegue(withIdentifier: SB.Main.Segue.homeSearch, sender: self)
             }
         }
+        
+        homeView.fpClosure = { [unowned self] type in
+            self.findPublishType = type
+        }
     }
     
-    
-    fileprivate func changeChildView(_ type:FindPublishWork){
-    
-        func addFindWorkToChild(){
-            
-            publishWorkVc.view.removeFromSuperview()
-            publishWorkVc.removeFromParentViewController()
-            
-            self.addChildViewController(findWorkVc)
-            self.homeView.mapBaseView.addSubview(findWorkVc.view)
-            findWorkVc.view.snp.makeConstraints { (make) in
-                make.edges.equalTo(findWorkVc.view.superview!)
-            }
-            findWorkVc.didMove(toParentViewController: self)
-            
-            self.homeView.mapBaseView.addSubview(homeItemView)
-            homeItemView.snp.makeConstraints { (make) in
-                make.right.equalTo(homeItemView.superview!).offset(-8)
-//                make.bottom.equalTo(homeItemView.superview!).offset(-80)
-                make.centerY.equalTo(homeItemView.superview!).offset(-80)
-                make.width.equalTo(60)
-                make.height.equalTo(180)
-            }
-        }
-        
-        func addPublishWorkToChild(){
-            
-            homeItemView.removeFromSuperview()
-            
-            findWorkVc.view.removeFromSuperview()
-            findWorkVc.removeFromParentViewController()
-            
-            self.addChildViewController(publishWorkVc)
-            self.homeView.mapBaseView.addSubview(publishWorkVc.view)
-            publishWorkVc.view.snp.makeConstraints { (make) in
-                make.edges.equalTo(publishWorkVc.view.superview!)
-            }
-            publishWorkVc.didMove(toParentViewController: self)
-        }
-        
-        switch findPublishType {
-        case .findWork:
-            addFindWorkToChild()
-        case .publishWork:
-            addPublishWorkToChild()
-        }
-    }
     
     //MARK: - var & let
     var findPublishType:FindPublishWork = .findWork{
         didSet{
-            if findPublishType != oldValue {
-                changeChildView(findPublishType)
-            }
+            mapController.mapType = findPublishType
         }
     }
     
@@ -196,16 +149,9 @@ class HomeController: UIViewController {
         return UIBarButtonItem(customView: button)
     }()
     
-    lazy var findWorkVc:FindWorkController = {
-        
-        return FindWorkController()
-    }()
-    
-    lazy var publishWorkVc:PublishWorkController = {
-        
-        return PublishWorkController()
+    lazy var mapController:HomeMapController = {
+        return HomeMapController()
     }()
     
     @IBOutlet var homeView: HomeView!
-    let homeItemView = HomeItemView()
 }
