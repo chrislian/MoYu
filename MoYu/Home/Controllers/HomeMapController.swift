@@ -191,7 +191,7 @@ class HomeMapController: UIViewController {
         let map = BMKMapView()
         map.minZoomLevel = 6
         map.maxZoomLevel = 20
-        map.zoomLevel = 10
+        map.zoomLevel = 11
         map.logoPosition = BMKLogoPositionLeftBottom
         map.isSelectedAnnotationViewFront = true
         
@@ -247,6 +247,7 @@ class HomeMapController: UIViewController {
         let search = BMKGeoCodeSearch()
         return search;
     }()
+    
     
     let findWorkLeftView = HomeItemView()
     
