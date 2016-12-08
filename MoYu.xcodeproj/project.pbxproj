@@ -150,6 +150,7 @@
 		EDEC08D41DEE78A100DD5F5D /* FindWorkAnnoation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */; };
 		EDF736CB1DEC08F300423E4A /* FindWorkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */; };
 		EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */; };
+		EDFB49181DF907ED00472B09 /* Timer+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB49171DF907ED00472B09 /* Timer+Safe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +346,7 @@
 		EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnoation.swift; sourceTree = "<group>"; };
 		EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnotationView.swift; sourceTree = "<group>"; };
 		EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPartimeJobDetailController.swift; sourceTree = "<group>"; };
+		EDFB49171DF907ED00472B09 /* Timer+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Safe.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -864,6 +866,7 @@
 				838E85061D294CC100C992CC /* UINavigationController+MoYu.swift */,
 				838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */,
 				839F1FE81D83B996006F1ED9 /* UIViewController+MoYu.swift */,
+				EDFB49171DF907ED00472B09 /* Timer+Safe.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1450,6 +1453,7 @@
 				83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */,
 				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,
 				838E84E81D29492200C992CC /* HomeMenuController.swift in Sources */,
+				EDFB49181DF907ED00472B09 /* Timer+Safe.swift in Sources */,
 				838CF1191D634FD3002BDC24 /* LocationHeadView.swift in Sources */,
 				8389C6571CB0F026003E96B1 /* Storyboards.swift in Sources */,
 				8327B64E1D3B65C200DF6D78 /* SFHFKeychainUtils.m in Sources */,

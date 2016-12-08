@@ -18,6 +18,16 @@ class HomeMapController: UIViewController {
         self.setupView()
         self.startLocation()
         self.followMode()
+        
+        zoomInTimer = Timer.cl_startTimer(interval: 0.1, repeats: true){ [unowned self] in
+            if self.mapView.zoomLevel <= 16.0{
+                self.mapView.zoomIn()
+            }else{
+                self.zoomInTimer?.invalidate()
+                self.zoomInTimer = nil
+            }
+        }
+        RunLoop.current.add(zoomInTimer!, forMode: .commonModes)
     }
     
     //MARK: - public method
@@ -181,7 +191,7 @@ class HomeMapController: UIViewController {
         let map = BMKMapView()
         map.minZoomLevel = 6
         map.maxZoomLevel = 20
-        map.zoomLevel = 16
+        map.zoomLevel = 10
         map.logoPosition = BMKLogoPositionLeftBottom
         map.isSelectedAnnotationViewFront = true
         
@@ -263,6 +273,8 @@ class HomeMapController: UIViewController {
             }
         }
     }
+    
+    var zoomInTimer:Timer?
 
 }
 
