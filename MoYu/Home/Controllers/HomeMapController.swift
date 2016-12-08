@@ -113,13 +113,16 @@ class HomeMapController: UIViewController {
             case .partTime:
                 let vc = PostParttimeJobController()
                 vc.location = self.publishLocation
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.publishClourse?(vc)
+                //self.navigationController?.pushViewController(vc, animated: true)
                 
             case .task:
                 let vc = PostTaskController()
                 vc.location = self.publishLocation
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.publishClourse?(vc)
+                //self.navigationController?.pushViewController(vc, animated: true)
             }
+            
         }
         
         findWorkCardView.dismiss(0)
@@ -276,6 +279,8 @@ class HomeMapController: UIViewController {
     }
     
     var zoomInTimer:Timer?
+    
+    var publishClourse:((UIViewController)->Void)?
 
 }
 

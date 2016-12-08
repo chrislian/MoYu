@@ -113,6 +113,9 @@ class HomeController: UIViewController {
                 self.performSegue(withIdentifier: SB.Main.Segue.homeSearch, sender: self)
             }
         }
+        mapController.publishClourse = {[unowned self] in
+            self.navigationController?.pushViewController($0, animated: true)
+        }
         
         homeView.fpClosure = { [unowned self] type in
             self.findPublishType = type
