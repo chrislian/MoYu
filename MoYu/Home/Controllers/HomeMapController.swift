@@ -322,7 +322,7 @@ extension HomeMapController:BMKMapViewDelegate{
             return annotationView
         case .publishWork:
             let annotationViewID = "publishWorkAnnotation"
-            let annotationView = FindWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
+            let annotationView = PublishWorkAnnotationView(annotation: annotation, reuseIdentifier: annotationViewID)
             annotationView?.isDraggable = true
             annotationView?.canShowCallout = false
             return annotationView
@@ -344,8 +344,7 @@ extension HomeMapController:BMKMapViewDelegate{
                 findWorkDataArray = [anotation]
             }
         case .publishWork:
-            if let view = view as? FindWorkAnnotationView{
-                view.updateSelect(status: true)
+            if let _ = view as? PublishWorkAnnotationView{
                 publishSheetView.show()
             }
         }
@@ -362,8 +361,7 @@ extension HomeMapController:BMKMapViewDelegate{
             }
 
         case .publishWork:
-            if let view = view as? FindWorkAnnotationView{
-                view.updateSelect(status: false)
+            if let _ = view as? PublishWorkAnnotationView{
                 publishSheetView.dismiss()
             }
         }
@@ -375,8 +373,7 @@ extension HomeMapController:BMKMapViewDelegate{
         case .findWork:
             deselectCurrentAnnotationView()
         case .publishWork:
-            if let view = view as? FindWorkAnnotationView{
-                view.updateSelect(status: false)
+            if let _ = view as? PublishWorkAnnotationView{
                 publishSheetView.dismiss()
             }
         }
@@ -419,10 +416,15 @@ extension HomeMapController:BMKLocationServiceDelegate{
         userLocation.title = nil
         mapView.updateLocationData(userLocation)
         
-
-        publishLocation = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
+        let location = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
         
-        currentLocation = MoYuLocation(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
+        if publishLocation.latitude == 0 || publishLocation.longitude == 0 {
+            publishLocation = location
+        }
+        
+        if location.latitude != currentLocation.latitude || location.longitude != currentLocation.longitude {
+            currentLocation = location
+        }
     }
 }
 
