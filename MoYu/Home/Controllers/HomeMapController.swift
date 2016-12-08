@@ -28,6 +28,12 @@ class HomeMapController: UIViewController {
             }
         }
         RunLoop.current.add(zoomInTimer!, forMode: .commonModes)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateUserInfo), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - public method
@@ -76,6 +82,12 @@ class HomeMapController: UIViewController {
         mapView.showsUserLocation = true
     }
     //MARK: - event response
+    @objc private func onReceive(notify:NSNotification){
+        if notify.name.rawValue == UserNotification.updateUserInfo{
+            self.updateFindWorks(currentLocation)
+        }
+    }
+    
     
     //MARK: - private methods
     private func setupView(){
@@ -167,15 +179,22 @@ class HomeMapController: UIViewController {
         switch type {
         case .findWork:
             findWorkLeftView.show()
+            publishSheetView.dismiss()
+            
             if findWorkAnnotations.count > 0 {
                 mapView.addAnnotations(findWorkAnnotations)
             }
             if let annotation = publishWorkAnnotation{
                 mapView.removeAnnotation(annotation)
             }
+            updateFindWorks(currentLocation)
         case .publishWork:
+            
             findWorkLeftView.dismiss()
             findWorkCardView.dismiss()
+            
+            publishSheetView.show()
+            publishLocation = currentLocation
             
             if findWorkAnnotations.count > 0 {
                 mapView.removeAnnotations(findWorkAnnotations)
@@ -208,7 +227,9 @@ class HomeMapController: UIViewController {
     //MARK: - var & let
     var mapType:FindPublishWork = .findWork{
         didSet{
-            changeMapModel(type: mapType)
+            if mapType != oldValue{
+                changeMapModel(type: mapType)
+            }
         }
     }
     
@@ -252,7 +273,6 @@ class HomeMapController: UIViewController {
         }
         didSet{
             if findWorkAnnotations.count > 0{
-                println("add find annotaions count = \(findWorkAnnotations.count)")
                 mapView.addAnnotations(findWorkAnnotations)
             }
         }
