@@ -132,12 +132,34 @@ class HomeMapController: UIViewController {
     }
     private func updateFindWorks(_ location:MoYuLocation){
         
-        Router.allPartTimeJobList(page: 1, location: location).request { [weak self] (status, json) in
-            if case .success = status, let data = json?["reslist"].array{
-                
-                self?.findWorkAnnotations = data.map( HomeMenuModel.init ).map( FindWorkAnnoation.init )
+        var currentPage = 1
+        var allDatas = [FindWorkAnnoation]()
+        
+        func loadAllPartTimeJob(page:Int, clourse:@escaping (([FindWorkAnnoation])->Void)){
+            
+            Router.allPartTimeJobList(page: page, location: location).request { (status, json) in
+                var datas:[FindWorkAnnoation] = []
+                if case .success = status, let data = json?["reslist"].array{
+                    datas = data.map( HomeMenuModel.init ).map( FindWorkAnnoation.init )
+                }
+                clourse(datas)
             }
         }
+        
+        func handlePartTimeJobs(datas:[FindWorkAnnoation]){
+            
+            allDatas.append(contentsOf: datas)
+            if datas.count < 10{
+                
+                self.findWorkAnnotations = allDatas
+            }else{
+                currentPage += 1
+                loadAllPartTimeJob(page: currentPage, clourse: handlePartTimeJobs)
+            }
+        }
+        
+        
+        loadAllPartTimeJob(page: currentPage, clourse: handlePartTimeJobs)
     }
     
     private func changeMapModel(type:FindPublishWork){
@@ -230,6 +252,7 @@ class HomeMapController: UIViewController {
         }
         didSet{
             if findWorkAnnotations.count > 0{
+                println("add find annotaions count = \(findWorkAnnotations.count)")
                 mapView.addAnnotations(findWorkAnnotations)
             }
         }

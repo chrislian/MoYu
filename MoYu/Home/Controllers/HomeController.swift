@@ -133,8 +133,8 @@ class HomeController: UIViewController {
     lazy var leftBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
         let image = UIImage(named: "homeLeftTop")
-        button.setBackgroundImage(image, for: UIControlState())
-        button.setTitle("", for: UIControlState())
+        button.setBackgroundImage(image, for: .normal)
+        button.setTitle("", for: .normal)
         button.tag = 0
         button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), for: .touchUpInside)
         
@@ -144,8 +144,8 @@ class HomeController: UIViewController {
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         let image = UIImage(named: "homeRightTop")
-        button.setBackgroundImage(image, for: UIControlState())
-        button.setTitle("", for: UIControlState())
+        button.setBackgroundImage(image, for: .normal)
+        button.setTitle("", for: .normal)
         button.tag = 1
         button.addTarget(self, action: #selector(leftRightBarButtonClicked(_:)), for: .touchUpInside)
         
