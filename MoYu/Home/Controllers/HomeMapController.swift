@@ -324,6 +324,7 @@ class HomeMapController: UIViewController {
     var zoomInTimer:Timer?
     
     var publishClourse:((UIViewController)->Void)?
+    var findWorkClourse:((HomeMenuModel)->Void)?
 
 }
 
@@ -481,6 +482,8 @@ extension HomeMapController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        findWorkClourse?(findWorkDataArray[indexPath.row].model)
     }
 }
 

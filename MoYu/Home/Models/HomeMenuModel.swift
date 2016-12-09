@@ -32,7 +32,8 @@ struct HomeMenuModel{
     let sum:Int
     let time:Date
     let userid:String
-    let workingtime:Date
+    let workingtime:Double
+    let type:Int
     
     init(json:JSON){
         address = json["address"].stringValue
@@ -56,6 +57,7 @@ struct HomeMenuModel{
         sum = json["sum"].intValue
         time = Date.init(timeIntervalSince1970: json["time"].doubleValue)
         userid = json["userid"].stringValue
-        workingtime = Date(timeIntervalSince1970: json["workingtime"].doubleValue)
+        workingtime = json["workingtime"].doubleValue
+        type = json["type"].intValue
     }
 }

@@ -51,7 +51,11 @@ class HomeController: UIViewController {
         
         if let vc = segue.destination.childViewControllers.last as? HomeMenuController {
             vc.location = mapController.currentLocation
+        }else if let vc = segue.destination as? GetParttimeJobDetailController,
+            let model = sender as? HomeMenuModel{
+            vc.jobModel = model
         }
+        
     }
     
     //MARK: - event response
@@ -115,6 +119,9 @@ class HomeController: UIViewController {
         }
         mapController.publishClourse = {[unowned self] in
             self.navigationController?.pushViewController($0, animated: true)
+        }
+        mapController.findWorkClourse = {[unowned self] model in
+            self.performSegue(withIdentifier: SB.Main.Segue.homeParttimeJobDetail, sender: model)
         }
         
         homeView.fpClosure = { [unowned self] type in
