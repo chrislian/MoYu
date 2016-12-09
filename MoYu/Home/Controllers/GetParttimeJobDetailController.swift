@@ -65,7 +65,7 @@ class GetParttimeJobDetailController: UIViewController,PraseErrorType,AlertViewT
         
         guard let model = jobModel else{ return }
         
-        Router.getParttimeJob(order: model.order, status: 0).request {[weak self] (status, json) in
+        Router.getParttimeJob(order: model.ordernum, status: sender.tag).request {[weak self] (status, json) in
          
             self?.show(error: status, showSuccess: true)
 
