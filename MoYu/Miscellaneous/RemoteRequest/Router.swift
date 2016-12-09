@@ -40,6 +40,8 @@ enum Router {
     case postParttimeJob(parameter: JSONDictionary)//发布兼职
     case postTask(paramter: JSONDictionary)//发布任务
     case searchParttimeJob(page:Int,keyword:String)//兼职关键字搜索
+    case getParttimeJob(order:String, status:Int)//status 0,接兼职， 1.用户完成， 2.商家完成
+
     
     //任务
     case allTask(page:Int)//所有任务
@@ -136,6 +138,9 @@ extension Router: RouterType{
             
         case .checkTaskStatus(let order):
             parameters = compose(parameters: ["ordernum":order ])
+            
+        case .getParttimeJob(let order, let status):
+            parameters = compose(parameters: ["ordernum":order, "status":status])
         }
         
         return parameters
@@ -205,6 +210,8 @@ extension Router: RouterType{
             suffix = "postPartTimeStatus"
         case .checkTaskStatus:
             suffix = "testS"
+        case .getParttimeJob:
+            suffix = "postPartTimeStatus"
         }
         return mainUrl + suffix
     }

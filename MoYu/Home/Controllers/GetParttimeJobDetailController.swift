@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GetParttimeJobDetailController: UIViewController {
+class GetParttimeJobDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -31,9 +31,52 @@ class GetParttimeJobDetailController: UIViewController {
         grabButton.layer.masksToBounds = true
         grabButton.layer.borderColor = UIColor.lightGray.cgColor
         grabButton.layer.borderWidth = 0.5
-        grabButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+        
+        grabButton.addTarget(self, action: #selector(grabButtonClicked(sender:)), for: .touchUpInside)
+        
+        updateGrabButton(status: jobModel?.status ?? 0)
+        
     }
     
+    private func updateGrabButton(status:Int){
+        
+        grabButton.tag = status
+        if status == 0 {
+            grabButton.backgroundColor = UIColor.mo_main()
+            grabButton.setTitle("立即抢单", for: .normal)
+            grabButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            grabButton.isEnabled = true
+        }else if status == 1{
+            grabButton.backgroundColor = UIColor.mo_main()
+            grabButton.setTitle("确认完成", for: .normal)
+            grabButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            grabButton.isEnabled = true
+        }else if status == 2{
+            grabButton.backgroundColor = UIColor.gray
+            grabButton.setTitle("等待商家确认", for: .normal)
+            grabButton.setTitleColor(UIColor.white, for: .normal)
+            grabButton.isEnabled = false
+        }
+    }
+
+    
+    //MARK: - event response
+    @objc private func grabButtonClicked(sender:UIButton){
+        
+        guard let model = jobModel else{ return }
+        
+        Router.getParttimeJob(order: model.order, status: 0).request {[weak self] (status, json) in
+         
+            self?.show(error: status, showSuccess: true)
+
+            if case .success = status, let json = json{
+                
+                let model = HomeMenuModel(json: json)
+                self?.jobModel = model
+                self?.updateGrabButton(status: model.status)
+            }
+        }
+    }
     
     //MARK: - var & let
     var jobModel:HomeMenuModel?
