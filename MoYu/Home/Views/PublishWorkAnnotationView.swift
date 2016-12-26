@@ -16,14 +16,15 @@ class PublishWorkAnnotationView: BMKAnnotationView {
         
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
-        self.bounds = CGRect(x: 0, y: 0, width: 60, height: 64)
+        self.bounds = CGRect(x: 0, y: 0, width: 29, height: 37)
         self.backgroundColor = UIColor.clear
-        
-//        setupView()
+
         self.addSubview(annotationImageView)
         annotationImageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
+        
+        annotationImageView.layer.anchorPoint = CGPoint(x: 0.2, y: 1)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +37,7 @@ class PublishWorkAnnotationView: BMKAnnotationView {
         
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "avatarActiveBg")
+        imageView.image = UIImage(named: "home_pin_location")
         return imageView
     }()
 }

@@ -49,6 +49,17 @@ class TaskDetailCell: UITableViewCell {
         amountLabel.attributedText = commission(model.commission)
     }
     
+    func update(item model:HomeMenuModel){
+        
+        avatorImageView.mo_loadRoundImage("", radius: avatorImageView.bounds.size.width/2)
+        titleLabel.text = ""
+        contentLabel.text = model.name
+        stepLabel.text = ""
+        amountLabel.attributedText = commission(Double(model.commission) ?? 0)
+
+    }
+    
+    
     //MARK: - private method
     
     fileprivate func commission( _ value:Double)->NSAttributedString{

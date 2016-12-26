@@ -8,13 +8,13 @@
 
 import UIKit
 import SnapKit
-
+import Spring
 
 enum MOHomeItemType {
     case gps,menu,search
 }
 
-class HomeItemView: UIView {
+class HomeItemView: SpringView {
 
     //MARK: - life cycle
     override init(frame: CGRect) {
@@ -25,6 +25,28 @@ class HomeItemView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - public methods
+    func show(){
+        if !isVisable{
+            self.animation = "slideLeft"
+            self.curve = "easeIn"
+            self.duration = 1
+            self.animate()
+        }
+        isVisable = true
+    }
+    
+    func dismiss(_ duration:TimeInterval = 0.7){
+        
+        if isVisable{
+            self.animation = "fadeOut"
+            self.curve = "easeIn"
+            self.duration = CGFloat(duration)
+            self.animate()
+        }
+        isVisable = false
     }
     
     //MARK: - event response
@@ -114,4 +136,6 @@ class HomeItemView: UIView {
     }()
     
     var homeItemClosure:((_ type:MOHomeItemType)->Void)?
+    
+    fileprivate var isVisable = true
 }

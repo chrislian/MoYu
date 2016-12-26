@@ -22,6 +22,7 @@ struct SB {
         struct Cell {
             static let homeMessage = "cellHomeMessageIdentifier"
             static let homeMenu  = "cellHomeMenuIdentifier"
+            static let parttimeContent = "cellParttimeJobContentIdentifier"
         }
         
         struct Segue {
@@ -30,6 +31,8 @@ struct SB {
             static let homeMenu = "segueHomeMenu"
             static let homeSearch = "segueHomeSearch"
             static let selectCity = "segueSelectCity"
+            static let getParttimeJob = "segueGetParttimeJob"
+            static let homeParttimeJobDetail = "segueHomeGetParttimeJob"
             
         }
         

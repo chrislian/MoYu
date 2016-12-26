@@ -43,6 +43,10 @@ class HomeMenuController: UIViewController,RefreshViewType ,PraseErrorType, Aler
             vc.changeCityClourse = { [unowned self] city in
                 self.currentCity = city
             }
+        }else if segue.identifier == SB.Main.Segue.getParttimeJob,
+            let vc = segue.destination as? GetParttimeJobDetailController,
+            let model = sender as? HomeMenuModel{
+            vc.jobModel = model
         }
     }
 
@@ -156,10 +160,9 @@ extension HomeMenuController:UITableViewDelegate{
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
-        self.navigationController?.pushViewController(vc, animated: true)
+        performSegue(withIdentifier: SB.Main.Segue.getParttimeJob, sender: modelArray[indexPath.row])
     }
+    
 }
 
 extension HomeMenuController:UITableViewDataSource{
