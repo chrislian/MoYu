@@ -75,11 +75,11 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     
     fileprivate func zanTap(withItem item:AboutJobItem){
         
-        if item.zan{
-            
-            self.showAlert(message: "已点过赞了~")
-            return
-        }
+//        if item.zan{
+//            
+//            self.showAlert(message: "已点过赞了~")
+//            return
+//        }
         
         Router.jobZoneZan(id: item.id, value: true).request { (status, json) in
             self.show(error: status, showSuccess: true)
@@ -92,10 +92,7 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     
     fileprivate func commentTap(withItem item:AboutJobItem){
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
-        vc.title = "评论"
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.performSegue(withIdentifier: SB.AppCenter.Segue.comments, sender: item)
     }
     
     

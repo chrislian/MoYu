@@ -31,33 +31,25 @@ class AboutJobsCell: UITableViewCell {
         dateLabel.text = item.create_time.mo_ToString(.detail)
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
-        //headImageView.mo_loadRoundImage(item.avator, placeholder: UIImage(named: "defalutHead")!)
+        headImageView.mo_loadRoundImage(item.avator)
+        zanCountLabel.text = item.zan
+        
+        commentCountLabel.text = "\(item.replylists.count)"
         
         jobZoneItem = item
     }
     
     
+    @IBAction func zanButtonTap(_ sender: UIButton) {
+        zanClourse?(jobZoneItem)
+    }
+    @IBAction func commentButtonTap(_ sender: UIButton) {
+        commentClourse?(jobZoneItem)
+    }
     //MARK: - private method
-    
-    dynamic fileprivate func zanTap(_ sender:UITapGestureRecognizer){
-        
-        self.zanClourse?(jobZoneItem)
-    }
-    dynamic fileprivate func commentTap(_ sender:UITapGestureRecognizer){
-        
-        self.commentClourse?(jobZoneItem)
-    }
     
     fileprivate func setupCell(){
         
-        zanImageView.isUserInteractionEnabled = true
-        commentImageView.isUserInteractionEnabled = true
-        
-        let zan = UITapGestureRecognizer(target: self, action: #selector(zanTap(_:)))
-        zanImageView.addGestureRecognizer(zan)
-        
-        let comment = UITapGestureRecognizer(target: self, action: #selector(commentTap(_:)))
-        commentImageView.addGestureRecognizer(comment)
     }
 
 
@@ -66,8 +58,8 @@ class AboutJobsCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var commentImageView: UIImageView!
-    @IBOutlet weak var zanImageView: UIImageView!
+    @IBOutlet weak var zanCountLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
     
     fileprivate var jobZoneItem:AboutJobItem?
     var zanClourse:((AboutJobItem?)->Void)?

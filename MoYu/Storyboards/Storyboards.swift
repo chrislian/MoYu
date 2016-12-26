@@ -91,6 +91,7 @@ struct SB {
             static let aboutJobs = "segueAboutJobs"
             static let personMsg = "seguePersonMessage"
             static let publishMsg = "seguePublishMessage"
+            static let comments = "segueComments"
         }
         
         static var root:UIViewController?{
