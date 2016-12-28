@@ -141,7 +141,7 @@ extension AboutJobsController: UITableViewDelegate{
         guard let cell = cell as? AboutJobsCell else{
             return
         }
-        cell.update(item: aboutJobModel.items[(indexPath as NSIndexPath).section])
+        cell.update(item: aboutJobModel.items[indexPath.section])
         
         cell.zanClourse = { [unowned self] jobZoneItem in
             

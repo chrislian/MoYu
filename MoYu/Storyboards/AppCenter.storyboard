@@ -254,14 +254,24 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAz-pA-75n">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="13"/>
+                                                                    <connections>
+                                                                        <action selector="commentButtonTap:" destination="avx-4z-Tdq" eventType="touchUpInside" id="qAa-zE-zDs"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="nAz-pA-75n" secondAttribute="bottom" id="AEC-67-dyJ"/>
                                                                 <constraint firstItem="dS3-aX-K0k" firstAttribute="top" secondItem="mku-PG-DGI" secondAttribute="top" id="H9D-M0-zYn"/>
+                                                                <constraint firstItem="nAz-pA-75n" firstAttribute="top" secondItem="mku-PG-DGI" secondAttribute="top" id="NNh-FW-5m3"/>
                                                                 <constraint firstAttribute="bottom" secondItem="dS3-aX-K0k" secondAttribute="bottom" id="RNT-4k-Jgc"/>
                                                                 <constraint firstAttribute="trailing" secondItem="enU-9N-Vzg" secondAttribute="trailing" id="Toi-Db-3Jx"/>
                                                                 <constraint firstAttribute="bottom" secondItem="enU-9N-Vzg" secondAttribute="bottom" id="a9E-vi-zOi"/>
                                                                 <constraint firstItem="enU-9N-Vzg" firstAttribute="top" secondItem="mku-PG-DGI" secondAttribute="top" id="dEb-4Z-Jab"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nAz-pA-75n" secondAttribute="trailing" id="exH-Sv-RM1"/>
                                                                 <constraint firstItem="enU-9N-Vzg" firstAttribute="leading" secondItem="dS3-aX-K0k" secondAttribute="trailing" constant="2" id="kMk-60-fnf"/>
+                                                                <constraint firstItem="nAz-pA-75n" firstAttribute="leading" secondItem="mku-PG-DGI" secondAttribute="leading" id="lKe-zo-yjU"/>
                                                                 <constraint firstItem="dS3-aX-K0k" firstAttribute="leading" secondItem="mku-PG-DGI" secondAttribute="leading" id="mx7-aV-4T3"/>
                                                             </constraints>
                                                         </view>
@@ -289,6 +299,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="commentCountLabel" destination="enU-9N-Vzg" id="XD9-X1-KpA"/>
                                             <outlet property="commentLabel" destination="P87-2b-UHx" id="hPK-Tp-hvm"/>
                                             <outlet property="dateLabel" destination="bqE-Uy-geR" id="VA9-rI-eZT"/>
                                             <outlet property="headImageView" destination="voA-l1-fTX" id="Sur-Bf-bcU"/>
