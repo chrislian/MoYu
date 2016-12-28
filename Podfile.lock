@@ -6,6 +6,9 @@ PODS:
   - IQKeyboardManagerSwift (4.0.7)
   - Kingfisher (3.2.1)
   - MJRefresh (3.1.12)
+  - PHFComposeBarView (2.0.2):
+    - PHFDelegateChain (~> 1.0)
+  - PHFDelegateChain (1.0.1)
   - Proposer (1.0.0)
   - Realm (2.0.4):
     - Realm/Headers (= 2.0.4)
@@ -27,6 +30,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher (~> 3.0)
   - MJRefresh (~> 3.0)
+  - PHFComposeBarView (~> 2.0)
   - Proposer (~> 1.0.0)
   - RealmSwift
   - REFrostedViewController (~> 2.0)
@@ -44,6 +48,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PHFComposeBarView: 758c73ce54be681df97223bc61543dd8828ae0d3
+  PHFDelegateChain: 491f9cd8a3fb8761f390ff05f74a0e168d48d285
   Proposer: 73303728e11cb6dbe27102deac0da82956a51f16
   Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
   RealmSwift: 01e8db006035f16003e6307ae8eae1adccce68db
@@ -54,6 +60,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 094c9bcea5fa4994c1b8f30f017325e5b463d7f9
+PODFILE CHECKSUM: b7fbed54c85aa1e0a674cd4c3470202dc8761100
 
-COCOAPODS: 1.1.0.beta.2
+COCOAPODS: 1.2.0.beta.1
