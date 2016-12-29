@@ -12,7 +12,7 @@ import PHFComposeBarView
 import PHFDelegateChain
 
 
-class CommentController: UIViewController {
+class CommentController: UIViewController,AlertViewType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,7 +119,7 @@ extension CommentController: PHFComposeBarViewDelegate{
     
     func composeBarViewDidPressUtilityButton(_ composeBarView: PHFComposeBarView!) {
         
-        println("Utility button pressed")
+        showAlert(message: "还不支持图片恢复哦~")
     }
     
 }
