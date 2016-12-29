@@ -63,6 +63,11 @@ extension AppCenterController:UITableViewDelegate{
             performSegue(withIdentifier: SB.AppCenter.Segue.aboutJobs, sender: self)
         case (1,0):
             performSegue(withIdentifier: SB.AppCenter.Segue.aroundPeople, sender: nil)
+        case (1,2):
+            guard let vc = SB.Task.root else{ return }
+            present(vc, animated: true, completion: {[unowned self] in
+                let _ = self.navigationController?.popViewController(animated: false)
+            })
         default: break
             
         }
