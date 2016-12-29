@@ -376,9 +376,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b0p-VA-Ovi">
-                                                                    <rect key="frame" x="41" y="-2" width="18" height="18"/>
+                                                                    <rect key="frame" x="41" y="-0.5" width="15" height="15"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="18" id="9HC-Ei-szn"/>
+                                                                        <constraint firstAttribute="width" constant="15" id="9HC-Ei-szn"/>
                                                                         <constraint firstAttribute="width" secondItem="b0p-VA-Ovi" secondAttribute="height" multiplier="1:1" id="MgT-3q-Xim"/>
                                                                     </constraints>
                                                                 </imageView>

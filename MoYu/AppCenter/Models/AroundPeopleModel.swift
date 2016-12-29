@@ -16,8 +16,8 @@ struct AroundPeopleModel {
     var device = ""
     var img = ""
     var nickname = ""
-    var sex = 0
-    var age = MoSex.none
+    var age = 0
+    var sex = MoSex.none
     var level = ""
     var regtime = ""
     var balance:Double = 0
@@ -59,8 +59,8 @@ struct AroundPeopleModel {
         device  = json["device"].stringValue
         img = json["img"].stringValue
         nickname = json["nickname"].stringValue
-        sex = json["sex"].intValue
-        age = MoSex(json["age"].intValue)
+        age = json["age"].intValue
+        sex = MoSex(json["sex"].intValue)
         level = json["level"].stringValue
         regtime = json["regtime"].stringValue
         balance = json["balance"].doubleValue

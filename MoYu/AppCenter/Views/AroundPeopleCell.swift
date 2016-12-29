@@ -31,6 +31,15 @@ class AroundPeopleCell: UITableViewCell {
         motionLabel.text = model.autograph
         usernameLabel.text = model.nickname
         
+        switch model.sex {
+        case .none:
+            sexImageView.image = UIImage()
+        case .male:
+            sexImageView.image = UIImage(named: "icon_male")
+        case .female:
+            sexImageView.image = UIImage(named: "icon_female")
+        }
+        
         let currentLocation = UserManager.sharedInstance.currentLocation
         distanceLabel.text = currentLocation.distance(latitude: model.latitude, longitude: model.longitude)
     }
@@ -39,8 +48,10 @@ class AroundPeopleCell: UITableViewCell {
     //MARK: - private methods
     private func setupCell(){
         
+        sexImageView.contentMode = .scaleAspectFit
         
     }
+    
     
     //MARK: - var & let
     @IBOutlet weak var distanceLabel: UILabel!
