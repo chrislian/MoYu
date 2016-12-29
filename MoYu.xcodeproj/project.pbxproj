@@ -152,6 +152,7 @@
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
 		ED56A7681DED5B940088CD22 /* FindWorkCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */; };
 		ED94173A1DF805EB009535C1 /* HomeMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9417391DF805EB009535C1 /* HomeMapController.swift */; };
+		EDEB5B2A1E14AD0D00C3F273 /* CommentSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */; };
 		EDEC08D41DEE78A100DD5F5D /* FindWorkAnnoation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */; };
 		EDF736CB1DEC08F300423E4A /* FindWorkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */; };
 		EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */; };
@@ -353,6 +354,7 @@
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
 		ED9417391DF805EB009535C1 /* HomeMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMapController.swift; sourceTree = "<group>"; };
+		EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSubCell.swift; sourceTree = "<group>"; };
 		EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnoation.swift; sourceTree = "<group>"; };
 		EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnotationView.swift; sourceTree = "<group>"; };
 		EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPartimeJobDetailController.swift; sourceTree = "<group>"; };
@@ -734,6 +736,7 @@
 				838E84C51D29492200C992CC /* AboutJobsCell.swift */,
 				838E84C61D29492200C992CC /* AppCenterCell.swift */,
 				ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */,
+				EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1438,6 +1441,7 @@
 				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,
 				83AAFE9B1D43168B00E39EB4 /* MyPurseController.swift in Sources */,
 				839F1FE91D83B996006F1ED9 /* UIViewController+MoYu.swift in Sources */,
+				EDEB5B2A1E14AD0D00C3F273 /* CommentSubCell.swift in Sources */,
 				838E84F11D29492200C992CC /* HomeMessageCell.swift in Sources */,
 				83289B801D64A60200EF765D /* PostParttimeJobController.swift in Sources */,
 				EDEC08D41DEE78A100DD5F5D /* FindWorkAnnoation.swift in Sources */,

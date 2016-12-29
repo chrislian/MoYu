@@ -34,6 +34,12 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         updateData(withPage: 1)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? CommentController, let model = sender as? AboutJobItem {
+            vc.aboutJobModel = model
+        }
+    }
+    
     //MARK: - private method
     fileprivate func setupView(){
     

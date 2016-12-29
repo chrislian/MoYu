@@ -12,7 +12,7 @@ import PHFComposeBarView
 import PHFDelegateChain
 
 
-class CommentController: UIViewController,AlertViewType {
+class CommentController: UIViewController,AlertViewType,PraseErrorType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,8 @@ class CommentController: UIViewController,AlertViewType {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = UIColor.mo_background()
+        tableView.tableFooterView = UIView()
         
         view.addSubview(composeBarView)
     }
@@ -83,16 +85,63 @@ class CommentController: UIViewController,AlertViewType {
         view.delegate = self
         return view
     }()
+    
+    var aboutJobModel:AboutJobItem?
 }
 
 extension CommentController:UITableViewDelegate{
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.01
+        }
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let model = aboutJobModel else{ return }
+        
+        if let cell = cell as? CommentTopCell{
+            cell.update(comments: model.memo, count: model.replylists.count)
+        
+        }else if let cell = cell as? CommentSubCell{
+            cell.update(model: model.replylists[indexPath.row], index: indexPath.row + 1)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 extension CommentController: UITableViewDataSource{
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+       
+        if section == 0 {
+            return 1
+        }
+        return aboutJobModel?.replylists.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,7 +150,7 @@ extension CommentController: UITableViewDataSource{
         case (0,0):
             return CommentTopCell.cell(tableView: tableView)
         default:
-            return UITableViewCell()
+            return CommentSubCell.cell(tableView: tableView)
         }
     }
     
@@ -119,7 +168,7 @@ extension CommentController: PHFComposeBarViewDelegate{
     
     func composeBarViewDidPressUtilityButton(_ composeBarView: PHFComposeBarView!) {
         
-        showAlert(message: "还不支持图片恢复哦~")
+//        showAlert(message: "还不支持图片恢复哦~")
     }
     
 }

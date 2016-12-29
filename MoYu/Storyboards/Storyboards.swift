@@ -90,6 +90,7 @@ struct SB {
             static let appCenter = "cellAppCenterIdentifier"
             static let aboutJobs = "cellAboutJobsIdentifier"
             static let commentsTop = "cellCommentsTopIdentifier"
+            static let commentsSub = "cellCommentSubIdentifier"
         }
         struct Segue{
             static let aboutJobs = "segueAboutJobs"
