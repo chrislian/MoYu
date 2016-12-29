@@ -91,12 +91,14 @@ struct SB {
             static let aboutJobs = "cellAboutJobsIdentifier"
             static let commentsTop = "cellCommentsTopIdentifier"
             static let commentsSub = "cellCommentSubIdentifier"
+            static let aroundPeople = "cellAroundPeopleIdentifier"
         }
         struct Segue{
             static let aboutJobs = "segueAboutJobs"
             static let personMsg = "seguePersonMessage"
             static let publishMsg = "seguePublishMessage"
             static let comments = "segueComments"
+            static let aroundPeople = "segueAroundPeople"
         }
         
         static var root:UIViewController?{

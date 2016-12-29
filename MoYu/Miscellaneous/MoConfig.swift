@@ -79,3 +79,18 @@ struct MoYuPlatform {
         return isSim
     }()
 }
+
+enum MoSex:Int {
+    case none = 0
+    case male = 1
+    case female = 2
+    
+    init(_ value:Int) {
+        
+        switch value {
+        case 1: self =  .male
+        case 2: self =  .female
+        default: self =  .none
+        }
+    }
+}

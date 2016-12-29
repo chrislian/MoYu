@@ -154,6 +154,9 @@
 		ED79B1A51E14E2FE00B98302 /* MoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79B1A41E14E2FE00B98302 /* MoNotification.swift */; };
 		ED94173A1DF805EB009535C1 /* HomeMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9417391DF805EB009535C1 /* HomeMapController.swift */; };
 		EDEB5B2A1E14AD0D00C3F273 /* CommentSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */; };
+		EDEB5B2C1E14F56C00C3F273 /* AroundPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B2B1E14F56C00C3F273 /* AroundPeopleController.swift */; };
+		EDEB5B2E1E14F86B00C3F273 /* AroundPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B2D1E14F86B00C3F273 /* AroundPeopleCell.swift */; };
+		EDEB5B301E14F93400C3F273 /* AroundPeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B2F1E14F93400C3F273 /* AroundPeopleModel.swift */; };
 		EDEC08D41DEE78A100DD5F5D /* FindWorkAnnoation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */; };
 		EDF736CB1DEC08F300423E4A /* FindWorkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */; };
 		EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */; };
@@ -357,6 +360,9 @@
 		ED79B1A41E14E2FE00B98302 /* MoNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoNotification.swift; sourceTree = "<group>"; };
 		ED9417391DF805EB009535C1 /* HomeMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMapController.swift; sourceTree = "<group>"; };
 		EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSubCell.swift; sourceTree = "<group>"; };
+		EDEB5B2B1E14F56C00C3F273 /* AroundPeopleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundPeopleController.swift; sourceTree = "<group>"; };
+		EDEB5B2D1E14F86B00C3F273 /* AroundPeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundPeopleCell.swift; sourceTree = "<group>"; };
+		EDEB5B2F1E14F93400C3F273 /* AroundPeopleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundPeopleModel.swift; sourceTree = "<group>"; };
 		EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnoation.swift; sourceTree = "<group>"; };
 		EDF736CA1DEC08F300423E4A /* FindWorkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnotationView.swift; sourceTree = "<group>"; };
 		EDF819AB1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPartimeJobDetailController.swift; sourceTree = "<group>"; };
@@ -716,11 +722,12 @@
 		838E84BE1D29492200C992CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				838E84BF1D29492200C992CC /* AboutJobsController.swift */,
 				838E84C01D29492200C992CC /* AppCenterController.swift */,
+				838E84BF1D29492200C992CC /* AboutJobsController.swift */,
 				838E84C11D29492200C992CC /* PersonMessageController.swift */,
 				838E84C21D29492200C992CC /* PublishMessageController.swift */,
 				ED2F7E4D1E10BE3B001310D6 /* CommentController.swift */,
+				EDEB5B2B1E14F56C00C3F273 /* AroundPeopleController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -729,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				83558FF51D5E0CBA008D5883 /* AboutJobModel.swift */,
+				EDEB5B2F1E14F93400C3F273 /* AroundPeopleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -740,6 +748,7 @@
 				838E84C61D29492200C992CC /* AppCenterCell.swift */,
 				ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */,
 				EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */,
+				EDEB5B2D1E14F86B00C3F273 /* AroundPeopleCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1469,8 +1478,10 @@
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
 				83E1BE151DA397340058F7B9 /* MyPostPartTimeJob.swift in Sources */,
+				EDEB5B2E1E14F86B00C3F273 /* AroundPeopleCell.swift in Sources */,
 				ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */,
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
+				EDEB5B2C1E14F56C00C3F273 /* AroundPeopleController.swift in Sources */,
 				83D3F09E1D89806B0017DCB2 /* TaskModel.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
@@ -1511,6 +1522,7 @@
 				833240AF1D574F9D006C7203 /* SettingController.swift in Sources */,
 				83829ECD1D58679100CD6587 /* MessageCenterController.swift in Sources */,
 				83253EF41D97765D00F53402 /* SegmentedControl.swift in Sources */,
+				EDEB5B301E14F93400C3F273 /* AroundPeopleModel.swift in Sources */,
 				833A86361D2BFC20002E8BBD /* UserHeaderCell.swift in Sources */,
 				838E84F51D29492200C992CC /* LeftMenuViewController.swift in Sources */,
 				831C33CA1CB0B1E900157B67 /* AppDelegate.swift in Sources */,

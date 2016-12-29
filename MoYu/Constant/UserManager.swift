@@ -34,6 +34,8 @@ class UserManager {
         }
     }
     
+    var currentLocation = MoYuLocation()
+    
     fileprivate(set) var isLoginIn = false
     
     let realm = try! Realm()

@@ -55,11 +55,17 @@ extension AppCenterController:UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath as NSIndexPath).section == 0 && (indexPath as NSIndexPath).row == 0  {
-            self.performSegue(withIdentifier: SB.AppCenter.Segue.aboutJobs, sender: self)
-        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
+        switch (indexPath.section,indexPath.row) {
+        case (0,0):
+            performSegue(withIdentifier: SB.AppCenter.Segue.aboutJobs, sender: self)
+        case (1,0):
+            performSegue(withIdentifier: SB.AppCenter.Segue.aroundPeople, sender: nil)
+        default: break
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

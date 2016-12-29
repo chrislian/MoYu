@@ -319,6 +319,7 @@ class HomeMapController: UIViewController {
             if currentLocation.latitude != oldValue.latitude || currentLocation.longitude != oldValue.longitude{
                 self.updateFindWorks(currentLocation)
             }
+            UserManager.sharedInstance.currentLocation = currentLocation
         }
     }
     

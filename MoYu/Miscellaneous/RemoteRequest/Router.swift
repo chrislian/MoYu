@@ -38,6 +38,8 @@ enum Router {
     case commitJobZone(message:String)//发布职来职往
     case replyComment(replyID:String,parentID:String,comment:String)//回复评论
     
+    case aroundPeople(page:Int,location:MoYuLocation)//附近的人
+    
     case postParttimeJob(parameter: JSONDictionary)//发布兼职
     case postTask(paramter: JSONDictionary)//发布任务
     case searchParttimeJob(page:Int,keyword:String)//兼职关键字搜索
@@ -144,6 +146,8 @@ extension Router: RouterType{
             parameters = compose(parameters: ["ordernum":order, "status":status])
         case .replyComment(let(replyID, parentID, comment)):
             parameters = compose(parameters: ["replyid":replyID,"parentid":parentID,"comment":comment])
+        case .aroundPeople(let page, let location):
+            parameters = compose(parameters: ["page":page,"latitude":location.latitude, "longitude":location.longitude])
         }
         
         return parameters
@@ -221,6 +225,9 @@ extension Router: RouterType{
         
         case .replyComment:
             suffix = "postJobZoneComment"
+            
+        case .aroundPeople:
+            suffix = "getNearby"
         }
         return mainUrl + suffix
     }
