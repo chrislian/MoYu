@@ -70,6 +70,21 @@ class CommentController: UIViewController,AlertViewType,PraseErrorType {
         view.addSubview(composeBarView)
     }
     
+    fileprivate func sendComment(text:String){
+        
+        guard let model = aboutJobModel else{ return }
+        
+        Router.replyComment(replyID: model.userid, parentID: model.id, comment: text).request {[weak self] (status, json) in
+            
+            self?.show(error: status, showSuccess: true)
+            guard case .success = status else{
+                return
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue:UserNotification.updateAboutJob), object: nil)
+            let _ = self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
     
@@ -80,6 +95,8 @@ class CommentController: UIViewController,AlertViewType,PraseErrorType {
         view.maxCharCount = 200
         view.maxLinesCount = 5
         view.placeholder = "说点什么吧~"
+        view.placeholderLabel.font = UIFont.mo_font()
+        view.textView.font = UIFont.mo_font()
         view.utilityButtonImage = UIImage(named: "icon_picture")
         view.buttonTitle = "发送"
         view.delegate = self
@@ -159,11 +176,17 @@ extension CommentController: UITableViewDataSource{
 extension CommentController: PHFComposeBarViewDelegate{
     
     func composeBarViewDidPressButton(_ composeBarView: PHFComposeBarView!) {
-        if let text = composeBarView.text{
-            println("main button press: \(text)")
-            composeBarView.setText("", animated: true)
-            composeBarView.resignFirstResponder()
+        
+        guard let text = composeBarView.text, text.mo_length() > 0 else{
+            showAlert(message: "回复点什么吧~")
+            return
         }
+        
+        composeBarView.setText("", animated: true)
+        composeBarView.resignFirstResponder()
+        
+        sendComment(text: text)
+    
     }
     
     func composeBarViewDidPressUtilityButton(_ composeBarView: PHFComposeBarView!) {

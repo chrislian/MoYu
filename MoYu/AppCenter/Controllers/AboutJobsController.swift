@@ -18,6 +18,12 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         self.title = "职来职往"
         
         self.setupView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateAboutJob), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - event response
@@ -39,6 +45,13 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
             vc.aboutJobModel = model
         }
     }
+    
+    func onReceive(notify:Notification){
+        if notify.name.rawValue == UserNotification.updateAboutJob{
+            beginRefresh()
+        }
+    }
+    
     
     //MARK: - private method
     fileprivate func setupView(){

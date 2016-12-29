@@ -36,6 +36,7 @@ enum Router {
     case jobZoneList(page:Int)//职来职往
     case jobZoneZan(id:String, value:Bool)//职来职往点赞
     case commitJobZone(message:String)//发布职来职往
+    case replyComment(replyID:String,parentID:String,comment:String)//回复评论
     
     case postParttimeJob(parameter: JSONDictionary)//发布兼职
     case postTask(paramter: JSONDictionary)//发布任务
@@ -141,6 +142,8 @@ extension Router: RouterType{
             
         case .getParttimeJob(let order, let status):
             parameters = compose(parameters: ["ordernum":order, "status":status])
+        case .replyComment(let(replyID, parentID, comment)):
+            parameters = compose(parameters: ["replyid":replyID,"parentid":parentID,"comment":comment])
         }
         
         return parameters
@@ -206,12 +209,18 @@ extension Router: RouterType{
             
         case .postTaskStatus:
             suffix = "postTaskStatus"
+            
         case .postPartTimeStatus:
             suffix = "postPartTimeStatus"
+        
         case .checkTaskStatus:
             suffix = "testS"
+        
         case .getParttimeJob:
             suffix = "postPartTimeStatus"
+        
+        case .replyComment:
+            suffix = "postJobZoneComment"
         }
         return mainUrl + suffix
     }

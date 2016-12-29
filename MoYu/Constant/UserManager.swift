@@ -14,6 +14,7 @@ import SwiftyJSON
 struct UserNotification {
     
     static let updateUserInfo = "com.moyu.user.notification.update.user.info"
+    static let updateAboutJob = "com.moyu.user.notification.update.aboutJob"
     
 }
 
