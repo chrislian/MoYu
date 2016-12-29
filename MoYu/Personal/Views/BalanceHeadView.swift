@@ -142,7 +142,7 @@ class BalanceHeadView: UIView {
     
     fileprivate lazy var withdrawButton: UIButton = {
         let button = UIButton()
-        button.setTitle("", for: UIControlState())
+        button.setTitle("", for: .normal)
         button.addTarget(self, action: #selector(BalanceHeadView.withdrawButtonClicked(_:)), for: .touchUpInside)
         return button
     }()

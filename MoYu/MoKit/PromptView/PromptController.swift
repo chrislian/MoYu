@@ -85,7 +85,7 @@ class PromptController: UIViewController {
         
         let vc = PromptController()
         vc.promptView.titleLabel.text = text
-        vc.promptView.confirmButton.setTitle(confirm, for: UIControlState())
+        vc.promptView.confirmButton.setTitle(confirm, for: .normal)
         if let length = configClourse?(vc.promptView.textfield){
             vc.textMaxLength = length
         }

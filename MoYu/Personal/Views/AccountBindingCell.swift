@@ -29,14 +29,14 @@ class AccountBindingCell: UITableViewCell {
     func update(acount item:AccountItem){
         if item.isBinding{
             if item.type == .phone{
-                bindingButton.setTitle("修改", for: UIControlState())
+                bindingButton.setTitle("修改", for: .normal)
             }
-            bindingButton.setTitle("解绑", for: UIControlState())
-            bindingButton.setTitleColor(UIColor.mo_silver, for: UIControlState())
+            bindingButton.setTitle("解绑", for: .normal)
+            bindingButton.setTitleColor(UIColor.mo_silver, for: .normal)
             bindingButton.layer.borderColor = UIColor.mo_silver.cgColor
         }else{
-            bindingButton.setTitleColor(UIColor.mo_main, for: UIControlState())
-            bindingButton.setTitle("绑定", for: UIControlState())
+            bindingButton.setTitleColor(UIColor.mo_main, for: .normal)
+            bindingButton.setTitle("绑定", for: .normal)
             bindingButton.layer.borderColor = UIColor.mo_main.cgColor
         }
         let image:UIImage?

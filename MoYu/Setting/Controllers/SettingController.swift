@@ -56,7 +56,7 @@ class SettingController: UIViewController,PraseErrorType, AlertViewType {
         
         
         exitButton.addTarget(self, action: #selector(exitButtonClicked(_:)), for: .touchUpInside)
-        exitButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        exitButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         exitButton.backgroundColor = UIColor.mo_main
         exitButton.layer.cornerRadius = 3.0
         exitButton.layer.masksToBounds = true

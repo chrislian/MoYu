@@ -81,8 +81,8 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     
     fileprivate lazy var nextButton:UIButton = {
         let button = UIButton()
-        button.setTitle("下一步", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        button.setTitle("下一步", for: .normal)
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         button.titleLabel?.font = UIFont.mo_font(.bigger)
         button.backgroundColor = UIColor.mo_main
         button.layer.borderColor = UIColor.mo_lightBlack.cgColor

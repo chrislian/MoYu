@@ -115,7 +115,7 @@ class ActionSheetController: UIViewController {
         if let otherButtons = self.delegate?.otherButtons?(sheet : self) {
             for text in otherButtons {
                 let button = otherButton()
-                button.setTitle(text, for: UIControlState())
+                button.setTitle(text, for: .normal)
                 button.buttonIndex = index
                 index += 1
                 buttons.append(button)
@@ -136,7 +136,7 @@ class ActionSheetController: UIViewController {
         button.backgroundColor     = UIColor.white
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius  = 5
-        button.setTitleColor(UIColor.gray, for: UIControlState())
+        button.setTitleColor(UIColor.gray, for: .normal)
         button.layer.masksToBounds = true
         button.layer.borderWidth   = 0.65
         button.addTarget(self, action: #selector(ActionSheetController.buttonAction(_:)), for: .touchUpInside )
@@ -163,8 +163,8 @@ class ActionSheetController: UIViewController {
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(ActionSheetController.buttonAction(_:)), for: .touchUpInside )
-        button.setTitle("确认", for: UIControlState())
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setTitle("确认", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         return button
     }()
     
@@ -175,8 +175,8 @@ class ActionSheetController: UIViewController {
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(ActionSheetController.buttonAction(_:)), for: .touchUpInside )
-        button.setTitle("取消", for: UIControlState())
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setTitle("取消", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         return button
     }()
     

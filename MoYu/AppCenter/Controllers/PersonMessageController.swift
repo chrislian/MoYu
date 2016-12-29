@@ -47,7 +47,7 @@ class PersonMessageController: UIViewController {
     //MARK: - var & let
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 24))
-        button.setTitle("清空", for: UIControlState())
+        button.setTitle("清空", for: .normal)
         button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), for: .touchUpInside)
         
         return UIBarButtonItem(customView: button)

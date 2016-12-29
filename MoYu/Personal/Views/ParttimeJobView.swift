@@ -36,14 +36,14 @@ class ParttimeJobView: UIView {
         
         switch type{
         case .recurit:
-            myRecuritButton.setTitleColor(UIColor.mo_main, for: UIControlState())
+            myRecuritButton.setTitleColor(UIColor.mo_main, for: .normal)
             myRecuritLine.backgroundColor = UIColor.mo_main
-            myPublicButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+            myPublicButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
             myPublicLine.backgroundColor = UIColor.white
         case .announce:
-            myPublicButton.setTitleColor(UIColor.mo_main, for: UIControlState())
+            myPublicButton.setTitleColor(UIColor.mo_main, for: .normal)
             myPublicLine.backgroundColor = UIColor.mo_main
-            myRecuritButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+            myRecuritButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
             myRecuritLine.backgroundColor = UIColor.white
         }
     }

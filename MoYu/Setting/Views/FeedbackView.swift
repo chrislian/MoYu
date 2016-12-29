@@ -78,9 +78,9 @@ class FeedbackView: UIView {
     //MARK: - var & let
     lazy var typeButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.mo_main, for: UIControlState())
+        button.setTitleColor(UIColor.mo_main, for: .normal)
         button.titleLabel?.font = UIFont.mo_font()
-        button.setTitle("开 发", for: UIControlState())
+        button.setTitle("开 发", for: .normal)
         button.layer.borderColor = UIColor.mo_main.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 3

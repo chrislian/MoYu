@@ -158,8 +158,8 @@ class PublishSheetView: SpringView {
         didSet{
             switch publishType {
             case .partTime:
-                parttimeButton.setTitleColor(UIColor.mo_main, for: UIControlState())
-                taskButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+                parttimeButton.setTitleColor(UIColor.mo_main, for: .normal)
+                taskButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
                 
                 UIView.animate(withDuration: 0.3, animations: { 
                         self.parttimeJobLine.backgroundColor = UIColor.mo_main
@@ -170,8 +170,8 @@ class PublishSheetView: SpringView {
                 })
             case .task:
                 
-                parttimeButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
-                taskButton.setTitleColor(UIColor.mo_main, for: UIControlState())
+                parttimeButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
+                taskButton.setTitleColor(UIColor.mo_main, for: .normal)
                 UIView.animate(withDuration: 0.3, animations: { 
                         self.parttimeJobLine.backgroundColor = UIColor.clear
                         self.taskJobLine.backgroundColor = UIColor.mo_main
@@ -187,8 +187,8 @@ class PublishSheetView: SpringView {
         let button = UIButton(type: .custom)
         button.tag = MOPublishSheetMode.partTime.rawValue
         button.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
-        button.setTitle("发兼职", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        button.setTitle("发兼职", for: .normal)
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.titleLabel?.textAlignment = .center
         return button
@@ -198,8 +198,8 @@ class PublishSheetView: SpringView {
         let button = UIButton(type: .custom)
         button.tag = MOPublishSheetMode.task.rawValue
         button.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
-        button.setTitle("发任务", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        button.setTitle("发任务", for: .normal)
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.titleLabel?.textAlignment = .center
         return button
@@ -222,8 +222,8 @@ class PublishSheetView: SpringView {
     
     fileprivate lazy var publishButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
-        button.setTitle("完善发布信息", for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
+        button.setTitle("完善发布信息", for: .normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.addTarget(self, action: #selector(publishButtonClicked), for: .touchUpInside)
         button.backgroundColor = UIColor.mo_main

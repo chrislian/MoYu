@@ -151,10 +151,10 @@ class PromptView: SpringView {
     
     let cancelButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.mo_font(.bigger)
         button.backgroundColor = UIColor.mo_silver
-        button.setTitle("取消", for: UIControlState())
+        button.setTitle("取消", for: .normal)
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
         return button
@@ -162,10 +162,10 @@ class PromptView: SpringView {
     
     let confirmButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.mo_font(.bigger)
         button.backgroundColor = UIColor.mo_main
-        button.setTitle("确定", for: UIControlState())
+        button.setTitle("确定", for: .normal)
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
         return button

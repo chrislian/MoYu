@@ -43,9 +43,9 @@ class SignInByAuthView: UIView {
         authCodeView.layer.cornerRadius = authCodeView.bounds.size.height/2
         authCodeView.layer.masksToBounds = true
         
-        authButton.setTitle("获取验证码", for: UIControlState())
+        authButton.setTitle("获取验证码", for: .normal)
         authButton.titleLabel?.font = UIFont.mo_font(.smallest)
-        authButton.setTitleColor(UIColor.mo_main, for: UIControlState())
+        authButton.setTitleColor(UIColor.mo_main, for: .normal)
         authButton.layer.cornerRadius = authButton.bounds.size.height/2
         authButton.layer.borderWidth = 0.8
         authButton.layer.borderColor = UIColor.mo_main.cgColor
@@ -61,11 +61,11 @@ class SignInByAuthView: UIView {
         
         enterByPasswordButton.titleLabel?.font = UIFont.mo_font()
         enterByPasswordButton.titleLabel?.textColor = UIColor.white
-        enterByPasswordButton.setTitle("密码登录", for: UIControlState())
+        enterByPasswordButton.setTitle("密码登录", for: .normal)
         
         userProtocolButton.titleLabel?.font = UIFont.mo_font()
         userProtocolButton.titleLabel?.textColor = UIColor.white
-        userProtocolButton.setTitle("用户协议", for: UIControlState())
+        userProtocolButton.setTitle("用户协议", for: .normal)
         
         orLabel.font = UIFont.mo_font(.smallest)
     }

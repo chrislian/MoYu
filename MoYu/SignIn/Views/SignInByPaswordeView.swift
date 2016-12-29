@@ -58,8 +58,8 @@ class SignInByPasswordView: UIView {
         passwordTextFiled.isSecureTextEntry = true
         
         userProtocolButton.titleLabel?.font = UIFont.mo_font()
-        userProtocolButton.setTitle("用户协议", for: UIControlState())
-        userProtocolButton.setTitleColor(UIColor.mo_main, for: UIControlState())
+        userProtocolButton.setTitle("用户协议", for: .normal)
+        userProtocolButton.setTitleColor(UIColor.mo_main, for: .normal)
         
     }
     //MARK: - public method

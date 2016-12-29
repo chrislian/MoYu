@@ -121,7 +121,7 @@ private extension SegmentedControl {
                     ))
                 
                 item.isSelected = (index == selectedIndex)
-                item.setTitle(segment.segmentTitle(), for: UIControlState())
+                item.setTitle(segment.segmentTitle(), for: .normal)
                 item.addTarget(self, action: #selector(SegmentedControl.segmentTouched(_:)), for: UIControlEvents.touchUpInside)
                 
                 addSubview(item)
@@ -149,7 +149,7 @@ private extension SegmentedControl {
     
     func updateTitleStyle() {
         for item in segmentItems {
-            item.setTitleColor(titleColor, for: UIControlState())
+            item.setTitleColor(titleColor, for: .normal)
             item.setTitleColor(highlightedTitleColor, for: .highlighted)
             item.setTitleColor(selectedTitleColor, for: .selected)
             item.titleLabel?.font = UIFont.mo_font()

@@ -125,8 +125,8 @@ class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertView
     fileprivate lazy var submitButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.mo_main
-        button.setTitle("发布", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        button.setTitle("发布", for: .normal)
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         button.titleLabel?.font = UIFont.mo_font(.big)
         button.addTarget(self, action: #selector(submitButtonClicked(_:)), for: .touchUpInside)
         button.layer.borderColor = UIColor.mo_lightBlack.cgColor

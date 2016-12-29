@@ -125,8 +125,8 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     lazy var rightBarButton:UIBarButtonItem = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         let image = UIImage(named:"icon_message")
-        button.setBackgroundImage(image, for: UIControlState())
-        button.setTitle("", for: UIControlState())
+        button.setBackgroundImage(image, for: .normal)
+        button.setTitle("", for: .normal)
         button.tag = 1
         button.addTarget(self, action: #selector(rightBarButtonClicked(_:)), for: .touchUpInside)
         
@@ -135,9 +135,9 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     
     lazy var publishButton:UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("", for: UIControlState())
+        button.setTitle("", for: .normal)
         button.contentMode = .scaleAspectFit
-        button.setImage(UIImage(named:"icon_publish"), for: UIControlState())
+        button.setImage(UIImage(named:"icon_publish"), for: .normal)
         button.addTarget(self, action: #selector(publishButtonClicked(_:)), for: .touchUpInside)
         return button
     }()

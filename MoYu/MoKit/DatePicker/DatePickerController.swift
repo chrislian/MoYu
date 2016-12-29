@@ -114,8 +114,8 @@ class DatePickerController: UIViewController {
     
     fileprivate lazy var cancelButton:UIButton = {
         let button = UIButton()
-        button.setTitle("取消", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        button.setTitle("取消", for: .normal)
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.addTarget(self, action: #selector(DatePickerController.buttonTap(cancel:)), for: .touchUpInside)
         return button
@@ -123,8 +123,8 @@ class DatePickerController: UIViewController {
     
     fileprivate lazy var submitButton:UIButton = {
         let button = UIButton()
-        button.setTitle("确定", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        button.setTitle("确定", for: .normal)
+        button.setTitleColor(UIColor.mo_lightBlack, for: .normal)
         button.titleLabel?.font = UIFont.mo_font()
         button.addTarget(self, action: #selector(DatePickerController.buttonTap(submit:)), for: .touchUpInside)
         return button

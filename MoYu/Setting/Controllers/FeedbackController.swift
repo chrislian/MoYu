@@ -71,7 +71,7 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
         feedbackView.contentText.delegate = self
         feedbackView.titleText.delegate = self
         feedbackView.typeButton.addTarget(self, action: #selector(typeButtonTap(_:)), for: .touchUpInside)
-        feedbackView.typeButton.setTitle(feedbackTypes[0], for: UIControlState())
+        feedbackView.typeButton.setTitle(feedbackTypes[0], for: .normal)
     }
     
     
@@ -139,7 +139,7 @@ extension FeedbackController : ActionSheetProtocol{
     
     func action(sheet: ActionSheetController, selectedAtIndex: Int) {
         
-        feedbackView.typeButton.setTitle(feedbackTypes[selectedAtIndex], for: UIControlState())
+        feedbackView.typeButton.setTitle(feedbackTypes[selectedAtIndex], for: .normal)
         
         selectIndex = selectedAtIndex
     }
