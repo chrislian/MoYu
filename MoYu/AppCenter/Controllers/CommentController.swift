@@ -78,7 +78,7 @@ class CommentController: UIViewController {
         view.maxCharCount = 200
         view.maxLinesCount = 5
         view.placeholder = "说点什么吧~"
-        view.utilityButtonImage = UIImage(named: "icon_camera")
+        view.utilityButtonImage = UIImage(named: "icon_picture")
         view.buttonTitle = "发送"
         view.delegate = self
         return view
