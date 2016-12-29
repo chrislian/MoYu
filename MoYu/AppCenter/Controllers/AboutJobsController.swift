@@ -151,16 +151,19 @@ extension AboutJobsController: UITableViewDelegate{
             self.zanTap(withItem: item)
         }
         
-        cell.commentClourse = { [unowned self] jobZoneItem in
-            guard let item = jobZoneItem else{ return }
-            
-            self.commentTap(withItem: item)
-        }
+//        cell.commentClourse = { [unowned self] jobZoneItem in
+//            guard let item = jobZoneItem else{ return }
+//            
+//            self.commentTap(withItem: item)
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let item = aboutJobModel.items[indexPath.section]
+        self.commentTap(withItem: item)
     }
 }
 
