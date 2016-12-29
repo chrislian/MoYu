@@ -18,8 +18,8 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
         self.title = "职来职往"
         
         self.setupView()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateAboutJob), object: nil)
+
+        NotificationCenter.add(observer: self, selector: #selector(onReceive(notify:)), name: MoNotification.updateAboutJob)
     }
     
     deinit {
@@ -47,7 +47,7 @@ class AboutJobsController: UIViewController, PraseErrorType, AlertViewType, Refr
     }
     
     func onReceive(notify:Notification){
-        if notify.name.rawValue == UserNotification.updateAboutJob{
+        if notify.name == MoNotification.updateAboutJob{
             beginRefresh()
         }
     }

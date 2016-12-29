@@ -42,13 +42,6 @@ func backgroundThread(_ clourse : @escaping ()->()){
 }
 
 
-func sendMessage(_ name:String, object:AnyObject? = nil,userInfo: [AnyHashable: Any]? = nil){
-
-    Async.main{
-        NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: object, userInfo: userInfo)
-    }
-}
-
 /**
  *  坐标
  */

@@ -29,7 +29,8 @@ class HomeMapController: UIViewController {
         }
         RunLoop.current.add(zoomInTimer!, forMode: .commonModes)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateUserInfo), object: nil)
+        NotificationCenter.add(observer: self, selector: #selector(onReceive(notify:)), name: MoNotification.updateUserInfo)
+        
     }
     
     deinit {
@@ -83,7 +84,7 @@ class HomeMapController: UIViewController {
     }
     //MARK: - event response
     @objc private func onReceive(notify:NSNotification){
-        if notify.name.rawValue == UserNotification.updateUserInfo{
+        if notify.name == MoNotification.updateUserInfo{
             self.updateFindWorks(currentLocation)
         }
     }

@@ -80,7 +80,7 @@ class CommentController: UIViewController,AlertViewType,PraseErrorType {
             guard case .success = status else{
                 return
             }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue:UserNotification.updateAboutJob), object: nil)
+            NotificationCenter.post(name: MoNotification.updateAboutJob)
             let _ = self?.navigationController?.popViewController(animated: true)
         }
     }

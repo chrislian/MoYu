@@ -17,7 +17,7 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
 
         setupLeftMenuView()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateUserInfo), object: nil)
+        NotificationCenter.add(observer: self, selector: #selector(onReceive(notify:)), name: MoNotification.updateUserInfo)
         
     }
     
@@ -29,7 +29,7 @@ class LeftMenuController: UIViewController,SignInType,PraseErrorType,AlertViewTy
     
     @objc fileprivate func onReceive(notify sender:Notification){
         
-        if sender.name.rawValue == UserNotification.updateUserInfo{
+        if sender.name == MoNotification.updateUserInfo{
             
             leftMenuView.updateHeader(user: UserManager.sharedInstance.user)
         }
@@ -266,7 +266,7 @@ extension LeftMenuController: UIImagePickerControllerDelegate, UINavigationContr
         Router.updateAvatar(string: base64String).request{
             self.updateUser($0, json: $1)
             self.activityIndicatorView.stopAnimating()
-            sendMessage(UserNotification.updateUserInfo)
+            NotificationCenter.post(name:MoNotification.updateUserInfo)
         }
     }
 }

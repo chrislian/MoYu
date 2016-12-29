@@ -151,6 +151,7 @@
 		ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7631DED34090088CD22 /* FindWorkCardView.swift */; };
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
 		ED56A7681DED5B940088CD22 /* FindWorkCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */; };
+		ED79B1A51E14E2FE00B98302 /* MoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79B1A41E14E2FE00B98302 /* MoNotification.swift */; };
 		ED94173A1DF805EB009535C1 /* HomeMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9417391DF805EB009535C1 /* HomeMapController.swift */; };
 		EDEB5B2A1E14AD0D00C3F273 /* CommentSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */; };
 		EDEC08D41DEE78A100DD5F5D /* FindWorkAnnoation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */; };
@@ -353,6 +354,7 @@
 		ED56A7631DED34090088CD22 /* FindWorkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardView.swift; sourceTree = "<group>"; };
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
+		ED79B1A41E14E2FE00B98302 /* MoNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoNotification.swift; sourceTree = "<group>"; };
 		ED9417391DF805EB009535C1 /* HomeMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMapController.swift; sourceTree = "<group>"; };
 		EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSubCell.swift; sourceTree = "<group>"; };
 		EDEC08D31DEE78A100DD5F5D /* FindWorkAnnoation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkAnnoation.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				833240951D56E579006C7203 /* MoHUD.swift */,
 				8389C6541CB0EA5E003E96B1 /* Print.swift */,
 				83D965141D52DD8C00484F14 /* UserManager.swift */,
+				ED79B1A41E14E2FE00B98302 /* MoNotification.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -1471,6 +1474,7 @@
 				83D3F09E1D89806B0017DCB2 /* TaskModel.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
+				ED79B1A51E14E2FE00B98302 /* MoNotification.swift in Sources */,
 				8347C0C81D76FB84006CCF68 /* PublishTaskCell.swift in Sources */,
 				83C593181D59B41000699A01 /* ParttimeJobView.swift in Sources */,
 				83393DCA1D51844D002E842D /* Reachability.swift in Sources */,

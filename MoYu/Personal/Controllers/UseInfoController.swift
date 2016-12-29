@@ -18,7 +18,7 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         
         self.setupView()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notify:)), name: NSNotification.Name(rawValue: UserNotification.updateUserInfo), object: nil)
+        NotificationCenter.add(observer: self, selector: #selector(onReceive(notify:)), name: MoNotification.updateUserInfo)
         
     
     }
@@ -44,7 +44,7 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
 
     func onReceive(notify:Notification){
         
-        if notify.name.rawValue == UserNotification.updateUserInfo{
+        if notify.name == MoNotification.updateUserInfo{
             self.updateUserInfo()
         }
     }
