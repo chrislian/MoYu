@@ -18,7 +18,7 @@ class CommentController: UIViewController,AlertViewType,PraseErrorType {
         super.viewDidLoad()
 
         self.title = "评论"
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
     
         setupView()
         
@@ -64,7 +64,7 @@ class CommentController: UIViewController,AlertViewType,PraseErrorType {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         tableView.tableFooterView = UIView()
         
         view.addSubview(composeBarView)

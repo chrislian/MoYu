@@ -66,7 +66,7 @@ class FeedbackController: UIViewController,PraseErrorType,AlertViewType {
             make.edges.equalTo(self.view)
         }
         
-        feedbackView.backgroundColor = UIColor.mo_background()
+        feedbackView.backgroundColor = UIColor.mo_background
         
         feedbackView.contentText.delegate = self
         feedbackView.titleText.delegate = self

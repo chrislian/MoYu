@@ -35,7 +35,7 @@ class SelectCityController: UIViewController ,CollapsableSectionHeaderInteractio
    fileprivate func setupTableView(){
     tableView.delegate = self
     tableView.dataSource = self
-    tableView.backgroundColor = UIColor.mo_background()
+    tableView.backgroundColor = UIColor.mo_background
 //    tableView.separatorStyle = .None
     
     let headView = UIView(frame:CGRect(x: 0,y: 0,width: MoScreenWidth,height: 80))
@@ -116,7 +116,7 @@ extension SelectCityController :UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let line = UIView()
         line.frame = CGRect(x: 0, y: 0, width: MoScreenWidth, height: 1)
-        line.backgroundColor = UIColor.mo_background()
+        line.backgroundColor = UIColor.mo_background
         return line
     }
     
@@ -137,9 +137,9 @@ extension SelectCityController :UITableViewDelegate{
         
         cell.textLabel?.text = self.items[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
-        cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        cell.textLabel?.textColor = UIColor.mo_lightBlack
         cell.selectionStyle = .none
-        cell.backgroundColor = UIColor.mo_mercury()
+        cell.backgroundColor = UIColor.mo_mercury
     }
     
     

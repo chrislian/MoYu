@@ -54,7 +54,7 @@ class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertView
     }
     
     fileprivate func layout(){
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
         
         self.view.addSubview(titleText)
         titleText.snp.makeConstraints { (make) in
@@ -96,7 +96,7 @@ class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertView
         text.placeholderFont = UIFont.mo_font()
         text.placeholderTextColor = UIColor.lightGray
         text.placeholderText = "请输入标题"
-        text.textColor = UIColor.mo_lightBlack()
+        text.textColor = UIColor.mo_lightBlack
         text.font = UIFont.mo_font()
         text.delegate = self
         return text
@@ -108,7 +108,7 @@ class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertView
         text.placeholderFont = UIFont.mo_font()
         text.placeholderTextColor = UIColor.lightGray
         text.placeholderText = "请输入详细步骤"
-        text.textColor = UIColor.mo_lightBlack()
+        text.textColor = UIColor.mo_lightBlack
         text.font = UIFont.mo_font()
         text.delegate = self
         return text
@@ -124,12 +124,12 @@ class PostPartimeJobDetailController: UIViewController,PraseErrorType, AlertView
     
     fileprivate lazy var submitButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.mo_main()
+        button.backgroundColor = UIColor.mo_main
         button.setTitle("发布", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font(.big)
         button.addTarget(self, action: #selector(submitButtonClicked(_:)), for: .touchUpInside)
-        button.layer.borderColor = UIColor.mo_lightBlack().cgColor
+        button.layer.borderColor = UIColor.mo_lightBlack.cgColor
         button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true

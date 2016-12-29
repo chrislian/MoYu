@@ -56,7 +56,7 @@ class PublishMessageController: UIViewController, PraseErrorType, AlertViewType 
     //MARK: - private method
     fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_lightYellow()
+        self.view.backgroundColor = UIColor.mo_lightYellow
         self.view.addSubview(textView)
         textView.snp.makeConstraints { (make) in
             let edge = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

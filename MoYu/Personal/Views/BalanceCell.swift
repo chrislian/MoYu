@@ -83,7 +83,7 @@ class BalanceCell: UITableViewCell {
     //MARK: - var & let
     fileprivate let weakLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.smaller)
         label.text = "周二"
         return label
@@ -91,7 +91,7 @@ class BalanceCell: UITableViewCell {
     
     fileprivate let dateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.smaller)
         label.text = "07-26"
         return label
@@ -106,7 +106,7 @@ class BalanceCell: UITableViewCell {
 
     fileprivate let consumeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.smaller)
         label.text = "-0.00元"
         return label
@@ -114,7 +114,7 @@ class BalanceCell: UITableViewCell {
     
     fileprivate let sourceDetailLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_silver()
+        label.textColor = UIColor.mo_silver
         label.font = UIFont.mo_font(.smaller)
         label.text = "消费详情"
         return label

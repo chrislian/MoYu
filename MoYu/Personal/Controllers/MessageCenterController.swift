@@ -33,8 +33,8 @@ class MessageCenterController: UIViewController,PraseErrorType, AlertViewType {
     //MARK: - private method
     fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_background()
-        tableView.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
+        tableView.backgroundColor = UIColor.mo_background
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -89,7 +89,7 @@ extension MessageCenterController: UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         vc.title = "详情"
         self.navigationController?.pushViewController(vc, animated: true)
     }

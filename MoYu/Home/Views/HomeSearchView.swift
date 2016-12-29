@@ -20,9 +20,9 @@ class HomeSearchView: UIView {
     fileprivate func setupView(){
         
         searchBar.backgroundImage = UIImage()
-        searchBar.tintColor = UIColor.mo_main()
+        searchBar.tintColor = UIColor.mo_main
         
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         tableView.tableHeaderView = headView
     }
     

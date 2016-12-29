@@ -88,7 +88,7 @@ class PostTaskController: UIViewController ,PraseErrorType, AlertViewType{
         tableView.delegate = self
         tableView.dataSource = self
 //        tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         return tableView
     }()
     
@@ -263,9 +263,9 @@ extension PostTaskController: UITableViewDataSource{
         case(1, 0...2 ):
             let cell =  defaultCell()
             cell.textLabel?.font = UIFont.mo_font()
-            cell.textLabel?.textColor = UIColor.mo_lightBlack()
+            cell.textLabel?.textColor = UIColor.mo_lightBlack
             cell.detailTextLabel?.font = UIFont.mo_font()
-            cell.detailTextLabel?.textColor = UIColor.mo_silver()
+            cell.detailTextLabel?.textColor = UIColor.mo_silver
             return cell
         default:
             break

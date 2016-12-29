@@ -78,7 +78,7 @@ extension HomeSearchController:UITableViewDelegate{
         
         cell.textLabel?.text = "test"
         cell.textLabel?.font = UIFont.mo_font()
-        cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        cell.textLabel?.textColor = UIColor.mo_lightBlack
         
         cell.selectionStyle = .none
         cell.accessoryType = .disclosureIndicator

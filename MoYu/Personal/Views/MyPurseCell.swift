@@ -31,10 +31,10 @@ class MyPurseCell: UITableViewCell {
     //MARK: - pirvate method
     fileprivate func setupCell(){
         iconImageView.contentMode = .scaleAspectFit
-        leftLabel.textColor = UIColor.mo_lightBlack()
+        leftLabel.textColor = UIColor.mo_lightBlack
         leftLabel.font = UIFont.mo_font()
         
-        rightLabel.textColor = UIColor.mo_silver()
+        rightLabel.textColor = UIColor.mo_silver
         rightLabel.font = UIFont.mo_font()
         rightLabel.text = ""
     }

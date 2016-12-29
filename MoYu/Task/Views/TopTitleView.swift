@@ -108,7 +108,7 @@ class TopTitleView: UIView {
     //MARK: - var & let 
     fileprivate lazy var leftLabel:UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.bigger)
         label.textAlignment = .center
         label.text = "兼职"
@@ -120,7 +120,7 @@ class TopTitleView: UIView {
     
     fileprivate lazy var middleLabel:UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.bigger)
         label.textAlignment = .center
         label.text = "任务"
@@ -132,7 +132,7 @@ class TopTitleView: UIView {
     
     fileprivate lazy var rightLabel:UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.bigger)
         label.textAlignment = .center
         label.text = "积分购"
@@ -145,7 +145,7 @@ class TopTitleView: UIView {
     
     fileprivate lazy var bottomLine:UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mo_lightBlack()
+        view.backgroundColor = UIColor.mo_lightBlack
         return view
     }()
     

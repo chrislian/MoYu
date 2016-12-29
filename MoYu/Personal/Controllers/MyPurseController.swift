@@ -65,7 +65,7 @@ class MyPurseController: UIViewController, PraseErrorType, AlertViewType {
 
         tableView.separatorStyle = .none
         
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -108,7 +108,7 @@ extension MyPurseController: UITableViewDelegate{
             let title = cellItems[(indexPath as NSIndexPath).row].title()
             let vc = UIViewController()
             vc.title = title
-            vc.view.backgroundColor = UIColor.mo_mercury()
+            vc.view.backgroundColor = UIColor.mo_mercury
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

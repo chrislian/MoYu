@@ -36,7 +36,7 @@ class FeedbackView: UIView {
         
         let label = UILabel()
         label.text = "类型"
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         view.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.left.equalTo(view).offset(20)
@@ -78,10 +78,10 @@ class FeedbackView: UIView {
     //MARK: - var & let
     lazy var typeButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.mo_main(), for: UIControlState())
+        button.setTitleColor(UIColor.mo_main, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
         button.setTitle("开 发", for: UIControlState())
-        button.layer.borderColor = UIColor.mo_main().cgColor
+        button.layer.borderColor = UIColor.mo_main.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
@@ -93,8 +93,8 @@ class FeedbackView: UIView {
         text.placeholderFont = UIFont.mo_font()
         text.font = UIFont.mo_font()
         
-        text.placeholderTextColor = UIColor.mo_silver()
-        text.textColor = UIColor.mo_lightBlack()
+        text.placeholderTextColor = UIColor.mo_silver
+        text.textColor = UIColor.mo_lightBlack
         text.backgroundColor = UIColor.white
         
         text.placeholderText = "请输入标题"
@@ -107,8 +107,8 @@ class FeedbackView: UIView {
         text.placeholderFont = UIFont.mo_font()
         text.font = UIFont.mo_font()
         
-        text.placeholderTextColor = UIColor.mo_silver()
-        text.textColor = UIColor.mo_lightBlack()
+        text.placeholderTextColor = UIColor.mo_silver
+        text.textColor = UIColor.mo_lightBlack
         text.backgroundColor = UIColor.white
         
         text.placeholderText = "请输入您的宝贵意见"
@@ -119,7 +119,7 @@ class FeedbackView: UIView {
     lazy var countDownLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.mo_font(.smaller)
-        label.textColor = UIColor.mo_silver()
+        label.textColor = UIColor.mo_silver
         label.text = "0/500"
         return label
     }()

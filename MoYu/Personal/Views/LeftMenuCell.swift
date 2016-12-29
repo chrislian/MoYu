@@ -53,9 +53,9 @@ class LeftMenuView: UIView {
     fileprivate func updateAuthImageView(_ imageView:UIImageView,flag:Bool){
         var color:UIColor
         if flag {
-           color = UIColor.mo_main()
+           color = UIColor.mo_main
         }else{
-            color = UIColor.mo_mercury()
+            color = UIColor.mo_mercury
         }
         
         guard let image = imageView.image else{

@@ -76,16 +76,16 @@ class TaskDetailCell: UITableViewCell {
     }
     
     fileprivate func setupCell(){
-        amountLabel.textColor = UIColor.mo_main()
+        amountLabel.textColor = UIColor.mo_main
         amountLabel.font = UIFont.mo_font(.biggest)
         
-        stepLabel.textColor = UIColor.mo_lightBlack()
+        stepLabel.textColor = UIColor.mo_lightBlack
         stepLabel.font = UIFont.mo_font(.smaller)
         
-        contentLabel.textColor = UIColor.mo_lightBlack()
+        contentLabel.textColor = UIColor.mo_lightBlack
         contentLabel.font = UIFont.mo_font(.small)
         
-        titleLabel.textColor = UIColor.mo_lightBlack()
+        titleLabel.textColor = UIColor.mo_lightBlack
         titleLabel.font = UIFont.mo_font(.bigger)
         
         avatorImageView.contentMode = .scaleAspectFill

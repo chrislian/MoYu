@@ -13,7 +13,7 @@ class ParttimeJobContentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        textView.textColor = UIColor.mo_lightBlack()
+        textView.textColor = UIColor.mo_lightBlack
     }
 
     class func cell(tableView:UITableView)->ParttimeJobContentCell{

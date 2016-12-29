@@ -158,26 +158,26 @@ class PublishSheetView: SpringView {
         didSet{
             switch publishType {
             case .partTime:
-                parttimeButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
-                taskButton.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+                parttimeButton.setTitleColor(UIColor.mo_main, for: UIControlState())
+                taskButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
                 
                 UIView.animate(withDuration: 0.3, animations: { 
-                        self.parttimeJobLine.backgroundColor = UIColor.mo_main()
+                        self.parttimeJobLine.backgroundColor = UIColor.mo_main
                         self.taskJobLine.backgroundColor = UIColor.clear
                     }, completion: {_ in
-                        self.parttimeJobLine.backgroundColor = UIColor.mo_main()
+                        self.parttimeJobLine.backgroundColor = UIColor.mo_main
                         self.taskJobLine.backgroundColor = UIColor.clear
                 })
             case .task:
                 
-                parttimeButton.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
-                taskButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
+                parttimeButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+                taskButton.setTitleColor(UIColor.mo_main, for: UIControlState())
                 UIView.animate(withDuration: 0.3, animations: { 
                         self.parttimeJobLine.backgroundColor = UIColor.clear
-                        self.taskJobLine.backgroundColor = UIColor.mo_main()
+                        self.taskJobLine.backgroundColor = UIColor.mo_main
                     }, completion: { _ in
                         self.parttimeJobLine.backgroundColor = UIColor.clear
-                        self.taskJobLine.backgroundColor = UIColor.mo_main()
+                        self.taskJobLine.backgroundColor = UIColor.mo_main
                 })
             }
         }
@@ -188,7 +188,7 @@ class PublishSheetView: SpringView {
         button.tag = MOPublishSheetMode.partTime.rawValue
         button.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
         button.setTitle("发兼职", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
         button.titleLabel?.textAlignment = .center
         return button
@@ -199,7 +199,7 @@ class PublishSheetView: SpringView {
         button.tag = MOPublishSheetMode.task.rawValue
         button.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
         button.setTitle("发任务", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
         button.titleLabel?.textAlignment = .center
         return button
@@ -214,7 +214,7 @@ class PublishSheetView: SpringView {
     
     let locationLabel:UILabel = {
         let  label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font()
         label.text = "当前位置"
         return label
@@ -222,11 +222,11 @@ class PublishSheetView: SpringView {
     
     fileprivate lazy var publishButton:UIButton = {
         let button = UIButton()
-        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
         button.setTitle("完善发布信息", for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font()
         button.addTarget(self, action: #selector(publishButtonClicked), for: .touchUpInside)
-        button.backgroundColor = UIColor.mo_main()
+        button.backgroundColor = UIColor.mo_main
         return button
     }()
     

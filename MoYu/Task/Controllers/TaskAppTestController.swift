@@ -58,14 +58,14 @@ final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType
         
         taskButton.tag = status
         if status == 0 {
-            taskButton.backgroundColor = UIColor.mo_main()
+            taskButton.backgroundColor = UIColor.mo_main
             taskButton.setTitle("开始任务", for: .normal)
-            taskButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
             taskButton.isEnabled = true
         }else if status == 1{
-            taskButton.backgroundColor = UIColor.mo_main()
+            taskButton.backgroundColor = UIColor.mo_main
             taskButton.setTitle("确认完成", for: .normal)
-            taskButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            taskButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
             taskButton.isEnabled = true
         }else if status == 2{
             taskButton.backgroundColor = UIColor.gray
@@ -77,7 +77,7 @@ final class TaskAppTestController: UIViewController,PraseErrorType,AlertViewType
     
     private func setupView(){
         
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
@@ -109,7 +109,7 @@ extension TaskAppTestController: UITableViewDelegate{
         func headerLabel(_ title:String)->UILabel{
             let label = UILabel()
             label.text = "  " + title
-            label.textColor = UIColor.mo_lightBlack()
+            label.textColor = UIColor.mo_lightBlack
             label.font = UIFont.mo_font()
             return label
         }

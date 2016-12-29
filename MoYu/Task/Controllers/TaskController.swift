@@ -55,8 +55,8 @@ class TaskController: UIViewController {
             }
         }
         
-        headerView.backgroundColor = UIColor.mo_background()
-        subView.backgroundColor = UIColor.mo_background()
+        headerView.backgroundColor = UIColor.mo_background
+        subView.backgroundColor = UIColor.mo_background
         
         headerView.addSubview(segmentedView)
         
@@ -123,7 +123,7 @@ class TaskController: UIViewController {
     
     fileprivate var pageController:UIPageViewController = {
         let vc = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         return vc
     }()
     
@@ -131,10 +131,10 @@ class TaskController: UIViewController {
         let control = SegmentedControl(frame: CGRect(x: 0, y: 0, width: MoScreenWidth, height: 36))
         control.segments = ["全部","应用体验","问卷调查","其他"]
         control.backgroundColor = UIColor.white
-        control.selectedTitleColor = UIColor.mo_main()
-        control.titleColor = UIColor.mo_lightBlack()
-        control.highlightedTitleColor = UIColor.mo_lightBlack()
-        control.selectedBackgroundColor = UIColor.mo_main()
+        control.selectedTitleColor = UIColor.mo_main
+        control.titleColor = UIColor.mo_lightBlack
+        control.highlightedTitleColor = UIColor.mo_lightBlack
+        control.selectedBackgroundColor = UIColor.mo_main
         control.selectedBackgroundViewHeight = 2
         control.titleFontSize = 15
         control.addTarget(self, action: #selector(TaskController.segmentedControlChanged), for: .touchUpInside)

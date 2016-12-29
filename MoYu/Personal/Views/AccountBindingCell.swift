@@ -32,12 +32,12 @@ class AccountBindingCell: UITableViewCell {
                 bindingButton.setTitle("修改", for: UIControlState())
             }
             bindingButton.setTitle("解绑", for: UIControlState())
-            bindingButton.setTitleColor(UIColor.mo_silver(), for: UIControlState())
-            bindingButton.layer.borderColor = UIColor.mo_silver().cgColor
+            bindingButton.setTitleColor(UIColor.mo_silver, for: UIControlState())
+            bindingButton.layer.borderColor = UIColor.mo_silver.cgColor
         }else{
-            bindingButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
+            bindingButton.setTitleColor(UIColor.mo_main, for: UIControlState())
             bindingButton.setTitle("绑定", for: UIControlState())
-            bindingButton.layer.borderColor = UIColor.mo_main().cgColor
+            bindingButton.layer.borderColor = UIColor.mo_main.cgColor
         }
         let image:UIImage?
         switch item.type {
@@ -66,11 +66,11 @@ class AccountBindingCell: UITableViewCell {
         accountImageView.layer.masksToBounds = true
         
         accountNameLabel.font = UIFont.mo_font()
-        accountNameLabel.textColor = UIColor.mo_lightBlack()
+        accountNameLabel.textColor = UIColor.mo_lightBlack
         accountNameLabel.text = "墨鱼"
     
         accountStatusLabel.font = UIFont.mo_font()
-        accountStatusLabel.textColor = UIColor.mo_main()
+        accountStatusLabel.textColor = UIColor.mo_main
         
         bindingButton.layer.borderWidth = 1
         bindingButton.layer.cornerRadius = bindingButton.frame.size.height/2

@@ -22,7 +22,7 @@ class SignInByAuthView: UIView {
         headView.layer.masksToBounds = true
         headView.layer.borderColor = UIColor.white.cgColor
         headView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        headView.layer.shadowColor = UIColor.mo_main().cgColor
+        headView.layer.shadowColor = UIColor.mo_main.cgColor
         headView.layer.borderWidth = 0.8
         headView.backgroundColor = UIColor.clear
         
@@ -33,7 +33,7 @@ class SignInByAuthView: UIView {
         enterButton.layer.masksToBounds = true
         enterButton.titleLabel?.font = UIFont.mo_font(.bigger)
         enterButton.titleLabel?.textColor = UIColor.white
-        enterButton.backgroundColor = UIColor.mo_main()
+        enterButton.backgroundColor = UIColor.mo_main
         
         userNameView.backgroundColor = UIColor ( red: 1.0, green: 0.8, blue: 0.4, alpha: 0.2 )
         userNameView.layer.cornerRadius = userNameView.bounds.size.height/2
@@ -45,17 +45,17 @@ class SignInByAuthView: UIView {
         
         authButton.setTitle("获取验证码", for: UIControlState())
         authButton.titleLabel?.font = UIFont.mo_font(.smallest)
-        authButton.setTitleColor(UIColor.mo_main(), for: UIControlState())
+        authButton.setTitleColor(UIColor.mo_main, for: UIControlState())
         authButton.layer.cornerRadius = authButton.bounds.size.height/2
         authButton.layer.borderWidth = 0.8
-        authButton.layer.borderColor = UIColor.mo_main().cgColor
+        authButton.layer.borderColor = UIColor.mo_main.cgColor
         authButton.layer.masksToBounds = true
         
-        userTextfield.textColor = UIColor.mo_lightBlack()
+        userTextfield.textColor = UIColor.mo_lightBlack
         userTextfield.placeholder = "请输入您的手机号码"
         userTextfield.font = UIFont.mo_font(.smaller)
         
-        authTextFiled.textColor = UIColor.mo_lightBlack()
+        authTextFiled.textColor = UIColor.mo_lightBlack
         authTextFiled.placeholder = "验证码"
         authTextFiled.font = UIFont.mo_font(.smaller)
         

@@ -29,7 +29,7 @@ class RecuritCenterController: UIViewController {
     @IBAction func buttonClicked(_ sender: UIButton) {
         
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         vc.title = "招募详情"
         self.navigationController?.pushViewController(vc, animated: true)
     }

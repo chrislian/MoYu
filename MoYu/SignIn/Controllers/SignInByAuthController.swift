@@ -127,11 +127,11 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
     fileprivate var countDownLabel :UILabel = {
         let label = UILabel()
         
-        label.backgroundColor = UIColor.mo_lightYellow()
+        label.backgroundColor = UIColor.mo_lightYellow
         label.font = UIFont.mo_font(.smallest)
         label.textAlignment = .center
         label.text = "60s重新获取"
-        label.textColor = UIColor.mo_silver()
+        label.textColor = UIColor.mo_silver
         
         return label
     }()

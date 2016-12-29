@@ -99,8 +99,8 @@ class ParttimeJobManagerController: UIViewController, PraseErrorType,AlertViewTy
     
     fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_background()
-        parttimeJobView.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
+        parttimeJobView.backgroundColor = UIColor.mo_background
         
         parttimeJobView.tableView.delegate = self
         parttimeJobView.tableView.dataSource = self
@@ -154,7 +154,7 @@ extension ParttimeJobManagerController: UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

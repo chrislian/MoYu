@@ -21,7 +21,7 @@ class MessageCenterCell: UITableViewCell {
         
         self.frame = CGRect(x: 12, y: self.frame.origin.y, width: MoScreenWidth - 24, height: self.frame.size.height)
         
-        self.layer.borderColor = UIColor.mo_mercury().cgColor
+        self.layer.borderColor = UIColor.mo_mercury.cgColor
         self.layer.borderWidth = 0.5
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 2.0
@@ -55,13 +55,13 @@ class MessageCenterCell: UITableViewCell {
     
     //MARK: - private method
     fileprivate func setupCell(){
-        titleLabel.textColor = UIColor.mo_lightBlack()
+        titleLabel.textColor = UIColor.mo_lightBlack
         titleLabel.font = UIFont.mo_font(.bigger)
 
-        dateLabel.textColor = UIColor.mo_lightBlack()
+        dateLabel.textColor = UIColor.mo_lightBlack
         dateLabel.font = UIFont.mo_font(.smaller)
         
-        contentLabel.textColor = UIColor.mo_lightBlack()
+        contentLabel.textColor = UIColor.mo_lightBlack
         contentLabel.font = UIFont.mo_font()
         
         thumbnialImageView.contentMode = .scaleAspectFill

@@ -21,13 +21,13 @@ class UserGuideController: UIViewController {
     //MARK: - private method
     fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
         
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 44.0
-        self.tableView.backgroundColor = UIColor.mo_background()
+        self.tableView.backgroundColor = UIColor.mo_background
         
     }
 
@@ -48,7 +48,7 @@ extension UserGuideController:UITableViewDelegate{
         
         cell.textLabel?.text = datas[(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
-        cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        cell.textLabel?.textColor = UIColor.mo_lightBlack
         
         cell.selectionStyle = .none
         cell.accessoryType = .disclosureIndicator
@@ -60,7 +60,7 @@ extension UserGuideController:UITableViewDelegate{
         
         let vc = UIViewController()
         vc.title = datas[(indexPath as NSIndexPath).row]
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

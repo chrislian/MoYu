@@ -41,7 +41,7 @@ class FindWorkCardCell: UICollectionViewCell {
     private func setupCell(){
         self.backgroundColor = UIColor.clear
 
-        payLabel.textColor = UIColor.mo_main()
+        payLabel.textColor = UIColor.mo_main
     }
     
     

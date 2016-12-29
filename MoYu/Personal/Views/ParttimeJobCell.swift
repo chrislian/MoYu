@@ -118,17 +118,17 @@ class ParttimeJobCell: UITableViewCell {
         
         progressView.backgroundColor = UIColor.white
         
-        amountLabel.textColor = UIColor.mo_main()
+        amountLabel.textColor = UIColor.mo_main
         amountLabel.font = UIFont.mo_font()
         amountLabel.textAlignment = .right
         
-        statusLabel.textColor = UIColor.mo_silver()
+        statusLabel.textColor = UIColor.mo_silver
         statusLabel.font = UIFont.mo_font()
         
         briefLabel.textColor = UIColor.gray
         briefLabel.font = UIFont.mo_font(.smaller)
         
-        titleLabel.textColor = UIColor.mo_lightBlack()
+        titleLabel.textColor = UIColor.mo_lightBlack
         titleLabel.font = UIFont.mo_font(.big)
         
         
@@ -153,8 +153,8 @@ class ParttimeJobCell: UITableViewCell {
     
     lazy var workProgress: UIProgressView = {
         let progress = UIProgressView(progressViewStyle: .bar)
-        progress.progressTintColor = UIColor.mo_main()
-        progress.trackTintColor = UIColor.mo_silver()
+        progress.progressTintColor = UIColor.mo_main
+        progress.trackTintColor = UIColor.mo_silver
         progress.layer.cornerRadius = 2.5
         progress.layer.masksToBounds = true
         return progress

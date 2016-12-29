@@ -120,7 +120,7 @@ class PromptView: SpringView {
     
     let titleLabel:UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_main()
+        label.textColor = UIColor.mo_main
         label.font = UIFont.mo_font(.bigger)
         label.text = "温馨提示"
         return label
@@ -128,13 +128,13 @@ class PromptView: SpringView {
     
     fileprivate let separateLine:UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mo_silver()
+        view.backgroundColor = UIColor.mo_silver
         return view
     }()
     
     fileprivate let subTitleLabel:UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font()
         return label
     }()
@@ -142,7 +142,7 @@ class PromptView: SpringView {
     let textfield:UITextField = {
         let text = UITextField()
         text.font = UIFont.mo_font()
-        text.textColor = UIColor.mo_lightBlack()
+        text.textColor = UIColor.mo_lightBlack
         text.placeholder = "在此输入内容"
         text.borderStyle = .none
         text.clearButtonMode = .whileEditing
@@ -153,7 +153,7 @@ class PromptView: SpringView {
         let button = UIButton()
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font(.bigger)
-        button.backgroundColor = UIColor.mo_silver()
+        button.backgroundColor = UIColor.mo_silver
         button.setTitle("取消", for: UIControlState())
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
@@ -164,7 +164,7 @@ class PromptView: SpringView {
         let button = UIButton()
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font(.bigger)
-        button.backgroundColor = UIColor.mo_main()
+        button.backgroundColor = UIColor.mo_main
         button.setTitle("确定", for: UIControlState())
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true

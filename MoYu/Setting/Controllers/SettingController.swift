@@ -45,19 +45,19 @@ class SettingController: UIViewController,PraseErrorType, AlertViewType {
         
         mo_rootLeftBackButton()
         
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 44.0
-        self.tableView.backgroundColor = UIColor.mo_background()
+        self.tableView.backgroundColor = UIColor.mo_background
         self.tableView.separatorStyle = .none
         self.tableView.tableFooterView = UIView()
         
         
         exitButton.addTarget(self, action: #selector(exitButtonClicked(_:)), for: .touchUpInside)
-        exitButton.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
-        exitButton.backgroundColor = UIColor.mo_main()
+        exitButton.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
+        exitButton.backgroundColor = UIColor.mo_main
         exitButton.layer.cornerRadius = 3.0
         exitButton.layer.masksToBounds = true
     }
@@ -83,7 +83,7 @@ extension SettingController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = datas[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
-        cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        cell.textLabel?.textColor = UIColor.mo_lightBlack
         
         cell.selectionStyle = .none
         cell.accessoryType = .disclosureIndicator
@@ -106,7 +106,7 @@ extension SettingController: UITableViewDelegate{
         default:
             let vc = UIViewController()
             vc.title = datas[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
-            vc.view.backgroundColor = UIColor.mo_background()
+            vc.view.backgroundColor = UIColor.mo_background
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

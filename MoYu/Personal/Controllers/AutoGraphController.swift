@@ -39,7 +39,7 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
     
     fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
 
         let rightBarButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
@@ -84,7 +84,7 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
     fileprivate let autographTextField:UITextField = {
         let textfield = UITextField()
         textfield.font = UIFont.mo_font()
-        textfield.textColor = UIColor.mo_lightBlack()
+        textfield.textColor = UIColor.mo_lightBlack
         textfield.placeholder = "说点什么吧~"
         return textfield
     }()
@@ -92,7 +92,7 @@ class AutoGraphController: UIViewController, PraseErrorType, AlertViewType {
     fileprivate let promptLabel:UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.smaller)
         label.text = ""
         return label

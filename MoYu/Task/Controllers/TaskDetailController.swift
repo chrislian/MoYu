@@ -45,7 +45,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     //MARK: - private method
     fileprivate func setupView(){
         
-        view.backgroundColor = UIColor.mo_background()
+        view.backgroundColor = UIColor.mo_background
         
         view.addSubview(tableView)
         tableView.frame = CGRect(origin: CGPoint(x: 0,y: -32), size: CGSize(width: MoScreenWidth, height: view.frame.size.height - 50))
@@ -62,7 +62,7 @@ class TaskDetailController: UIViewController,PraseErrorType,AlertViewType {
     
     lazy var tableView:UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.delegate = self

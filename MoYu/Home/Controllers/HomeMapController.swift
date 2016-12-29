@@ -13,7 +13,7 @@ class HomeMapController: UIViewController {
     //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
         
         self.setupView()
         self.startLocation()

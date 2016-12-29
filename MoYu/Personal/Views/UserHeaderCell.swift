@@ -30,11 +30,11 @@ class UserHeaderCell: UITableViewCell {
         headerImageView.layer.cornerRadius = headerImageView.frame.size.width/2
         headerImageView.layer.masksToBounds = true
         
-        usernameLabel.textColor = UIColor.mo_lightBlack()
+        usernameLabel.textColor = UIColor.mo_lightBlack
         usernameLabel.font = UIFont.mo_font(.bigger)
         usernameLabel.text = "无名"
         
-        signInFromLabel.textColor = UIColor.mo_main()
+        signInFromLabel.textColor = UIColor.mo_main
         signInFromLabel.font = UIFont.mo_font()
         signInFromLabel.text = ""
     }

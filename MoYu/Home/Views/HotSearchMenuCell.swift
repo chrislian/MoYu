@@ -35,7 +35,7 @@ class HotSearchMenuCell: UICollectionViewCell {
         self.addSubview(textLabel)
 //        textLabel.backgroundColor = UIColor.orangeColor()
         textLabel.textAlignment = .center
-        textLabel.textColor = UIColor.mo_lightBlack()
+        textLabel.textColor = UIColor.mo_lightBlack
         textLabel.font = UIFont.mo_font(.smallest)
         textLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)

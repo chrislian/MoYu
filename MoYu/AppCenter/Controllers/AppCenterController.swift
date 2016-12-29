@@ -30,8 +30,8 @@ class AppCenterController: UIViewController {
     
     //MARK: - private method
     fileprivate func setupAppCenterView(){
-        tableView.backgroundColor = UIColor.mo_background()
-        bannerView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
+        bannerView.backgroundColor = UIColor.mo_background
         
         tableView.bounces = false
         tableView.delegate = self
@@ -71,13 +71,13 @@ extension AppCenterController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor  = UIColor.mo_background()
+        view.backgroundColor  = UIColor.mo_background
         return view
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor  = UIColor.mo_background()
+        view.backgroundColor  = UIColor.mo_background
         return view
     }
     

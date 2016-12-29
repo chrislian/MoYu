@@ -50,7 +50,7 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
     //MARK: - private method
     fileprivate func setupView(){
         
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
         
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -75,17 +75,17 @@ class PostParttimeJobController: UIViewController,PraseErrorType,AlertViewType {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
         return tableView
     }()
     
     fileprivate lazy var nextButton:UIButton = {
         let button = UIButton()
         button.setTitle("下一步", for: UIControlState())
-        button.setTitleColor(UIColor.mo_lightBlack(), for: UIControlState())
+        button.setTitleColor(UIColor.mo_lightBlack, for: UIControlState())
         button.titleLabel?.font = UIFont.mo_font(.bigger)
-        button.backgroundColor = UIColor.mo_main()
-        button.layer.borderColor = UIColor.mo_lightBlack().cgColor
+        button.backgroundColor = UIColor.mo_main
+        button.layer.borderColor = UIColor.mo_lightBlack.cgColor
         button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 3
         button.layer.masksToBounds = true
@@ -179,10 +179,10 @@ extension PostParttimeJobController: UITableViewDelegate{
         
         cell.textLabel?.text = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         cell.textLabel?.font = UIFont.mo_font()
-        cell.textLabel?.textColor = UIColor.mo_lightBlack()
+        cell.textLabel?.textColor = UIColor.mo_lightBlack
         
         cell.detailTextLabel?.font = UIFont.mo_font()
-        cell.detailTextLabel?.textColor = UIColor.mo_silver()
+        cell.detailTextLabel?.textColor = UIColor.mo_silver
         
         var detailText = ""
         switch((indexPath as NSIndexPath).section,(indexPath as NSIndexPath).row){

@@ -56,7 +56,7 @@ class TaskStepDetailCell: UITableViewCell {
     
     fileprivate lazy var stepTextView:YYTextView = {
         let text = YYTextView()
-        text.textColor = UIColor.mo_lightBlack()
+        text.textColor = UIColor.mo_lightBlack
         text.font = UIFont.mo_font()
         text.isEditable = false
         return text;

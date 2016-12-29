@@ -23,20 +23,20 @@ class RecommendController: UIViewController {
     @IBAction func inviteFriendTap(_ sender: AnyObject) {
         
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func moreRecommendTap(_ sender: UIButton) {
         
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     dynamic fileprivate func rightBarItem(tap sender:AnyObject){
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

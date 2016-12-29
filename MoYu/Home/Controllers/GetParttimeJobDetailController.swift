@@ -42,14 +42,14 @@ class GetParttimeJobDetailController: UIViewController,PraseErrorType,AlertViewT
         
         grabButton.tag = status
         if status == 0 {
-            grabButton.backgroundColor = UIColor.mo_main()
+            grabButton.backgroundColor = UIColor.mo_main
             grabButton.setTitle("立即抢单", for: .normal)
-            grabButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            grabButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
             grabButton.isEnabled = true
         }else if status == 1{
-            grabButton.backgroundColor = UIColor.mo_main()
+            grabButton.backgroundColor = UIColor.mo_main
             grabButton.setTitle("确认完成", for: .normal)
-            grabButton.setTitleColor(UIColor.mo_lightBlack(), for: .normal)
+            grabButton.setTitleColor(UIColor.mo_lightBlack, for: .normal)
             grabButton.isEnabled = true
         }else if status == 2{
             grabButton.backgroundColor = UIColor.gray
@@ -157,10 +157,10 @@ extension GetParttimeJobDetailController:UITableViewDataSource{
                 cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             }
             cell?.textLabel?.font = UIFont.mo_font()
-            cell?.textLabel?.textColor = UIColor.mo_lightBlack()
+            cell?.textLabel?.textColor = UIColor.mo_lightBlack
             
             cell?.detailTextLabel?.font = UIFont.mo_font()
-            cell?.detailTextLabel?.textColor = UIColor.mo_silver()
+            cell?.detailTextLabel?.textColor = UIColor.mo_silver
             
             cell?.textLabel?.text = left
             cell?.detailTextLabel?.text = right

@@ -24,10 +24,10 @@ extension UINavigationController{
      
      - parameter value: true false
      */
-    func mo_navigationBar(opaque value:Bool, tintColor:UIColor = UIColor.mo_main()){
+    func mo_navigationBar(opaque value:Bool, tintColor:UIColor = UIColor.mo_main){
         if value{
             self.navigationBar.setBackgroundImage( UIImage.mo_createImageWithColor( tintColor ), for: .default)
-            self.navigationBar.shadowImage = UIImage.mo_createImageWithColor(UIColor.mo_silver())
+            self.navigationBar.shadowImage = UIImage.mo_createImageWithColor(UIColor.mo_silver)
             //            self.navigationController?.navigationBar.translucent = false
         }else{
             self.navigationBar.setBackgroundImage(UIImage(), for: .default)

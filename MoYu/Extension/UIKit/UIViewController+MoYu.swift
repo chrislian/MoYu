@@ -21,7 +21,7 @@ extension UIViewController{
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 43))
         label.backgroundColor = UIColor.clear
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.bigger)
         label.textAlignment = .center
         label.text = aTitle

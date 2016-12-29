@@ -140,7 +140,7 @@ class ActionSheetController: UIViewController {
         button.layer.masksToBounds = true
         button.layer.borderWidth   = 0.65
         button.addTarget(self, action: #selector(ActionSheetController.buttonAction(_:)), for: .touchUpInside )
-        button.layer.borderColor   = UIColor.mo_mercury().cgColor
+        button.layer.borderColor   = UIColor.mo_mercury.cgColor
         return button
     }
     
@@ -158,7 +158,7 @@ class ActionSheetController: UIViewController {
    
     fileprivate lazy var destructiveButton:ActionSheetButton = {
         let button = ActionSheetButton()
-        button.backgroundColor     = UIColor.mo_main()
+        button.backgroundColor     = UIColor.mo_main
         button.layer.cornerRadius  = 5
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false

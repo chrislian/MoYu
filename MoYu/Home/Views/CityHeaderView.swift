@@ -51,7 +51,7 @@ class CityHeaderView: UITableViewHeaderFooterView {
     var sectionIndex: Int = 0
     lazy var sectionTitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font()
         return label
     }()

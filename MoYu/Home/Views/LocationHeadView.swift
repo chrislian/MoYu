@@ -60,14 +60,14 @@ class LocationHeadView: UIView {
     
    fileprivate func setupLineView() -> UIView{
         let lineView = UIView()
-        lineView.backgroundColor = UIColor.mo_mercury()
+        lineView.backgroundColor = UIColor.mo_mercury
         return lineView
     }
     
     //MARK: - var & let
     var locationLab:UILabel = {
         let  label = UILabel()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font()
         label.text = "当前位置：定位中..."
         return label
@@ -75,9 +75,9 @@ class LocationHeadView: UIView {
     
     fileprivate let subTitleLabel:UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.mo_background()
+        label.backgroundColor = UIColor.mo_background
         label.text = "    手动选择"
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font(.smaller)
         return label
     }()

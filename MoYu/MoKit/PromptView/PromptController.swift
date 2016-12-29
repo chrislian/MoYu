@@ -105,7 +105,7 @@ class PromptController: UIViewController {
         let view = PromptView(type: .input)
         view.layer.cornerRadius = 3
         view.layer.masksToBounds = true
-        view.layer.borderColor = UIColor.mo_mercury().cgColor
+        view.layer.borderColor = UIColor.mo_mercury.cgColor
         view.layer.borderWidth = 0.7
         return view
     }()

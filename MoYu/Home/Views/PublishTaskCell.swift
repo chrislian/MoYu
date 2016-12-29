@@ -55,9 +55,9 @@ class PublishTaskCell: UITableViewCell {
         
         let textView = YYTextView()
         textView.placeholderFont = UIFont.mo_font()
-        textView.placeholderTextColor = UIColor.mo_silver()
+        textView.placeholderTextColor = UIColor.mo_silver
         textView.font = UIFont.mo_font()
-        textView.textColor = UIColor.mo_lightBlack()
+        textView.textColor = UIColor.mo_lightBlack
         textView.delegate = self
         return textView
     }()

@@ -29,7 +29,7 @@ class HotSearchView: UIView {
     
         let label = UILabel(frame:CGRect(x: 10, y: 0, width: MoScreenWidth-10, height: 40))
         label.font = UIFont.mo_font()
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.text = "热门搜索"
         self.addSubview(label)
         

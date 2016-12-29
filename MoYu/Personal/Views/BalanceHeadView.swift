@@ -93,7 +93,7 @@ class BalanceHeadView: UIView {
     //MARK: - var & let
     let cycleView:UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mo_lightYellow()
+        view.backgroundColor = UIColor.mo_lightYellow
         view.layer.cornerRadius = 50
         view.layer.masksToBounds = true
         return view
@@ -102,7 +102,7 @@ class BalanceHeadView: UIView {
     let balanceLabel:UILabel = {
         let label = UILabel()
         label.font = UIFont.mo_boldFont(.biggest)
-        label.textColor = UIColor.mo_silver()
+        label.textColor = UIColor.mo_silver
         label.textAlignment = .center
         label.text = "8800.00"
         return label
@@ -112,7 +112,7 @@ class BalanceHeadView: UIView {
     let balanceTitleLabel:UILabel = {
         let label = UILabel()
         label.font = UIFont.mo_font(.smaller)
-        label.textColor = UIColor.mo_silver()
+        label.textColor = UIColor.mo_silver
         label.textAlignment = .center
         label.text = "余额(元)"
         return label
@@ -121,7 +121,7 @@ class BalanceHeadView: UIView {
     let withdrawView : UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
-        view.layer.borderColor = UIColor.mo_lightBlack().cgColor
+        view.layer.borderColor = UIColor.mo_lightBlack.cgColor
         view.layer.borderWidth = 0.8
         return view
     }()
@@ -135,7 +135,7 @@ class BalanceHeadView: UIView {
     fileprivate let withdrawLabel:UILabel = {
         let label = UILabel()
         label.text = "提现 "
-        label.textColor = UIColor.mo_lightBlack()
+        label.textColor = UIColor.mo_lightBlack
         label.font = UIFont.mo_font()
         return label
     }()
@@ -150,19 +150,19 @@ class BalanceHeadView: UIView {
     
     fileprivate let leftLineView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mo_silver()
+        view.backgroundColor = UIColor.mo_silver
         return view
     }()
     fileprivate let rightLineView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mo_silver()
+        view.backgroundColor = UIColor.mo_silver
         return view
     }()
     
     fileprivate let consumeDetailLabel:UILabel = {
         let label = UILabel()
         label.text = "余额明细"
-        label.textColor = UIColor.mo_silver()
+        label.textColor = UIColor.mo_silver
         label.font = UIFont.mo_font(.smaller)
         return label
     }()

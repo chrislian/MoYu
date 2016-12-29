@@ -37,7 +37,7 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
     
     func rightBarItem(tap sender:AnyObject){
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.mo_background()
+        vc.view.backgroundColor = UIColor.mo_background
         vc.title = "综合实力"
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -61,12 +61,12 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         let rightBarButton = UIBarButtonItem(title: "综合实力", style: .plain, target: self, action: #selector(rightBarItem(tap:)))
         navigationItem.rightBarButtonItem = rightBarButton
         
-        self.view.backgroundColor = UIColor.mo_background()
+        self.view.backgroundColor = UIColor.mo_background
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.mo_background()
+        tableView.backgroundColor = UIColor.mo_background
     }
     
     fileprivate func updateUserInfo(){
@@ -118,7 +118,7 @@ class UseInfoController: UIViewController ,PraseErrorType, AlertViewType{
         alert.addTextField { [unowned self ] textField in
             
             textField.font = UIFont.mo_font()
-            textField.textColor = UIColor.mo_lightBlack()
+            textField.textColor = UIColor.mo_lightBlack
             textField.text = "\(UserManager.sharedInstance.user.age)"
             textField.delegate = self
             textField.keyboardType = .numberPad
@@ -146,10 +146,10 @@ extension UseInfoController:UITableViewDelegate{
         
         func update(cell:UITableViewCell){
             cell.textLabel?.font = UIFont.mo_font()
-            cell.textLabel?.textColor = UIColor.mo_lightBlack()
+            cell.textLabel?.textColor = UIColor.mo_lightBlack
             
             cell.detailTextLabel?.font = UIFont.mo_font()
-            cell.detailTextLabel?.textColor = UIColor.mo_silver()
+            cell.detailTextLabel?.textColor = UIColor.mo_silver
             
             cell.textLabel?.text = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].0
             cell.detailTextLabel?.text = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].1
@@ -189,7 +189,7 @@ extension UseInfoController:UITableViewDelegate{
             self.present(ageAlertController, animated: true, completion: nil)
         default:
             let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.mo_background()
+            vc.view.backgroundColor = UIColor.mo_background
             vc.title = dataArrays[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].0
             self.navigationController?.pushViewController(vc, animated: true)
         }
