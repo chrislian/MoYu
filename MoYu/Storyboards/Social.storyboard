@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JOZ-fq-npd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--People Home Page Controller-->
+        <scene sceneID="5ye-E3-yMy">
+            <objects>
+                <viewController id="UjN-So-mt9" customClass="PeopleHomePageController" customModule="MoYu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gPj-AP-5EE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ReJ-Oh-mgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nhp-2F-dwj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p7n-g7-a7G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="wrr-3W-tZ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="so4-wZ-YyE">
+                                        <rect key="frame" x="0.0" y="373" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="so4-wZ-YyE" id="KEr-FD-YWV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p7n-g7-a7G" firstAttribute="bottom" secondItem="ReJ-Oh-mgO" secondAttribute="top" id="FYV-w4-bdS"/>
+                            <constraint firstItem="p7n-g7-a7G" firstAttribute="leading" secondItem="nhp-2F-dwj" secondAttribute="leading" id="HRy-Jx-nu0"/>
+                            <constraint firstAttribute="trailing" secondItem="p7n-g7-a7G" secondAttribute="trailing" id="NYM-Fk-YPt"/>
+                            <constraint firstItem="p7n-g7-a7G" firstAttribute="top" secondItem="nhp-2F-dwj" secondAttribute="top" id="eRg-kt-P6z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oxg-kb-1hh"/>
+                    <connections>
+                        <outlet property="tableView" destination="p7n-g7-a7G" id="ENs-gM-BAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCg-fQ-J2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3237.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I7b-tc-kXc">
+            <objects>
+                <navigationController storyboardIdentifier="socialNavigation" automaticallyAdjustsScrollViewInsets="NO" id="JOZ-fq-npd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Keb-44-Pda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UjN-So-mt9" kind="relationship" relationship="rootViewController" id="H02-kt-Bm4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uri-fF-XiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298.4000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

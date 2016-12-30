@@ -100,12 +100,30 @@ struct SB {
             static let comments = "segueComments"
             static let aroundPeople = "segueAroundPeople"
             static let peopleHomePage = "seguePeopleHomePage"
+            static let socialNavi = "segueSocial"
         }
         
         static var root:UIViewController?{
             return SB.vc(storyboard: "AppCenter")
         }
     }
+    
+    //MARK: - social storyboard
+    struct Social {
+        struct Cell {
+            
+        }
+        
+        struct Segue {
+            
+        }
+        
+        static var root:UIViewController?{
+            
+            return SB.vc(storyboard: "Social")
+        }
+    }
+    
     
     //MARK: - task storyboard
     struct Task {
