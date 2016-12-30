@@ -148,6 +148,8 @@
 		ED362FDF1DFA39B200289940 /* GetParttimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 		ED4992261E15EB1600AD8E7C /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4992251E15EB1600AD8E7C /* Reveal.framework */; };
+		ED4992281E15EFB000AD8E7C /* PeopleHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4992271E15EFB000AD8E7C /* PeopleHomePageController.swift */; };
+		ED49922A1E160A1700AD8E7C /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */; };
 		ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7631DED34090088CD22 /* FindWorkCardView.swift */; };
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
 		ED56A7681DED5B940088CD22 /* FindWorkCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */; };
@@ -354,6 +356,8 @@
 		ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTopCell.swift; sourceTree = "<group>"; };
 		ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParttimeJobDetailController.swift; sourceTree = "<group>"; };
 		ED4992251E15EB1600AD8E7C /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = MoYu/Reveal.framework; sourceTree = "<group>"; };
+		ED4992271E15EFB000AD8E7C /* PeopleHomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleHomePageController.swift; sourceTree = "<group>"; };
+		ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		ED56A7631DED34090088CD22 /* FindWorkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardView.swift; sourceTree = "<group>"; };
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
@@ -728,6 +732,7 @@
 				838E84C21D29492200C992CC /* PublishMessageController.swift */,
 				ED2F7E4D1E10BE3B001310D6 /* CommentController.swift */,
 				EDEB5B2B1E14F56C00C3F273 /* AroundPeopleController.swift */,
+				ED4992271E15EFB000AD8E7C /* PeopleHomePageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -897,6 +902,7 @@
 				838E85071D294CC100C992CC /* UISeachBar+MoYu.swift */,
 				839F1FE81D83B996006F1ED9 /* UIViewController+MoYu.swift */,
 				EDFB49171DF907ED00472B09 /* Timer+Safe.swift */,
+				ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1421,6 +1427,7 @@
 				83E1BE1B1DA3AFC80058F7B9 /* MyGetPartTimeJob.swift in Sources */,
 				83AAFE9D1D43224B00E39EB4 /* MyPurseCell.swift in Sources */,
 				834EC4191D3287560046FBEF /* SignInByAuthView.swift in Sources */,
+				ED4992281E15EFB000AD8E7C /* PeopleHomePageController.swift in Sources */,
 				833240981D56E579006C7203 /* MoHUD.swift in Sources */,
 				8327B6411D3B365400DF6D78 /* SignInByPaswordeView.swift in Sources */,
 				8327B63F1D3B24FF00DF6D78 /* Router.swift in Sources */,
@@ -1448,6 +1455,7 @@
 				ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */,
 				8334572D1D55F3FC008FFFF9 /* ActionSheetController.swift in Sources */,
 				83CE8A8F1D5F2FC30082208D /* LegalProvisionsController.swift in Sources */,
+				ED49922A1E160A1700AD8E7C /* UINavigationBarExtension.swift in Sources */,
 				83558FF61D5E0CBA008D5883 /* AboutJobModel.swift in Sources */,
 				83BCD6221D47194B00FA4388 /* BalanceCell.swift in Sources */,
 				833240A21D56FD43006C7203 /* OLGhostAlertView.m in Sources */,

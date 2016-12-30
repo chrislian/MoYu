@@ -111,7 +111,7 @@ extension AroundPeopleController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //TODO: - show
+        performSegue(withIdentifier: SB.AppCenter.Segue.peopleHomePage, sender: models[indexPath.row])
     }
 }
 
