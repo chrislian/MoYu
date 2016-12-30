@@ -147,7 +147,7 @@
 		ED2F7E521E10CA85001310D6 /* CommentTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */; };
 		ED362FDF1DFA39B200289940 /* GetParttimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
-		ED3F8D691E1498C8007C3B25 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3F8D681E1498C8007C3B25 /* Reveal.framework */; };
+		ED4992261E15EB1600AD8E7C /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4992251E15EB1600AD8E7C /* Reveal.framework */; };
 		ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7631DED34090088CD22 /* FindWorkCardView.swift */; };
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
 		ED56A7681DED5B940088CD22 /* FindWorkCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */; };
@@ -353,7 +353,7 @@
 		ED2F7E4F1E10C2D9001310D6 /* ParttimeJobContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobContentCell.swift; sourceTree = "<group>"; };
 		ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTopCell.swift; sourceTree = "<group>"; };
 		ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParttimeJobDetailController.swift; sourceTree = "<group>"; };
-		ED3F8D681E1498C8007C3B25 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		ED4992251E15EB1600AD8E7C /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = MoYu/Reveal.framework; sourceTree = "<group>"; };
 		ED56A7631DED34090088CD22 /* FindWorkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardView.swift; sourceTree = "<group>"; };
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
@@ -374,8 +374,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4992261E15EB1600AD8E7C /* Reveal.framework in Frameworks */,
 				15D37867C79F4DED7F7C7CDB /* Pods_MoYu.framework in Frameworks */,
-				ED3F8D691E1498C8007C3B25 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,7 +967,7 @@
 		AA65D61154422FDF04B3BC87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ED3F8D681E1498C8007C3B25 /* Reveal.framework */,
+				ED4992251E15EB1600AD8E7C /* Reveal.framework */,
 				5DA126A58D4CBA2C3226DFD8 /* Pods_MoYu.framework */,
 				B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */,
 				1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */,
@@ -1701,6 +1701,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MoYu/BaiduMapAPI",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MoYu",
 				);
 				INFOPLIST_FILE = MoYu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1725,6 +1726,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MoYu/BaiduMapAPI",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MoYu",
 				);
 				INFOPLIST_FILE = MoYu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
