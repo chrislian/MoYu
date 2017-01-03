@@ -68,6 +68,11 @@ struct MoYuLocation {
             return String(format: "%0.2fkm", distance/1000)
         }
     }
+    
+    func distance(location:MoYuLocation)->String{
+        
+        return distance(latitude: location.latitude, longitude: location.longitude)
+    }
 }
 
 struct MoYuPlatform {

@@ -22,6 +22,17 @@ class AroundPeopleController: UIViewController,PraseErrorType,AlertViewType {
         beginRefresh()
     }
     
+    //MARK: - event response
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let nav = segue.destination as? UINavigationController,
+            let vc = nav.viewControllers.first as? PeopleHomePageController,
+            let model = sender as? AroundPeopleModel{
+            
+            vc.aroundPeopleModel = model
+        }
+    }
+    
     
     //MARK: - private method
     private func setupView(){

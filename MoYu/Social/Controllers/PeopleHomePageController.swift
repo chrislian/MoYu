@@ -36,9 +36,15 @@ class PeopleHomePageController: UIViewController {
     
     //MARK: - private mthods
     private func setupView(){
+        
         tableView.backgroundColor = UIColor.mo_lightYellow
         tableView.delegate = self
         tableView.dataSource = self
+        
+        if let model = aroundPeopleModel{
+            
+            homePageView.update(model: model)
+        }
     }
     
     //MARK: - event response
@@ -48,7 +54,6 @@ class PeopleHomePageController: UIViewController {
     
     
     //MARK: - var & let
-
     @IBOutlet var homePageView: HomePageView!
     
     fileprivate var tableView:UITableView{
@@ -57,6 +62,7 @@ class PeopleHomePageController: UIViewController {
     
     fileprivate let headerViewDefaultHeight:CGFloat = 345
     
+    var aroundPeopleModel:AroundPeopleModel?
 }
 
 
@@ -64,6 +70,16 @@ class PeopleHomePageController: UIViewController {
 // MARK: - UITableViewDelegate
 extension PeopleHomePageController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.mo_background
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }

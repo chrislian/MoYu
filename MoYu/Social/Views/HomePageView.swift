@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum HomePageHeaderType {
+    
+    case sign//备注
+    case pk//pk
+    case sayHi//打招呼
+}
+
 class HomePageView: UIView {
 
   
@@ -19,20 +26,30 @@ class HomePageView: UIView {
         setupView()
     }
     
+    //MARK: - public methods
+    func update(model:AroundPeopleModel){
+        
+        avatorImageView.mo_loadRoundImage(model.avator)
+        usernameLabel.text = model.nickname
+        motionLabel.text = model.autograph
+        let currentLocation = UserManager.sharedInstance.currentLocation
+        distanceLabel.text = "距离 " + model.location.distance(location: currentLocation)
+    }
+    
     //MARK: - private methods
     private func setupView(){
         
         avatorImageView.contentMode = .scaleAspectFill
         avatorImageView.clipsToBounds = true
         
-        usernameLabel.textColor = UIColor.mo_lightBlack
-//        usernameLabel.text = ""
+        usernameLabel.textColor = UIColor.mo_main
+        usernameLabel.text = ""
         
         motionLabel.textColor = UIColor.lightGray
-//        motionLabel.text = ""
+        motionLabel.text = ""
         
         distanceLabel.textColor = UIColor.mo_main
-//        distanceLabel.text = ""
+        distanceLabel.text = ""
         
         pkLabel.backgroundColor = UIColor.mo_main
         pkLabel.layer.cornerRadius = pkLabel.frame.size.height/2
@@ -41,13 +58,23 @@ class HomePageView: UIView {
         signLabel.textColor = UIColor.lightGray
         sayHelloLabel.textColor = UIColor.lightGray
         
+        pkLabel.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(pkTap(_:)))
+        pkLabel.addGestureRecognizer(tap)
+        
     }
     
     //MARK: - event response
     @IBAction func signButton(_ sender: UIButton) {
+        tapClourse?(.sign)
     }
     
     @IBAction func sayHelloButton(_ sender: UIButton) {
+        tapClourse?(.sayHi)
+    }
+    
+    @objc private func pkTap(_ sender:UITapGestureRecognizer){
+        tapClourse?(.pk)
     }
     
     
@@ -62,4 +89,6 @@ class HomePageView: UIView {
     @IBOutlet weak var pkLabel: UILabel!
     @IBOutlet weak var signLabel: UILabel!
     @IBOutlet weak var sayHelloLabel: UILabel!
+    
+    var tapClourse:((HomePageHeaderType)->Void)?
 }
