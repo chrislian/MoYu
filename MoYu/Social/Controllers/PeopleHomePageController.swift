@@ -14,6 +14,7 @@ class PeopleHomePageController: UIViewController {
         super.viewDidLoad()
 
         setupView()
+        automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,8 +24,9 @@ class PeopleHomePageController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.lt_setBackgroundColor(backgroundColor: UIColor.clear)
+        
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -32,13 +34,15 @@ class PeopleHomePageController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
     }
     
-
-    
     //MARK: - private mthods
     private func setupView(){
         tableView.delegate = self
         tableView.dataSource = self
-        
+    }
+    
+    //MARK: - event response
+    @IBAction func closeBarButton(_ sender: UIBarButtonItem) {
+         dismiss(animated: true, completion: nil)
     }
     
     
@@ -76,7 +80,7 @@ extension PeopleHomePageController{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let color = UIColor.mo_main
-        let navbarChangePoint:CGFloat = 217 - 64
+        let navbarChangePoint:CGFloat = 217
         let offsetY = scrollView.contentOffset.y
         if offsetY > navbarChangePoint {
             let alpha = min(1, 1 - (navbarChangePoint + 64 - offsetY)/64)
@@ -84,7 +88,5 @@ extension PeopleHomePageController{
         }else{
             navigationController?.navigationBar.lt_setBackgroundColor(backgroundColor: color.withAlphaComponent(0))
         }
-        
-        println("offset.y = \(offsetY)")
     }
 }
