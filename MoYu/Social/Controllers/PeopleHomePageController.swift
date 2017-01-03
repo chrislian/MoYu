@@ -36,6 +36,7 @@ class PeopleHomePageController: UIViewController {
     
     //MARK: - private mthods
     private func setupView(){
+        tableView.backgroundColor = UIColor.mo_lightYellow
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -48,7 +49,13 @@ class PeopleHomePageController: UIViewController {
     
     //MARK: - var & let
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var homePageView: HomePageView!
+    
+    fileprivate var tableView:UITableView{
+        return homePageView.tableView
+    }
+    
+    fileprivate let headerViewDefaultHeight:CGFloat = 345
     
 }
 

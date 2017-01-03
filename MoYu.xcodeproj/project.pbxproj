@@ -139,6 +139,7 @@
 		83F801ED1D8198E800DC4D60 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F801EC1D8198E800DC4D60 /* TaskController.swift */; };
 		83F801EF1D819E5400DC4D60 /* TopTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F801EE1D819E5400DC4D60 /* TopTitleView.swift */; };
 		CD47BA611D5CDD19A175585D /* Pods_MoYuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3BBA236B014F423BA6CD3 /* Pods_MoYuUITests.framework */; };
+		ED0DAA551E1B80B6007663AA /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DAA541E1B80B6007663AA /* HomePageView.swift */; };
 		ED1C6BEF1D6C492F00AC7394 /* CityHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */; };
 		ED1C6BF11D6C53B600AC7394 /* CollapsableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */; };
 		ED24BA0F1DF15D5400845597 /* PublishWorkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24BA0E1DF15D5400845597 /* PublishWorkAnnotationView.swift */; };
@@ -349,6 +350,7 @@
 		B69D31954C6C97A6D617E130 /* Pods-MoYu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYu/Pods-MoYu.release.xcconfig"; sourceTree = "<group>"; };
 		B7775ACCECAD8A28A68B1DFC /* Pods-MoYuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoYuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoYuUITests/Pods-MoYuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoYuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0DAA541E1B80B6007663AA /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		ED1C6BEE1D6C492F00AC7394 /* CityHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHeaderView.swift; sourceTree = "<group>"; };
 		ED1C6BF01D6C53B600AC7394 /* CollapsableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsableType.swift; sourceTree = "<group>"; };
 		ED24BA0E1DF15D5400845597 /* PublishWorkAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishWorkAnnotationView.swift; sourceTree = "<group>"; };
@@ -1020,6 +1022,7 @@
 		ED4992301E1657D100AD8E7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED0DAA541E1B80B6007663AA /* HomePageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1520,6 +1523,7 @@
 				83829ED11D586D4E00CD6587 /* MessageCenterModel.swift in Sources */,
 				838E84E21D29492200C992CC /* AppCenterController.swift in Sources */,
 				838E84F71D29492200C992CC /* LeftMenuCell.swift in Sources */,
+				ED0DAA551E1B80B6007663AA /* HomePageView.swift in Sources */,
 				83E1BE151DA397340058F7B9 /* MyPostPartTimeJob.swift in Sources */,
 				EDEB5B2E1E14F86B00C3F273 /* AroundPeopleCell.swift in Sources */,
 				ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */,
