@@ -320,22 +320,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行业评分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-F1-dlc">
-                                                    <rect key="frame" x="8" y="8" width="57.5" height="17"/>
+                                                    <rect key="frame" x="20" y="8" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-uG-cFF">
-                                                    <rect key="frame" x="8" y="33" width="359" height="118"/>
+                                                    <rect key="frame" x="20" y="33" width="347" height="118"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fCv-uG-cFF" firstAttribute="trailing" secondItem="rQX-NP-8LM" secondAttribute="trailingMargin" id="7zK-bR-aZk"/>
                                                 <constraint firstItem="fCv-uG-cFF" firstAttribute="top" secondItem="gRU-F1-dlc" secondAttribute="bottom" constant="8" id="c2j-W1-gd9"/>
-                                                <constraint firstItem="fCv-uG-cFF" firstAttribute="leading" secondItem="rQX-NP-8LM" secondAttribute="leadingMargin" id="iR7-la-Ipf"/>
+                                                <constraint firstItem="fCv-uG-cFF" firstAttribute="leading" secondItem="rQX-NP-8LM" secondAttribute="leadingMargin" constant="12" id="iR7-la-Ipf"/>
                                                 <constraint firstItem="fCv-uG-cFF" firstAttribute="bottom" secondItem="rQX-NP-8LM" secondAttribute="bottomMargin" id="lpO-Wz-0tn"/>
-                                                <constraint firstItem="gRU-F1-dlc" firstAttribute="leading" secondItem="rQX-NP-8LM" secondAttribute="leadingMargin" id="pZD-uQ-J55"/>
+                                                <constraint firstItem="gRU-F1-dlc" firstAttribute="leading" secondItem="rQX-NP-8LM" secondAttribute="leadingMargin" constant="12" id="pZD-uQ-J55"/>
                                                 <constraint firstItem="gRU-F1-dlc" firstAttribute="top" secondItem="rQX-NP-8LM" secondAttribute="topMargin" id="pcd-eN-xdx"/>
                                             </constraints>
                                         </tableViewCellContentView>

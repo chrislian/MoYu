@@ -64,6 +64,7 @@ class PeopleHomePageController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+//        tableView.separatorStyle = .none
         tableView.tableFooterView = {
             $0.backgroundColor = UIColor.mo_background
             return $0
@@ -72,6 +73,10 @@ class PeopleHomePageController: UIViewController {
         if let model = aroundPeopleModel{
             
             homePageView.update(model: model)
+        }
+        
+        homePageView.tapClourse = { type in
+            println("header view tap:\(type)")
         }
     }
     
@@ -128,6 +133,9 @@ extension PeopleHomePageController: UITableViewDelegate {
         case .peopleAuth(let (peosonal, merchant)):
             if let cell = cell as? PeopleAuthCell{
                 cell.update(personAuth: peosonal, merchantAuth: merchant)
+                cell.authButtonClourse = { type in
+                    println("auth button type:\(type)")
+                }
             }
         case .jobIntension(let job):
             cell.textLabel?.text = "求职意向"
