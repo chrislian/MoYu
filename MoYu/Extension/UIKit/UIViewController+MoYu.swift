@@ -15,13 +15,13 @@ extension UIViewController{
      
      - parameter aTitle:
      */
-    func mo_navigationBar(title aTitle:String){
+    func mo_navigationBar(title aTitle:String,alpha:CGFloat = 1.0){
         
         self.navigationItem.titleView = nil
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 43))
         label.backgroundColor = UIColor.clear
-        label.textColor = UIColor.mo_lightBlack
+        label.textColor = UIColor.mo_lightBlack.withAlphaComponent(alpha)
         label.font = UIFont.mo_font(.bigger)
         label.textAlignment = .center
         label.text = aTitle

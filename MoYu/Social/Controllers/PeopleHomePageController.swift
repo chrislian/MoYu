@@ -15,6 +15,7 @@ class PeopleHomePageController: UIViewController {
 
         setupView()
         automaticallyAdjustsScrollViewInsets = false
+        mo_navigationBar(title: aroundPeopleModel?.nickname ?? "", alpha: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,8 +109,10 @@ extension PeopleHomePageController{
         if offsetY > navbarChangePoint {
             let alpha = min(1, 1 - (navbarChangePoint + 64 - offsetY)/64)
             navigationController?.navigationBar.lt_setBackgroundColor(backgroundColor: color.withAlphaComponent(alpha))
+            mo_navigationBar(title: aroundPeopleModel?.nickname ?? "", alpha:alpha)
         }else{
             navigationController?.navigationBar.lt_setBackgroundColor(backgroundColor: color.withAlphaComponent(0))
+            mo_navigationBar(title: aroundPeopleModel?.nickname ?? "", alpha:0)
         }
     }
 }
