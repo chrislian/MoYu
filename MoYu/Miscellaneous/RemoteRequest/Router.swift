@@ -59,13 +59,13 @@ extension Router: RouterType{
     
     
     // MARK: - request parameters
-    func parameters() -> JSONDictionary? {
+    var parameters:JSONDictionary? {
         
         var parameters:JSONDictionary? = nil
         
         switch self {
         case .signIn(let phone, let code):
-            parameters = ["type": 2 ,"device": self.MOUID() ,"phonenum": phone ,"verify": code ]
+            parameters = ["type": 2 ,"device": MOUID ,"phonenum": phone ,"verify": code ]
         case .signOut,.financial:
             parameters = compose()
             
@@ -154,7 +154,7 @@ extension Router: RouterType{
     }
     
     // MARK: - urlString
-    func urlString()->String{
+    var urlString:String{
         let suffix:String
         switch self {
         case .signIn:

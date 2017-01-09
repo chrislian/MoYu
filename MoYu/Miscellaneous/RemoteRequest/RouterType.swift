@@ -12,20 +12,19 @@ typealias JSONDictionary = [String:Any]
 
 protocol RouterType {
     
-    func sessionID()->String
-    
-    func userID()->String
-    
-    func MOUID()->String
-    
     func compose(parameters: JSONDictionary?) -> JSONDictionary
     
     func request(remote clourse: @escaping RemoteClourse)
     
+    var sessionID:String{ get }
+    
+    var userID:String{ get }
+    
+    var MOUID:String{ get }
+    
     //required
-    func parameters() -> JSONDictionary?
-    //required
-    func urlString()->String
+    var parameters:JSONDictionary?{ get }
+    var urlString:String{ get }
 }
 
 extension RouterType {
@@ -35,33 +34,33 @@ extension RouterType {
 //        println("urlString:\(self.urlString())")
 //        println("parameters:\(self.parameters())")
         
-        Remote.post(url: self.urlString(), parameters: self.parameters(),callback: clourse)
+        Remote.post(url: urlString, parameters: parameters,callback: clourse)
     }
     
     
-    func sessionID()->String{
+    var sessionID:String{
         
         return UserManager.sharedInstance.user.sessionid
     }
     
-    func userID()->String{
+    var userID:String{
         
         return UserManager.sharedInstance.user.id
     }
     
-    func MOUID()->String{
+    var MOUID:String{
         return MODevice.MOUID() ?? ""
     }
     
     func compose(parameters: JSONDictionary? = nil) -> JSONDictionary{
         
-        var base:JSONDictionary = ["device": self.MOUID() ]
+        var base:JSONDictionary = ["device": MOUID]
         
-        if !self.userID().isEmpty{
-            base["userid"] = self.userID()
+        if !userID.isEmpty{
+            base["userid"] = userID
         }
-        if !self.sessionID().isEmpty{
-            base["sessionid"] = self.sessionID()
+        if !sessionID.isEmpty{
+            base["sessionid"] = sessionID
         }
         
         guard let parameters = parameters else { return base }
