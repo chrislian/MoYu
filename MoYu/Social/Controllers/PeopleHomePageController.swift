@@ -8,6 +8,32 @@
 
 import UIKit
 
+fileprivate enum PeopleHomePageCellType{
+    
+    case peopleAuth(peosonal:Bool,merchant:Bool)
+   
+    case jobIntension(job:String)
+    
+    case education(school:String)
+    
+    var isAuth:(person:Bool,merchant:Bool)?{
+        
+        switch self{
+        case .peopleAuth: return (true,false)
+        default: return nil
+        }
+    }
+    
+    var text:(left:String,right:String){
+        switch self{
+        case .peopleAuth: return("","")
+        case .jobIntension(let job): return ("求职意向:",job)
+        case .education(let school): return ("学校:",school)
+        }
+    }
+    
+}
+
 class PeopleHomePageController: UIViewController {
 
     override func viewDidLoad() {
@@ -41,6 +67,7 @@ class PeopleHomePageController: UIViewController {
         tableView.backgroundColor = UIColor.mo_lightYellow
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = false
         
         if let model = aroundPeopleModel{
             
@@ -64,6 +91,16 @@ class PeopleHomePageController: UIViewController {
     fileprivate let headerViewDefaultHeight:CGFloat = 345
     
     var aroundPeopleModel:AroundPeopleModel?
+    
+    fileprivate lazy var dataArray:[PeopleHomePageCellType] = {
+        
+        var data:[PeopleHomePageCellType] = []
+        data.append(PeopleHomePageCellType.peopleAuth(peosonal: true, merchant: false))
+        data.append(PeopleHomePageCellType.jobIntension(job: self.aroundPeopleModel?.intension ?? "无"))
+        data.append(PeopleHomePageCellType.education(school: self.aroundPeopleModel?.school ?? "无"))
+        
+        return data
+    }()
 }
 
 
@@ -84,6 +121,22 @@ extension PeopleHomePageController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        switch dataArray[indexPath.row] {
+        case .peopleAuth(let (peosonal, merchant)):
+            if let cell = cell as? PeopleAuthCell{
+                cell.update(personAuth: peosonal, merchantAuth: merchant)
+            }
+        case .jobIntension(let job):
+            cell.textLabel?.text = "求职意向"
+            cell.detailTextLabel?.text = job
+        case .education(let school):
+            cell.textLabel?.text = "毕业学校"
+            cell.detailTextLabel?.text = school
+        }
+    }
 }
 
 
@@ -91,11 +144,29 @@ extension PeopleHomePageController: UITableViewDelegate {
 extension PeopleHomePageController: UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        func value1Cell()->UITableViewCell{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "personHomePageCellIdentifier") else{
+                return UITableViewCell(style: .value1, reuseIdentifier: "personHomePageCellIdentifier")
+            }
+            return cell
+        }
+        
+        switch dataArray[indexPath.row] {
+        case .peopleAuth:
+            return PeopleAuthCell.cell(tableView: tableView)
+        case .jobIntension,.education:
+            let cell = value1Cell()
+            cell.textLabel?.font = UIFont.mo_font()
+            cell.detailTextLabel?.font = UIFont.mo_font()
+            cell.textLabel?.textColor = UIColor.mo_lightBlack
+            cell.detailTextLabel?.textColor = UIColor.lightGray
+            return cell
+        }
     }
 }
 

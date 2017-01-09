@@ -148,6 +148,7 @@
 		ED2F7E521E10CA85001310D6 /* CommentTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */; };
 		ED362FDF1DFA39B200289940 /* GetParttimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
+		ED40C2B51E236B7B00B1B9E0 /* PeopleAuthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */; };
 		ED4992261E15EB1600AD8E7C /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4992251E15EB1600AD8E7C /* Reveal.framework */; };
 		ED49922A1E160A1700AD8E7C /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */; };
 		ED49922C1E16568F00AD8E7C /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED49922B1E16568F00AD8E7C /* Social.storyboard */; };
@@ -358,6 +359,7 @@
 		ED2F7E4F1E10C2D9001310D6 /* ParttimeJobContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParttimeJobContentCell.swift; sourceTree = "<group>"; };
 		ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTopCell.swift; sourceTree = "<group>"; };
 		ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParttimeJobDetailController.swift; sourceTree = "<group>"; };
+		ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleAuthCell.swift; sourceTree = "<group>"; };
 		ED4992251E15EB1600AD8E7C /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = MoYu/Reveal.framework; sourceTree = "<group>"; };
 		ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		ED49922B1E16568F00AD8E7C /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
@@ -1023,6 +1025,7 @@
 			isa = PBXGroup;
 			children = (
 				ED0DAA541E1B80B6007663AA /* HomePageView.swift */,
+				ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1545,6 +1548,7 @@
 				ED2F7E501E10C2D9001310D6 /* ParttimeJobContentCell.swift in Sources */,
 				83829ECF1D586A9100CD6587 /* MessageCenterCell.swift in Sources */,
 				83F801ED1D8198E800DC4D60 /* TaskController.swift in Sources */,
+				ED40C2B51E236B7B00B1B9E0 /* PeopleAuthCell.swift in Sources */,
 				838E84E91D29492200C992CC /* HomeMessageController.swift in Sources */,
 				838E85111D294CC100C992CC /* UINavigationController+MoYu.swift in Sources */,
 				838E84EE1D29492200C992CC /* HomeItemView.swift in Sources */,

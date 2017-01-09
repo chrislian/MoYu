@@ -111,7 +111,7 @@ struct SB {
     //MARK: - social storyboard
     struct Social {
         struct Cell {
-            
+            static let peopleAuth = "cellPeopleAuthIdentifier"
         }
         
         struct Segue {
