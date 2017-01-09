@@ -18,6 +18,7 @@
 #import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
+#import <HyphenateLite/HyphenateLite.h>//环信
 
 #import "SFHFKeychainUtils.h"
 #import "OLGhostAlertView.h"

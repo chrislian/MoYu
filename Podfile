@@ -11,6 +11,7 @@ pod 'REFrostedViewController', '~> 2.0'
 pod 'MJRefresh',    '~> 3.0'
 pod 'BaiduMapKit',   '~> 3.0'
 pod 'PHFComposeBarView', '~> 2.0'
+pod 'HyphenateLite'
 
 #swift
 pod 'Alamofire',    '~> 4.0'
