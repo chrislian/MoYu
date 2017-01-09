@@ -112,6 +112,7 @@ struct SB {
     struct Social {
         struct Cell {
             static let peopleAuth = "cellPeopleAuthIdentifier"
+            static let jobScore = "cellJobScoreIdentifier"
         }
         
         struct Segue {

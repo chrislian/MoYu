@@ -16,19 +16,15 @@ fileprivate enum PeopleHomePageCellType{
     
     case education(school:String)
     
-    var isAuth:(person:Bool,merchant:Bool)?{
-        
-        switch self{
-        case .peopleAuth: return (true,false)
-        default: return nil
-        }
-    }
+    case jobScore
     
-    var text:(left:String,right:String){
-        switch self{
-        case .peopleAuth: return("","")
-        case .jobIntension(let job): return ("求职意向:",job)
-        case .education(let school): return ("学校:",school)
+    var cellHeight:CGFloat{
+        
+        switch self {
+        case .peopleAuth,.jobIntension,.education:
+            return 60
+        case .jobScore:
+            return 201
         }
     }
     
@@ -64,10 +60,14 @@ class PeopleHomePageController: UIViewController {
     //MARK: - private mthods
     private func setupView(){
         
-        tableView.backgroundColor = UIColor.mo_lightYellow
+        tableView.backgroundColor = UIColor.white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+        tableView.tableFooterView = {
+            $0.backgroundColor = UIColor.mo_background
+            return $0
+        }(UIView())
         
         if let model = aroundPeopleModel{
             
@@ -98,7 +98,7 @@ class PeopleHomePageController: UIViewController {
         data.append(PeopleHomePageCellType.peopleAuth(peosonal: true, merchant: false))
         data.append(PeopleHomePageCellType.jobIntension(job: self.aroundPeopleModel?.intension ?? "无"))
         data.append(PeopleHomePageCellType.education(school: self.aroundPeopleModel?.school ?? "无"))
-        
+        data.append(PeopleHomePageCellType.jobScore)
         return data
     }()
 }
@@ -119,7 +119,7 @@ extension PeopleHomePageController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return dataArray[indexPath.row].cellHeight
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -135,6 +135,7 @@ extension PeopleHomePageController: UITableViewDelegate {
         case .education(let school):
             cell.textLabel?.text = "毕业学校"
             cell.detailTextLabel?.text = school
+        case .jobScore: break
         }
     }
 }
@@ -166,6 +167,7 @@ extension PeopleHomePageController: UITableViewDataSource{
             cell.textLabel?.textColor = UIColor.mo_lightBlack
             cell.detailTextLabel?.textColor = UIColor.lightGray
             return cell
+        case .jobScore: return JobScoreCell.cell(tableView: tableView)
         }
     }
 }

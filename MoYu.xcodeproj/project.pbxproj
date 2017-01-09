@@ -149,6 +149,7 @@
 		ED362FDF1DFA39B200289940 /* GetParttimeJobDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */; };
 		ED3E0B0E92C1C528DCBDA9E8 /* Pods_MoYuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E412A103F72DF7BD26728 /* Pods_MoYuTests.framework */; };
 		ED40C2B51E236B7B00B1B9E0 /* PeopleAuthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */; };
+		ED40C2B71E237BE700B1B9E0 /* JobScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED40C2B61E237BE700B1B9E0 /* JobScoreCell.swift */; };
 		ED4992261E15EB1600AD8E7C /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4992251E15EB1600AD8E7C /* Reveal.framework */; };
 		ED49922A1E160A1700AD8E7C /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */; };
 		ED49922C1E16568F00AD8E7C /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED49922B1E16568F00AD8E7C /* Social.storyboard */; };
@@ -360,6 +361,7 @@
 		ED2F7E511E10CA85001310D6 /* CommentTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTopCell.swift; sourceTree = "<group>"; };
 		ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParttimeJobDetailController.swift; sourceTree = "<group>"; };
 		ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleAuthCell.swift; sourceTree = "<group>"; };
+		ED40C2B61E237BE700B1B9E0 /* JobScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobScoreCell.swift; sourceTree = "<group>"; };
 		ED4992251E15EB1600AD8E7C /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = MoYu/Reveal.framework; sourceTree = "<group>"; };
 		ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		ED49922B1E16568F00AD8E7C /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
@@ -1026,6 +1028,7 @@
 			children = (
 				ED0DAA541E1B80B6007663AA /* HomePageView.swift */,
 				ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */,
+				ED40C2B61E237BE700B1B9E0 /* JobScoreCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1533,6 +1536,7 @@
 				83393DC91D51844D002E842D /* IdentifyCode.swift in Sources */,
 				EDEB5B2C1E14F56C00C3F273 /* AroundPeopleController.swift in Sources */,
 				83D3F09E1D89806B0017DCB2 /* TaskModel.swift in Sources */,
+				ED40C2B71E237BE700B1B9E0 /* JobScoreCell.swift in Sources */,
 				833240B51D57538D006C7203 /* FeedbackView.swift in Sources */,
 				838E84EB1D29492200C992CC /* HomeController.swift in Sources */,
 				ED79B1A51E14E2FE00B98302 /* MoNotification.swift in Sources */,

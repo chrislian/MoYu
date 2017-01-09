@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AuM-nc-hLe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AuM-nc-hLe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="qPZ-fB-s1e">
@@ -179,21 +180,21 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellPeopleAuthIdentifier" rowHeight="97" id="9Jn-gQ-D2K" customClass="PeopleAuthCell" customModule="MoYu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="373" width="375" height="97"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellPeopleAuthIdentifier" rowHeight="54" id="9Jn-gQ-D2K" customClass="PeopleAuthCell" customModule="MoYu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="373" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Jn-gQ-D2K" id="WvQ-M0-DuA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4G-cR-m0i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-Sv-uHX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="96"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="53.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AI-AU-PMy">
-                                                                    <rect key="frame" x="44" y="32" width="98.5" height="33.5"/>
+                                                                    <rect key="frame" x="44" y="11" width="98.5" height="33.5"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_personal_auth" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-mJ-VCz">
                                                                             <rect key="frame" x="0.0" y="6" width="21" height="21"/>
@@ -220,7 +221,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fib-zj-5eU">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="96"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="53.5"/>
                                                                     <connections>
                                                                         <action selector="authClick:" destination="9Jn-gQ-D2K" eventType="touchUpInside" id="aLW-dk-XRw"/>
                                                                     </connections>
@@ -237,10 +238,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrh-mt-eVv">
-                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="96"/>
+                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="53.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DM-0n-KNW">
-                                                                    <rect key="frame" x="44" y="31" width="98.5" height="33.5"/>
+                                                                    <rect key="frame" x="44" y="10" width="98.5" height="33.5"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_merchant_auth" translatesAutoresizingMaskIntoConstraints="NO" id="93l-mx-eRh">
                                                                             <rect key="frame" x="0.0" y="6" width="21" height="21"/>
@@ -267,7 +268,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLC-7z-oy0">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="96"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="53.5"/>
                                                                     <connections>
                                                                         <action selector="authClick:" destination="9Jn-gQ-D2K" eventType="touchUpInside" id="tXF-bn-Aau"/>
                                                                     </connections>
@@ -309,6 +310,38 @@
                                             <outlet property="merchantAuthLabel" destination="pqL-02-GvH" id="7EO-Yo-wR4"/>
                                             <outlet property="personAuthImageView" destination="Lpe-mJ-VCz" id="N5s-Sk-uMz"/>
                                             <outlet property="personAuthLabel" destination="d4l-c4-NNl" id="kd6-3X-1eG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellJobScoreIdentifier" rowHeight="160" id="baN-6Z-qY8" customClass="JobScoreCell" customModule="MoYu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="427" width="375" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baN-6Z-qY8" id="rQX-NP-8LM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行业评分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-F1-dlc">
+                                                    <rect key="frame" x="8" y="8" width="57.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-uG-cFF">
+                                                    <rect key="frame" x="8" y="33" width="359" height="118"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fCv-uG-cFF" firstAttribute="trailing" secondItem="rQX-NP-8LM" secondAttribute="trailingMargin" id="7zK-bR-aZk"/>
+                                                <constraint firstItem="fCv-uG-cFF" firstAttribute="top" secondItem="gRU-F1-dlc" secondAttribute="bottom" constant="8" id="c2j-W1-gd9"/>
+                                                <constraint firstItem="fCv-uG-cFF" firstAttribute="leading" secondItem="rQX-NP-8LM" secondAttribute="leadingMargin" id="iR7-la-Ipf"/>
+                                                <constraint firstItem="fCv-uG-cFF" firstAttribute="bottom" secondItem="rQX-NP-8LM" secondAttribute="bottomMargin" id="lpO-Wz-0tn"/>
+                                                <constraint firstItem="gRU-F1-dlc" firstAttribute="leading" secondItem="rQX-NP-8LM" secondAttribute="leadingMargin" id="pZD-uQ-J55"/>
+                                                <constraint firstItem="gRU-F1-dlc" firstAttribute="top" secondItem="rQX-NP-8LM" secondAttribute="topMargin" id="pcd-eN-xdx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="jobScoreLabel" destination="gRU-F1-dlc" id="XJY-ke-dhT"/>
+                                            <outlet property="subView" destination="fCv-uG-cFF" id="zkR-LB-yJ1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
