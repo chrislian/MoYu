@@ -362,6 +362,7 @@
 		ED362FDE1DFA39B200289940 /* GetParttimeJobDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetParttimeJobDetailController.swift; sourceTree = "<group>"; };
 		ED40C2B41E236B7B00B1B9E0 /* PeopleAuthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleAuthCell.swift; sourceTree = "<group>"; };
 		ED40C2B61E237BE700B1B9E0 /* JobScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobScoreCell.swift; sourceTree = "<group>"; };
+		ED40C2B81E23872800B1B9E0 /* MoYu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoYu.entitlements; sourceTree = "<group>"; };
 		ED4992251E15EB1600AD8E7C /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = MoYu/Reveal.framework; sourceTree = "<group>"; };
 		ED4992291E160A1700AD8E7C /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		ED49922B1E16568F00AD8E7C /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
@@ -460,6 +461,7 @@
 		831C33C81CB0B1E900157B67 /* MoYu */ = {
 			isa = PBXGroup;
 			children = (
+				ED40C2B81E23872800B1B9E0 /* MoYu.entitlements */,
 				831C33C91CB0B1E900157B67 /* AppDelegate.swift */,
 				834E3EB41CB0BE86005B8FC3 /* Constant */,
 				834E3EB51CB0BE86005B8FC3 /* Extension */,
@@ -1122,6 +1124,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 78AL42KSBM;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					831C33D91CB0B1E900157B67 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1751,6 +1758,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoYu/MoYu.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jincheng YI (9Z5G29ZE7G)";
 				DEVELOPMENT_TEAM = 78AL42KSBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1763,8 +1771,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxb.MoYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "93046cfe-3b47-4aeb-a083-a04bb3f8876e";
-				PROVISIONING_PROFILE_SPECIFIER = moyu_development_726;
+				PROVISIONING_PROFILE = "efc290fd-9f19-4974-8271-167244d61b9c";
+				PROVISIONING_PROFILE_SPECIFIER = moyu_development_170109;
 				SWIFT_OBJC_BRIDGING_HEADER = "MoYu/MoYu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1776,6 +1784,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoYu/MoYu.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jincheng YI (78AL42KSBM)";
 				DEVELOPMENT_TEAM = 78AL42KSBM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1788,8 +1797,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxb.MoYu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "32459c07-35a5-4e46-bf40-bc55eb544941";
-				PROVISIONING_PROFILE_SPECIFIER = moyu_Destribution_adHoc_0903;
+				PROVISIONING_PROFILE = "d502f602-17f6-4b61-bee0-513ad8fea708";
+				PROVISIONING_PROFILE_SPECIFIER = moyu_Destribution_adHoc_170109;
 				SWIFT_OBJC_BRIDGING_HEADER = "MoYu/MoYu-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
