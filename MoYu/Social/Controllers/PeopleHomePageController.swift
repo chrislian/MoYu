@@ -75,8 +75,16 @@ class PeopleHomePageController: UIViewController {
             homePageView.update(model: model)
         }
         
-        homePageView.tapClourse = { type in
+        homePageView.tapClourse = {[unowned self] type in
             println("header view tap:\(type)")
+            
+            switch type {
+            case .sayHi:
+                self.performSegue(withIdentifier: SB.Social.Segue.chat, sender: nil)
+            case .pk:
+                self.performSegue(withIdentifier: SB.Social.Segue.pk, sender: nil)
+            case .sign:break//备注
+            }
         }
     }
     

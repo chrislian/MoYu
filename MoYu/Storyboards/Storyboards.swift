@@ -116,7 +116,8 @@ struct SB {
         }
         
         struct Segue {
-            
+            static let chat = "segueChat"
+            static let pk = "seguePK"
         }
         
         static var root:UIViewController?{

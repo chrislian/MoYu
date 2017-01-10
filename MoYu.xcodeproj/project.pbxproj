@@ -157,6 +157,8 @@
 		ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7631DED34090088CD22 /* FindWorkCardView.swift */; };
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
 		ED56A7681DED5B940088CD22 /* FindWorkCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */; };
+		ED78C28E1E24BEB5000FB055 /* PeopleChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78C28D1E24BEB5000FB055 /* PeopleChatController.swift */; };
+		ED78C2901E24C247000FB055 /* PeoplePkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78C28F1E24C247000FB055 /* PeoplePkController.swift */; };
 		ED79B1A51E14E2FE00B98302 /* MoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79B1A41E14E2FE00B98302 /* MoNotification.swift */; };
 		ED94173A1DF805EB009535C1 /* HomeMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9417391DF805EB009535C1 /* HomeMapController.swift */; };
 		EDEB5B2A1E14AD0D00C3F273 /* CommentSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */; };
@@ -370,6 +372,8 @@
 		ED56A7631DED34090088CD22 /* FindWorkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardView.swift; sourceTree = "<group>"; };
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
+		ED78C28D1E24BEB5000FB055 /* PeopleChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleChatController.swift; sourceTree = "<group>"; };
+		ED78C28F1E24C247000FB055 /* PeoplePkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePkController.swift; sourceTree = "<group>"; };
 		ED79B1A41E14E2FE00B98302 /* MoNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoNotification.swift; sourceTree = "<group>"; };
 		ED9417391DF805EB009535C1 /* HomeMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMapController.swift; sourceTree = "<group>"; };
 		EDEB5B291E14AD0D00C3F273 /* CommentSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSubCell.swift; sourceTree = "<group>"; };
@@ -1014,6 +1018,8 @@
 			isa = PBXGroup;
 			children = (
 				ED4992311E165DED00AD8E7C /* PeopleHomePageController.swift */,
+				ED78C28D1E24BEB5000FB055 /* PeopleChatController.swift */,
+				ED78C28F1E24C247000FB055 /* PeoplePkController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1520,6 +1526,7 @@
 				838E84F81D29492200C992CC /* LeftTableViewCell.swift in Sources */,
 				EDF819AC1D673C1E0065F6A1 /* PostPartimeJobDetailController.swift in Sources */,
 				838E84F21D29492200C992CC /* HomeSearchView.swift in Sources */,
+				ED78C2901E24C247000FB055 /* PeoplePkController.swift in Sources */,
 				ED2F7E521E10CA85001310D6 /* CommentTopCell.swift in Sources */,
 				838E850F1D294CC100C992CC /* UIImage+MoYu.swift in Sources */,
 				83829ED51D58877B00CD6587 /* RecommendController.swift in Sources */,
@@ -1603,6 +1610,7 @@
 				8334C84D1D71674100977C2A /* PromptController.swift in Sources */,
 				838E850A1D294CC100C992CC /* NSDateFormatter+MoYu.swift in Sources */,
 				834CF1D51D79ACF100880D9C /* AlertViewType.swift in Sources */,
+				ED78C28E1E24BEB5000FB055 /* PeopleChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
