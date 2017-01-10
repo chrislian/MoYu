@@ -72,6 +72,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let phone = UserManager.sharedInstance.getPhoneNumber() , !phone.isEmpty{
             println("当前登录手机号码为:\(phone)")
+            
+            if !EMClient.shared().isLoggedIn{
+                EMClient.shared().login(withUsername: phone, password: "123456", completion: { (username, error) in
+                    if error == nil{
+                        EMClient.shared().options.isAutoLogin = true
+                    }else{
+                        println("login EMC success, username is \(username)")
+                    }
+                })
+            }
         } else{
             println("未登录")
         }

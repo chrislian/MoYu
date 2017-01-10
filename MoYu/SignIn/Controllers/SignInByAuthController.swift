@@ -45,7 +45,7 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
                 let data = json{
                 
                 UserManager.sharedInstance.update(user: data, phone: phoneNum)
-                self?.autoSignInEMC(username: "18350210050", password: "123456")
+                self?.autoSignInEMC(username: phoneNum, password: "123456")
                 
                 self?.dismissSignInView()
             }else{
