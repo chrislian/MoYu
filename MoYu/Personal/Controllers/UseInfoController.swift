@@ -238,16 +238,16 @@ extension UseInfoController: ActionSheetProtocol{
     
     
     func otherButtons(sheet: ActionSheetController) -> [String] {
-        return ["女","男"]
+        return [MoSex.male.detail2,MoSex.female.detail2]
     }
     
     func action(sheet: ActionSheetController, selectedAtIndex: Int) {
         
-        if UserManager.sharedInstance.user.sex == selectedAtIndex{
+        if UserManager.sharedInstance.user.sex == selectedAtIndex + 1{
             return
         }
         
-        Router.updateSex(value: selectedAtIndex).request(remote: self.updateUser )
+        Router.updateSex(value: selectedAtIndex + 1).request(remote: self.updateUser )
     }
     
 }

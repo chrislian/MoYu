@@ -47,7 +47,7 @@ struct AroundPeopleModel {
     }
     var avator:String {
         
-        return mainUrl + img
+        return baseUrl + img
     }
 
     

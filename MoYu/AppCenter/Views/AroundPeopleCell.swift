@@ -27,7 +27,7 @@ class AroundPeopleCell: UITableViewCell {
     
     func update(model:AroundPeopleModel){
         
-        avatorImageView.mo_loadRoundImage(model.avator)
+        avatorImageView.mo_loadRoundImage(model.avator,radius: avatorImageView.frame.size.height/2)
         motionLabel.text = model.autograph
         usernameLabel.text = model.nickname
         

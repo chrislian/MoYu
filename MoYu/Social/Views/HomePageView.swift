@@ -29,7 +29,7 @@ class HomePageView: UIView {
     //MARK: - public methods
     func update(model:AroundPeopleModel){
         
-        avatorImageView.mo_loadRoundImage(model.avator)
+        avatorImageView.mo_loadRoundImage(model.avator,radius: avatorImageView.frame.size.height/2)
         usernameLabel.text = model.nickname
         motionLabel.text = model.autograph
         let currentLocation = UserManager.sharedInstance.currentLocation

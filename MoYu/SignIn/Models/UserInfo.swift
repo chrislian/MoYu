@@ -114,10 +114,8 @@ class UserInfo: Object {
     }
     
     var moSex:String{
-        if self.sex == 0{
-            return "女"
-        }
-        return "男"
+        
+        return MoSex(sex).detail2
     }
     
     var moLevel:String {

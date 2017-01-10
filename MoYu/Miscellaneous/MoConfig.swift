@@ -98,4 +98,26 @@ enum MoSex:Int {
         default: self =  .none
         }
     }
+    
+    var detail:String{
+        switch self {
+        case .none:
+            return "不限"
+        case .male:
+            return "男"
+        case .female:
+            return "女"
+        }
+    }
+    
+    var detail2:String{
+        switch self {
+        case .none:
+            return "保密"
+        case .male:
+            return "男"
+        case .female:
+            return "女"
+        }
+    }
 }
