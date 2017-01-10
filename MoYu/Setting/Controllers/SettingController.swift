@@ -27,19 +27,33 @@ class SettingController: UIViewController,PraseErrorType, AlertViewType {
     //MARK: - event response
     func exitButtonClicked(_ sender:UIButton){
         
-        Router.signOut.request { (status, json) in
+        Router.signOut.request {[weak self] (status, json) in
             
-            self.show(error: status, showSuccess: true)
+            self?.show(error: status, showSuccess: true)
             
             if case .success = status{
                 
+                self?.signOutEMC()
+                
                 UserManager.sharedInstance.deleteUser()
-                self.showSignInView()
+                
+                self?.showSignInView()
             }
         }
     }
     
     //MARK: - private method
+    private func signOutEMC(){
+        EMClient.shared().logout(true) { error in
+            if error == nil {
+                println("logout EMC success")
+            }else{
+                println("logout EMC occur failure, error:\(error)")
+            }
+        }
+    }
+    
+    
     fileprivate func setupView(){
  
         

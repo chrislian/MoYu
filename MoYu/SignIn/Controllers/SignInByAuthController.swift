@@ -40,15 +40,16 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
                 return
         }
         
-        Router.signIn(phone: phoneNum, verifyCode: authCode).request { (status, json) in
+        Router.signIn(phone: phoneNum, verifyCode: authCode).request {[weak self] (status, json) in
             if case .success = status,
                 let data = json{
                 
                 UserManager.sharedInstance.update(user: data, phone: phoneNum)
-                println("userJson:\(json)")
-                self.dismissSignInView()
+                self?.autoSignInEMC(username: "18350210050", password: "123456")
+                
+                self?.dismissSignInView()
             }else{
-                self.show(error: status)
+                self?.show(error: status)
             }
         }
     }
@@ -73,6 +74,21 @@ class SignInByAuthController: UIViewController,PraseErrorType,AlertViewType {
     
 
     //MARK: - private method
+    
+    private func autoSignInEMC(username:String,password:String){
+        
+        if !EMClient.shared().isLoggedIn {
+            EMClient.shared().login(withUsername: username, password: password, completion: { (aUsername, error) in
+                
+                if error == nil{
+                    EMClient.shared().options.isAutoLogin = true
+                }
+                
+                println("login EMClient success")
+            })
+        }
+    }
+    
 
     fileprivate func setupView(){
         
