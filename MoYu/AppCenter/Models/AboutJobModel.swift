@@ -68,7 +68,7 @@ struct AboutJobItem{
     
     var avator:String {
         
-        return mainUrl + photo
+        return baseUrl + photo
     }
 }
 

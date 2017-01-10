@@ -38,7 +38,7 @@ class CommentSubCell: UITableViewCell {
     
     func update(model:AboutJobSubItem,index:Int){
         
-        avatorImageView.mo_loadRoundImage("")
+        avatorImageView.mo_loadRoundImage("",radius: avatorImageView.frame.size.height/2)
         benchLabel.text = benchText(idx: index)
         usernameLabel.text = model.nickname
         createTimeLabel.text = model.create_date.mo_ToString(.detail)

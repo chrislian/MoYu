@@ -31,7 +31,7 @@ class AboutJobsCell: UITableViewCell {
         dateLabel.text = item.create_time.mo_ToString(.detail)
         usernameLabel.text = item.nickname
         commentLabel.text = item.memo
-        headImageView.mo_loadRoundImage(item.avator)
+        headImageView.mo_loadRoundImage(item.avator,radius: headImageView.frame.size.height/2)
         zanCountLabel.text = item.zan
         
         commentCountLabel.text = "\(item.replylists.count)"
