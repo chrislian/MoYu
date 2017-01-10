@@ -457,6 +457,13 @@
                             <constraint firstAttribute="trailing" secondItem="jII-2G-cPd" secondAttribute="trailing" id="xhe-7e-FfH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wM2-E4-3ld">
+                        <barButtonItem key="rightBarButtonItem" image="icon_more_dot" id="lrt-Wh-wIB">
+                            <connections>
+                                <action selector="rightTopButton:" destination="8n4-Dt-NNN" id="VwW-Zc-y9a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jII-2G-cPd" id="oLp-SI-3I3"/>
                         <segue destination="bFG-gu-mxx" kind="presentation" identifier="segueSocial" id="KNQ-D7-faR"/>
@@ -726,6 +733,7 @@
     <resources>
         <image name="defalutHead" width="67" height="67"/>
         <image name="icon_comments" width="28" height="27"/>
+        <image name="icon_more_dot" width="31" height="7"/>
         <image name="icon_zan" width="27" height="27"/>
         <image name="nav_back" width="22" height="22"/>
         <image name="rightAppCenterBanner" width="621" height="251"/>

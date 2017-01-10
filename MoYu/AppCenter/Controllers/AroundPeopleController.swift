@@ -33,6 +33,10 @@ class AroundPeopleController: UIViewController,PraseErrorType,AlertViewType {
         }
     }
     
+    @IBAction func rightTopButton(_ sender: UIBarButtonItem) {
+        
+        filterActionSheet.show(self)
+    }
     
     //MARK: - private method
     private func setupView(){
@@ -66,11 +70,11 @@ class AroundPeopleController: UIViewController,PraseErrorType,AlertViewType {
             }
             
             if page == 1{
-                strongSelf.models = models
+                strongSelf.totalModels = models
             }else{
-                strongSelf.models += models
+                strongSelf.totalModels += models
             }
-            strongSelf.tableView.reloadData()
+            strongSelf.updateModel(sex: strongSelf.sexType)
         }
     }
     
@@ -78,11 +82,22 @@ class AroundPeopleController: UIViewController,PraseErrorType,AlertViewType {
     //MARK: - var & let
     @IBOutlet weak var tableView: UITableView!
     
+    var totalModels:[AroundPeopleModel] = []
+    
     var models:[AroundPeopleModel] = []
     
     var canLoadMore = false
     
     var currentPage = 1
+    
+    lazy var filterActionSheet:ActionSheetController = {
+        let actionSheet = ActionSheetController()
+        actionSheet.delegate = self
+        actionSheet.showCancelButton = false
+        return actionSheet
+    }()
+    
+    fileprivate var sexType:MoSex = .none
 }
 
 extension AroundPeopleController: RefreshViewType{
@@ -139,5 +154,36 @@ extension AroundPeopleController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return AroundPeopleCell.cell(tableView: tableView)
+    }
+}
+
+
+// MARK: - ActionSheetProtocol
+extension AroundPeopleController: ActionSheetProtocol{
+    
+    fileprivate func updateModel(sex:MoSex){
+        
+        switch sex {
+        case .none:
+            models = totalModels
+        case .male:
+            models = totalModels.filter{ $0.sex == .male }
+        case .female:
+            models = totalModels.filter{ $0.sex == .female }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    
+    func otherButtons(sheet: ActionSheetController) -> [String] {
+        return ["查看全部","只看男生","只看女生"]
+    }
+    
+    func action(sheet: ActionSheetController, selectedAtIndex: Int) {
+
+        sexType = MoSex(selectedAtIndex)
+        
+        updateModel(sex: sexType)
     }
 }

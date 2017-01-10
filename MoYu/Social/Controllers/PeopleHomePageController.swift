@@ -57,6 +57,16 @@ class PeopleHomePageController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? PeopleChatController,
+            let model = sender as? AroundPeopleModel{
+            vc.chatFriend = model
+        }
+    }
+    
+    
     //MARK: - private mthods
     private func setupView(){
         
@@ -80,7 +90,7 @@ class PeopleHomePageController: UIViewController {
             
             switch type {
             case .sayHi:
-                self.performSegue(withIdentifier: SB.Social.Segue.chat, sender: nil)
+                self.performSegue(withIdentifier: SB.Social.Segue.chat, sender: self.aroundPeopleModel ?? nil)
             case .pk:
                 self.performSegue(withIdentifier: SB.Social.Segue.pk, sender: nil)
             case .sign:break//备注

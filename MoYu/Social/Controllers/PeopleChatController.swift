@@ -14,7 +14,13 @@ class PeopleChatController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mo_navigationBar(title: "Chat")
+        if let nickname = chatFriend?.nickname{
+            
+            mo_navigationBar(title: nickname)
+        }else {
+            mo_navigationBar(title: chatFriend?.phonenum ?? "")
+        }
     }
 
+    var chatFriend:AroundPeopleModel?
 }
