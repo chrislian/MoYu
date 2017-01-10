@@ -12,6 +12,7 @@ pod 'MJRefresh',    '~> 3.0'
 pod 'BaiduMapKit',   '~> 3.0'
 pod 'PHFComposeBarView', '~> 2.0'
 pod 'HyphenateLite'
+pod 'JSQMessagesViewController'
 
 #swift
 pod 'Alamofire',    '~> 4.0'

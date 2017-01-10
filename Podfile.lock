@@ -5,6 +5,9 @@ PODS:
   - CryptoSwift (0.6.6)
   - HyphenateLite (3.2.2.2)
   - IQKeyboardManagerSwift (4.0.7)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - Kingfisher (3.2.1)
   - MJRefresh (3.1.12)
   - PHFComposeBarView (2.0.2):
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - CryptoSwift (~> 0.6.0)
   - HyphenateLite
   - IQKeyboardManagerSwift
+  - JSQMessagesViewController
   - Kingfisher (~> 3.0)
   - MJRefresh (~> 3.0)
   - PHFComposeBarView (~> 2.0)
@@ -49,6 +53,8 @@ SPEC CHECKSUMS:
   CryptoSwift: 88592381b73f36e192124539390a7c9bacda76af
   HyphenateLite: ac26520e7adfc06ed1ca6ec531fd829b097d15ff
   IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PHFComposeBarView: 758c73ce54be681df97223bc61543dd8828ae0d3
@@ -63,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 66ac0df0008a7eaf5ba25d00a953f0d5caccd4ef
+PODFILE CHECKSUM: a0957566b4a2a6194d1bd4e16923e6f7b4954ce2
 
 COCOAPODS: 1.2.0.beta.1
