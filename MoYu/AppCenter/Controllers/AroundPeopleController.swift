@@ -57,7 +57,7 @@ class AroundPeopleController: UIViewController,PraseErrorType,AlertViewType {
             
             guard case .success = status, let json = json else{ return }
             
-            let models = json["reslist"].arrayValue.map ( AroundPeopleModel.init )
+            let models = json["reslist"].arrayValue.map ( AroundPeopleModel.init ).filter{ $0.id != UserManager.sharedInstance.user.id }
             
             if models.count == MoDefaultLoadMoreCount{
                 strongSelf.canLoadMore = true
