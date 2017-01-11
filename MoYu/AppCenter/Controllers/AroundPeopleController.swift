@@ -93,7 +93,8 @@ class AroundPeopleController: UIViewController,PraseErrorType,AlertViewType {
     lazy var filterActionSheet:ActionSheetController = {
         let actionSheet = ActionSheetController()
         actionSheet.delegate = self
-        actionSheet.showCancelButton = false
+//        actionSheet.showCancelButton = false
+        actionSheet.showDestructiveButton = false
         return actionSheet
     }()
     
