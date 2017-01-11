@@ -157,6 +157,7 @@
 		ED56A7641DED34090088CD22 /* FindWorkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7631DED34090088CD22 /* FindWorkCardView.swift */; };
 		ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */; };
 		ED56A7681DED5B940088CD22 /* FindWorkCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */; };
+		ED6698961E25C11D0087975D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6698951E25C11D0087975D /* Conversation.swift */; };
 		ED78C28E1E24BEB5000FB055 /* PeopleChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78C28D1E24BEB5000FB055 /* PeopleChatController.swift */; };
 		ED78C2901E24C247000FB055 /* PeoplePkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78C28F1E24C247000FB055 /* PeoplePkController.swift */; };
 		ED79B1A51E14E2FE00B98302 /* MoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79B1A41E14E2FE00B98302 /* MoNotification.swift */; };
@@ -372,6 +373,7 @@
 		ED56A7631DED34090088CD22 /* FindWorkCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardView.swift; sourceTree = "<group>"; };
 		ED56A7651DED5B940088CD22 /* FindWorkCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWorkCardCell.swift; sourceTree = "<group>"; };
 		ED56A7661DED5B940088CD22 /* FindWorkCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindWorkCardCell.xib; sourceTree = "<group>"; };
+		ED6698951E25C11D0087975D /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		ED78C28D1E24BEB5000FB055 /* PeopleChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleChatController.swift; sourceTree = "<group>"; };
 		ED78C28F1E24C247000FB055 /* PeoplePkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePkController.swift; sourceTree = "<group>"; };
 		ED79B1A41E14E2FE00B98302 /* MoNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoNotification.swift; sourceTree = "<group>"; };
@@ -1027,6 +1029,7 @@
 		ED49922F1E1657D100AD8E7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED6698951E25C11D0087975D /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1507,6 +1510,7 @@
 				834EC4171D3236460046FBEF /* SignInByPasswordController.swift in Sources */,
 				838E84E11D29492200C992CC /* AboutJobsController.swift in Sources */,
 				838E84F31D29492200C992CC /* HomeView.swift in Sources */,
+				ED6698961E25C11D0087975D /* Conversation.swift in Sources */,
 				ED94173A1DF805EB009535C1 /* HomeMapController.swift in Sources */,
 				831632AE1D2EA3E300205211 /* Remote.swift in Sources */,
 				ED56A7671DED5B940088CD22 /* FindWorkCardCell.swift in Sources */,
