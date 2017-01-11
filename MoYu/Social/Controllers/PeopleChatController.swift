@@ -191,9 +191,17 @@ class PeopleChatController: JSQMessagesViewController {
         return JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
     
-    fileprivate let senderAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: UIImage(named:"defaultAvator"), diameter: 34)
+    fileprivate var senderAvatar:JSQMessagesAvatarImage = {
+        let imageView = UIImageView()
+        imageView.mo_loadImage(UserManager.sharedInstance.user.avatorUrl)
+        return JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: imageView.image, diameter: 34)
+    }()
     
-    fileprivate let recvAvatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: UIImage(named:"defaultAvator"), diameter: 34)
+    fileprivate lazy var recvAvatar:JSQMessagesAvatarImage = {
+        let imageView = UIImageView()
+        imageView.mo_loadImage(self.chatFriend?.avator ?? "")
+        return JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: imageView.image, diameter: 34)
+    }()
     
     fileprivate var receiveName:String{
         
