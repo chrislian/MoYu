@@ -23,6 +23,8 @@ class PeopleChatController: JSQMessagesViewController {
     //MARK: - private mothods
     private func setupView(){
         
+        inputToolbar.contentView.textView.placeHolder = "打个招呼吧~"
+        
         collectionView?.collectionViewLayout.incomingAvatarViewSize = CGSize(width: kJSQMessagesCollectionViewAvatarSizeDefault, height:kJSQMessagesCollectionViewAvatarSizeDefault )
         collectionView?.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: kJSQMessagesCollectionViewAvatarSizeDefault, height:kJSQMessagesCollectionViewAvatarSizeDefault )
         
@@ -88,6 +90,7 @@ class PeopleChatController: JSQMessagesViewController {
     
     override func didPressAccessoryButton(_ sender: UIButton) {
         self.inputToolbar.contentView!.textView!.resignFirstResponder()
+        
         
         println("did pressAccessoryButton")
     }
