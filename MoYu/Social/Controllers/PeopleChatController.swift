@@ -17,6 +17,14 @@ class PeopleChatController: JSQMessagesViewController {
         mo_navigationBar(title: receiveName)
         
         setupView()
+        
+//        let conversation = EMClient.shared().chatManager.getConversation("", type: EMConversationTypeChat, createIfNotExist: true)
+        
+        EMClient.shared().chatManager.add(self)
+    }
+    
+    deinit {
+        EMClient.shared().chatManager.remove(self)
     }
     
     
@@ -80,12 +88,13 @@ class PeopleChatController: JSQMessagesViewController {
          *  2. Add new id<JSQMessageData> object to your data source
          *  3. Call `finishSendingMessage`
          */
-        
-        println("send message, senderID is \(senderId), name is \(senderDisplayName), text is \(text)")
-        
-        let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
-        self.messages.append(message!)
-        self.finishSendingMessage(animated: true)
+//        
+//        println("send message, senderID is \(senderId), name is \(senderDisplayName), text is \(text)")
+//        
+//        let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
+//        self.messages.append(message!)
+//        self.finishSendingMessage(animated: true)
+        sendMessage(text: text, senderId: senderId, senderDisplayName: senderDisplayName, date: date)
     }
     
     override func didPressAccessoryButton(_ sender: UIButton) {
@@ -93,6 +102,29 @@ class PeopleChatController: JSQMessagesViewController {
         
         
         println("did pressAccessoryButton")
+    }
+    
+    fileprivate func sendMessage(text:String,senderId: String, senderDisplayName: String, date: Date){
+
+        let body = EMTextMessageBody(text: text)
+        guard let conversationId = conversation?.conversationId, let recvId = chatFriend?.phonenum else{ return }
+        let message = EMMessage(conversationID: conversationId, from: senderId, to: recvId, body: body, ext: nil)
+        message?.chatType = EMChatTypeChat
+        message?.localTime = Int64(Date().timeIntervalSince1970)
+        
+        EMClient.shared().chatManager.send(message, progress: { progress in
+            
+        }, completion: { [weak self] (message, error) in
+            
+            if error == nil{
+                let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
+                self?.messages.append(message!)
+                self?.finishSendingMessage(animated: true)
+            }else{
+            
+                println(error)
+            }
+        })
     }
     
     
@@ -214,4 +246,59 @@ class PeopleChatController: JSQMessagesViewController {
             return chatFriend?.phonenum ?? ""
         }
     }
+    
+    fileprivate lazy var conversation:EMConversation? = {
+        
+        return EMClient.shared().chatManager.getConversation(self.chatFriend?.phonenum ?? "", type: EMConversationTypeChat, createIfNotExist: true)
+        
+    }()
+}
+
+
+// MARK: - EMChatManagerDelegate
+extension PeopleChatController:EMChatManagerDelegate{
+    
+    fileprivate func covertEMMessage(message:EMMessage)->JSQMessage?{
+        
+        guard let conversationId = self.conversation?.conversationId,
+            let name = message.from,
+            let body = message.body else{
+            return nil
+        }
+        
+        switch body.type {
+        case EMMessageBodyTypeText:
+            if let body = body as? EMTextMessageBody,
+                let text = body.text {
+                
+                let date = Date.init(timeIntervalSinceNow: TimeInterval(message.localTime))
+                return JSQMessage(senderId: conversationId, senderDisplayName: name, date: date, text:text )
+            }
+            
+        default: break
+        }
+        return nil
+    }
+    
+    
+    /// 接收一条及以上的非cmd消息
+    ///
+    /// - Parameter aMessages: 消息
+    func messagesDidReceive(_ aMessages: [Any]!) {
+        
+        messages += aMessages.flatMap{ $0 as? EMMessage }.flatMap( covertEMMessage(message:) )
+        
+        scrollToBottom(animated: true)
+        
+        finishReceivingMessage(animated: true)
+    }
+    
+    
+    /// 接收一条及以上的cmd
+    ///
+    /// - Parameter aCmdMessages: 消息
+    func cmdMessagesDidReceive(_ aCmdMessages: [Any]!) {
+        
+    }
+    
 }
